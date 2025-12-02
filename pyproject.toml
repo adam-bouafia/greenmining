@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "greenmining"
 version = "0.1.7"
-description = "Green Software Foundation (GSF) patterns mining tool for microservices repositories"
+description = "Analyze GitHub repositories to identify green software engineering patterns and energy-efficient practices"
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}

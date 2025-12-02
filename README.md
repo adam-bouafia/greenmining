@@ -8,11 +8,11 @@ Green mining for microservices repositories.
 
 ## Overview
 
-`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices. It detects 76 official Green Software Foundation patterns across cloud, web, AI, database, networking, and general categories.
+`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects 76 sustainable software patterns across cloud, web, AI, database, networking, and general categories.
 
 ## Features
 
-- 🔍 **76 GSF Patterns**: Detect official Green Software Foundation patterns
+- 🔍 **76 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices
 - 📊 **Repository Mining**: Analyze 100+ microservices repositories from GitHub
 - 📈 **Green Awareness Detection**: Identify sustainability-focused commits
 - 📄 **Comprehensive Reports**: Generate analysis reports in multiple formats
@@ -73,7 +73,7 @@ greenmining report
 from greenmining import GSF_PATTERNS, is_green_aware, get_pattern_by_keywords
 
 # Check available patterns
-print(f"Total GSF patterns: {len(GSF_PATTERNS)}")  # 76
+print(f"Total patterns: {len(GSF_PATTERNS)}")  # 76
 
 # Detect green awareness in commit messages
 commit_msg = "Optimize Redis caching to reduce energy consumption"
@@ -113,7 +113,7 @@ for commit in commits:
         print(f"  Patterns: {result['known_pattern']}")
 ```
 
-#### Access GSF Patterns Data
+#### Access Sustainability Patterns Data
 
 ```python
 from greenmining import GSF_PATTERNS
