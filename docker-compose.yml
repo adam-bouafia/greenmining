@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  greenmining:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: greenmining:latest
+    container_name: greenmining
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - MAX_REPOS=${MAX_REPOS:-100}
+      - COMMITS_PER_REPO=${COMMITS_PER_REPO:-50}
+    command: pipeline --max-repos 100
+    restart: unless-stopped
+
+  greenmining-interactive:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: greenmining:latest
+    container_name: greenmining-interactive
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash
