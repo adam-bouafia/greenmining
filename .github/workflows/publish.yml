@@ -108,6 +108,8 @@ jobs:
               run: |
                   if [ "${{ github.event_name }}" == "release" ]; then
                     VERSION=${GITHUB_REF#refs/tags/v}
+                  elif [ "${{ github.event_name }}" == "push" ] && [[ "$GITHUB_REF" == refs/tags/* ]]; then
+                    VERSION=${GITHUB_REF#refs/tags/v}
                   else
                     VERSION=${{ github.event.inputs.version }}
                   fi
@@ -157,6 +159,8 @@ jobs:
               id: version
               run: |
                   if [ "${{ github.event_name }}" == "release" ]; then
+                    VERSION=${GITHUB_REF#refs/tags/v}
+                  elif [ "${{ github.event_name }}" == "push" ] && [[ "$GITHUB_REF" == refs/tags/* ]]; then
                     VERSION=${GITHUB_REF#refs/tags/v}
                   else
                     VERSION=${{ github.event.inputs.version }}
