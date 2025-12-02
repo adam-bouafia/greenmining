@@ -1,192 +1,280 @@
-# Green Microservices Mining CLI
+# greenmining
 
-Interactive CLI tool for mining GitHub repositories to analyze green software engineering practices in microservices architectures.
+Green mining for microservices repositories.
+
+[![PyPI](https://img.shields.io/pypi/v/greenmining)](https://pypi.org/project/greenmining/)
+[![Python](https://img.shields.io/pypi/pyversions/greenmining)](https://pypi.org/project/greenmining/)
+[![License](https://img.shields.io/github/license/adam-bouafia/greenmining)](LICENSE)
 
 ## Overview
 
-This tool fetches top microservice repositories from GitHub, extracts commit data, analyzes commits for energy efficiency and sustainability practices and generates comprehensive reports for academic research.
+`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices. It detects 76 official Green Software Foundation patterns across cloud, web, AI, database, networking, and general categories.
 
 ## Features
 
-- 🔍 **Repository Mining**: Fetch top 100+ microservice repositories from GitHub
-- 📊 **Commit Analysis**: Extract and analyze commit history for green practices
-- 📈 **Pattern Detection**: Identify known and emerging green software patterns
-- 📄 **Report Generation**: Generate academic-ready markdown reports with statistics
-- 💾 **Multiple Output Formats**: CSV, JSON, and Markdown outputs
-- ⚡ **Resume Capability**: Checkpoint system for long-running analyses
+- 🔍 **76 GSF Patterns**: Detect official Green Software Foundation patterns
+- 📊 **Repository Mining**: Analyze 100+ microservices repositories from GitHub
+- 📈 **Green Awareness Detection**: Identify sustainability-focused commits
+- 📄 **Comprehensive Reports**: Generate analysis reports in multiple formats
+- 🐳 **Docker Support**: Run in containers for consistent environments
+- ⚡ **Fast Analysis**: Parallel processing and checkpoint system
 
 ## Installation
 
-### Prerequisites
-
-- Python 3.10 or higher
-- GitHub Personal Access Token
-
-### Setup
+### Via pip
 
 ```bash
-# Clone or create project directory
-cd /home/neo/Documents/greenmining
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Configure environment variables
-cp .env.example .env
-# Edit .env and add your API keys
+pip install greenmining
 ```
 
-### Environment Configuration
+### From source
 
-Edit `.env` file:
+```bash
+git clone https://github.com/adam-bouafia/greenmining.git
+cd greenmining
+pip install -e .
+```
 
-```env
+### With Docker
+
+```bash
+docker pull adambouafia/greenmining:latest
+```
+
+## Quick Start
+
+### CLI Usage
+
+```bash
+# Set your GitHub token
+export GITHUB_TOKEN="your_github_token"
+
+# Run full analysis pipeline
+greenmining pipeline --max-repos 100
+
+# Fetch repositories
+greenmining fetch --max-repos 100 --min-stars 100
+
+# Extract commits
+greenmining extract --max-commits 50
+
+# Analyze for green patterns
+greenmining analyze
+
+# Generate report
+greenmining report
+```
+
+### Python API
+
+#### Basic Pattern Detection
+
+```python
+from greenmining import GSF_PATTERNS, is_green_aware, get_pattern_by_keywords
+
+# Check available patterns
+print(f"Total GSF patterns: {len(GSF_PATTERNS)}")  # 76
+
+# Detect green awareness in commit messages
+commit_msg = "Optimize Redis caching to reduce energy consumption"
+if is_green_aware(commit_msg):
+    patterns = get_pattern_by_keywords(commit_msg)
+    print(f"Matched patterns: {patterns}")
+    # Output: ['Cache Static Data', 'Use Efficient Cache Strategies']
+```
+
+#### Analyze Repository Commits
+
+```python
+from greenmining.services.github_fetcher import GitHubFetcher
+from greenmining.services.commit_extractor import CommitExtractor
+from greenmining.services.data_analyzer import DataAnalyzer
+from greenmining.config import Config
+
+# Initialize services
+config = Config()
+fetcher = GitHubFetcher(config)
+extractor = CommitExtractor(config)
+analyzer = DataAnalyzer(config)
+
+# Fetch repositories
+repos = fetcher.fetch_repositories(max_repos=10, min_stars=100)
+
+# Extract commits from first repo
+commits = extractor.extract_commits(repos[0], max_commits=50)
+
+# Analyze commits for green patterns
+results = []
+for commit in commits:
+    result = analyzer.analyze_commit(commit)
+    if result['green_aware']:
+        results.append(result)
+        print(f"Green commit found: {commit.message[:50]}...")
+        print(f"  Patterns: {result['known_pattern']}")
+```
+
+#### Access GSF Patterns Data
+
+```python
+from greenmining import GSF_PATTERNS
+
+# Get all cloud patterns
+cloud_patterns = {
+    pid: pattern for pid, pattern in GSF_PATTERNS.items()
+    if pattern['category'] == 'cloud'
+}
+print(f"Cloud patterns: {len(cloud_patterns)}")
+
+# Get pattern details
+cache_pattern = GSF_PATTERNS['gsf_001']
+print(f"Pattern: {cache_pattern['name']}")
+print(f"Category: {cache_pattern['category']}")
+print(f"Keywords: {cache_pattern['keywords']}")
+print(f"Impact: {cache_pattern['sci_impact']}")
+```
+
+#### Generate Custom Reports
+
+```python
+from greenmining.services.data_aggregator import DataAggregator
+from greenmining.config import Config
+
+config = Config()
+aggregator = DataAggregator(config)
+
+# Load analysis results
+results = aggregator.load_analysis_results()
+
+# Generate statistics
+stats = aggregator.calculate_statistics(results)
+print(f"Total commits analyzed: {stats['total_commits']}")
+print(f"Green-aware commits: {stats['green_aware_count']}")
+print(f"Top patterns: {stats['top_patterns'][:5]}")
+
+# Export to CSV
+aggregator.export_to_csv(results, "output.csv")
+```
+
+#### Batch Analysis
+
+```python
+from greenmining.controllers.repository_controller import RepositoryController
+from greenmining.config import Config
+
+config = Config()
+controller = RepositoryController(config)
+
+# Run full pipeline programmatically
+controller.fetch_repositories(max_repos=50)
+controller.extract_commits(max_commits=100)
+controller.analyze_commits()
+controller.aggregate_results()
+controller.generate_report()
+
+print("Analysis complete! Check data/ directory for results.")
+```
+
+### Docker Usage
+
+```bash
+# Run analysis pipeline
+docker run -v $(pwd)/data:/app/data \
+           adambouafia/greenmining:latest --help
+
+# With custom configuration
+docker run -v $(pwd)/.env:/app/.env:ro \
+           -v $(pwd)/data:/app/data \
+           adambouafia/greenmining:latest pipeline --max-repos 50
+
+# Interactive shell
+docker run -it adambouafia/greenmining:latest /bin/bash
+```
+
+## Configuration
+
+Create a `.env` file or set environment variables:
+
+```bash
 GITHUB_TOKEN=your_github_personal_access_token
 MAX_REPOS=100
 COMMITS_PER_REPO=50
 OUTPUT_DIR=./data
 ```
 
-## Usage
+## GSF Pattern Categories
 
-### Full Pipeline
+- **Cloud** (40 patterns): Autoscaling, serverless, right-sizing, region selection
+- **Web** (15 patterns): CDN, caching, lazy loading, compression
+- **AI/ML** (8 patterns): Model optimization, pruning, quantization
+- **Database** (6 patterns): Indexing, query optimization, connection pooling
+- **Networking** (4 patterns): Protocol optimization, connection reuse
+- **General** (3 patterns): Code efficiency, resource management
 
-Run the complete analysis pipeline:
+## CLI Commands
 
-```bash
-python cli.py pipeline
-```
-
-### Individual Commands
-
-Run specific phases:
-
-```bash
-# Fetch repositories
-python cli.py fetch --max-repos 100 --min-stars 100
-
-# Extract commits
-python cli.py extract --max-commits 50 --skip-merges
-
-# Analyze with Claude
-python cli.py analyze --batch-size 10 --resume
-
-# Aggregate results
-python cli.py aggregate
-
-# Generate report
-python cli.py report
-
-# Check status
-python cli.py status
-```
-
-### Command Options
-
-#### `fetch`
-- `--max-repos`: Maximum number of repositories to fetch (default: 100)
-- `--min-stars`: Minimum stars required (default: 100)
-- `--languages`: Comma-separated language list (default: java,python,go,nodejs,csharp)
-
-#### `extract`
-- `--max-commits`: Maximum commits per repository (default: 50)
-- `--skip-merges`: Skip merge commits (default: true)
-- `--days-back`: Only analyze commits from last N days (default: 730)
-
-#### `analyze`
-- `--batch-size`: Number of commits to analyze in parallel (default: 10)
-- `--resume`: Resume from last checkpoint
-
-#### Global Options
-- `--config`: Path to custom .env file
-- `--verbose`: Enable verbose logging
-- `--dry-run`: Show what would be done without executing
-
-## Project Structure
-
-```
-green-microservices-mining/
-├── venv/                         # Virtual environment
-├── .env                          # Environment configuration (not in git)
-├── .gitignore
-├── requirements.txt              # Python dependencies
-├── config.py                     # Configuration management
-├── utils.py                      # Helper functions
-├── github_fetcher.py             # Repository fetching
-├── commit_extractor.py           # Commit extraction
-├── data_analyzer.py              # Data analysis
-├── data_aggregator.py            # Data aggregation
-├── reports.py                    # Report generation
-├── cli.py                        # CLI interface
-├── main.py                       # Entry point
-├── data/                         # Output directory
-│   ├── repositories.json
-│   ├── commits.json
-│   ├── analysis_results.json
-│   ├── aggregated_statistics.json
-│   ├── green_analysis_results.csv
-│   └── green_microservices_analysis.md
-└── README.md
-```
+| Command | Description |
+|---------|-------------|
+| `fetch` | Fetch microservices repositories from GitHub |
+| `extract` | Extract commit history from repositories |
+| `analyze` | Analyze commits for green patterns |
+| `aggregate` | Aggregate analysis results |
+| `report` | Generate comprehensive report |
+| `pipeline` | Run complete analysis pipeline |
+| `status` | Show current analysis status |
 
 ## Output Files
 
-- `repositories.json`: Metadata of fetched repositories
-- `commits.json`: Extracted commit data
-- `analysis_results.json`: Claude analysis results per commit
-- `aggregated_statistics.json`: Summary statistics
-- `green_analysis_results.csv`: Tabular data for spreadsheet analysis
-- `green_microservices_analysis.md`: Final academic report
+All outputs are saved to the `data/` directory:
 
-## Research Questions
+- `repositories.json` - Repository metadata
+- `commits.json` - Extracted commit data
+- `analysis_results.json` - Pattern analysis results
+- `aggregated_statistics.json` - Summary statistics
+- `green_analysis_results.csv` - CSV export for spreadsheets
+- `green_microservices_analysis.md` - Final report
 
-This tool answers the assignment questions:
+## Development
 
-1. **Q1: Green Awareness** - Do developers of microservice-based open-source projects discuss or address energy efficiency and sustainability in their commits?
-   - Method: Keyword matching against 40+ green software terms
-   - Keywords: energy, power, carbon, optimization, efficient, etc.
+```bash
+# Clone repository
+git clone https://github.com/adam-bouafia/greenmining.git
+cd greenmining
 
-2. **Q2: Known GSF Patterns** - Are known green software patterns and tactics being applied?
-   - Method: Pattern matching against Green Software Foundation catalog
-   - Source: https://patterns.greensoftware.foundation/
-   - Categories: Cloud, Web, AI, Networking, Database, General
-   - Patterns: 20+ official GSF patterns including:
-     - Caching (Redis, CDN, Memcache)
-     - Autoscaling & Right-sizing
-     - Serverless Computing
-     - Lazy Loading & Asynchronous Processing
-     - Connection & Resource Pooling
-     - Database Optimization & Indexing
-     - ML Model Optimization
-     - And more...
+# Install development dependencies
+pip install -e ".[dev]"
 
-3. **Q3: Emerging Practices** - Discover new possible green patterns/tactics not yet documented
-   - Method: Manual review of commits showing green awareness but not matching known patterns
-   - Focus: Microservice-specific sustainability practices
+# Run tests
+pytest tests/
+
+# Run with coverage
+pytest --cov=greenmining tests/
+
+# Format code
+black greenmining/ tests/
+ruff check greenmining/ tests/
+```
+
+## Requirements
+
+- Python 3.9+
+- PyGithub >= 2.1.1
+- PyDriller >= 2.5
+- pandas >= 2.2.0
+- click >= 8.1.7
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - See [LICENSE](LICENSE) for details.
 
 ## Contributing
 
-This is a research tool. For issues or suggestions, please open an issue.
+Contributions are welcome! Please open an issue or submit a pull request.
 
-## Citation
+## Links
 
-If you use this tool in your research, please cite:
+- **GitHub**: https://github.com/adam-bouafia/greenmining
+- **PyPI**: https://pypi.org/project/greenmining/
+- **Docker Hub**: https://hub.docker.com/r/adambouafia/greenmining
+- **Documentation**: https://github.com/adam-bouafia/greenmining#readme
 
-```
-[Your thesis citation here]
-```
 
-## Acknowledgments
-
-Built with:
-- PyGithub for GitHub API
-- Click for CLI framework
-- pandas for data processing
