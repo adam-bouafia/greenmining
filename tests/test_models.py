@@ -1,14 +1,14 @@
 """Test data models."""
 
+
 import pytest
-from datetime import datetime
 
 
 @pytest.mark.unit
 def test_repository_model():
     """Test Repository dataclass."""
     from greenmining.models.repository import Repository
-    
+
     repo = Repository(
         repo_id=123,
         name="test-repo",
@@ -30,9 +30,9 @@ def test_repository_model():
         has_issues=True,
         has_wiki=True,
         archived=False,
-        license="MIT"
+        license="MIT",
     )
-    
+
     assert repo.name == "test-repo"
     assert repo.stars == 100
     assert repo.language == "Python"
@@ -42,7 +42,7 @@ def test_repository_model():
 def test_commit_model():
     """Test Commit dataclass."""
     from greenmining.models.commit import Commit
-    
+
     commit = Commit(
         commit_id="abc123",
         repo_name="test-repo",
@@ -57,9 +57,9 @@ def test_commit_model():
         deletions=5,
         is_merge=False,
         branches=["main"],
-        in_main_branch=True
+        in_main_branch=True,
     )
-    
+
     assert commit.commit_id == "abc123"
     assert commit.author == "Test Author"
     assert commit.insertions == 10
@@ -69,7 +69,7 @@ def test_commit_model():
 def test_analysis_result_model():
     """Test AnalysisResult dataclass."""
     from greenmining.models.analysis_result import AnalysisResult
-    
+
     result = AnalysisResult(
         commit_id="abc123",
         repo_name="test-repo",
@@ -82,9 +82,9 @@ def test_analysis_result_model():
         emergent_pattern=None,
         files_changed=["cache.py"],
         lines_added=10,
-        lines_deleted=2
+        lines_deleted=2,
     )
-    
+
     assert result.green_aware is True
     assert result.known_pattern == "Cache Static Data"
     assert result.pattern_confidence == "high"

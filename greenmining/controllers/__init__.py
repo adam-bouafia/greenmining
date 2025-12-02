@@ -7,5 +7,5 @@ Controllers coordinate between models, services, and presenters following MCP ar
 from .repository_controller import RepositoryController
 
 __all__ = [
-    'RepositoryController',
+    "RepositoryController",
 ]
