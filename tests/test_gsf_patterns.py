@@ -8,8 +8,8 @@ def test_gsf_patterns_loaded():
     """Test that GSF patterns are loaded correctly."""
     from greenmining.gsf_patterns import GREEN_KEYWORDS, GSF_PATTERNS
 
-    assert len(GSF_PATTERNS) == 76
-    assert len(GREEN_KEYWORDS) == 190
+    assert len(GSF_PATTERNS) == 122  # Expanded from 76 with VU Amsterdam research
+    assert len(GREEN_KEYWORDS) > 200  # Expanded keyword list
 
 
 @pytest.mark.unit
@@ -18,7 +18,12 @@ def test_pattern_categories():
     from greenmining.gsf_patterns import GSF_PATTERNS
 
     categories = {p["category"] for p in GSF_PATTERNS.values()}
-    expected = {"cloud", "web", "ai", "database", "networking", "general"}
+    # Expanded categories from VU Amsterdam research
+    expected = {
+        "cloud", "web", "ai", "database", "networking", "network", "general",
+        "resource", "caching", "data", "async", "code", "monitoring",
+        "microservices", "infrastructure"
+    }
     assert categories == expected
 
 
