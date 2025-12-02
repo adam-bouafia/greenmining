@@ -90,7 +90,7 @@ jobs:
 
             - name: 📊 Display published version
               run: |
-                  VERSION=$(python -c "from greenmining import __version__; print(__version__)")
+                  VERSION=$(python -c "import sys; sys.path.insert(0, 'greenmining'); from __version__ import __version__; print(__version__)")
                   echo "✅ Published greenmining v${VERSION} to PyPI"
                   echo "🔗 https://pypi.org/project/greenmining/${VERSION}/"
 
