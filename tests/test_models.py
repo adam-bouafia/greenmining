@@ -1,6 +1,5 @@
 """Test data models."""
 
-
 import pytest
 
 

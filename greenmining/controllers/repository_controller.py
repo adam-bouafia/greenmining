@@ -1,6 +1,5 @@
 """Repository Controller - Handles repository fetching operations."""
 
-
 from github import Github, GithubException
 from tqdm import tqdm
 

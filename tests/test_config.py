@@ -1,17 +1,22 @@
 """Test configuration and utilities."""
 
+import os
 import pytest
 
 
 @pytest.mark.unit
-def test_config_loads():
+def test_config_loads(monkeypatch):
     """Test that config loads correctly."""
     from greenmining.config import Config
 
+    # Mock GITHUB_TOKEN for CI environment
+    monkeypatch.setenv("GITHUB_TOKEN", "test_token_for_ci")
+    
     config = Config()
     assert config.MAX_REPOS == 100
     assert config.COMMITS_PER_REPO == 50
     assert hasattr(config, "GITHUB_TOKEN")
+    assert config.GITHUB_TOKEN == "test_token_for_ci"
 
 
 @pytest.mark.unit

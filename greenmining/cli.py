@@ -1,6 +1,5 @@
 """Green Microservices Mining CLI"""
 
-
 import click
 
 from greenmining.config import Config
