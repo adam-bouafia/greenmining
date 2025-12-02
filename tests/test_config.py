@@ -11,7 +11,7 @@ def test_config_loads(monkeypatch):
 
     # Mock GITHUB_TOKEN for CI environment
     monkeypatch.setenv("GITHUB_TOKEN", "test_token_for_ci")
-    
+
     config = Config()
     assert config.MAX_REPOS == 100
     assert config.COMMITS_PER_REPO == 50
