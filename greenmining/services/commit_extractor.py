@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import click
-from pydriller import Repository
+from github import Github
 from tqdm import tqdm
 
 from greenmining.config import get_config
@@ -21,20 +21,28 @@ from greenmining.utils import (
 
 
 class CommitExtractor:
-    """Extracts commit data from repositories."""
+    """Extracts commit data from repositories using GitHub API."""
 
-    def __init__(self, max_commits: int = 50, skip_merges: bool = True, days_back: int = 730):
+    def __init__(
+        self,
+        max_commits: int = 50,
+        skip_merges: bool = True,
+        days_back: int = 730,
+        github_token: str | None = None,
+    ):
         """Initialize commit extractor.
 
         Args:
             max_commits: Maximum commits per repository
             skip_merges: Skip merge commits
             days_back: Only analyze commits from last N days
+            github_token: GitHub API token (optional)
         """
         self.max_commits = max_commits
         self.skip_merges = skip_merges
         self.days_back = days_back
         self.cutoff_date = datetime.now() - timedelta(days=days_back)
+        self.github = Github(github_token) if github_token else None
 
     def extract_from_repositories(self, repositories: list[dict[str, Any]]) -> list[dict[str, Any]]:
         """Extract commits from list of repositories.
@@ -77,7 +85,7 @@ class CommitExtractor:
 
     @retry_on_exception(max_retries=2, delay=5.0, exceptions=(Exception,))
     def _extract_repo_commits(self, repo: dict[str, Any]) -> list[dict[str, Any]]:
-        """Extract commits from a single repository.
+        """Extract commits from a single repository using GitHub API.
 
         Args:
             repo: Repository metadata dictionary
@@ -86,27 +94,35 @@ class CommitExtractor:
             List of commit dictionaries
         """
         commits = []
-        repo_url = repo["clone_url"]
         repo_name = repo["full_name"]
 
         try:
-            # Use PyDriller to traverse commits
+            # Get repository from GitHub API
+            if not self.github:
+                config = get_config()
+                self.github = Github(config.GITHUB_TOKEN)
+
+            gh_repo = self.github.get_repo(repo_name)
+
+            # Get recent commits (GitHub API returns in reverse chronological order)
             commit_count = 0
 
-            for commit in Repository(
-                repo_url, only_no_merge=self.skip_merges, since=self.cutoff_date
-            ).traverse_commits():
-
+            for commit in gh_repo.get_commits():
                 # Skip if reached max commits
                 if commit_count >= self.max_commits:
                     break
 
+                # Skip merge commits if requested
+                if self.skip_merges and len(commit.parents) > 1:
+                    continue
+
                 # Skip trivial commits
-                if not commit.msg or len(commit.msg.strip()) < 10:
+                commit_msg = commit.commit.message
+                if not commit_msg or len(commit_msg.strip()) < 10:
                     continue
 
                 # Extract commit data
-                commit_data = self._extract_commit_metadata(commit, repo_name)
+                commit_data = self._extract_commit_metadata_from_github(commit, repo_name)
                 commits.append(commit_data)
                 commit_count += 1
 
@@ -156,6 +172,46 @@ class CommitExtractor:
                 list(commit.branches) if hasattr(commit, "branches") and commit.branches else []
             ),
             "in_main_branch": commit.in_main_branch if hasattr(commit, "in_main_branch") else True,
+        }
+
+    def _extract_commit_metadata_from_github(self, commit, repo_name: str) -> dict[str, Any]:
+        """Extract metadata from GitHub API commit object.
+
+        Args:
+            commit: GitHub API commit object
+            repo_name: Repository name
+
+        Returns:
+            Dictionary with commit metadata
+        """
+        # Get modified files and stats
+        files_changed = []
+        lines_added = 0
+        lines_deleted = 0
+
+        try:
+            for file in commit.files:
+                files_changed.append(file.filename)
+                lines_added += file.additions
+                lines_deleted += file.deletions
+        except Exception:
+            pass
+
+        return {
+            "commit_id": commit.sha,
+            "repo_name": repo_name,
+            "date": commit.commit.committer.date.isoformat(),
+            "author": commit.commit.author.name,
+            "author_email": commit.commit.author.email,
+            "message": commit.commit.message.strip(),
+            "files_changed": files_changed[:20],  # Limit to 20 files
+            "lines_added": lines_added,
+            "lines_deleted": lines_deleted,
+            "insertions": lines_added,
+            "deletions": lines_deleted,
+            "is_merge": len(commit.parents) > 1,
+            "branches": [],
+            "in_main_branch": True,
         }
 
     def save_results(self, commits: list[dict[str, Any]], output_file: Path, repos_count: int):

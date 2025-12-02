@@ -8,7 +8,7 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.8"
 
 __all__ = [
     "Config",
