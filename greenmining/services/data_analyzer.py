@@ -114,8 +114,8 @@ class DataAnalyzer:
         return {
             "commit_hash": commit.get("hash", commit.get("commit_id", "unknown")),
             "repository": commit.get("repository", commit.get("repo_name", "unknown")),
-            "author": commit.get("author_name", "unknown"),
-            "date": commit.get("author_date", commit.get("date", "unknown")),
+            "author": commit.get("author", commit.get("author_name", "unknown")),
+            "date": commit.get("date", commit.get("author_date", "unknown")),
             "message": message,
             # Research Question 1: Green awareness
             "green_aware": green_aware,
@@ -125,10 +125,9 @@ class DataAnalyzer:
             "pattern_details": pattern_details,
             "confidence": confidence,
             # Additional metadata
-            "files_modified": commit.get("modified_files", commit.get("files_changed", [])),
-            "insertions": commit.get("insertions", commit.get("lines_added", 0)),
-            "deletions": commit.get("deletions", commit.get("lines_deleted", 0)),
-            "lines_deleted": commit.get("lines_deleted", 0),
+            "files_modified": commit.get("files_changed", commit.get("modified_files", [])),
+            "insertions": commit.get("lines_added", commit.get("insertions", 0)),
+            "deletions": commit.get("lines_deleted", commit.get("deletions", 0)),
         }
 
     def _check_green_awareness(self, message: str, files: list[str]) -> tuple[bool, Optional[str]]:
@@ -205,9 +204,15 @@ class DataAnalyzer:
         """
         # Calculate summary statistics
         green_aware_count = sum(1 for r in results if r["green_aware"])
-        pattern_counts = Counter(
-            r["known_pattern"] for r in results if r["known_pattern"] != "NONE DETECTED"
-        )
+        
+        # Count all matched patterns (results have gsf_patterns_matched which is a list)
+        all_patterns = []
+        for r in results:
+            patterns = r.get("gsf_patterns_matched", [])
+            if patterns:  # If there are matched patterns
+                all_patterns.extend(patterns)
+        
+        pattern_counts = Counter(all_patterns)
 
         data = {
             "metadata": {

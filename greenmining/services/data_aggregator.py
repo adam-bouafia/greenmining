@@ -72,7 +72,7 @@ class DataAggregator:
         green_aware_count = sum(1 for r in results if r.get("green_aware", False))
 
         # Count repos with at least one green commit
-        repos_with_green = len({r["repo_name"] for r in results if r.get("green_aware", False)})
+        repos_with_green = len({r["repository"] for r in results if r.get("green_aware", False)})
 
         return {
             "total_commits": total_commits,
@@ -91,17 +91,24 @@ class DataAggregator:
         )
 
         for result in results:
-            pattern = result.get("known_pattern")
-            confidence = result.get("pattern_confidence", "NONE")
+            # Handle both gsf_patterns_matched (list) and known_pattern (string)
+            patterns = result.get("gsf_patterns_matched", [])
+            if not patterns:  # Fallback to old format
+                pattern = result.get("known_pattern")
+                if pattern and pattern != "NONE DETECTED":
+                    patterns = [pattern]
+            
+            confidence = result.get("confidence", result.get("pattern_confidence", "low")).upper()
 
-            if pattern and pattern != "NONE DETECTED":
+            for pattern in patterns:
                 pattern_data[pattern]["count"] += 1
                 if confidence in ["HIGH", "MEDIUM", "LOW"]:
                     pattern_data[pattern][confidence] += 1
 
                 # Store example commits (max 3)
                 if len(pattern_data[pattern]["example_commits"]) < 3:
-                    pattern_data[pattern]["example_commits"].append(result["commit_id"])
+                    commit_id = result.get("commit_hash", result.get("commit_id", "unknown"))
+                    pattern_data[pattern]["example_commits"].append(commit_id)
 
         # Convert to list format
         patterns_list = []
@@ -153,15 +160,21 @@ class DataAggregator:
 
         # Group commits by repository
         for result in results:
-            repo_commits[result["repo_name"]].append(result)
+            repo_commits[result["repository"]].append(result)
 
         # Calculate stats for each repo
         repo_stats = []
         for repo_name, commits in repo_commits.items():
             green_commits = [c for c in commits if c.get("green_aware", False)]
-            patterns = [
-                c.get("known_pattern") for c in commits if c.get("known_pattern") != "NONE DETECTED"
-            ]
+            # Get all patterns from commits (gsf_patterns_matched is a list)
+            patterns = []
+            for c in commits:
+                patterns_list = c.get("gsf_patterns_matched", [])
+                if not patterns_list:  # Fallback
+                    pattern = c.get("known_pattern")
+                    if pattern and pattern != "NONE DETECTED":
+                        patterns_list = [pattern]
+                patterns.extend(patterns_list)
             unique_patterns = list(set(patterns))
 
             repo_stats.append(
@@ -191,7 +204,7 @@ class DataAggregator:
         # Group commits by language
         language_commits = defaultdict(list)
         for result in results:
-            language = repo_language_map.get(result["repo_name"], "Unknown")
+            language = repo_language_map.get(result["repository"], "Unknown")
             language_commits[language].append(result)
 
         # Calculate stats for each language
@@ -239,18 +252,14 @@ class DataAggregator:
         for result in analysis_results:
             csv_data.append(
                 {
-                    "commit_id": result["commit_id"],
-                    "repo_name": result["repo_name"],
+                    "commit_hash": result.get("commit_hash", result.get("commit_id", "")),
+                    "repo_name": result.get("repository", ""),
                     "date": result.get("date", ""),
-                    "commit_message": result.get("commit_message", "")[:200],  # Truncate
+                    "message": result.get("message", "")[:200],  # Truncate
                     "green_aware": result.get("green_aware", False),
-                    "green_evidence": (
-                        result.get("green_evidence", "")[:200]
-                        if result.get("green_evidence")
-                        else ""
-                    ),
-                    "known_pattern": result.get("known_pattern", ""),
-                    "pattern_confidence": result.get("pattern_confidence", ""),
+                    "gsf_patterns": ", ".join(result.get("gsf_patterns_matched", [])),
+                    "pattern_count": result.get("pattern_count", 0),
+                    "confidence": result.get("confidence", ""),
                     "lines_added": result.get("lines_added", 0),
                     "lines_deleted": result.get("lines_deleted", 0),
                 }
