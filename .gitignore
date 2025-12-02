@@ -45,6 +45,9 @@ examples/
 !MANIFEST.in
 !LICENSE
 
+# Task/evaluation folder (local work only)
+task/
+
 # IDE
 .vscode/
 .idea/

@@ -204,14 +204,14 @@ class DataAnalyzer:
         """
         # Calculate summary statistics
         green_aware_count = sum(1 for r in results if r["green_aware"])
-        
+
         # Count all matched patterns (results have gsf_patterns_matched which is a list)
         all_patterns = []
         for r in results:
             patterns = r.get("gsf_patterns_matched", [])
             if patterns:  # If there are matched patterns
                 all_patterns.extend(patterns)
-        
+
         pattern_counts = Counter(all_patterns)
 
         data = {

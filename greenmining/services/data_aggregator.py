@@ -97,7 +97,7 @@ class DataAggregator:
                 pattern = result.get("known_pattern")
                 if pattern and pattern != "NONE DETECTED":
                     patterns = [pattern]
-            
+
             confidence = result.get("confidence", result.get("pattern_confidence", "low")).upper()
 
             for pattern in patterns:
