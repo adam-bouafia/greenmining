@@ -17,7 +17,11 @@ class RepositoryController:
         self.github = Github(config.GITHUB_TOKEN)
 
     def fetch_repositories(
-        self, max_repos: int = None, min_stars: int = None, languages: list[str] = None
+        self,
+        max_repos: int = None,
+        min_stars: int = None,
+        languages: list[str] = None,
+        keywords: str = None,
     ) -> list[Repository]:
         """Fetch repositories from GitHub.
 
@@ -25,6 +29,7 @@ class RepositoryController:
             max_repos: Maximum number of repositories to fetch
             min_stars: Minimum stars filter
             languages: List of programming languages to filter
+            keywords: Custom search keywords (default: "microservices")
 
         Returns:
             List of Repository model instances
@@ -32,12 +37,14 @@ class RepositoryController:
         max_repos = max_repos or self.config.MAX_REPOS
         min_stars = min_stars or self.config.MIN_STARS
         languages = languages or self.config.SUPPORTED_LANGUAGES
+        keywords = keywords or "microservices"
 
         colored_print(f"🔍 Fetching up to {max_repos} repositories...", "cyan")
+        colored_print(f"   Keywords: {keywords}", "cyan")
         colored_print(f"   Filters: min_stars={min_stars}", "cyan")
 
-        # Build search query - simpler approach
-        query = f"microservices stars:>={min_stars}"
+        # Build search query with custom keywords
+        query = f"{keywords} stars:>={min_stars}"
 
         try:
             # Execute search

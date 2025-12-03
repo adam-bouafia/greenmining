@@ -29,8 +29,14 @@ def cli(config_file, verbose):
 @click.option(
     "--languages", default="Python,Java,Go,JavaScript,TypeScript", help="Comma-separated languages"
 )
-def fetch(max_repos, min_stars, languages):
-    """Fetch top microservice repositories from GitHub."""
+@click.option(
+    "--keywords",
+    default="microservices",
+    type=str,
+    help="Search keywords (e.g., 'kubernetes', 'docker', 'cloud-native')",
+)
+def fetch(max_repos, min_stars, languages, keywords):
+    """Fetch repositories from GitHub based on custom search keywords."""
     presenter.show_banner()
     colored_print(f"\n🎯 Target: {max_repos} repositories\n", "cyan")
 
@@ -39,7 +45,7 @@ def fetch(max_repos, min_stars, languages):
 
     try:
         repositories = controller.fetch_repositories(
-            max_repos=max_repos, min_stars=min_stars, languages=lang_list
+            max_repos=max_repos, min_stars=min_stars, languages=lang_list, keywords=keywords
         )
 
         # Show results

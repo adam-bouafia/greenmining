@@ -52,7 +52,10 @@ export GITHUB_TOKEN="your_github_token"
 # Run full analysis pipeline
 greenmining pipeline --max-repos 100
 
-# Fetch repositories
+# Fetch repositories with custom keywords
+greenmining fetch --max-repos 100 --min-stars 100 --keywords "kubernetes docker cloud-native"
+
+# Fetch with default (microservices)
 greenmining fetch --max-repos 100 --min-stars 100
 
 # Extract commits
@@ -83,22 +86,42 @@ if is_green_aware(commit_msg):
     # Output: ['Cache Static Data', 'Use Efficient Cache Strategies']
 ```
 
+#### Fetch Repositories with Custom Keywords (NEW)
+
+```python
+from greenmining import fetch_repositories
+
+# Fetch repositories with custom search keywords
+repos = fetch_repositories(
+    github_token="your_github_token",
+    max_repos=50,
+    min_stars=500,
+    keywords="kubernetes cloud-native",
+    languages=["Python", "Go"]
+)
+
+print(f"Found {len(repos)} repositories")
+for repo in repos[:5]:
+    print(f"- {repo.full_name} ({repo.stars} stars)")
+```
+
 #### Analyze Repository Commits
 
 ```python
-from greenmining.services.github_fetcher import GitHubFetcher
 from greenmining.services.commit_extractor import CommitExtractor
 from greenmining.services.data_analyzer import DataAnalyzer
-from greenmining.config import Config
+from greenmining import fetch_repositories
+
+# Fetch repositories with custom keywords
+repos = fetch_repositories(
+    github_token="your_token",
+    max_repos=10,
+    keywords="serverless edge-computing"
+)
 
 # Initialize services
-config = Config()
-fetcher = GitHubFetcher(config)
-extractor = CommitExtractor(config)
-analyzer = DataAnalyzer(config)
-
-# Fetch repositories
-repos = fetcher.fetch_repositories(max_repos=10, min_stars=100)
+extractor = CommitExtractor()
+analyzer = DataAnalyzer()
 
 # Extract commits from first repo
 commits = extractor.extract_commits(repos[0], max_commits=50)
@@ -220,7 +243,8 @@ OUTPUT_DIR=./data
 
 - **Pattern Detection**: Automatically identifies 122 sustainability patterns across 15 categories
 - **Keyword Analysis**: Scans commit messages using 321 green software keywords
-- **Repository Analysis**: Fetches and analyzes microservices repositories from GitHub
+- **Custom Repository Fetching**: Fetch repositories with custom search keywords (not limited to microservices)
+- **Repository Analysis**: Analyzes repositories from GitHub with flexible filtering
 - **Batch Processing**: Analyze hundreds of repositories and thousands of commits
 - **Multi-format Output**: Generates Markdown reports, CSV exports, and JSON data
 - **Statistical Analysis**: Calculates green-awareness metrics, pattern distribution, and trends
@@ -295,7 +319,7 @@ Feature flags, incremental processing, precomputation, background jobs, workflow
 
 | Command | Description | Key Options |
 |---------|-------------|-------------|
-| `fetch` | Fetch microservices repositories from GitHub | `--max-repos`, `--min-stars`, `--language` |
+| `fetch` | Fetch repositories from GitHub with custom keywords | `--max-repos`, `--min-stars`, `--languages`, `--keywords` |
 | `extract` | Extract commit history from repositories | `--max-commits` per repository |
 | `analyze` | Analyze commits for green patterns | Auto-detects patterns from 122-pattern database |
 | `aggregate` | Aggregate analysis results | Generates statistics and summaries |
@@ -307,12 +331,17 @@ Feature flags, incremental processing, precomputation, background jobs, workflow
 
 #### Fetch Repositories
 ```bash
-greenmining fetch --max-repos 100 --min-stars 50 --language Python
+# Fetch with custom search keywords
+greenmining fetch --max-repos 100 --min-stars 50 --languages Python --keywords "kubernetes docker"
+
+# Fetch microservices (default)
+greenmining fetch --max-repos 100 --min-stars 50 --languages Python
 ```
 Options:
 - `--max-repos`: Maximum repositories to fetch (default: 100)
 - `--min-stars`: Minimum GitHub stars (default: 100)
-- `--language`: Filter by programming language
+- `--languages`: Filter by programming languages (default: "Python,Java,Go,JavaScript,TypeScript")
+- `--keywords`: Custom search keywords (default: "microservices")
 
 #### Extract Commits
 ```bash
