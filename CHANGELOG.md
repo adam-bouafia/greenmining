@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.1.12] - 2025-12-03
+
+### Added
+- Custom search keywords for repository fetching (`--keywords` option)
+- `fetch_repositories()` function exposed in public API
+- Users can now search for any topic (kubernetes, docker, serverless, etc.)
+
+### Changed
+- README updated to reflect 122 patterns (was showing 76 in PyPI description)
+- CLI `fetch` command now accepts `--keywords` parameter
+- Repository fetching no longer hardcoded to "microservices"
+
+### Fixed
+- Outdated pattern count in PyPI package description
+
+## [0.1.11] - 2025-12-03
+
+### Added
+- Expanded pattern database from 76 to 122 patterns
+- Added 9 new categories (Resource, Caching, Data, Async, Code, Monitoring, Network, Microservices, Infrastructure)
+- Expanded keywords from 190 to 321
+- VU Amsterdam 2024 research patterns for ML systems
+
+### Changed
+- README with comprehensive feature documentation
+- Detection rate improved to 37.15% (up from 33.79%)
+
 ## [0.1.7] - 2025-12-02
 
 ### Added

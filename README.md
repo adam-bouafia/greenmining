@@ -12,7 +12,7 @@ Green mining for microservices repositories.
 
 ## Features
 
-- 🔍 **122 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices across 15 categories
+- 🔍 **122 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices across 15 categories (expanded from 76)
 - 📊 **Repository Mining**: Analyze 100+ microservices repositories from GitHub
 - 📈 **Green Awareness Detection**: Identify sustainability-focused commits
 - 📄 **Comprehensive Reports**: Generate analysis reports in multiple formats
