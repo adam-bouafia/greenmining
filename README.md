@@ -8,11 +8,11 @@ Green mining for microservices repositories.
 
 ## Overview
 
-`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects 76 sustainable software patterns across cloud, web, AI, database, networking, and general categories.
+`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects 122 sustainable software patterns across cloud, web, AI, database, networking, and general categories, including advanced patterns from VU Amsterdam 2024 research on green architectural tactics for ML systems.
 
 ## Features
 
-- 🔍 **76 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices
+- 🔍 **122 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices across 15 categories
 - 📊 **Repository Mining**: Analyze 100+ microservices repositories from GitHub
 - 📈 **Green Awareness Detection**: Identify sustainability-focused commits
 - 📄 **Comprehensive Reports**: Generate analysis reports in multiple formats
@@ -203,12 +203,23 @@ OUTPUT_DIR=./data
 
 ## GSF Pattern Categories
 
+**122 patterns across 15 categories:**
+
 - **Cloud** (40 patterns): Autoscaling, serverless, right-sizing, region selection
 - **Web** (15 patterns): CDN, caching, lazy loading, compression
-- **AI/ML** (8 patterns): Model optimization, pruning, quantization
-- **Database** (6 patterns): Indexing, query optimization, connection pooling
-- **Networking** (4 patterns): Protocol optimization, connection reuse
-- **General** (3 patterns): Code efficiency, resource management
+- **AI/ML** (16 patterns): Model optimization, pruning, quantization, edge inference, batch optimization
+- **Database** (9 patterns): Indexing, query optimization, connection pooling, prepared statements, views
+- **Networking** (8 patterns): Protocol optimization, connection reuse, HTTP/2, gRPC
+- **Network** (6 patterns): Request batching, GraphQL optimization, API gateway, circuit breaker
+- **Resource** (2 patterns): Resource limits, dynamic allocation
+- **Caching** (5 patterns): Multi-level caching, invalidation, data deduplication
+- **Data** (2 patterns): Efficient serialization, pagination
+- **Async** (3 patterns): Event-driven architecture, reactive streams, eliminate polling
+- **Code** (4 patterns): Algorithm optimization, code efficiency, GC tuning
+- **Monitoring** (3 patterns): Energy monitoring, performance profiling, APM
+- **Microservices** (4 patterns): Service decomposition, colocation, graceful shutdown
+- **Infrastructure** (4 patterns): Alpine containers, IaC, renewable energy regions
+- **General** (1 pattern): Feature flags, incremental processing, precomputation
 
 ## CLI Commands
 
