@@ -20,9 +20,21 @@ def test_pattern_categories():
     categories = {p["category"] for p in GSF_PATTERNS.values()}
     # Expanded categories from VU Amsterdam research
     expected = {
-        "cloud", "web", "ai", "database", "networking", "network", "general",
-        "resource", "caching", "data", "async", "code", "monitoring",
-        "microservices", "infrastructure"
+        "cloud",
+        "web",
+        "ai",
+        "database",
+        "networking",
+        "network",
+        "general",
+        "resource",
+        "caching",
+        "data",
+        "async",
+        "code",
+        "monitoring",
+        "microservices",
+        "infrastructure",
     }
     assert categories == expected
 
