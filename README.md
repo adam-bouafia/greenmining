@@ -10,8 +10,6 @@ Green mining for microservices repositories.
 
 `greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects sustainable software patterns across cloud, web, AI, database, networking, and general categories.
 
-## Features
-
 ## Installation
 
 ### Via pip
