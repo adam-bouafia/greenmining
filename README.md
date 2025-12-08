@@ -8,25 +8,9 @@ Green mining for microservices repositories.
 
 ## Overview
 
-`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects 122 sustainable software patterns across cloud, web, AI, database, networking, and general categories, including advanced patterns from VU Amsterdam 2024 research on green architectural tactics for ML systems.
+`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects sustainable software patterns across cloud, web, AI, database, networking, and general categories.
 
 ## Features
-
-### Core Capabilities
-
-- 🔍 **122 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices across 15 categories (expanded from 76)
-- 📊 **Repository Mining**: Analyze 100+ microservices repositories from GitHub
-- 📈 **Green Awareness Detection**: Identify sustainability-focused commits
-- 📄 **Comprehensive Reports**: Generate analysis reports in multiple formats
-- 🐳 **Docker Support**: Run in containers for consistent environments
-- ⚡ **Fast Analysis**: Parallel processing and checkpoint system
-
-### Advanced Analysis Features (NEW)
-
-- 🧠 **NLP-Enhanced Detection**: Morphological variant matching (e.g., "optimize" → "optimizing") and semantic synonym recognition
-- 🤖 **ML Feature Extraction**: Extract text, code, and temporal features for machine learning model training
-- 📅 **Temporal Trend Analysis**: Track pattern adoption, velocity, and evolution over time (daily/weekly/monthly/quarterly/yearly)
-- 📊 **Enhanced Statistics**: Pattern correlations, effect size analysis, and confidence distributions
 
 ## Installation
 
@@ -70,13 +54,13 @@ greenmining fetch --max-repos 100 --min-stars 100
 # Extract commits
 greenmining extract --max-commits 50
 
-# Analyze for green patterns (basic)
+# Analyze for green patterns
 greenmining analyze
 
-# Analyze with advanced features (NEW)
+# Analyze with advanced features
 greenmining analyze --enable-nlp --enable-ml-features --enable-diff-analysis
 
-# Aggregate results with temporal analysis (NEW)
+# Aggregate results with temporal analysis
 greenmining aggregate --enable-temporal --temporal-granularity quarter --enable-enhanced-stats
 
 # Generate report
@@ -108,11 +92,15 @@ from greenmining import fetch_repositories
 
 # Fetch repositories with custom search keywords
 repos = fetch_repositories(
-    github_token="your_github_token",
-    max_repos=50,
-    min_stars=500,
-    keywords="kubernetes cloud-native",
-    languages=["Python", "Go"]
+    github_token="your_github_token",  # Required: GitHub personal access token
+    max_repos=50,                      # Maximum number of repositories to fetch
+    min_stars=500,                     # Minimum star count filter
+    keywords="kubernetes cloud-native", # Search keywords (space-separated)
+    languages=["Python", "Go"],        # Programming language filters
+    created_after="2020-01-01",        # Filter by creation date (YYYY-MM-DD)
+    created_before="2024-12-31",       # Filter by creation date (YYYY-MM-DD)
+    pushed_after="2023-01-01",         # Filter by last push date (YYYY-MM-DD)
+    pushed_before="2024-12-31"         # Filter by last push date (YYYY-MM-DD)
 )
 
 print(f"Found {len(repos)} repositories")
@@ -120,11 +108,24 @@ for repo in repos[:5]:
     print(f"- {repo.full_name} ({repo.stars} stars)")
 ```
 
+**Parameters:**
+- `github_token` (str, required): GitHub personal access token for API authentication
+- `max_repos` (int, default=100): Maximum number of repositories to fetch
+- `min_stars` (int, default=100): Minimum GitHub stars filter
+- `keywords` (str, default="microservices"): Space-separated search keywords
+- `languages` (list[str], optional): Programming language filters (e.g., ["Python", "Go", "Java"])
+- `created_after` (str, optional): Filter repos created after date (format: "YYYY-MM-DD")
+- `created_before` (str, optional): Filter repos created before date (format: "YYYY-MM-DD")
+- `pushed_after` (str, optional): Filter repos pushed after date (format: "YYYY-MM-DD")
+- `pushed_before` (str, optional): Filter repos pushed before date (format: "YYYY-MM-DD")
+
 #### Analyze Repository Commits
 
 ```python
 from greenmining.services.commit_extractor import CommitExtractor
 from greenmining.services.data_analyzer import DataAnalyzer
+from greenmining.analyzers.nlp_analyzer import NLPAnalyzer
+from greenmining.analyzers.ml_feature_extractor import MLFeatureExtractor
 from greenmining import fetch_repositories
 
 # Fetch repositories with custom keywords
@@ -134,15 +135,59 @@ repos = fetch_repositories(
     keywords="serverless edge-computing"
 )
 
-# Initialize services (with advanced features)
-extractor = CommitExtractor()
+# Initialize commit extractor with parameters
+extractor = CommitExtractor(
+    exclude_merge_commits=True,      # Skip merge commits (default: True)
+    exclude_bot_commits=True,        # Skip bot commits (default: True)
+    min_message_length=10            # Minimum commit message length (default: 10)
+)
+
+# Initialize analyzer with advanced features
 analyzer = DataAnalyzer(
-    enable_nlp=True,           # Enable NLP-enhanced detection
-    enable_ml_features=True    # Enable ML feature extraction
+    enable_diff_analysis=False,      # Enable code diff analysis (slower but more accurate)
+    enable_nlp=True,                 # Enable NLP-enhanced pattern detection
+    enable_ml_features=True,         # Enable ML feature extraction
+    patterns=None,                   # Custom pattern dict (default: GSF_PATTERNS)
+    batch_size=10                    # Batch processing size (default: 10)
+)
+
+# Optional: Configure NLP analyzer separately
+nlp_analyzer = NLPAnalyzer(
+    enable_stemming=True,            # Enable morphological analysis (optimize→optimizing)
+    enable_synonyms=True             # Enable semantic synonym matching (cache→buffer)
+)
+
+# Optional: Configure ML feature extractor
+ml_extractor = MLFeatureExtractor(
+    green_keywords=None              # Custom keyword list (default: built-in 19 keywords)
 )
 
 # Extract commits from first repo
-commits = extractor.extract_commits(repos[0], max_commits=50)
+commits = extractor.extract_commits(
+    repository=repos[0],             # PyGithub Repository object
+    max_commits=50,                  # Maximum commits to extract per repository
+    since=None,                      # Start date filter (datetime object, optional)
+    until=None                       # End date filter (datetime object, optional)
+)
+
+**CommitExtractor Parameters:**
+- `exclude_merge_commits` (bool, default=True): Skip merge commits during extraction
+- `exclude_bot_commits` (bool, default=True): Skip commits from bot accounts
+- `min_message_length` (int, default=10): Minimum length for commit message to be included
+
+**DataAnalyzer Parameters:**
+- `enable_diff_analysis` (bool, default=False): Enable code diff analysis (slower)
+- `enable_nlp` (bool, default=False): Enable NLP-enhanced pattern detection
+- `enable_ml_features` (bool, default=False): Enable ML feature extraction
+- `patterns` (dict, optional): Custom pattern dictionary (default: GSF_PATTERNS)
+- `batch_size` (int, default=10): Number of commits to process in each batch
+
+**NLPAnalyzer Parameters:**
+- `enable_stemming` (bool, default=True): Enable morphological variant matching
+- `enable_synonyms` (bool, default=True): Enable semantic synonym expansion
+
+**MLFeatureExtractor Parameters:**
+- `green_keywords` (list[str], optional): Custom green keywords list
 
 # Analyze commits for green patterns
 results = []
@@ -203,16 +248,46 @@ print(f"Available categories: {sorted(categories)}")
 
 ```python
 from greenmining.services.data_aggregator import DataAggregator
+from greenmining.analyzers.temporal_analyzer import TemporalAnalyzer
+from greenmining.analyzers.qualitative_analyzer import QualitativeAnalyzer
 
-# Initialize aggregator with temporal analysis
+# Initialize aggregator with all advanced features
 aggregator = DataAggregator(
-    enable_temporal=True,          # Enable temporal trend analysis
-    temporal_granularity="quarter", # daily/week/month/quarter/year
-    enable_enhanced_stats=True     # Enable pattern correlations
+    config=None,                        # Config object (optional)
+    enable_enhanced_stats=True,         # Enable statistical analysis (correlations, trends)
+    enable_temporal=True,               # Enable temporal trend analysis
+    temporal_granularity="quarter"      # Time granularity: day/week/month/quarter/year
+)
+
+# Optional: Configure temporal analyzer separately
+temporal_analyzer = TemporalAnalyzer(
+    granularity="quarter"               # Time period granularity for grouping commits
+)
+
+# Optional: Configure qualitative analyzer for validation sampling
+qualitative_analyzer = QualitativeAnalyzer(
+    sample_size=30,                     # Number of samples for manual validation
+    stratify_by="pattern"               # Stratification method: pattern/repository/time/random
 )
 
 # Aggregate results with temporal insights
-aggregated = aggregator.aggregate(analysis_results, repositories)
+aggregated = aggregator.aggregate(
+    analysis_results=analysis_results,  # List of analysis result dictionaries
+    repositories=repositories           # List of PyGithub repository objects
+)
+
+**DataAggregator Parameters:**
+- `config` (Config, optional): Configuration object
+- `enable_enhanced_stats` (bool, default=False): Enable pattern correlations and effect size analysis
+- `enable_temporal` (bool, default=False): Enable temporal trend analysis over time
+- `temporal_granularity` (str, default="quarter"): Time granularity (day/week/month/quarter/year)
+
+**TemporalAnalyzer Parameters:**
+- `granularity` (str, default="quarter"): Time period for grouping (day/week/month/quarter/year)
+
+**QualitativeAnalyzer Parameters:**
+- `sample_size` (int, default=30): Number of commits to sample for validation
+- `stratify_by` (str, default="pattern"): Stratification method (pattern/repository/time/random)
 
 # Access temporal analysis results
 temporal = aggregated['temporal_analysis']
@@ -288,13 +363,81 @@ docker run -it adambouafia/greenmining:latest /bin/bash
 
 ## Configuration
 
+### Environment Variables
+
 Create a `.env` file or set environment variables:
 
 ```bash
+# Required
 GITHUB_TOKEN=your_github_personal_access_token
+
+# Optional - Repository Fetching
 MAX_REPOS=100
+MIN_STARS=100
+SUPPORTED_LANGUAGES=Python,Java,Go,JavaScript,TypeScript
+SEARCH_KEYWORDS=microservices
+
+# Optional - Commit Extraction
 COMMITS_PER_REPO=50
+EXCLUDE_MERGE_COMMITS=true
+EXCLUDE_BOT_COMMITS=true
+
+# Optional - Analysis Features
+ENABLE_DIFF_ANALYSIS=false
+ENABLE_NLP=true
+ENABLE_ML_FEATURES=true
+BATCH_SIZE=10
+
+# Optional - Temporal Analysis
+ENABLE_TEMPORAL=true
+TEMPORAL_GRANULARITY=quarter
+ENABLE_ENHANCED_STATS=true
+
+# Optional - Output
 OUTPUT_DIR=./data
+REPORT_FORMAT=markdown
+```
+
+### Config Object Parameters
+
+```python
+from greenmining.config import Config
+
+config = Config(
+    # GitHub API
+    github_token="your_token",              # GitHub personal access token (required)
+    
+    # Repository Fetching
+    max_repos=100,                          # Maximum repositories to fetch
+    min_stars=100,                          # Minimum star threshold
+    supported_languages=["Python", "Go"],   # Language filters
+    search_keywords="microservices",        # Default search keywords
+    
+    # Commit Extraction
+    max_commits=50,                         # Commits per repository
+    exclude_merge_commits=True,             # Skip merge commits
+    exclude_bot_commits=True,               # Skip bot commits
+    min_message_length=10,                  # Minimum commit message length
+    
+    # Analysis Options
+    enable_diff_analysis=False,             # Enable code diff analysis
+    enable_nlp=True,                        # Enable NLP features
+    enable_ml_features=True,                # Enable ML feature extraction
+    batch_size=10,                          # Batch processing size
+    
+    # Temporal Analysis
+    enable_temporal=True,                   # Enable temporal trend analysis
+    temporal_granularity="quarter",         # day/week/month/quarter/year
+    enable_enhanced_stats=True,             # Enable statistical analysis
+    
+    # Output Configuration
+    output_dir="./data",                    # Output directory path
+    repos_file="repositories.json",         # Repositories filename
+    commits_file="commits.json",            # Commits filename
+    analysis_file="analysis_results.json",  # Analysis results filename
+    stats_file="aggregated_statistics.json", # Statistics filename
+    report_file="green_analysis.md"         # Report filename
+)
 ```
 
 ## Features
