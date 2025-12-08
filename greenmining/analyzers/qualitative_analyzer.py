@@ -11,6 +11,8 @@ Based on Soliman et al.: 42/151 studies used qualitative analysis
 Critical for: validating IR-based approaches, calculating accuracy metrics
 """
 
+from __future__ import annotations
+
 import random
 from typing import Dict, List, Optional, Set, Tuple
 from dataclasses import dataclass

@@ -14,6 +14,8 @@ Use case: Train ML classifier as complement to keyword matching
 Goal: Higher recall while maintaining precision (De Martino 2025: 97.91% accuracy)
 """
 
+from __future__ import annotations
+
 import re
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass

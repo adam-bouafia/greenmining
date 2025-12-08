@@ -14,6 +14,8 @@ Addresses research questions:
 4. Do green practices correlate with project maturity?
 """
 
+from __future__ import annotations
+
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
