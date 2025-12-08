@@ -16,6 +16,7 @@ from greenmining.analyzers import (
     QualitativeAnalyzer,
 )
 from greenmining.config import get_config
+from greenmining.models.repository import Repository
 from greenmining.utils import (
     colored_print,
     format_number,
@@ -270,8 +271,13 @@ class DataAggregator:
         self, results: list[dict[str, Any]], repos: list[dict[str, Any]]
     ) -> list[dict[str, Any]]:
         """Generate per-language statistics."""
-        # Create repo name to language mapping
-        repo_language_map = {repo["full_name"]: repo.get("language", "Unknown") for repo in repos}
+        # Create repo name to language mapping (handle both Repository objects and dicts)
+        repo_language_map = {}
+        for repo in repos:
+            if isinstance(repo, Repository):
+                repo_language_map[repo.full_name] = repo.language or "Unknown"
+            else:
+                repo_language_map[repo["full_name"]] = repo.get("language", "Unknown")
 
         # Group commits by language
         language_commits = defaultdict(list)

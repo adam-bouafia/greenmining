@@ -12,6 +12,7 @@ from github import Github
 from tqdm import tqdm
 
 from greenmining.config import get_config
+from greenmining.models.repository import Repository
 from greenmining.utils import (
     colored_print,
     format_timestamp,
@@ -49,11 +50,11 @@ class CommitExtractor:
         self.github = Github(github_token) if github_token else None
         self.timeout = timeout
 
-    def extract_from_repositories(self, repositories: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    def extract_from_repositories(self, repositories: list[dict[str, Any] | Repository]) -> list[dict[str, Any]]:
         """Extract commits from list of repositories.
 
         Args:
-            repositories: List of repository metadata
+            repositories: List of repository metadata (dicts or Repository objects)
 
         Returns:
             List of commit data dictionaries
@@ -89,15 +90,17 @@ class CommitExtractor:
                     pbar.update(1)
                 except TimeoutError:
                     signal.alarm(0)  # Cancel alarm
+                    repo_name = repo.full_name if isinstance(repo, Repository) else repo["full_name"]
                     colored_print(
-                        f"\nTimeout processing {repo['full_name']} (>{self.timeout}s)", "yellow"
+                        f"\nTimeout processing {repo_name} (>{self.timeout}s)", "yellow"
                     )
-                    failed_repos.append(repo["full_name"])
+                    failed_repos.append(repo_name)
                     pbar.update(1)
                 except Exception as e:
                     signal.alarm(0)  # Cancel alarm
-                    colored_print(f"\nError processing {repo['full_name']}: {e}", "yellow")
-                    failed_repos.append(repo["full_name"])
+                    repo_name = repo.full_name if isinstance(repo, Repository) else repo["full_name"]
+                    colored_print(f"\nError processing {repo_name}: {e}", "yellow")
+                    failed_repos.append(repo_name)
                     pbar.update(1)
 
         if failed_repos:
@@ -114,13 +117,14 @@ class CommitExtractor:
         """Extract commits from a single repository using GitHub API.
 
         Args:
-            repo: Repository metadata dictionary
+            repo: Repository metadata (dict or Repository object)
 
         Returns:
             List of commit dictionaries
         """
         commits = []
-        repo_name = repo["full_name"]
+        # Handle both Repository objects and dicts
+        repo_name = repo.full_name if isinstance(repo, Repository) else repo["full_name"]
 
         try:
             # Get repository from GitHub API

@@ -48,6 +48,9 @@ examples/
 # Task/evaluation folder (local work only)
 task/
 
+# Experiment folder (local analysis only)
+experiment/
+
 # Thesis work (NEVER commit - local academic work only)
 thesis/
 
