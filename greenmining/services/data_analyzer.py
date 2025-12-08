@@ -9,6 +9,11 @@ from typing import Any, Optional
 import click
 from tqdm import tqdm
 
+from greenmining.analyzers import (
+    CodeDiffAnalyzer,
+    NLPAnalyzer,
+    MLFeatureExtractor,
+)
 from greenmining.config import get_config
 from greenmining.gsf_patterns import (
     GREEN_KEYWORDS,
@@ -30,16 +35,49 @@ from greenmining.utils import (
 class DataAnalyzer:
     """Analyzes commits for green software patterns using GSF (Green Software Foundation) patterns."""
 
-    def __init__(self, batch_size: int = 10):
+    def __init__(
+        self,
+        batch_size: int = 10,
+        enable_diff_analysis: bool = False,
+        enable_nlp: bool = False,
+        enable_ml_features: bool = False,
+    ):
         """Initialize analyzer with GSF patterns.
 
         Args:
             batch_size: Number of commits to process in each batch
+            enable_diff_analysis: Enable code diff analysis (slower but more accurate)
+            enable_nlp: Enable NLP-enhanced pattern detection
+            enable_ml_features: Enable ML feature extraction
         """
         # Use GSF patterns from gsf_patterns.py
         self.gsf_patterns = GSF_PATTERNS
         self.green_keywords = GREEN_KEYWORDS
         self.batch_size = batch_size
+        self.enable_diff_analysis = enable_diff_analysis
+        self.enable_nlp = enable_nlp
+        self.enable_ml_features = enable_ml_features
+        
+        # Initialize code diff analyzer if enabled
+        if self.enable_diff_analysis:
+            self.diff_analyzer = CodeDiffAnalyzer()
+            colored_print("Code diff analysis enabled (may increase processing time)", "cyan")
+        else:
+            self.diff_analyzer = None
+        
+        # Initialize NLP analyzer if enabled
+        if self.enable_nlp:
+            self.nlp_analyzer = NLPAnalyzer(enable_stemming=True, enable_synonyms=True)
+            colored_print("NLP analysis enabled (morphological variants + synonyms)", "cyan")
+        else:
+            self.nlp_analyzer = None
+        
+        # Initialize ML feature extractor if enabled
+        if self.enable_ml_features:
+            self.ml_extractor = MLFeatureExtractor(green_keywords=list(GREEN_KEYWORDS))
+            colored_print("ML feature extraction enabled", "cyan")
+        else:
+            self.ml_extractor = None
 
     def analyze_commits(
         self, commits: list[dict[str, Any]], resume_from: int = 0
@@ -90,6 +128,42 @@ class DataAnalyzer:
 
         # Q2: KNOWN GSF PATTERNS - Match against Green Software Foundation patterns
         matched_patterns = get_pattern_by_keywords(message)
+        
+        # Enhanced NLP analysis (if enabled)
+        nlp_results = None
+        if self.nlp_analyzer:
+            nlp_results = self.nlp_analyzer.analyze_text(message, list(self.green_keywords))
+            
+            # Check if NLP found additional matches not caught by keyword matching
+            has_nlp_matches, additional_terms = self.nlp_analyzer.enhance_pattern_detection(
+                message, matched_patterns
+            )
+            
+            if has_nlp_matches:
+                # NLP enhancement found additional evidence
+                green_aware = True
+        
+        # Q3: CODE DIFF ANALYSIS (if enabled and diff data available)
+        diff_analysis = None
+        if self.diff_analyzer and commit.get("diff_data"):
+            try:
+                # Note: This requires commit object from PyDriller
+                # For now, we'll store a placeholder for future integration
+                diff_analysis = {
+                    "enabled": True,
+                    "status": "requires_pydriller_commit_object",
+                    "patterns_detected": [],
+                    "confidence": "none",
+                    "evidence": {},
+                    "metrics": {}
+                }
+            except Exception as e:
+                diff_analysis = {
+                    "enabled": True,
+                    "status": f"error: {str(e)}",
+                    "patterns_detected": [],
+                    "confidence": "none"
+                }
 
         # Get detailed pattern info
         pattern_details = []
@@ -105,13 +179,18 @@ class DataAnalyzer:
                 )
 
         # Calculate confidence based on number of patterns matched
+        # Boost confidence if diff analysis also detected patterns
+        pattern_count = len(matched_patterns)
+        if diff_analysis and diff_analysis.get("patterns_detected"):
+            pattern_count += len(diff_analysis["patterns_detected"])
+        
         confidence = (
             "high"
-            if len(matched_patterns) >= 2
-            else "medium" if len(matched_patterns) == 1 else "low"
+            if pattern_count >= 2
+            else "medium" if pattern_count == 1 else "low"
         )
 
-        return {
+        result = {
             "commit_hash": commit.get("hash", commit.get("commit_id", "unknown")),
             "repository": commit.get("repository", commit.get("repo_name", "unknown")),
             "author": commit.get("author", commit.get("author_name", "unknown")),
@@ -129,6 +208,32 @@ class DataAnalyzer:
             "insertions": commit.get("lines_added", commit.get("insertions", 0)),
             "deletions": commit.get("lines_deleted", commit.get("deletions", 0)),
         }
+        
+        # Add diff analysis results if available
+        if diff_analysis:
+            result["diff_analysis"] = diff_analysis
+        
+        # Add NLP analysis results if available
+        if nlp_results:
+            result["nlp_analysis"] = {
+                "total_matches": nlp_results["total_nlp_matches"],
+                "match_density": nlp_results["match_density"],
+                "morphological_count": len(nlp_results["morphological_matches"]),
+                "semantic_count": len(nlp_results["semantic_matches"]),
+                "phrase_count": len(nlp_results["phrase_matches"]),
+            }
+        
+        # Add ML features if enabled
+        if self.enable_ml_features and self.ml_extractor:
+            # Note: Full feature extraction requires repository context
+            # For now, extract basic text features
+            text_features = self.ml_extractor.extract_text_features(message)
+            result["ml_features"] = {
+                "text": text_features,
+                "note": "Full ML features require repository and historical context",
+            }
+        
+        return result
 
     def _check_green_awareness(self, message: str, files: list[str]) -> tuple[bool, Optional[str]]:
         """Check if commit explicitly mentions green/energy concerns.

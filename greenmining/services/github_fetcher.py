@@ -26,6 +26,10 @@ class GitHubFetcher:
         max_repos: int = 100,
         min_stars: int = 100,
         languages: Optional[list[str]] = None,
+        created_after: Optional[str] = None,
+        created_before: Optional[str] = None,
+        pushed_after: Optional[str] = None,
+        pushed_before: Optional[str] = None,
     ):
         """Initialize GitHub fetcher.
 
@@ -34,6 +38,10 @@ class GitHubFetcher:
             max_repos: Maximum number of repositories to fetch
             min_stars: Minimum number of stars required
             languages: List of programming languages to filter
+            created_after: Repository created after date (YYYY-MM-DD)
+            created_before: Repository created before date (YYYY-MM-DD)
+            pushed_after: Repository pushed after date (YYYY-MM-DD)
+            pushed_before: Repository pushed before date (YYYY-MM-DD)
         """
         self.github = Github(token)
         self.max_repos = max_repos
@@ -47,6 +55,10 @@ class GitHubFetcher:
             "C#",
             "Rust",
         ]
+        self.created_after = created_after
+        self.created_before = created_before
+        self.pushed_after = pushed_after
+        self.pushed_before = pushed_before
 
     def search_repositories(self) -> list[dict[str, Any]]:
         """Search for microservice repositories.
@@ -62,10 +74,8 @@ class GitHubFetcher:
             f"Filters: min_stars={self.min_stars}, languages={', '.join(self.languages)}", "cyan"
         )
 
-        # Build search query
-        keyword_query = " OR ".join(keywords)
-        language_query = " OR ".join([f"language:{lang}" for lang in self.languages])
-        query = f"({keyword_query}) ({language_query}) stars:>={self.min_stars}"
+        # Build search query with temporal filters
+        query = self._build_temporal_query(keywords)
 
         try:
             # Execute search
@@ -138,6 +148,51 @@ class GitHubFetcher:
             "archived": repo.archived,
             "license": repo.license.name if repo.license else None,
         }
+
+    def _build_temporal_query(self, keywords: list[str]) -> str:
+        """
+        Build GitHub search query with temporal constraints.
+
+        Args:
+            keywords: List of search keywords
+
+        Returns:
+            Complete search query string
+        """
+        query_parts = []
+
+        # Keywords
+        keyword_query = " OR ".join(keywords)
+        query_parts.append(f"({keyword_query})")
+
+        # Languages
+        language_query = " OR ".join([f"language:{lang}" for lang in self.languages])
+        query_parts.append(f"({language_query})")
+
+        # Stars
+        query_parts.append(f"stars:>={self.min_stars}")
+
+        # Archived filter
+        query_parts.append("archived:false")
+
+        # Temporal filters
+        if self.created_after and self.created_before:
+            query_parts.append(f"created:{self.created_after}..{self.created_before}")
+        elif self.created_after:
+            query_parts.append(f"created:>={self.created_after}")
+        elif self.created_before:
+            query_parts.append(f"created:<={self.created_before}")
+
+        if self.pushed_after and self.pushed_before:
+            query_parts.append(f"pushed:{self.pushed_after}..{self.pushed_before}")
+        elif self.pushed_after:
+            query_parts.append(f"pushed:>={self.pushed_after}")
+        elif self.pushed_before:
+            query_parts.append(f"pushed:<={self.pushed_before}")
+
+        query = " ".join(query_parts)
+        colored_print(f"Query: {query}", "cyan")
+        return query
 
     def _handle_rate_limit(self):
         """Handle GitHub API rate limiting."""

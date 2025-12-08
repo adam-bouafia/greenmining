@@ -356,7 +356,7 @@ GSF_PATTERNS = {
     "compress_ml_models": {
         "name": "Compress ML Models for Inference",
         "category": "ai",
-        "keywords": ["compress", "model", "quantiz", "prune", "distill"],
+        "keywords": ["model compression", "quantization", "model pruning", "knowledge distillation"],
         "description": "Reduce model size through quantization, pruning, distillation",
         "sci_impact": "Dramatically reduces inference energy and memory",
     },
@@ -370,14 +370,14 @@ GSF_PATTERNS = {
     "energy_efficient_ai_edge": {
         "name": "Energy Efficient AI at Edge",
         "category": "ai",
-        "keywords": ["edge", "ai", "inference", "local", "device"],
+        "keywords": ["edge inference", "edge ai", "edge ml", "tflite", "onnx runtime"],
         "description": "Run inference on edge devices when possible",
         "sci_impact": "Eliminates network transfer, uses local compute",
     },
     "energy_efficient_framework": {
         "name": "Energy Efficient Framework",
         "category": "ai",
-        "keywords": ["framework", "tensorflow", "pytorch", "efficient"],
+        "keywords": ["tensorflow", "pytorch", "onnx", "jax", "huggingface"],
         "description": "Choose ML frameworks optimized for efficiency",
         "sci_impact": "Different frameworks have different energy profiles",
     },
@@ -405,14 +405,14 @@ GSF_PATTERNS = {
     "right_hardware_ai": {
         "name": "Right Hardware Type for AI",
         "category": "ai",
-        "keywords": ["hardware", "gpu", "tpu", "accelerator", "ai"],
+        "keywords": ["gpu training", "tpu", "cuda", "nvidia ai", "ml accelerator"],
         "description": "Use appropriate hardware (GPU/TPU) for AI workloads",
         "sci_impact": "Specialized hardware is more energy efficient",
     },
     "serverless_ml": {
         "name": "Serverless Model Development",
         "category": "ai",
-        "keywords": ["serverless", "ml", "sagemaker", "vertex", "lambda"],
+        "keywords": ["sagemaker", "vertex ai", "azure ml", "lambda inference", "serverless ml"],
         "description": "Use serverless platforms for ML development",
         "sci_impact": "Pay-per-use, no idle resources",
     },

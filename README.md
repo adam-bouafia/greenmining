@@ -12,12 +12,21 @@ Green mining for microservices repositories.
 
 ## Features
 
+### Core Capabilities
+
 - 🔍 **122 Sustainability Patterns**: Detect energy-efficient and environmentally conscious coding practices across 15 categories (expanded from 76)
 - 📊 **Repository Mining**: Analyze 100+ microservices repositories from GitHub
 - 📈 **Green Awareness Detection**: Identify sustainability-focused commits
 - 📄 **Comprehensive Reports**: Generate analysis reports in multiple formats
 - 🐳 **Docker Support**: Run in containers for consistent environments
 - ⚡ **Fast Analysis**: Parallel processing and checkpoint system
+
+### Advanced Analysis Features (NEW)
+
+- 🧠 **NLP-Enhanced Detection**: Morphological variant matching (e.g., "optimize" → "optimizing") and semantic synonym recognition
+- 🤖 **ML Feature Extraction**: Extract text, code, and temporal features for machine learning model training
+- 📅 **Temporal Trend Analysis**: Track pattern adoption, velocity, and evolution over time (daily/weekly/monthly/quarterly/yearly)
+- 📊 **Enhanced Statistics**: Pattern correlations, effect size analysis, and confidence distributions
 
 ## Installation
 
@@ -61,8 +70,14 @@ greenmining fetch --max-repos 100 --min-stars 100
 # Extract commits
 greenmining extract --max-commits 50
 
-# Analyze for green patterns
+# Analyze for green patterns (basic)
 greenmining analyze
+
+# Analyze with advanced features (NEW)
+greenmining analyze --enable-nlp --enable-ml-features --enable-diff-analysis
+
+# Aggregate results with temporal analysis (NEW)
+greenmining aggregate --enable-temporal --temporal-granularity quarter --enable-enhanced-stats
 
 # Generate report
 greenmining report
@@ -119,9 +134,12 @@ repos = fetch_repositories(
     keywords="serverless edge-computing"
 )
 
-# Initialize services
+# Initialize services (with advanced features)
 extractor = CommitExtractor()
-analyzer = DataAnalyzer()
+analyzer = DataAnalyzer(
+    enable_nlp=True,           # Enable NLP-enhanced detection
+    enable_ml_features=True    # Enable ML feature extraction
+)
 
 # Extract commits from first repo
 commits = extractor.extract_commits(repos[0], max_commits=50)
@@ -134,6 +152,18 @@ for commit in commits:
         results.append(result)
         print(f"Green commit found: {commit.message[:50]}...")
         print(f"  Patterns: {result['known_pattern']}")
+        
+        # Access NLP analysis results (NEW)
+        if 'nlp_analysis' in result:
+            nlp = result['nlp_analysis']
+            print(f"  NLP: {nlp['morphological_count']} morphological matches, "
+                  f"{nlp['semantic_count']} semantic matches")
+        
+        # Access ML features (NEW)
+        if 'ml_features' in result:
+            ml = result['ml_features']['text']
+            print(f"  ML Features: {ml['word_count']} words, "
+                  f"keyword density: {ml['keyword_density']:.2f}")
 ```
 
 #### Access Sustainability Patterns Data
@@ -167,6 +197,36 @@ print(f"Available categories: {sorted(categories)}")
 # Output: ['ai', 'async', 'caching', 'cloud', 'code', 'data', 
 #          'database', 'general', 'infrastructure', 'microservices',
 #          'monitoring', 'network', 'networking', 'resource', 'web']
+```
+
+#### Advanced Analysis: Temporal Trends (NEW)
+
+```python
+from greenmining.services.data_aggregator import DataAggregator
+
+# Initialize aggregator with temporal analysis
+aggregator = DataAggregator(
+    enable_temporal=True,          # Enable temporal trend analysis
+    temporal_granularity="quarter", # daily/week/month/quarter/year
+    enable_enhanced_stats=True     # Enable pattern correlations
+)
+
+# Aggregate results with temporal insights
+aggregated = aggregator.aggregate(analysis_results, repositories)
+
+# Access temporal analysis results
+temporal = aggregated['temporal_analysis']
+print(f"Time periods analyzed: {len(temporal['periods'])}")
+
+# View pattern adoption trends over time
+for period_data in temporal['periods']:
+    print(f"{period_data['period']}: {period_data['commit_count']} commits, "
+          f"{period_data['green_awareness_rate']:.1%} green awareness")
+
+# Access pattern evolution insights
+evolution = temporal.get('pattern_evolution', {})
+print(f"Emerging patterns: {evolution.get('emerging', [])}")
+print(f"Stable patterns: {evolution.get('stable', [])}")
 ```
 
 #### Generate Custom Reports
@@ -321,8 +381,8 @@ Feature flags, incremental processing, precomputation, background jobs, workflow
 |---------|-------------|-------------|
 | `fetch` | Fetch repositories from GitHub with custom keywords | `--max-repos`, `--min-stars`, `--languages`, `--keywords` |
 | `extract` | Extract commit history from repositories | `--max-commits` per repository |
-| `analyze` | Analyze commits for green patterns | Auto-detects patterns from 122-pattern database |
-| `aggregate` | Aggregate analysis results | Generates statistics and summaries |
+| `analyze` | Analyze commits for green patterns | `--enable-nlp`, `--enable-ml-features`, `--enable-diff-analysis` |
+| `aggregate` | Aggregate analysis results | `--enable-temporal`, `--temporal-granularity`, `--enable-enhanced-stats` |
 | `report` | Generate comprehensive report | Creates Markdown and CSV outputs |
 | `pipeline` | Run complete analysis pipeline | `--max-repos`, `--max-commits` (all-in-one) |
 | `status` | Show current analysis status | Displays progress and file statistics |
@@ -349,6 +409,33 @@ greenmining extract --max-commits 50
 ```
 Options:
 - `--max-commits`: Maximum commits per repository (default: 50)
+
+#### Analyze Commits (with Advanced Features)
+```bash
+# Basic analysis
+greenmining analyze
+
+# Advanced analysis with all features
+greenmining analyze --enable-nlp --enable-ml-features --enable-diff-analysis --batch-size 20
+```
+Options:
+- `--batch-size`: Batch size for processing (default: 10)
+- `--enable-diff-analysis`: Enable code diff analysis (slower but more accurate)
+- `--enable-nlp`: Enable NLP-enhanced pattern detection with morphological variants and synonyms
+- `--enable-ml-features`: Enable ML feature extraction for model training
+
+#### Aggregate Results (with Temporal Analysis)
+```bash
+# Basic aggregation
+greenmining aggregate
+
+# Advanced aggregation with temporal trends
+greenmining aggregate --enable-temporal --temporal-granularity quarter --enable-enhanced-stats
+```
+Options:
+- `--enable-enhanced-stats`: Enable enhanced statistical analysis (correlations, effect sizes)
+- `--enable-temporal`: Enable temporal trend analysis
+- `--temporal-granularity`: Time period granularity (choices: day, week, month, quarter, year)
 
 #### Run Pipeline
 ```bash

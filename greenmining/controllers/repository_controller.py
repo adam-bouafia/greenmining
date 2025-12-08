@@ -22,6 +22,10 @@ class RepositoryController:
         min_stars: int = None,
         languages: list[str] = None,
         keywords: str = None,
+        created_after: str = None,
+        created_before: str = None,
+        pushed_after: str = None,
+        pushed_before: str = None,
     ) -> list[Repository]:
         """Fetch repositories from GitHub.
 
@@ -30,6 +34,10 @@ class RepositoryController:
             min_stars: Minimum stars filter
             languages: List of programming languages to filter
             keywords: Custom search keywords (default: "microservices")
+            created_after: Repository created after date (YYYY-MM-DD)
+            created_before: Repository created before date (YYYY-MM-DD)
+            pushed_after: Repository pushed after date (YYYY-MM-DD)
+            pushed_before: Repository pushed before date (YYYY-MM-DD)
 
         Returns:
             List of Repository model instances
@@ -42,9 +50,16 @@ class RepositoryController:
         colored_print(f"🔍 Fetching up to {max_repos} repositories...", "cyan")
         colored_print(f"   Keywords: {keywords}", "cyan")
         colored_print(f"   Filters: min_stars={min_stars}", "cyan")
+        
+        if created_after or created_before:
+            colored_print(f"   Created: {created_after or 'any'} to {created_before or 'any'}", "cyan")
+        if pushed_after or pushed_before:
+            colored_print(f"   Pushed: {pushed_after or 'any'} to {pushed_before or 'any'}", "cyan")
 
-        # Build search query with custom keywords
-        query = f"{keywords} stars:>={min_stars}"
+        # Build search query with temporal filters
+        query = self._build_temporal_query(
+            keywords, min_stars, created_after, created_before, pushed_after, pushed_before
+        )
 
         try:
             # Execute search
@@ -82,6 +97,37 @@ class RepositoryController:
         except Exception as e:
             colored_print(f"❌ Error fetching repositories: {e}", "red")
             raise
+
+    def _build_temporal_query(
+        self,
+        keywords: str,
+        min_stars: int,
+        created_after: str = None,
+        created_before: str = None,
+        pushed_after: str = None,
+        pushed_before: str = None,
+    ) -> str:
+        """Build GitHub search query with temporal constraints."""
+        query_parts = [keywords, f"stars:>={min_stars}"]
+
+        # Temporal filters
+        if created_after and created_before:
+            query_parts.append(f"created:{created_after}..{created_before}")
+        elif created_after:
+            query_parts.append(f"created:>={created_after}")
+        elif created_before:
+            query_parts.append(f"created:<={created_before}")
+
+        if pushed_after and pushed_before:
+            query_parts.append(f"pushed:{pushed_after}..{pushed_before}")
+        elif pushed_after:
+            query_parts.append(f"pushed:>={pushed_after}")
+        elif pushed_before:
+            query_parts.append(f"pushed:<={pushed_before}")
+
+        query = " ".join(query_parts)
+        colored_print(f"   Query: {query}", "cyan")
+        return query
 
     def load_repositories(self) -> list[Repository]:
         """Load repositories from file.

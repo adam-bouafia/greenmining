@@ -48,6 +48,23 @@ class Config:
         self.MAX_REPOS = int(os.getenv("MAX_REPOS", "100"))
         self.COMMITS_PER_REPO = int(os.getenv("COMMITS_PER_REPO", "50"))
         self.DAYS_BACK = int(os.getenv("DAYS_BACK", "730"))  # 2 years
+        
+        # Advanced Analyzer Configuration
+        self.ENABLE_NLP_ANALYSIS = os.getenv("ENABLE_NLP_ANALYSIS", "false").lower() == "true"
+        self.ENABLE_TEMPORAL_ANALYSIS = os.getenv("ENABLE_TEMPORAL_ANALYSIS", "false").lower() == "true"
+        self.TEMPORAL_GRANULARITY = os.getenv("TEMPORAL_GRANULARITY", "quarter")  # day, week, month, quarter, year
+        self.ENABLE_ML_FEATURES = os.getenv("ENABLE_ML_FEATURES", "false").lower() == "true"
+        self.VALIDATION_SAMPLE_SIZE = int(os.getenv("VALIDATION_SAMPLE_SIZE", "30"))
+
+        # Temporal Filtering (NEW)
+        self.CREATED_AFTER = os.getenv("CREATED_AFTER")  # YYYY-MM-DD
+        self.CREATED_BEFORE = os.getenv("CREATED_BEFORE")  # YYYY-MM-DD
+        self.PUSHED_AFTER = os.getenv("PUSHED_AFTER")  # YYYY-MM-DD
+        self.PUSHED_BEFORE = os.getenv("PUSHED_BEFORE")  # YYYY-MM-DD
+        self.COMMIT_DATE_FROM = os.getenv("COMMIT_DATE_FROM")  # YYYY-MM-DD
+        self.COMMIT_DATE_TO = os.getenv("COMMIT_DATE_TO")  # YYYY-MM-DD
+        self.MIN_COMMITS = int(os.getenv("MIN_COMMITS", "0"))
+        self.ACTIVITY_WINDOW_DAYS = int(os.getenv("ACTIVITY_WINDOW_DAYS", "730"))
 
         # Analysis Configuration
         self.BATCH_SIZE = int(os.getenv("BATCH_SIZE", "10"))

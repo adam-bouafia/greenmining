@@ -35,7 +35,11 @@ def cli(config_file, verbose):
     type=str,
     help="Search keywords (e.g., 'kubernetes', 'docker', 'cloud-native')",
 )
-def fetch(max_repos, min_stars, languages, keywords):
+@click.option("--created-after", type=str, help="Repository created after (YYYY-MM-DD)")
+@click.option("--created-before", type=str, help="Repository created before (YYYY-MM-DD)")
+@click.option("--pushed-after", type=str, help="Repository pushed after (YYYY-MM-DD)")
+@click.option("--pushed-before", type=str, help="Repository pushed before (YYYY-MM-DD)")
+def fetch(max_repos, min_stars, languages, keywords, created_after, created_before, pushed_after, pushed_before):
     """Fetch repositories from GitHub based on custom search keywords."""
     presenter.show_banner()
     colored_print(f"\n🎯 Target: {max_repos} repositories\n", "cyan")
@@ -45,7 +49,14 @@ def fetch(max_repos, min_stars, languages, keywords):
 
     try:
         repositories = controller.fetch_repositories(
-            max_repos=max_repos, min_stars=min_stars, languages=lang_list, keywords=keywords
+            max_repos=max_repos,
+            min_stars=min_stars,
+            languages=lang_list,
+            keywords=keywords,
+            created_after=created_after,
+            created_before=created_before,
+            pushed_after=pushed_after,
+            pushed_before=pushed_before
         )
 
         # Show results
@@ -67,11 +78,12 @@ def fetch(max_repos, min_stars, languages, keywords):
 @click.option("--max-commits", default=50, type=int, help="Max commits per repository")
 @click.option("--skip-merges", is_flag=True, default=True, help="Skip merge commits")
 @click.option("--days-back", default=730, type=int, help="Days to look back (default: 2 years)")
-def extract(max_commits, skip_merges, days_back):
+@click.option("--timeout", default=60, type=int, help="Timeout per repo in seconds (default: 60)")
+def extract(max_commits, skip_merges, days_back, timeout):
     """Extract commits from fetched repositories."""
     presenter.show_banner()
 
-    from services.commit_extractor import CommitExtractor
+    from greenmining.services.commit_extractor import CommitExtractor
 
     try:
         # Load repositories
@@ -86,14 +98,14 @@ def extract(max_commits, skip_merges, days_back):
 
         # Extract commits
         extractor = CommitExtractor(
-            max_commits=max_commits, skip_merges=skip_merges, days_back=days_back
+            max_commits=max_commits, skip_merges=skip_merges, days_back=days_back, timeout=timeout
         )
         commits = extractor.extract_from_repositories(
             repositories=[r.to_dict() for r in repositories]
         )
 
         # Save commits
-        from utils import save_json_file
+        from greenmining.utils import save_json_file
 
         save_json_file(commits, config.COMMITS_FILE)
         colored_print(f"   Saved to: {config.COMMITS_FILE}", "cyan")
@@ -119,12 +131,15 @@ def extract(max_commits, skip_merges, days_back):
 
 @cli.command()
 @click.option("--batch-size", default=10, type=int, help="Batch size for processing")
-def analyze(batch_size):
+@click.option("--enable-diff-analysis", is_flag=True, help="Enable code diff analysis (slower)")
+@click.option("--enable-nlp", is_flag=True, help="Enable NLP-enhanced pattern detection")
+@click.option("--enable-ml-features", is_flag=True, help="Enable ML feature extraction")
+def analyze(batch_size, enable_diff_analysis, enable_nlp, enable_ml_features):
     """Analyze commits for green software patterns."""
     presenter.show_banner()
 
-    from services.data_analyzer import DataAnalyzer
-    from utils import save_json_file
+    from greenmining.services.data_analyzer import DataAnalyzer
+    from greenmining.utils import save_json_file
 
     try:
         # Load commits
@@ -133,12 +148,27 @@ def analyze(batch_size):
 
         commits = load_json_file(config.COMMITS_FILE)
         colored_print(f"\n🔬 Analyzing {len(commits)} commits for green patterns...\n", "cyan")
-        colored_print("   Method: Keyword-based heuristic analysis\n", "cyan")
+        
+        # Show enabled methods
+        methods = ["Keyword"]
+        if enable_diff_analysis:
+            methods.append("Code Diff")
+        if enable_nlp:
+            methods.append("NLP")
+        if enable_ml_features:
+            methods.append("ML Features")
+        
+        colored_print(f"   Methods: {' + '.join(methods)}\n", "cyan")
         colored_print(f"   Batch size: {batch_size}\n", "cyan")
 
         # Analyze
-        analyzer = DataAnalyzer()
-        results = analyzer.analyze_commits_batch(commits, batch_size=batch_size)
+        analyzer = DataAnalyzer(
+            batch_size=batch_size,
+            enable_diff_analysis=enable_diff_analysis,
+            enable_nlp=enable_nlp,
+            enable_ml_features=enable_ml_features,
+        )
+        results = analyzer.analyze_commits(commits)
 
         # Save results
         save_json_file(results, config.ANALYSIS_FILE)
@@ -165,12 +195,20 @@ def analyze(batch_size):
 
 
 @cli.command()
-def aggregate():
+@click.option("--enable-enhanced-stats", is_flag=True, help="Enable enhanced statistical analysis")
+@click.option("--enable-temporal", is_flag=True, help="Enable temporal trend analysis")
+@click.option(
+    "--temporal-granularity",
+    default="quarter",
+    type=click.Choice(["day", "week", "month", "quarter", "year"]),
+    help="Temporal analysis granularity",
+)
+def aggregate(enable_enhanced_stats, enable_temporal, temporal_granularity):
     """Aggregate analysis results and generate statistics."""
     presenter.show_banner()
 
-    from services.data_aggregator import DataAggregator
-    from utils import save_json_file
+    from greenmining.services.data_aggregator import DataAggregator
+    from greenmining.utils import save_json_file
 
     try:
         # Load data
@@ -181,9 +219,19 @@ def aggregate():
         repos = load_json_file(config.REPOS_FILE) if config.REPOS_FILE.exists() else []
 
         colored_print(f"\n📊 Aggregating results from {len(results)} commits...\n", "cyan")
+        
+        # Show enabled features
+        if enable_enhanced_stats:
+            colored_print("   Enhanced statistics: Enabled\n", "cyan")
+        if enable_temporal:
+            colored_print(f"   Temporal analysis: Enabled (granularity: {temporal_granularity})\n", "cyan")
 
         # Aggregate
-        aggregator = DataAggregator()
+        aggregator = DataAggregator(
+            enable_enhanced_stats=enable_enhanced_stats,
+            enable_temporal=enable_temporal,
+            temporal_granularity=temporal_granularity,
+        )
         aggregated = aggregator.aggregate(results, repos)
 
         # Save
@@ -193,7 +241,15 @@ def aggregate():
         presenter.show_analysis_results(aggregated)
 
         if aggregated.get("known_patterns"):
-            presenter.show_pattern_distribution(aggregated["known_patterns"], limit=10)
+            # Convert list format to dict format expected by presenter
+            patterns_dict = {}
+            for pattern in aggregated["known_patterns"]:
+                patterns_dict[pattern["pattern_name"]] = {
+                    "count": pattern["count"],
+                    "percentage": pattern["percentage"],
+                    "confidence_distribution": pattern.get("confidence_breakdown", {}),
+                }
+            presenter.show_pattern_distribution(patterns_dict, limit=10)
 
         presenter.show_success(f"Aggregation complete! Results saved to {config.AGGREGATED_FILE}")
 
@@ -208,20 +264,47 @@ def report(output):
     """Generate comprehensive markdown report."""
     presenter.show_banner()
 
-    from services.reports import ReportGenerator
+    from greenmining.services.reports import ReportGenerator
 
     try:
         # Load aggregated data
         if not config.AGGREGATED_FILE.exists():
             raise FileNotFoundError("No aggregated data found. Run 'aggregate' first.")
 
+        # Load analysis results
+        if not config.ANALYSIS_FILE.exists():
+            raise FileNotFoundError("No analysis results found. Run 'analyze' first.")
+
+        # Load repository data
+        if not config.REPOS_FILE.exists():
+            raise FileNotFoundError("No repository data found. Run 'fetch' first.")
+
         aggregated = load_json_file(config.AGGREGATED_FILE)
+        analysis_results = load_json_file(config.ANALYSIS_FILE)
+        repos_data = load_json_file(config.REPOS_FILE)
+
+        # Wrap analysis results if it's a list
+        if isinstance(analysis_results, list):
+            analysis = {"results": analysis_results, "total": len(analysis_results)}
+        else:
+            analysis = analysis_results
+
+        # Wrap repos data if it's a list
+        if isinstance(repos_data, list):
+            repos = {"repositories": repos_data, "total": len(repos_data)}
+        else:
+            repos = repos_data
 
         colored_print("\n📄 Generating comprehensive report...\n", "cyan")
 
         # Generate report
         generator = ReportGenerator()
-        report_path = generator.generate_report(aggregated, output)
+        report_content = generator.generate_report(aggregated, analysis, repos)
+
+        # Save report
+        from pathlib import Path
+        report_path = Path(output)
+        report_path.write_text(report_content)
 
         presenter.show_success(f"Report generated: {report_path}")
         colored_print("\n📖 The report includes:", "cyan")
@@ -323,8 +406,8 @@ def pipeline(max_repos, skip_fetch):
 
         # Phase 2: Extract
         colored_print("\n[2/5] 📝 Extracting commits...", "cyan")
-        from services.commit_extractor import CommitExtractor
-        from utils import save_json_file
+        from greenmining.services.commit_extractor import CommitExtractor
+        from greenmining.utils import save_json_file
 
         controller = RepositoryController(config)
         repos = controller.load_repositories()
@@ -335,7 +418,7 @@ def pipeline(max_repos, skip_fetch):
 
         # Phase 3: Analyze
         colored_print("\n[3/5] 🔬 Analyzing commits...", "cyan")
-        from services.data_analyzer import DataAnalyzer
+        from greenmining.services.data_analyzer import DataAnalyzer
 
         commits = load_json_file(config.COMMITS_FILE)
         analyzer = DataAnalyzer()
@@ -347,7 +430,7 @@ def pipeline(max_repos, skip_fetch):
 
         # Phase 4: Aggregate
         colored_print("\n[4/5] 📊 Aggregating results...", "cyan")
-        from services.data_aggregator import DataAggregator
+        from greenmining.services.data_aggregator import DataAggregator
 
         aggregator = DataAggregator()
         aggregated = aggregator.aggregate(results, [r.to_dict() for r in repos])
@@ -355,7 +438,7 @@ def pipeline(max_repos, skip_fetch):
 
         # Phase 5: Report
         colored_print("\n[5/5] 📄 Generating report...", "cyan")
-        from services.reports import ReportGenerator
+        from greenmining.services.reports import ReportGenerator
 
         generator = ReportGenerator()
         generator.generate_report(aggregated)

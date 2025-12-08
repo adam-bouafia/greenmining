@@ -180,6 +180,11 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
         # 2.4 Per-Repository Analysis
         sections.append(self._generate_repo_analysis_section(data))
 
+        # 2.5 Enhanced Statistics (if available)
+        enhanced_section = self._generate_enhanced_statistics_section(data)
+        if enhanced_section:
+            sections.append(enhanced_section)
+
         return "### 2. Results\n\n" + "\n\n".join(sections)
 
     def _generate_green_awareness_section(self, data: dict[str, Any]) -> str:
@@ -299,6 +304,116 @@ No novel microservice-specific green practices were automatically detected. Manu
 {top_10_table}
 
 **Repositories with No Green Mentions:** {no_green_count} out of {len(per_repo)} repositories had zero green-aware commits."""
+
+    def _generate_enhanced_statistics_section(self, data: dict[str, Any]) -> str:
+        """Generate enhanced statistical analysis subsection.
+        
+        Args:
+            data: Aggregated data containing enhanced_statistics field
+            
+        Returns:
+            Markdown section with enhanced statistics
+        """
+        enhanced_stats = data.get("enhanced_statistics")
+        
+        if not enhanced_stats:
+            return ""
+        
+        # Handle error case
+        if "error" in enhanced_stats:
+            return f"""#### 2.5 Enhanced Statistical Analysis
+
+**Note:** Enhanced statistical analysis encountered an error: {enhanced_stats['error']}
+"""
+        
+        sections = []
+        sections.append("#### 2.5 Enhanced Statistical Analysis")
+        sections.append("")
+        sections.append("This section presents advanced statistical analyses of green software engineering patterns.")
+        sections.append("")
+        
+        # Temporal trends
+        temporal = enhanced_stats.get("temporal_trends", {})
+        if temporal and "error" not in temporal:
+            sections.append("##### Temporal Trends")
+            sections.append("")
+            
+            if "overall_trend" in temporal:
+                trend_dir = temporal["overall_trend"].get("direction", "unknown")
+                trend_sig = temporal["overall_trend"].get("significant", False)
+                sections.append(f"**Overall Trend:** {trend_dir.capitalize()}")
+                if trend_sig:
+                    sections.append(" (statistically significant)")
+                sections.append("")
+            
+            if "monthly_stats" in temporal and temporal["monthly_stats"]:
+                sections.append("**Monthly Pattern Statistics:**")
+                sections.append("")
+                monthly = temporal["monthly_stats"]
+                sections.append(f"- Mean commits/month: {format_number(monthly.get('mean', 0))}")
+                sections.append(f"- Median commits/month: {format_number(monthly.get('median', 0))}")
+                sections.append(f"- Std deviation: {format_number(monthly.get('std', 0))}")
+                sections.append("")
+        
+        # Pattern correlations
+        correlations = enhanced_stats.get("pattern_correlations", {})
+        if correlations and "error" not in correlations:
+            sections.append("##### Pattern Correlations")
+            sections.append("")
+            
+            top_corr = correlations.get("top_positive_correlations", [])
+            if top_corr:
+                sections.append("**Top Positive Correlations (|r| > 0.5):**")
+                sections.append("")
+                sections.append("| Pattern 1 | Pattern 2 | Correlation (r) |")
+                sections.append("|-----------|-----------|-----------------|")
+                for corr in top_corr[:5]:
+                    sections.append(
+                        f"| {corr['pattern1']} | {corr['pattern2']} | {corr['correlation']:.3f} |"
+                    )
+                sections.append("")
+            else:
+                sections.append("No strong pattern correlations detected (|r| > 0.5).")
+                sections.append("")
+        
+        # Effect sizes
+        effect_sizes = enhanced_stats.get("effect_size", {})
+        if effect_sizes and "error" not in effect_sizes:
+            sections.append("##### Effect Size Analysis")
+            sections.append("")
+            
+            green_vs_nongreen = effect_sizes.get("green_vs_nongreen_patterns")
+            if green_vs_nongreen:
+                cohens_d = green_vs_nongreen.get("cohens_d", 0)
+                magnitude = green_vs_nongreen.get("magnitude", "negligible")
+                sections.append(f"**Green vs Non-Green Pattern Usage:**")
+                sections.append(f"- Cohen's d: {cohens_d:.3f}")
+                sections.append(f"- Effect magnitude: {magnitude.capitalize()}")
+                sections.append("")
+        
+        # Descriptive statistics
+        descriptive = enhanced_stats.get("descriptive", {})
+        if descriptive and "error" not in descriptive:
+            sections.append("##### Descriptive Statistics")
+            sections.append("")
+            
+            patterns = descriptive.get("patterns_per_commit", {})
+            if patterns:
+                sections.append("**Patterns per Commit:**")
+                sections.append(f"- Mean: {patterns.get('mean', 0):.2f}")
+                sections.append(f"- Median: {patterns.get('median', 0):.2f}")
+                sections.append(f"- Standard deviation: {patterns.get('std', 0):.2f}")
+                sections.append("")
+            
+            repos = descriptive.get("green_commits_per_repo", {})
+            if repos:
+                sections.append("**Green Commits per Repository:**")
+                sections.append(f"- Mean: {repos.get('mean', 0):.2f}")
+                sections.append(f"- Median: {repos.get('median', 0):.2f}")
+                sections.append(f"- Standard deviation: {repos.get('std', 0):.2f}")
+                sections.append("")
+        
+        return "\n".join(sections)
 
     def _generate_discussion(self, data: dict[str, Any]) -> str:
         """Generate discussion section."""

@@ -29,6 +29,7 @@ class CommitExtractor:
         skip_merges: bool = True,
         days_back: int = 730,
         github_token: str | None = None,
+        timeout: int = 60,
     ):
         """Initialize commit extractor.
 
@@ -37,12 +38,14 @@ class CommitExtractor:
             skip_merges: Skip merge commits
             days_back: Only analyze commits from last N days
             github_token: GitHub API token (optional)
+            timeout: Timeout in seconds per repository (default: 60)
         """
         self.max_commits = max_commits
         self.skip_merges = skip_merges
         self.days_back = days_back
         self.cutoff_date = datetime.now() - timedelta(days=days_back)
         self.github = Github(github_token) if github_token else None
+        self.timeout = timeout
 
     def extract_from_repositories(self, repositories: list[dict[str, Any]]) -> list[dict[str, Any]]:
         """Extract commits from list of repositories.
@@ -62,14 +65,33 @@ class CommitExtractor:
             "cyan",
         )
 
+        import signal
+
+        def timeout_handler(signum, frame):
+            raise TimeoutError("Repository extraction timeout")
+
         with tqdm(total=len(repositories), desc="Processing repositories", unit="repo") as pbar:
             for repo in repositories:
                 try:
+                    # Set timeout alarm
+                    signal.signal(signal.SIGALRM, timeout_handler)
+                    signal.alarm(self.timeout)
+
                     commits = self._extract_repo_commits(repo)
                     all_commits.extend(commits)
+
+                    # Cancel alarm
+                    signal.alarm(0)
+
                     pbar.set_postfix({"commits": len(all_commits), "failed": len(failed_repos)})
                     pbar.update(1)
+                except TimeoutError:
+                    signal.alarm(0)  # Cancel alarm
+                    colored_print(f"\nTimeout processing {repo['full_name']} (>{self.timeout}s)", "yellow")
+                    failed_repos.append(repo["full_name"])
+                    pbar.update(1)
                 except Exception as e:
+                    signal.alarm(0)  # Cancel alarm
                     colored_print(f"\nError processing {repo['full_name']}: {e}", "yellow")
                     failed_repos.append(repo["full_name"])
                     pbar.update(1)
