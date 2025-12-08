@@ -35,7 +35,7 @@ class DataAggregator:
         temporal_granularity: str = "quarter",
     ):
         """Initialize aggregator.
-        
+
         Args:
             enable_enhanced_stats: Enable enhanced statistical analysis
             enable_temporal: Enable temporal trend analysis
@@ -43,16 +43,18 @@ class DataAggregator:
         """
         self.enable_enhanced_stats = enable_enhanced_stats
         self.enable_temporal = enable_temporal
-        
+
         if self.enable_enhanced_stats:
             self.statistical_analyzer = EnhancedStatisticalAnalyzer()
             colored_print("Enhanced statistical analysis enabled", "cyan")
         else:
             self.statistical_analyzer = None
-        
+
         if self.enable_temporal:
             self.temporal_analyzer = TemporalAnalyzer(granularity=temporal_granularity)
-            colored_print(f"Temporal analysis enabled (granularity: {temporal_granularity})", "cyan")
+            colored_print(
+                f"Temporal analysis enabled (granularity: {temporal_granularity})", "cyan"
+            )
         else:
             self.temporal_analyzer = None
 
@@ -84,7 +86,7 @@ class DataAggregator:
 
         # Per-language statistics
         per_language_stats = self._generate_language_stats(analysis_results, repositories)
-        
+
         # Enhanced statistical analysis (if enabled)
         enhanced_stats = None
         if self.enable_enhanced_stats and len(analysis_results) > 0:
@@ -94,7 +96,7 @@ class DataAggregator:
             except Exception as e:
                 colored_print(f"⚠️  Enhanced statistics failed: {e}", "yellow")
                 enhanced_stats = {"error": str(e)}
-        
+
         # Temporal trend analysis (if enabled)
         temporal_analysis = None
         if self.enable_temporal and len(analysis_results) > 0:
@@ -109,7 +111,7 @@ class DataAggregator:
                     }
                     for r in analysis_results
                 ]
-                
+
                 temporal_analysis = self.temporal_analyzer.analyze_trends(commits, analysis_results)
                 colored_print("✅ Temporal trend analysis complete", "green")
             except Exception as e:
@@ -123,13 +125,13 @@ class DataAggregator:
             "per_repo_stats": per_repo_stats,
             "per_language_stats": per_language_stats,
         }
-        
+
         if enhanced_stats:
             result["enhanced_statistics"] = enhanced_stats
-        
+
         if temporal_analysis:
             result["temporal_analysis"] = temporal_analysis
-        
+
         return result
 
     def _generate_summary(
@@ -298,63 +300,63 @@ class DataAggregator:
 
     def _generate_enhanced_statistics(self, results: list[dict[str, Any]]) -> dict[str, Any]:
         """Generate enhanced statistical analysis.
-        
+
         Args:
             results: List of commit analysis results
-            
+
         Returns:
             Dictionary with enhanced statistical analysis
         """
         # Prepare DataFrame
         df = pd.DataFrame(results)
-        
+
         # Ensure required columns exist
-        if 'date' not in df.columns or 'green_aware' not in df.columns:
+        if "date" not in df.columns or "green_aware" not in df.columns:
             return {"error": "Missing required columns for enhanced statistics"}
-        
+
         enhanced_stats = {}
-        
+
         # 1. Temporal Trend Analysis
         if len(df) >= 8:  # Need at least 8 data points
             try:
                 df_copy = df.copy()
-                df_copy['commit_hash'] = df_copy.get('commit_hash', df_copy.index)
+                df_copy["commit_hash"] = df_copy.get("commit_hash", df_copy.index)
                 trends = self.statistical_analyzer.temporal_trend_analysis(df_copy)
                 enhanced_stats["temporal_trends"] = {
                     "trend_direction": trends["trend"]["direction"],
                     "correlation": float(trends["trend"]["correlation"]),
                     "p_value": float(trends["trend"]["p_value"]),
                     "significant": trends["trend"]["significant"],
-                    "monthly_data_points": len(trends.get("monthly_data", {}))
+                    "monthly_data_points": len(trends.get("monthly_data", {})),
                 }
             except Exception as e:
                 enhanced_stats["temporal_trends"] = {"error": str(e)}
-        
+
         # 2. Pattern Correlation Analysis (if pattern columns exist)
-        pattern_cols = [col for col in df.columns if col.startswith('pattern_')]
+        pattern_cols = [col for col in df.columns if col.startswith("pattern_")]
         if pattern_cols and len(pattern_cols) >= 2:
             try:
                 correlations = self.statistical_analyzer.analyze_pattern_correlations(df)
                 enhanced_stats["pattern_correlations"] = {
                     "significant_pairs_count": len(correlations["significant_pairs"]),
                     "significant_pairs": correlations["significant_pairs"][:5],  # Top 5
-                    "interpretation": correlations["interpretation"]
+                    "interpretation": correlations["interpretation"],
                 }
             except Exception as e:
                 enhanced_stats["pattern_correlations"] = {"error": str(e)}
-        
+
         # 3. Effect Size Analysis by Repository
-        if 'repository' in df.columns:
+        if "repository" in df.columns:
             try:
                 # Group by repository
-                green_rates_by_repo = df.groupby('repository')['green_aware'].mean()
+                green_rates_by_repo = df.groupby("repository")["green_aware"].mean()
                 if len(green_rates_by_repo) >= 2:
                     # Compare top vs bottom half
                     sorted_rates = sorted(green_rates_by_repo.values)
                     mid_point = len(sorted_rates) // 2
                     group1 = sorted_rates[:mid_point]
                     group2 = sorted_rates[mid_point:]
-                    
+
                     if len(group1) > 0 and len(group2) > 0:
                         effect = self.statistical_analyzer.effect_size_analysis(
                             list(group1), list(group2)
@@ -364,20 +366,22 @@ class DataAggregator:
                             "magnitude": effect["magnitude"],
                             "mean_difference": float(effect["mean_difference"]),
                             "significant": effect["significant"],
-                            "comparison": "high_green_vs_low_green_repos"
+                            "comparison": "high_green_vs_low_green_repos",
                         }
             except Exception as e:
                 enhanced_stats["effect_size"] = {"error": str(e)}
-        
+
         # 4. Basic descriptive statistics
         enhanced_stats["descriptive"] = {
             "total_commits": len(df),
-            "green_commits": int(df['green_aware'].sum()),
-            "green_rate_mean": float(df['green_aware'].mean()),
-            "green_rate_std": float(df['green_aware'].std()) if len(df) > 1 else 0.0,
-            "unique_repositories": int(df['repository'].nunique()) if 'repository' in df.columns else 0
+            "green_commits": int(df["green_aware"].sum()),
+            "green_rate_mean": float(df["green_aware"].mean()),
+            "green_rate_std": float(df["green_aware"].std()) if len(df) > 1 else 0.0,
+            "unique_repositories": (
+                int(df["repository"].nunique()) if "repository" in df.columns else 0
+            ),
         }
-        
+
         return enhanced_stats
 
     def save_results(

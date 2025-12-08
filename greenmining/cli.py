@@ -39,7 +39,16 @@ def cli(config_file, verbose):
 @click.option("--created-before", type=str, help="Repository created before (YYYY-MM-DD)")
 @click.option("--pushed-after", type=str, help="Repository pushed after (YYYY-MM-DD)")
 @click.option("--pushed-before", type=str, help="Repository pushed before (YYYY-MM-DD)")
-def fetch(max_repos, min_stars, languages, keywords, created_after, created_before, pushed_after, pushed_before):
+def fetch(
+    max_repos,
+    min_stars,
+    languages,
+    keywords,
+    created_after,
+    created_before,
+    pushed_after,
+    pushed_before,
+):
     """Fetch repositories from GitHub based on custom search keywords."""
     presenter.show_banner()
     colored_print(f"\n🎯 Target: {max_repos} repositories\n", "cyan")
@@ -56,7 +65,7 @@ def fetch(max_repos, min_stars, languages, keywords, created_after, created_befo
             created_after=created_after,
             created_before=created_before,
             pushed_after=pushed_after,
-            pushed_before=pushed_before
+            pushed_before=pushed_before,
         )
 
         # Show results
@@ -148,7 +157,7 @@ def analyze(batch_size, enable_diff_analysis, enable_nlp, enable_ml_features):
 
         commits = load_json_file(config.COMMITS_FILE)
         colored_print(f"\n🔬 Analyzing {len(commits)} commits for green patterns...\n", "cyan")
-        
+
         # Show enabled methods
         methods = ["Keyword"]
         if enable_diff_analysis:
@@ -157,7 +166,7 @@ def analyze(batch_size, enable_diff_analysis, enable_nlp, enable_ml_features):
             methods.append("NLP")
         if enable_ml_features:
             methods.append("ML Features")
-        
+
         colored_print(f"   Methods: {' + '.join(methods)}\n", "cyan")
         colored_print(f"   Batch size: {batch_size}\n", "cyan")
 
@@ -219,12 +228,14 @@ def aggregate(enable_enhanced_stats, enable_temporal, temporal_granularity):
         repos = load_json_file(config.REPOS_FILE) if config.REPOS_FILE.exists() else []
 
         colored_print(f"\n📊 Aggregating results from {len(results)} commits...\n", "cyan")
-        
+
         # Show enabled features
         if enable_enhanced_stats:
             colored_print("   Enhanced statistics: Enabled\n", "cyan")
         if enable_temporal:
-            colored_print(f"   Temporal analysis: Enabled (granularity: {temporal_granularity})\n", "cyan")
+            colored_print(
+                f"   Temporal analysis: Enabled (granularity: {temporal_granularity})\n", "cyan"
+            )
 
         # Aggregate
         aggregator = DataAggregator(
@@ -303,6 +314,7 @@ def report(output):
 
         # Save report
         from pathlib import Path
+
         report_path = Path(output)
         report_path.write_text(report_content)
 

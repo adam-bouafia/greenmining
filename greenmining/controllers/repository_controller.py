@@ -50,9 +50,11 @@ class RepositoryController:
         colored_print(f"🔍 Fetching up to {max_repos} repositories...", "cyan")
         colored_print(f"   Keywords: {keywords}", "cyan")
         colored_print(f"   Filters: min_stars={min_stars}", "cyan")
-        
+
         if created_after or created_before:
-            colored_print(f"   Created: {created_after or 'any'} to {created_before or 'any'}", "cyan")
+            colored_print(
+                f"   Created: {created_after or 'any'} to {created_before or 'any'}", "cyan"
+            )
         if pushed_after or pushed_before:
             colored_print(f"   Pushed: {pushed_after or 'any'} to {pushed_before or 'any'}", "cyan")
 

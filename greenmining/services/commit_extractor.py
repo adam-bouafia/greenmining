@@ -87,7 +87,9 @@ class CommitExtractor:
                     pbar.update(1)
                 except TimeoutError:
                     signal.alarm(0)  # Cancel alarm
-                    colored_print(f"\nTimeout processing {repo['full_name']} (>{self.timeout}s)", "yellow")
+                    colored_print(
+                        f"\nTimeout processing {repo['full_name']} (>{self.timeout}s)", "yellow"
+                    )
                     failed_repos.append(repo["full_name"])
                     pbar.update(1)
                 except Exception as e:

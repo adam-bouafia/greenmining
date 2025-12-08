@@ -27,14 +27,14 @@ class EnhancedStatisticalAnalyzer:
         """
         # Create pattern co-occurrence matrix
         pattern_columns = [col for col in commit_data.columns if col.startswith("pattern_")]
-        
+
         if not pattern_columns:
             return {
                 "correlation_matrix": {},
                 "significant_pairs": [],
-                "interpretation": "No pattern columns found"
+                "interpretation": "No pattern columns found",
             }
-            
+
         correlation_matrix = commit_data[pattern_columns].corr(method="pearson")
 
         # Identify significant correlations
@@ -78,8 +78,10 @@ class EnhancedStatisticalAnalyzer:
         commits_df = commits_df.sort_values("date")
 
         # Monthly aggregation
-        monthly = commits_df.set_index("date").resample("ME").agg(
-            {"green_aware": "sum", "commit_hash": "count"}
+        monthly = (
+            commits_df.set_index("date")
+            .resample("ME")
+            .agg({"green_aware": "sum", "commit_hash": "count"})
         )
         monthly.columns = ["green_aware", "total_commits"]
         monthly["green_rate"] = monthly["green_aware"] / monthly["total_commits"]
@@ -142,7 +144,7 @@ class EnhancedStatisticalAnalyzer:
         mean1, mean2 = np.mean(group1), np.mean(group2)
         std1, std2 = np.std(group1, ddof=1), np.std(group2, ddof=1)
         pooled_std = np.sqrt((std1**2 + std2**2) / 2)
-        
+
         if pooled_std == 0:
             cohens_d = 0
         else:
@@ -234,12 +236,8 @@ class EnhancedStatisticalAnalyzer:
             p2 = pair["pattern2"].replace("pattern_", "")
             corr = pair["correlation"]
             if corr > 0:
-                interpretations.append(
-                    f"{p1} and {p2} tend to be adopted together (r={corr:.2f})"
-                )
+                interpretations.append(f"{p1} and {p2} tend to be adopted together (r={corr:.2f})")
             else:
-                interpretations.append(
-                    f"{p1} and {p2} rarely co-occur (r={corr:.2f})"
-                )
+                interpretations.append(f"{p1} and {p2} rarely co-occur (r={corr:.2f})")
 
         return "; ".join(interpretations)

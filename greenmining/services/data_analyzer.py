@@ -57,21 +57,21 @@ class DataAnalyzer:
         self.enable_diff_analysis = enable_diff_analysis
         self.enable_nlp = enable_nlp
         self.enable_ml_features = enable_ml_features
-        
+
         # Initialize code diff analyzer if enabled
         if self.enable_diff_analysis:
             self.diff_analyzer = CodeDiffAnalyzer()
             colored_print("Code diff analysis enabled (may increase processing time)", "cyan")
         else:
             self.diff_analyzer = None
-        
+
         # Initialize NLP analyzer if enabled
         if self.enable_nlp:
             self.nlp_analyzer = NLPAnalyzer(enable_stemming=True, enable_synonyms=True)
             colored_print("NLP analysis enabled (morphological variants + synonyms)", "cyan")
         else:
             self.nlp_analyzer = None
-        
+
         # Initialize ML feature extractor if enabled
         if self.enable_ml_features:
             self.ml_extractor = MLFeatureExtractor(green_keywords=list(GREEN_KEYWORDS))
@@ -128,21 +128,21 @@ class DataAnalyzer:
 
         # Q2: KNOWN GSF PATTERNS - Match against Green Software Foundation patterns
         matched_patterns = get_pattern_by_keywords(message)
-        
+
         # Enhanced NLP analysis (if enabled)
         nlp_results = None
         if self.nlp_analyzer:
             nlp_results = self.nlp_analyzer.analyze_text(message, list(self.green_keywords))
-            
+
             # Check if NLP found additional matches not caught by keyword matching
             has_nlp_matches, additional_terms = self.nlp_analyzer.enhance_pattern_detection(
                 message, matched_patterns
             )
-            
+
             if has_nlp_matches:
                 # NLP enhancement found additional evidence
                 green_aware = True
-        
+
         # Q3: CODE DIFF ANALYSIS (if enabled and diff data available)
         diff_analysis = None
         if self.diff_analyzer and commit.get("diff_data"):
@@ -155,14 +155,14 @@ class DataAnalyzer:
                     "patterns_detected": [],
                     "confidence": "none",
                     "evidence": {},
-                    "metrics": {}
+                    "metrics": {},
                 }
             except Exception as e:
                 diff_analysis = {
                     "enabled": True,
                     "status": f"error: {str(e)}",
                     "patterns_detected": [],
-                    "confidence": "none"
+                    "confidence": "none",
                 }
 
         # Get detailed pattern info
@@ -183,12 +183,8 @@ class DataAnalyzer:
         pattern_count = len(matched_patterns)
         if diff_analysis and diff_analysis.get("patterns_detected"):
             pattern_count += len(diff_analysis["patterns_detected"])
-        
-        confidence = (
-            "high"
-            if pattern_count >= 2
-            else "medium" if pattern_count == 1 else "low"
-        )
+
+        confidence = "high" if pattern_count >= 2 else "medium" if pattern_count == 1 else "low"
 
         result = {
             "commit_hash": commit.get("hash", commit.get("commit_id", "unknown")),
@@ -208,11 +204,11 @@ class DataAnalyzer:
             "insertions": commit.get("lines_added", commit.get("insertions", 0)),
             "deletions": commit.get("lines_deleted", commit.get("deletions", 0)),
         }
-        
+
         # Add diff analysis results if available
         if diff_analysis:
             result["diff_analysis"] = diff_analysis
-        
+
         # Add NLP analysis results if available
         if nlp_results:
             result["nlp_analysis"] = {
@@ -222,7 +218,7 @@ class DataAnalyzer:
                 "semantic_count": len(nlp_results["semantic_matches"]),
                 "phrase_count": len(nlp_results["phrase_matches"]),
             }
-        
+
         # Add ML features if enabled
         if self.enable_ml_features and self.ml_extractor:
             # Note: Full feature extraction requires repository context
@@ -232,7 +228,7 @@ class DataAnalyzer:
                 "text": text_features,
                 "note": "Full ML features require repository and historical context",
             }
-        
+
         return result
 
     def _check_green_awareness(self, message: str, files: list[str]) -> tuple[bool, Optional[str]]:

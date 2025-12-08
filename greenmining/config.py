@@ -48,11 +48,15 @@ class Config:
         self.MAX_REPOS = int(os.getenv("MAX_REPOS", "100"))
         self.COMMITS_PER_REPO = int(os.getenv("COMMITS_PER_REPO", "50"))
         self.DAYS_BACK = int(os.getenv("DAYS_BACK", "730"))  # 2 years
-        
+
         # Advanced Analyzer Configuration
         self.ENABLE_NLP_ANALYSIS = os.getenv("ENABLE_NLP_ANALYSIS", "false").lower() == "true"
-        self.ENABLE_TEMPORAL_ANALYSIS = os.getenv("ENABLE_TEMPORAL_ANALYSIS", "false").lower() == "true"
-        self.TEMPORAL_GRANULARITY = os.getenv("TEMPORAL_GRANULARITY", "quarter")  # day, week, month, quarter, year
+        self.ENABLE_TEMPORAL_ANALYSIS = (
+            os.getenv("ENABLE_TEMPORAL_ANALYSIS", "false").lower() == "true"
+        )
+        self.TEMPORAL_GRANULARITY = os.getenv(
+            "TEMPORAL_GRANULARITY", "quarter"
+        )  # day, week, month, quarter, year
         self.ENABLE_ML_FEATURES = os.getenv("ENABLE_ML_FEATURES", "false").lower() == "true"
         self.VALIDATION_SAMPLE_SIZE = int(os.getenv("VALIDATION_SAMPLE_SIZE", "30"))
 

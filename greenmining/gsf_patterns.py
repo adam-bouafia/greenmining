@@ -356,7 +356,12 @@ GSF_PATTERNS = {
     "compress_ml_models": {
         "name": "Compress ML Models for Inference",
         "category": "ai",
-        "keywords": ["model compression", "quantization", "model pruning", "knowledge distillation"],
+        "keywords": [
+            "model compression",
+            "quantization",
+            "model pruning",
+            "knowledge distillation",
+        ],
         "description": "Reduce model size through quantization, pruning, distillation",
         "sci_impact": "Dramatically reduces inference energy and memory",
     },
