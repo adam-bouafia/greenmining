@@ -1,10 +1,12 @@
 """Data analyzer for green microservices commits using GSF patterns."""
 
+from __future__ import annotations
+
 import json
 import re
 from collections import Counter
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import click
 from tqdm import tqdm

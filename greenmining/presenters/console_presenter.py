@@ -1,6 +1,8 @@
 """Console Presenter - Handles console output formatting."""
 
-from typing import Any
+from __future__ import annotations
+
+from typing import Any, Dict, List
 
 from tabulate import tabulate
 

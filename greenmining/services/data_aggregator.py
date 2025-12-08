@@ -1,9 +1,11 @@
 """Data aggregator for green microservices analysis results."""
 
+from __future__ import annotations
+
 import json
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 import click
 import pandas as pd

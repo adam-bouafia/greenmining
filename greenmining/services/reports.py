@@ -1,9 +1,11 @@
-"""Report generator for green microservices analysis."""
+"""Report generation for green mining analysis."""
+
+from __future__ import annotations
 
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 import click
 

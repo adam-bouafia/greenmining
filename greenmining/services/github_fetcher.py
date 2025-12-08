@@ -1,8 +1,10 @@
 """GitHub repository fetcher for green microservices mining."""
 
+from __future__ import annotations
+
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 import click
 from github import Github, GithubException, RateLimitExceededException
