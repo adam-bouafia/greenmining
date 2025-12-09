@@ -39,7 +39,6 @@ analysis_results.json
 
 # Documentation - organized in docs/ and examples/
 docs/
-examples/
 !README.md
 !CHANGELOG.md
 !MANIFEST.in
