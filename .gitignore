@@ -47,6 +47,9 @@ docs/
 # Task/evaluation folder (local work only)
 task/
 
+# Examples folder (local experiments only)
+examples/
+
 # Thesis work (NEVER commit - local academic work only)
 thesis/
 
