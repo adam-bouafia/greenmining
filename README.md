@@ -1,14 +1,24 @@
 # greenmining
 
-Green mining for microservices repositories.
+An empirical Python library for Mining Software Repositories (MSR) in Green IT research.
 
 [![PyPI](https://img.shields.io/pypi/v/greenmining)](https://pypi.org/project/greenmining/)
 [![Python](https://img.shields.io/pypi/pyversions/greenmining)](https://pypi.org/project/greenmining/)
 [![License](https://img.shields.io/github/license/adam-bouafia/greenmining)](LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-readthedocs-blue)](https://greenmining.readthedocs.io/)
 
 ## Overview
 
-`greenmining` is a Python library for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects sustainable software patterns across cloud, web, AI, database, networking, and general categories.
+`greenmining` is a research-grade Python library designed for **empirical Mining Software Repositories (MSR)** studies in **Green IT**. It enables researchers and practitioners to:
+
+- **Mine repositories at scale** - Fetch and analyze GitHub repositories with configurable filters
+- **Classify green commits** - Detect 122 sustainability patterns from the Green Software Foundation (GSF) catalog
+- **Analyze any repository by URL** - Direct PyDriller-based analysis without API rate limits
+- **Measure energy consumption** - RAPL and CodeCarbon backends for power profiling
+- **Generate research datasets** - Statistical analysis, temporal trends, and publication-ready reports
+- **Study green software evolution** - Track adoption patterns across projects and time periods
+
+Whether you're conducting MSR research, analyzing green software adoption, or measuring the energy footprint of codebases, GreenMining provides the empirical toolkit you need.
 
 ## Installation
 

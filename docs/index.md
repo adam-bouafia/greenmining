@@ -1,7 +1,7 @@
 # GreenMining Documentation
 
 <p align="center">
-  <strong>A Python library for mining and analyzing green software engineering patterns in GitHub repositories</strong>
+  <strong>An empirical Python library for Mining Software Repositories (MSR) in Green IT research</strong>
 </p>
 
 <p align="center">
@@ -14,7 +14,15 @@
 
 ## What is GreenMining?
 
-GreenMining is a research-grade tool for analyzing software repositories to detect **green software engineering practices**. It identifies commits that implement sustainability patterns based on the [Green Software Foundation (GSF)](https://patterns.greensoftware.foundation/) catalog.
+GreenMining is an **empirical research tool** for Mining Software Repositories (MSR) focused on **Green IT** and sustainable software practices. It provides researchers and practitioners with a comprehensive toolkit for:
+
+- **Mining repositories** at scale to study green software evolution
+- **Classifying commits** using the [Green Software Foundation (GSF)](https://patterns.greensoftware.foundation/) pattern catalog
+- **Measuring energy consumption** of software systems and analysis workloads
+- **Analyzing temporal trends** and adoption patterns across projects
+- **Generating research-ready datasets** with statistical analysis
+
+The library integrates with PyDriller for deep repository analysis and supports multiple energy measurement backends (RAPL, CodeCarbon) for empirical Green IT research.
 
 ### Key Capabilities
 
@@ -114,6 +122,12 @@ GreenMining detects **122 patterns** across **15 categories**:
 - [Basic Usage](examples/basic.md) - Simple pattern detection examples
 - [Complete Pipeline](examples/pipeline.md) - Full research workflow example
 
+### Project
+
+- [Roadmap](roadmap.md) - Future features and development plans
+- [Contributing](contributing.md) - How to contribute to GreenMining
+- [Changelog](changelog.md) - Version history and release notes
+
 ---
 
 ## Example Output
@@ -146,13 +160,32 @@ Categories Distribution:
 
 ## Research Applications
 
-GreenMining is designed for software engineering research:
+GreenMining is designed for **empirical MSR research** in Green IT:
 
-- **Mining Software Repositories (MSR)** studies on green practices
-- **Green Software Foundation** pattern adoption analysis
-- **Temporal trend analysis** of sustainability practices
-- **Cross-repository comparison** of green awareness
-- **Energy measurement** of analysis workloads
+### Mining Software Repositories (MSR)
+- Large-scale repository mining with GitHub API and GraphQL
+- Configurable filters (stars, languages, dates, keywords)
+- Batch processing with rate limit handling
+
+### Green IT Pattern Analysis
+- 122 GSF patterns across 15 sustainability categories
+- Keyword-based commit classification with confidence scoring
+- Pattern co-occurrence and correlation analysis
+
+### Temporal & Statistical Analysis
+- Trend analysis at configurable granularity (day/week/month/quarter/year)
+- Effect size calculations (Cohen's d, Cliff's delta)
+- Cross-repository comparative studies
+
+### Energy Measurement
+- RAPL backend for direct CPU/DRAM power measurement (Linux)
+- CodeCarbon integration for cross-platform emissions tracking
+- Energy profiling of analysis workloads
+
+### Research Outputs
+- JSON, CSV, and Markdown report generation
+- Publication-ready statistical summaries
+- Reproducible analysis pipelines
 
 ---
 
