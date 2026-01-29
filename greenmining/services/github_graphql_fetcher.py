@@ -1,9 +1,7 @@
-"""
-GitHub GraphQL API fetcher for faster and more efficient repository fetching.
-
-GraphQL allows fetching exactly the data you need in a single request,
-reducing API calls and improving rate limit efficiency.
-"""
+# GitHub GraphQL API fetcher for faster and more efficient repository fetching.
+#
+# GraphQL allows fetching exactly the data you need in a single request,
+# reducing API calls and improving rate limit efficiency.
 
 import json
 import time
@@ -15,25 +13,21 @@ from greenmining.models.repository import Repository
 
 
 class GitHubGraphQLFetcher:
-    """
-    Fetch GitHub repositories using GraphQL API v4.
-
-    Benefits over REST API:
-    - Fetch repos + commits in 1 request instead of 100+ REST calls
-    - Get exactly the fields you need (no over-fetching)
-    - Better rate limit efficiency (5000 points/hour vs 5000 requests/hour)
-    - More powerful search capabilities
-    """
+    # Fetch GitHub repositories using GraphQL API v4.
+    #
+    # Benefits over REST API:
+    # - Fetch repos + commits in 1 request instead of 100+ REST calls
+    # - Get exactly the fields you need (no over-fetching)
+    # - Better rate limit efficiency (5000 points/hour vs 5000 requests/hour)
+    # - More powerful search capabilities
 
     GRAPHQL_ENDPOINT = "https://api.github.com/graphql"
 
     def __init__(self, token: str):
-        """
-        Initialize GraphQL fetcher.
-
-        Args:
-            token: GitHub personal access token
-        """
+        # Initialize GraphQL fetcher.
+        #
+        # Args:
+        #     token: GitHub personal access token
         self.token = token
         self.headers = {
             "Authorization": f"Bearer {token}",
@@ -51,22 +45,20 @@ class GitHubGraphQLFetcher:
         pushed_after: Optional[str] = None,
         pushed_before: Optional[str] = None,
     ) -> List[Repository]:
-        """
-        Search GitHub repositories using GraphQL.
-
-        Args:
-            keywords: Search keywords
-            max_repos: Maximum number of repositories to fetch
-            min_stars: Minimum star count
-            languages: Programming languages to filter
-            created_after: Created after date (YYYY-MM-DD)
-            created_before: Created before date (YYYY-MM-DD)
-            pushed_after: Pushed after date (YYYY-MM-DD)
-            pushed_before: Pushed before date (YYYY-MM-DD)
-
-        Returns:
-            List of Repository objects
-        """
+        # Search GitHub repositories using GraphQL.
+        #
+        # Args:
+        #     keywords: Search keywords
+        #     max_repos: Maximum number of repositories to fetch
+        #     min_stars: Minimum star count
+        #     languages: Programming languages to filter
+        #     created_after: Created after date (YYYY-MM-DD)
+        #     created_before: Created before date (YYYY-MM-DD)
+        #     pushed_after: Pushed after date (YYYY-MM-DD)
+        #     pushed_before: Pushed before date (YYYY-MM-DD)
+        #
+        # Returns:
+        #     List of Repository objects
         # Build search query
         search_query = self._build_search_query(
             keywords,
@@ -195,7 +187,7 @@ class GitHubGraphQLFetcher:
         pushed_after: Optional[str],
         pushed_before: Optional[str],
     ) -> str:
-        """Build GitHub search query string."""
+        # Build GitHub search query string.
         query_parts = [keywords]
 
         # Star count
@@ -219,7 +211,7 @@ class GitHubGraphQLFetcher:
         return " ".join(query_parts)
 
     def _execute_query(self, query: str, variables: Dict[str, Any]) -> Dict[str, Any]:
-        """Execute GraphQL query."""
+        # Execute GraphQL query.
         payload = {"query": query, "variables": variables}
 
         response = requests.post(
@@ -230,7 +222,7 @@ class GitHubGraphQLFetcher:
         return response.json()
 
     def _parse_repository(self, node: Dict[str, Any]) -> Repository:
-        """Parse GraphQL repository node to Repository object."""
+        # Parse GraphQL repository node to Repository object.
         # Extract languages
         languages = []
         if node.get("languages") and node["languages"].get("nodes"):
@@ -265,20 +257,18 @@ class GitHubGraphQLFetcher:
     def get_repository_commits(
         self, owner: str, name: str, max_commits: int = 100
     ) -> List[Dict[str, Any]]:
-        """
-        Fetch commits for a specific repository using GraphQL.
-
-        This is much faster than REST API as it gets all commits in 1-2 requests
-        instead of paginating through 100 individual REST calls.
-
-        Args:
-            owner: Repository owner
-            name: Repository name
-            max_commits: Maximum commits to fetch
-
-        Returns:
-            List of commit dictionaries
-        """
+        # Fetch commits for a specific repository using GraphQL.
+        #
+        # This is much faster than REST API as it gets all commits in 1-2 requests
+        # instead of paginating through 100 individual REST calls.
+        #
+        # Args:
+        #     owner: Repository owner
+        #     name: Repository name
+        #     max_commits: Maximum commits to fetch
+        #
+        # Returns:
+        #     List of commit dictionaries
         query = """
         query($owner: String!, $name: String!, $first: Int!) {
           repository(owner: $owner, name: $name) {
@@ -359,7 +349,7 @@ class GitHubGraphQLFetcher:
         return commits
 
     def save_results(self, repositories: List[Repository], output_file: str):
-        """Save repositories to JSON file."""
+        # Save repositories to JSON file.
         data = {
             "total_repositories": len(repositories),
             "repositories": [repo.to_dict() for repo in repositories],

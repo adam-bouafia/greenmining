@@ -1,21 +1,19 @@
-"""
-================================================================================
-DEADCODE - OLD REST API IMPLEMENTATION
-================================================================================
-
-This file contains the OLD GitHub REST API implementation.
-It has been REPLACED by GitHubGraphQLFetcher for better performance.
-
-Performance comparison:
-  REST API:    10+ requests for 100 repos, ~2 minutes
-  GraphQL API: 1-2 requests for 100 repos, ~15 seconds (10x faster!)
-
-USE INSTEAD: greenmining.services.github_graphql_fetcher.GitHubGraphQLFetcher
-
-This file is kept for reference only. Do not use in production.
-
-================================================================================
-"""
+# ================================================================================
+# DEADCODE - OLD REST API IMPLEMENTATION
+# ================================================================================
+#
+# This file contains the OLD GitHub REST API implementation.
+# It has been REPLACED by GitHubGraphQLFetcher for better performance.
+#
+# Performance comparison:
+#   REST API:    10+ requests for 100 repos, ~2 minutes
+#   GraphQL API: 1-2 requests for 100 repos, ~15 seconds (10x faster!)
+#
+# USE INSTEAD: greenmining.services.github_graphql_fetcher.GitHubGraphQLFetcher
+#
+# This file is kept for reference only. Do not use in production.
+#
+# ================================================================================
 
 # GitHub repository fetcher for green microservices mining.
 

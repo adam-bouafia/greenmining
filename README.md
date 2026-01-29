@@ -8,7 +8,7 @@ Green mining for microservices repositories.
 
 ## Overview
 
-`greenmining` is a Python library and CLI tool for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects sustainable software patterns across cloud, web, AI, database, networking, and general categories.
+`greenmining` is a Python library for analyzing GitHub repositories to identify green software engineering practices and energy-efficient patterns. It detects sustainable software patterns across cloud, web, AI, database, networking, and general categories.
 
 ## Installation
 
@@ -52,7 +52,7 @@ if is_green_aware(commit_msg):
     # Output: ['Cache Static Data', 'Use Efficient Cache Strategies']
 ```
 
-#### Fetch Repositories with Custom Keywords (NEW)
+#### Fetch Repositories with Custom Keywords
 
 ```python
 from greenmining import fetch_repositories
@@ -91,8 +91,6 @@ for repo in repos[:5]:
 ```python
 from greenmining.services.commit_extractor import CommitExtractor
 from greenmining.services.data_analyzer import DataAnalyzer
-from greenmining.analyzers.nlp_analyzer import NLPAnalyzer
-from greenmining.analyzers.ml_feature_extractor import MLFeatureExtractor
 from greenmining import fetch_repositories
 
 # Fetch repositories with custom keywords
@@ -142,18 +140,6 @@ for commit in commits:
         results.append(result)
         print(f"Green commit found: {commit.message[:50]}...")
         print(f"  Patterns: {result['known_pattern']}")
-        
-        # Access NLP analysis results (NEW)
-        if 'nlp_analysis' in result:
-            nlp = result['nlp_analysis']
-            print(f"  NLP: {nlp['morphological_count']} morphological matches, "
-                  f"{nlp['semantic_count']} semantic matches")
-        
-        # Access ML features (NEW)
-        if 'ml_features' in result:
-            ml = result['ml_features']['text']
-            print(f"  ML Features: {ml['word_count']} words, "
-                  f"keyword density: {ml['keyword_density']:.2f}")
 ```
 
 #### Access Sustainability Patterns Data
@@ -189,7 +175,7 @@ print(f"Available categories: {sorted(categories)}")
 #          'monitoring', 'network', 'networking', 'resource', 'web']
 ```
 
-#### Advanced Analysis: Temporal Trends (NEW)
+#### Advanced Analysis: Temporal Trends
 
 ```python
 from greenmining.services.data_aggregator import DataAggregator
@@ -321,7 +307,7 @@ repositories = fetch_repositories(
     min_stars=10,
     keywords="software engineering",
 )
-print(f"✓ Fetched {len(repositories)} repositories")
+print(f"Fetched {len(repositories)} repositories")
 
 # STAGE 2: Extract Commits
 print("\nExtracting commits...")
@@ -333,7 +319,7 @@ extractor = CommitExtractor(
     timeout=120,
 )
 all_commits = extractor.extract_from_repositories(repositories)
-print(f"✓ Extracted {len(all_commits)} commits")
+print(f"Extracted {len(all_commits)} commits")
 
 # Save commits
 extractor.save_results(
@@ -352,8 +338,8 @@ analyzed_commits = analyzer.analyze_commits(all_commits)
 # Count green-aware commits
 green_count = sum(1 for c in analyzed_commits if c.get("green_aware", False))
 green_percentage = (green_count / len(analyzed_commits) * 100) if analyzed_commits else 0
-print(f"✓ Analyzed {len(analyzed_commits)} commits")
-print(f"✓ Green-aware: {green_count} ({green_percentage:.1f}%)")
+print(f"Analyzed {len(analyzed_commits)} commits")
+print(f"Green-aware: {green_count} ({green_percentage:.1f}%)")
 
 # Save analysis
 analyzer.save_results(analyzed_commits, output_dir / "analyzed.json")
@@ -381,7 +367,7 @@ print("\n" + "="*80)
 print("ANALYSIS COMPLETE")
 print("="*80)
 aggregator.print_summary(results)
-print(f"\n📁 Results saved in: {output_dir.absolute()}")
+print(f"\nResults saved in: {output_dir.absolute()}")
 ```
 
 **What this example does:**

@@ -1,4 +1,4 @@
-"""Setup script for backward compatibility with older pip versions."""
+# Setup script for backward compatibility with older pip versions.
 
 from setuptools import setup
 
