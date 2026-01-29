@@ -37,8 +37,8 @@ repositories.json
 commits.json
 analysis_results.json
 
-# Documentation 
-docs/
+# Documentation build output
+site/
 !README.md
 !CHANGELOG.md
 !MANIFEST.in
