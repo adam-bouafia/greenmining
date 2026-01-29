@@ -39,6 +39,7 @@ analysis_results.json
 
 # Documentation build output
 site/
+docs/roadmap.md
 !README.md
 !CHANGELOG.md
 !MANIFEST.in
