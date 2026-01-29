@@ -229,12 +229,10 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
         # Pattern descriptions
         pattern_details = []
         for i, pattern in enumerate(patterns[:10], 1):
-            pattern_details.append(
-                f"""**{i}. {pattern['pattern_name']}**
+            pattern_details.append(f"""**{i}. {pattern['pattern_name']}**
 - Frequency: {format_number(pattern['count'])} commits ({format_percentage(pattern['percentage'])})
 - Confidence Distribution: HIGH={conf['HIGH']}, MEDIUM={conf['MEDIUM']}, LOW={conf['LOW']}
-- Example Commits: {', '.join([c[:8] for c in pattern['example_commits'][:3]])}"""
-            )
+- Example Commits: {', '.join([c[:8] for c in pattern['example_commits'][:3]])}""")
 
         return f"""#### 2.2 Known Green Patterns & Tactics Applied
 
@@ -259,12 +257,10 @@ No novel microservice-specific green practices were automatically detected. Manu
 
         pattern_list = []
         for pattern in emergent:
-            pattern_list.append(
-                f"""**Pattern:** {pattern['pattern_name']}
+            pattern_list.append(f"""**Pattern:** {pattern['pattern_name']}
 - Occurrences: {pattern['count']}
 - Description: {pattern['description']}
-- Example Commits: {', '.join([c[:8] for c in pattern['example_commits'][:3]])}"""
-            )
+- Example Commits: {', '.join([c[:8] for c in pattern['example_commits'][:3]])}""")
 
         return f"""#### 2.3 Emerging Practices Discovered
 
