@@ -1,4 +1,5 @@
 # Report generation for green mining analysis.
+"""Report generation module for GreenMining analysis results."""
 
 from __future__ import annotations
 
