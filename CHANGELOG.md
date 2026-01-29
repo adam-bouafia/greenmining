@@ -84,7 +84,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pattern matching engine
 - Green awareness detection
 - Data analysis and reporting
-- CLI interface with Click
 - Docker support with multi-stage builds
 - GitHub Actions CI/CD pipeline
 - PyPI publishing workflow

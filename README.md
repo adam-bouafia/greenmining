@@ -633,8 +633,7 @@ ruff check greenmining/ tests/
 - Python 3.9+
 - PyGithub >= 2.1.1
 - PyDriller >= 2.5
-- pandas >= 2.2.0
-- click >= 8.1.7
+- pandas >= 2.2.0 
 - codecarbon >= 2.0.0 (optional, for cross-platform energy measurement)
 
 ## License

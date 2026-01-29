@@ -57,7 +57,6 @@ nav:
     - Quick Start: getting-started/quickstart.md
     - Configuration: getting-started/configuration.md
   - User Guide:
-    - CLI Commands: user-guide/cli.md
     - Python API: user-guide/api.md
     - URL Analysis: user-guide/url-analysis.md
     - Energy Measurement: user-guide/energy.md
@@ -73,9 +72,11 @@ nav:
 
 extra:
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/adam-bouafia/
     - icon: fontawesome/brands/github
       link: https://github.com/adam-bouafia/greenmining
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/greenmining/
 
-copyright: Copyright &copy; 2024-2026 Adam Bouafia
+copyright: Copyright &copy; 2026 Adam Bouafia
