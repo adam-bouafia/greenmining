@@ -1,8 +1,4 @@
-"""
-Models Package - Data models and entities for green microservices mining.
-
-This package contains all data structures and domain models following MCP architecture.
-"""
+# Models Package - Data models and entities for green microservices mining.
 
 from .aggregated_stats import AggregatedStats
 from .analysis_result import AnalysisResult

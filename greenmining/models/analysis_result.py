@@ -1,4 +1,4 @@
-"""Analysis Result Model - Represents commit analysis output."""
+# Analysis Result Model - Represents commit analysis output.
 
 from dataclasses import dataclass
 from typing import Optional
@@ -6,7 +6,7 @@ from typing import Optional
 
 @dataclass
 class AnalysisResult:
-    """Data model for commit analysis results."""
+    # Data model for commit analysis results.
 
     commit_id: str
     repo_name: str
@@ -26,7 +26,7 @@ class AnalysisResult:
             self.files_changed = []
 
     def to_dict(self) -> dict:
-        """Convert to dictionary."""
+        # Convert to dictionary.
         return {
             "commit_id": self.commit_id,
             "repo_name": self.repo_name,
@@ -44,5 +44,5 @@ class AnalysisResult:
 
     @classmethod
     def from_dict(cls, data: dict) -> "AnalysisResult":
-        """Create from dictionary."""
+        # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})

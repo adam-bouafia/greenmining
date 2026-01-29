@@ -1,4 +1,4 @@
-"""Commit Model - Represents a Git commit."""
+# Commit Model - Represents a Git commit.
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import List
 
 @dataclass
 class Commit:
-    """Data model for a Git commit."""
+    # Data model for a Git commit.
 
     commit_id: str
     repo_name: str
@@ -26,7 +26,7 @@ class Commit:
     in_main_branch: bool = True
 
     def to_dict(self) -> dict:
-        """Convert to dictionary."""
+        # Convert to dictionary.
         return {
             "commit_id": self.commit_id,
             "repo_name": self.repo_name,
@@ -46,12 +46,12 @@ class Commit:
 
     @classmethod
     def from_dict(cls, data: dict) -> "Commit":
-        """Create from dictionary."""
+        # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})
 
     @classmethod
     def from_pydriller_commit(cls, commit, repo_name: str) -> "Commit":
-        """Create from PyDriller commit object."""
+        # Create from PyDriller commit object.
         return cls(
             commit_id=commit.hash,
             repo_name=repo_name,

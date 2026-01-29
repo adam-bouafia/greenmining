@@ -1,4 +1,4 @@
-"""Aggregated Statistics Model - Represents aggregated analysis data."""
+# Aggregated Statistics Model - Represents aggregated analysis data.
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import Dict, List, Optional
 
 @dataclass
 class AggregatedStats:
-    """Data model for aggregated statistics."""
+    # Data model for aggregated statistics.
 
     summary: dict = field(default_factory=dict)
     known_patterns: dict = field(default_factory=dict)
@@ -17,7 +17,7 @@ class AggregatedStats:
     timestamp: Optional[str] = None
 
     def to_dict(self) -> dict:
-        """Convert to dictionary."""
+        # Convert to dictionary.
         return {
             "summary": self.summary,
             "known_patterns": self.known_patterns,
@@ -28,5 +28,5 @@ class AggregatedStats:
 
     @classmethod
     def from_dict(cls, data: dict) -> "AggregatedStats":
-        """Create from dictionary."""
+        # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})

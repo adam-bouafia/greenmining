@@ -1,4 +1,4 @@
-"""Code diff analyzer for detecting green software patterns in code changes."""
+# Code diff analyzer for detecting green software patterns in code changes.
 
 import re
 from typing import Any, Dict, List
@@ -7,10 +7,7 @@ from pydriller import Commit, ModifiedFile
 
 
 class CodeDiffAnalyzer:
-    """
-    Analyze code diffs to detect green software patterns
-    beyond commit message keywords.
-    """
+    # Analyze code diffs to detect green software patterns
 
     # Pattern indicators in code changes
     PATTERN_SIGNATURES = {
@@ -64,22 +61,154 @@ class CodeDiffAnalyzer:
             "keywords": [r"lazy", r"defer", r"\.only\(", r"select_related"],
             "patterns": [r"@lazy", r"LazyLoader", r"dynamic.*import"],
         },
+        # NEW: Serverless computing patterns
+        "serverless_computing": {
+            "providers": [
+                r"aws.*lambda",
+                r"@app\.route",
+                r"functions\.https",
+                r"azure.*function",
+            ],
+            "frameworks": [r"serverless", r"chalice", r"zappa", r"claudia"],
+            "keywords": [r"lambda_handler", r"cloud.*function", r"function.*app"],
+        },
+        # NEW: CDN and edge computing
+        "cdn_edge": {
+            "providers": [
+                r"cloudflare",
+                r"cloudfront",
+                r"fastly",
+                r"akamai",
+                r"cdn\.js",
+            ],
+            "keywords": [
+                r"edge.*cache",
+                r"cdn",
+                r"\.distribute\(",
+                r"edge.*function",
+            ],
+        },
+        # NEW: Compression patterns
+        "compression": {
+            "algorithms": [r"gzip", r"brotli", r"deflate", r"zstd", r"lz4"],
+            "keywords": [
+                r"compress",
+                r"decompress",
+                r"\.gz\b",
+                r"Content-Encoding",
+            ],
+            "libraries": [r"import gzip", r"import zlib", r"import brotli"],
+        },
+        # NEW: ML model optimization
+        "model_optimization": {
+            "techniques": [
+                r"quantize",
+                r"quantization",
+                r"prune",
+                r"pruning",
+                r"distill",
+            ],
+            "formats": [r"onnx", r"tensorrt", r"tflite", r"coreml"],
+            "keywords": [
+                r"int8",
+                r"fp16",
+                r"mixed.*precision",
+                r"model\.optimize",
+            ],
+        },
+        # NEW: Efficient protocols (HTTP/2, gRPC)
+        "efficient_protocols": {
+            "http2": [r"http2", r"http/2", r"h2", r"alpn"],
+            "grpc": [r"grpc", r"protobuf", r"\.proto\b"],
+            "keywords": [
+                r"stream",
+                r"multiplexing",
+                r"server.*push",
+                r"binary.*protocol",
+            ],
+        },
+        # NEW: Container optimization
+        "container_optimization": {
+            "base_images": [
+                r"FROM.*alpine",
+                r"FROM.*scratch",
+                r"FROM.*distroless",
+            ],
+            "techniques": [
+                r"multi-stage",
+                r"--no-install-recommends",
+                r"&&.*rm.*-rf",
+                r"\.dockerignore",
+            ],
+            "keywords": [r"layer.*cache", r"build.*cache", r"image.*size"],
+        },
+        # NEW: Green cloud regions
+        "green_regions": {
+            "regions": [
+                r"eu-west",
+                r"eu-north",
+                r"sweden",
+                r"norway",
+                r"canada",
+            ],
+            "keywords": [
+                r"renewable",
+                r"green.*region",
+                r"sustainable.*region",
+                r"carbon.*neutral",
+            ],
+        },
+        # NEW: Auto-scaling patterns
+        "auto_scaling": {
+            "kubernetes": [
+                r"HorizontalPodAutoscaler",
+                r"autoscaling/v",
+                r"hpa",
+                r"minReplicas",
+                r"maxReplicas",
+            ],
+            "cloud": [
+                r"auto.*scal",
+                r"scale.*to.*zero",
+                r"ScalingPolicy",
+                r"TargetTracking",
+            ],
+            "keywords": [
+                r"scale.*up",
+                r"scale.*down",
+                r"metrics.*server",
+                r"cpu.*utilization",
+            ],
+        },
+        # NEW: Code splitting and lazy loading (web)
+        "code_splitting": {
+            "webpack": [
+                r"dynamic.*import",
+                r"lazy.*load",
+                r"code.*split",
+                r"chunk",
+            ],
+            "react": [r"React\.lazy", r"Suspense", r"loadable"],
+            "keywords": [r"bundle", r"split.*chunk", r"async.*component"],
+        },
+        # NEW: Green ML training
+        "green_ml_training": {
+            "keywords": [
+                r"early.*stopping",
+                r"learning.*rate.*scheduler",
+                r"gradient.*checkpointing",
+                r"mixed.*precision",
+            ],
+            "frameworks": [
+                r"apex",
+                r"torch\.cuda\.amp",
+                r"tf\.keras\.mixed_precision",
+            ],
+        },
     }
 
     def analyze_commit_diff(self, commit: Commit) -> Dict[str, Any]:
-        """
-        Analyze code changes in a commit to detect green patterns.
-
-        Args:
-            commit: PyDriller Commit object
-
-        Returns:
-            Dictionary containing:
-            - patterns_detected: List of detected pattern names
-            - confidence: Confidence level (high/medium/low/none)
-            - evidence: Dictionary mapping patterns to evidence lines
-            - metrics: Code change metrics
-        """
+        # Analyze code changes in a commit to detect green patterns.
         patterns_detected = []
         evidence = {}
         metrics = self._calculate_metrics(commit)
@@ -116,15 +245,7 @@ class CodeDiffAnalyzer:
         }
 
     def _detect_patterns_in_line(self, code_line: str) -> List[str]:
-        """
-        Detect patterns in a single line of code.
-
-        Args:
-            code_line: Line of code to analyze
-
-        Returns:
-            List of detected pattern names
-        """
+        # Detect patterns in a single line of code.
         detected = []
 
         for pattern_name, signatures in self.PATTERN_SIGNATURES.items():
@@ -137,15 +258,7 @@ class CodeDiffAnalyzer:
         return detected
 
     def _calculate_metrics(self, commit: Commit) -> Dict[str, int]:
-        """
-        Calculate code change metrics.
-
-        Args:
-            commit: PyDriller Commit object
-
-        Returns:
-            Dictionary of metrics
-        """
+        # Calculate code change metrics.
         lines_added = sum(f.added_lines for f in commit.modified_files)
         lines_removed = sum(f.deleted_lines for f in commit.modified_files)
         files_changed = len(commit.modified_files)
@@ -165,22 +278,7 @@ class CodeDiffAnalyzer:
     def _calculate_diff_confidence(
         self, patterns: List[str], evidence: Dict[str, List[str]], metrics: Dict[str, int]
     ) -> str:
-        """
-        Calculate confidence level for diff-based detection.
-
-        Factors:
-        - Number of patterns detected
-        - Amount of evidence per pattern
-        - Code change magnitude
-
-        Args:
-            patterns: List of detected patterns
-            evidence: Dictionary mapping patterns to evidence
-            metrics: Code change metrics
-
-        Returns:
-            Confidence level: high/medium/low/none
-        """
+        # Calculate confidence level for diff-based detection.
         if not patterns:
             return "none"
 
@@ -194,15 +292,7 @@ class CodeDiffAnalyzer:
             return "low"
 
     def _is_code_file(self, modified_file: ModifiedFile) -> bool:
-        """
-        Check if file is a code file (not config, docs, etc.).
-
-        Args:
-            modified_file: PyDriller ModifiedFile object
-
-        Returns:
-            True if file is a code file
-        """
+        # Check if file is a code file (not config, docs, etc.).
         code_extensions = [
             ".py",
             ".java",

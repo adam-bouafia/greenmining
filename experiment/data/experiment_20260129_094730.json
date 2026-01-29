@@ -1,0 +1,40 @@
+{
+  "experiment_date": "2026-01-29T09:47:30.760596",
+  "config": {
+    "max_commits_per_repo": 10,
+    "repositories_count": 5
+  },
+  "summary": {
+    "total_commits": 0,
+    "green_commits": 0,
+    "green_percentage": 0,
+    "patterns_found": {}
+  },
+  "results": [
+    {
+      "repository": "fastapi",
+      "url": "https://github.com/tiangolo/fastapi",
+      "error": "'CommitAnalysis' object has no attribute 'is_green_aware'"
+    },
+    {
+      "repository": "flask",
+      "url": "https://github.com/pallets/flask",
+      "error": "'CommitAnalysis' object has no attribute 'is_green_aware'"
+    },
+    {
+      "repository": "requests",
+      "url": "https://github.com/psf/requests",
+      "error": "'CommitAnalysis' object has no attribute 'is_green_aware'"
+    },
+    {
+      "repository": "httpx",
+      "url": "https://github.com/encode/httpx",
+      "error": "'CommitAnalysis' object has no attribute 'is_green_aware'"
+    },
+    {
+      "repository": "poetry",
+      "url": "https://github.com/python-poetry/poetry",
+      "error": "'CommitAnalysis' object has no attribute 'is_green_aware'"
+    }
+  ]
+}

@@ -1,15 +1,4 @@
-"""
-Qualitative Analysis Framework for Pattern Validation
-
-Implements qualitative validation from Soliman et al. (2017):
-- Stratified random sampling for manual validation
-- Precision/recall calculation framework
-- Inter-rater reliability support
-- False positive/negative tracking
-
-Based on Soliman et al.: 42/151 studies used qualitative analysis
-Critical for: validating IR-based approaches, calculating accuracy metrics
-"""
+# Qualitative Analysis Framework for Pattern Validation
 
 from __future__ import annotations
 
@@ -22,7 +11,7 @@ import json
 
 @dataclass
 class ValidationSample:
-    """Represents a single validation sample"""
+    # Represents a single validation sample
 
     commit_sha: str
     commit_message: str
@@ -38,7 +27,7 @@ class ValidationSample:
 
 @dataclass
 class ValidationMetrics:
-    """Precision/recall metrics for validation"""
+    # Precision/recall metrics for validation
 
     true_positives: int
     false_positives: int
@@ -51,26 +40,10 @@ class ValidationMetrics:
 
 
 class QualitativeAnalyzer:
-    """
-    Framework for manual validation and qualitative analysis.
-
-    Implements:
-    1. Stratified sampling (ensure representation across categories)
-    2. Validation workflow (export → review → import → calculate metrics)
-    3. Precision/recall calculation
-    4. Inter-rater reliability (if multiple reviewers)
-
-    Based on Soliman et al.: "42 studies used qualitative analysis for validation"
-    """
+    # Framework for manual validation and qualitative analysis.
 
     def __init__(self, sample_size: int = 30, stratify_by: str = "pattern"):
-        """
-        Initialize qualitative analyzer.
-
-        Args:
-            sample_size: Number of commits to sample for validation
-            stratify_by: Stratification method ('pattern', 'repository', 'time', 'random')
-        """
+        # Initialize qualitative analyzer.
         self.sample_size = sample_size
         self.stratify_by = stratify_by
         self.samples: List[ValidationSample] = []
@@ -78,17 +51,7 @@ class QualitativeAnalyzer:
     def generate_validation_samples(
         self, commits: List[Dict], analysis_results: List[Dict], include_negatives: bool = True
     ) -> List[ValidationSample]:
-        """
-        Generate stratified validation samples.
-
-        Args:
-            commits: All commits
-            analysis_results: Pattern detection results
-            include_negatives: Include non-green commits for false negative detection
-
-        Returns:
-            List of ValidationSample objects
-        """
+        # Generate stratified validation samples.
         # Build commit lookup
         commit_lookup = {c.get("hash", c.get("sha")): c for c in commits}
 
@@ -141,7 +104,7 @@ class QualitativeAnalyzer:
         return samples
 
     def _stratified_sample_by_pattern(self, results: List[Dict], sample_size: int) -> List[Dict]:
-        """Stratified sampling ensuring each pattern category is represented."""
+        # Stratified sampling ensuring each pattern category is represented.
         # Group by dominant pattern
         pattern_groups = defaultdict(list)
         for result in results:
@@ -172,7 +135,7 @@ class QualitativeAnalyzer:
     def _stratified_sample_by_repo(
         self, results: List[Dict], commit_lookup: Dict, sample_size: int
     ) -> List[Dict]:
-        """Stratified sampling ensuring each repository is represented."""
+        # Stratified sampling ensuring each repository is represented.
         # Group by repository
         repo_groups = defaultdict(list)
         for result in results:
@@ -194,12 +157,7 @@ class QualitativeAnalyzer:
         return samples[:sample_size]
 
     def export_samples_for_review(self, output_path: str) -> None:
-        """
-        Export validation samples to JSON for manual review.
-
-        Args:
-            output_path: Path to output JSON file
-        """
+        # Export validation samples to JSON for manual review.
         samples_data = []
         for i, sample in enumerate(self.samples, 1):
             samples_data.append(
@@ -223,12 +181,7 @@ class QualitativeAnalyzer:
             json.dump(samples_data, f, indent=2)
 
     def import_validated_samples(self, input_path: str) -> None:
-        """
-        Import manually validated samples from JSON.
-
-        Args:
-            input_path: Path to JSON file with validated samples
-        """
+        # Import manually validated samples from JSON.
         with open(input_path, "r") as f:
             samples_data = json.load(f)
 
@@ -248,12 +201,7 @@ class QualitativeAnalyzer:
                     break
 
     def calculate_metrics(self) -> ValidationMetrics:
-        """
-        Calculate precision, recall, F1, and accuracy.
-
-        Returns:
-            ValidationMetrics object
-        """
+        # Calculate precision, recall, F1, and accuracy.
         # Count outcomes
         tp = 0  # True positive: detected as green, truly green
         fp = 0  # False positive: detected as green, not green
@@ -295,12 +243,7 @@ class QualitativeAnalyzer:
         )
 
     def get_validation_report(self) -> Dict:
-        """
-        Generate comprehensive validation report.
-
-        Returns:
-            Dictionary with validation statistics and metrics
-        """
+        # Generate comprehensive validation report.
         validated_count = sum(1 for s in self.samples if s.validation_status == "validated")
         pending_count = sum(1 for s in self.samples if s.validation_status == "pending")
 
@@ -360,7 +303,7 @@ class QualitativeAnalyzer:
         }
 
     def _analyze_pattern_accuracy(self) -> Dict:
-        """Analyze accuracy per pattern category."""
+        # Analyze accuracy per pattern category.
         pattern_stats = defaultdict(lambda: {"tp": 0, "fp": 0})
 
         for sample in self.samples:
@@ -391,16 +334,7 @@ class QualitativeAnalyzer:
         samples_from_reviewer_a: List[ValidationSample],
         samples_from_reviewer_b: List[ValidationSample],
     ) -> Dict:
-        """
-        Calculate inter-rater reliability (Cohen's Kappa).
-
-        Args:
-            samples_from_reviewer_a: Samples validated by reviewer A
-            samples_from_reviewer_b: Samples validated by reviewer B (same commits)
-
-        Returns:
-            Dictionary with Cohen's Kappa and agreement statistics
-        """
+        # Calculate inter-rater reliability (Cohen's Kappa).
         # Match samples by commit_sha
         matched_samples = []
         for sample_a in samples_from_reviewer_a:
@@ -445,7 +379,7 @@ class QualitativeAnalyzer:
         }
 
     def _interpret_kappa(self, kappa: float) -> str:
-        """Interpret Cohen's Kappa value."""
+        # Interpret Cohen's Kappa value.
         if kappa < 0:
             return "Poor (less than chance)"
         elif kappa < 0.20:

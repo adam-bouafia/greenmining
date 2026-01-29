@@ -1,10 +1,4 @@
-"""
-Green Software Foundation Patterns
-Official patterns from https://patterns.greensoftware.foundation/
-
-Categories: Cloud (40+ patterns), Web (15+ patterns), AI/ML (10+ patterns)
-Total: 65+ official GSF patterns
-"""
+# Green Software Foundation Patterns
 
 GSF_PATTERNS = {
     # ==================== CLOUD PATTERNS (40+) ====================
@@ -1219,7 +1213,7 @@ GSF_PATTERNS = {
     },
 }
 
-# Green software keywords (comprehensive list from all GSF patterns + VU Amsterdam research)
+# Green software keywords (comprehensive list from all GSF patterns)
 GREEN_KEYWORDS = [
     # Core sustainability terms
     "energy",
@@ -1565,15 +1559,7 @@ GREEN_KEYWORDS = [
 
 
 def get_pattern_by_keywords(commit_message: str) -> list:
-    """
-    Match commit message against GSF patterns.
-
-    Args:
-        commit_message: The commit message to analyze
-
-    Returns:
-        List of matched pattern names
-    """
+    # Match commit message against GSF patterns.
     message_lower = commit_message.lower()
     matched_patterns = []
 
@@ -1587,14 +1573,6 @@ def get_pattern_by_keywords(commit_message: str) -> list:
 
 
 def is_green_aware(commit_message: str) -> bool:
-    """
-    Check if commit shows green software awareness.
-
-    Args:
-        commit_message: The commit message to analyze
-
-    Returns:
-        True if commit has green keywords
-    """
+    # Check if commit shows green software awareness.
     message_lower = commit_message.lower()
     return any(keyword.lower() in message_lower for keyword in GREEN_KEYWORDS)

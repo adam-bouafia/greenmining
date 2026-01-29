@@ -1,4 +1,4 @@
-"""Data aggregator for green microservices analysis results."""
+# Data aggregator for green microservices analysis results.
 
 from __future__ import annotations
 
@@ -7,11 +7,10 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import click
 import pandas as pd
 
 from greenmining.analyzers import (
-    EnhancedStatisticalAnalyzer,
+    StatisticalAnalyzer,
     TemporalAnalyzer,
     QualitativeAnalyzer,
 )
@@ -29,27 +28,21 @@ from greenmining.utils import (
 
 
 class DataAggregator:
-    """Aggregates analysis results and generates statistics."""
+    # Aggregates analysis results and generates statistics.
 
     def __init__(
         self,
-        enable_enhanced_stats: bool = False,
+        enable_stats: bool = False,
         enable_temporal: bool = False,
         temporal_granularity: str = "quarter",
     ):
-        """Initialize aggregator.
-
-        Args:
-            enable_enhanced_stats: Enable enhanced statistical analysis
-            enable_temporal: Enable temporal trend analysis
-            temporal_granularity: Granularity for temporal analysis (day/week/month/quarter/year)
-        """
-        self.enable_enhanced_stats = enable_enhanced_stats
+        # Initialize aggregator.
+        self.enable_stats = enable_stats
         self.enable_temporal = enable_temporal
 
-        if self.enable_enhanced_stats:
-            self.statistical_analyzer = EnhancedStatisticalAnalyzer()
-            colored_print("Enhanced statistical analysis enabled", "cyan")
+        if self.enable_stats:
+            self.statistical_analyzer = StatisticalAnalyzer()
+            colored_print("Statistical analysis enabled", "cyan")
         else:
             self.statistical_analyzer = None
 
@@ -64,15 +57,7 @@ class DataAggregator:
     def aggregate(
         self, analysis_results: list[dict[str, Any]], repositories: list[dict[str, Any]]
     ) -> dict[str, Any]:
-        """Aggregate analysis results into summary statistics.
-
-        Args:
-            analysis_results: List of commit analysis results
-            repositories: List of repository metadata
-
-        Returns:
-            Aggregated statistics dictionary
-        """
+        # Aggregate analysis results into summary statistics.
         colored_print("\nAggregating analysis results...", "cyan")
 
         # Summary statistics
@@ -90,15 +75,15 @@ class DataAggregator:
         # Per-language statistics
         per_language_stats = self._generate_language_stats(analysis_results, repositories)
 
-        # Enhanced statistical analysis (if enabled)
-        enhanced_stats = None
-        if self.enable_enhanced_stats and len(analysis_results) > 0:
+        # Statistical analysis (if enabled)
+        stats_analysis = None
+        if self.enable_stats and len(analysis_results) > 0:
             try:
-                enhanced_stats = self._generate_enhanced_statistics(analysis_results)
-                colored_print("✅ Enhanced statistical analysis complete", "green")
+                stats_analysis = self._generate_statistics(analysis_results)
+                colored_print(" Statistical analysis complete", "green")
             except Exception as e:
-                colored_print(f"⚠️  Enhanced statistics failed: {e}", "yellow")
-                enhanced_stats = {"error": str(e)}
+                colored_print(f"  Statistics failed: {e}", "yellow")
+                stats_analysis = {"error": str(e)}
 
         # Temporal trend analysis (if enabled)
         temporal_analysis = None
@@ -116,9 +101,9 @@ class DataAggregator:
                 ]
 
                 temporal_analysis = self.temporal_analyzer.analyze_trends(commits, analysis_results)
-                colored_print("✅ Temporal trend analysis complete", "green")
+                colored_print(" Temporal trend analysis complete", "green")
             except Exception as e:
-                colored_print(f"⚠️  Temporal analysis failed: {e}", "yellow")
+                colored_print(f"  Temporal analysis failed: {e}", "yellow")
                 temporal_analysis = {"error": str(e)}
 
         result = {
@@ -129,8 +114,8 @@ class DataAggregator:
             "per_language_stats": per_language_stats,
         }
 
-        if enhanced_stats:
-            result["enhanced_statistics"] = enhanced_stats
+        if stats_analysis:
+            result["statistics"] = stats_analysis
 
         if temporal_analysis:
             result["temporal_analysis"] = temporal_analysis
@@ -140,7 +125,7 @@ class DataAggregator:
     def _generate_summary(
         self, results: list[dict[str, Any]], repos: list[dict[str, Any]]
     ) -> dict[str, Any]:
-        """Generate overall summary statistics."""
+        # Generate overall summary statistics.
         total_commits = len(results)
         green_aware_count = sum(1 for r in results if r.get("green_aware", False))
 
@@ -158,7 +143,7 @@ class DataAggregator:
         }
 
     def _analyze_known_patterns(self, results: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        """Analyze known green software patterns."""
+        # Analyze known green software patterns.
         pattern_data = defaultdict(
             lambda: {"count": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0, "example_commits": []}
         )
@@ -209,7 +194,7 @@ class DataAggregator:
         return patterns_list
 
     def _analyze_emergent_patterns(self, results: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        """Analyze emergent patterns (placeholder for manual review)."""
+        # Analyze emergent patterns (placeholder for manual review).
         emergent = []
 
         for result in results:
@@ -228,7 +213,7 @@ class DataAggregator:
     def _generate_repo_stats(
         self, results: list[dict[str, Any]], repos: list[dict[str, Any]]
     ) -> list[dict[str, Any]]:
-        """Generate per-repository statistics."""
+        # Generate per-repository statistics.
         repo_commits = defaultdict(list)
 
         # Group commits by repository
@@ -270,7 +255,7 @@ class DataAggregator:
     def _generate_language_stats(
         self, results: list[dict[str, Any]], repos: list[dict[str, Any]]
     ) -> list[dict[str, Any]]:
-        """Generate per-language statistics."""
+        # Generate per-language statistics.
         # Create repo name to language mapping (handle both Repository objects and dicts)
         repo_language_map = {}
         for repo in repos:
@@ -306,23 +291,16 @@ class DataAggregator:
 
         return language_stats
 
-    def _generate_enhanced_statistics(self, results: list[dict[str, Any]]) -> dict[str, Any]:
-        """Generate enhanced statistical analysis.
-
-        Args:
-            results: List of commit analysis results
-
-        Returns:
-            Dictionary with enhanced statistical analysis
-        """
+    def _generate_statistics(self, results: list[dict[str, Any]]) -> dict[str, Any]:
+        # Generate statistical analysis.
         # Prepare DataFrame
         df = pd.DataFrame(results)
 
         # Ensure required columns exist
         if "date" not in df.columns or "green_aware" not in df.columns:
-            return {"error": "Missing required columns for enhanced statistics"}
+            return {"error": "Missing required columns for statistics"}
 
-        enhanced_stats = {}
+        stats_result = {}
 
         # 1. Temporal Trend Analysis
         if len(df) >= 8:  # Need at least 8 data points
@@ -330,7 +308,7 @@ class DataAggregator:
                 df_copy = df.copy()
                 df_copy["commit_hash"] = df_copy.get("commit_hash", df_copy.index)
                 trends = self.statistical_analyzer.temporal_trend_analysis(df_copy)
-                enhanced_stats["temporal_trends"] = {
+                stats_result["temporal_trends"] = {
                     "trend_direction": trends["trend"]["direction"],
                     "correlation": float(trends["trend"]["correlation"]),
                     "p_value": float(trends["trend"]["p_value"]),
@@ -338,20 +316,20 @@ class DataAggregator:
                     "monthly_data_points": len(trends.get("monthly_data", {})),
                 }
             except Exception as e:
-                enhanced_stats["temporal_trends"] = {"error": str(e)}
+                stats_result["temporal_trends"] = {"error": str(e)}
 
         # 2. Pattern Correlation Analysis (if pattern columns exist)
         pattern_cols = [col for col in df.columns if col.startswith("pattern_")]
         if pattern_cols and len(pattern_cols) >= 2:
             try:
                 correlations = self.statistical_analyzer.analyze_pattern_correlations(df)
-                enhanced_stats["pattern_correlations"] = {
+                stats_result["pattern_correlations"] = {
                     "significant_pairs_count": len(correlations["significant_pairs"]),
                     "significant_pairs": correlations["significant_pairs"][:5],  # Top 5
                     "interpretation": correlations["interpretation"],
                 }
             except Exception as e:
-                enhanced_stats["pattern_correlations"] = {"error": str(e)}
+                stats_result["pattern_correlations"] = {"error": str(e)}
 
         # 3. Effect Size Analysis by Repository
         if "repository" in df.columns:
@@ -369,7 +347,7 @@ class DataAggregator:
                         effect = self.statistical_analyzer.effect_size_analysis(
                             list(group1), list(group2)
                         )
-                        enhanced_stats["effect_size"] = {
+                        stats_result["effect_size"] = {
                             "cohens_d": float(effect["cohens_d"]),
                             "magnitude": effect["magnitude"],
                             "mean_difference": float(effect["mean_difference"]),
@@ -377,10 +355,10 @@ class DataAggregator:
                             "comparison": "high_green_vs_low_green_repos",
                         }
             except Exception as e:
-                enhanced_stats["effect_size"] = {"error": str(e)}
+                stats_result["effect_size"] = {"error": str(e)}
 
         # 4. Basic descriptive statistics
-        enhanced_stats["descriptive"] = {
+        stats_result["descriptive"] = {
             "total_commits": len(df),
             "green_commits": int(df["green_aware"].sum()),
             "green_rate_mean": float(df["green_aware"].mean()),
@@ -390,7 +368,7 @@ class DataAggregator:
             ),
         }
 
-        return enhanced_stats
+        return stats_result
 
     def save_results(
         self,
@@ -399,14 +377,7 @@ class DataAggregator:
         csv_file: Path,
         analysis_results: list[dict[str, Any]],
     ):
-        """Save aggregated results to JSON and CSV files.
-
-        Args:
-            aggregated_data: Aggregated statistics
-            json_file: JSON output file path
-            csv_file: CSV output file path
-            analysis_results: Original analysis results for CSV
-        """
+        # Save aggregated results to JSON and CSV files.
         # Save JSON
         save_json_file(aggregated_data, json_file)
         colored_print(f"Saved aggregated statistics to {json_file}", "green")
@@ -434,17 +405,17 @@ class DataAggregator:
         colored_print(f"Saved detailed results to {csv_file}", "green")
 
     def print_summary(self, aggregated_data: dict[str, Any]):
-        """Print summary to console."""
+        # Print summary to console.
         from tabulate import tabulate
 
         summary = aggregated_data["summary"]
 
         colored_print("\n" + "=" * 60, "cyan")
-        colored_print("📊 AGGREGATED STATISTICS SUMMARY", "cyan")
+        colored_print(" AGGREGATED STATISTICS SUMMARY", "cyan")
         colored_print("=" * 60, "cyan")
 
         # Overall summary
-        colored_print("\n📈 Overall Statistics:", "blue")
+        colored_print("\n Overall Statistics:", "blue")
         summary_table = [
             ["Total Commits Analyzed", format_number(summary["total_commits"])],
             [
@@ -458,7 +429,7 @@ class DataAggregator:
 
         # Top patterns
         if aggregated_data["known_patterns"]:
-            colored_print("\n🎯 Top Green Patterns Detected:", "blue")
+            colored_print("\n Top Green Patterns Detected:", "blue")
             pattern_table = []
             for pattern in aggregated_data["known_patterns"][:10]:
                 pattern_table.append(
@@ -479,7 +450,7 @@ class DataAggregator:
 
         # Top repositories
         if aggregated_data["per_repo_stats"]:
-            colored_print("\n🏆 Top 10 Greenest Repositories:", "blue")
+            colored_print("\n Top 10 Greenest Repositories:", "blue")
             repo_table = []
             for repo in aggregated_data["per_repo_stats"][:10]:
                 repo_table.append(
@@ -498,7 +469,7 @@ class DataAggregator:
 
         # Language breakdown
         if aggregated_data["per_language_stats"]:
-            colored_print("\n💻 Language Breakdown:", "blue")
+            colored_print("\n Language Breakdown:", "blue")
             lang_table = []
             for lang in aggregated_data["per_language_stats"]:
                 lang_table.append(
@@ -512,104 +483,3 @@ class DataAggregator:
             print(
                 tabulate(lang_table, headers=["Language", "Total", "Green", "%"], tablefmt="simple")
             )
-
-
-@click.command()
-@click.option(
-    "--analysis-file",
-    default=None,
-    help="Input analysis file (default: data/analysis_results.json)",
-)
-@click.option(
-    "--repos-file", default=None, help="Input repositories file (default: data/repositories.json)"
-)
-@click.option(
-    "--output-json",
-    default=None,
-    help="Output JSON file (default: data/aggregated_statistics.json)",
-)
-@click.option(
-    "--output-csv", default=None, help="Output CSV file (default: data/green_analysis_results.csv)"
-)
-@click.option("--config-file", default=".env", help="Path to .env configuration file")
-def aggregate(
-    analysis_file: Optional[str],
-    repos_file: Optional[str],
-    output_json: Optional[str],
-    output_csv: Optional[str],
-    config_file: str,
-):
-    """Aggregate analysis results and generate statistics."""
-    print_banner("Data Aggregator")
-
-    try:
-        # Load configuration
-        config = get_config(config_file)
-
-        # Determine input/output files
-        analysis_input = Path(analysis_file) if analysis_file else config.ANALYSIS_FILE
-        repos_input = Path(repos_file) if repos_file else config.REPOS_FILE
-        json_output = Path(output_json) if output_json else config.AGGREGATED_FILE
-        csv_output = Path(output_csv) if output_csv else config.CSV_FILE
-
-        # Check if input files exist
-        if not analysis_input.exists():
-            colored_print(f"Analysis file not found: {analysis_input}", "red")
-            colored_print("Please run 'analyze' command first", "yellow")
-            exit(1)
-
-        if not repos_input.exists():
-            colored_print(f"Repositories file not found: {repos_input}", "red")
-            colored_print("Please run 'fetch' command first", "yellow")
-            exit(1)
-
-        # Load data
-        colored_print(f"Loading analysis results from {analysis_input}...", "blue")
-        analysis_data = load_json_file(analysis_input)
-        analysis_results = analysis_data.get("results", [])
-
-        colored_print(f"Loading repositories from {repos_input}...", "blue")
-        repos_data = load_json_file(repos_input)
-        repositories = repos_data.get("repositories", [])
-
-        if not analysis_results:
-            colored_print("No analysis results found", "yellow")
-            exit(1)
-
-        colored_print(
-            f"Loaded {len(analysis_results)} analysis results and {len(repositories)} repositories",
-            "green",
-        )
-
-        # Initialize aggregator
-        aggregator = DataAggregator()
-
-        # Aggregate data
-        aggregated_data = aggregator.aggregate(analysis_results, repositories)
-
-        # Save results
-        aggregator.save_results(aggregated_data, json_output, csv_output, analysis_results)
-
-        # Print summary
-        aggregator.print_summary(aggregated_data)
-
-        colored_print("\n✓ Aggregation complete!", "green")
-        colored_print(f"JSON output: {json_output}", "green")
-        colored_print(f"CSV output: {csv_output}", "green")
-
-    except FileNotFoundError as e:
-        colored_print(f"File not found: {e}", "red")
-        exit(1)
-    except json.JSONDecodeError as e:
-        colored_print(f"Invalid JSON: {e}", "red")
-        exit(1)
-    except Exception as e:
-        colored_print(f"Error: {e}", "red")
-        import traceback
-
-        traceback.print_exc()
-        exit(1)
-
-
-if __name__ == "__main__":
-    aggregate()

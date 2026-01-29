@@ -1,0 +1,40 @@
+{
+  "experiment_date": "2026-01-29T09:43:34.468048",
+  "config": {
+    "max_commits_per_repo": 10,
+    "repositories_count": 5
+  },
+  "summary": {
+    "total_commits": 0,
+    "green_commits": 0,
+    "green_percentage": 0,
+    "patterns_found": {}
+  },
+  "results": [
+    {
+      "repository": "codecarbon",
+      "url": "https://github.com/codecarbon-io/codecarbon",
+      "error": "Cmd('git') failed due to: exit code(128)\n  cmdline: git clone -v -- https://github.com/codecarbon-io/codecarbon /tmp/greenmining_repos/codecarbon\n  stderr: 'Cloning into '/tmp/greenmining_repos/codecarbon'...\nremote: Repository not found.\nfatal: repository 'https://github.com/codecarbon-io/codecarbon/' not found\n'"
+    },
+    {
+      "repository": "impact",
+      "url": "https://github.com/mlco2/impact",
+      "error": "Already measuring energy"
+    },
+    {
+      "repository": "experiment-impact-tracker",
+      "url": "https://github.com/Breakend/experiment-impact-tracker",
+      "error": "Already measuring energy"
+    },
+    {
+      "repository": "Eco2AI",
+      "url": "https://github.com/sb-ai-lab/Eco2AI",
+      "error": "Already measuring energy"
+    },
+    {
+      "repository": "carbonern",
+      "url": "https://github.com/lfwa/carbonern",
+      "error": "Already measuring energy"
+    }
+  ]
+}

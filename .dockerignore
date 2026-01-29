@@ -49,12 +49,8 @@ logs/
 .env
 .env.local
 
-# Docs and examples
-docs/
-prototype/
-cli-roadmap.md
-PYPI_ROADMAP.md
-CICD_SETUP.md
+# Docs and examples 
+prototype/ 
 
 # Docker
 docker-compose.yml

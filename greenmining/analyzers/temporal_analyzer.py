@@ -1,18 +1,4 @@
-"""
-Temporal and Historical Analysis for Green Software Practices
-
-Implements time-series analysis from Soliman et al. (2017):
-- Adoption trend analysis (when practices emerged)
-- Velocity analysis (commit frequency over time)
-- Pattern evolution tracking (which practices dominated when)
-- Temporal correlations (do practices cluster in time?)
-
-Addresses research questions:
-1. When did green practices emerge in software development?
-2. Are green practices increasing or decreasing over time?
-3. Which practices were early vs. late adopters?
-4. Do green practices correlate with project maturity?
-"""
+# Temporal and Historical Analysis for Green Software Practices
 
 from __future__ import annotations
 
@@ -25,7 +11,7 @@ import statistics
 
 @dataclass
 class TemporalMetrics:
-    """Metrics for a specific time period"""
+    # Metrics for a specific time period
 
     period: str
     start_date: datetime
@@ -40,7 +26,7 @@ class TemporalMetrics:
 
 @dataclass
 class TrendAnalysis:
-    """Trend analysis results"""
+    # Trend analysis results
 
     trend_direction: str  # 'increasing', 'decreasing', 'stable'
     slope: float
@@ -51,35 +37,16 @@ class TrendAnalysis:
 
 
 class TemporalAnalyzer:
-    """
-    Analyze temporal patterns in green software adoption.
-
-    Based on Soliman et al.: "Time-range filtering is standard practice"
-    Extends with: trend detection, velocity analysis, evolution tracking
-    """
+    # Analyze temporal patterns in green software adoption.
 
     def __init__(self, granularity: str = "quarter"):
-        """
-        Initialize temporal analyzer.
-
-        Args:
-            granularity: Time period granularity ('day', 'week', 'month', 'quarter', 'year')
-        """
+        # Initialize temporal analyzer.
         self.granularity = granularity
 
     def group_commits_by_period(
         self, commits: List[Dict], date_field: str = "date"
     ) -> Dict[str, List[Dict]]:
-        """
-        Group commits into time periods.
-
-        Args:
-            commits: List of commit dictionaries
-            date_field: Field containing commit date
-
-        Returns:
-            Dictionary mapping period strings to commit lists
-        """
+        # Group commits into time periods.
         periods = defaultdict(list)
 
         for commit in commits:
@@ -103,7 +70,7 @@ class TemporalAnalyzer:
         return dict(periods)
 
     def _get_period_key(self, date: datetime) -> str:
-        """Get period key for a date based on granularity."""
+        # Get period key for a date based on granularity.
         if self.granularity == "day":
             return date.strftime("%Y-%m-%d")
         elif self.granularity == "week":
@@ -120,7 +87,7 @@ class TemporalAnalyzer:
             return date.strftime("%Y-%m")
 
     def _parse_period_key(self, period_key: str) -> Tuple[datetime, datetime]:
-        """Parse period key back to start and end dates."""
+        # Parse period key back to start and end dates.
         if "W" in period_key:
             # Week format: 2024-W15
             year, week = period_key.split("-W")
@@ -173,17 +140,7 @@ class TemporalAnalyzer:
     def calculate_period_metrics(
         self, period_key: str, commits: List[Dict], analysis_results: List[Dict]
     ) -> TemporalMetrics:
-        """
-        Calculate metrics for a time period.
-
-        Args:
-            period_key: Period identifier
-            commits: Commits in this period
-            analysis_results: Pattern analysis results for commits
-
-        Returns:
-            TemporalMetrics object
-        """
+        # Calculate metrics for a time period.
         start_date, end_date = self._parse_period_key(period_key)
 
         # Count green commits
@@ -229,20 +186,7 @@ class TemporalAnalyzer:
         )
 
     def analyze_trends(self, commits: List[Dict], analysis_results: List[Dict]) -> Dict:
-        """
-        Comprehensive temporal trend analysis.
-
-        Args:
-            commits: All commits to analyze
-            analysis_results: Pattern analysis results
-
-        Returns:
-            Dictionary with:
-            - periods: List of TemporalMetrics
-            - trend: TrendAnalysis
-            - adoption_curve: List of (period, cumulative_rate)
-            - velocity_trend: Velocity change over time
-        """
+        # Comprehensive temporal trend analysis.
         # Group by periods
         grouped = self.group_commits_by_period(commits)
 
@@ -284,7 +228,7 @@ class TemporalAnalyzer:
         }
 
     def _calculate_trend(self, periods: List[TemporalMetrics]) -> Optional[TrendAnalysis]:
-        """Calculate linear trend using least squares regression."""
+        # Calculate linear trend using least squares regression.
         if len(periods) < 2:
             return None
 
@@ -332,7 +276,7 @@ class TemporalAnalyzer:
         )
 
     def _calculate_adoption_curve(self, periods: List[TemporalMetrics]) -> List[Tuple[str, float]]:
-        """Calculate cumulative adoption over time."""
+        # Calculate cumulative adoption over time.
         cumulative_green = 0
         cumulative_total = 0
         curve = []
@@ -348,7 +292,7 @@ class TemporalAnalyzer:
         return curve
 
     def _calculate_velocity_trend(self, periods: List[TemporalMetrics]) -> Dict:
-        """Analyze velocity changes over time."""
+        # Analyze velocity changes over time.
         if not periods:
             return {}
 
@@ -365,7 +309,7 @@ class TemporalAnalyzer:
     def _analyze_pattern_evolution(
         self, periods: List[TemporalMetrics], analysis_results: List[Dict]
     ) -> Dict:
-        """Track when different patterns emerged and dominated."""
+        # Track when different patterns emerged and dominated.
         pattern_timeline = defaultdict(lambda: {"first_seen": None, "occurrences_by_period": {}})
 
         for period in periods:
@@ -406,7 +350,7 @@ class TemporalAnalyzer:
         }
 
     def _metrics_to_dict(self, metrics: TemporalMetrics) -> Dict:
-        """Convert TemporalMetrics to dictionary."""
+        # Convert TemporalMetrics to dictionary.
         return {
             "period": metrics.period,
             "start_date": metrics.start_date.isoformat(),
@@ -420,7 +364,7 @@ class TemporalAnalyzer:
         }
 
     def _trend_to_dict(self, trend: Optional[TrendAnalysis]) -> Dict:
-        """Convert TrendAnalysis to dictionary."""
+        # Convert TrendAnalysis to dictionary.
         if not trend:
             return {}
 

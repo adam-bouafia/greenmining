@@ -1,4 +1,4 @@
-"""Utility functions for green microservices mining CLI."""
+# Utility functions for green microservices mining CLI.
 
 import json
 import time
@@ -15,32 +15,14 @@ init(autoreset=True)
 
 
 def format_timestamp(dt: Optional[datetime] = None) -> str:
-    """Format timestamp in ISO 8601 format.
-
-    Args:
-        dt: Datetime object, defaults to now
-
-    Returns:
-        ISO formatted timestamp string
-    """
+    # Format timestamp in ISO 8601 format.
     if dt is None:
         dt = datetime.utcnow()
     return dt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def load_json_file(path: Path) -> dict[str, Any]:
-    """Load JSON data from file.
-
-    Args:
-        path: Path to JSON file
-
-    Returns:
-        Parsed JSON data
-
-    Raises:
-        FileNotFoundError: If file doesn't exist
-        json.JSONDecodeError: If file is not valid JSON
-    """
+    # Load JSON data from file.
     if not path.exists():
         raise FileNotFoundError(f"File not found: {path}")
 
@@ -49,13 +31,7 @@ def load_json_file(path: Path) -> dict[str, Any]:
 
 
 def save_json_file(data: dict[str, Any], path: Path, indent: int = 2) -> None:
-    """Save data to JSON file.
-
-    Args:
-        data: Data to save
-        path: Output file path
-        indent: JSON indentation level
-    """
+    # Save data to JSON file.
     path.parent.mkdir(parents=True, exist_ok=True)
 
     with open(path, "w", encoding="utf-8") as f:
@@ -63,17 +39,7 @@ def save_json_file(data: dict[str, Any], path: Path, indent: int = 2) -> None:
 
 
 def load_csv_file(path: Path) -> pd.DataFrame:
-    """Load CSV file as pandas DataFrame.
-
-    Args:
-        path: Path to CSV file
-
-    Returns:
-        DataFrame with CSV data
-
-    Raises:
-        FileNotFoundError: If file doesn't exist
-    """
+    # Load CSV file as pandas DataFrame.
     if not path.exists():
         raise FileNotFoundError(f"File not found: {path}")
 
@@ -81,40 +47,18 @@ def load_csv_file(path: Path) -> pd.DataFrame:
 
 
 def save_csv_file(df: pd.DataFrame, path: Path) -> None:
-    """Save DataFrame to CSV file.
-
-    Args:
-        df: DataFrame to save
-        path: Output file path
-    """
+    # Save DataFrame to CSV file.
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False, encoding="utf-8")
 
 
 def estimate_tokens(text: str) -> int:
-    """Estimate number of tokens in text.
-
-    Uses rough approximation: 1 token ≈ 4 characters
-
-    Args:
-        text: Input text
-
-    Returns:
-        Estimated token count
-    """
+    # Estimate number of tokens in text.
     return len(text) // 4
 
 
 def estimate_cost(tokens: int, model: str = "claude-sonnet-4-20250514") -> float:
-    """Estimate API cost based on token usage.
-
-    Args:
-        tokens: Number of tokens
-        model: Model name
-
-    Returns:
-        Estimated cost in USD
-    """
+    # Estimate API cost based on token usage.
     # Claude Sonnet 4 pricing (as of Dec 2024)
     # Input: $3 per million tokens
     # Output: $15 per million tokens
@@ -135,17 +79,7 @@ def retry_on_exception(
     exponential_backoff: bool = True,
     exceptions: tuple = (Exception,),
 ) -> Callable:
-    """Decorator to retry function on exception.
-
-    Args:
-        max_retries: Maximum number of retry attempts
-        delay: Initial delay between retries in seconds
-        exponential_backoff: Use exponential backoff for delays
-        exceptions: Tuple of exception types to catch
-
-    Returns:
-        Decorated function
-    """
+    # Decorator to retry function on exception.
 
     def decorator(func: Callable) -> Callable:
         @wraps(func)
@@ -175,12 +109,7 @@ def retry_on_exception(
 
 
 def colored_print(text: str, color: str = "white") -> None:
-    """Print colored text to console.
-
-    Args:
-        text: Text to print
-        color: Color name (red, green, yellow, blue, magenta, cyan, white)
-    """
+    # Print colored text to console.
     color_map = {
         "red": Fore.RED,
         "green": Fore.GREEN,
@@ -196,14 +125,7 @@ def colored_print(text: str, color: str = "white") -> None:
 
 
 def handle_github_rate_limit(response) -> None:
-    """Handle GitHub API rate limiting.
-
-    Args:
-        response: GitHub API response object
-
-    Raises:
-        Exception: If rate limit is exceeded
-    """
+    # Handle GitHub API rate limiting.
     if hasattr(response, "status") and response.status == 403:
         colored_print("GitHub API rate limit exceeded!", "red")
         colored_print("Please wait or use an authenticated token.", "yellow")
@@ -211,39 +133,17 @@ def handle_github_rate_limit(response) -> None:
 
 
 def format_number(num: int) -> str:
-    """Format large numbers with thousand separators.
-
-    Args:
-        num: Number to format
-
-    Returns:
-        Formatted string
-    """
+    # Format large numbers with thousand separators.
     return f"{num:,}"
 
 
 def format_percentage(value: float, decimals: int = 1) -> str:
-    """Format percentage value.
-
-    Args:
-        value: Percentage value (0-100)
-        decimals: Number of decimal places
-
-    Returns:
-        Formatted percentage string
-    """
+    # Format percentage value.
     return f"{value:.{decimals}f}%"
 
 
 def format_duration(seconds: float) -> str:
-    """Format duration in human-readable format.
-
-    Args:
-        seconds: Duration in seconds
-
-    Returns:
-        Formatted duration string (e.g., "2h 15m")
-    """
+    # Format duration in human-readable format.
     if seconds < 60:
         return f"{int(seconds)}s"
     elif seconds < 3600:
@@ -257,40 +157,20 @@ def format_duration(seconds: float) -> str:
 
 
 def truncate_text(text: str, max_length: int = 100) -> str:
-    """Truncate text to maximum length.
-
-    Args:
-        text: Input text
-        max_length: Maximum length
-
-    Returns:
-        Truncated text with ellipsis if needed
-    """
+    # Truncate text to maximum length.
     if len(text) <= max_length:
         return text
     return text[: max_length - 3] + "..."
 
 
 def create_checkpoint(checkpoint_file: Path, data: dict[str, Any]) -> None:
-    """Create checkpoint file for resuming operations.
-
-    Args:
-        checkpoint_file: Path to checkpoint file
-        data: Checkpoint data
-    """
+    # Create checkpoint file for resuming operations.
     save_json_file(data, checkpoint_file)
     colored_print(f"Checkpoint saved: {checkpoint_file}", "green")
 
 
 def load_checkpoint(checkpoint_file: Path) -> Optional[dict[str, Any]]:
-    """Load checkpoint data if exists.
-
-    Args:
-        checkpoint_file: Path to checkpoint file
-
-    Returns:
-        Checkpoint data or None if doesn't exist
-    """
+    # Load checkpoint data if exists.
     if checkpoint_file.exists():
         try:
             return load_json_file(checkpoint_file)
@@ -300,21 +180,13 @@ def load_checkpoint(checkpoint_file: Path) -> Optional[dict[str, Any]]:
 
 
 def print_banner(title: str) -> None:
-    """Print formatted banner.
-
-    Args:
-        title: Banner title
-    """
+    # Print formatted banner.
     colored_print("\n" + "=" * 60, "cyan")
-    colored_print(f"🔍 {title}", "cyan")
+    colored_print(f" {title}", "cyan")
     colored_print("=" * 60 + "\n", "cyan")
 
 
 def print_section(title: str) -> None:
-    """Print section header.
-
-    Args:
-        title: Section title
-    """
-    colored_print(f"\n📌 {title}", "blue")
+    # Print section header.
+    colored_print(f"\n {title}", "blue")
     colored_print("-" * 60, "blue")

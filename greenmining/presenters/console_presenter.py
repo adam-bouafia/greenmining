@@ -1,4 +1,4 @@
-"""Console Presenter - Handles console output formatting."""
+# Console Presenter - Handles console output formatting.
 
 from __future__ import annotations
 
@@ -10,26 +10,26 @@ from greenmining.utils import colored_print
 
 
 class ConsolePresenter:
-    """Presenter for console/terminal output."""
+    # Presenter for console/terminal output.
 
     @staticmethod
     def show_banner():
-        """Display application banner."""
+        # Display application banner.
         banner = """
-╔══════════════════════════════════════════════════════════╗
-║           Green Microservices Mining                     ║
-╚══════════════════════════════════════════════════════════╝
+
+           Green Microservices Mining                     
+
         """
         colored_print(banner, "green")
 
     @staticmethod
     def show_repositories(repositories: list[dict], limit: int = 10):
-        """Display repository table."""
+        # Display repository table.
         if not repositories:
             colored_print("No repositories to display", "yellow")
             return
 
-        colored_print(f"\n📊 Top {min(limit, len(repositories))} Repositories:\n", "cyan")
+        colored_print(f"\n Top {min(limit, len(repositories))} Repositories:\n", "cyan")
 
         table_data = []
         for repo in repositories[:limit]:
@@ -51,8 +51,8 @@ class ConsolePresenter:
 
     @staticmethod
     def show_commit_stats(stats: dict[str, Any]):
-        """Display commit statistics."""
-        colored_print("\n📈 Commit Statistics:\n", "cyan")
+        # Display commit statistics.
+        colored_print("\n Commit Statistics:\n", "cyan")
 
         table_data = [
             ["Total Commits", f"{stats.get('total_commits', 0):,}"],
@@ -65,8 +65,8 @@ class ConsolePresenter:
 
     @staticmethod
     def show_analysis_results(results: dict[str, Any]):
-        """Display analysis results."""
-        colored_print("\n🔬 Analysis Results:\n", "cyan")
+        # Display analysis results.
+        colored_print("\n Analysis Results:\n", "cyan")
 
         summary = results.get("summary", {})
         table_data = [
@@ -80,12 +80,12 @@ class ConsolePresenter:
 
     @staticmethod
     def show_pattern_distribution(patterns: dict[str, Any], limit: int = 10):
-        """Display pattern distribution."""
+        # Display pattern distribution.
         if not patterns:
             colored_print("No patterns to display", "yellow")
             return
 
-        colored_print(f"\n🎯 Top {limit} Green Patterns:\n", "cyan")
+        colored_print(f"\n Top {limit} Green Patterns:\n", "cyan")
 
         # Sort by count
         sorted_patterns = sorted(
@@ -108,12 +108,12 @@ class ConsolePresenter:
 
     @staticmethod
     def show_pipeline_status(status: dict[str, Any]):
-        """Display pipeline status."""
-        colored_print("\n⚙️  Pipeline Status:\n", "cyan")
+        # Display pipeline status.
+        colored_print("\n  Pipeline Status:\n", "cyan")
 
         table_data = []
         for phase, info in status.items():
-            status_icon = "✅" if info.get("completed") else "⏳"
+            status_icon = "" if info.get("completed") else "⏳"
             table_data.append(
                 [status_icon, phase, info.get("file", "N/A"), info.get("size", "N/A")]
             )
@@ -123,21 +123,21 @@ class ConsolePresenter:
 
     @staticmethod
     def show_progress_message(phase: str, current: int, total: int):
-        """Display progress message."""
+        # Display progress message.
         percentage = (current / total * 100) if total > 0 else 0
         colored_print(f"[{phase}] Progress: {current}/{total} ({percentage:.1f}%)", "cyan")
 
     @staticmethod
     def show_error(message: str):
-        """Display error message."""
-        colored_print(f"❌ Error: {message}", "red")
+        # Display error message.
+        colored_print(f" Error: {message}", "red")
 
     @staticmethod
     def show_success(message: str):
-        """Display success message."""
-        colored_print(f"✅ {message}", "green")
+        # Display success message.
+        colored_print(f" {message}", "green")
 
     @staticmethod
     def show_warning(message: str):
-        """Display warning message."""
-        colored_print(f"⚠️  Warning: {message}", "yellow")
+        # Display warning message.
+        colored_print(f"  Warning: {message}", "yellow")

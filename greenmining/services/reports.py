@@ -1,4 +1,4 @@
-"""Report generation for green mining analysis."""
+# Report generation for green mining analysis.
 
 from __future__ import annotations
 
@@ -6,8 +6,6 @@ import json
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
-
-import click
 
 from greenmining.config import get_config
 from greenmining.utils import (
@@ -20,10 +18,10 @@ from greenmining.utils import (
 
 
 class ReportGenerator:
-    """Generates markdown report from aggregated statistics."""
+    # Generates markdown report from aggregated statistics.
 
     def __init__(self):
-        """Initialize report generator."""
+        # Initialize report generator.
         pass
 
     def generate_report(
@@ -32,16 +30,7 @@ class ReportGenerator:
         analysis_data: dict[str, Any],
         repos_data: dict[str, Any],
     ) -> str:
-        """Generate comprehensive markdown report.
-
-        Args:
-            aggregated_data: Aggregated statistics
-            analysis_data: Original analysis results
-            repos_data: Repository metadata
-
-        Returns:
-            Markdown report content
-        """
+        # Generate comprehensive markdown report.
         report_sections = []
 
         # Title and metadata
@@ -68,7 +57,7 @@ class ReportGenerator:
         return "\n\n".join(report_sections)
 
     def _generate_header(self) -> str:
-        """Generate report header."""
+        # Generate report header.
         return f"""# Mining Software Repositories for Green Microservices
 ## Comprehensive Analysis Report
 
@@ -78,7 +67,7 @@ class ReportGenerator:
 ---"""
 
     def _generate_executive_summary(self, data: dict[str, Any]) -> str:
-        """Generate executive summary."""
+        # Generate executive summary.
         summary = data["summary"]
         top_patterns = data["known_patterns"][:3] if data["known_patterns"] else []
 
@@ -106,7 +95,7 @@ These findings suggest that while green software practices are present in micros
     def _generate_methodology(
         self, repos_data: dict[str, Any], analysis_data: dict[str, Any]
     ) -> str:
-        """Generate methodology section."""
+        # Generate methodology section.
         metadata = repos_data.get("metadata", {})
         analysis_metadata = analysis_data.get("metadata", {})
 
@@ -167,7 +156,7 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
 - 2-year time window may not capture all historical practices"""
 
     def _generate_results(self, data: dict[str, Any]) -> str:
-        """Generate results section."""
+        # Generate results section.
         sections = []
 
         # 2.1 Green Awareness
@@ -182,15 +171,15 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
         # 2.4 Per-Repository Analysis
         sections.append(self._generate_repo_analysis_section(data))
 
-        # 2.5 Enhanced Statistics (if available)
-        enhanced_section = self._generate_enhanced_statistics_section(data)
-        if enhanced_section:
-            sections.append(enhanced_section)
+        # 2.5 Statistics (if available)
+        stats_section = self._generate_statistics_section(data)
+        if stats_section:
+            sections.append(stats_section)
 
         return "### 2. Results\n\n" + "\n\n".join(sections)
 
     def _generate_green_awareness_section(self, data: dict[str, Any]) -> str:
-        """Generate green awareness subsection."""
+        # Generate green awareness subsection.
         summary = data["summary"]
         per_lang = data["per_language_stats"]
         per_repo = data["per_repo_stats"]
@@ -219,7 +208,7 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
 {lang_table}"""
 
     def _generate_known_patterns_section(self, data: dict[str, Any]) -> str:
-        """Generate known patterns subsection."""
+        # Generate known patterns subsection.
         patterns = data["known_patterns"]
 
         if not patterns:
@@ -259,7 +248,7 @@ The following table summarizes the known green software patterns detected in the
 {chr(10).join(pattern_details)}"""
 
     def _generate_emergent_patterns_section(self, data: dict[str, Any]) -> str:
-        """Generate emergent patterns subsection."""
+        # Generate emergent patterns subsection.
         emergent = data["emergent_patterns"]
 
         if not emergent:
@@ -281,7 +270,7 @@ No novel microservice-specific green practices were automatically detected. Manu
 {chr(10).join(pattern_list)}"""
 
     def _generate_repo_analysis_section(self, data: dict[str, Any]) -> str:
-        """Generate per-repository analysis subsection."""
+        # Generate per-repository analysis subsection.
         per_repo = data["per_repo_stats"]
 
         # Top 10 greenest
@@ -307,37 +296,30 @@ No novel microservice-specific green practices were automatically detected. Manu
 
 **Repositories with No Green Mentions:** {no_green_count} out of {len(per_repo)} repositories had zero green-aware commits."""
 
-    def _generate_enhanced_statistics_section(self, data: dict[str, Any]) -> str:
-        """Generate enhanced statistical analysis subsection.
+    def _generate_statistics_section(self, data: dict[str, Any]) -> str:
+        # Generate statistical analysis subsection.
+        stats = data.get("statistics")
 
-        Args:
-            data: Aggregated data containing enhanced_statistics field
-
-        Returns:
-            Markdown section with enhanced statistics
-        """
-        enhanced_stats = data.get("enhanced_statistics")
-
-        if not enhanced_stats:
+        if not stats:
             return ""
 
         # Handle error case
-        if "error" in enhanced_stats:
-            return f"""#### 2.5 Enhanced Statistical Analysis
+        if "error" in stats:
+            return f"""#### 2.5 Statistical Analysis
 
-**Note:** Enhanced statistical analysis encountered an error: {enhanced_stats['error']}
+**Note:** Statistical analysis encountered an error: {stats['error']}
 """
 
         sections = []
-        sections.append("#### 2.5 Enhanced Statistical Analysis")
+        sections.append("#### 2.5 Statistical Analysis")
         sections.append("")
         sections.append(
-            "This section presents advanced statistical analyses of green software engineering patterns."
+            "This section presents statistical analyses of green software engineering patterns."
         )
         sections.append("")
 
         # Temporal trends
-        temporal = enhanced_stats.get("temporal_trends", {})
+        temporal = stats.get("temporal_trends", {})
         if temporal and "error" not in temporal:
             sections.append("##### Temporal Trends")
             sections.append("")
@@ -362,7 +344,7 @@ No novel microservice-specific green practices were automatically detected. Manu
                 sections.append("")
 
         # Pattern correlations
-        correlations = enhanced_stats.get("pattern_correlations", {})
+        correlations = stats.get("pattern_correlations", {})
         if correlations and "error" not in correlations:
             sections.append("##### Pattern Correlations")
             sections.append("")
@@ -383,7 +365,7 @@ No novel microservice-specific green practices were automatically detected. Manu
                 sections.append("")
 
         # Effect sizes
-        effect_sizes = enhanced_stats.get("effect_size", {})
+        effect_sizes = stats.get("effect_size", {})
         if effect_sizes and "error" not in effect_sizes:
             sections.append("##### Effect Size Analysis")
             sections.append("")
@@ -398,7 +380,7 @@ No novel microservice-specific green practices were automatically detected. Manu
                 sections.append("")
 
         # Descriptive statistics
-        descriptive = enhanced_stats.get("descriptive", {})
+        descriptive = stats.get("descriptive", {})
         if descriptive and "error" not in descriptive:
             sections.append("##### Descriptive Statistics")
             sections.append("")
@@ -422,7 +404,7 @@ No novel microservice-specific green practices were automatically detected. Manu
         return "\n".join(sections)
 
     def _generate_discussion(self, data: dict[str, Any]) -> str:
-        """Generate discussion section."""
+        # Generate discussion section.
         summary = data["summary"]
         green_pct = summary["green_aware_percentage"]
 
@@ -473,7 +455,7 @@ Based on the detected patterns, microservice developers primarily focus on:
 4. **Best practices dissemination:** Green microservices patterns should be documented and promoted in the community"""
 
     def _generate_limitations(self) -> str:
-        """Generate limitations section."""
+        # Generate limitations section.
         return """### 4. Limitations
 
 #### 4.1 Sample Size and Selection Bias
@@ -505,7 +487,7 @@ Based on the detected patterns, microservice developers primarily focus on:
 5. **Energy measurement:** Correlate detected patterns with actual energy consumption data"""
 
     def _generate_conclusion(self, data: dict[str, Any]) -> str:
-        """Generate conclusion section."""
+        # Generate conclusion section.
         summary = data["summary"]
         top_patterns = (
             [p["pattern_name"] for p in data["known_patterns"][:5]]
@@ -559,94 +541,8 @@ Answer: Automated keyword analysis found limited evidence of novel patterns. Man
 *For questions or additional analysis, please refer to the accompanying data files: `green_analysis_results.csv` and `aggregated_statistics.json`*"""
 
     def save_report(self, report_content: str, output_file: Path):
-        """Save report to markdown file."""
+        # Save report to markdown file.
         output_file.parent.mkdir(parents=True, exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(report_content)
         colored_print(f"Saved report to {output_file}", "green")
-
-
-@click.command()
-@click.option("--aggregated-file", default=None, help="Input aggregated statistics file")
-@click.option("--analysis-file", default=None, help="Input analysis results file")
-@click.option("--repos-file", default=None, help="Input repositories file")
-@click.option(
-    "--output-file",
-    default=None,
-    help="Output markdown file (default: data/green_microservices_analysis.md)",
-)
-@click.option("--config-file", default=".env", help="Path to .env configuration file")
-def report(
-    aggregated_file: Optional[str],
-    analysis_file: Optional[str],
-    repos_file: Optional[str],
-    output_file: Optional[str],
-    config_file: str,
-):
-    """Generate comprehensive markdown report."""
-    print_banner("Report Generator")
-
-    try:
-        # Load configuration
-        config = get_config(config_file)
-
-        # Determine input/output files
-        agg_input = Path(aggregated_file) if aggregated_file else config.AGGREGATED_FILE
-        analysis_input = Path(analysis_file) if analysis_file else config.ANALYSIS_FILE
-        repos_input = Path(repos_file) if repos_file else config.REPOS_FILE
-        output = Path(output_file) if output_file else config.REPORT_FILE
-
-        # Check if input files exist
-        missing_files = []
-        if not agg_input.exists():
-            missing_files.append(str(agg_input))
-        if not analysis_input.exists():
-            missing_files.append(str(analysis_input))
-        if not repos_input.exists():
-            missing_files.append(str(repos_input))
-
-        if missing_files:
-            colored_print("Missing required input files:", "red")
-            for f in missing_files:
-                colored_print(f"  - {f}", "red")
-            colored_print(
-                "\nPlease run the full pipeline first: fetch → extract → analyze → aggregate",
-                "yellow",
-            )
-            exit(1)
-
-        # Load data
-        colored_print("Loading data files...", "blue")
-        aggregated_data = load_json_file(agg_input)
-        analysis_data = load_json_file(analysis_input)
-        repos_data = load_json_file(repos_input)
-        colored_print("✓ Data loaded successfully", "green")
-
-        # Generate report
-        colored_print("\nGenerating report...", "blue")
-        generator = ReportGenerator()
-        report_content = generator.generate_report(aggregated_data, analysis_data, repos_data)
-
-        # Save report
-        generator.save_report(report_content, output)
-
-        colored_print("\n✓ Report generated successfully!", "green")
-        colored_print(f"Output: {output}", "green")
-        colored_print(f"Report size: {len(report_content):,} characters", "white")
-
-    except FileNotFoundError as e:
-        colored_print(f"File not found: {e}", "red")
-        exit(1)
-    except json.JSONDecodeError as e:
-        colored_print(f"Invalid JSON: {e}", "red")
-        exit(1)
-    except Exception as e:
-        colored_print(f"Error: {e}", "red")
-        import traceback
-
-        traceback.print_exc()
-        exit(1)
-
-
-if __name__ == "__main__":
-    report()

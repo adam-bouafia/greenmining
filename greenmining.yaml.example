@@ -1,0 +1,54 @@
+# GreenMining Configuration File
+# Copy to greenmining.yaml and customize
+
+version: "2.0"
+
+sources:
+  # Direct URLs for repository analysis
+  urls:
+    - https://github.com/pallets/flask
+    - https://github.com/django/django
+    # - git@github.com:company/private-repo.git
+  
+  # GitHub search configuration
+  search:
+    enabled: true
+    keywords:
+      - microservices
+      - cloud-native
+      - kubernetes
+    min_stars: 100
+    languages:
+      - Python
+      - Go
+      - Java
+      - JavaScript
+      - TypeScript
+
+extraction:
+  max_commits: 500
+  skip_merges: true
+  days_back: 730
+  clone_path: /tmp/greenmining_repos
+
+analysis:
+  process_metrics: true
+  structural_metrics: true
+  delta_maintainability: true
+
+energy:
+  enabled: false
+  backend: rapl  # rapl | codecarbon
+  carbon_tracking: false
+  country_iso: USA
+  
+  power_profiling:
+    enabled: false
+    test_command: "pytest tests/ -x"
+    regression_threshold: 5.0
+
+output:
+  directory: ./data
+  formats:
+    - json
+    - markdown

@@ -1,4 +1,4 @@
-"""Repository Model - Represents a GitHub repository."""
+# Repository Model - Represents a GitHub repository.
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from typing import List, Optional
 
 @dataclass
 class Repository:
-    """Data model for a GitHub repository."""
+    # Data model for a GitHub repository.
 
     repo_id: int
     name: str
@@ -33,7 +33,7 @@ class Repository:
     license: Optional[str] = None
 
     def to_dict(self) -> dict:
-        """Convert to dictionary."""
+        # Convert to dictionary.
         return {
             "repo_id": self.repo_id,
             "name": self.name,
@@ -60,12 +60,12 @@ class Repository:
 
     @classmethod
     def from_dict(cls, data: dict) -> "Repository":
-        """Create from dictionary."""
+        # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})
 
     @classmethod
     def from_github_repo(cls, repo, repo_id: int) -> "Repository":
-        """Create from PyGithub repository object."""
+        # Create from PyGithub repository object.
         return cls(
             repo_id=repo_id,
             name=repo.name,

@@ -1,3 +1,3 @@
-"""Version information for greenmining."""
+# Version information for greenmining.
 
-__version__ = "1.0.2"
+__version__ = "1.0.4"

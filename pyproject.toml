@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "greenmining"
-version = "1.0.3"
+version = "1.0.4"
 description = "Analyze GitHub repositories to identify green software engineering patterns and energy-efficient practices"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -37,20 +37,19 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
-    "Environment :: Console",
 ]
 
 dependencies = [
     "PyGithub>=2.1.1",
     "PyDriller>=2.5",
     "pandas>=2.2.0",
-    "click>=8.1.7",
     "colorama>=0.4.6",
     "tabulate>=0.9.0",
     "tqdm>=4.66.0",
     "matplotlib>=3.8.0",
     "plotly>=5.18.0",
-    "python-dotenv>=1.0.0"
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0"
 ]
 
 [project.optional-dependencies]
@@ -70,9 +69,6 @@ docs = [
     "sphinx-rtd-theme>=2.0.0",
     "myst-parser>=2.0.0"
 ]
-
-[project.scripts]
-greenmining = "greenmining.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/adam-bouafia/greenmining"

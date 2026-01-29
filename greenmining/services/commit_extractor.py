@@ -1,4 +1,4 @@
-"""Commit extractor for green microservices mining."""
+# Commit extractor for green microservices mining.
 
 from __future__ import annotations
 
@@ -7,7 +7,6 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import click
 from github import Github
 from tqdm import tqdm
 
@@ -24,7 +23,7 @@ from greenmining.utils import (
 
 
 class CommitExtractor:
-    """Extracts commit data from repositories using GitHub API."""
+    # Extracts commit data from repositories using GitHub API.
 
     def __init__(
         self,
@@ -34,15 +33,7 @@ class CommitExtractor:
         github_token: str | None = None,
         timeout: int = 60,
     ):
-        """Initialize commit extractor.
-
-        Args:
-            max_commits: Maximum commits per repository
-            skip_merges: Skip merge commits
-            days_back: Only analyze commits from last N days
-            github_token: GitHub API token (optional)
-            timeout: Timeout in seconds per repository (default: 60)
-        """
+        # Initialize commit extractor.
         self.max_commits = max_commits
         self.skip_merges = skip_merges
         self.days_back = days_back
@@ -51,14 +42,7 @@ class CommitExtractor:
         self.timeout = timeout
 
     def extract_from_repositories(self, repositories: list[dict[str, Any] | Repository]) -> list[dict[str, Any]]:
-        """Extract commits from list of repositories.
-
-        Args:
-            repositories: List of repository metadata (dicts or Repository objects)
-
-        Returns:
-            List of commit data dictionaries
-        """
+        # Extract commits from list of repositories.
         all_commits = []
         failed_repos = []
 
@@ -114,14 +98,7 @@ class CommitExtractor:
 
     @retry_on_exception(max_retries=2, delay=5.0, exceptions=(Exception,))
     def _extract_repo_commits(self, repo: dict[str, Any]) -> list[dict[str, Any]]:
-        """Extract commits from a single repository using GitHub API.
-
-        Args:
-            repo: Repository metadata (dict or Repository object)
-
-        Returns:
-            List of commit dictionaries
-        """
+        # Extract commits from a single repository using GitHub API.
         commits = []
         # Handle both Repository objects and dicts
         repo_name = repo.full_name if isinstance(repo, Repository) else repo["full_name"]
@@ -163,15 +140,7 @@ class CommitExtractor:
         return commits
 
     def _extract_commit_metadata(self, commit, repo_name: str) -> dict[str, Any]:
-        """Extract metadata from commit object.
-
-        Args:
-            commit: PyDriller commit object
-            repo_name: Repository name
-
-        Returns:
-            Dictionary with commit metadata
-        """
+        # Extract metadata from commit object.
         # Get modified files
         files_changed = []
         lines_added = 0
@@ -205,15 +174,7 @@ class CommitExtractor:
         }
 
     def _extract_commit_metadata_from_github(self, commit, repo_name: str) -> dict[str, Any]:
-        """Extract metadata from GitHub API commit object.
-
-        Args:
-            commit: GitHub API commit object
-            repo_name: Repository name
-
-        Returns:
-            Dictionary with commit metadata
-        """
+        # Extract metadata from GitHub API commit object.
         # Get modified files and stats
         files_changed = []
         lines_added = 0
@@ -245,13 +206,7 @@ class CommitExtractor:
         }
 
     def save_results(self, commits: list[dict[str, Any]], output_file: Path, repos_count: int):
-        """Save extracted commits to JSON file.
-
-        Args:
-            commits: List of commit data
-            output_file: Output file path
-            repos_count: Number of repositories processed
-        """
+        # Save extracted commits to JSON file.
         data = {
             "metadata": {
                 "extracted_at": format_timestamp(),
@@ -267,102 +222,3 @@ class CommitExtractor:
 
         save_json_file(data, output_file)
         colored_print(f"Saved {len(commits)} commits to {output_file}", "green")
-
-
-@click.command()
-@click.option("--max-commits", default=50, help="Maximum commits per repository")
-@click.option("--skip-merges/--include-merges", default=True, help="Skip merge commits")
-@click.option("--days-back", default=730, help="Only analyze commits from last N days")
-@click.option(
-    "--repos-file", default=None, help="Input repositories file (default: data/repositories.json)"
-)
-@click.option("--output", default=None, help="Output file path (default: data/commits.json)")
-@click.option("--config-file", default=".env", help="Path to .env configuration file")
-def extract(
-    max_commits: int,
-    skip_merges: bool,
-    days_back: int,
-    repos_file: Optional[str],
-    output: Optional[str],
-    config_file: str,
-):
-    """Extract commits from fetched repositories."""
-    print_banner("Commit Data Extractor")
-
-    try:
-        # Load configuration
-        config = get_config(config_file)
-
-        # Determine input/output files
-        input_file = Path(repos_file) if repos_file else config.REPOS_FILE
-        output_file = Path(output) if output else config.COMMITS_FILE
-
-        # Check if input file exists
-        if not input_file.exists():
-            colored_print(f"Input file not found: {input_file}", "red")
-            colored_print("Please run 'fetch' command first to fetch repositories", "yellow")
-            exit(1)
-
-        # Load repositories
-        colored_print(f"Loading repositories from {input_file}...", "blue")
-        data = load_json_file(input_file)
-        repositories = data.get("repositories", [])
-
-        if not repositories:
-            colored_print("No repositories found in input file", "yellow")
-            exit(1)
-
-        colored_print(f"Loaded {len(repositories)} repositories", "green")
-
-        # Initialize extractor
-        extractor = CommitExtractor(
-            max_commits=max_commits, skip_merges=skip_merges, days_back=days_back
-        )
-
-        # Extract commits
-        commits = extractor.extract_from_repositories(repositories)
-
-        if not commits:
-            colored_print("No commits extracted", "yellow")
-            exit(1)
-
-        # Save results
-        extractor.save_results(commits, output_file, len(repositories))
-
-        # Display summary
-        colored_print(f"\n✓ Successfully extracted {len(commits)} commits", "green")
-        colored_print(f"Output saved to: {output_file}", "green")
-
-        # Calculate statistics
-        avg_commits = len(commits) / len(repositories)
-        colored_print("\nStatistics:", "cyan")
-        colored_print(f"  Total repositories: {len(repositories)}", "white")
-        colored_print(f"  Total commits: {len(commits)}", "white")
-        colored_print(f"  Average commits per repo: {avg_commits:.1f}", "white")
-
-        # Show language breakdown
-        from collections import Counter
-
-        repo_languages = [repo["language"] for repo in repositories if repo.get("language")]
-        language_counts = Counter(repo_languages)
-
-        colored_print("\nLanguage breakdown:", "cyan")
-        for lang, count in language_counts.most_common(5):
-            colored_print(f"  {lang}: {count} repos", "white")
-
-    except FileNotFoundError as e:
-        colored_print(f"File not found: {e}", "red")
-        exit(1)
-    except json.JSONDecodeError:
-        colored_print(f"Invalid JSON in input file: {input_file}", "red")
-        exit(1)
-    except Exception as e:
-        colored_print(f"Error: {e}", "red")
-        import traceback
-
-        traceback.print_exc()
-        exit(1)
-
-
-if __name__ == "__main__":
-    extract()

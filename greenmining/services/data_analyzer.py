@@ -1,4 +1,4 @@
-"""Data analyzer for green microservices commits using GSF patterns."""
+# Data analyzer for green microservices commits using GSF patterns.
 
 from __future__ import annotations
 
@@ -8,13 +8,10 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-import click
 from tqdm import tqdm
 
 from greenmining.analyzers import (
     CodeDiffAnalyzer,
-    NLPAnalyzer,
-    MLFeatureExtractor,
 )
 from greenmining.config import get_config
 from greenmining.gsf_patterns import (
@@ -35,30 +32,19 @@ from greenmining.utils import (
 
 
 class DataAnalyzer:
-    """Analyzes commits for green software patterns using GSF (Green Software Foundation) patterns."""
+    # Analyzes commits for green software patterns using GSF (Green Software Founda...
 
     def __init__(
         self,
         batch_size: int = 10,
         enable_diff_analysis: bool = False,
-        enable_nlp: bool = False,
-        enable_ml_features: bool = False,
     ):
-        """Initialize analyzer with GSF patterns.
-
-        Args:
-            batch_size: Number of commits to process in each batch
-            enable_diff_analysis: Enable code diff analysis (slower but more accurate)
-            enable_nlp: Enable NLP-enhanced pattern detection
-            enable_ml_features: Enable ML feature extraction
-        """
+        # Initialize analyzer with GSF patterns.
         # Use GSF patterns from gsf_patterns.py
         self.gsf_patterns = GSF_PATTERNS
         self.green_keywords = GREEN_KEYWORDS
         self.batch_size = batch_size
         self.enable_diff_analysis = enable_diff_analysis
-        self.enable_nlp = enable_nlp
-        self.enable_ml_features = enable_ml_features
 
         # Initialize code diff analyzer if enabled
         if self.enable_diff_analysis:
@@ -67,32 +53,10 @@ class DataAnalyzer:
         else:
             self.diff_analyzer = None
 
-        # Initialize NLP analyzer if enabled
-        if self.enable_nlp:
-            self.nlp_analyzer = NLPAnalyzer(enable_stemming=True, enable_synonyms=True)
-            colored_print("NLP analysis enabled (morphological variants + synonyms)", "cyan")
-        else:
-            self.nlp_analyzer = None
-
-        # Initialize ML feature extractor if enabled
-        if self.enable_ml_features:
-            self.ml_extractor = MLFeatureExtractor(green_keywords=list(GREEN_KEYWORDS))
-            colored_print("ML feature extraction enabled", "cyan")
-        else:
-            self.ml_extractor = None
-
     def analyze_commits(
         self, commits: list[dict[str, Any]], resume_from: int = 0
     ) -> list[dict[str, Any]]:
-        """Analyze commits for green software practices.
-
-        Args:
-            commits: List of commit dictionaries
-            resume_from: Index to resume from
-
-        Returns:
-            List of analysis results
-        """
+        # Analyze commits for green software practices.
         results = []
 
         colored_print(f"\nAnalyzing {len(commits)} commits for green practices...", "cyan")
@@ -115,14 +79,7 @@ class DataAnalyzer:
         return results
 
     def _analyze_commit(self, commit: dict[str, Any]) -> dict[str, Any]:
-        """Analyze a single commit using GSF patterns.
-
-        Args:
-            commit: Commit dictionary
-
-        Returns:
-            Analysis result with GSF pattern matching
-        """
+        # Analyze a single commit using GSF patterns.
         message = commit.get("message", "")
 
         # Q1: GREEN AWARENESS - Check using GSF keywords
@@ -130,20 +87,6 @@ class DataAnalyzer:
 
         # Q2: KNOWN GSF PATTERNS - Match against Green Software Foundation patterns
         matched_patterns = get_pattern_by_keywords(message)
-
-        # Enhanced NLP analysis (if enabled)
-        nlp_results = None
-        if self.nlp_analyzer:
-            nlp_results = self.nlp_analyzer.analyze_text(message, list(self.green_keywords))
-
-            # Check if NLP found additional matches not caught by keyword matching
-            has_nlp_matches, additional_terms = self.nlp_analyzer.enhance_pattern_detection(
-                message, matched_patterns
-            )
-
-            if has_nlp_matches:
-                # NLP enhancement found additional evidence
-                green_aware = True
 
         # Q3: CODE DIFF ANALYSIS (if enabled and diff data available)
         diff_analysis = None
@@ -211,38 +154,10 @@ class DataAnalyzer:
         if diff_analysis:
             result["diff_analysis"] = diff_analysis
 
-        # Add NLP analysis results if available
-        if nlp_results:
-            result["nlp_analysis"] = {
-                "total_matches": nlp_results["total_nlp_matches"],
-                "match_density": nlp_results["match_density"],
-                "morphological_count": len(nlp_results["morphological_matches"]),
-                "semantic_count": len(nlp_results["semantic_matches"]),
-                "phrase_count": len(nlp_results["phrase_matches"]),
-            }
-
-        # Add ML features if enabled
-        if self.enable_ml_features and self.ml_extractor:
-            # Note: Full feature extraction requires repository context
-            # For now, extract basic text features
-            text_features = self.ml_extractor.extract_text_features(message)
-            result["ml_features"] = {
-                "text": text_features,
-                "note": "Full ML features require repository and historical context",
-            }
-
         return result
 
     def _check_green_awareness(self, message: str, files: list[str]) -> tuple[bool, Optional[str]]:
-        """Check if commit explicitly mentions green/energy concerns.
-
-        Args:
-            message: Commit message (lowercase)
-            files: List of changed files (lowercase)
-
-        Returns:
-            Tuple of (is_green_aware, evidence_text)
-        """
+        # Check if commit explicitly mentions green/energy concerns.
         # Check message for green keywords
         for keyword in self.GREEN_KEYWORDS:
             if keyword in message:
@@ -265,15 +180,7 @@ class DataAnalyzer:
         return False, None
 
     def _detect_known_pattern(self, message: str, files: list[str]) -> tuple[Optional[str], str]:
-        """Detect known green software pattern.
-
-        Args:
-            message: Commit message (lowercase)
-            files: List of changed files (lowercase)
-
-        Returns:
-            Tuple of (pattern_name, confidence_level)
-        """
+        # Detect known green software pattern.
         matches = []
 
         # Check each pattern
@@ -299,12 +206,7 @@ class DataAnalyzer:
         return matches[0][0], matches[0][1]
 
     def save_results(self, results: list[dict[str, Any]], output_file: Path):
-        """Save analysis results to JSON file.
-
-        Args:
-            results: List of analysis results
-            output_file: Output file path
-        """
+        # Save analysis results to JSON file.
         # Calculate summary statistics
         green_aware_count = sum(1 for r in results if r["green_aware"])
 
@@ -335,7 +237,7 @@ class DataAnalyzer:
         colored_print(f"Saved analysis for {len(results)} commits to {output_file}", "green")
 
         # Display summary
-        colored_print("\n📊 Analysis Summary:", "cyan")
+        colored_print("\n Analysis Summary:", "cyan")
         colored_print(
             f"  Green-aware commits: {green_aware_count} ({data['metadata']['green_aware_percentage']}%)",
             "white",
@@ -344,98 +246,3 @@ class DataAnalyzer:
             colored_print("\n  Top patterns detected:", "cyan")
             for pattern, count in pattern_counts.most_common(5):
                 colored_print(f"    - {pattern}: {count}", "white")
-
-
-@click.command()
-@click.option("--batch-size", default=10, help="Batch size for processing")
-@click.option("--resume", is_flag=True, help="Resume from checkpoint")
-@click.option(
-    "--commits-file", default=None, help="Input commits file (default: data/commits.json)"
-)
-@click.option(
-    "--output", default=None, help="Output file path (default: data/analysis_results.json)"
-)
-@click.option("--config-file", default=".env", help="Path to .env configuration file")
-def analyze(
-    batch_size: int,
-    resume: bool,
-    commits_file: Optional[str],
-    output: Optional[str],
-    config_file: str,
-):
-    """Analyze commits for green software practices."""
-    print_banner("Data Analyzer")
-
-    try:
-        # Load configuration
-        config = get_config(config_file)
-
-        # Determine input/output files
-        input_file = Path(commits_file) if commits_file else config.COMMITS_FILE
-        output_file = Path(output) if output else config.ANALYSIS_FILE
-
-        # Check if input file exists
-        if not input_file.exists():
-            colored_print(f"Input file not found: {input_file}", "red")
-            colored_print("Please run 'extract' command first to extract commits", "yellow")
-            exit(1)
-
-        # Load commits
-        colored_print(f"Loading commits from {input_file}...", "blue")
-        data = load_json_file(input_file)
-        commits = data.get("commits", [])
-
-        if not commits:
-            colored_print("No commits found in input file", "yellow")
-            exit(1)
-
-        colored_print(f"Loaded {len(commits)} commits", "green")
-
-        # Check for resume
-        resume_from = 0
-        if resume:
-            checkpoint_data = load_checkpoint(config.CHECKPOINT_FILE)
-            if checkpoint_data:
-                resume_from = checkpoint_data.get("processed_count", 0)
-                colored_print(
-                    f"Resuming from checkpoint: {resume_from} commits processed", "yellow"
-                )
-
-        # Initialize analyzer
-        analyzer = DataAnalyzer(batch_size=batch_size)
-
-        # Analyze commits
-        results = analyzer.analyze_commits(commits, resume_from=resume_from)
-
-        if not results:
-            colored_print("No analysis results generated", "yellow")
-            exit(1)
-
-        # Save results
-        analyzer.save_results(results, output_file)
-
-        # Save checkpoint
-        create_checkpoint(
-            config.CHECKPOINT_FILE,
-            {"processed_count": len(results), "timestamp": format_timestamp()},
-        )
-
-        colored_print(f"\n✓ Successfully analyzed {len(results)} commits", "green")
-        colored_print(f"Output saved to: {output_file}", "green")
-
-    except FileNotFoundError as e:
-        colored_print(f"File not found: {e}", "red")
-        exit(1)
-    except json.JSONDecodeError:
-        colored_print(f"Invalid JSON in input file: {input_file}", "red")
-        exit(1)
-    except Exception as e:
-        colored_print(f"Error: {e}", "red")
-        import traceback
-
-        traceback.print_exc()
-        exit(1)
-
-
-if __name__ == "__main__":
-    analyze()

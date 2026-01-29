@@ -34,37 +34,6 @@ docker pull adambouafia/greenmining:latest
 
 ## Quick Start
 
-### CLI Usage
-
-```bash
-# Set your GitHub token
-export GITHUB_TOKEN="your_github_token"
-
-# Run full analysis pipeline
-greenmining pipeline --max-repos 100
-
-# Fetch repositories with custom keywords
-greenmining fetch --max-repos 100 --min-stars 100 --keywords "kubernetes docker cloud-native"
-
-# Fetch with default (microservices)
-greenmining fetch --max-repos 100 --min-stars 100
-
-# Extract commits
-greenmining extract --max-commits 50
-
-# Analyze for green patterns
-greenmining analyze
-
-# Analyze with advanced features
-greenmining analyze --enable-nlp --enable-ml-features --enable-diff-analysis
-
-# Aggregate results with temporal analysis
-greenmining aggregate --enable-temporal --temporal-granularity quarter --enable-enhanced-stats
-
-# Generate report
-greenmining report
-```
-
 ### Python API
 
 #### Basic Pattern Detection
@@ -143,21 +112,8 @@ extractor = CommitExtractor(
 # Initialize analyzer with advanced features
 analyzer = DataAnalyzer(
     enable_diff_analysis=False,      # Enable code diff analysis (slower but more accurate)
-    enable_nlp=True,                 # Enable NLP-enhanced pattern detection
-    enable_ml_features=True,         # Enable ML feature extraction
     patterns=None,                   # Custom pattern dict (default: GSF_PATTERNS)
     batch_size=10                    # Batch processing size (default: 10)
-)
-
-# Optional: Configure NLP analyzer separately
-nlp_analyzer = NLPAnalyzer(
-    enable_stemming=True,            # Enable morphological analysis (optimize→optimizing)
-    enable_synonyms=True             # Enable semantic synonym matching (cache→buffer)
-)
-
-# Optional: Configure ML feature extractor
-ml_extractor = MLFeatureExtractor(
-    green_keywords=None              # Custom keyword list (default: built-in 19 keywords)
 )
 
 # Extract commits from first repo
@@ -175,17 +131,8 @@ commits = extractor.extract_commits(
 
 **DataAnalyzer Parameters:**
 - `enable_diff_analysis` (bool, default=False): Enable code diff analysis (slower)
-- `enable_nlp` (bool, default=False): Enable NLP-enhanced pattern detection
-- `enable_ml_features` (bool, default=False): Enable ML feature extraction
 - `patterns` (dict, optional): Custom pattern dictionary (default: GSF_PATTERNS)
 - `batch_size` (int, default=10): Number of commits to process in each batch
-
-**NLPAnalyzer Parameters:**
-- `enable_stemming` (bool, default=True): Enable morphological variant matching
-- `enable_synonyms` (bool, default=True): Enable semantic synonym expansion
-
-**MLFeatureExtractor Parameters:**
-- `green_keywords` (list[str], optional): Custom green keywords list
 
 # Analyze commits for green patterns
 results = []
@@ -252,7 +199,7 @@ from greenmining.analyzers.qualitative_analyzer import QualitativeAnalyzer
 # Initialize aggregator with all advanced features
 aggregator = DataAggregator(
     config=None,                        # Config object (optional)
-    enable_enhanced_stats=True,         # Enable statistical analysis (correlations, trends)
+    enable_stats=True,                  # Enable statistical analysis (correlations, trends)
     enable_temporal=True,               # Enable temporal trend analysis
     temporal_granularity="quarter"      # Time granularity: day/week/month/quarter/year
 )
@@ -276,7 +223,7 @@ aggregated = aggregator.aggregate(
 
 **DataAggregator Parameters:**
 - `config` (Config, optional): Configuration object
-- `enable_enhanced_stats` (bool, default=False): Enable pattern correlations and effect size analysis
+- `enable_stats` (bool, default=False): Enable pattern correlations and effect size analysis
 - `enable_temporal` (bool, default=False): Enable temporal trend analysis over time
 - `temporal_granularity` (str, default="quarter"): Time granularity (day/week/month/quarter/year)
 
@@ -398,8 +345,6 @@ extractor.save_results(
 # STAGE 3: Analyze Commits
 print("\nAnalyzing commits...")
 analyzer = DataAnalyzer(
-    enable_nlp=True,
-    enable_ml_features=True,
     enable_diff_analysis=False,  # Set to True for detailed code analysis (slower)
 )
 analyzed_commits = analyzer.analyze_commits(all_commits)
@@ -416,7 +361,7 @@ analyzer.save_results(analyzed_commits, output_dir / "analyzed.json")
 # STAGE 4: Aggregate Results
 print("\nAggregating results...")
 aggregator = DataAggregator(
-    enable_enhanced_stats=True,
+    enable_stats=True,
     enable_temporal=True,
     temporal_granularity="quarter",
 )
@@ -443,8 +388,8 @@ print(f"\n📁 Results saved in: {output_dir.absolute()}")
 
 1. **Fetches repositories** from GitHub based on keywords and filters
 2. **Extracts commits** from each repository (up to 1000 per repo)
-3. **Analyzes commits** for green software patterns using NLP and ML
-4. **Aggregates results** with temporal analysis and enhanced statistics
+3. **Analyzes commits** for green software patterns
+4. **Aggregates results** with temporal analysis and statistics
 5. **Saves results** to JSON and CSV files for further analysis
 
 **Expected output files:**
@@ -459,17 +404,13 @@ print(f"\n📁 Results saved in: {output_dir.absolute()}")
 ### Docker Usage
 
 ```bash
-# Run analysis pipeline
+# Interactive shell with Python
+docker run -it -v $(pwd)/data:/app/data \
+           adambouafia/greenmining:latest python
+
+# Run Python script
 docker run -v $(pwd)/data:/app/data \
-           adambouafia/greenmining:latest --help
-
-# With custom configuration
-docker run -v $(pwd)/.env:/app/.env:ro \
-           -v $(pwd)/data:/app/data \
-           adambouafia/greenmining:latest pipeline --max-repos 50
-
-# Interactive shell
-docker run -it adambouafia/greenmining:latest /bin/bash
+           adambouafia/greenmining:latest python your_script.py
 ```
 
 ## Configuration
@@ -495,14 +436,12 @@ EXCLUDE_BOT_COMMITS=true
 
 # Optional - Analysis Features
 ENABLE_DIFF_ANALYSIS=false
-ENABLE_NLP=true
-ENABLE_ML_FEATURES=true
 BATCH_SIZE=10
 
 # Optional - Temporal Analysis
 ENABLE_TEMPORAL=true
 TEMPORAL_GRANULARITY=quarter
-ENABLE_ENHANCED_STATS=true
+ENABLE_STATS=true
 
 # Optional - Output
 OUTPUT_DIR=./data
@@ -532,14 +471,12 @@ config = Config(
     
     # Analysis Options
     enable_diff_analysis=False,             # Enable code diff analysis
-    enable_nlp=True,                        # Enable NLP features
-    enable_ml_features=True,                # Enable ML feature extraction
     batch_size=10,                          # Batch processing size
     
     # Temporal Analysis
     enable_temporal=True,                   # Enable temporal trend analysis
     temporal_granularity="quarter",         # day/week/month/quarter/year
-    enable_enhanced_stats=True,             # Enable statistical analysis
+    enable_stats=True,                      # Enable statistical analysis
     
     # Output Configuration
     output_dir="./data",                    # Output directory path
@@ -565,6 +502,50 @@ config = Config(
 - **Docker Support**: Pre-built images for containerized analysis
 - **Programmatic API**: Full Python API for custom workflows and integrations
 - **Clean Architecture**: Modular design with services layer (Fetcher, Extractor, Analyzer, Aggregator, Reports)
+- **Energy Measurement**: Real-time energy consumption tracking via RAPL (Linux) or CodeCarbon (cross-platform)
+
+### Energy Measurement
+
+greenmining includes built-in energy measurement capabilities for tracking the carbon footprint of your analysis:
+
+#### Backend Options
+
+| Backend | Platform | Metrics | Requirements |
+|---------|----------|---------|--------------|
+| **RAPL** | Linux (Intel/AMD) | CPU/RAM energy (Joules) | `/sys/class/powercap/` access |
+| **CodeCarbon** | Cross-platform | Energy + Carbon emissions (gCO2) | `pip install codecarbon` |
+
+#### Python API
+
+```python
+from greenmining.energy import RAPLEnergyMeter, CodeCarbonMeter
+
+# RAPL (Linux only)
+rapl = RAPLEnergyMeter()
+if rapl.is_available():
+    rapl.start()
+    # ... run analysis ...
+    result = rapl.stop()
+    print(f"Energy: {result.energy_joules:.2f} J")
+
+# CodeCarbon (cross-platform)
+cc = CodeCarbonMeter()
+if cc.is_available():
+    cc.start()
+    # ... run analysis ...
+    result = cc.stop()
+    print(f"Energy: {result.energy_joules:.2f} J")
+    print(f"Carbon: {result.carbon_grams:.4f} gCO2")
+```
+
+#### Experiment Results
+
+CodeCarbon was verified with a real experiment:
+- **Repository**: flask (pallets/flask)
+- **Commits analyzed**: 10
+- **Energy measured**: 160.6 J
+- **Carbon emissions**: 0.0119 gCO2
+- **Duration**: 11.28 seconds
 
 ### Pattern Database
 
@@ -629,77 +610,6 @@ Alpine containers, Infrastructure as Code, renewable energy regions, container o
 ### 15. General (8 patterns)
 Feature flags, incremental processing, precomputation, background jobs, workflow optimization
 
-## CLI Commands
-
-| Command | Description | Key Options |
-|---------|-------------|-------------|
-| `fetch` | Fetch repositories from GitHub with custom keywords | `--max-repos`, `--min-stars`, `--languages`, `--keywords` |
-| `extract` | Extract commit history from repositories | `--max-commits` per repository |
-| `analyze` | Analyze commits for green patterns | `--enable-nlp`, `--enable-ml-features`, `--enable-diff-analysis` |
-| `aggregate` | Aggregate analysis results | `--enable-temporal`, `--temporal-granularity`, `--enable-enhanced-stats` |
-| `report` | Generate comprehensive report | Creates Markdown and CSV outputs |
-| `pipeline` | Run complete analysis pipeline | `--max-repos`, `--max-commits` (all-in-one) |
-| `status` | Show current analysis status | Displays progress and file statistics |
-
-### Command Details
-
-#### Fetch Repositories
-```bash
-# Fetch with custom search keywords
-greenmining fetch --max-repos 100 --min-stars 50 --languages Python --keywords "kubernetes docker"
-
-# Fetch microservices (default)
-greenmining fetch --max-repos 100 --min-stars 50 --languages Python
-```
-Options:
-- `--max-repos`: Maximum repositories to fetch (default: 100)
-- `--min-stars`: Minimum GitHub stars (default: 100)
-- `--languages`: Filter by programming languages (default: "Python,Java,Go,JavaScript,TypeScript")
-- `--keywords`: Custom search keywords (default: "microservices")
-
-#### Extract Commits
-```bash
-greenmining extract --max-commits 50
-```
-Options:
-- `--max-commits`: Maximum commits per repository (default: 50)
-
-#### Analyze Commits (with Advanced Features)
-```bash
-# Basic analysis
-greenmining analyze
-
-# Advanced analysis with all features
-greenmining analyze --enable-nlp --enable-ml-features --enable-diff-analysis --batch-size 20
-```
-Options:
-- `--batch-size`: Batch size for processing (default: 10)
-- `--enable-diff-analysis`: Enable code diff analysis (slower but more accurate)
-- `--enable-nlp`: Enable NLP-enhanced pattern detection with morphological variants and synonyms
-- `--enable-ml-features`: Enable ML feature extraction for model training
-
-#### Aggregate Results (with Temporal Analysis)
-```bash
-# Basic aggregation
-greenmining aggregate
-
-# Advanced aggregation with temporal trends
-greenmining aggregate --enable-temporal --temporal-granularity quarter --enable-enhanced-stats
-```
-Options:
-- `--enable-enhanced-stats`: Enable enhanced statistical analysis (correlations, effect sizes)
-- `--enable-temporal`: Enable temporal trend analysis
-- `--temporal-granularity`: Time period granularity (choices: day, week, month, quarter, year)
-
-#### Run Pipeline
-```bash
-greenmining pipeline --max-repos 50 --max-commits 100
-```
-Options:
-- `--max-repos`: Repositories to analyze
-- `--max-commits`: Commits per repository
-- Executes: fetch → extract → analyze → aggregate → report
-
 ## Output Files
 
 All outputs are saved to the `data/` directory:
@@ -739,6 +649,7 @@ ruff check greenmining/ tests/
 - PyDriller >= 2.5
 - pandas >= 2.2.0
 - click >= 8.1.7
+- codecarbon >= 2.0.0 (optional, for cross-platform energy measurement)
 
 ## License
 

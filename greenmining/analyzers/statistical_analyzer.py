@@ -1,4 +1,4 @@
-"""Enhanced statistical analyzer for green software patterns."""
+# Statistical analyzer for green software patterns.
 
 from __future__ import annotations
 
@@ -9,24 +9,11 @@ import pandas as pd
 from scipy import stats
 
 
-class EnhancedStatisticalAnalyzer:
-    """
-    Advanced statistical analyses for green software patterns.
-    Based on Soliman et al. quantitative validation techniques.
-    """
+class StatisticalAnalyzer:
+    # Advanced statistical analyses for green software patterns.
 
     def analyze_pattern_correlations(self, commit_data: pd.DataFrame) -> Dict[str, Any]:
-        """
-        Analyze correlations between patterns.
-
-        Question: Do repositories that adopt caching also adopt resource limits?
-
-        Args:
-            commit_data: DataFrame with pattern columns
-
-        Returns:
-            Dictionary containing correlation matrix and significant pairs
-        """
+        # Analyze correlations between patterns.
         # Create pattern co-occurrence matrix
         pattern_columns = [col for col in commit_data.columns if col.startswith("pattern_")]
 
@@ -61,20 +48,7 @@ class EnhancedStatisticalAnalyzer:
         }
 
     def temporal_trend_analysis(self, commits_df: pd.DataFrame) -> Dict[str, Any]:
-        """
-        Analyze temporal trends in green awareness.
-
-        Techniques:
-        - Mann-Kendall trend test (monotonic trend detection)
-        - Seasonal decomposition (identify cyclical patterns)
-        - Change point detection (identify sudden shifts)
-
-        Args:
-            commits_df: DataFrame with date and green_aware columns
-
-        Returns:
-            Dictionary containing trend analysis results
-        """
+        # Analyze temporal trends in green awareness.
         # Prepare time series data
         commits_df["date"] = pd.to_datetime(commits_df["date"])
         commits_df = commits_df.sort_values("date")
@@ -127,21 +101,7 @@ class EnhancedStatisticalAnalyzer:
         }
 
     def effect_size_analysis(self, group1: List[float], group2: List[float]) -> Dict[str, Any]:
-        """
-        Calculate effect size between two groups.
-
-        Use case: Compare green awareness between:
-        - Different programming languages
-        - Different time periods
-        - Different repository sizes
-
-        Args:
-            group1: First group values
-            group2: Second group values
-
-        Returns:
-            Dictionary containing effect size metrics
-        """
+        # Calculate effect size between two groups.
         # Cohen's d (effect size)
         mean1, mean2 = np.mean(group1), np.mean(group2)
         std1, std2 = np.std(group1, ddof=1), np.std(group2, ddof=1)
@@ -175,20 +135,7 @@ class EnhancedStatisticalAnalyzer:
         }
 
     def pattern_adoption_rate_analysis(self, commits_df: pd.DataFrame) -> Dict[str, Any]:
-        """
-        Analyze pattern adoption rates over repository lifetime.
-
-        Metrics:
-        - Time to first adoption (TTFA)
-        - Adoption acceleration
-        - Pattern stickiness (continued use after adoption)
-
-        Args:
-            commits_df: DataFrame with pattern and date columns
-
-        Returns:
-            Dictionary mapping patterns to adoption metrics
-        """
+        # Analyze pattern adoption rates over repository lifetime.
         results = {}
 
         for pattern in commits_df["pattern"].unique():
@@ -220,15 +167,7 @@ class EnhancedStatisticalAnalyzer:
         return results
 
     def _interpret_correlations(self, significant_pairs: List[Dict[str, Any]]) -> str:
-        """
-        Generate interpretation of correlation results.
-
-        Args:
-            significant_pairs: List of significant correlation pairs
-
-        Returns:
-            Interpretation string
-        """
+        # Generate interpretation of correlation results.
         if not significant_pairs:
             return "No significant correlations found between patterns."
 

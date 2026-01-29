@@ -1,0 +1,36 @@
+{
+  "experiment_date": "2026-01-29T10:13:19.549029",
+  "backend": "codecarbon",
+  "repository": "flask",
+  "url": "https://github.com/pallets/flask",
+  "commits_analyzed": 10,
+  "green_commits": 6,
+  "green_percentage": 60.0,
+  "patterns": {
+    "Keep Request Counts Low": 4,
+    "Encrypt What Is Necessary": 1,
+    "Match SLO Requirements": 1,
+    "Minimize Deployed Environments": 2,
+    "Scale Infrastructure with User Load": 2,
+    "Eliminate Polling": 1,
+    "Scale Down Unused Applications": 1,
+    "Scan for Vulnerabilities": 1,
+    "Set Retention Policy on Storage": 1,
+    "Use Cloud Native Security Tools": 1
+  },
+  "energy_metrics": {
+    "joules": 160.60578412404962,
+    "watts_avg": 14.23239848867328,
+    "watts_peak": 14.23239848867328,
+    "duration_seconds": 11.284519910812378,
+    "cpu_energy_joules": 160.60578412404962,
+    "dram_energy_joules": 0,
+    "gpu_energy_joules": null,
+    "carbon_grams": 0.011939344766346227,
+    "carbon_intensity": null,
+    "backend": "codecarbon",
+    "start_time": "2026-01-29T10:13:08.263909",
+    "end_time": "2026-01-29T10:13:19.548429"
+  },
+  "analysis_time_seconds": 6.89
+}

@@ -1,0 +1,145 @@
+{
+  "experiment_date": "2026-01-29T09:50:56.401553",
+  "config": {
+    "max_commits_per_repo": 10,
+    "repositories_count": 5
+  },
+  "summary": {
+    "total_commits": 50,
+    "green_commits": 21,
+    "green_percentage": 42.0,
+    "patterns_found": {
+      "Defer Offscreen Images": 1,
+      "Properly Sized Images": 1,
+      "Serve Images in Modern Formats": 1,
+      "Match SLO Requirements": 3,
+      "Database Indexing": 2,
+      "Keep Request Counts Low": 13,
+      "Encrypt What Is Necessary": 3,
+      "Minimize Deployed Environments": 4,
+      "Scale Infrastructure with User Load": 3,
+      "Eliminate Polling": 2,
+      "Scale Down Unused Applications": 1,
+      "Scan for Vulnerabilities": 1,
+      "Set Retention Policy on Storage": 1,
+      "Use Cloud Native Security Tools": 1,
+      "Match VM Utilization Requirements": 1,
+      "Reduce Transmitted Data": 1,
+      "Avoid Chaining Critical Requests": 3,
+      "Connection Pooling": 2,
+      "Delete Unused Storage Resources": 1,
+      "Remove Unused Assets": 1,
+      "Pagination & Lazy Loading": 1,
+      "Containerize Your Workload": 1,
+      "Cache Static Data": 1,
+      "Lazy Loading": 1
+    }
+  },
+  "results": [
+    {
+      "repository": "fastapi",
+      "url": "https://github.com/tiangolo/fastapi",
+      "commits_analyzed": 10,
+      "green_commits": 3,
+      "green_percentage": 30.0,
+      "patterns": [
+        "Defer Offscreen Images",
+        "Properly Sized Images",
+        "Serve Images in Modern Formats",
+        "Match SLO Requirements",
+        "Match SLO Requirements",
+        "Database Indexing"
+      ],
+      "analysis_time_seconds": 137.71,
+      "energy_joules": 3547.884
+    },
+    {
+      "repository": "flask",
+      "url": "https://github.com/pallets/flask",
+      "commits_analyzed": 10,
+      "green_commits": 6,
+      "green_percentage": 60.0,
+      "patterns": [
+        "Keep Request Counts Low",
+        "Encrypt What Is Necessary",
+        "Match SLO Requirements",
+        "Minimize Deployed Environments",
+        "Keep Request Counts Low",
+        "Scale Infrastructure with User Load",
+        "Keep Request Counts Low",
+        "Eliminate Polling",
+        "Minimize Deployed Environments",
+        "Scale Down Unused Applications",
+        "Scale Infrastructure with User Load",
+        "Scan for Vulnerabilities",
+        "Set Retention Policy on Storage",
+        "Use Cloud Native Security Tools",
+        "Keep Request Counts Low"
+      ],
+      "analysis_time_seconds": 6.73,
+      "energy_joules": 157.7184
+    },
+    {
+      "repository": "requests",
+      "url": "https://github.com/psf/requests",
+      "commits_analyzed": 10,
+      "green_commits": 5,
+      "green_percentage": 50.0,
+      "patterns": [
+        "Match VM Utilization Requirements",
+        "Reduce Transmitted Data",
+        "Scale Infrastructure with User Load",
+        "Avoid Chaining Critical Requests",
+        "Keep Request Counts Low",
+        "Connection Pooling",
+        "Keep Request Counts Low",
+        "Delete Unused Storage Resources",
+        "Remove Unused Assets",
+        "Keep Request Counts Low",
+        "Avoid Chaining Critical Requests",
+        "Keep Request Counts Low",
+        "Connection Pooling",
+        "Eliminate Polling",
+        "Pagination & Lazy Loading",
+        "Keep Request Counts Low"
+      ],
+      "analysis_time_seconds": 4.36,
+      "energy_joules": 112.2329
+    },
+    {
+      "repository": "httpx",
+      "url": "https://github.com/encode/httpx",
+      "commits_analyzed": 10,
+      "green_commits": 4,
+      "green_percentage": 40.0,
+      "patterns": [
+        "Encrypt What Is Necessary",
+        "Minimize Deployed Environments",
+        "Keep Request Counts Low",
+        "Database Indexing",
+        "Encrypt What Is Necessary",
+        "Keep Request Counts Low",
+        "Keep Request Counts Low"
+      ],
+      "analysis_time_seconds": 4.97,
+      "energy_joules": 141.7643
+    },
+    {
+      "repository": "poetry",
+      "url": "https://github.com/python-poetry/poetry",
+      "commits_analyzed": 10,
+      "green_commits": 3,
+      "green_percentage": 30.0,
+      "patterns": [
+        "Containerize Your Workload",
+        "Minimize Deployed Environments",
+        "Cache Static Data",
+        "Avoid Chaining Critical Requests",
+        "Keep Request Counts Low",
+        "Lazy Loading"
+      ],
+      "analysis_time_seconds": 24.84,
+      "energy_joules": 601.6589
+    }
+  ]
+}
