@@ -14,3 +14,6 @@ pytest==7.4.3
 pytest-cov==4.1.0
 codecarbon>=2.0.0
 pyyaml>=6.0
+mkdocs-material
+mkdocs
+mkdocs-material-extensions
