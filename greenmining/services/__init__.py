@@ -3,12 +3,12 @@
 from .commit_extractor import CommitExtractor
 from .data_aggregator import DataAggregator
 from .data_analyzer import DataAnalyzer
-from .github_fetcher import GitHubFetcher
+from .github_graphql_fetcher import GitHubGraphQLFetcher
 from .local_repo_analyzer import LocalRepoAnalyzer
 from .reports import ReportGenerator
 
 __all__ = [
-    "GitHubFetcher",
+    "GitHubGraphQLFetcher",
     "CommitExtractor",
     "DataAnalyzer",
     "DataAggregator",

@@ -18,7 +18,7 @@
         <link rel="prev" href="../quickstart/">
       
       
-        <link rel="next" href="../../user-guide/cli/">
+        <link rel="next" href="../../user-guide/api/">
       
       
         
@@ -270,7 +270,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user-guide/cli/" class="md-tabs__link">
+        <a href="../../user-guide/api/" class="md-tabs__link">
           
   
   
@@ -890,34 +890,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user-guide/cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI Commands
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1976,27 +1948,27 @@
 <li><strong>YAML config file</strong> if specified</li>
 <li><strong><code>.env</code> file</strong> in current directory</li>
 <li><strong>Environment variables</strong></li>
-<li><strong>Command-line arguments</strong></li>
+<li><strong>Python Config overrides</strong></li>
 </ol>
 <hr />
 <h2 id="validating-configuration">Validating Configuration<a class="headerlink" href="#validating-configuration" title="Permanent link">&para;</a></h2>
-<p>Check current configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>greenmining<span class="w"> </span>status
-</code></pre></div>
-<p>Output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>GreenMining Configuration
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>=========================
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>GITHUB_TOKEN: ***configured***
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>MAX_REPOS: 100
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>COMMITS_PER_REPO: 1000
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>OUTPUT_DIR: data
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>ENABLE_TEMPORAL: True
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>TEMPORAL_GRANULARITY: quarter
+<p>Check current configuration in Python:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Config</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Check settings</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GITHUB_TOKEN: </span><span class="si">{</span><span class="s1">&#39;***configured***&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">GITHUB_TOKEN</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Not set&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAX_REPOS: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">MAX_REPOS</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;COMMITS_PER_REPO: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">COMMITS_PER_REPO</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OUTPUT_DIR: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ENABLE_TEMPORAL: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">ENABLE_TEMPORAL</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TEMPORAL_GRANULARITY: </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">TEMPORAL_GRANULARITY</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../user-guide/cli/">CLI Commands</a> - Use configuration with CLI</li>
+<li><a href="../quickstart/">Quick Start</a> - Get started with examples</li>
 <li><a href="../../user-guide/api/">Python API</a> - Programmatic configuration</li>
 <li><a href="../../reference/config-options/">Config Options Reference</a> - Full reference</li>
 </ul>
@@ -2037,7 +2009,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024-2026 Adam Bouafia
+      Copyright &copy; 2026 Adam Bouafia
     </div>
   
   
@@ -2050,6 +2022,17 @@
       
         
 <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/adam-bouafia/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
   
     
     

@@ -41,7 +41,9 @@ class CommitExtractor:
         self.github = Github(github_token) if github_token else None
         self.timeout = timeout
 
-    def extract_from_repositories(self, repositories: list[dict[str, Any] | Repository]) -> list[dict[str, Any]]:
+    def extract_from_repositories(
+        self, repositories: list[dict[str, Any] | Repository]
+    ) -> list[dict[str, Any]]:
         # Extract commits from list of repositories.
         all_commits = []
         failed_repos = []
@@ -74,15 +76,17 @@ class CommitExtractor:
                     pbar.update(1)
                 except TimeoutError:
                     signal.alarm(0)  # Cancel alarm
-                    repo_name = repo.full_name if isinstance(repo, Repository) else repo["full_name"]
-                    colored_print(
-                        f"\nTimeout processing {repo_name} (>{self.timeout}s)", "yellow"
+                    repo_name = (
+                        repo.full_name if isinstance(repo, Repository) else repo["full_name"]
                     )
+                    colored_print(f"\nTimeout processing {repo_name} (>{self.timeout}s)", "yellow")
                     failed_repos.append(repo_name)
                     pbar.update(1)
                 except Exception as e:
                     signal.alarm(0)  # Cancel alarm
-                    repo_name = repo.full_name if isinstance(repo, Repository) else repo["full_name"]
+                    repo_name = (
+                        repo.full_name if isinstance(repo, Repository) else repo["full_name"]
+                    )
                     colored_print(f"\nError processing {repo_name}: {e}", "yellow")
                     failed_repos.append(repo_name)
                     pbar.update(1)

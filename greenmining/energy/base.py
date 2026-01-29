@@ -12,36 +12,36 @@ import time
 
 class EnergyBackend(Enum):
     # Supported energy measurement backends.
-    
-    RAPL = "rapl"           # Intel RAPL (Linux)
+
+    RAPL = "rapl"  # Intel RAPL (Linux)
     CODECARBON = "codecarbon"  # CodeCarbon (cross-platform)
-    CPU_METER = "cpu_meter"    # CPU Energy Meter
+    CPU_METER = "cpu_meter"  # CPU Energy Meter
 
 
 @dataclass
 class EnergyMetrics:
     # Energy measurement results from a profiling session.
-    
+
     # Core energy metrics
-    joules: float = 0.0                    # Total energy consumed
-    watts_avg: float = 0.0                 # Average power draw
-    watts_peak: float = 0.0                # Peak power draw
-    duration_seconds: float = 0.0          # Measurement duration
-    
+    joules: float = 0.0  # Total energy consumed
+    watts_avg: float = 0.0  # Average power draw
+    watts_peak: float = 0.0  # Peak power draw
+    duration_seconds: float = 0.0  # Measurement duration
+
     # Component-specific energy (if available)
-    cpu_energy_joules: float = 0.0         # CPU-specific energy
-    dram_energy_joules: float = 0.0        # Memory energy
+    cpu_energy_joules: float = 0.0  # CPU-specific energy
+    dram_energy_joules: float = 0.0  # Memory energy
     gpu_energy_joules: Optional[float] = None  # GPU energy if available
-    
+
     # Carbon footprint (if carbon tracking enabled)
-    carbon_grams: Optional[float] = None    # CO2 equivalent in grams
-    carbon_intensity: Optional[float] = None # gCO2/kWh of grid
-    
+    carbon_grams: Optional[float] = None  # CO2 equivalent in grams
+    carbon_intensity: Optional[float] = None  # gCO2/kWh of grid
+
     # Metadata
     backend: str = ""
     start_time: Optional[datetime] = None
     end_time: Optional[datetime] = None
-    
+
     def to_dict(self) -> Dict[str, Any]:
         # Convert to dictionary.
         return {
@@ -63,14 +63,14 @@ class EnergyMetrics:
 @dataclass
 class CommitEnergyProfile:
     # Energy profile for a specific commit.
-    
+
     commit_hash: str
     energy_before: Optional[EnergyMetrics] = None  # Parent commit energy
-    energy_after: Optional[EnergyMetrics] = None   # This commit energy
-    energy_delta: float = 0.0                      # Change in joules
-    energy_regression: bool = False                # True if energy increased
-    regression_percentage: float = 0.0             # % change
-    
+    energy_after: Optional[EnergyMetrics] = None  # This commit energy
+    energy_delta: float = 0.0  # Change in joules
+    energy_regression: bool = False  # True if energy increased
+    regression_percentage: float = 0.0  # % change
+
     def to_dict(self) -> Dict[str, Any]:
         # Convert to dictionary.
         return {
@@ -85,29 +85,29 @@ class CommitEnergyProfile:
 
 class EnergyMeter(ABC):
     # Abstract base class for energy measurement backends.
-    
+
     def __init__(self, backend: EnergyBackend):
         # Initialize the energy meter.
         self.backend = backend
         self._is_measuring = False
         self._start_time: Optional[float] = None
         self._measurements: List[float] = []
-    
+
     @abstractmethod
     def is_available(self) -> bool:
         # Check if this energy measurement backend is available on the system.
         pass
-    
+
     @abstractmethod
     def start(self) -> None:
         # Start energy measurement.
         pass
-    
+
     @abstractmethod
     def stop(self) -> EnergyMetrics:
         # Stop energy measurement and return results.
         pass
-    
+
     def measure(self, func: Callable, *args, **kwargs) -> tuple[Any, EnergyMetrics]:
         # Measure energy consumption of a function call.
         self.start()
@@ -116,11 +116,11 @@ class EnergyMeter(ABC):
         finally:
             metrics = self.stop()
         return result, metrics
-    
+
     def measure_command(self, command: str, timeout: Optional[int] = None) -> EnergyMetrics:
         # Measure energy consumption of a shell command.
         import subprocess
-        
+
         self.start()
         try:
             subprocess.run(
@@ -133,12 +133,12 @@ class EnergyMeter(ABC):
         finally:
             metrics = self.stop()
         return metrics
-    
+
     def __enter__(self):
         # Context manager entry.
         self.start()
         return self
-    
+
     def __exit__(self, exc_type, exc_val, exc_tb):
         # Context manager exit.
         self.stop()
@@ -149,17 +149,17 @@ def get_energy_meter(backend: str = "rapl") -> EnergyMeter:
     # Factory function to get an energy meter instance.
     from .rapl import RAPLEnergyMeter
     from .codecarbon_meter import CodeCarbonMeter
-    
+
     backend_lower = backend.lower()
-    
+
     if backend_lower == "rapl":
         meter = RAPLEnergyMeter()
     elif backend_lower == "codecarbon":
         meter = CodeCarbonMeter()
     else:
         raise ValueError(f"Unsupported energy backend: {backend}")
-    
+
     if not meter.is_available():
         raise ValueError(f"Energy backend '{backend}' is not available on this system")
-    
+
     return meter

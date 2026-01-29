@@ -268,7 +268,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user-guide/cli/" class="md-tabs__link">
+        <a href="../../user-guide/api/" class="md-tabs__link">
           
   
   
@@ -630,34 +630,6 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user-guide/cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI Commands
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -2259,7 +2231,6 @@
 <li><strong>Environment variables</strong> - <code>export OPTION=value</code></li>
 <li><strong><code>.env</code> file</strong> - Key-value pairs in project root</li>
 <li><strong>Python Config object</strong> - Programmatic configuration</li>
-<li><strong>CLI arguments</strong> - Command-line overrides</li>
 </ol>
 <h3 id="precedence-order">Precedence Order<a class="headerlink" href="#precedence-order" title="Permanent link">&para;</a></h3>
 <p>Later sources override earlier ones:</p>
@@ -2267,7 +2238,7 @@
 <li>Default values (lowest priority)</li>
 <li><code>.env</code> file</li>
 <li>Environment variables</li>
-<li>CLI arguments (highest priority)</li>
+<li>Python Config overrides (highest priority)</li>
 </ol>
 <hr />
 <h2 id="github-api-options">GitHub API Options<a class="headerlink" href="#github-api-options" title="Permanent link">&para;</a></h2>
@@ -2295,7 +2266,7 @@
 </tr>
 <tr>
 <td><strong>Required</strong></td>
-<td>Yes (for fetch/pipeline commands)</td>
+<td>Yes (for fetch operations)</td>
 </tr>
 </tbody>
 </table>
@@ -2325,14 +2296,11 @@
 <td><strong>Environment</strong></td>
 <td><code>MAX_REPOS</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--max-repos</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MAX_REPOS</span><span class="o">=</span><span class="m">50</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>greenmining<span class="w"> </span>fetch<span class="w"> </span>--max-repos<span class="w"> </span><span class="m">50</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_repositories</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">repos</span> <span class="o">=</span> <span class="n">fetch_repositories</span><span class="p">(</span><span class="n">github_token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">max_repos</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="min_stars">MIN_STARS<a class="headerlink" href="#min_stars" title="Permanent link">&para;</a></h3>
 <p>Minimum GitHub star count required for repositories.</p>
@@ -2356,14 +2324,9 @@
 <td><strong>Environment</strong></td>
 <td><code>MIN_STARS</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--min-stars</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MIN_STARS</span><span class="o">=</span><span class="m">500</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>greenmining<span class="w"> </span>fetch<span class="w"> </span>--min-stars<span class="w"> </span><span class="m">500</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">repos</span> <span class="o">=</span> <span class="n">fetch_repositories</span><span class="p">(</span><span class="n">github_token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">min_stars</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="supported_languages">SUPPORTED_LANGUAGES<a class="headerlink" href="#supported_languages" title="Permanent link">&para;</a></h3>
 <p>Programming languages to filter repositories.</p>
@@ -2387,14 +2350,9 @@
 <td><strong>Environment</strong></td>
 <td><code>SUPPORTED_LANGUAGES</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--languages</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SUPPORTED_LANGUAGES</span><span class="o">=</span><span class="s2">&quot;Python,Go,Rust&quot;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>greenmining<span class="w"> </span>fetch<span class="w"> </span>--languages<span class="w"> </span><span class="s2">&quot;Python,Go,Rust&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">repos</span> <span class="o">=</span> <span class="n">fetch_repositories</span><span class="p">(</span><span class="n">github_token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">languages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Go&quot;</span><span class="p">,</span> <span class="s2">&quot;Rust&quot;</span><span class="p">])</span>
 </code></pre></div>
 <h3 id="search_keywords">SEARCH_KEYWORDS<a class="headerlink" href="#search_keywords" title="Permanent link">&para;</a></h3>
 <p>Keywords for GitHub repository search.</p>
@@ -2418,14 +2376,9 @@
 <td><strong>Environment</strong></td>
 <td><code>SEARCH_KEYWORDS</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--keywords</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SEARCH_KEYWORDS</span><span class="o">=</span><span class="s2">&quot;kubernetes cloud-native&quot;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>greenmining<span class="w"> </span>fetch<span class="w"> </span>--keywords<span class="w"> </span><span class="s2">&quot;kubernetes cloud-native&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">repos</span> <span class="o">=</span> <span class="n">fetch_repositories</span><span class="p">(</span><span class="n">github_token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="s2">&quot;kubernetes cloud-native&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="url-analysis-options">URL Analysis Options<a class="headerlink" href="#url-analysis-options" title="Permanent link">&para;</a></h2>
@@ -2451,13 +2404,12 @@
 <td><strong>Environment</strong></td>
 <td><code>REPOSITORY_URLS</code> (comma-separated)</td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--urls</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">REPOSITORY_URLS</span><span class="o">=</span><span class="s2">&quot;https://github.com/org/repo1,https://github.com/org/repo2&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span><span class="n">max_commits</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span><span class="s2">&quot;https://github.com/org/repo&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="clone_path">CLONE_PATH<a class="headerlink" href="#clone_path" title="Permanent link">&para;</a></h3>
 <p>Directory where repositories are cloned for analysis.</p>
@@ -2481,14 +2433,9 @@
 <td><strong>Environment</strong></td>
 <td><code>CLONE_PATH</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--clone-path</code></td>
-</tr>
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CLONE_PATH</span><span class="o">=</span>/var/data/greenmining
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>greenmining<span class="w"> </span>analyze-url<span class="w"> </span>https://github.com/org/repo<span class="w"> </span>--clone-path<span class="w"> </span>/var/data/greenmining
 </code></pre></div>
 <h3 id="cleanup_after_analysis">CLEANUP_AFTER_ANALYSIS<a class="headerlink" href="#cleanup_after_analysis" title="Permanent link">&para;</a></h3>
 <p>Whether to delete cloned repositories after analysis.</p>
@@ -2512,14 +2459,9 @@
 <td><strong>Environment</strong></td>
 <td><code>CLEANUP_AFTER_ANALYSIS</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--no-cleanup</code></td>
-</tr>
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CLEANUP_AFTER_ANALYSIS</span><span class="o">=</span><span class="nb">false</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>greenmining<span class="w"> </span>analyze-url<span class="w"> </span>https://github.com/org/repo<span class="w"> </span>--no-cleanup
 </code></pre></div>
 <hr />
 <h2 id="commit-extraction-options">Commit Extraction Options<a class="headerlink" href="#commit-extraction-options" title="Permanent link">&para;</a></h2>
@@ -2545,14 +2487,12 @@
 <td><strong>Environment</strong></td>
 <td><code>COMMITS_PER_REPO</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--max-commits</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">COMMITS_PER_REPO</span><span class="o">=</span><span class="m">500</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>greenmining<span class="w"> </span>extract<span class="w"> </span>--max-commits<span class="w"> </span><span class="m">500</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.commit_extractor</span><span class="w"> </span><span class="kn">import</span> <span class="n">CommitExtractor</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">extractor</span> <span class="o">=</span> <span class="n">CommitExtractor</span><span class="p">()</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">extractor</span><span class="o">.</span><span class="n">max_commits</span> <span class="o">=</span> <span class="mi">500</span>
 </code></pre></div>
 <h3 id="exclude_merge_commits">EXCLUDE_MERGE_COMMITS<a class="headerlink" href="#exclude_merge_commits" title="Permanent link">&para;</a></h3>
 <p>Skip merge commits during extraction.</p>
@@ -2575,10 +2515,6 @@
 <tr>
 <td><strong>Environment</strong></td>
 <td><code>EXCLUDE_MERGE_COMMITS</code></td>
-</tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--no-exclude-merges</code></td>
 </tr>
 </tbody>
 </table>
@@ -2605,10 +2541,6 @@
 <tr>
 <td><strong>Environment</strong></td>
 <td><code>EXCLUDE_BOT_COMMITS</code></td>
-</tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--no-exclude-bots</code></td>
 </tr>
 </tbody>
 </table>
@@ -2664,14 +2596,11 @@
 <td><strong>Environment</strong></td>
 <td><code>ENABLE_DIFF_ANALYSIS</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--enable-diff-analysis</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_DIFF_ANALYSIS</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>greenmining<span class="w"> </span>analyze<span class="w"> </span>--enable-diff-analysis
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span><span class="n">enable_diff_analysis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="batch_size">BATCH_SIZE<a class="headerlink" href="#batch_size" title="Permanent link">&para;</a></h3>
 <p>Number of commits to process per batch.</p>
@@ -2695,14 +2624,12 @@
 <td><strong>Environment</strong></td>
 <td><code>BATCH_SIZE</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--batch-size</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">BATCH_SIZE</span><span class="o">=</span><span class="m">50</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>greenmining<span class="w"> </span>analyze<span class="w"> </span>--batch-size<span class="w"> </span><span class="m">50</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAnalyzer</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">DataAnalyzer</span><span class="p">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">analyzer</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">50</span>
 </code></pre></div>
 <hr />
 <h2 id="pydriller-options">PyDriller Options<a class="headerlink" href="#pydriller-options" title="Permanent link">&para;</a></h2>
@@ -2808,14 +2735,11 @@
 <td><strong>Environment</strong></td>
 <td><code>ENABLE_STATS</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--enable-stats</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_STATS</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>greenmining<span class="w"> </span>aggregate<span class="w"> </span>--enable-stats
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_aggregator</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAggregator</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span><span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="enable_temporal">ENABLE_TEMPORAL<a class="headerlink" href="#enable_temporal" title="Permanent link">&para;</a></h3>
 <p>Enable temporal trend analysis.</p>
@@ -2839,14 +2763,9 @@
 <td><strong>Environment</strong></td>
 <td><code>ENABLE_TEMPORAL</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--enable-temporal</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_TEMPORAL</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>greenmining<span class="w"> </span>aggregate<span class="w"> </span>--enable-temporal
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span><span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="temporal_granularity">TEMPORAL_GRANULARITY<a class="headerlink" href="#temporal_granularity" title="Permanent link">&para;</a></h3>
 <p>Time period granularity for temporal analysis.</p>
@@ -2874,14 +2793,9 @@
 <td><strong>Environment</strong></td>
 <td><code>TEMPORAL_GRANULARITY</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--temporal-granularity</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TEMPORAL_GRANULARITY</span><span class="o">=</span>month
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>greenmining<span class="w"> </span>aggregate<span class="w"> </span>--temporal-granularity<span class="w"> </span>month
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span><span class="n">temporal_granularity</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="energy-measurement-options">Energy Measurement Options<a class="headerlink" href="#energy-measurement-options" title="Permanent link">&para;</a></h2>
@@ -2907,14 +2821,14 @@
 <td><strong>Environment</strong></td>
 <td><code>ENERGY_ENABLED</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--energy</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENERGY_ENABLED</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>greenmining<span class="w"> </span>analyze-url<span class="w"> </span>https://github.com/org/repo<span class="w"> </span>--energy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">energy_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;rapl&quot;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">)</span>
 </code></pre></div>
 <h3 id="energy_backend">ENERGY_BACKEND<a class="headerlink" href="#energy_backend" title="Permanent link">&para;</a></h3>
 <p>Energy measurement backend to use.</p>
@@ -2936,20 +2850,18 @@
 </tr>
 <tr>
 <td><strong>Options</strong></td>
-<td>rapl, codecarbon, cpu_meter</td>
+<td>rapl, codecarbon</td>
 </tr>
 <tr>
 <td><strong>Environment</strong></td>
 <td><code>ENERGY_BACKEND</code></td>
 </tr>
-<tr>
-<td><strong>CLI</strong></td>
-<td><code>--energy-backend</code></td>
-</tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENERGY_BACKEND</span><span class="o">=</span>codecarbon
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>greenmining<span class="w"> </span>analyze-url<span class="w"> </span>https://github.com/org/repo<span class="w"> </span>--energy-backend<span class="w"> </span>codecarbon
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="n">energy_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;codecarbon&quot;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">)</span>
 </code></pre></div>
 <h3 id="carbon_tracking">CARBON_TRACKING<a class="headerlink" href="#carbon_tracking" title="Permanent link">&para;</a></h3>
 <p>Enable carbon emissions tracking (CodeCarbon only).</p>
@@ -3219,8 +3131,8 @@
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../patterns/">GSF Patterns</a> - Pattern reference</li>
-<li><a href="../../user-guide/cli/">CLI Commands</a> - Command-line usage</li>
 <li><a href="../../user-guide/api/">Python API</a> - Programmatic configuration</li>
+<li><a href="../../user-guide/energy/">Energy Measurement</a> - Energy tracking guide</li>
 </ul>
 
 
@@ -3259,7 +3171,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024-2026 Adam Bouafia
+      Copyright &copy; 2026 Adam Bouafia
     </div>
   
   
@@ -3272,6 +3184,17 @@
       
         
 <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/adam-bouafia/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
   
     
     

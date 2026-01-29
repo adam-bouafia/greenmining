@@ -11,7 +11,8 @@ def _load_yaml_config(yaml_path: Path) -> Dict[str, Any]:
         return {}
     try:
         import yaml
-        with open(yaml_path, 'r') as f:
+
+        with open(yaml_path, "r") as f:
             return yaml.safe_load(f) or {}
     except ImportError:
         return {}
@@ -30,7 +31,7 @@ class Config:
             load_dotenv(env_path)
         else:
             load_dotenv()  # Load from system environment
-        
+
         # Load YAML config (takes precedence for certain options)
         yaml_path = Path(yaml_file)
         self._yaml_config = _load_yaml_config(yaml_path)
@@ -45,22 +46,32 @@ class Config:
 
         # Search and Processing Configuration (YAML: sources.search.keywords)
         yaml_search = self._yaml_config.get("sources", {}).get("search", {})
-        self.GITHUB_SEARCH_KEYWORDS = yaml_search.get("keywords", 
-            ["microservices", "microservice-architecture", "cloud-native"])
+        self.GITHUB_SEARCH_KEYWORDS = yaml_search.get(
+            "keywords", ["microservices", "microservice-architecture", "cloud-native"]
+        )
 
         # Supported Languages (YAML: sources.search.languages)
-        self.SUPPORTED_LANGUAGES = yaml_search.get("languages", [
-            "Java", "Python", "Go", "JavaScript", "TypeScript", "C#", "Rust",
-        ])
+        self.SUPPORTED_LANGUAGES = yaml_search.get(
+            "languages",
+            [
+                "Java",
+                "Python",
+                "Go",
+                "JavaScript",
+                "TypeScript",
+                "C#",
+                "Rust",
+            ],
+        )
 
         # Repository and Commit Limits (YAML: extraction.*)
         yaml_extraction = self._yaml_config.get("extraction", {})
         self.MIN_STARS = yaml_search.get("min_stars", int(os.getenv("MIN_STARS", "100")))
         self.MAX_REPOS = int(os.getenv("MAX_REPOS", "100"))
-        self.COMMITS_PER_REPO = yaml_extraction.get("max_commits", 
-            int(os.getenv("COMMITS_PER_REPO", "50")))
-        self.DAYS_BACK = yaml_extraction.get("days_back", 
-            int(os.getenv("DAYS_BACK", "730")))
+        self.COMMITS_PER_REPO = yaml_extraction.get(
+            "max_commits", int(os.getenv("COMMITS_PER_REPO", "50"))
+        )
+        self.DAYS_BACK = yaml_extraction.get("days_back", int(os.getenv("DAYS_BACK", "730")))
         self.SKIP_MERGES = yaml_extraction.get("skip_merges", True)
 
         # Analysis Configuration (YAML: analysis.*)
@@ -72,14 +83,17 @@ class Config:
         self.TEMPORAL_GRANULARITY = os.getenv("TEMPORAL_GRANULARITY", "quarter")
         self.ENABLE_ML_FEATURES = os.getenv("ENABLE_ML_FEATURES", "false").lower() == "true"
         self.VALIDATION_SAMPLE_SIZE = int(os.getenv("VALIDATION_SAMPLE_SIZE", "30"))
-        
+
         # PyDriller options (YAML: analysis.process_metrics, etc.)
-        self.PROCESS_METRICS_ENABLED = yaml_analysis.get("process_metrics",
-            os.getenv("PROCESS_METRICS_ENABLED", "true").lower() == "true")
-        self.STRUCTURAL_METRICS_ENABLED = yaml_analysis.get("structural_metrics",
-            os.getenv("STRUCTURAL_METRICS_ENABLED", "true").lower() == "true")
-        self.DMM_ENABLED = yaml_analysis.get("delta_maintainability",
-            os.getenv("DMM_ENABLED", "true").lower() == "true")
+        self.PROCESS_METRICS_ENABLED = yaml_analysis.get(
+            "process_metrics", os.getenv("PROCESS_METRICS_ENABLED", "true").lower() == "true"
+        )
+        self.STRUCTURAL_METRICS_ENABLED = yaml_analysis.get(
+            "structural_metrics", os.getenv("STRUCTURAL_METRICS_ENABLED", "true").lower() == "true"
+        )
+        self.DMM_ENABLED = yaml_analysis.get(
+            "delta_maintainability", os.getenv("DMM_ENABLED", "true").lower() == "true"
+        )
 
         # Temporal Filtering
         self.CREATED_AFTER = os.getenv("CREATED_AFTER")
@@ -102,8 +116,7 @@ class Config:
 
         # Output Configuration (YAML: output.directory)
         yaml_output = self._yaml_config.get("output", {})
-        self.OUTPUT_DIR = Path(yaml_output.get("directory", 
-            os.getenv("OUTPUT_DIR", "./data")))
+        self.OUTPUT_DIR = Path(yaml_output.get("directory", os.getenv("OUTPUT_DIR", "./data")))
         self.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
         # File Paths
@@ -119,25 +132,24 @@ class Config:
         yaml_urls = self._yaml_config.get("sources", {}).get("urls", [])
         env_urls = self._parse_repository_urls(os.getenv("REPOSITORY_URLS", ""))
         self.REPOSITORY_URLS: List[str] = yaml_urls if yaml_urls else env_urls
-        
+
         # Clone path (YAML: extraction.clone_path)
-        self.CLONE_PATH = Path(yaml_extraction.get("clone_path",
-            os.getenv("CLONE_PATH", "/tmp/greenmining_repos")))
-        self.CLEANUP_AFTER_ANALYSIS = (
-            os.getenv("CLEANUP_AFTER_ANALYSIS", "true").lower() == "true"
+        self.CLONE_PATH = Path(
+            yaml_extraction.get("clone_path", os.getenv("CLONE_PATH", "/tmp/greenmining_repos"))
         )
+        self.CLEANUP_AFTER_ANALYSIS = os.getenv("CLEANUP_AFTER_ANALYSIS", "true").lower() == "true"
 
         # Energy Measurement (YAML: energy.*)
         yaml_energy = self._yaml_config.get("energy", {})
-        self.ENERGY_ENABLED = yaml_energy.get("enabled",
-            os.getenv("ENERGY_ENABLED", "false").lower() == "true")
-        self.ENERGY_BACKEND = yaml_energy.get("backend",
-            os.getenv("ENERGY_BACKEND", "rapl"))
-        self.CARBON_TRACKING = yaml_energy.get("carbon_tracking",
-            os.getenv("CARBON_TRACKING", "false").lower() == "true")
-        self.COUNTRY_ISO = yaml_energy.get("country_iso",
-            os.getenv("COUNTRY_ISO", "USA"))
-        
+        self.ENERGY_ENABLED = yaml_energy.get(
+            "enabled", os.getenv("ENERGY_ENABLED", "false").lower() == "true"
+        )
+        self.ENERGY_BACKEND = yaml_energy.get("backend", os.getenv("ENERGY_BACKEND", "rapl"))
+        self.CARBON_TRACKING = yaml_energy.get(
+            "carbon_tracking", os.getenv("CARBON_TRACKING", "false").lower() == "true"
+        )
+        self.COUNTRY_ISO = yaml_energy.get("country_iso", os.getenv("COUNTRY_ISO", "USA"))
+
         # Power profiling (YAML: energy.power_profiling.*)
         yaml_power = yaml_energy.get("power_profiling", {})
         self.POWER_PROFILING_ENABLED = yaml_power.get("enabled", False)
