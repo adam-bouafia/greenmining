@@ -8,7 +8,6 @@ from typing import Any, Dict, List, Optional
 
 from .base import EnergyMetrics
 
-
 # Average carbon intensity by country (gCO2/kWh) - 2024 data
 # Source: Electricity Maps, IEA
 CARBON_INTENSITY_BY_COUNTRY = {
