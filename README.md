@@ -272,7 +272,137 @@ print(f"Top patterns: {stats['top_patterns'][:5]}")
 aggregator.export_to_csv(results, "output.csv")
 ```
 
-#### Batch Analysis
+#### URL-Based Repository Analysis
+
+```python
+from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
+
+analyzer = LocalRepoAnalyzer(
+    max_commits=200,
+    cleanup_after=True,
+)
+
+result = analyzer.analyze_repository("https://github.com/pallets/flask")
+
+print(f"Repository: {result.name}")
+print(f"Commits analyzed: {result.total_commits}")
+print(f"Green-aware: {result.green_commits} ({result.green_commit_rate:.1%})")
+
+for commit in result.commits[:5]:
+    if commit.green_aware:
+        print(f"  {commit.message[:60]}...")
+```
+
+#### Batch Analysis with Parallelism
+
+```python
+from greenmining import analyze_repositories
+
+results = analyze_repositories(
+    urls=[
+        "https://github.com/kubernetes/kubernetes",
+        "https://github.com/istio/istio",
+        "https://github.com/envoyproxy/envoy",
+    ],
+    max_commits=100,
+    parallel_workers=3,
+    energy_tracking=True,
+    energy_backend="auto",
+)
+
+for result in results:
+    print(f"{result.name}: {result.green_commit_rate:.1%} green")
+```
+
+#### Private Repository Analysis
+
+```python
+from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
+
+# HTTPS with token
+analyzer = LocalRepoAnalyzer(github_token="ghp_xxxx")
+result = analyzer.analyze_repository("https://github.com/company/private-repo")
+
+# SSH with key
+analyzer = LocalRepoAnalyzer(ssh_key_path="~/.ssh/id_rsa")
+result = analyzer.analyze_repository("git@github.com:company/private-repo.git")
+```
+
+#### Power Regression Detection
+
+```python
+from greenmining.analyzers import PowerRegressionDetector
+
+detector = PowerRegressionDetector(
+    test_command="pytest tests/ -x",
+    energy_backend="rapl",
+    threshold_percent=5.0,
+    iterations=5,
+)
+
+regressions = detector.detect(
+    repo_path="/path/to/repo",
+    baseline_commit="v1.0.0",
+    target_commit="HEAD",
+)
+
+for regression in regressions:
+    print(f"Commit {regression.sha[:8]}: +{regression.power_increase:.1f}%")
+```
+
+#### Version Power Comparison
+
+```python
+from greenmining.analyzers import VersionPowerAnalyzer
+
+analyzer = VersionPowerAnalyzer(
+    test_command="pytest tests/",
+    energy_backend="rapl",
+    iterations=10,
+    warmup_iterations=2,
+)
+
+report = analyzer.analyze_versions(
+    repo_path="/path/to/repo",
+    versions=["v1.0", "v1.1", "v1.2", "v2.0"],
+)
+
+print(report.summary())
+print(f"Trend: {report.trend}")
+print(f"Most efficient: {report.most_efficient}")
+```
+
+#### Metrics-to-Power Correlation
+
+```python
+from greenmining.analyzers import MetricsPowerCorrelator
+
+correlator = MetricsPowerCorrelator()
+correlator.fit(
+    metrics=["complexity", "nloc", "code_churn"],
+    metrics_values={
+        "complexity": [10, 20, 30, 40],
+        "nloc": [100, 200, 300, 400],
+        "code_churn": [50, 100, 150, 200],
+    },
+    power_measurements=[5.0, 8.0, 12.0, 15.0],
+)
+
+print(f"Pearson: {correlator.pearson}")
+print(f"Spearman: {correlator.spearman}")
+print(f"Feature importance: {correlator.feature_importance}")
+```
+
+#### Web Dashboard
+
+```python
+from greenmining.dashboard import run_dashboard
+
+# Launch interactive dashboard (requires pip install greenmining[dashboard])
+run_dashboard(data_dir="./data", host="127.0.0.1", port=5000)
+```
+
+#### Pipeline Batch Analysis
 
 ```python
 from greenmining.controllers.repository_controller import RepositoryController
@@ -493,17 +623,24 @@ config = Config(
 
 ### Core Capabilities
 
-- **Pattern Detection**: Automatically identifies 122 sustainability patterns across 15 categories
-- **Keyword Analysis**: Scans commit messages using 321 green software keywords
-- **Custom Repository Fetching**: Fetch repositories with custom search keywords (not limited to microservices)
-- **Repository Analysis**: Analyzes repositories from GitHub with flexible filtering
-- **Batch Processing**: Analyze hundreds of repositories and thousands of commits
-- **Multi-format Output**: Generates Markdown reports, CSV exports, and JSON data
-- **Statistical Analysis**: Calculates green-awareness metrics, pattern distribution, and trends
+- **Pattern Detection**: 122 sustainability patterns across 15 categories from the GSF catalog
+- **Keyword Analysis**: 321 green software detection keywords
+- **Repository Fetching**: GraphQL API with date, star, and language filters
+- **URL-Based Analysis**: Direct PyDriller analysis from GitHub URLs (HTTPS and SSH)
+- **Batch Processing**: Parallel analysis of multiple repositories with configurable workers
+- **Private Repository Support**: Authentication via SSH keys or GitHub tokens
+- **Energy Measurement**: RAPL, CodeCarbon, and CPU Energy Meter backends
+- **Carbon Footprint Reporting**: CO2 emissions with 20+ country profiles and cloud region support (AWS, GCP, Azure)
+- **Power Regression Detection**: Identify commits that increased energy consumption
+- **Metrics-to-Power Correlation**: Pearson and Spearman analysis between code metrics and power
+- **Version Power Comparison**: Compare power consumption across software versions with trend detection
+- **Method-Level Analysis**: Per-method complexity metrics via Lizard integration
+- **Source Code Access**: Before/after source code for refactoring detection
+- **Full Process Metrics**: All 8 PyDriller process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
+- **Statistical Analysis**: Correlations, effect sizes, and temporal trends
+- **Multi-format Output**: Markdown reports, CSV exports, JSON data
+- **Web Dashboard**: Flask-based interactive visualization (`pip install greenmining[dashboard]`)
 - **Docker Support**: Pre-built images for containerized analysis
-- **Programmatic API**: Full Python API for custom workflows and integrations
-- **Clean Architecture**: Modular design with services layer (Fetcher, Extractor, Analyzer, Aggregator, Reports)
-- **Energy Measurement**: Real-time energy consumption tracking via RAPL (Linux) or CodeCarbon (cross-platform)
 
 ### Energy Measurement
 
@@ -654,8 +791,15 @@ ruff check greenmining/ tests/
 - Python 3.9+
 - PyGithub >= 2.1.1
 - PyDriller >= 2.5
-- pandas >= 2.2.0 
-- codecarbon >= 2.0.0 (optional, for cross-platform energy measurement)
+- pandas >= 2.2.0
+
+**Optional dependencies:**
+
+```bash
+pip install greenmining[energy]      # psutil, codecarbon (energy measurement)
+pip install greenmining[dashboard]   # flask (web dashboard)
+pip install greenmining[dev]         # pytest, black, ruff, mypy (development)
+```
 
 ## License
 

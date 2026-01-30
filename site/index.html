@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A library for mining and analyzing green software engineering patterns in GitHub repositories">
+        <meta name="description" content="An empirical Python library for Mining Software Repositories (MSR) in Green IT research">
       
       
         <meta name="author" content="Adam Bouafia">
@@ -326,6 +326,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="contributing/" class="md-tabs__link">
         
   
@@ -603,6 +622,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -627,6 +657,67 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Research Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mining-software-repositories-msr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mining Software Repositories (MSR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green-it-pattern-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Green IT Pattern Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-statistical-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporal &amp; Statistical Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energy Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1219,6 +1310,33 @@
   
   
     <li class="md-nav__item">
+      <a href="roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="contributing/" class="md-nav__link">
         
   
@@ -1426,6 +1544,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1450,6 +1579,67 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Research Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mining-software-repositories-msr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mining Software Repositories (MSR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green-it-pattern-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Green IT Pattern Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-statistical-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporal &amp; Statistical Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energy Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1497,7 +1687,7 @@
 
 <h1 id="greenmining-documentation">GreenMining Documentation<a class="headerlink" href="#greenmining-documentation" title="Permanent link">&para;</a></h1>
 <p align="center">
-  <strong>A Python library for mining and analyzing green software engineering patterns in GitHub repositories</strong>
+  <strong>An empirical Python library for Mining Software Repositories (MSR) in Green IT research</strong>
 </p>
 
 <p align="center">
@@ -1508,7 +1698,15 @@
 
 <hr />
 <h2 id="what-is-greenmining">What is GreenMining?<a class="headerlink" href="#what-is-greenmining" title="Permanent link">&para;</a></h2>
-<p>GreenMining is a research-grade tool for analyzing software repositories to detect <strong>green software engineering practices</strong>. It identifies commits that implement sustainability patterns based on the <a href="https://patterns.greensoftware.foundation/">Green Software Foundation (GSF)</a> catalog.</p>
+<p>GreenMining is an <strong>empirical research tool</strong> for Mining Software Repositories (MSR) focused on <strong>Green IT</strong> and sustainable software practices. It provides researchers and practitioners with a comprehensive toolkit for:</p>
+<ul>
+<li><strong>Mining repositories</strong> at scale to study green software evolution</li>
+<li><strong>Classifying commits</strong> using the <a href="https://patterns.greensoftware.foundation/">Green Software Foundation (GSF)</a> pattern catalog</li>
+<li><strong>Measuring energy consumption</strong> of software systems and analysis workloads</li>
+<li><strong>Analyzing temporal trends</strong> and adoption patterns across projects</li>
+<li><strong>Generating research-ready datasets</strong> with statistical analysis</li>
+</ul>
+<p>The library integrates with PyDriller for deep repository analysis and supports multiple energy measurement backends (RAPL, CodeCarbon) for empirical Green IT research.</p>
 <h3 id="key-capabilities">Key Capabilities<a class="headerlink" href="#key-capabilities" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1677,6 +1875,12 @@
 <li><a href="examples/basic/">Basic Usage</a> - Simple pattern detection examples</li>
 <li><a href="examples/pipeline/">Complete Pipeline</a> - Full research workflow example</li>
 </ul>
+<h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="roadmap/">Roadmap</a> - Future features and development plans</li>
+<li><a href="contributing/">Contributing</a> - How to contribute to GreenMining</li>
+<li><a href="changelog/">Changelog</a> - Version history and release notes</li>
+</ul>
 <hr />
 <h2 id="example-output">Example Output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h2>
 <p>When analyzing a repository, GreenMining produces reports like:</p>
@@ -1702,13 +1906,36 @@
 </code></pre></div>
 <hr />
 <h2 id="research-applications">Research Applications<a class="headerlink" href="#research-applications" title="Permanent link">&para;</a></h2>
-<p>GreenMining is designed for software engineering research:</p>
+<p>GreenMining is designed for <strong>empirical MSR research</strong> in Green IT:</p>
+<h3 id="mining-software-repositories-msr">Mining Software Repositories (MSR)<a class="headerlink" href="#mining-software-repositories-msr" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Mining Software Repositories (MSR)</strong> studies on green practices</li>
-<li><strong>Green Software Foundation</strong> pattern adoption analysis</li>
-<li><strong>Temporal trend analysis</strong> of sustainability practices</li>
-<li><strong>Cross-repository comparison</strong> of green awareness</li>
-<li><strong>Energy measurement</strong> of analysis workloads</li>
+<li>Large-scale repository mining with GitHub API and GraphQL</li>
+<li>Configurable filters (stars, languages, dates, keywords)</li>
+<li>Batch processing with rate limit handling</li>
+</ul>
+<h3 id="green-it-pattern-analysis">Green IT Pattern Analysis<a class="headerlink" href="#green-it-pattern-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>122 GSF patterns across 15 sustainability categories</li>
+<li>Keyword-based commit classification with confidence scoring</li>
+<li>Pattern co-occurrence and correlation analysis</li>
+</ul>
+<h3 id="temporal-statistical-analysis">Temporal &amp; Statistical Analysis<a class="headerlink" href="#temporal-statistical-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trend analysis at configurable granularity (day/week/month/quarter/year)</li>
+<li>Effect size calculations (Cohen's d, Cliff's delta)</li>
+<li>Cross-repository comparative studies</li>
+</ul>
+<h3 id="energy-measurement">Energy Measurement<a class="headerlink" href="#energy-measurement" title="Permanent link">&para;</a></h3>
+<ul>
+<li>RAPL backend for direct CPU/DRAM power measurement (Linux)</li>
+<li>CodeCarbon integration for cross-platform emissions tracking</li>
+<li>Energy profiling of analysis workloads</li>
+</ul>
+<h3 id="research-outputs">Research Outputs<a class="headerlink" href="#research-outputs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>JSON, CSV, and Markdown report generation</li>
+<li>Publication-ready statistical summaries</li>
+<li>Reproducible analysis pipelines</li>
 </ul>
 <hr />
 <h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h2>

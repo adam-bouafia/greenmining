@@ -18,6 +18,10 @@ def fetch_repositories(
     min_stars: int = None,
     languages: list = None,
     keywords: str = None,
+    created_after: str = None,
+    created_before: str = None,
+    pushed_after: str = None,
+    pushed_before: str = None,
 ):
     # Fetch repositories from GitHub with custom search keywords.
     config = Config()
@@ -29,6 +33,10 @@ def fetch_repositories(
         min_stars=min_stars,
         languages=languages,
         keywords=keywords,
+        created_after=created_after,
+        created_before=created_before,
+        pushed_after=pushed_after,
+        pushed_before=pushed_before,
     )
 
 
