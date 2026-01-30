@@ -196,4 +196,4 @@ python -c "from greenmining.dashboard import run_dashboard; run_dashboard()"
 
 - [Python API](api.md) - Full API reference
 - [Energy Measurement](energy.md) - Energy backends and carbon reporting
-- [Experiment](../experiment.md) - Full pipeline walkthrough
+- [Experiment](../examples/experiment.md) - Full pipeline walkthrough

@@ -310,7 +310,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/basic/" class="md-tabs__link">
+        <a href="../../examples/experiment/" class="md-tabs__link">
           
   
   
@@ -319,25 +319,6 @@
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../roadmap/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Roadmap
-
-      </a>
-    </li>
   
 
       
@@ -814,6 +795,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#analyze_repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analyze_repositories()
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -930,6 +922,50 @@
     <span class="md-ellipsis">
       
         CodeDiffAnalyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powerregressiondetector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerRegressionDetector
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricspowercorrelator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MetricsPowerCorrelator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionpoweranalyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionPowerAnalyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carbonreporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CarbonReporter
       
     </span>
   </a>
@@ -1252,35 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/basic/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Basic Usage
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/pipeline/" class="md-nav__link">
+      <a href="../../examples/experiment/" class="md-nav__link">
         
   
   
@@ -1304,33 +1312,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../roadmap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Roadmap
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1510,6 +1491,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#analyze_repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analyze_repositories()
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1626,6 +1618,50 @@
     <span class="md-ellipsis">
       
         CodeDiffAnalyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powerregressiondetector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerRegressionDetector
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricspowercorrelator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MetricsPowerCorrelator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionpoweranalyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionPowerAnalyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carbonreporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CarbonReporter
       
     </span>
   </a>
@@ -1900,256 +1936,772 @@
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># [&#39;energy&#39;, &#39;power&#39;, &#39;carbon&#39;, &#39;emission&#39;, &#39;footprint&#39;, </span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">#  &#39;sustainability&#39;, &#39;sustainable&#39;, &#39;green&#39;, &#39;efficient&#39;, &#39;efficiency&#39;]</span>
 </code></pre></div>
+<h3 id="analyze_repositories">analyze_repositories()<a class="headerlink" href="#analyze_repositories" title="Permanent link">&para;</a></h3>
+<p>Analyze multiple repositories from URLs with optional parallel processing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">analyze_repositories</span><span class="p">(</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">urls</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">max_commits</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">parallel_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">output_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dict&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">energy_tracking</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">energy_backend</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rapl&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">method_level_analysis</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">include_source_code</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">ssh_key_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="n">github_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>urls</code></td>
+<td>list</td>
+<td>(required)</td>
+<td>List of GitHub repository URLs</td>
+</tr>
+<tr>
+<td><code>max_commits</code></td>
+<td>int</td>
+<td>500</td>
+<td>Maximum commits per repository</td>
+</tr>
+<tr>
+<td><code>parallel_workers</code></td>
+<td>int</td>
+<td>1</td>
+<td>Concurrent analysis workers</td>
+</tr>
+<tr>
+<td><code>energy_tracking</code></td>
+<td>bool</td>
+<td>False</td>
+<td>Enable energy measurement</td>
+</tr>
+<tr>
+<td><code>energy_backend</code></td>
+<td>str</td>
+<td>"rapl"</td>
+<td>Energy backend (rapl, codecarbon, cpu_meter, auto)</td>
+</tr>
+<tr>
+<td><code>method_level_analysis</code></td>
+<td>bool</td>
+<td>False</td>
+<td>Include per-method metrics</td>
+</tr>
+<tr>
+<td><code>include_source_code</code></td>
+<td>bool</td>
+<td>False</td>
+<td>Include source code before/after</td>
+</tr>
+<tr>
+<td><code>ssh_key_path</code></td>
+<td>str</td>
+<td>None</td>
+<td>SSH key for private repos</td>
+</tr>
+<tr>
+<td><code>github_token</code></td>
+<td>str</td>
+<td>None</td>
+<td>GitHub token for private HTTPS repos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining</span><span class="w"> </span><span class="kn">import</span> <span class="n">analyze_repositories</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">results</span> <span class="o">=</span> <span class="n">analyze_repositories</span><span class="p">(</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">urls</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="s2">&quot;https://github.com/kubernetes/kubernetes&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="s2">&quot;https://github.com/istio/istio&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="p">],</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="n">max_commits</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="n">parallel_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="n">energy_tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">)</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">green_commit_rate</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> green&quot;</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <h2 id="service-classes">Service Classes<a class="headerlink" href="#service-classes" title="Permanent link">&para;</a></h2>
 <h3 id="dataanalyzer">DataAnalyzer<a class="headerlink" href="#dataanalyzer" title="Permanent link">&para;</a></h3>
 <p>Analyze commits for green software patterns.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAnalyzer</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">DataAnalyzer</span><span class="p">(</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">enable_diff_analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Analyze code diffs</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>               <span class="c1"># Custom patterns (default: GSF_PATTERNS)</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">10</span>                <span class="c1"># Commits per batch</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">)</span>
-</code></pre></div>
-<p><strong>Methods:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Analyze a single commit</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_commit</span><span class="p">(</span><span class="n">commit_dict</span><span class="p">)</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Analyze multiple commits</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_commits</span><span class="p">(</span><span class="n">commits_list</span><span class="p">)</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Save results to file</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">analyzer</span><span class="o">.</span><span class="n">save_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;output.json&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAnalyzer</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">DataAnalyzer</span><span class="p">(</span><span class="n">enable_diff_analysis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">commit</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="s2">&quot;sha&quot;</span><span class="p">:</span> <span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Implement Redis caching for user sessions&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;developer&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-15T10:00:00Z&quot;</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_commit</span><span class="p">(</span><span class="n">commit</span><span class="p">)</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Patterns: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;patterns&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">DataAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">enable_diff_analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Analyze code diffs</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>               <span class="c1"># Custom patterns (default: GSF_PATTERNS)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">batch_size</span><span class="o">=</span><span class="mi">10</span>                <span class="c1"># Commits per batch</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">)</span>
+</code></pre></div>
+<p><strong>Methods:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Analyze a single commit</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_commit</span><span class="p">(</span><span class="n">commit_dict</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Analyze multiple commits</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_commits</span><span class="p">(</span><span class="n">commits_list</span><span class="p">)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Save results to file</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">analyzer</span><span class="o">.</span><span class="n">save_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;output.json&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAnalyzer</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">DataAnalyzer</span><span class="p">(</span><span class="n">enable_diff_analysis</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">commit</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="s2">&quot;sha&quot;</span><span class="p">:</span> <span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Implement Redis caching for user sessions&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;developer&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-15T10:00:00Z&quot;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">}</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_commit</span><span class="p">(</span><span class="n">commit</span><span class="p">)</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Patterns: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;patterns&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="dataaggregator">DataAggregator<a class="headerlink" href="#dataaggregator" title="Permanent link">&para;</a></h3>
 <p>Aggregate analysis results with statistics.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_aggregator</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAggregator</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                  <span class="c1"># Config object</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            <span class="c1"># Statistical analysis</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>         <span class="c1"># Temporal trends</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="n">temporal_granularity</span><span class="o">=</span><span class="s2">&quot;quarter&quot;</span>  <span class="c1"># day/week/month/quarter/year</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">)</span>
-</code></pre></div>
-<p><strong>Methods:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Aggregate results</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">aggregated</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">,</span> <span class="n">repositories</span><span class="p">)</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Save to files</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">aggregator</span><span class="o">.</span><span class="n">save_results</span><span class="p">(</span><span class="n">aggregated</span><span class="p">,</span> <span class="s2">&quot;stats.json&quot;</span><span class="p">,</span> <span class="s2">&quot;stats.csv&quot;</span><span class="p">,</span> <span class="n">analysis_results</span><span class="p">)</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Print summary</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">aggregator</span><span class="o">.</span><span class="n">print_summary</span><span class="p">(</span><span class="n">aggregated</span><span class="p">)</span>
-</code></pre></div>
-<p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_aggregator</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAggregator</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="n">temporal_granularity</span><span class="o">=</span><span class="s2">&quot;month&quot;</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">)</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1"># Assuming analysis_results and repositories are already populated</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="n">aggregated</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">,</span> <span class="n">repositories</span><span class="p">)</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total commits: </span><span class="si">{</span><span class="n">aggregated</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">][</span><span class="s1">&#39;total_commits&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">aggregated</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">][</span><span class="s1">&#39;green_aware_percentage&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                  <span class="c1"># Config object</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            <span class="c1"># Statistical analysis</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>         <span class="c1"># Temporal trends</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="n">temporal_granularity</span><span class="o">=</span><span class="s2">&quot;quarter&quot;</span>  <span class="c1"># day/week/month/quarter/year</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">)</span>
+</code></pre></div>
+<p><strong>Methods:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Aggregate results</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">aggregated</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">,</span> <span class="n">repositories</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Save to files</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">aggregator</span><span class="o">.</span><span class="n">save_results</span><span class="p">(</span><span class="n">aggregated</span><span class="p">,</span> <span class="s2">&quot;stats.json&quot;</span><span class="p">,</span> <span class="s2">&quot;stats.csv&quot;</span><span class="p">,</span> <span class="n">analysis_results</span><span class="p">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Print summary</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">aggregator</span><span class="o">.</span><span class="n">print_summary</span><span class="p">(</span><span class="n">aggregated</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_aggregator</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAggregator</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="n">temporal_granularity</span><span class="o">=</span><span class="s2">&quot;month&quot;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="c1"># Assuming analysis_results and repositories are already populated</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="n">aggregated</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">,</span> <span class="n">repositories</span><span class="p">)</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total commits: </span><span class="si">{</span><span class="n">aggregated</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">][</span><span class="s1">&#39;total_commits&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">aggregated</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">][</span><span class="s1">&#39;green_aware_percentage&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="localrepoanalyzer">LocalRepoAnalyzer<a class="headerlink" href="#localrepoanalyzer" title="Permanent link">&para;</a></h3>
-<p>Analyze repositories directly from GitHub URLs using PyDriller.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="n">clone_path</span><span class="o">=</span><span class="s2">&quot;/tmp/greenmining_repos&quot;</span><span class="p">,</span>  <span class="c1"># Clone directory</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="n">cleanup_after</span><span class="o">=</span><span class="kc">True</span>                     <span class="c1"># Delete after analysis</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">)</span>
+<p>Analyze repositories directly from GitHub URLs.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="n">clone_path</span><span class="o">=</span><span class="s2">&quot;/tmp/greenmining_repos&quot;</span><span class="p">,</span>  <span class="c1"># Clone directory</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="n">max_commits</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>                       <span class="c1"># Max commits per repo</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="n">days_back</span><span class="o">=</span><span class="mi">730</span><span class="p">,</span>                         <span class="c1"># How far back to analyze</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="n">skip_merges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                      <span class="c1"># Skip merge commits</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="n">compute_process_metrics</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>          <span class="c1"># Compute process metrics</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    <span class="n">cleanup_after</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                    <span class="c1"># Delete after analysis</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    <span class="n">ssh_key_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                     <span class="c1"># SSH key for private repos</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="n">github_token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                     <span class="c1"># GitHub token for private repos</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="n">energy_tracking</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>                 <span class="c1"># Enable energy measurement</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;rapl&quot;</span><span class="p">,</span>                 <span class="c1"># Energy backend</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    <span class="n">method_level_analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>           <span class="c1"># Per-method metrics</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>    <span class="n">include_source_code</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>             <span class="c1"># Source code before/after</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>    <span class="n">process_metrics</span><span class="o">=</span><span class="s2">&quot;standard&quot;</span><span class="p">,</span>            <span class="c1"># &quot;standard&quot; or &quot;full&quot;</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="p">)</span>
 </code></pre></div>
 <p><strong>Methods:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Analyze single repository</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">repo_url</span><span class="o">=</span><span class="s2">&quot;https://github.com/owner/repo&quot;</span><span class="p">,</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="n">max_commits</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="n">since_date</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="n">to_date</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Analyze single repository</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span><span class="s2">&quot;https://github.com/owner/repo&quot;</span><span class="p">)</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Analyze multiple repositories (with parallelism)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repositories</span><span class="p">(</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="n">urls</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;https://github.com/org/repo1&quot;</span><span class="p">,</span> <span class="s2">&quot;https://github.com/org/repo2&quot;</span><span class="p">],</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="n">parallel_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="p">)</span>
 </code></pre></div>
-<p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="n">clone_path</span><span class="o">=</span><span class="s2">&quot;/tmp/analysis&quot;</span><span class="p">,</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="n">cleanup_after</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">)</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    <span class="n">repo_url</span><span class="o">=</span><span class="s2">&quot;https://github.com/pallets/flask&quot;</span><span class="p">,</span>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="n">max_commits</span><span class="o">=</span><span class="mi">100</span>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="p">)</span>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Repository: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Commits analyzed: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;total_commits&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1"># Access individual commits</span>
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;commits&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">]:</span>
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>    <span class="k">if</span> <span class="n">commit</span><span class="p">[</span><span class="s1">&#39;green_aware&#39;</span><span class="p">]:</span>
-<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  🌱 </span><span class="si">{</span><span class="n">commit</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][:</span><span class="mi">50</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+<p><strong>Example: Basic analysis</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span><span class="n">cleanup_after</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span><span class="s2">&quot;https://github.com/pallets/flask&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Repository: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Commits analyzed: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">total_commits</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">green_commits</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">green_commit_rate</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">commits</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    <span class="k">if</span> <span class="n">commit</span><span class="o">.</span><span class="n">green_aware</span><span class="p">:</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">commit</span><span class="o">.</span><span class="n">message</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Example: Private repository with energy tracking</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="n">github_token</span><span class="o">=</span><span class="s2">&quot;ghp_xxxx&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">energy_tracking</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="n">method_level_analysis</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="p">)</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span><span class="s2">&quot;https://github.com/company/private-repo&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy consumed: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">energy_metrics</span><span class="p">[</span><span class="s1">&#39;joules&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> J&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="k">for</span> <span class="n">commit</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">commits</span><span class="p">:</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>    <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">commit</span><span class="o">.</span><span class="n">methods</span><span class="p">:</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">method</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: complexity=</span><span class="si">{</span><span class="n">method</span><span class="o">.</span><span class="n">complexity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Example: Batch parallel analysis</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span><span class="n">max_commits</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">results</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repositories</span><span class="p">(</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="n">urls</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>        <span class="s2">&quot;https://github.com/kubernetes/kubernetes&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>        <span class="s2">&quot;https://github.com/istio/istio&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>        <span class="s2">&quot;https://github.com/envoyproxy/envoy&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="p">],</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>    <span class="n">parallel_workers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">)</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">green_commit_rate</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> green&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="reportgenerator">ReportGenerator<a class="headerlink" href="#reportgenerator" title="Permanent link">&para;</a></h3>
 <p>Generate Markdown reports from analysis results.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.reports</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReportGenerator</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">ReportGenerator</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.reports</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReportGenerator</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">ReportGenerator</span><span class="p">()</span>
 </code></pre></div>
 <p><strong>Methods:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Generate full report</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">report</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">aggregated_data</span><span class="p">)</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Save to file</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="n">generator</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;report.md&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Generate full report</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">report</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">aggregated_data</span><span class="p">)</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Save to file</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="n">generator</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;report.md&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="analyzer-classes">Analyzer Classes<a class="headerlink" href="#analyzer-classes" title="Permanent link">&para;</a></h2>
 <h3 id="statisticalanalyzer">StatisticalAnalyzer<a class="headerlink" href="#statisticalanalyzer" title="Permanent link">&para;</a></h3>
 <p>Compute statistical metrics on analysis results.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.statistical_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatisticalAnalyzer</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">StatisticalAnalyzer</span><span class="p">()</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># Pattern correlations</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="n">correlations</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_pattern_correlations</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="c1"># Effect sizes</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="n">effect_sizes</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_effect_sizes</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="c1"># Descriptive statistics</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="n">descriptive</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">get_descriptive_statistics</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.statistical_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatisticalAnalyzer</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">StatisticalAnalyzer</span><span class="p">()</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># Pattern correlations</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="n">correlations</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_pattern_correlations</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="c1"># Effect sizes</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="n">effect_sizes</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_effect_sizes</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="c1"># Descriptive statistics</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="n">descriptive</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">get_descriptive_statistics</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="temporalanalyzer">TemporalAnalyzer<a class="headerlink" href="#temporalanalyzer" title="Permanent link">&para;</a></h3>
 <p>Analyze patterns over time.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.temporal_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemporalAnalyzer</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">TemporalAnalyzer</span><span class="p">(</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;quarter&quot;</span><span class="p">)</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># Group commits by period</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="n">periods</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">group_commits_by_period</span><span class="p">(</span><span class="n">commits</span><span class="p">)</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1"># Analyze trends</span>
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="n">trends</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_trends</span><span class="p">(</span><span class="n">periods</span><span class="p">)</span>
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># Pattern evolution</span>
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="n">evolution</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_pattern_evolution</span><span class="p">(</span><span class="n">commits</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.temporal_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemporalAnalyzer</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">TemporalAnalyzer</span><span class="p">(</span><span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;quarter&quot;</span><span class="p">)</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="c1"># Group commits by period</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="n">periods</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">group_commits_by_period</span><span class="p">(</span><span class="n">commits</span><span class="p">)</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="c1"># Analyze trends</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="n">trends</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_trends</span><span class="p">(</span><span class="n">periods</span><span class="p">)</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="c1"># Pattern evolution</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="n">evolution</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_pattern_evolution</span><span class="p">(</span><span class="n">commits</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="qualitativeanalyzer">QualitativeAnalyzer<a class="headerlink" href="#qualitativeanalyzer" title="Permanent link">&para;</a></h3>
 <p>Generate validation samples for manual review.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.qualitative_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">QualitativeAnalyzer</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">QualitativeAnalyzer</span><span class="p">(</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="n">sample_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    <span class="n">stratify_by</span><span class="o">=</span><span class="s2">&quot;pattern&quot;</span>  <span class="c1"># pattern/repository/time/random</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="p">)</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="c1"># Generate samples</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="n">samples</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">generate_validation_samples</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="c1"># Export for review</span>
-<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="n">analyzer</span><span class="o">.</span><span class="n">export_samples_for_review</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="s2">&quot;validation_samples.csv&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.qualitative_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">QualitativeAnalyzer</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">QualitativeAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="n">sample_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    <span class="n">stratify_by</span><span class="o">=</span><span class="s2">&quot;pattern&quot;</span>  <span class="c1"># pattern/repository/time/random</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="p">)</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1"># Generate samples</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="n">samples</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">generate_validation_samples</span><span class="p">(</span><span class="n">analysis_results</span><span class="p">)</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="c1"># Export for review</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="n">analyzer</span><span class="o">.</span><span class="n">export_samples_for_review</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="s2">&quot;validation_samples.csv&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h3 id="codediffanalyzer">CodeDiffAnalyzer<a class="headerlink" href="#codediffanalyzer" title="Permanent link">&para;</a></h3>
 <p>Analyze code changes for green patterns.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.code_diff_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">CodeDiffAnalyzer</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">CodeDiffAnalyzer</span><span class="p">()</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1"># Check if file is analyzable</span>
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="n">is_code</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">is_code_file</span><span class="p">(</span><span class="s2">&quot;app.py&quot;</span><span class="p">)</span>  <span class="c1"># True</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="c1"># Analyze diff content</span>
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="n">patterns</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">detect_patterns_in_diff</span><span class="p">(</span><span class="n">diff_text</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers.code_diff_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">CodeDiffAnalyzer</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">CodeDiffAnalyzer</span><span class="p">()</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="c1"># Check if file is analyzable</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="n">is_code</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">is_code_file</span><span class="p">(</span><span class="s2">&quot;app.py&quot;</span><span class="p">)</span>  <span class="c1"># True</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="c1"># Analyze diff content</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="n">patterns</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">detect_patterns_in_diff</span><span class="p">(</span><span class="n">diff_text</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="powerregressiondetector">PowerRegressionDetector<a class="headerlink" href="#powerregressiondetector" title="Permanent link">&para;</a></h3>
+<p>Identify commits that caused power consumption regressions by running a test command
+at each commit and measuring energy usage.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers</span><span class="w"> </span><span class="kn">import</span> <span class="n">PowerRegressionDetector</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">detector</span> <span class="o">=</span> <span class="n">PowerRegressionDetector</span><span class="p">(</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    <span class="n">test_command</span><span class="o">=</span><span class="s2">&quot;pytest tests/ -x&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;rapl&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    <span class="n">threshold_percent</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>    <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>    <span class="n">warmup_iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="p">)</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="n">regressions</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>    <span class="n">repo_path</span><span class="o">=</span><span class="s2">&quot;/path/to/repo&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>    <span class="n">baseline_commit</span><span class="o">=</span><span class="s2">&quot;v1.0.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>    <span class="n">target_commit</span><span class="o">=</span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="p">)</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="k">for</span> <span class="n">regression</span> <span class="ow">in</span> <span class="n">regressions</span><span class="p">:</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Commit </span><span class="si">{</span><span class="n">regression</span><span class="o">.</span><span class="n">sha</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span><span class="si">}</span><span class="s2">: +</span><span class="si">{</span><span class="n">regression</span><span class="o">.</span><span class="n">power_increase</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Message: </span><span class="si">{</span><span class="n">regression</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Constructor Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>test_command</code></td>
+<td>str</td>
+<td><code>"pytest tests/ -x"</code></td>
+<td>Shell command to run for measurement</td>
+</tr>
+<tr>
+<td><code>energy_backend</code></td>
+<td>str</td>
+<td><code>"rapl"</code></td>
+<td>Energy backend (rapl, codecarbon, cpu_meter, auto)</td>
+</tr>
+<tr>
+<td><code>threshold_percent</code></td>
+<td>float</td>
+<td><code>5.0</code></td>
+<td>Minimum % increase to flag as regression</td>
+</tr>
+<tr>
+<td><code>iterations</code></td>
+<td>int</td>
+<td><code>5</code></td>
+<td>Measurement iterations per commit</td>
+</tr>
+<tr>
+<td><code>warmup_iterations</code></td>
+<td>int</td>
+<td><code>1</code></td>
+<td>Warmup runs before measuring</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PowerRegression Output:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sha</code></td>
+<td>str</td>
+<td>Commit SHA</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>str</td>
+<td>Commit message</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>str</td>
+<td>Commit author</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>str</td>
+<td>Commit date</td>
+</tr>
+<tr>
+<td><code>power_before</code></td>
+<td>float</td>
+<td>Average power before (watts)</td>
+</tr>
+<tr>
+<td><code>power_after</code></td>
+<td>float</td>
+<td>Average power after (watts)</td>
+</tr>
+<tr>
+<td><code>power_increase</code></td>
+<td>float</td>
+<td>Percentage increase</td>
+</tr>
+<tr>
+<td><code>energy_before</code></td>
+<td>float</td>
+<td>Energy before (joules)</td>
+</tr>
+<tr>
+<td><code>energy_after</code></td>
+<td>float</td>
+<td>Energy after (joules)</td>
+</tr>
+<tr>
+<td><code>is_regression</code></td>
+<td>bool</td>
+<td>True if above threshold</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="metricspowercorrelator">MetricsPowerCorrelator<a class="headerlink" href="#metricspowercorrelator" title="Permanent link">&para;</a></h3>
+<p>Correlate code metrics (complexity, NLOC, churn) with power consumption using
+Pearson and Spearman correlation coefficients.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricsPowerCorrelator</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">correlator</span> <span class="o">=</span> <span class="n">MetricsPowerCorrelator</span><span class="p">(</span><span class="n">significance_level</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">correlator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;complexity&quot;</span><span class="p">,</span> <span class="s2">&quot;nloc&quot;</span><span class="p">,</span> <span class="s2">&quot;code_churn&quot;</span><span class="p">],</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>    <span class="n">metrics_values</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>        <span class="s2">&quot;complexity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>        <span class="s2">&quot;nloc&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>        <span class="s2">&quot;code_churn&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>    <span class="p">},</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>    <span class="n">power_measurements</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="p">)</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="c1"># Access results</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">correlator</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: pearson=</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">pearson_r</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, spearman=</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">spearman_r</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Significant: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">significant</span><span class="si">}</span><span class="s2">, Strength: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">strength</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a><span class="c1"># Feature importance ranking</span>
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">importance</span> <span class="ow">in</span> <span class="n">correlator</span><span class="o">.</span><span class="n">feature_importance</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">importance</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Constructor Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>significance_level</code></td>
+<td>float</td>
+<td><code>0.05</code></td>
+<td>P-value threshold for significance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CorrelationResult Output:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metric_name</code></td>
+<td>str</td>
+<td>Name of the metric</td>
+</tr>
+<tr>
+<td><code>pearson_r</code></td>
+<td>float</td>
+<td>Pearson correlation coefficient</td>
+</tr>
+<tr>
+<td><code>pearson_p</code></td>
+<td>float</td>
+<td>Pearson p-value</td>
+</tr>
+<tr>
+<td><code>spearman_r</code></td>
+<td>float</td>
+<td>Spearman rank correlation</td>
+</tr>
+<tr>
+<td><code>spearman_p</code></td>
+<td>float</td>
+<td>Spearman p-value</td>
+</tr>
+<tr>
+<td><code>significant</code></td>
+<td>bool</td>
+<td>True if p &lt; significance_level</td>
+</tr>
+<tr>
+<td><code>strength</code></td>
+<td>str</td>
+<td>none, weak, moderate, strong</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="versionpoweranalyzer">VersionPowerAnalyzer<a class="headerlink" href="#versionpoweranalyzer" title="Permanent link">&para;</a></h3>
+<p>Compare energy consumption across software versions by checking out tags/branches
+and running a test suite at each version.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.analyzers</span><span class="w"> </span><span class="kn">import</span> <span class="n">VersionPowerAnalyzer</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">VersionPowerAnalyzer</span><span class="p">(</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="n">test_command</span><span class="o">=</span><span class="s2">&quot;pytest tests/&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>    <span class="n">energy_backend</span><span class="o">=</span><span class="s2">&quot;rapl&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>    <span class="n">iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>    <span class="n">warmup_iterations</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="p">)</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="n">report</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_versions</span><span class="p">(</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>    <span class="n">repo_path</span><span class="o">=</span><span class="s2">&quot;/path/to/repo&quot;</span><span class="p">,</span>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>    <span class="n">versions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;v1.0&quot;</span><span class="p">,</span> <span class="s2">&quot;v1.1&quot;</span><span class="p">,</span> <span class="s2">&quot;v1.2&quot;</span><span class="p">,</span> <span class="s2">&quot;v2.0&quot;</span><span class="p">],</span>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="p">)</span>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trend: </span><span class="si">{</span><span class="n">report</span><span class="o">.</span><span class="n">trend</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>            <span class="c1"># increasing, decreasing, stable</span>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Most efficient: </span><span class="si">{</span><span class="n">report</span><span class="o">.</span><span class="n">most_efficient</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total change: </span><span class="si">{</span><span class="n">report</span><span class="o">.</span><span class="n">total_change_percent</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">report</span><span class="o">.</span><span class="n">versions</span><span class="p">:</span>
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">power_watts_avg</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">W (std: </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">energy_std</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Constructor Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>test_command</code></td>
+<td>str</td>
+<td><code>"pytest tests/"</code></td>
+<td>Shell command to run per version</td>
+</tr>
+<tr>
+<td><code>energy_backend</code></td>
+<td>str</td>
+<td><code>"rapl"</code></td>
+<td>Energy backend</td>
+</tr>
+<tr>
+<td><code>iterations</code></td>
+<td>int</td>
+<td><code>5</code></td>
+<td>Measurement iterations per version</td>
+</tr>
+<tr>
+<td><code>warmup_iterations</code></td>
+<td>int</td>
+<td><code>1</code></td>
+<td>Warmup runs before measuring</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VersionPowerReport Output:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>versions</code></td>
+<td>list</td>
+<td>List of VersionPowerProfile objects</td>
+</tr>
+<tr>
+<td><code>trend</code></td>
+<td>str</td>
+<td>increasing, decreasing, or stable</td>
+</tr>
+<tr>
+<td><code>total_change_percent</code></td>
+<td>float</td>
+<td>% change from first to last version</td>
+</tr>
+<tr>
+<td><code>most_efficient</code></td>
+<td>str</td>
+<td>Version tag with lowest power</td>
+</tr>
+<tr>
+<td><code>least_efficient</code></td>
+<td>str</td>
+<td>Version tag with highest power</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VersionPowerProfile Fields:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>str</td>
+<td>Version tag or branch name</td>
+</tr>
+<tr>
+<td><code>commit_sha</code></td>
+<td>str</td>
+<td>Resolved commit SHA</td>
+</tr>
+<tr>
+<td><code>energy_joules</code></td>
+<td>float</td>
+<td>Average energy per run</td>
+</tr>
+<tr>
+<td><code>power_watts_avg</code></td>
+<td>float</td>
+<td>Average power draw</td>
+</tr>
+<tr>
+<td><code>duration_seconds</code></td>
+<td>float</td>
+<td>Average test duration</td>
+</tr>
+<tr>
+<td><code>iterations</code></td>
+<td>int</td>
+<td>Number of measurement iterations</td>
+</tr>
+<tr>
+<td><code>energy_std</code></td>
+<td>float</td>
+<td>Standard deviation across iterations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="carbonreporter">CarbonReporter<a class="headerlink" href="#carbonreporter" title="Permanent link">&para;</a></h3>
+<p>Generate carbon footprint reports from energy measurements. Supports 20+ countries
+and major cloud providers (AWS, GCP, Azure).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.energy</span><span class="w"> </span><span class="kn">import</span> <span class="n">CarbonReporter</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">reporter</span> <span class="o">=</span> <span class="n">CarbonReporter</span><span class="p">(</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    <span class="n">country_iso</span><span class="o">=</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>    <span class="n">cloud_provider</span><span class="o">=</span><span class="s2">&quot;aws&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;us-east-1&quot;</span><span class="p">,</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="p">)</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="n">report</span> <span class="o">=</span> <span class="n">reporter</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">total_joules</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">)</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CO2 emissions: </span><span class="si">{</span><span class="n">report</span><span class="o">.</span><span class="n">total_emissions_kg</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> kg&quot;</span><span class="p">)</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Equivalent: </span><span class="si">{</span><span class="n">report</span><span class="o">.</span><span class="n">tree_months</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> tree-months&quot;</span><span class="p">)</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </code></pre></div>
 <hr />
 <h2 id="configuration-class">Configuration Class<a class="headerlink" href="#configuration-class" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Config</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># Access configuration values</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">MAX_REPOS</span><span class="p">)</span>           <span class="c1"># 100</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">COMMITS_PER_REPO</span><span class="p">)</span>    <span class="c1"># 1000</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_LANGUAGES</span><span class="p">)</span> <span class="c1"># [&#39;Python&#39;, &#39;Java&#39;, ...]</span>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>          <span class="c1"># &#39;data&#39;</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
-<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="c1"># URL Analysis options</span>
-<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">REPOSITORY_URLS</span><span class="p">)</span>     <span class="c1"># []</span>
-<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">CLONE_PATH</span><span class="p">)</span>          <span class="c1"># &#39;/tmp/greenmining_repos&#39;</span>
-<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
-<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="c1"># Energy options</span>
-<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">ENERGY_ENABLED</span><span class="p">)</span>      <span class="c1"># False</span>
-<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">ENERGY_BACKEND</span><span class="p">)</span>      <span class="c1"># &#39;rapl&#39;</span>
-<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
-<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="c1"># PyDriller options</span>
-<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">PROCESS_METRICS_ENABLED</span><span class="p">)</span>  <span class="c1"># True</span>
-<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">DMM_ENABLED</span><span class="p">)</span>              <span class="c1"># True</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Config</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="c1"># Access configuration values</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">MAX_REPOS</span><span class="p">)</span>           <span class="c1"># 100</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">COMMITS_PER_REPO</span><span class="p">)</span>    <span class="c1"># 1000</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">SUPPORTED_LANGUAGES</span><span class="p">)</span> <span class="c1"># [&#39;Python&#39;, &#39;Java&#39;, ...]</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">)</span>          <span class="c1"># &#39;data&#39;</span>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="c1"># URL Analysis options</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">REPOSITORY_URLS</span><span class="p">)</span>     <span class="c1"># []</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">CLONE_PATH</span><span class="p">)</span>          <span class="c1"># &#39;/tmp/greenmining_repos&#39;</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a><span class="c1"># Energy options</span>
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">ENERGY_ENABLED</span><span class="p">)</span>      <span class="c1"># False</span>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">ENERGY_BACKEND</span><span class="p">)</span>      <span class="c1"># &#39;rapl&#39;</span>
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a><span class="c1"># Process metric options</span>
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">PROCESS_METRICS_ENABLED</span><span class="p">)</span>  <span class="c1"># True</span>
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">DMM_ENABLED</span><span class="p">)</span>              <span class="c1"># True</span>
 </code></pre></div>
 <hr />
 <h2 id="complete-example">Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="ch">#!/usr/bin/env python3</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="sd">&quot;&quot;&quot;Complete GreenMining analysis workflow.&quot;&quot;&quot;</span>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining</span><span class="w"> </span><span class="kn">import</span> <span class="n">GSF_PATTERNS</span><span class="p">,</span> <span class="n">is_green_aware</span><span class="p">,</span> <span class="n">get_pattern_by_keywords</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_aggregator</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAggregator</span>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.reports</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReportGenerator</span>
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="c1"># 1. Analyze repository</span>
-<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span><span class="n">cleanup_after</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span>
-<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>    <span class="n">repo_url</span><span class="o">=</span><span class="s2">&quot;https://github.com/pallets/flask&quot;</span><span class="p">,</span>
-<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>    <span class="n">max_commits</span><span class="o">=</span><span class="mi">200</span>
-<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="p">)</span>
-<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
-<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analyzed </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;total_commits&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> commits&quot;</span><span class="p">)</span>
-<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware_percentage&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
-<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
-<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="c1"># 2. Aggregate results</span>
-<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span><span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="n">aggregated</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
-<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>    <span class="n">analysis_results</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;commits&#39;</span><span class="p">],</span>
-<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>    <span class="n">repositories</span><span class="o">=</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">]]</span>
-<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="p">)</span>
-<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>
-<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="c1"># 3. Generate report</span>
-<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">ReportGenerator</span><span class="p">()</span>
-<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a><span class="n">report</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">aggregated</span><span class="p">)</span>
-<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a><span class="n">generator</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;flask_analysis.md&quot;</span><span class="p">)</span>
-<a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a>
-<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Report saved to flask_analysis.md&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="sd">&quot;&quot;&quot;Complete GreenMining analysis workflow.&quot;&quot;&quot;</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining</span><span class="w"> </span><span class="kn">import</span> <span class="n">GSF_PATTERNS</span><span class="p">,</span> <span class="n">is_green_aware</span><span class="p">,</span> <span class="n">get_pattern_by_keywords</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.local_repo_analyzer</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalRepoAnalyzer</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.data_aggregator</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataAggregator</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">greenmining.services.reports</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReportGenerator</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="c1"># 1. Analyze repository</span>
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="n">analyzer</span> <span class="o">=</span> <span class="n">LocalRepoAnalyzer</span><span class="p">(</span><span class="n">cleanup_after</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="n">result</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="n">analyze_repository</span><span class="p">(</span>
+<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>    <span class="n">repo_url</span><span class="o">=</span><span class="s2">&quot;https://github.com/pallets/flask&quot;</span><span class="p">,</span>
+<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>    <span class="n">max_commits</span><span class="o">=</span><span class="mi">200</span>
+<a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="p">)</span>
+<a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>
+<a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analyzed </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;total_commits&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> commits&quot;</span><span class="p">)</span>
+<a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Green-aware: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;green_aware_percentage&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+<a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a>
+<a id="__codelineno-34-19" name="__codelineno-34-19" href="#__codelineno-34-19"></a><span class="c1"># 2. Aggregate results</span>
+<a id="__codelineno-34-20" name="__codelineno-34-20" href="#__codelineno-34-20"></a><span class="n">aggregator</span> <span class="o">=</span> <span class="n">DataAggregator</span><span class="p">(</span><span class="n">enable_stats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">enable_temporal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-34-21" name="__codelineno-34-21" href="#__codelineno-34-21"></a><span class="n">aggregated</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+<a id="__codelineno-34-22" name="__codelineno-34-22" href="#__codelineno-34-22"></a>    <span class="n">analysis_results</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;commits&#39;</span><span class="p">],</span>
+<a id="__codelineno-34-23" name="__codelineno-34-23" href="#__codelineno-34-23"></a>    <span class="n">repositories</span><span class="o">=</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">]]</span>
+<a id="__codelineno-34-24" name="__codelineno-34-24" href="#__codelineno-34-24"></a><span class="p">)</span>
+<a id="__codelineno-34-25" name="__codelineno-34-25" href="#__codelineno-34-25"></a>
+<a id="__codelineno-34-26" name="__codelineno-34-26" href="#__codelineno-34-26"></a><span class="c1"># 3. Generate report</span>
+<a id="__codelineno-34-27" name="__codelineno-34-27" href="#__codelineno-34-27"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">ReportGenerator</span><span class="p">()</span>
+<a id="__codelineno-34-28" name="__codelineno-34-28" href="#__codelineno-34-28"></a><span class="n">report</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate_report</span><span class="p">(</span><span class="n">aggregated</span><span class="p">)</span>
+<a id="__codelineno-34-29" name="__codelineno-34-29" href="#__codelineno-34-29"></a><span class="n">generator</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s2">&quot;flask_analysis.md&quot;</span><span class="p">)</span>
+<a id="__codelineno-34-30" name="__codelineno-34-30" href="#__codelineno-34-30"></a>
+<a id="__codelineno-34-31" name="__codelineno-34-31" href="#__codelineno-34-31"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Report saved to flask_analysis.md&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>

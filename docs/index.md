@@ -119,12 +119,10 @@ GreenMining detects **122 patterns** across **15 categories**:
 
 ### Examples
 
-- [Basic Usage](examples/basic.md) - Simple pattern detection examples
-- [Complete Pipeline](examples/pipeline.md) - Full research workflow example
+- [Complete Pipeline](examples/experiment.md) - Full experiment workflow example
 
 ### Project
 
-- [Roadmap](roadmap.md) - Future features and development plans
 - [Contributing](contributing.md) - How to contribute to GreenMining
 - [Changelog](changelog.md) - Version history and release notes
 

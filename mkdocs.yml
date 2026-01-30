@@ -64,10 +64,8 @@ nav:
     - GSF Patterns: reference/patterns.md
     - Configuration Options: reference/config-options.md
     - Data Models: reference/models.md
-  - Examples:
-    - Basic Usage: examples/basic.md
-    - Complete Pipeline: examples/pipeline.md
-  - Experiment: experiment.md
+  - Examples: 
+    - Complete Pipeline: examples/experiment.md
   - Contributing: contributing.md
   - Changelog: changelog.md
 

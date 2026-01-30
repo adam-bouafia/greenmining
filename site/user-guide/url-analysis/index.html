@@ -310,7 +310,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/basic/" class="md-tabs__link">
+        <a href="../../examples/experiment/" class="md-tabs__link">
           
   
   
@@ -319,25 +319,6 @@
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../roadmap/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Roadmap
-
-      </a>
-    </li>
   
 
       
@@ -881,22 +862,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydriller-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PyDriller Integration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PyDriller Integration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#commit-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
         Commit Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-commit-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Commit Metrics
       
     </span>
   </a>
@@ -919,6 +900,17 @@
     <span class="md-ellipsis">
       
         Process Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-level-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method-Level Metrics
       
     </span>
   </a>
@@ -1263,35 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/basic/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Basic Usage
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/pipeline/" class="md-nav__link">
+      <a href="../../examples/experiment/" class="md-nav__link">
         
   
   
@@ -1315,33 +1279,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../roadmap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Roadmap
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1560,22 +1497,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydriller-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PyDriller Integration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PyDriller Integration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#commit-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
         Commit Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-commit-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Commit Metrics
       
     </span>
   </a>
@@ -1598,6 +1535,17 @@
     <span class="md-ellipsis">
       
         Process Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-level-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method-Level Metrics
       
     </span>
   </a>
@@ -1713,16 +1661,17 @@
 
 
 <h1 id="url-analysis">URL Analysis<a class="headerlink" href="#url-analysis" title="Permanent link">&para;</a></h1>
-<p>Analyze GitHub repositories directly by URL using PyDriller.</p>
+<p>Analyze GitHub repositories directly by URL.</p>
 <hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>URL analysis allows you to analyze any GitHub repository without using the GitHub API rate limits. It uses <a href="https://pydriller.readthedocs.io/">PyDriller</a> to clone repositories locally and extract commit data with full diff information.</p>
+<p>URL analysis allows you to analyze any GitHub repository without using the GitHub API rate limits. GreenMining clones repositories locally and extracts commit data with full diff information.</p>
 <h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>No GitHub API limits</strong> - Clone and analyze directly</li>
 <li><strong>Full commit data</strong> - Access diffs, modified files, metrics</li>
 <li><strong>Process metrics</strong> - Code churn, change set size, contributor count</li>
 <li><strong>DMM metrics</strong> - Delta Maintainability Model scores</li>
+<li><strong>Method-level analysis</strong> - Per-function complexity via Lizard</li>
 <li><strong>Historical analysis</strong> - Analyze any date range</li>
 </ul>
 <hr />
@@ -1948,9 +1897,9 @@
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="s2">&quot;https://github.com/owner/repo/tree/branch-name&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="pydriller-integration">PyDriller Integration<a class="headerlink" href="#pydriller-integration" title="Permanent link">&para;</a></h2>
-<p>GreenMining uses PyDriller for commit extraction with these metrics:</p>
-<h3 id="commit-metrics">Commit Metrics<a class="headerlink" href="#commit-metrics" title="Permanent link">&para;</a></h3>
+<h2 id="commit-metrics">Commit Metrics<a class="headerlink" href="#commit-metrics" title="Permanent link">&para;</a></h2>
+<p>GreenMining extracts the following metrics for each commit:</p>
+<h3 id="basic-commit-metrics">Basic Commit Metrics<a class="headerlink" href="#basic-commit-metrics" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1978,6 +1927,7 @@
 </tbody>
 </table>
 <h3 id="dmm-metrics-delta-maintainability-model">DMM Metrics (Delta Maintainability Model)<a class="headerlink" href="#dmm-metrics-delta-maintainability-model" title="Permanent link">&para;</a></h3>
+<p>Measures how a commit impacts code maintainability on a 0-1 scale (higher is better).</p>
 <table>
 <thead>
 <tr>
@@ -1990,21 +1940,22 @@
 <tr>
 <td><code>dmm_unit_size</code></td>
 <td>0-1</td>
-<td>Unit size maintainability</td>
+<td>Unit size maintainability — proportion of changed code units that remain within acceptable size thresholds</td>
 </tr>
 <tr>
 <td><code>dmm_unit_complexity</code></td>
 <td>0-1</td>
-<td>Cyclomatic complexity impact</td>
+<td>Cyclomatic complexity impact — proportion of changed code units with acceptable complexity</td>
 </tr>
 <tr>
 <td><code>dmm_unit_interfacing</code></td>
 <td>0-1</td>
-<td>Interface complexity</td>
+<td>Interface complexity — proportion of changed code units with manageable parameter counts</td>
 </tr>
 </tbody>
 </table>
 <h3 id="process-metrics">Process Metrics<a class="headerlink" href="#process-metrics" title="Permanent link">&para;</a></h3>
+<p>All 8 process metrics tracked per repository:</p>
 <table>
 <thead>
 <tr>
@@ -2015,7 +1966,7 @@
 <tbody>
 <tr>
 <td><code>change_set</code></td>
-<td>Files changed per commit (max, avg)</td>
+<td>Number of files changed per commit (max, avg)</td>
 </tr>
 <tr>
 <td><code>code_churn</code></td>
@@ -2023,11 +1974,86 @@
 </tr>
 <tr>
 <td><code>contributors_count</code></td>
-<td>Unique contributors</td>
+<td>Unique contributors in the analysis period</td>
 </tr>
 <tr>
 <td><code>commits_count</code></td>
-<td>Total commits in period</td>
+<td>Total commits in the analysis period</td>
+</tr>
+<tr>
+<td><code>contributors_experience</code></td>
+<td>Average experience of contributors (commits to repo)</td>
+</tr>
+<tr>
+<td><code>history_complexity</code></td>
+<td>Normalized entropy of file change history</td>
+</tr>
+<tr>
+<td><code>hunks_count</code></td>
+<td>Number of contiguous changed blocks per file</td>
+</tr>
+<tr>
+<td><code>lines_count</code></td>
+<td>Total lines of code modified across all commits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="method-level-metrics">Method-Level Metrics<a class="headerlink" href="#method-level-metrics" title="Permanent link">&para;</a></h3>
+<p>When <code>method_level_analysis=True</code>, GreenMining uses Lizard to extract per-function metrics:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>methods_count</code></td>
+<td>Number of methods analyzed in a commit</td>
+</tr>
+<tr>
+<td><code>total_nloc</code></td>
+<td>Total non-comment lines of code</td>
+</tr>
+<tr>
+<td><code>total_complexity</code></td>
+<td>Sum of cyclomatic complexity across all methods</td>
+</tr>
+<tr>
+<td><code>max_complexity</code></td>
+<td>Highest single-function complexity</td>
+</tr>
+</tbody>
+</table>
+<p>Each method entry includes:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Function/method name</td>
+</tr>
+<tr>
+<td><code>nloc</code></td>
+<td>Non-comment lines of code</td>
+</tr>
+<tr>
+<td><code>complexity</code></td>
+<td>Cyclomatic complexity</td>
+</tr>
+<tr>
+<td><code>token_count</code></td>
+<td>Number of tokens</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td>Number of parameters</td>
 </tr>
 </tbody>
 </table>

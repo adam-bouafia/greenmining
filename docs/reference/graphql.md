@@ -287,4 +287,4 @@ query($searchQuery: String!, $first: Int!) {
 
 - [Python API](../user-guide/api.md) - `fetch_repositories` wrapper
 - [Data Models](models.md) - Repository dataclass fields
-- [Experiment](../experiment.md) - Full pipeline example
+- [Experiment](../examples/experiment.md) - Full pipeline example
