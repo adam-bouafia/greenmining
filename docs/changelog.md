@@ -50,9 +50,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Cloud provider region support (AWS, GCP, Azure)
   - Equivalence calculations (tree-months, smartphone charges, km driven)
 
-### Full PyDriller Integration (Phase 3)
+### Full Process Metrics Integration (Phase 3)
 
-- **Complete Process Metrics**: All 8 PyDriller process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
+- **Complete Process Metrics**: All 8 process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
 - **Method-Level Analysis**: Per-method metrics via Lizard integration
   - `LocalRepoAnalyzer(method_level_analysis=True)`
   - Extracts name, complexity, NLOC, token count, parameters per method
@@ -156,14 +156,14 @@ repos = fetcher.search_repositories(keywords="kubernetes", max_repos=100)
 ## [0.2.0] - 2024-XX-XX
 
 ### Added
-- **URL-based Analysis**: Analyze repositories directly by URL using PyDriller
+- **URL-based Analysis**: Analyze repositories directly by URL with full commit extraction
   - `greenmining analyze <url>` command (unified single/batch support)
   - `LocalRepoAnalyzer` service for Python API
 - **Energy Measurement**: Track energy consumption during analysis
   - RAPL backend for Linux (Intel CPUs)
   - CodeCarbon backend for cross-platform carbon tracking
   - `--energy` and `--energy-backend` CLI options
-- **PyDriller Integration**: Rich commit metrics
+- **Commit Extraction**: Rich commit metrics and process metrics
   - Delta Maintainability Model (DMM) metrics
   - Process metrics (code churn, change set, contributor count)
   - Structural metrics (complexity, lines of code)
@@ -201,7 +201,7 @@ repos = fetcher.search_repositories(keywords="kubernetes", max_repos=100)
 
 ### Dependencies
 - Python 3.9+
-- PyDriller for repository mining
+- Built-in repository mining and commit extraction
 - python-dotenv for configuration
 
 ---

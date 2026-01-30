@@ -356,7 +356,7 @@ print(f"Green-aware: {aggregated['summary']['green_aware_percentage']}%")
 
 ### LocalRepoAnalyzer
 
-Analyze repositories directly from GitHub URLs using PyDriller.
+Analyze repositories directly from GitHub URLs.
 
 ```python
 from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
@@ -366,7 +366,7 @@ analyzer = LocalRepoAnalyzer(
     max_commits=500,                       # Max commits per repo
     days_back=730,                         # How far back to analyze
     skip_merges=True,                      # Skip merge commits
-    compute_process_metrics=True,          # Compute PyDriller metrics
+    compute_process_metrics=True,          # Compute process metrics
     cleanup_after=True,                    # Delete after analysis
     ssh_key_path=None,                     # SSH key for private repos
     github_token=None,                     # GitHub token for private repos
@@ -552,7 +552,8 @@ patterns = analyzer.detect_patterns_in_diff(diff_text)
 
 ### PowerRegressionDetector
 
-Identify commits that caused power consumption regressions.
+Identify commits that caused power consumption regressions by running a test command
+at each commit and measuring energy usage.
 
 ```python
 from greenmining.analyzers import PowerRegressionDetector
@@ -576,16 +577,42 @@ for regression in regressions:
     print(f"  Message: {regression.message}")
 ```
 
+**Constructor Parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `test_command` | str | `"pytest tests/ -x"` | Shell command to run for measurement |
+| `energy_backend` | str | `"rapl"` | Energy backend (rapl, codecarbon, cpu_meter, auto) |
+| `threshold_percent` | float | `5.0` | Minimum % increase to flag as regression |
+| `iterations` | int | `5` | Measurement iterations per commit |
+| `warmup_iterations` | int | `1` | Warmup runs before measuring |
+
+**PowerRegression Output:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `sha` | str | Commit SHA |
+| `message` | str | Commit message |
+| `author` | str | Commit author |
+| `date` | str | Commit date |
+| `power_before` | float | Average power before (watts) |
+| `power_after` | float | Average power after (watts) |
+| `power_increase` | float | Percentage increase |
+| `energy_before` | float | Energy before (joules) |
+| `energy_after` | float | Energy after (joules) |
+| `is_regression` | bool | True if above threshold |
+
 ---
 
 ### MetricsPowerCorrelator
 
-Correlate code metrics with power consumption.
+Correlate code metrics (complexity, NLOC, churn) with power consumption using
+Pearson and Spearman correlation coefficients.
 
 ```python
 from greenmining.analyzers import MetricsPowerCorrelator
 
-correlator = MetricsPowerCorrelator()
+correlator = MetricsPowerCorrelator(significance_level=0.05)
 correlator.fit(
     metrics=["complexity", "nloc", "code_churn"],
     metrics_values={
@@ -596,16 +623,40 @@ correlator.fit(
     power_measurements=[...],
 )
 
-print(f"Pearson correlations: {correlator.pearson}")
-print(f"Spearman correlations: {correlator.spearman}")
-print(f"Feature importance: {correlator.feature_importance}")
+# Access results
+for name, result in correlator.get_results().items():
+    print(f"{name}: pearson={result.pearson_r:.3f}, spearman={result.spearman_r:.3f}")
+    print(f"  Significant: {result.significant}, Strength: {result.strength}")
+
+# Feature importance ranking
+for name, importance in correlator.feature_importance.items():
+    print(f"{name}: {importance:.3f}")
 ```
+
+**Constructor Parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `significance_level` | float | `0.05` | P-value threshold for significance |
+
+**CorrelationResult Output:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `metric_name` | str | Name of the metric |
+| `pearson_r` | float | Pearson correlation coefficient |
+| `pearson_p` | float | Pearson p-value |
+| `spearman_r` | float | Spearman rank correlation |
+| `spearman_p` | float | Spearman p-value |
+| `significant` | bool | True if p < significance_level |
+| `strength` | str | none, weak, moderate, strong |
 
 ---
 
 ### VersionPowerAnalyzer
 
-Compare power consumption across software versions.
+Compare energy consumption across software versions by checking out tags/branches
+and running a test suite at each version.
 
 ```python
 from greenmining.analyzers import VersionPowerAnalyzer
@@ -623,15 +674,51 @@ report = analyzer.analyze_versions(
 )
 
 print(report.summary())
-print(f"Trend: {report.trend}")
+print(f"Trend: {report.trend}")            # increasing, decreasing, stable
 print(f"Most efficient: {report.most_efficient}")
+print(f"Total change: {report.total_change_percent:.1f}%")
+
+for v in report.versions:
+    print(f"  {v.version}: {v.power_watts_avg:.2f}W (std: {v.energy_std:.4f})")
 ```
+
+**Constructor Parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `test_command` | str | `"pytest tests/"` | Shell command to run per version |
+| `energy_backend` | str | `"rapl"` | Energy backend |
+| `iterations` | int | `5` | Measurement iterations per version |
+| `warmup_iterations` | int | `1` | Warmup runs before measuring |
+
+**VersionPowerReport Output:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `versions` | list | List of VersionPowerProfile objects |
+| `trend` | str | increasing, decreasing, or stable |
+| `total_change_percent` | float | % change from first to last version |
+| `most_efficient` | str | Version tag with lowest power |
+| `least_efficient` | str | Version tag with highest power |
+
+**VersionPowerProfile Fields:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `version` | str | Version tag or branch name |
+| `commit_sha` | str | Resolved commit SHA |
+| `energy_joules` | float | Average energy per run |
+| `power_watts_avg` | float | Average power draw |
+| `duration_seconds` | float | Average test duration |
+| `iterations` | int | Number of measurement iterations |
+| `energy_std` | float | Standard deviation across iterations |
 
 ---
 
 ### CarbonReporter
 
-Generate carbon footprint reports from energy measurements.
+Generate carbon footprint reports from energy measurements. Supports 20+ countries
+and major cloud providers (AWS, GCP, Azure).
 
 ```python
 from greenmining.energy import CarbonReporter
@@ -671,7 +758,7 @@ print(config.CLONE_PATH)          # '/tmp/greenmining_repos'
 print(config.ENERGY_ENABLED)      # False
 print(config.ENERGY_BACKEND)      # 'rapl'
 
-# PyDriller options
+# Process metric options
 print(config.PROCESS_METRICS_ENABLED)  # True
 print(config.DMM_ENABLED)              # True
 ```

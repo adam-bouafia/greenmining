@@ -131,7 +131,7 @@ When commits are analyzed, they're returned as dictionaries:
     "diff_patterns": ["caching"],
     "files_modified": 3,
     
-    # If PyDriller metrics enabled
+    # If process metrics enabled
     "insertions": 45,
     "deletions": 12,
     "dmm_unit_size": 0.85,
@@ -263,7 +263,7 @@ Output from `LocalRepoAnalyzer.analyze_repository()`:
             "green_aware": True,
             "patterns": ["Cache Static Data"],
             
-            # PyDriller metrics
+            # Process metrics
             "modified_files": 3,
             "insertions": 45,
             "deletions": 12,

@@ -106,7 +106,7 @@ config.MIN_STARS = 500
 | `ENABLE_DIFF_ANALYSIS` | bool | false | Analyze code diffs (slower) |
 | `BATCH_SIZE` | int | 10 | Commits per batch |
 
-### PyDriller Options
+### Process Metrics Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|

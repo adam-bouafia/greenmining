@@ -1,12 +1,12 @@
 # URL Analysis
 
-Analyze GitHub repositories directly by URL using PyDriller.
+Analyze GitHub repositories directly by URL.
 
 ---
 
 ## Overview
 
-URL analysis allows you to analyze any GitHub repository without using the GitHub API rate limits. It uses [PyDriller](https://pydriller.readthedocs.io/) to clone repositories locally and extract commit data with full diff information.
+URL analysis allows you to analyze any GitHub repository without using the GitHub API rate limits. GreenMining clones repositories locally and extracts commit data with full diff information.
 
 ### Benefits
 
@@ -14,6 +14,7 @@ URL analysis allows you to analyze any GitHub repository without using the GitHu
 - **Full commit data** - Access diffs, modified files, metrics
 - **Process metrics** - Code churn, change set size, contributor count
 - **DMM metrics** - Delta Maintainability Model scores
+- **Method-level analysis** - Per-function complexity via Lizard
 - **Historical analysis** - Analyze any date range
 
 ---
@@ -222,11 +223,11 @@ Sample Green Commits:
 
 ---
 
-## PyDriller Integration
+## Commit Metrics
 
-GreenMining uses PyDriller for commit extraction with these metrics:
+GreenMining extracts the following metrics for each commit:
 
-### Commit Metrics
+### Basic Commit Metrics
 
 | Metric | Description |
 |--------|-------------|
@@ -237,20 +238,49 @@ GreenMining uses PyDriller for commit extraction with these metrics:
 
 ### DMM Metrics (Delta Maintainability Model)
 
+Measures how a commit impacts code maintainability on a 0-1 scale (higher is better).
+
 | Metric | Range | Description |
 |--------|-------|-------------|
-| `dmm_unit_size` | 0-1 | Unit size maintainability |
-| `dmm_unit_complexity` | 0-1 | Cyclomatic complexity impact |
-| `dmm_unit_interfacing` | 0-1 | Interface complexity |
+| `dmm_unit_size` | 0-1 | Unit size maintainability — proportion of changed code units that remain within acceptable size thresholds |
+| `dmm_unit_complexity` | 0-1 | Cyclomatic complexity impact — proportion of changed code units with acceptable complexity |
+| `dmm_unit_interfacing` | 0-1 | Interface complexity — proportion of changed code units with manageable parameter counts |
 
 ### Process Metrics
 
+All 8 process metrics tracked per repository:
+
 | Metric | Description |
 |--------|-------------|
-| `change_set` | Files changed per commit (max, avg) |
+| `change_set` | Number of files changed per commit (max, avg) |
 | `code_churn` | Lines added/removed over time |
-| `contributors_count` | Unique contributors |
-| `commits_count` | Total commits in period |
+| `contributors_count` | Unique contributors in the analysis period |
+| `commits_count` | Total commits in the analysis period |
+| `contributors_experience` | Average experience of contributors (commits to repo) |
+| `history_complexity` | Normalized entropy of file change history |
+| `hunks_count` | Number of contiguous changed blocks per file |
+| `lines_count` | Total lines of code modified across all commits |
+
+### Method-Level Metrics
+
+When `method_level_analysis=True`, GreenMining uses Lizard to extract per-function metrics:
+
+| Metric | Description |
+|--------|-------------|
+| `methods_count` | Number of methods analyzed in a commit |
+| `total_nloc` | Total non-comment lines of code |
+| `total_complexity` | Sum of cyclomatic complexity across all methods |
+| `max_complexity` | Highest single-function complexity |
+
+Each method entry includes:
+
+| Field | Description |
+|-------|-------------|
+| `name` | Function/method name |
+| `nloc` | Non-comment lines of code |
+| `complexity` | Cyclomatic complexity |
+| `token_count` | Number of tokens |
+| `parameters` | Number of parameters |
 
 ---
 

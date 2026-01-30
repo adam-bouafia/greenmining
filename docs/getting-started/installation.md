@@ -76,7 +76,7 @@ GreenMining automatically installs these dependencies:
 | Package | Purpose |
 |---------|---------|
 | `PyGithub>=2.1.1` | GitHub API access |
-| `PyDriller>=2.5` | Repository mining |
+| `PyDriller>=2.5` | Commit extraction and process metrics |
 | `pandas>=2.2.0` | Data manipulation |
 | `scipy>=1.10.0` | Statistical analysis |
 | `numpy>=1.24.0` | Numerical operations |

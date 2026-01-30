@@ -67,7 +67,7 @@ nav:
   - Examples:
     - Basic Usage: examples/basic.md
     - Complete Pipeline: examples/pipeline.md
-  - Roadmap: roadmap.md
+  - Experiment: experiment.md
   - Contributing: contributing.md
   - Changelog: changelog.md
 

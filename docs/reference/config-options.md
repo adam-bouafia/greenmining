@@ -253,7 +253,7 @@ analyzer.batch_size = 50
 
 ---
 
-## PyDriller Options
+## Process Metrics Options
 
 ### PROCESS_METRICS_ENABLED
 
@@ -513,7 +513,7 @@ MIN_MESSAGE_LENGTH=10
 ENABLE_DIFF_ANALYSIS=false
 BATCH_SIZE=10
 
-# PyDriller
+# Process Metrics
 PROCESS_METRICS_ENABLED=true
 STRUCTURAL_METRICS_ENABLED=true
 DMM_ENABLED=true

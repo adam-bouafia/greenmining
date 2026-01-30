@@ -1,0 +1,1618 @@
+{
+  "summary": {
+    "total_commits": 185,
+    "green_aware_count": 70,
+    "green_aware_percentage": 37.84,
+    "repos_with_green_commits": 8,
+    "total_repos": 10
+  },
+  "known_patterns": [
+    {
+      "pattern_name": "Keep Request Counts Low",
+      "count": 36,
+      "percentage": 7.6,
+      "confidence_breakdown": {
+        "HIGH": 34,
+        "MEDIUM": 2,
+        "LOW": 0
+      },
+      "example_commits": [
+        "c627a9f4009fac1bce03f17e65159c32d4c9cf88",
+        "697e692a08f90380f3f573e0d01d9ca813534be2",
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a"
+      ]
+    },
+    {
+      "pattern_name": "Use Compiled Languages",
+      "count": 27,
+      "percentage": 5.7,
+      "confidence_breakdown": {
+        "HIGH": 23,
+        "MEDIUM": 4,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a4d0395452d36523d6ec32608ba67284cd9d7ac2",
+        "1a45d92dbe5b626124e1d87b0f400e480d40ace0",
+        "c666f1096e6f6e5ad9dada5182f87b7585e3bbab"
+      ]
+    },
+    {
+      "pattern_name": "Delete Unused Storage Resources",
+      "count": 26,
+      "percentage": 5.5,
+      "confidence_breakdown": {
+        "HIGH": 25,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "196ce2b237a0635f7078245dfdd3ca231e33eef1",
+        "23a63fd9ddf0bd75c031459712bfbc120278606a",
+        "6ddc5fbf65d3eec65e054725f962703ade56a87b"
+      ]
+    },
+    {
+      "pattern_name": "Avoid Chaining Critical Requests",
+      "count": 24,
+      "percentage": 5.1,
+      "confidence_breakdown": {
+        "HIGH": 21,
+        "MEDIUM": 3,
+        "LOW": 0
+      },
+      "example_commits": [
+        "c627a9f4009fac1bce03f17e65159c32d4c9cf88",
+        "6ddc5fbf65d3eec65e054725f962703ade56a87b",
+        "84c09387d23ce4511d29b16082a410fda204a740"
+      ]
+    },
+    {
+      "pattern_name": "Remove Unused Assets",
+      "count": 22,
+      "percentage": 4.7,
+      "confidence_breakdown": {
+        "HIGH": 22,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "49070f73af0d018a0193435e9a71e6c865e56080",
+        "fd0e9cceaed77626c4ab3057152084ef35be5095"
+      ]
+    },
+    {
+      "pattern_name": "Database Views & Materialized Views",
+      "count": 17,
+      "percentage": 3.6,
+      "confidence_breakdown": {
+        "HIGH": 16,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "4c44342aa758b433acb97b20ff3090d31f0d240b",
+        "579e1c2d78ba1094c28cab1aafe4b40eda86db31"
+      ]
+    },
+    {
+      "pattern_name": "Minimize Deployed Environments",
+      "count": 15,
+      "percentage": 3.2,
+      "confidence_breakdown": {
+        "HIGH": 15,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "fd0e9cceaed77626c4ab3057152084ef35be5095",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20"
+      ]
+    },
+    {
+      "pattern_name": "Reduce Network Traversal Between VMs",
+      "count": 14,
+      "percentage": 3.0,
+      "confidence_breakdown": {
+        "HIGH": 14,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "db810660aa7b299d49081ac11816c2a52536e12b",
+        "23a63fd9ddf0bd75c031459712bfbc120278606a",
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a"
+      ]
+    },
+    {
+      "pattern_name": "Eliminate Polling",
+      "count": 14,
+      "percentage": 3.0,
+      "confidence_breakdown": {
+        "HIGH": 14,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "697e692a08f90380f3f573e0d01d9ca813534be2",
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20"
+      ]
+    },
+    {
+      "pattern_name": "Compress Transmitted Data",
+      "count": 13,
+      "percentage": 2.7,
+      "confidence_breakdown": {
+        "HIGH": 13,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "db810660aa7b299d49081ac11816c2a52536e12b",
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "a66f05cebd30500894e993c2a2dce84204fa4ca6"
+      ]
+    },
+    {
+      "pattern_name": "Use Energy Efficient Hardware",
+      "count": 11,
+      "percentage": 2.3,
+      "confidence_breakdown": {
+        "HIGH": 11,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "697e692a08f90380f3f573e0d01d9ca813534be2",
+        "59f0442f75ae55488a2a606ccbab6a483dd1ea29",
+        "579e1c2d78ba1094c28cab1aafe4b40eda86db31"
+      ]
+    },
+    {
+      "pattern_name": "Reduce Transmitted Data",
+      "count": 11,
+      "percentage": 2.3,
+      "confidence_breakdown": {
+        "HIGH": 11,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20",
+        "b9d108aad696975a27d60485c3faa65f6a7b525f"
+      ]
+    },
+    {
+      "pattern_name": "Implement Stateless Design",
+      "count": 10,
+      "percentage": 2.1,
+      "confidence_breakdown": {
+        "HIGH": 10,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "68a9216ea033783c166432693ccdaceacdb1843d",
+        "612589005acbd8e6b3d18ff50409bc7d05f45e94",
+        "03ae1a76c77566c313736836d55ce50b16f5093e"
+      ]
+    },
+    {
+      "pattern_name": "Scale Infrastructure with User Load",
+      "count": 10,
+      "percentage": 2.1,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 8,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a080a7038e9a6576922e0e5ffef9256091e005dc",
+        "10451942606f6c9a3ad9a36551c9fac7a3f960b7",
+        "9498f49e8920050d4b5dfff09a679eb1391afc02"
+      ]
+    },
+    {
+      "pattern_name": "Queue Non-Urgent Requests",
+      "count": 10,
+      "percentage": 2.1,
+      "confidence_breakdown": {
+        "HIGH": 10,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "612589005acbd8e6b3d18ff50409bc7d05f45e94",
+        "df0500abc53f46111071ee3a1075f0da4f5541c0",
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da"
+      ]
+    },
+    {
+      "pattern_name": "Avoid Excessive DOM Size",
+      "count": 9,
+      "percentage": 1.9,
+      "confidence_breakdown": {
+        "HIGH": 9,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "21df44e5de8ed530e0a8c6832e66cb51ea3db7af",
+        "51d25debbc1b4ee0e81ceaf26d970fe93e089aa3"
+      ]
+    },
+    {
+      "pattern_name": "Match VM Utilization Requirements",
+      "count": 8,
+      "percentage": 1.7,
+      "confidence_breakdown": {
+        "HIGH": 8,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "51d25debbc1b4ee0e81ceaf26d970fe93e089aa3",
+        "0d988b20d26df99ee27d711754a3a295002eddcc"
+      ]
+    },
+    {
+      "pattern_name": "Connection Pooling",
+      "count": 8,
+      "percentage": 1.7,
+      "confidence_breakdown": {
+        "HIGH": 8,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "579e1c2d78ba1094c28cab1aafe4b40eda86db31",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20",
+        "c195b57ec3861f7a376e3a9095dcac122bbdc5cf"
+      ]
+    },
+    {
+      "pattern_name": "Asynchronous Processing",
+      "count": 8,
+      "percentage": 1.7,
+      "confidence_breakdown": {
+        "HIGH": 8,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "612589005acbd8e6b3d18ff50409bc7d05f45e94",
+        "df0500abc53f46111071ee3a1075f0da4f5541c0",
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da"
+      ]
+    },
+    {
+      "pattern_name": "Resource Limits & Constraints",
+      "count": 8,
+      "percentage": 1.7,
+      "confidence_breakdown": {
+        "HIGH": 8,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "ed9375f1c0462eb5cd24d7ed78732faa17af931b",
+        "51d25debbc1b4ee0e81ceaf26d970fe93e089aa3",
+        "99df7874331684d3110e8cfdedff11d48066b73a"
+      ]
+    },
+    {
+      "pattern_name": "Properly Sized Images",
+      "count": 7,
+      "percentage": 1.5,
+      "confidence_breakdown": {
+        "HIGH": 7,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "51d25debbc1b4ee0e81ceaf26d970fe93e089aa3",
+        "0d988b20d26df99ee27d711754a3a295002eddcc"
+      ]
+    },
+    {
+      "pattern_name": "Optimize Storage Resource Utilization",
+      "count": 7,
+      "percentage": 1.5,
+      "confidence_breakdown": {
+        "HIGH": 7,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "737ebf5d2faaddca0057ab01deb1b7dbf1a9675f",
+        "38e47415f94ba9548d2dc2402c383ce1ab8a960a"
+      ]
+    },
+    {
+      "pattern_name": "Scale Kubernetes Workloads Based on Events",
+      "count": 7,
+      "percentage": 1.5,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "612589005acbd8e6b3d18ff50409bc7d05f45e94",
+        "df0500abc53f46111071ee3a1075f0da4f5541c0",
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da"
+      ]
+    },
+    {
+      "pattern_name": "Minimize Main Thread Work",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 5,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "9f507ebe1868cc821ca93e45df5a094a0e55358c",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20",
+        "896b60329a40d0ac8f8aeff9af49c05e12b34b01"
+      ]
+    },
+    {
+      "pattern_name": "Serve Images in Modern Formats",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "db810660aa7b299d49081ac11816c2a52536e12b",
+        "612589005acbd8e6b3d18ff50409bc7d05f45e94",
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da"
+      ]
+    },
+    {
+      "pattern_name": "Efficient Format for Model Training",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "db810660aa7b299d49081ac11816c2a52536e12b",
+        "612589005acbd8e6b3d18ff50409bc7d05f45e94",
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da"
+      ]
+    },
+    {
+      "pattern_name": "Reduce HTTP Requests",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "b9d108aad696975a27d60485c3faa65f6a7b525f",
+        "df0500abc53f46111071ee3a1075f0da4f5541c0"
+      ]
+    },
+    {
+      "pattern_name": "Match SLO Requirements",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "49070f73af0d018a0193435e9a71e6c865e56080",
+        "2da3987489a7c4bfcaddd48e99498e0759d30356",
+        "28887a62a655757751f5de5c79c10ad841a770ae"
+      ]
+    },
+    {
+      "pattern_name": "Use Serverless",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "b9d108aad696975a27d60485c3faa65f6a7b525f",
+        "21df44e5de8ed530e0a8c6832e66cb51ea3db7af",
+        "2eb43506e24f8d19028b0d928c3039d2830e7572"
+      ]
+    },
+    {
+      "pattern_name": "Use Async Instead of Sync",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da",
+        "faed5637e9d947a8e060cd6b552ed1c3030260d2",
+        "a71be7aef19e905e05fe665e9c72612f6a3e70af"
+      ]
+    },
+    {
+      "pattern_name": "Lazy Loading",
+      "count": 6,
+      "percentage": 1.3,
+      "confidence_breakdown": {
+        "HIGH": 6,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da",
+        "faed5637e9d947a8e060cd6b552ed1c3030260d2",
+        "a71be7aef19e905e05fe665e9c72612f6a3e70af"
+      ]
+    },
+    {
+      "pattern_name": "Deprecate GIFs",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 0,
+        "MEDIUM": 5,
+        "LOW": 0
+      },
+      "example_commits": [
+        "8f6c82b033877fb8eeb5a0becad0053ede5ea2d5",
+        "28723ccba569f37c29db42e7c18ed4e8572fece5",
+        "e036f87c041ac792ac3e6de9a405573573c86b91"
+      ]
+    },
+    {
+      "pattern_name": "Cache Static Data",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 5,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "99df7874331684d3110e8cfdedff11d48066b73a",
+        "a71be7aef19e905e05fe665e9c72612f6a3e70af"
+      ]
+    },
+    {
+      "pattern_name": "Use Cloud Native Security Tools",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 5,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "993040b871cdf08cb314ec2afbc17af513386e32",
+        "04b9619e641ce72d238e0c56580172b0d98cc8c1"
+      ]
+    },
+    {
+      "pattern_name": "gRPC for Service Communication",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 4,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "8883ce1712aeecc83853884c11f6a2afb790e6ec"
+      ]
+    },
+    {
+      "pattern_name": "Compress Stored Data",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 5,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "38e47415f94ba9548d2dc2402c383ce1ab8a960a",
+        "99df7874331684d3110e8cfdedff11d48066b73a"
+      ]
+    },
+    {
+      "pattern_name": "Efficient Serialization",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 4,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "ef82cf17747617d7323828de37bfcac956412b00",
+        "6d13993d1e0745ee546566598dbf259d23eee67f"
+      ]
+    },
+    {
+      "pattern_name": "Performance Profiling",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 3,
+        "MEDIUM": 2,
+        "LOW": 0
+      },
+      "example_commits": [
+        "5ed500b6645fbae524d43ddfeaec2429a8827890",
+        "0a11d3b7d622d6cf86e03948e3968c2c39450eaa",
+        "760ae17533b3d3fd32645e61feb9f3513b8a655c"
+      ]
+    },
+    {
+      "pattern_name": "Optimize Average CPU Utilization",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 5,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "737ebf5d2faaddca0057ab01deb1b7dbf1a9675f",
+        "5a27459b873aff925e52f7e54dbd78fc4cc42d18",
+        "a71be7aef19e905e05fe665e9c72612f6a3e70af"
+      ]
+    },
+    {
+      "pattern_name": "Batch Processing",
+      "count": 5,
+      "percentage": 1.1,
+      "confidence_breakdown": {
+        "HIGH": 5,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "c195b57ec3861f7a376e3a9095dcac122bbdc5cf",
+        "379d47ac24062da8ba2038fa19c4f0a6b3c459c2",
+        "429038a3c6d25aa520406e82869898ddabec16ed"
+      ]
+    },
+    {
+      "pattern_name": "Scan for Vulnerabilities",
+      "count": 4,
+      "percentage": 0.8,
+      "confidence_breakdown": {
+        "HIGH": 4,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "22b407ffbd5cb9177d8bc852b280a37c4363580a",
+        "04b9619e641ce72d238e0c56580172b0d98cc8c1",
+        "a29f1cb588ad48237db232453747dd1aec96abe7"
+      ]
+    },
+    {
+      "pattern_name": "Database Indexing",
+      "count": 4,
+      "percentage": 0.8,
+      "confidence_breakdown": {
+        "HIGH": 4,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "b301e3e1be6aa587b47d551177cc8f6ba1ea68f8",
+        "993040b871cdf08cb314ec2afbc17af513386e32",
+        "a29f1cb588ad48237db232453747dd1aec96abe7"
+      ]
+    },
+    {
+      "pattern_name": "Shed Lower Priority Traffic",
+      "count": 4,
+      "percentage": 0.8,
+      "confidence_breakdown": {
+        "HIGH": 4,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "03ae1a76c77566c313736836d55ce50b16f5093e",
+        "ed9375f1c0462eb5cd24d7ed78732faa17af931b",
+        "a29f1cb588ad48237db232453747dd1aec96abe7"
+      ]
+    },
+    {
+      "pattern_name": "Enable Text Compression",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 3,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "697e692a08f90380f3f573e0d01d9ca813534be2",
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "GraphQL for Selective Retrieval",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "6889ed156bef3d3ad89b6553e500c7a8500e41d3",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20"
+      ]
+    },
+    {
+      "pattern_name": "Scale Logical Components Independently",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 3,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "b9d108aad696975a27d60485c3faa65f6a7b525f",
+        "28887a62a655757751f5de5c79c10ad841a770ae",
+        "a29f1cb588ad48237db232453747dd1aec96abe7"
+      ]
+    },
+    {
+      "pattern_name": "Encrypt What Is Necessary",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 2,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cdb3ac740df72417c86b6b86eb10f02c6a4fac43",
+        "2dbcb05c334db1b2aa6d522cf29da586a295878e",
+        "c195b57ec3861f7a376e3a9095dcac122bbdc5cf"
+      ]
+    },
+    {
+      "pattern_name": "Scale Down Unused Applications",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 3,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "df0500abc53f46111071ee3a1075f0da4f5541c0",
+        "aa2d3ae725ea47d3e53f4c9e9cc8d0f3e3d0e340",
+        "5a27459b873aff925e52f7e54dbd78fc4cc42d18"
+      ]
+    },
+    {
+      "pattern_name": "Right Hardware Type for AI",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 3,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "51d25debbc1b4ee0e81ceaf26d970fe93e089aa3",
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "Remove Unused CSS",
+      "count": 3,
+      "percentage": 0.6,
+      "confidence_breakdown": {
+        "HIGH": 3,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da",
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "Set Retention Policy on Storage",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "579e1c2d78ba1094c28cab1aafe4b40eda86db31",
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20"
+      ]
+    },
+    {
+      "pattern_name": "Incremental Processing",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc",
+        "ed9375f1c0462eb5cd24d7ed78732faa17af931b"
+      ]
+    },
+    {
+      "pattern_name": "Energy Efficient Models",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20",
+        "f154a3464ff17a7c3239b02f41230a0c3f3f90da"
+      ]
+    },
+    {
+      "pattern_name": "Defer Offscreen Images",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "Pre-trained Transfer Learning",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "Reduce Reflection Usage",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "Approximation Algorithms",
+      "count": 2,
+      "percentage": 0.4,
+      "confidence_breakdown": {
+        "HIGH": 2,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a29f1cb588ad48237db232453747dd1aec96abe7",
+        "acc4541c7742190b5d9789c107ed9e79417945a4"
+      ]
+    },
+    {
+      "pattern_name": "Choose Region Closest to Users",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "23a63fd9ddf0bd75c031459712bfbc120278606a"
+      ]
+    },
+    {
+      "pattern_name": "Avoid Tracking Unnecessary Data",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "cc5bbc1573961b4ec56d3d9f241ecc65a26141bc"
+      ]
+    },
+    {
+      "pattern_name": "Cache Invalidation Strategy",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "6e03c02b1a34e1aa6b5270d863c20b147c6c8d20"
+      ]
+    },
+    {
+      "pattern_name": "Optimize Storage",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "b9d108aad696975a27d60485c3faa65f6a7b525f"
+      ]
+    },
+    {
+      "pattern_name": "Feature Flags for Resource Control",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "b9d108aad696975a27d60485c3faa65f6a7b525f"
+      ]
+    },
+    {
+      "pattern_name": "Containerize Your Workload",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "c7b9c08825acc61f1adde54535a41855c04962a2"
+      ]
+    },
+    {
+      "pattern_name": "Evaluate Other CPU Architectures",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "5a27459b873aff925e52f7e54dbd78fc4cc42d18"
+      ]
+    },
+    {
+      "pattern_name": "Optimize Peak CPU Utilization",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "5a27459b873aff925e52f7e54dbd78fc4cc42d18"
+      ]
+    },
+    {
+      "pattern_name": "Application Performance Monitoring",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "896b60329a40d0ac8f8aeff9af49c05e12b34b01"
+      ]
+    },
+    {
+      "pattern_name": "Garbage Collection Tuning",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 0,
+        "MEDIUM": 1,
+        "LOW": 0
+      },
+      "example_commits": [
+        "9e2cc98c9312198d5143e3e784059fbd00434683"
+      ]
+    },
+    {
+      "pattern_name": "Data Deduplication",
+      "count": 1,
+      "percentage": 0.2,
+      "confidence_breakdown": {
+        "HIGH": 1,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "example_commits": [
+        "a29f1cb588ad48237db232453747dd1aec96abe7"
+      ]
+    }
+  ],
+  "emergent_patterns": [],
+  "per_repo_stats": [
+    {
+      "repo_name": "FuelLabs/fuel-core",
+      "total_commits": 20,
+      "green_commits": 19,
+      "percentage": 95.0,
+      "patterns": [
+        "Use Compiled Languages",
+        "Performance Profiling",
+        "Reduce HTTP Requests",
+        "Incremental Processing",
+        "Reduce Network Traversal Between VMs",
+        "Match SLO Requirements",
+        "GraphQL for Selective Retrieval",
+        "Use Energy Efficient Hardware",
+        "Minimize Deployed Environments",
+        "Enable Text Compression",
+        "Efficient Serialization",
+        "Connection Pooling",
+        "Implement Stateless Design",
+        "Properly Sized Images",
+        "Cache Static Data",
+        "Reduce Transmitted Data",
+        "Minimize Main Thread Work",
+        "Use Serverless",
+        "Avoid Excessive DOM Size",
+        "Set Retention Policy on Storage",
+        "gRPC for Service Communication",
+        "Compress Stored Data",
+        "Optimize Storage Resource Utilization",
+        "Avoid Tracking Unnecessary Data",
+        "Compress Transmitted Data",
+        "Use Cloud Native Security Tools",
+        "Eliminate Polling",
+        "Delete Unused Storage Resources",
+        "Avoid Chaining Critical Requests",
+        "Cache Invalidation Strategy",
+        "Match VM Utilization Requirements",
+        "Database Indexing",
+        "Remove Unused Assets",
+        "Feature Flags for Resource Control",
+        "Scan for Vulnerabilities",
+        "Energy Efficient Models",
+        "Keep Request Counts Low",
+        "Optimize Storage",
+        "Scale Logical Components Independently",
+        "Database Views & Materialized Views"
+      ]
+    },
+    {
+      "repo_name": "paritytech/polkadot-sdk",
+      "total_commits": 20,
+      "green_commits": 17,
+      "percentage": 85.0,
+      "patterns": [
+        "Use Compiled Languages",
+        "Optimize Average CPU Utilization",
+        "Performance Profiling",
+        "Reduce HTTP Requests",
+        "Incremental Processing",
+        "Reduce Network Traversal Between VMs",
+        "Scale Kubernetes Workloads Based on Events",
+        "Serve Images in Modern Formats",
+        "Match SLO Requirements",
+        "Efficient Format for Model Training",
+        "Minimize Deployed Environments",
+        "Implement Stateless Design",
+        "Properly Sized Images",
+        "Reduce Transmitted Data",
+        "Evaluate Other CPU Architectures",
+        "Use Serverless",
+        "Minimize Main Thread Work",
+        "Application Performance Monitoring",
+        "Containerize Your Workload",
+        "Avoid Excessive DOM Size",
+        "Compress Stored Data",
+        "Optimize Storage Resource Utilization",
+        "Compress Transmitted Data",
+        "Queue Non-Urgent Requests",
+        "Scale Down Unused Applications",
+        "Lazy Loading",
+        "Scale Infrastructure with User Load",
+        "Eliminate Polling",
+        "Delete Unused Storage Resources",
+        "Avoid Chaining Critical Requests",
+        "Resource Limits & Constraints",
+        "Remove Unused CSS",
+        "Match VM Utilization Requirements",
+        "Asynchronous Processing",
+        "Optimize Peak CPU Utilization",
+        "Remove Unused Assets",
+        "Use Async Instead of Sync",
+        "Right Hardware Type for AI",
+        "Shed Lower Priority Traffic",
+        "Energy Efficient Models",
+        "Keep Request Counts Low"
+      ]
+    },
+    {
+      "repo_name": "aptos-labs/aptos-core",
+      "total_commits": 20,
+      "green_commits": 11,
+      "percentage": 55.0,
+      "patterns": [
+        "Use Compiled Languages",
+        "Reduce Network Traversal Between VMs",
+        "Serve Images in Modern Formats",
+        "Efficient Format for Model Training",
+        "Encrypt What Is Necessary",
+        "Efficient Serialization",
+        "Connection Pooling",
+        "Implement Stateless Design",
+        "Properly Sized Images",
+        "Reduce Transmitted Data",
+        "Use Serverless",
+        "Avoid Excessive DOM Size",
+        "Compress Transmitted Data",
+        "Lazy Loading",
+        "Queue Non-Urgent Requests",
+        "Garbage Collection Tuning",
+        "Eliminate Polling",
+        "Delete Unused Storage Resources",
+        "Avoid Chaining Critical Requests",
+        "Batch Processing",
+        "Match VM Utilization Requirements",
+        "Asynchronous Processing",
+        "Remove Unused Assets",
+        "Use Async Instead of Sync"
+      ]
+    },
+    {
+      "repo_name": "slowmist/Blockchain-dark-forest-selfguard-handbook",
+      "total_commits": 20,
+      "green_commits": 9,
+      "percentage": 45.0,
+      "patterns": [
+        "Optimize Storage Resource Utilization",
+        "Optimize Average CPU Utilization",
+        "Encrypt What Is Necessary",
+        "Scale Infrastructure with User Load"
+      ]
+    },
+    {
+      "repo_name": "massalabs/massa",
+      "total_commits": 20,
+      "green_commits": 9,
+      "percentage": 45.0,
+      "patterns": [
+        "Use Compiled Languages",
+        "Optimize Average CPU Utilization",
+        "Reduce HTTP Requests",
+        "Match SLO Requirements",
+        "Scale Kubernetes Workloads Based on Events",
+        "Reduce Network Traversal Between VMs",
+        "Serve Images in Modern Formats",
+        "Data Deduplication",
+        "Minimize Deployed Environments",
+        "Efficient Format for Model Training",
+        "Enable Text Compression",
+        "Efficient Serialization",
+        "Connection Pooling",
+        "Implement Stateless Design",
+        "Properly Sized Images",
+        "Cache Static Data",
+        "Reduce Transmitted Data",
+        "Minimize Main Thread Work",
+        "Use Serverless",
+        "Avoid Excessive DOM Size",
+        "Reduce Reflection Usage",
+        "gRPC for Service Communication",
+        "Compress Stored Data",
+        "Optimize Storage Resource Utilization",
+        "Compress Transmitted Data",
+        "Pre-trained Transfer Learning",
+        "Lazy Loading",
+        "Queue Non-Urgent Requests",
+        "Use Cloud Native Security Tools",
+        "Eliminate Polling",
+        "Delete Unused Storage Resources",
+        "Avoid Chaining Critical Requests",
+        "Resource Limits & Constraints",
+        "Batch Processing",
+        "Remove Unused CSS",
+        "Match VM Utilization Requirements",
+        "Asynchronous Processing",
+        "Database Indexing",
+        "Remove Unused Assets",
+        "Use Async Instead of Sync",
+        "Right Hardware Type for AI",
+        "Scan for Vulnerabilities",
+        "Shed Lower Priority Traffic",
+        "Defer Offscreen Images",
+        "Keep Request Counts Low",
+        "Scale Logical Components Independently",
+        "Approximation Algorithms",
+        "Database Views & Materialized Views"
+      ]
+    },
+    {
+      "repo_name": "smartcontractkit/full-blockchain-solidity-course-js",
+      "total_commits": 20,
+      "green_commits": 2,
+      "percentage": 10.0,
+      "patterns": [
+        "Use Compiled Languages",
+        "Avoid Chaining Critical Requests",
+        "Keep Request Counts Low"
+      ]
+    },
+    {
+      "repo_name": "smartcontractkit/full-blockchain-solidity-course-py",
+      "total_commits": 20,
+      "green_commits": 2,
+      "percentage": 10.0,
+      "patterns": [
+        "Use Compiled Languages",
+        "Reduce Network Traversal Between VMs",
+        "Serve Images in Modern Formats",
+        "Deprecate GIFs",
+        "Efficient Format for Model Training",
+        "Compress Transmitted Data"
+      ]
+    },
+    {
+      "repo_name": "BytePhoenixCoding/BlockchainTokenSniper",
+      "total_commits": 20,
+      "green_commits": 1,
+      "percentage": 5.0,
+      "patterns": [
+        "Reduce Network Traversal Between VMs",
+        "Choose Region Closest to Users",
+        "Avoid Chaining Critical Requests",
+        "Delete Unused Storage Resources"
+      ]
+    },
+    {
+      "repo_name": "calistus-igwilo/nitda-blockchain-scholarship",
+      "total_commits": 5,
+      "green_commits": 0,
+      "percentage": 0.0,
+      "patterns": [
+        "Minimize Main Thread Work"
+      ]
+    },
+    {
+      "repo_name": "Eternaldeath/BlockchainHome",
+      "total_commits": 20,
+      "green_commits": 0,
+      "percentage": 0.0,
+      "patterns": [
+        "Performance Profiling"
+      ]
+    }
+  ],
+  "per_language_stats": [
+    {
+      "language": "Unknown",
+      "total_commits": 80,
+      "green_commits": 14,
+      "percentage": 17.5
+    },
+    {
+      "language": "Rust",
+      "total_commits": 80,
+      "green_commits": 56,
+      "percentage": 70.0
+    },
+    {
+      "language": "HTML",
+      "total_commits": 25,
+      "green_commits": 0,
+      "percentage": 0.0
+    }
+  ],
+  "statistics": {
+    "temporal_trends": {
+      "trend_direction": "decreasing",
+      "correlation": NaN,
+      "p_value": NaN,
+      "significant": false,
+      "monthly_data_points": 4
+    },
+    "pattern_correlations": {
+      "error": "setting an array element with a sequence."
+    },
+    "effect_size": {
+      "cohens_d": -3.5386069477175313,
+      "magnitude": "large",
+      "mean_difference": -0.6,
+      "significant": true,
+      "comparison": "high_green_vs_low_green_repos"
+    },
+    "descriptive": {
+      "total_commits": 185,
+      "green_commits": 70,
+      "green_rate_mean": 0.3783783783783784,
+      "green_rate_std": 0.48629876257963733,
+      "unique_repositories": 10
+    }
+  },
+  "temporal_analysis": {
+    "periods": [
+      {
+        "period": "2022-Q1",
+        "start_date": "2022-01-01T00:00:00",
+        "end_date": "2022-03-31T23:59:59",
+        "commit_count": 8,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.09
+      },
+      {
+        "period": "2022-Q2",
+        "start_date": "2022-04-01T00:00:00",
+        "end_date": "2022-06-30T23:59:59",
+        "commit_count": 6,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.07
+      },
+      {
+        "period": "2022-Q3",
+        "start_date": "2022-07-01T00:00:00",
+        "end_date": "2022-09-30T23:59:59",
+        "commit_count": 10,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.11
+      },
+      {
+        "period": "2022-Q4",
+        "start_date": "2022-10-01T00:00:00",
+        "end_date": "2022-12-31T23:59:59",
+        "commit_count": 10,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.11
+      },
+      {
+        "period": "2023-Q1",
+        "start_date": "2023-01-01T00:00:00",
+        "end_date": "2023-03-31T23:59:59",
+        "commit_count": 10,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.11
+      },
+      {
+        "period": "2023-Q2",
+        "start_date": "2023-04-01T00:00:00",
+        "end_date": "2023-06-30T23:59:59",
+        "commit_count": 16,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.18
+      },
+      {
+        "period": "2023-Q3",
+        "start_date": "2023-07-01T00:00:00",
+        "end_date": "2023-09-30T23:59:59",
+        "commit_count": 8,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.09
+      },
+      {
+        "period": "2024-Q1",
+        "start_date": "2024-01-01T00:00:00",
+        "end_date": "2024-03-31T23:59:59",
+        "commit_count": 3,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.03
+      },
+      {
+        "period": "2024-Q2",
+        "start_date": "2024-04-01T00:00:00",
+        "end_date": "2024-06-30T23:59:59",
+        "commit_count": 14,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.15
+      },
+      {
+        "period": "2024-Q3",
+        "start_date": "2024-07-01T00:00:00",
+        "end_date": "2024-09-30T23:59:59",
+        "commit_count": 7,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.08
+      },
+      {
+        "period": "2025-Q1",
+        "start_date": "2025-01-01T00:00:00",
+        "end_date": "2025-03-31T23:59:59",
+        "commit_count": 4,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.04
+      },
+      {
+        "period": "2025-Q2",
+        "start_date": "2025-04-01T00:00:00",
+        "end_date": "2025-06-30T23:59:59",
+        "commit_count": 12,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.13
+      },
+      {
+        "period": "2025-Q3",
+        "start_date": "2025-07-01T00:00:00",
+        "end_date": "2025-09-30T23:59:59",
+        "commit_count": 5,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.05
+      },
+      {
+        "period": "2025-Q4",
+        "start_date": "2025-10-01T00:00:00",
+        "end_date": "2025-12-31T23:59:59",
+        "commit_count": 21,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.23
+      },
+      {
+        "period": "2026-Q1",
+        "start_date": "2026-01-01T00:00:00",
+        "end_date": "2026-03-31T23:59:59",
+        "commit_count": 51,
+        "green_commit_count": 0,
+        "green_awareness_rate": 0.0,
+        "unique_patterns": 0,
+        "dominant_pattern": null,
+        "velocity": 0.57
+      }
+    ],
+    "trend": {
+      "trend_direction": "stable",
+      "slope": 0.0,
+      "r_squared": 0,
+      "start_rate": 0.0,
+      "end_rate": 0.0,
+      "change_percentage": 0
+    },
+    "adoption_curve": [
+      [
+        "2022-Q1",
+        0.0
+      ],
+      [
+        "2022-Q2",
+        0.0
+      ],
+      [
+        "2022-Q3",
+        0.0
+      ],
+      [
+        "2022-Q4",
+        0.0
+      ],
+      [
+        "2023-Q1",
+        0.0
+      ],
+      [
+        "2023-Q2",
+        0.0
+      ],
+      [
+        "2023-Q3",
+        0.0
+      ],
+      [
+        "2024-Q1",
+        0.0
+      ],
+      [
+        "2024-Q2",
+        0.0
+      ],
+      [
+        "2024-Q3",
+        0.0
+      ],
+      [
+        "2025-Q1",
+        0.0
+      ],
+      [
+        "2025-Q2",
+        0.0
+      ],
+      [
+        "2025-Q3",
+        0.0
+      ],
+      [
+        "2025-Q4",
+        0.0
+      ],
+      [
+        "2026-Q1",
+        0.0
+      ]
+    ],
+    "velocity_trend": {
+      "average_velocity": 0.14,
+      "velocity_std": 0.13,
+      "min_velocity": 0.03,
+      "max_velocity": 0.57,
+      "velocity_by_period": [
+        [
+          "2022-Q1",
+          0.09
+        ],
+        [
+          "2022-Q2",
+          0.07
+        ],
+        [
+          "2022-Q3",
+          0.11
+        ],
+        [
+          "2022-Q4",
+          0.11
+        ],
+        [
+          "2023-Q1",
+          0.11
+        ],
+        [
+          "2023-Q2",
+          0.18
+        ],
+        [
+          "2023-Q3",
+          0.09
+        ],
+        [
+          "2024-Q1",
+          0.03
+        ],
+        [
+          "2024-Q2",
+          0.15
+        ],
+        [
+          "2024-Q3",
+          0.08
+        ],
+        [
+          "2025-Q1",
+          0.04
+        ],
+        [
+          "2025-Q2",
+          0.13
+        ],
+        [
+          "2025-Q3",
+          0.05
+        ],
+        [
+          "2025-Q4",
+          0.23
+        ],
+        [
+          "2026-Q1",
+          0.57
+        ]
+      ]
+    },
+    "pattern_evolution": {},
+    "summary": {
+      "total_periods": 15,
+      "first_period": "2022-Q1",
+      "last_period": "2026-Q1",
+      "overall_trend": "stable",
+      "average_green_rate": 0.0
+    }
+  }
+}

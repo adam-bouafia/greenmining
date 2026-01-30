@@ -22,7 +22,7 @@ GreenMining is an **empirical research tool** for Mining Software Repositories (
 - **Analyzing temporal trends** and adoption patterns across projects
 - **Generating research-ready datasets** with statistical analysis
 
-The library integrates with PyDriller for deep repository analysis and supports multiple energy measurement backends (RAPL, CodeCarbon) for empirical Green IT research.
+The library performs deep repository analysis with full commit extraction and supports multiple energy measurement backends (RAPL, CodeCarbon) for empirical Green IT research.
 
 ### Key Capabilities
 
@@ -31,7 +31,7 @@ The library integrates with PyDriller for deep repository analysis and supports 
 | **122 GSF Patterns** | Detect patterns across 15 categories (cloud, web, AI, caching, etc.) |
 | **321 Green Keywords** | Comprehensive keyword matching for green-aware commits |
 | **GitHub Mining** | Fetch repositories by keywords, stars, language filters |
-| **URL Analysis** | Analyze any GitHub repo directly via URL using PyDriller |
+| **URL Analysis** | Analyze any GitHub repo directly via URL with full commit extraction |
 | **Statistical Analysis** | Pattern correlations, temporal trends, effect sizes |
 | **Energy Measurement** | RAPL and CodeCarbon backends for power profiling |
 | **Multiple Outputs** | JSON, CSV, and Markdown reports |
