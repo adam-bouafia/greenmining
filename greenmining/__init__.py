@@ -9,7 +9,7 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
 
 
 def fetch_repositories(

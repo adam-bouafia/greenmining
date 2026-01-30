@@ -38,21 +38,16 @@ commits.json
 analysis_results.json
 
 # Documentation build output
-site/
-docs/roadmap.md
+site/ 
 !README.md
 !CHANGELOG.md
 !MANIFEST.in
 !LICENSE
-
-# Task/evaluation folder (local work only)
+ 
 task/
-
-# Examples folder (local experiments only)
+ 
 examples/
-
-# Thesis work (NEVER commit - local academic work only)
-thesis/
+ 
 
 # IDE
 .vscode/
