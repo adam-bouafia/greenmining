@@ -14,7 +14,7 @@ An empirical Python library for Mining Software Repositories (MSR) in Green IT r
 - **Mine repositories at scale** - Fetch and analyze GitHub repositories via GraphQL API with configurable filters
 - **Batch analysis with parallelism** - Analyze multiple repositories concurrently with configurable worker pools
 - **Classify green commits** - Detect 122 sustainability patterns from the Green Software Foundation (GSF) catalog
-- **Analyze any repository by URL** - Direct PyDriller-based analysis with support for private repositories
+- **Analyze any repository by URL** - Direct Git-based analysis with support for private repositories
 - **Measure energy consumption** - RAPL, CodeCarbon, and CPU Energy Meter backends for power profiling
 - **Carbon footprint reporting** - CO2 emissions calculation with 20+ country profiles and cloud region support
 - **Power regression detection** - Identify commits that increased energy consumption
@@ -626,7 +626,7 @@ config = Config(
 - **Pattern Detection**: 122 sustainability patterns across 15 categories from the GSF catalog
 - **Keyword Analysis**: 321 green software detection keywords
 - **Repository Fetching**: GraphQL API with date, star, and language filters
-- **URL-Based Analysis**: Direct PyDriller analysis from GitHub URLs (HTTPS and SSH)
+- **URL-Based Analysis**: Direct Git-based analysis from GitHub URLs (HTTPS and SSH)
 - **Batch Processing**: Parallel analysis of multiple repositories with configurable workers
 - **Private Repository Support**: Authentication via SSH keys or GitHub tokens
 - **Energy Measurement**: RAPL, CodeCarbon, and CPU Energy Meter backends
@@ -636,7 +636,7 @@ config = Config(
 - **Version Power Comparison**: Compare power consumption across software versions with trend detection
 - **Method-Level Analysis**: Per-method complexity metrics via Lizard integration
 - **Source Code Access**: Before/after source code for refactoring detection
-- **Full Process Metrics**: All 8 PyDriller process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
+- **Full Process Metrics**: All 8 process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
 - **Statistical Analysis**: Correlations, effect sizes, and temporal trends
 - **Multi-format Output**: Markdown reports, CSV exports, JSON data
 - **Web Dashboard**: Flask-based interactive visualization (`pip install greenmining[dashboard]`)
@@ -790,7 +790,8 @@ ruff check greenmining/ tests/
 
 - Python 3.9+
 - PyGithub >= 2.1.1
-- PyDriller >= 2.5
+- gitpython >= 3.1.0
+- lizard >= 1.17.0
 - pandas >= 2.2.0
 
 **Optional dependencies:**

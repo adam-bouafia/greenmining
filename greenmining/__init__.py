@@ -9,7 +9,7 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "1.1.4"
+__version__ = "1.1.5"
 
 
 def fetch_repositories(
@@ -51,6 +51,8 @@ def analyze_repositories(
     include_source_code: bool = False,
     ssh_key_path: str = None,
     github_token: str = None,
+    since_date: str = None,
+    to_date: str = None,
 ):
     # Analyze multiple repositories from URLs.
     # Args:
@@ -64,7 +66,19 @@ def analyze_repositories(
     #   include_source_code: Include source code before/after in results
     #   ssh_key_path: SSH key path for private repositories
     #   github_token: GitHub token for private HTTPS repositories
+    #   since_date: Analyze commits from this date (YYYY-MM-DD string)
+    #   to_date: Analyze commits up to this date (YYYY-MM-DD string)
     from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
+
+    kwargs = {}
+    if since_date:
+        from datetime import datetime
+
+        kwargs["since_date"] = datetime.strptime(since_date, "%Y-%m-%d")
+    if to_date:
+        from datetime import datetime
+
+        kwargs["to_date"] = datetime.strptime(to_date, "%Y-%m-%d")
 
     analyzer = LocalRepoAnalyzer(
         max_commits=max_commits,
@@ -74,6 +88,7 @@ def analyze_repositories(
         include_source_code=include_source_code,
         ssh_key_path=ssh_key_path,
         github_token=github_token,
+        **kwargs,
     )
 
     return analyzer.analyze_repositories(

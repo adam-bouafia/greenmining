@@ -35,7 +35,7 @@ Repositories were selected using 8 keyword groups:
 The experiment executes GreenMining's 5-stage pipeline:
 
 1. **FETCH** - Discover repositories from GitHub API
-2. **EXTRACT** - Extract commit messages using PyDriller
+2. **EXTRACT** - Extract commit messages from Git history
 3. **ANALYZE** - Detect green patterns in commits
 4. **AGGREGATE** - Compute statistics and metrics
 5. **REPORT** - Generate analysis report

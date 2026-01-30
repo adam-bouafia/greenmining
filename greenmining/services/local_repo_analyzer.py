@@ -204,6 +204,8 @@ class LocalRepoAnalyzer:
         method_level_analysis: bool = False,
         include_source_code: bool = False,
         process_metrics: str = "standard",
+        since_date: Optional[datetime] = None,
+        to_date: Optional[datetime] = None,
     ):
         # Initialize the local repository analyzer.
         # Args:
@@ -224,6 +226,8 @@ class LocalRepoAnalyzer:
         self.clone_path.mkdir(parents=True, exist_ok=True)
         self.max_commits = max_commits
         self.days_back = days_back
+        self.since_date = since_date
+        self.to_date = to_date
         self.skip_merges = skip_merges
         self.compute_process_metrics = compute_process_metrics
         self.cleanup_after = cleanup_after
@@ -446,7 +450,7 @@ class LocalRepoAnalyzer:
         auth_url = self._prepare_auth_url(url)
 
         # Calculate date range
-        since_date = datetime.now() - timedelta(days=self.days_back)
+        since_date = self.since_date or (datetime.now() - timedelta(days=self.days_back))
 
         # Configure PyDriller Repository
         repo_config = {
@@ -454,6 +458,8 @@ class LocalRepoAnalyzer:
             "since": since_date,
             "only_no_merge": self.skip_merges,
         }
+        if self.to_date:
+            repo_config["to"] = self.to_date
 
         # Clone to specific path if needed
         local_path = self.clone_path / repo_name

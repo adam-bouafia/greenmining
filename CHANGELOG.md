@@ -80,7 +80,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial project structure with MCP architecture
 - GSF patterns database (76 patterns, 190 keywords)
 - GitHub repository fetching and analysis
-- PyDriller integration for commit mining
+- Git-based commit mining integration
 - Pattern matching engine
 - Green awareness detection
 - Data analysis and reporting
