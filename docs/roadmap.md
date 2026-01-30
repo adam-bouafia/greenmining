@@ -4,22 +4,34 @@ This document outlines planned features and enhancements for GreenMining.
 
 ---
 
-## Current Status (v1.0.4)
+## Current Status (v1.0.5 Beta)
 
-### ✅ Implemented Features
+### Implemented Features
 
 | Feature | Status | Description |
 |---------|--------|-------------|
-| **GSF Pattern Catalog** | ✅ Complete | 122 patterns across 15 categories |
-| **GitHub Repository Mining** | ✅ Complete | GraphQL API with filters |
-| **URL-Based Analysis** | ✅ Complete | Direct PyDriller analysis |
-| **Commit Classification** | ✅ Complete | Keyword matching with confidence |
-| **Energy Measurement** | ✅ Complete | RAPL + CodeCarbon backends |
-| **Statistical Analysis** | ✅ Complete | Correlations, effect sizes, trends |
-| **Temporal Analysis** | ✅ Complete | Configurable time granularity |
-| **Report Generation** | ✅ Complete | JSON, CSV, Markdown outputs |
-| **DMM Metrics** | ✅ Complete | Delta Maintainability Model |
-| **Process Metrics** | ⚠️ Partial | Code churn, change set, contributors |
+| **GSF Pattern Catalog** | Complete | 122 patterns across 15 categories |
+| **GitHub Repository Mining** | Complete | GraphQL API with filters |
+| **URL-Based Analysis** | Complete | Direct PyDriller analysis |
+| **Commit Classification** | Complete | Keyword matching with confidence |
+| **Energy Measurement** | Complete | RAPL + CodeCarbon backends |
+| **Statistical Analysis** | Complete | Correlations, effect sizes, trends |
+| **Temporal Analysis** | Complete | Configurable time granularity |
+| **Report Generation** | Complete | JSON, CSV, Markdown outputs |
+| **DMM Metrics** | Complete | Delta Maintainability Model |
+| **Process Metrics** | Complete | All 8 PyDriller process metrics |
+| **Configuration-Based URL Input** | Complete | YAML config with sources.urls |
+| **Batch URL Analysis API** | Complete | LocalRepoAnalyzer.analyze_repositories with parallel workers |
+| **Private Repository Support** | Complete | SSH key and GitHub token authentication |
+| **CPU Energy Meter Backend** | Complete | CPUEnergyMeter class with auto-detection |
+| **Integrated Energy Tracking** | Complete | LocalRepoAnalyzer energy_tracking parameter |
+| **Carbon Footprint Reporting** | Complete | CarbonReporter class with 20+ country profiles |
+| **Method-Level Analysis** | Complete | method_level_analysis parameter |
+| **Source Code Access** | Complete | include_source_code parameter |
+| **Power Regression Detection** | Complete | PowerRegressionDetector class |
+| **Metrics-to-Power Correlation** | Complete | MetricsPowerCorrelator class |
+| **Version-by-Version Power Analysis** | Complete | VersionPowerAnalyzer class |
+| **Web Dashboard** | Complete | Flask-based dashboard module |
 
 ---
 
@@ -27,7 +39,7 @@ This document outlines planned features and enhancements for GreenMining.
 
 ### 1.1 Configuration-Based URL Input
 
-Add support for specifying repository URLs directly in configuration files.
+Support for specifying repository URLs directly in configuration files.
 
 ```yaml
 # greenmining.yaml
@@ -42,8 +54,8 @@ sources:
     min_stars: 500
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Low  
+**Status:** Complete
+**Effort:** Low
 **Impact:** High
 
 ### 1.2 Batch URL Analysis API
@@ -64,8 +76,8 @@ results = analyze_repositories(
 )
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Medium  
+**Status:** Complete
+**Effort:** Medium
 **Impact:** High
 
 ### 1.3 Private Repository Support
@@ -82,8 +94,8 @@ analyzer = LocalRepoAnalyzer(
 result = analyzer.analyze_repository("git@github.com:company/private-repo.git")
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Medium  
+**Status:** Complete
+**Effort:** Medium
 **Impact:** Medium
 
 ---
@@ -105,13 +117,13 @@ with meter.measure() as metrics:
 ```
 
 **Platforms:**
-- ✅ Linux (RAPL) - Already implemented
-- 🔴 Windows Energy Estimation Engine
-- 🔴 Apple Silicon power metrics
-- 🔴 AMD Energy Driver
+- Complete: Linux (RAPL)
+- Not Started: Windows Energy Estimation Engine
+- Not Started: Apple Silicon power metrics
+- Not Started: AMD Energy Driver
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Complete
+**Effort:** High
 **Impact:** High
 
 ### 2.2 Integrated Energy Tracking
@@ -129,8 +141,8 @@ print(result["energy_metrics"]["average_power_watts"])
 print(result["energy_metrics"]["duration_seconds"])
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Medium  
+**Status:** Complete
+**Effort:** Medium
 **Impact:** High
 
 ### 2.3 Carbon Footprint Reporting
@@ -150,8 +162,8 @@ print(f"CO2 emissions: {report.total_emissions_kg:.4f} kg")
 print(f"Equivalent: {report.tree_months:.1f} tree-months")
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Low  
+**Status:** Complete
+**Effort:** Low
 **Impact:** Medium
 
 ---
@@ -160,7 +172,7 @@ print(f"Equivalent: {report.tree_months:.1f} tree-months")
 
 ### 3.1 Complete Process Metrics
 
-Integrate all PyDriller process metrics.
+All PyDriller process metrics are integrated.
 
 ```python
 from greenmining.services import LocalRepoAnalyzer
@@ -178,13 +190,13 @@ result = analyzer.analyze_repository(url)
 # - lines_count: Total lines in files
 ```
 
-**Status:** ⚠️ Partial  
-**Effort:** Medium  
+**Status:** Complete
+**Effort:** Medium
 **Impact:** Medium
 
 ### 3.2 Method-Level Analysis
 
-Extract per-method metrics using Lizard integration.
+Per-method metrics extraction using Lizard integration.
 
 ```python
 result = analyzer.analyze_repository(
@@ -198,8 +210,8 @@ for commit in result["commits"]:
         print(f"  params={method['parameters']}, tokens={method['token_count']}")
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Complete
+**Effort:** High
 **Impact:** Medium
 
 ### 3.3 Source Code Access
@@ -217,8 +229,8 @@ for commit in result["commits"]:
             )
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Low  
+**Status:** Complete
+**Effort:** Low
 **Impact:** Low
 
 ---
@@ -249,8 +261,8 @@ for regression in regressions:
     print(f"  Message: {regression.message}")
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Complete
+**Effort:** High
 **Impact:** High
 
 ### 4.2 Metrics-to-Power Correlation
@@ -272,8 +284,8 @@ print(f"Spearman correlations: {correlator.spearman}")
 print(f"Feature importance: {correlator.feature_importance}")
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Complete
+**Effort:** High
 **Impact:** High
 
 ### 4.3 Version-by-Version Power Analysis
@@ -298,8 +310,8 @@ report = analyzer.analyze_versions(
 report.plot_power_evolution("power_evolution.png")
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Complete
+**Effort:** High
 **Impact:** High
 
 ---
@@ -328,8 +340,8 @@ jobs:
           baseline: main
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Medium  
+**Status:** Not Started
+**Effort:** Medium
 **Impact:** High
 
 ### 5.2 VS Code Extension
@@ -341,8 +353,8 @@ Real-time green pattern suggestions in IDE.
 - Show energy impact estimates
 - Quick-fix actions for common patterns
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Not Started
+**Effort:** High
 **Impact:** Medium
 
 ### 5.3 Web Dashboard
@@ -355,8 +367,8 @@ Interactive visualization of analysis results.
 - Energy consumption heatmaps
 - Export to various formats
 
-**Status:** 🔴 Not Started  
-**Effort:** High  
+**Status:** Complete
+**Effort:** High
 **Impact:** Medium
 
 ### 5.4 ML-Based Pattern Detection
@@ -371,27 +383,32 @@ patterns = predictor.predict_from_diff(diff_content)
 # Returns patterns based on code structure, not just keywords
 ```
 
-**Status:** 🔴 Not Started  
-**Effort:** Very High  
+**Status:** Not Started
+**Effort:** Very High
 **Impact:** High
 
 ---
 
 ## Implementation Priority Matrix
 
-| Phase | Feature | Effort | Impact | Priority |
-|-------|---------|--------|--------|----------|
-| 1 | URL Config Support | Low | High | 🔴 **Critical** |
-| 1 | Batch URL Analysis | Medium | High | 🔴 **Critical** |
-| 2 | Integrated Energy Tracking | Medium | High | 🟠 **High** |
-| 2 | Carbon Reporting | Low | Medium | 🟠 **High** |
-| 4 | Power Regression Detection | High | High | 🟡 **Medium** |
-| 3 | Full Process Metrics | Medium | Medium | 🟡 **Medium** |
-| 4 | Metrics Correlation | High | High | 🟡 **Medium** |
-| 3 | Method-Level Analysis | High | Medium | 🟡 **Medium** |
-| 5 | CI/CD Integration | Medium | High | 🟢 **Low** |
-| 5 | VS Code Extension | High | Medium | 🟢 **Low** |
-| 5 | ML Pattern Detection | Very High | High | 🟢 **Low** |
+| Phase | Feature | Effort | Impact | Status |
+|-------|---------|--------|--------|--------|
+| 1 | URL Config Support | Low | High | Complete |
+| 1 | Batch URL Analysis | Medium | High | Complete |
+| 1 | Private Repository Support | Medium | Medium | Complete |
+| 2 | CPU Energy Meter Backend | High | High | Complete |
+| 2 | Integrated Energy Tracking | Medium | High | Complete |
+| 2 | Carbon Reporting | Low | Medium | Complete |
+| 3 | Full Process Metrics | Medium | Medium | Complete |
+| 3 | Method-Level Analysis | High | Medium | Complete |
+| 3 | Source Code Access | Low | Low | Complete |
+| 4 | Power Regression Detection | High | High | Complete |
+| 4 | Metrics-to-Power Correlation | High | High | Complete |
+| 4 | Version-by-Version Power Analysis | High | High | Complete |
+| 5 | Web Dashboard | High | Medium | Complete |
+| 5 | CI/CD Integration | Medium | High | Not Started |
+| 5 | VS Code Extension | High | Medium | Not Started |
+| 5 | ML Pattern Detection | Very High | High | Not Started |
 
 ---
 
@@ -404,8 +421,7 @@ We welcome contributions! If you'd like to help implement any of these features:
 3. Submit a pull request
 
 Priority areas for contribution:
-- Phase 1 features (URL support)
-- Phase 2 features (Energy measurement)
+- Phase 5 features (CI/CD, VS Code Extension, ML Detection)
 - Additional GSF patterns
 - Documentation improvements
 

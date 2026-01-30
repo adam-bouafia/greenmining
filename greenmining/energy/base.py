@@ -147,8 +147,10 @@ class EnergyMeter(ABC):
 
 def get_energy_meter(backend: str = "rapl") -> EnergyMeter:
     # Factory function to get an energy meter instance.
+    # Supported backends: rapl, codecarbon, cpu_meter, auto
     from .rapl import RAPLEnergyMeter
     from .codecarbon_meter import CodeCarbonMeter
+    from .cpu_meter import CPUEnergyMeter
 
     backend_lower = backend.lower()
 
@@ -156,6 +158,14 @@ def get_energy_meter(backend: str = "rapl") -> EnergyMeter:
         meter = RAPLEnergyMeter()
     elif backend_lower == "codecarbon":
         meter = CodeCarbonMeter()
+    elif backend_lower in ("cpu_meter", "cpu"):
+        meter = CPUEnergyMeter()
+    elif backend_lower == "auto":
+        # Try RAPL first (most accurate), fall back to CPU meter
+        rapl = RAPLEnergyMeter()
+        if rapl.is_available():
+            return rapl
+        meter = CPUEnergyMeter()
     else:
         raise ValueError(f"Unsupported energy backend: {backend}")
 

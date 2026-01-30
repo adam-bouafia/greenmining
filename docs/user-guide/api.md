@@ -201,6 +201,59 @@ print(GREEN_KEYWORDS[:10])
 #  'sustainability', 'sustainable', 'green', 'efficient', 'efficiency']
 ```
 
+### analyze_repositories()
+
+Analyze multiple repositories from URLs with optional parallel processing.
+
+```python
+def analyze_repositories(
+    urls: list,
+    max_commits: int = 500,
+    parallel_workers: int = 1,
+    output_format: str = "dict",
+    energy_tracking: bool = False,
+    energy_backend: str = "rapl",
+    method_level_analysis: bool = False,
+    include_source_code: bool = False,
+    ssh_key_path: str = None,
+    github_token: str = None,
+) -> list
+```
+
+**Parameters:**
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `urls` | list | (required) | List of GitHub repository URLs |
+| `max_commits` | int | 500 | Maximum commits per repository |
+| `parallel_workers` | int | 1 | Concurrent analysis workers |
+| `energy_tracking` | bool | False | Enable energy measurement |
+| `energy_backend` | str | "rapl" | Energy backend (rapl, codecarbon, cpu_meter, auto) |
+| `method_level_analysis` | bool | False | Include per-method metrics |
+| `include_source_code` | bool | False | Include source code before/after |
+| `ssh_key_path` | str | None | SSH key for private repos |
+| `github_token` | str | None | GitHub token for private HTTPS repos |
+
+**Example:**
+
+```python
+from greenmining import analyze_repositories
+
+results = analyze_repositories(
+    urls=[
+        "https://github.com/kubernetes/kubernetes",
+        "https://github.com/istio/istio",
+    ],
+    max_commits=100,
+    parallel_workers=4,
+    energy_tracking=True,
+    energy_backend="auto",
+)
+
+for result in results:
+    print(f"{result.name}: {result.green_commit_rate:.1%} green")
+```
+
 ---
 
 ## Service Classes
@@ -310,7 +363,18 @@ from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
 
 analyzer = LocalRepoAnalyzer(
     clone_path="/tmp/greenmining_repos",  # Clone directory
-    cleanup_after=True                     # Delete after analysis
+    max_commits=500,                       # Max commits per repo
+    days_back=730,                         # How far back to analyze
+    skip_merges=True,                      # Skip merge commits
+    compute_process_metrics=True,          # Compute PyDriller metrics
+    cleanup_after=True,                    # Delete after analysis
+    ssh_key_path=None,                     # SSH key for private repos
+    github_token=None,                     # GitHub token for private repos
+    energy_tracking=False,                 # Enable energy measurement
+    energy_backend="rapl",                 # Energy backend
+    method_level_analysis=False,           # Per-method metrics
+    include_source_code=False,             # Source code before/after
+    process_metrics="standard",            # "standard" or "full"
 )
 ```
 
@@ -318,38 +382,65 @@ analyzer = LocalRepoAnalyzer(
 
 ```python
 # Analyze single repository
-result = analyzer.analyze_repository(
-    repo_url="https://github.com/owner/repo",
-    max_commits=1000,
-    since_date=datetime(2024, 1, 1),
-    to_date=datetime(2024, 12, 31)
+result = analyzer.analyze_repository("https://github.com/owner/repo")
+
+# Analyze multiple repositories (with parallelism)
+results = analyzer.analyze_repositories(
+    urls=["https://github.com/org/repo1", "https://github.com/org/repo2"],
+    parallel_workers=4,
 )
 ```
 
-**Example:**
+**Example: Basic analysis**
 
 ```python
 from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
-from datetime import datetime
 
+analyzer = LocalRepoAnalyzer(cleanup_after=True)
+result = analyzer.analyze_repository("https://github.com/pallets/flask")
+
+print(f"Repository: {result.name}")
+print(f"Commits analyzed: {result.total_commits}")
+print(f"Green-aware: {result.green_commits} ({result.green_commit_rate:.1%})")
+
+for commit in result.commits[:5]:
+    if commit.green_aware:
+        print(f"  {commit.message[:50]}...")
+```
+
+**Example: Private repository with energy tracking**
+
+```python
 analyzer = LocalRepoAnalyzer(
-    clone_path="/tmp/analysis",
-    cleanup_after=True
+    github_token="ghp_xxxx",
+    energy_tracking=True,
+    energy_backend="auto",
+    method_level_analysis=True,
 )
 
-result = analyzer.analyze_repository(
-    repo_url="https://github.com/pallets/flask",
-    max_commits=100
+result = analyzer.analyze_repository("https://github.com/company/private-repo")
+print(f"Energy consumed: {result.energy_metrics['joules']:.2f} J")
+
+for commit in result.commits:
+    for method in commit.methods:
+        print(f"  {method.name}: complexity={method.complexity}")
+```
+
+**Example: Batch parallel analysis**
+
+```python
+analyzer = LocalRepoAnalyzer(max_commits=100)
+results = analyzer.analyze_repositories(
+    urls=[
+        "https://github.com/kubernetes/kubernetes",
+        "https://github.com/istio/istio",
+        "https://github.com/envoyproxy/envoy",
+    ],
+    parallel_workers=3,
 )
 
-print(f"Repository: {result['repository']['name']}")
-print(f"Commits analyzed: {result['total_commits']}")
-print(f"Green-aware: {result['green_aware_count']}")
-
-# Access individual commits
-for commit in result['commits'][:5]:
-    if commit['green_aware']:
-        print(f"  🌱 {commit['message'][:50]}...")
+for result in results:
+    print(f"{result.name}: {result.green_commit_rate:.1%} green")
 ```
 
 ---
@@ -455,6 +546,106 @@ is_code = analyzer.is_code_file("app.py")  # True
 
 # Analyze diff content
 patterns = analyzer.detect_patterns_in_diff(diff_text)
+```
+
+---
+
+### PowerRegressionDetector
+
+Identify commits that caused power consumption regressions.
+
+```python
+from greenmining.analyzers import PowerRegressionDetector
+
+detector = PowerRegressionDetector(
+    test_command="pytest tests/ -x",
+    energy_backend="rapl",
+    threshold_percent=5.0,
+    iterations=5,
+    warmup_iterations=1,
+)
+
+regressions = detector.detect(
+    repo_path="/path/to/repo",
+    baseline_commit="v1.0.0",
+    target_commit="HEAD",
+)
+
+for regression in regressions:
+    print(f"Commit {regression.sha[:8]}: +{regression.power_increase:.1f}%")
+    print(f"  Message: {regression.message}")
+```
+
+---
+
+### MetricsPowerCorrelator
+
+Correlate code metrics with power consumption.
+
+```python
+from greenmining.analyzers import MetricsPowerCorrelator
+
+correlator = MetricsPowerCorrelator()
+correlator.fit(
+    metrics=["complexity", "nloc", "code_churn"],
+    metrics_values={
+        "complexity": [...],
+        "nloc": [...],
+        "code_churn": [...],
+    },
+    power_measurements=[...],
+)
+
+print(f"Pearson correlations: {correlator.pearson}")
+print(f"Spearman correlations: {correlator.spearman}")
+print(f"Feature importance: {correlator.feature_importance}")
+```
+
+---
+
+### VersionPowerAnalyzer
+
+Compare power consumption across software versions.
+
+```python
+from greenmining.analyzers import VersionPowerAnalyzer
+
+analyzer = VersionPowerAnalyzer(
+    test_command="pytest tests/",
+    energy_backend="rapl",
+    iterations=10,
+    warmup_iterations=2,
+)
+
+report = analyzer.analyze_versions(
+    repo_path="/path/to/repo",
+    versions=["v1.0", "v1.1", "v1.2", "v2.0"],
+)
+
+print(report.summary())
+print(f"Trend: {report.trend}")
+print(f"Most efficient: {report.most_efficient}")
+```
+
+---
+
+### CarbonReporter
+
+Generate carbon footprint reports from energy measurements.
+
+```python
+from greenmining.energy import CarbonReporter
+
+reporter = CarbonReporter(
+    country_iso="USA",
+    cloud_provider="aws",
+    region="us-east-1",
+)
+
+report = reporter.generate_report(total_joules=1000.0)
+print(f"CO2 emissions: {report.total_emissions_kg:.4f} kg")
+print(f"Equivalent: {report.tree_months:.1f} tree-months")
+print(report.summary())
 ```
 
 ---

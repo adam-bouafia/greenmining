@@ -11,12 +11,17 @@ An empirical Python library for Mining Software Repositories (MSR) in Green IT r
 
 `greenmining` is a research-grade Python library designed for **empirical Mining Software Repositories (MSR)** studies in **Green IT**. It enables researchers and practitioners to:
 
-- **Mine repositories at scale** - Fetch and analyze GitHub repositories with configurable filters
+- **Mine repositories at scale** - Fetch and analyze GitHub repositories via GraphQL API with configurable filters
+- **Batch analysis with parallelism** - Analyze multiple repositories concurrently with configurable worker pools
 - **Classify green commits** - Detect 122 sustainability patterns from the Green Software Foundation (GSF) catalog
-- **Analyze any repository by URL** - Direct PyDriller-based analysis without API rate limits
-- **Measure energy consumption** - RAPL and CodeCarbon backends for power profiling
+- **Analyze any repository by URL** - Direct PyDriller-based analysis with support for private repositories
+- **Measure energy consumption** - RAPL, CodeCarbon, and CPU Energy Meter backends for power profiling
+- **Carbon footprint reporting** - CO2 emissions calculation with 20+ country profiles and cloud region support
+- **Power regression detection** - Identify commits that increased energy consumption
+- **Method-level analysis** - Per-method complexity and metrics via Lizard integration
+- **Version power comparison** - Compare power consumption across software versions
 - **Generate research datasets** - Statistical analysis, temporal trends, and publication-ready reports
-- **Study green software evolution** - Track adoption patterns across projects and time periods
+- **Web dashboard** - Flask-based interactive visualization of analysis results
 
 Whether you're conducting MSR research, analyzing green software adoption, or measuring the energy footprint of codebases, GreenMining provides the empirical toolkit you need.
 
@@ -510,38 +515,44 @@ greenmining includes built-in energy measurement capabilities for tracking the c
 |---------|----------|---------|--------------|
 | **RAPL** | Linux (Intel/AMD) | CPU/RAM energy (Joules) | `/sys/class/powercap/` access |
 | **CodeCarbon** | Cross-platform | Energy + Carbon emissions (gCO2) | `pip install codecarbon` |
+| **CPU Meter** | All platforms | Estimated CPU energy (Joules) | Optional: `pip install psutil` |
+| **Auto** | All platforms | Best available backend | Automatic detection |
 
 #### Python API
 
 ```python
-from greenmining.energy import RAPLEnergyMeter, CodeCarbonMeter
+from greenmining.energy import RAPLEnergyMeter, CPUEnergyMeter, get_energy_meter
 
-# RAPL (Linux only)
-rapl = RAPLEnergyMeter()
-if rapl.is_available():
-    rapl.start()
-    # ... run analysis ...
-    result = rapl.stop()
-    print(f"Energy: {result.energy_joules:.2f} J")
+# Auto-detect best backend
+meter = get_energy_meter("auto")
+meter.start()
+# ... run analysis ...
+result = meter.stop()
+print(f"Energy: {result.joules:.2f} J")
+print(f"Power: {result.watts_avg:.2f} W")
 
-# CodeCarbon (cross-platform)
-cc = CodeCarbonMeter()
-if cc.is_available():
-    cc.start()
-    # ... run analysis ...
-    result = cc.stop()
-    print(f"Energy: {result.energy_joules:.2f} J")
-    print(f"Carbon: {result.carbon_grams:.4f} gCO2")
+# Integrated energy tracking during analysis
+from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
+
+analyzer = LocalRepoAnalyzer(energy_tracking=True, energy_backend="auto")
+result = analyzer.analyze_repository("https://github.com/pallets/flask")
+print(f"Analysis energy: {result.energy_metrics['joules']:.2f} J")
 ```
 
-#### Experiment Results
+#### Carbon Footprint Reporting
 
-CodeCarbon was verified with a real experiment:
-- **Repository**: flask (pallets/flask)
-- **Commits analyzed**: 10
-- **Energy measured**: 160.6 J
-- **Carbon emissions**: 0.0119 gCO2
-- **Duration**: 11.28 seconds
+```python
+from greenmining.energy import CarbonReporter
+
+reporter = CarbonReporter(
+    country_iso="USA",
+    cloud_provider="aws",
+    region="us-east-1",
+)
+report = reporter.generate_report(total_joules=3600.0)
+print(f"CO2: {report.total_emissions_kg * 1000:.4f} grams")
+print(f"Equivalent: {report.tree_months:.2f} tree-months to offset")
+```
 
 ### Pattern Database
 

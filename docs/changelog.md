@@ -11,6 +11,71 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.5] - 2026-01-30
+
+### Enhanced Repository Support (Phase 1)
+
+- **Batch URL Analysis API**: Analyze multiple repositories with configurable parallel workers
+  - `analyze_repositories(urls, parallel_workers=4)` top-level function
+  - `LocalRepoAnalyzer.analyze_repositories(urls, parallel_workers)` method
+  - Thread pool-based parallelism for concurrent repository processing
+- **Private Repository Support**: Authenticate with SSH keys or GitHub tokens
+  - `LocalRepoAnalyzer(ssh_key_path="~/.ssh/id_rsa")` for SSH auth
+  - `LocalRepoAnalyzer(github_token="ghp_xxx")` for HTTPS private repo access
+  - Transparent URL token injection for private repository cloning
+
+### Extended Energy Measurement (Phase 2)
+
+- **CPU Energy Meter Backend**: Cross-platform energy estimation
+  - Utilization-based power modeling using CPU TDP
+  - Auto-detects platform (Linux, macOS, Windows)
+  - Supports psutil for accurate CPU utilization tracking
+  - `get_energy_meter("auto")` selects optimal backend
+- **Integrated Energy Tracking**: Automatic energy measurement during analysis
+  - `LocalRepoAnalyzer(energy_tracking=True, energy_backend="rapl")`
+  - Energy metrics included in `RepositoryAnalysis.energy_metrics`
+- **Carbon Footprint Reporting**: CO2 emissions calculation from energy data
+  - `CarbonReporter` with 20+ country carbon intensity profiles
+  - Cloud provider region support (AWS, GCP, Azure)
+  - Equivalence calculations (tree-months, smartphone charges, km driven)
+
+### Full PyDriller Integration (Phase 3)
+
+- **Complete Process Metrics**: All 8 PyDriller process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
+- **Method-Level Analysis**: Per-method metrics via Lizard integration
+  - `LocalRepoAnalyzer(method_level_analysis=True)`
+  - Extracts name, complexity, NLOC, token count, parameters per method
+- **Source Code Access**: Before/after source code for refactoring detection
+  - `LocalRepoAnalyzer(include_source_code=True)`
+  - Full diff, change type, added/deleted lines per file
+
+### Green MSR Techniques (Phase 4)
+
+- **Power Regression Detection**: Identify commits that increased power consumption
+  - `PowerRegressionDetector` with configurable threshold and test commands
+  - Automated bisect-style regression detection across commit ranges
+- **Metrics-to-Power Correlation**: Correlate code metrics with power consumption
+  - `MetricsPowerCorrelator` with Pearson and Spearman correlation analysis
+  - Feature importance scoring and significance testing
+- **Version-by-Version Power Analysis**: Compare power across software versions
+  - `VersionPowerAnalyzer` with multi-iteration measurement and warmup
+  - Trend detection (increasing/decreasing/stable) with statistical reporting
+
+### Web Dashboard (Phase 5)
+
+- **Flask-based Dashboard**: Interactive visualization of analysis results
+  - Repository listing, summary statistics, green rate metrics
+  - REST API endpoints for programmatic access
+  - `pip install greenmining[dashboard]` for dashboard support
+
+### Dependencies
+
+- Added optional `psutil` for cross-platform CPU energy measurement
+- Added optional `flask` for web dashboard
+- Added optional `codecarbon` for carbon tracking
+
+---
+
 ## [1.0.4] - 2026-01-29
 
 ### 🚀 Major Performance Improvements

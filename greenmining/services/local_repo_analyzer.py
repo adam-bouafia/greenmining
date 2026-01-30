@@ -5,7 +5,9 @@ from __future__ import annotations
 import os
 import re
 import shutil
+import subprocess
 import tempfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -23,6 +25,58 @@ from pydriller.metrics.process.lines_count import LinesCount
 
 from greenmining.gsf_patterns import get_pattern_by_keywords, is_green_aware, GSF_PATTERNS
 from greenmining.utils import colored_print
+
+
+@dataclass
+class MethodMetrics:
+    # Per-method analysis metrics from Lizard integration.
+
+    name: str
+    long_name: str
+    filename: str
+    nloc: int = 0
+    complexity: int = 0
+    token_count: int = 0
+    parameters: int = 0
+    start_line: int = 0
+    end_line: int = 0
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "name": self.name,
+            "long_name": self.long_name,
+            "filename": self.filename,
+            "nloc": self.nloc,
+            "complexity": self.complexity,
+            "token_count": self.token_count,
+            "parameters": self.parameters,
+            "start_line": self.start_line,
+            "end_line": self.end_line,
+        }
+
+
+@dataclass
+class SourceCodeChange:
+    # Source code before/after a commit for refactoring detection.
+
+    filename: str
+    source_code_before: Optional[str] = None
+    source_code_after: Optional[str] = None
+    diff: Optional[str] = None
+    added_lines: int = 0
+    deleted_lines: int = 0
+    change_type: str = ""  # ADD, DELETE, MODIFY, RENAME
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "filename": self.filename,
+            "source_code_before": self.source_code_before,
+            "source_code_after": self.source_code_after,
+            "diff": self.diff,
+            "added_lines": self.added_lines,
+            "deleted_lines": self.deleted_lines,
+            "change_type": self.change_type,
+        }
 
 
 @dataclass
@@ -54,9 +108,19 @@ class CommitAnalysis:
     max_complexity: int = 0
     methods_count: int = 0
 
+    # Method-level analysis (Phase 3.2)
+    methods: List[MethodMetrics] = field(default_factory=list)
+
+    # Source code access (Phase 3.3)
+    source_changes: List[SourceCodeChange] = field(default_factory=list)
+
+    # Energy metrics (Phase 2.2 - populated when energy_tracking=True)
+    energy_joules: Optional[float] = None
+    energy_watts_avg: Optional[float] = None
+
     def to_dict(self) -> Dict[str, Any]:
         # Convert to dictionary.
-        return {
+        result = {
             "commit_hash": self.hash,
             "message": self.message,
             "author": self.author,
@@ -79,6 +143,18 @@ class CommitAnalysis:
             "methods_count": self.methods_count,
         }
 
+        if self.methods:
+            result["methods"] = [m.to_dict() for m in self.methods]
+
+        if self.source_changes:
+            result["source_changes"] = [s.to_dict() for s in self.source_changes]
+
+        if self.energy_joules is not None:
+            result["energy_joules"] = self.energy_joules
+            result["energy_watts_avg"] = self.energy_watts_avg
+
+        return result
+
 
 @dataclass
 class RepositoryAnalysis:
@@ -91,10 +167,11 @@ class RepositoryAnalysis:
     green_commit_rate: float
     commits: List[CommitAnalysis] = field(default_factory=list)
     process_metrics: Dict[str, Any] = field(default_factory=dict)
+    energy_metrics: Optional[Dict[str, Any]] = None
 
     def to_dict(self) -> Dict[str, Any]:
         # Convert to dictionary.
-        return {
+        result = {
             "url": self.url,
             "name": self.name,
             "total_commits": self.total_commits,
@@ -103,10 +180,14 @@ class RepositoryAnalysis:
             "commits": [c.to_dict() for c in self.commits],
             "process_metrics": self.process_metrics,
         }
+        if self.energy_metrics:
+            result["energy_metrics"] = self.energy_metrics
+        return result
 
 
 class LocalRepoAnalyzer:
     # Analyze repositories directly from GitHub URLs using PyDriller.
+    # Supports HTTPS URLs, SSH URLs, and private repositories.
 
     def __init__(
         self,
@@ -116,8 +197,29 @@ class LocalRepoAnalyzer:
         skip_merges: bool = True,
         compute_process_metrics: bool = True,
         cleanup_after: bool = True,
+        ssh_key_path: Optional[str] = None,
+        github_token: Optional[str] = None,
+        energy_tracking: bool = False,
+        energy_backend: str = "rapl",
+        method_level_analysis: bool = False,
+        include_source_code: bool = False,
+        process_metrics: str = "standard",
     ):
         # Initialize the local repository analyzer.
+        # Args:
+        #   clone_path: Directory to clone repos into
+        #   max_commits: Maximum commits to analyze per repo
+        #   days_back: How far back to analyze
+        #   skip_merges: Skip merge commits
+        #   compute_process_metrics: Compute PyDriller process metrics
+        #   cleanup_after: Remove cloned repos after analysis
+        #   ssh_key_path: Path to SSH private key for private repos
+        #   github_token: GitHub token for private HTTPS repos
+        #   energy_tracking: Enable automatic energy measurement
+        #   energy_backend: Energy measurement backend (rapl, codecarbon)
+        #   method_level_analysis: Extract per-method metrics via Lizard
+        #   include_source_code: Include source code before/after in results
+        #   process_metrics: "standard" or "full" PyDriller process metrics
         self.clone_path = clone_path or Path(tempfile.gettempdir()) / "greenmining_repos"
         self.clone_path.mkdir(parents=True, exist_ok=True)
         self.max_commits = max_commits
@@ -126,6 +228,52 @@ class LocalRepoAnalyzer:
         self.compute_process_metrics = compute_process_metrics
         self.cleanup_after = cleanup_after
         self.gsf_patterns = GSF_PATTERNS
+
+        # Phase 1.3: Private repository support
+        self.ssh_key_path = ssh_key_path
+        self.github_token = github_token
+
+        # Phase 2.2: Integrated energy tracking
+        self.energy_tracking = energy_tracking
+        self.energy_backend = energy_backend
+        self._energy_meter = None
+        if energy_tracking:
+            self._init_energy_meter()
+
+        # Phase 3.2: Method-level analysis
+        self.method_level_analysis = method_level_analysis
+
+        # Phase 3.3: Source code access
+        self.include_source_code = include_source_code
+
+        # Phase 3.1: Full process metrics mode
+        self.process_metrics_mode = process_metrics
+
+    def _init_energy_meter(self):
+        # Initialize the energy measurement backend.
+        try:
+            from greenmining.energy.base import get_energy_meter
+
+            self._energy_meter = get_energy_meter(self.energy_backend)
+        except Exception as e:
+            colored_print(f"   Warning: Energy tracking unavailable: {e}", "yellow")
+            self.energy_tracking = False
+
+    def _prepare_auth_url(self, url: str) -> str:
+        # Prepare authenticated URL for private repositories.
+        if self.github_token and url.startswith("https://"):
+            # Inject token into HTTPS URL for private repo access
+            return url.replace("https://", f"https://x-access-token:{self.github_token}@")
+        return url
+
+    def _setup_ssh_env(self) -> Dict[str, str]:
+        # Set up SSH environment for private repository cloning.
+        env = os.environ.copy()
+        if self.ssh_key_path:
+            ssh_key = os.path.expanduser(self.ssh_key_path)
+            if os.path.exists(ssh_key):
+                env["GIT_SSH_COMMAND"] = f"ssh -i {ssh_key} -o StrictHostKeyChecking=no"
+        return env
 
     def _parse_repo_url(self, url: str) -> tuple[str, str]:
         # Parse repository URL to extract owner and name.
@@ -157,6 +305,49 @@ class LocalRepoAnalyzer:
                     }
                 )
         return details
+
+    def _extract_method_metrics(self, commit) -> List[MethodMetrics]:
+        # Extract per-method metrics from modified files using Lizard (via PyDriller).
+        methods = []
+        try:
+            for mod in commit.modified_files:
+                if mod.methods:
+                    for method in mod.methods:
+                        methods.append(
+                            MethodMetrics(
+                                name=method.name,
+                                long_name=method.long_name,
+                                filename=mod.filename,
+                                nloc=method.nloc,
+                                complexity=method.complexity,
+                                token_count=method.token_count,
+                                parameters=len(method.parameters),
+                                start_line=method.start_line,
+                                end_line=method.end_line,
+                            )
+                        )
+        except Exception:
+            pass
+        return methods
+
+    def _extract_source_changes(self, commit) -> List[SourceCodeChange]:
+        # Extract source code before/after for each modified file.
+        changes = []
+        try:
+            for mod in commit.modified_files:
+                change = SourceCodeChange(
+                    filename=mod.filename,
+                    source_code_before=mod.source_code_before if mod.source_code_before else None,
+                    source_code_after=mod.source_code if mod.source_code else None,
+                    diff=mod.diff if mod.diff else None,
+                    added_lines=mod.added_lines,
+                    deleted_lines=mod.deleted_lines,
+                    change_type=mod.change_type.name if mod.change_type else "",
+                )
+                changes.append(change)
+        except Exception:
+            pass
+        return changes
 
     def analyze_commit(self, commit) -> CommitAnalysis:
         # Analyze a single PyDriller commit object.
@@ -209,6 +400,16 @@ class LocalRepoAnalyzer:
         except Exception:
             pass  # Structural metrics may fail for some files
 
+        # Phase 3.2: Method-level analysis
+        methods = []
+        if self.method_level_analysis:
+            methods = self._extract_method_metrics(commit)
+
+        # Phase 3.3: Source code access
+        source_changes = []
+        if self.include_source_code:
+            source_changes = self._extract_source_changes(commit)
+
         return CommitAnalysis(
             hash=commit.hash,
             message=message,
@@ -230,6 +431,8 @@ class LocalRepoAnalyzer:
             total_complexity=total_complexity,
             max_complexity=max_complexity,
             methods_count=methods_count,
+            methods=methods,
+            source_changes=source_changes,
         )
 
     def analyze_repository(self, url: str) -> RepositoryAnalysis:
@@ -239,12 +442,15 @@ class LocalRepoAnalyzer:
 
         colored_print(f"\n Analyzing repository: {full_name}", "cyan")
 
+        # Phase 1.3: Prepare authenticated URL for private repos
+        auth_url = self._prepare_auth_url(url)
+
         # Calculate date range
         since_date = datetime.now() - timedelta(days=self.days_back)
 
         # Configure PyDriller Repository
         repo_config = {
-            "path_to_repo": url,
+            "path_to_repo": auth_url,
             "since": since_date,
             "only_no_merge": self.skip_merges,
         }
@@ -257,6 +463,14 @@ class LocalRepoAnalyzer:
         repo_config["clone_repo_to"] = str(self.clone_path)
 
         colored_print(f"   Cloning to: {local_path}", "cyan")
+
+        # Phase 2.2: Start energy measurement if enabled
+        energy_result = None
+        if self.energy_tracking and self._energy_meter:
+            try:
+                self._energy_meter.start()
+            except Exception as e:
+                colored_print(f"   Warning: Energy measurement start failed: {e}", "yellow")
 
         commits_analyzed = []
         commit_count = 0
@@ -282,6 +496,13 @@ class LocalRepoAnalyzer:
 
             colored_print(f"    Analyzed {len(commits_analyzed)} commits", "green")
 
+            # Phase 2.2: Stop energy measurement
+            if self.energy_tracking and self._energy_meter:
+                try:
+                    energy_result = self._energy_meter.stop()
+                except Exception as e:
+                    colored_print(f"   Warning: Energy measurement stop failed: {e}", "yellow")
+
             # Compute process metrics if enabled
             process_metrics = {}
             if self.compute_process_metrics and local_path.exists():
@@ -292,6 +513,11 @@ class LocalRepoAnalyzer:
             green_commits = sum(1 for c in commits_analyzed if c.green_aware)
             green_rate = green_commits / len(commits_analyzed) if commits_analyzed else 0
 
+            # Build energy metrics dict
+            energy_dict = None
+            if energy_result:
+                energy_dict = energy_result.to_dict()
+
             result = RepositoryAnalysis(
                 url=url,
                 name=full_name,
@@ -300,6 +526,7 @@ class LocalRepoAnalyzer:
                 green_commit_rate=green_rate,
                 commits=commits_analyzed,
                 process_metrics=process_metrics,
+                energy_metrics=energy_dict,
             )
 
             return result
@@ -375,10 +602,24 @@ class LocalRepoAnalyzer:
 
         return metrics
 
-    def analyze_repositories(self, urls: List[str]) -> List[RepositoryAnalysis]:
+    def analyze_repositories(
+        self,
+        urls: List[str],
+        parallel_workers: int = 1,
+        output_format: str = "dict",
+    ) -> List[RepositoryAnalysis]:
         # Analyze multiple repositories from URLs.
-        results = []
+        # Args:
+        #   urls: List of repository URLs to analyze
+        #   parallel_workers: Number of concurrent workers (1 = sequential)
+        #   output_format: Output format (dict, json, csv)
+        if parallel_workers <= 1:
+            return self._analyze_sequential(urls)
+        return self._analyze_parallel(urls, parallel_workers)
 
+    def _analyze_sequential(self, urls: List[str]) -> List[RepositoryAnalysis]:
+        # Analyze repositories sequentially.
+        results = []
         for i, url in enumerate(urls, 1):
             colored_print(f"\n[{i}/{len(urls)}] Processing repository...", "cyan")
             try:
@@ -387,5 +628,22 @@ class LocalRepoAnalyzer:
             except Exception as e:
                 colored_print(f"   Error analyzing {url}: {e}", "red")
                 continue
+        return results
+
+    def _analyze_parallel(self, urls: List[str], max_workers: int) -> List[RepositoryAnalysis]:
+        # Analyze repositories in parallel using thread pool.
+        results = []
+        colored_print(f"\n Analyzing {len(urls)} repositories with {max_workers} workers", "cyan")
+
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_to_url = {executor.submit(self.analyze_repository, url): url for url in urls}
+            for future in as_completed(future_to_url):
+                url = future_to_url[future]
+                try:
+                    result = future.result()
+                    results.append(result)
+                    colored_print(f"   Completed: {result.name}", "green")
+                except Exception as e:
+                    colored_print(f"   Error analyzing {url}: {e}", "red")
 
         return results

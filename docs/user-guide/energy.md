@@ -18,7 +18,8 @@ GreenMining includes energy measurement capabilities to profile the power consum
 |---------|----------|----------|
 | **RAPL** | Linux (Intel/AMD) | Direct CPU/DRAM power reading |
 | **CodeCarbon** | Cross-platform | Emissions tracking, cloud support |
-| **CPU Energy Meter** | Linux | Alternative to RAPL (future) |
+| **CPU Energy Meter** | All platforms | Utilization-based estimation |
+| **Auto** | All platforms | RAPL if available, else CPU Meter |
 
 ---
 
@@ -159,9 +160,120 @@ print(f"Carbon footprint: {metrics.carbon_grams:.4f} g CO2")
 
 ---
 
+## CPU Energy Meter
+
+Cross-platform energy estimation using CPU utilization and TDP modeling.
+
+### Basic Usage
+
+```python
+from greenmining.energy import CPUEnergyMeter
+
+meter = CPUEnergyMeter()
+meter.start()
+
+# Your workload
+result = expensive_computation()
+
+metrics = meter.stop()
+print(f"Estimated energy: {metrics.joules:.2f} J")
+print(f"Average power: {metrics.watts_avg:.2f} W")
+```
+
+### Custom TDP
+
+```python
+from greenmining.energy import CPUEnergyMeter
+
+# Specify your CPU's TDP for more accurate estimation
+meter = CPUEnergyMeter(tdp_watts=45.0)  # e.g., laptop CPU
+```
+
+### Auto-Detection
+
+```python
+from greenmining.energy import get_energy_meter
+
+# Automatically selects RAPL (if available) or CPU Meter
+meter = get_energy_meter("auto")
+meter.start()
+# ... workload ...
+metrics = meter.stop()
+```
+
+---
+
+## Integrated Energy Tracking
+
+Automatically measure energy during repository analysis.
+
+```python
+from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
+
+analyzer = LocalRepoAnalyzer(
+    energy_tracking=True,
+    energy_backend="auto",  # rapl, codecarbon, cpu_meter, auto
+)
+
+result = analyzer.analyze_repository("https://github.com/pallets/flask")
+print(f"Energy consumed: {result.energy_metrics['joules']:.2f} J")
+print(f"Average power: {result.energy_metrics['watts_avg']:.2f} W")
+print(f"Duration: {result.energy_metrics['duration_seconds']:.2f} s")
+```
+
+---
+
+## Carbon Footprint Reporting
+
+Convert energy measurements to CO2 emissions using regional carbon intensity data.
+
+### Basic Usage
+
+```python
+from greenmining.energy import CarbonReporter
+
+reporter = CarbonReporter(country_iso="USA")
+report = reporter.generate_report(total_joules=3600.0)
+
+print(f"CO2: {report.total_emissions_kg * 1000:.4f} grams")
+print(f"Equivalent to {report.tree_months:.2f} tree-months")
+print(f"Or {report.smartphone_charges:.1f} smartphone charges")
+```
+
+### Cloud Region Support
+
+```python
+from greenmining.energy import CarbonReporter
+
+# Use cloud provider region for accurate carbon intensity
+reporter = CarbonReporter(
+    country_iso="USA",
+    cloud_provider="aws",
+    region="eu-north-1",  # Stockholm - low carbon (renewable energy)
+)
+
+report = reporter.generate_report(total_joules=1000.0)
+print(report.summary())
+```
+
+### Supported Regions
+
+```python
+from greenmining.energy import CarbonReporter
+
+# 20+ country profiles
+countries = CarbonReporter.get_supported_countries()
+
+# AWS, GCP, Azure regions
+aws_regions = CarbonReporter.get_supported_cloud_regions("aws")
+gcp_regions = CarbonReporter.get_supported_cloud_regions("gcp")
+```
+
+---
+
 ## Energy Metrics
 
-### EnergyResult Class
+### EnergyMetrics Class
 
 ```python
 from greenmining.energy.base import EnergyResult
@@ -259,19 +371,21 @@ for repo in repositories:
 
 ## Comparing Backends
 
-| Feature | RAPL | CodeCarbon |
-|---------|------|------------|
-| **Accuracy** | High (hardware) | Medium (estimation) |
-| **Platform** | Linux only | Cross-platform |
-| **Granularity** | Microseconds | Seconds |
-| **CO2 tracking** | No | Yes |
-| **Cloud support** | No | Yes |
-| **Setup** | May need root | pip install |
+| Feature | RAPL | CodeCarbon | CPU Meter |
+|---------|------|------------|-----------|
+| **Accuracy** | High (hardware) | Medium (estimation) | Low (model) |
+| **Platform** | Linux only | Cross-platform | All platforms |
+| **Granularity** | Microseconds | Seconds | Seconds |
+| **CO2 tracking** | No | Yes | Via CarbonReporter |
+| **Cloud support** | No | Yes | Via CarbonReporter |
+| **Setup** | May need root | pip install | No setup |
 
 ### Recommendation
 
 - Use **RAPL** for precise measurements on Linux
 - Use **CodeCarbon** for cross-platform and carbon tracking
+- Use **CPU Meter** when neither RAPL nor CodeCarbon is available
+- Use **auto** to let GreenMining pick the best available backend
 
 ---
 

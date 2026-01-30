@@ -32,6 +32,49 @@ def fetch_repositories(
     )
 
 
+def analyze_repositories(
+    urls: list,
+    max_commits: int = 500,
+    parallel_workers: int = 1,
+    output_format: str = "dict",
+    energy_tracking: bool = False,
+    energy_backend: str = "rapl",
+    method_level_analysis: bool = False,
+    include_source_code: bool = False,
+    ssh_key_path: str = None,
+    github_token: str = None,
+):
+    # Analyze multiple repositories from URLs.
+    # Args:
+    #   urls: List of GitHub repository URLs
+    #   max_commits: Maximum commits to analyze per repository
+    #   parallel_workers: Number of parallel analysis workers (1=sequential)
+    #   output_format: Output format (dict, json, csv)
+    #   energy_tracking: Enable automatic energy measurement during analysis
+    #   energy_backend: Energy backend (rapl, codecarbon, cpu_meter, auto)
+    #   method_level_analysis: Include per-method metrics via Lizard
+    #   include_source_code: Include source code before/after in results
+    #   ssh_key_path: SSH key path for private repositories
+    #   github_token: GitHub token for private HTTPS repositories
+    from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
+
+    analyzer = LocalRepoAnalyzer(
+        max_commits=max_commits,
+        energy_tracking=energy_tracking,
+        energy_backend=energy_backend,
+        method_level_analysis=method_level_analysis,
+        include_source_code=include_source_code,
+        ssh_key_path=ssh_key_path,
+        github_token=github_token,
+    )
+
+    return analyzer.analyze_repositories(
+        urls=urls,
+        parallel_workers=parallel_workers,
+        output_format=output_format,
+    )
+
+
 __all__ = [
     "Config",
     "GSF_PATTERNS",
@@ -39,5 +82,6 @@ __all__ = [
     "is_green_aware",
     "get_pattern_by_keywords",
     "fetch_repositories",
+    "analyze_repositories",
     "__version__",
 ]
