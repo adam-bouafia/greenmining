@@ -113,7 +113,7 @@ class ConsolePresenter:
 
         table_data = []
         for phase, info in status.items():
-            status_icon = "" if info.get("completed") else "⏳"
+            status_icon = "done" if info.get("completed") else "pending"
             table_data.append(
                 [status_icon, phase, info.get("file", "N/A"), info.get("size", "N/A")]
             )

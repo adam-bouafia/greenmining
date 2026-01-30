@@ -1,7 +1,4 @@
-# GitHub GraphQL API fetcher for faster and more efficient repository fetching.
-#
-# GraphQL allows fetching exactly the data you need in a single request,
-# reducing API calls and improving rate limit efficiency.
+# GitHub GraphQL API fetcher for repository search and data retrieval.
 
 import json
 import time
@@ -14,12 +11,6 @@ from greenmining.models.repository import Repository
 
 class GitHubGraphQLFetcher:
     # Fetch GitHub repositories using GraphQL API v4.
-    #
-    # Benefits over REST API:
-    # - Fetch repos + commits in 1 request instead of 100+ REST calls
-    # - Get exactly the fields you need (no over-fetching)
-    # - Better rate limit efficiency (5000 points/hour vs 5000 requests/hour)
-    # - More powerful search capabilities
 
     GRAPHQL_ENDPOINT = "https://api.github.com/graphql"
 
@@ -153,7 +144,7 @@ class GitHubGraphQLFetcher:
                 nodes = search.get("nodes", [])
                 for node in nodes:
                     if node and len(repositories) < max_repos:
-                        repo = self._parse_repository(node)
+                        repo = self._parse_repository(node, len(repositories) + 1)
                         repositories.append(repo)
 
                 # Check pagination
@@ -193,10 +184,10 @@ class GitHubGraphQLFetcher:
         # Star count
         query_parts.append(f"stars:>={min_stars}")
 
-        # Languages
-        if languages:
-            lang_query = " OR ".join([f"language:{lang}" for lang in languages])
-            query_parts.append(f"({lang_query})")
+        # Languages - skip filter if more than 5 to avoid exceeding GitHub query limits
+        if languages and len(languages) <= 5:
+            lang_query = " ".join([f"language:{lang}" for lang in languages])
+            query_parts.append(lang_query)
 
         # Date filters
         if created_after:
@@ -221,46 +212,48 @@ class GitHubGraphQLFetcher:
         response.raise_for_status()
         return response.json()
 
-    def _parse_repository(self, node: Dict[str, Any]) -> Repository:
+    def _parse_repository(self, node: Dict[str, Any], repo_id: int = 0) -> Repository:
         # Parse GraphQL repository node to Repository object.
-        # Extract languages
-        languages = []
-        if node.get("languages") and node["languages"].get("nodes"):
-            languages = [lang["name"] for lang in node["languages"]["nodes"]]
-        elif node.get("primaryLanguage"):
-            languages = [node["primaryLanguage"]["name"]]
+        full_name = node.get("nameWithOwner", "")
+        owner = full_name.split("/")[0] if "/" in full_name else ""
+        url = node.get("url", "")
+
+        # Extract primary language
+        lang_node = node.get("primaryLanguage") or {}
+        language = lang_node.get("name")
 
         # Extract license
-        license_name = None
-        if node.get("licenseInfo"):
-            license_name = node["licenseInfo"].get("name")
+        license_info = node.get("licenseInfo") or {}
+        license_name = license_info.get("name")
+
+        # Extract default branch safely (can be null for empty repos)
+        branch_ref = node.get("defaultBranchRef") or {}
+        main_branch = branch_ref.get("name", "main")
 
         return Repository(
+            repo_id=repo_id,
             name=node.get("name", ""),
-            full_name=node.get("nameWithOwner", ""),
-            description=node.get("description", ""),
-            url=node.get("url", ""),
+            owner=owner,
+            full_name=full_name,
+            url=url,
+            clone_url=f"{url}.git" if url else "",
+            language=language,
             stars=node.get("stargazerCount", 0),
             forks=node.get("forkCount", 0),
-            watchers=node.get("watchers", {}).get("totalCount", 0),
-            language=node.get("primaryLanguage", {}).get("name", ""),
-            languages=languages,
+            watchers=(node.get("watchers") or {}).get("totalCount", 0),
+            open_issues=0,
+            last_updated=node.get("updatedAt", ""),
             created_at=node.get("createdAt", ""),
-            updated_at=node.get("updatedAt", ""),
-            pushed_at=node.get("pushedAt", ""),
+            description=node.get("description", ""),
+            main_branch=main_branch,
+            archived=node.get("isArchived", False),
             license=license_name,
-            is_fork=node.get("isFork", False),
-            is_archived=node.get("isArchived", False),
-            default_branch=node.get("defaultBranchRef", {}).get("name", "main"),
         )
 
     def get_repository_commits(
         self, owner: str, name: str, max_commits: int = 100
     ) -> List[Dict[str, Any]]:
         # Fetch commits for a specific repository using GraphQL.
-        #
-        # This is much faster than REST API as it gets all commits in 1-2 requests
-        # instead of paginating through 100 individual REST calls.
         #
         # Args:
         #     owner: Repository owner

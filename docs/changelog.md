@@ -11,7 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.7] - 2026-01-30
+## [1.0.9] - 2026-01-30
+
+### Fixed
+- GraphQL `_parse_repository` now maps correctly to Repository dataclass fields (fixes `languages` keyword error)
+- Removed all emojis from library output
+- Removed marketing comments from codebase
+- GraphQL search skips language filter when >5 languages to avoid query complexity limits
+- Cleaned up deadcode blocks in repository_controller.py and github_fetcher.py
+
+---
+
+## [1.0.8] - 2026-01-30
 
 ### Enhanced Repository Support (Phase 1)
 
