@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.7] - 2026-01-31
+
+### Removed
+- Web dashboard module (`greenmining/dashboard/`) and Flask optional dependency
+- Dashboard documentation page (`user-guide/dashboard.md`) and all dashboard references across README, changelogs, experiment docs, and notebook
+
+### Fixed
+- ReadTheDocs experiment page not rendering (trailing whitespace in mkdocs nav entry)
+- Plotly interactive visualization in notebook (added nbformat dependency to venv)
+
+---
+
 ## [1.1.6] - 2026-01-31
 
 ### Fixed
@@ -23,7 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `since_date` and `to_date` parameters for `analyze_repositories()` and `LocalRepoAnalyzer` to bound commit date ranges
 - `created_before` and `pushed_after` parameters for `fetch_repositories()` search filtering
-- Dashboard documentation page (`user-guide/dashboard.md`) with full REST API reference
 - GraphQL API reference page (`reference/graphql.md`) with query schema, pagination, and rate limiting docs
 - Complete experiment documentation (`examples/experiment.md`) mapping all 20 notebook steps to library features
 - 4 missing process metrics documented: `contributors_experience`, `history_complexity`, `hunks_count`, `lines_count`
@@ -33,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Energy measurement in experiment notebook demonstrates all 4 backends independently: RAPL, CPU Meter, CodeCarbon, tracemalloc
 - Removed all PyDriller references from documentation, README, and CHANGELOG
 - Updated dependencies listing: `gitpython>=3.1.0` and `lizard>=1.17.0` replace former references
-- MkDocs navigation updated with Dashboard and GraphQL API pages
+- MkDocs navigation updated with GraphQL API page
 
 ### Removed
 - Qualitative Validation step from experiment notebook
@@ -103,17 +114,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `VersionPowerAnalyzer` with multi-iteration measurement and warmup
   - Trend detection (increasing/decreasing/stable) with statistical reporting
 
-### Web Dashboard (Phase 5)
-
-- **Flask-based Dashboard**: Interactive visualization of analysis results
-  - Repository listing, summary statistics, green rate metrics
-  - REST API endpoints for programmatic access
-  - `pip install greenmining[dashboard]` for dashboard support
-
 ### Dependencies
 
 - Added optional `psutil` for cross-platform CPU energy measurement
-- Added optional `flask` for web dashboard
 - Added optional `codecarbon` for carbon tracking
 
 ---

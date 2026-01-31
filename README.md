@@ -21,7 +21,6 @@ An empirical Python library for Mining Software Repositories (MSR) in Green IT r
 - **Method-level analysis** - Per-method complexity and metrics via Lizard integration
 - **Version power comparison** - Compare power consumption across software versions
 - **Generate research datasets** - Statistical analysis, temporal trends, and publication-ready reports
-- **Web dashboard** - Flask-based interactive visualization of analysis results
 
 Whether you're conducting MSR research, analyzing green software adoption, or measuring the energy footprint of codebases, GreenMining provides the empirical toolkit you need.
 
@@ -393,15 +392,6 @@ print(f"Spearman: {correlator.spearman}")
 print(f"Feature importance: {correlator.feature_importance}")
 ```
 
-#### Web Dashboard
-
-```python
-from greenmining.dashboard import run_dashboard
-
-# Launch interactive dashboard (requires pip install greenmining[dashboard])
-run_dashboard(data_dir="./data", host="127.0.0.1", port=5000)
-```
-
 #### Pipeline Batch Analysis
 
 ```python
@@ -639,7 +629,6 @@ config = Config(
 - **Full Process Metrics**: All 8 process metrics (ChangeSet, CodeChurn, CommitsCount, ContributorsCount, ContributorsExperience, HistoryComplexity, HunksCount, LinesCount)
 - **Statistical Analysis**: Correlations, effect sizes, and temporal trends
 - **Multi-format Output**: Markdown reports, CSV exports, JSON data
-- **Web Dashboard**: Flask-based interactive visualization (`pip install greenmining[dashboard]`)
 - **Docker Support**: Pre-built images for containerized analysis
 
 ### Energy Measurement
@@ -798,7 +787,6 @@ ruff check greenmining/ tests/
 
 ```bash
 pip install greenmining[energy]      # psutil, codecarbon (energy measurement)
-pip install greenmining[dashboard]   # flask (web dashboard)
 pip install greenmining[dev]         # pytest, black, ruff, mypy (development)
 ```
 

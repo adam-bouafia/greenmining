@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.7] - 2026-01-31
+
+### Removed
+- Web dashboard module (`greenmining/dashboard/`) and Flask dependency
+- Dashboard documentation page and all dashboard references
+
+### Fixed
+- ReadTheDocs experiment page not rendering (trailing whitespace in mkdocs nav)
+- Plotly rendering in notebook (nbformat dependency)
+
 ## [1.1.6] - 2026-01-31
 
 ### Fixed
@@ -11,7 +21,7 @@
 ### Added
 - `since_date` / `to_date` parameters for date-bounded commit analysis
 - `created_before` / `pushed_after` search filters
-- Dashboard, GraphQL API, and experiment documentation pages
+- GraphQL API and experiment documentation pages
 - Full process metrics and method-level metrics documentation
 
 ### Changed

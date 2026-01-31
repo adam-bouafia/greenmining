@@ -60,13 +60,12 @@ nav:
     - Python API: user-guide/api.md
     - URL Analysis: user-guide/url-analysis.md
     - Energy Measurement: user-guide/energy.md
-    - Dashboard: user-guide/dashboard.md
   - Reference:
     - GSF Patterns: reference/patterns.md
     - Configuration Options: reference/config-options.md
     - Data Models: reference/models.md
     - GraphQL API: reference/graphql.md
-  - Examples: 
+  - Examples:
     - Complete Pipeline: examples/experiment.md
   - Contributing: contributing.md
   - Changelog: changelog.md
