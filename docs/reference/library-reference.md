@@ -4,7 +4,7 @@
 
 GreenMining is an empirical Python library for Mining Software Repositories (MSR) in Green IT research. It analyzes GitHub repositories to detect green software engineering practices by matching commit messages and code changes against the Green Software Foundation (GSF) pattern catalog. The library supports energy measurement during analysis using Intel RAPL, CodeCarbon, or CPU utilization-based estimation, and provides statistical, temporal, and qualitative analysis capabilities.
 
-**Version:** 1.1.8
+**Version:** 1.1.9
 **License:** MIT
 **PyPI:** [greenmining](https://pypi.org/project/greenmining/)
 **Documentation:** [greenmining.readthedocs.io](https://greenmining.readthedocs.io)

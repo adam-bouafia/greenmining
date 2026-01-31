@@ -1,6 +1,36 @@
 # Changelog
 
-## [1.1.8] - 2026-01-31
+## [1.2.0] - 2026-01-31
+
+### Added
+- `clone_repositories()` top-level function for cloning repos into `./greenmining_repos/` with sanitized directory names
+- Repository name sanitization (`_sanitize_repo_name`) to prevent filesystem issues from special characters
+- 2 missing official GSF patterns: "Match Utilization Requirements with Pre-configured Servers", "Optimize Impact on Customer Devices and Equipment"
+- 11 new green keywords (energy proportionality, backward compatible, customer device, device lifetime, etc.)
+- GSF pattern database now covers 100% of the official Green Software Foundation catalog (61/61)
+
+### Changed
+- Repositories now clone to `./greenmining_repos/` instead of `/tmp` (fixes OS cleanup and permission issues)
+- `fetch_repositories()` takes direct parameters -- no Config intermediary
+- All function defaults are explicit parameters instead of config file values
+- Default supported languages updated from 7 to 20 (matches experiment scope)
+- Library reference documentation added to mkdocs navigation
+
+### Removed
+- **`config.py`** module entirely (Config class, get_config singleton, .env/YAML loading layer)
+- **`__version__.py`** (stale orphaned file with wrong version 1.0.5)
+- **`services/github_fetcher.py`** (empty deprecated REST API stub)
+- **`analyzers/power_regression.py`** (PowerRegressionDetector -- requires running repo code, not feasible in current pipeline)
+- **`analyzers/version_power_analyzer.py`** (VersionPowerAnalyzer -- same reason)
+- **`analyzers/qualitative_analyzer.py`** (QualitativeAnalyzer -- unused)
+- **`presenters/`** module (ConsolePresenter -- never used by any code)
+- **`docs/reference/config-options.md`** (obsolete config reference page)
+- 10 dead utility functions (estimate_tokens, estimate_cost, print_banner, print_section, load_csv_file, handle_github_rate_limit, format_duration, truncate_text, create_checkpoint, load_checkpoint)
+- 35+ unused Config attributes that were set but never read
+- Dead imports across 14 files
+- Dead methods: DataAnalyzer._check_green_awareness, DataAnalyzer._detect_known_pattern, CommitExtractor._extract_commit_metadata, StatisticalAnalyzer.pattern_adoption_rate_analysis, CodeCarbonMeter.get_carbon_intensity, Config.validate
+
+## [1.1.9] - 2026-01-31
 
 ### Removed
 - Web dashboard module (`greenmining/dashboard/`) and Flask dependency
@@ -36,119 +66,31 @@
 ### Added
 - Custom search keywords for repository fetching (`--keywords` option)
 - `fetch_repositories()` function exposed in public API
-- Users can now search for any topic (kubernetes, docker, serverless, etc.)
 
 ### Changed
 - README updated to reflect 122 patterns (was showing 76 in PyPI description)
-- CLI `fetch` command now accepts `--keywords` parameter
-- Repository fetching no longer hardcoded to "microservices"
-
-### Fixed
-- Outdated pattern count in PyPI package description
 
 ## [0.1.11] - 2025-12-03
 
 ### Added
 - Expanded pattern database from 76 to 122 patterns
-- Added 9 new categories (Resource, Caching, Data, Async, Code, Monitoring, Network, Microservices, Infrastructure)
+- Added 9 new categories
 - Expanded keywords from 190 to 321
 - VU Amsterdam 2024 research patterns for ML systems
 
-### Changed
-- README with comprehensive feature documentation
-- Detection rate improved to 37.15% (up from 33.79%)
-
-## [0.1.7] - 2025-12-02
-
-### Added
-- New release
-
-
-## [0.1.6] - 2025-12-02
-
-### Added
-- New release
-
-
-## [0.1.5] - 2025-12-02
-
-### Added
-- New release
-
-
-## [0.1.4] - 2025-12-02
-
-### Added
-- New release
-
-
-## [0.1.3] - 2025-12-02
-
-### Added
-- New release
-
-
-## [0.1.2] - 2025-12-02
-
-### Added
-- New release
-
-
-## [0.1.1] - 2025-12-02
-
-### Added
-- New release
-
-
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
-
-### Added
-- Initial project structure with MCP architecture
-- GSF patterns database (76 patterns, 190 keywords)
-- GitHub repository fetching and analysis
-- Git-based commit mining integration
-- Pattern matching engine
-- Green awareness detection
-- Data analysis and reporting
-- Docker support with multi-stage builds
-- GitHub Actions CI/CD pipeline
-- PyPI publishing workflow
-- Docker Hub and GHCR publishing
-- Comprehensive test suite
-- Documentation and examples
-
-### Changed
-- N/A
-
-### Deprecated
-- N/A
-
-### Removed
-- N/A
-
-### Fixed
-- N/A
-
-### Security
-- N/A
-
-## [0.1.0] - TBD
+## [0.1.0] - 2025-12-02
 
 ### Added
 - Initial release
 - Core functionality for GSF pattern mining
-- CLI tool `greenmining`
 - Support for 100 microservices repositories
 - Pattern matching with 76 GSF patterns
 - Green awareness analysis
-- Data export capabilities
 - Docker containerization
-- CI/CD automation
 
-[Unreleased]: https://github.com/yourusername/greenmining/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/yourusername/greenmining/releases/tag/v0.1.0
+[1.2.0]: https://github.com/adam-bouafia/greenmining/compare/v1.1.9...v1.2.0
+[1.1.9]: https://github.com/adam-bouafia/greenmining/compare/v1.1.6...v1.1.9
+[1.1.6]: https://github.com/adam-bouafia/greenmining/compare/v0.1.12...v1.1.6
+[0.1.12]: https://github.com/adam-bouafia/greenmining/compare/v0.1.11...v0.1.12
+[0.1.11]: https://github.com/adam-bouafia/greenmining/compare/v0.1.0...v0.1.11
+[0.1.0]: https://github.com/adam-bouafia/greenmining/releases/tag/v0.1.0

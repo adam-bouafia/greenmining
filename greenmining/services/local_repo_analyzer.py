@@ -221,7 +221,7 @@ class LocalRepoAnalyzer:
         #   method_level_analysis: Extract per-method metrics via Lizard
         #   include_source_code: Include source code before/after in results
         #   process_metrics: "standard" or "full" PyDriller process metrics
-        self.clone_path = clone_path or Path(tempfile.gettempdir()) / "greenmining_repos"
+        self.clone_path = clone_path or Path.cwd() / "greenmining_repos"
         self.clone_path.mkdir(parents=True, exist_ok=True)
         self.max_commits = max_commits
         self.days_back = days_back

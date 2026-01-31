@@ -62,7 +62,7 @@ nav:
     - Energy Measurement: user-guide/energy.md
   - Reference:
     - GSF Patterns: reference/patterns.md
-    - Configuration Options: reference/config-options.md
+    - Library Reference: reference/library-reference.md
     - Data Models: reference/models.md
     - GraphQL API: reference/graphql.md
   - Examples:

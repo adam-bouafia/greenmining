@@ -1,6 +1,5 @@
-# Green Microservices Mining - GSF Pattern Analysis Tool.
+# GreenMining - MSR library for Green IT research.
 
-from greenmining.config import Config
 from greenmining.controllers.repository_controller import RepositoryController
 from greenmining.gsf_patterns import (
     GREEN_KEYWORDS,
@@ -9,24 +8,23 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "1.1.8"
+__version__ = "1.2.0"
 
 
 def fetch_repositories(
     github_token: str,
-    max_repos: int = None,
-    min_stars: int = None,
+    max_repos: int = 100,
+    min_stars: int = 100,
     languages: list = None,
     keywords: str = None,
     created_after: str = None,
     created_before: str = None,
     pushed_after: str = None,
     pushed_before: str = None,
+    output_dir: str = "./data",
 ):
-    # Fetch repositories from GitHub with custom search keywords.
-    config = Config()
-    config.GITHUB_TOKEN = github_token
-    controller = RepositoryController(config)
+    # Fetch repositories from GitHub via GraphQL search.
+    controller = RepositoryController(github_token, output_dir=output_dir)
 
     return controller.fetch_repositories(
         max_repos=max_repos,
@@ -37,6 +35,27 @@ def fetch_repositories(
         created_before=created_before,
         pushed_after=pushed_after,
         pushed_before=pushed_before,
+    )
+
+
+def clone_repositories(
+    repositories: list,
+    github_token: str = None,
+    output_dir: str = "./data",
+    cleanup_existing: bool = False,
+):
+    # Clone repositories into ./greenmining_repos with sanitized directory names.
+    # Args:
+    #   repositories: List of Repository objects (from fetch_repositories)
+    #   github_token: GitHub token (required for controller init)
+    #   output_dir: Output directory for metadata files
+    #   cleanup_existing: Remove existing greenmining_repos/ before cloning
+    token = github_token or "unused"
+    controller = RepositoryController(token, output_dir=output_dir)
+
+    return controller.clone_repositories(
+        repositories=repositories,
+        cleanup_existing=cleanup_existing,
     )
 
 
@@ -99,12 +118,12 @@ def analyze_repositories(
 
 
 __all__ = [
-    "Config",
     "GSF_PATTERNS",
     "GREEN_KEYWORDS",
     "is_green_aware",
     "get_pattern_by_keywords",
     "fetch_repositories",
+    "clone_repositories",
     "analyze_repositories",
     "__version__",
 ]

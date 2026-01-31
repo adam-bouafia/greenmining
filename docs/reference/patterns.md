@@ -326,6 +326,6 @@ To suggest new patterns or improvements:
 
 ## Next Steps
 
-- [Configuration Options](config-options.md) - All configuration parameters
+- [Configuration](../getting-started/configuration.md) - All configuration parameters
 - [Python API](../user-guide/api.md) - Programmatic usage
 - [Data Models](models.md) - Repository and Commit models

@@ -385,4 +385,4 @@ shutil.rmtree("/tmp/greenmining_repos")
 
 - [Energy Measurement](energy.md) - Measure energy during analysis
 - [Python API](api.md) - Full API reference
-- [Configuration Options](../reference/config-options.md) - All settings
+- [Configuration](../getting-started/configuration.md) - All settings

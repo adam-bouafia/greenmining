@@ -114,7 +114,7 @@ GreenMining detects **124 patterns** across **15 categories**:
 ### Reference
 
 - [GSF Patterns](reference/patterns.md) - All 124 patterns with categories and keywords
-- [Configuration Options](reference/config-options.md) - All configuration parameters
+- [Configuration](getting-started/configuration.md) - All configuration parameters
 - [Data Models](reference/models.md) - Repository, Commit, and AnalysisResult models
 
 ### Examples

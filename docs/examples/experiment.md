@@ -53,7 +53,7 @@ import tracemalloc
 ```
 
 ```
-GreenMining version: 1.1.8
+GreenMining version: 1.1.9
 GSF Patterns: 124
 Green Keywords: 332
 ```

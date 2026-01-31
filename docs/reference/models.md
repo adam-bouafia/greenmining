@@ -417,4 +417,4 @@ std_green = statistics.stdev(green_counts) if len(green_counts) > 1 else 0
 
 - [Python API](../user-guide/api.md) - Working with models
 - [GSF Patterns](patterns.md) - Pattern reference
-- [Configuration](config-options.md) - All options
+- [Configuration](../getting-started/configuration.md) - All options
