@@ -6,7 +6,7 @@ from __future__ import annotations
 import time
 import platform
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 from .base import EnergyMeter, EnergyMetrics, EnergyBackend
 

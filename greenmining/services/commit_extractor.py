@@ -2,21 +2,17 @@
 
 from __future__ import annotations
 
-import json
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from github import Github
 from tqdm import tqdm
 
-from greenmining.config import get_config
 from greenmining.models.repository import Repository
 from greenmining.utils import (
     colored_print,
     format_timestamp,
-    load_json_file,
-    print_banner,
     retry_on_exception,
     save_json_file,
 )
@@ -110,8 +106,7 @@ class CommitExtractor:
         try:
             # Get repository from GitHub API
             if not self.github:
-                config = get_config()
-                self.github = Github(config.GITHUB_TOKEN)
+                raise ValueError("github_token is required for commit extraction")
 
             gh_repo = self.github.get_repo(repo_name)
 
@@ -142,40 +137,6 @@ class CommitExtractor:
             raise
 
         return commits
-
-    def _extract_commit_metadata(self, commit, repo_name: str) -> dict[str, Any]:
-        # Extract metadata from commit object.
-        # Get modified files
-        files_changed = []
-        lines_added = 0
-        lines_deleted = 0
-
-        try:
-            for modified_file in commit.modified_files:
-                files_changed.append(modified_file.filename)
-                lines_added += modified_file.added_lines
-                lines_deleted += modified_file.deleted_lines
-        except Exception:
-            pass
-
-        return {
-            "commit_id": commit.hash,
-            "repo_name": repo_name,
-            "date": commit.committer_date.isoformat(),
-            "author": commit.author.name,
-            "author_email": commit.author.email,
-            "message": commit.msg.strip(),
-            "files_changed": files_changed[:20],  # Limit to 20 files
-            "lines_added": lines_added,
-            "lines_deleted": lines_deleted,
-            "insertions": lines_added,
-            "deletions": lines_deleted,
-            "is_merge": commit.merge,
-            "branches": (
-                list(commit.branches) if hasattr(commit, "branches") and commit.branches else []
-            ),
-            "in_main_branch": commit.in_main_branch if hasattr(commit, "in_main_branch") else True,
-        }
 
     def _extract_commit_metadata_from_github(self, commit, repo_name: str) -> dict[str, Any]:
         # Extract metadata from GitHub API commit object.

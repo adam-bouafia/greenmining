@@ -5,13 +5,12 @@ from __future__ import annotations
 import os
 import re
 import shutil
-import subprocess
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Generator
+from typing import Any, Dict, List, Optional
 
 from pydriller import Repository
 from pydriller.metrics.process.change_set import ChangeSet

@@ -124,24 +124,3 @@ class CodeCarbonMeter(EnergyMeter):
             end_time=datetime.fromtimestamp(end_time),
         )
 
-    def get_carbon_intensity(self) -> Optional[float]:
-        # Get current carbon intensity for the configured region.
-        if not self._codecarbon_available:
-            return None
-
-        try:
-            from codecarbon import EmissionsTracker
-
-            # Create temporary tracker to get carbon intensity
-            tracker = EmissionsTracker(
-                project_name="carbon_check",
-                country_iso_code=self.country_iso_code,
-                save_to_file=False,
-                log_level="error",
-            )
-            tracker.start()
-            tracker.stop()
-
-            return getattr(tracker, "_carbon_intensity", None)
-        except Exception:
-            return None

@@ -11,8 +11,8 @@ An empirical Python library for Mining Software Repositories (MSR) in Green IT r
 
 `greenmining` is a research-grade Python library designed for **empirical Mining Software Repositories (MSR)** studies in **Green IT**. It enables researchers and practitioners to:
 
-- **Mine repositories at scale** - Fetch and analyze GitHub repositories via GraphQL API with configurable filters
-- **Batch analysis with parallelism** - Analyze multiple repositories concurrently with configurable worker pools
+- **Mine repositories at scale** - Search, Fetch and analyze GitHub repositories via GraphQL API with configurable filters
+
 - **Classify green commits** - Detect 122 sustainability patterns from the Green Software Foundation (GSF) catalog
 - **Analyze any repository by URL** - Direct Git-based analysis with support for private repositories
 - **Measure energy consumption** - RAPL, CodeCarbon, and CPU Energy Meter backends for power profiling

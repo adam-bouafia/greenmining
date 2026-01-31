@@ -135,38 +135,6 @@ class StatisticalAnalyzer:
             "significant": bool(p_value < 0.05),
         }
 
-    def pattern_adoption_rate_analysis(self, commits_df: pd.DataFrame) -> Dict[str, Any]:
-        # Analyze pattern adoption rates over repository lifetime.
-        results = {}
-
-        for pattern in commits_df["pattern"].unique():
-            pattern_commits = commits_df[commits_df["pattern"] == pattern].sort_values("date")
-
-            if len(pattern_commits) == 0:
-                continue
-
-            # Time to first adoption
-            first_adoption = pattern_commits.iloc[0]["date"]
-            repo_start = commits_df["date"].min()
-            ttfa_days = (first_adoption - repo_start).days
-
-            # Adoption frequency over time
-            monthly_adoption = pattern_commits.set_index("date").resample("ME").size()
-
-            # Pattern stickiness (months with at least one adoption)
-            total_months = len(commits_df.set_index("date").resample("ME").size())
-            active_months = len(monthly_adoption[monthly_adoption > 0])
-            stickiness = active_months / total_months if total_months > 0 else 0
-
-            results[pattern] = {
-                "ttfa_days": ttfa_days,
-                "total_adoptions": len(pattern_commits),
-                "stickiness": stickiness,
-                "monthly_adoption_rate": monthly_adoption.mean(),
-            }
-
-        return results
-
     def _interpret_correlations(self, significant_pairs: List[Dict[str, Any]]) -> str:
         # Generate interpretation of correlation results.
         if not significant_pairs:

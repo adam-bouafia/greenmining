@@ -254,6 +254,35 @@ GSF_PATTERNS = {
         "description": "Choose hardware optimized for energy efficiency",
         "sci_impact": "Direct reduction in energy consumption",
     },
+    "match_preconfigured_server": {
+        "name": "Match Utilization Requirements with Pre-configured Servers",
+        "category": "cloud",
+        "keywords": [
+            "pre-configured server",
+            "energy proportionality",
+            "server utilization",
+            "oversized server",
+            "underutilized server",
+            "server consolidation",
+        ],
+        "description": "Select pre-configured servers that match utilization needs; one highly utilized server is more energy-efficient than two underutilized ones",
+        "sci_impact": "Higher utilization improves energy proportionality; fewer servers reduces embodied carbon",
+    },
+    "optimize_customer_device_impact": {
+        "name": "Optimize Impact on Customer Devices and Equipment",
+        "category": "cloud",
+        "keywords": [
+            "customer device",
+            "backward compatible",
+            "backwards compatible",
+            "older hardware",
+            "device lifetime",
+            "older browser",
+            "end-of-life hardware",
+        ],
+        "description": "Design software to extend customer hardware lifetimes through backward compatibility with older devices, browsers, and operating systems",
+        "sci_impact": "Extending device lifetimes reduces embodied carbon; optimizing for older hardware may also reduce energy intensity",
+    },
     # ==================== WEB PATTERNS (15+) ====================
     "avoid_chaining_requests": {
         "name": "Avoid Chaining Critical Requests",
@@ -1555,6 +1584,18 @@ GREEN_KEYWORDS = [
     "workload",
     "overhead",
     "footprint",
+    # Server utilization & customer device patterns
+    "pre-configured server",
+    "energy proportionality",
+    "server consolidation",
+    "underutilized server",
+    "oversized server",
+    "backward compatible",
+    "backwards compatible",
+    "customer device",
+    "device lifetime",
+    "older browser",
+    "end-of-life hardware",
 ]
 
 

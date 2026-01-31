@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 
-import json
-import re
 from collections import Counter
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any
 
 from tqdm import tqdm
 
 from greenmining.analyzers import (
     CodeDiffAnalyzer,
 )
-from greenmining.config import get_config
 from greenmining.gsf_patterns import (
     GREEN_KEYWORDS,
     GSF_PATTERNS,
@@ -22,11 +19,7 @@ from greenmining.gsf_patterns import (
 )
 from greenmining.utils import (
     colored_print,
-    create_checkpoint,
     format_timestamp,
-    load_checkpoint,
-    load_json_file,
-    print_banner,
     save_json_file,
 )
 
@@ -155,55 +148,6 @@ class DataAnalyzer:
             result["diff_analysis"] = diff_analysis
 
         return result
-
-    def _check_green_awareness(self, message: str, files: list[str]) -> tuple[bool, Optional[str]]:
-        # Check if commit explicitly mentions green/energy concerns.
-        # Check message for green keywords
-        for keyword in self.GREEN_KEYWORDS:
-            if keyword in message:
-                # Extract context around keyword
-                pattern = rf".{{0,30}}{re.escape(keyword)}.{{0,30}}"
-                match = re.search(pattern, message, re.IGNORECASE)
-                if match:
-                    evidence = match.group(0).strip()
-                    return True, f"Keyword '{keyword}': {evidence}"
-
-        # Check file names for patterns
-        cache_files = [f for f in files if "cache" in f or "redis" in f]
-        if cache_files:
-            return True, f"Modified cache-related file: {cache_files[0]}"
-
-        perf_files = [f for f in files if "performance" in f or "optimization" in f]
-        if perf_files:
-            return True, f"Modified performance file: {perf_files[0]}"
-
-        return False, None
-
-    def _detect_known_pattern(self, message: str, files: list[str]) -> tuple[Optional[str], str]:
-        # Detect known green software pattern.
-        matches = []
-
-        # Check each pattern
-        for pattern_name, keywords in self.GREEN_PATTERNS.items():
-            for keyword in keywords:
-                if keyword in message:
-                    # Calculate confidence based on specificity
-                    confidence = "HIGH" if len(keyword) > 10 else "MEDIUM"
-                    matches.append((pattern_name, confidence, len(keyword)))
-
-        # Check file names for pattern hints
-        all_files = " ".join(files)
-        for pattern_name, keywords in self.GREEN_PATTERNS.items():
-            for keyword in keywords:
-                if keyword in all_files:
-                    matches.append((pattern_name, "MEDIUM", len(keyword)))
-
-        if not matches:
-            return "NONE DETECTED", "NONE"
-
-        # Return most specific match (longest keyword)
-        matches.sort(key=lambda x: x[2], reverse=True)
-        return matches[0][0], matches[0][1]
 
     def save_results(self, results: list[dict[str, Any]], output_file: Path):
         # Save analysis results to JSON file.

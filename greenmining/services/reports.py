@@ -1,20 +1,15 @@
 # Report generation for green mining analysis.
-"""Report generation module for GreenMining analysis results."""
 
 from __future__ import annotations
 
-import json
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any
 
-from greenmining.config import get_config
 from greenmining.utils import (
     colored_print,
     format_number,
     format_percentage,
-    load_json_file,
-    print_banner,
 )
 
 

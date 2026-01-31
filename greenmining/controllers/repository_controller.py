@@ -1,7 +1,5 @@
 # Repository Controller - Handles repository fetching operations.
 
-from tqdm import tqdm
-
 from greenmining.config import Config
 from greenmining.models.repository import Repository
 from greenmining.services.github_graphql_fetcher import GitHubGraphQLFetcher

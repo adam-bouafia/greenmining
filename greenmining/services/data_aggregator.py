@@ -2,26 +2,21 @@
 
 from __future__ import annotations
 
-import json
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 import pandas as pd
 
 from greenmining.analyzers import (
     StatisticalAnalyzer,
     TemporalAnalyzer,
-    QualitativeAnalyzer,
 )
-from greenmining.config import get_config
 from greenmining.models.repository import Repository
 from greenmining.utils import (
     colored_print,
     format_number,
     format_percentage,
-    load_json_file,
-    print_banner,
     save_csv_file,
     save_json_file,
 )
