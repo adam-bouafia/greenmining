@@ -1,0 +1,312 @@
+repository,repo_url,commit_hash,author,date,message,green_aware,patterns_matched,pattern_count,confidence,files_modified,insertions,deletions,dmm_unit_size,dmm_unit_complexity,dmm_unit_interfacing,total_nloc,total_complexity,methods_count,energy_joules
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,51cd5945f1a22c62a4800d6b79bfa000400403ea,Maxat Akbanov,2023-02-11T13:58:13+06:00,Change PHP version to 8.2 and Drush to 11*,False,,0,low,1,14,15,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,553ad77c05a993894e84243bcd8bc539c8b47ebe,Walid Shouman,2023-03-03T07:12:59+01:00,"Update master node label
+
+Reflecting: [PR107](https://github.com/geerlingguy/ansible-role-kubernetes",True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Keep Request Counts Low",4,high,1,2,2,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,30fa8228eb409c4293f662c0914aa3d80dcc91c3,Walid Shouman,2023-03-03T07:17:35+01:00,"Use docker_packages instead of docker_package
+
+Reflecting [PR#365](https://github.com/geerlingguy/an",True,"Containerize Your Workload, Keep Request Counts Low",2,high,1,2,1,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,eeb73d7a436570a142337f4291e7e8ce8096e77e,Jeff Geerling,2023-06-17T21:48:26-05:00,Proper way of installing molecule with docker tests.,True,Containerize Your Workload,1,medium,3,4,4,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,a4b7cfb5fb4e536496aad02161910238167e757d,Jeff Geerling,2023-06-17T21:57:54-05:00,Fixes #531: systemd with molecule Docker containers requires cgroupns set to host and rw.,True,Containerize Your Workload,1,medium,2,4,3,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,0f7a64822c9c727871e3b22471aab728b7871399,Jeff Geerling,2023-06-17T22:18:16-05:00,Small fix to README.,False,,0,low,1,1,1,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,8058f712c375039dd62c67b8c2518795718b262f,Jeff Geerling,2023-06-29T11:03:04-05:00,Add a link to the book's manuscript repository.,False,,0,low,1,6,2,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,4df7fa21362a57e8c438317a7918cf98ce6e3fae,Fredrik Jervfors,2023-07-19T15:23:40+02:00,"Remove TODO from mysql.yml
+
+https://github.com/geerlingguy/ansible-for-devops/issues/297 is closed
+s",True,"Delete Unused Storage Resources, Minimize Deployed Environments, Remove Unused Assets, Keep Request Counts Low",4,high,1,0,1,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,4c6bc5a74b42d0c25339aa2f682d7389546944b9,meysiolio,2023-11-03T09:26:32-04:00,"Update digitalocean.yml
+
+new size name in DO",False,"Match VM Utilization Requirements, Avoid Excessive DOM Size, Properly Sized Images",3,high,1,1,1,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,cb8b77aba8dbaba6c7cb70bf324fe702a83264eb,Lukas Riedersberger,2024-01-04T09:46:59+01:00,"Fix running npm package forever in chapter 4
+
+This addresses an issue in the nodejs example of chapt",False,Eliminate Polling,1,medium,1,2,2,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,d169fa793f253511e7961c2f8cace5ea8c994e80,Seth Franklin,2025-01-01T13:12:52-05:00,Updated Droplet image_id for CentOS,True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,1,1,1,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,ca886e83a0d4b64fb2dfe04248ffbcac56be7198,Jeff Geerling,2025-05-25T00:01:10-05:00,Update versions for molecule test versions in chapter 13.,False,,0,low,2,3,3,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,9714c4b51d9af963f6ae0ea1fc7d4ba4de64a6fd,Jeff Geerling,2025-05-25T00:34:27-05:00,Syntax update for jenkins provisioning.,False,,0,low,1,3,1,,,,0,0,0,
+geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,86e1bf80098239cd995d54217585e8d61117d2e7,Jeff Geerling,2025-05-25T00:58:10-05:00,Replace use of private_network directive with quoted version.,True,"Compress Transmitted Data, Reduce Network Traversal Between VMs",2,high,19,28,28,,,,0,0,0,
+in28minutes/devops-master-class,https://github.com/in28minutes/devops-master-class,ad44023ee8b03b4b509be35993a109a3c0e9fae3,Aamir Khan,2023-06-04T14:42:39+05:18,Update readme.md for docker commands list,True,Containerize Your Workload,1,medium,1,191,7,,,,0,0,0,
+in28minutes/devops-master-class,https://github.com/in28minutes/devops-master-class,a3f7bc5c4e2371680c763465d59dd531e6eec5b8,rameezsyed94,2024-09-10T19:09:27+05:18,fork request,False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,1,1,2,,,,0,0,0,
+hygieia/hygieia,https://github.com/hygieia/hygieia,3c9f733d1e36f5561567648c208f91ccc16e646d,Mio Diaz,2023-09-29T16:42:56-04:00,Update README.md,False,,0,low,1,3,1,,,,0,0,0,
+hygieia/hygieia,https://github.com/hygieia/hygieia,3964249fec9f877c662d20d6622ecad2c16e99fc,Mio Diaz,2023-09-29T16:43:13-04:00,Update README.md,False,,0,low,1,1,1,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,a4c930f4014cf25cd9655fb073999becdc789357,Kalyan Reddy Daida,2023-01-17T09:36:55+05:18,Welcome to StackSimplify,False,,0,low,28,765,45,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,07829be8177d8dba6ffaf0e57a472c520b40abb6,STACKSIMPLIFY,2023-03-16T07:15:49+05:18,"Added PDF version of PPT
+
+Added PDF version of PPT",False,,0,low,1,0,0,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,d7362b3b7760b32623db0ae6b60f18a8f9901a67,STACKSIMPLIFY,2023-03-16T12:33:36+05:18,"Updated Trust policy creation using Windows Powershell
+
+Updated Trust policy creation using Windows ",True,"Set Retention Policy on Storage, Use Compiled Languages",2,high,1,81,1,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,f04ff14c71bf9c556038dd03b3002814d474396b,STACKSIMPLIFY,2023-03-21T17:38:45+05:18,"Add Windows Powershell steps for updating aws-auth configmap
+
+Add Windows Powershell steps for updat",True,,0,low,1,36,0,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,1148246aedad0a4f68ff780ea73b810b29a9485b,Kalyan Reddy Daida,2023-05-01T16:53:36+05:18,Welcome to StackSimplify,False,,0,low,4,102,15,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,5e1e0c1585b5d22144c7dff83869c5114dfc5a89,Kalyan Reddy Daida,2024-01-02T13:52:13+05:18,Welcome to Stack Simplify,False,,0,low,35,1642,1,0.7704918032786885,1.0,0.8961748633879781,365,43,37,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,63e22ffa239b4e47364c0a60b6d30bf76d37f1e3,STACKSIMPLIFY,2024-05-16T18:53:39+05:18,Update 02-Nginx-App1-LoadBalancer-Service.yml,True,Scale Infrastructure with User Load,1,medium,1,3,1,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,c5aa6c5926aaa2928ffc4494ff0c1ad29cf07c5a,STACKSIMPLIFY,2024-05-23T11:05:40+05:18,"Update README.md 
+
+Updated with --image=mysql:5.7.22 to --image=mysql:latest",True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,1,1,1,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,860bdcd30e796cc208bd69b7038de2a422132e1f,Kalyan Reddy Daida,2024-05-24T18:38:08+05:18,Welcome to StackSimplify,False,,0,low,44,0,0,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,5e0b3c0a338a2f10ec168d40891f21f9bec0169d,STACKSIMPLIFY,2024-05-24T19:00:22+05:18,Update README.md,False,,0,low,1,5,0,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,d48915c59867b57075b21de102b0820c5374698c,Kalyan Reddy Daida,2025-05-14T09:47:39+05:18,Welcome to StackSimplify,False,,0,low,1,3,2,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,5d37679007a3a654f0d55fa0a8eaa04dd64e9799,Kalyan Reddy Daida,2025-05-15T06:37:10+05:18,Welcome to Stack Simplify,False,,0,low,491,21476,0,0.7712418300653595,0.9044117647058824,0.9174836601307189,2175,309,233,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,2fa5de92e6cfbf83d7628edcc04a3ec7bb51a5d4,Kalyan Reddy Daida,2025-05-15T06:38:22+05:18,Welcome to Stack Simplify,False,,0,low,1,0,10,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,9787db6b2de9692a74513d7ec05ccb0f3056c1e5,Kalyan Reddy Daida,2025-05-15T06:42:49+05:18,Welcome to Stack Simplify,False,,0,low,1,1,18,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,3200f3b838c144d4785668f1f5dcae7e4271a1f3,Kalyan Reddy Daida,2025-05-15T07:00:29+05:18,Welcome to Stack Simplify,False,,0,low,1,76,98,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,53485ed2d25d8122c21d8f76fb1645324950fcf5,Kalyan Reddy Daida,2025-05-15T07:11:06+05:18,Welcome to Stack Simplify,False,,0,low,3,104,55,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,3891361ebc3807250fae500f62e987c3df106338,Kalyan Reddy Daida,2025-05-15T07:12:11+05:18,Welcome to Stack Simplify,False,,0,low,1,0,1,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,6bd411134a5a7d013648c96e98f8dd0a37c20700,Kalyan Reddy Daida,2025-05-15T09:22:29+05:18,Welcome to Stack Simplify,False,,0,low,12,3,3,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,b535fa71a0a004c69b7841bbec59a81a78ac1ebe,Kalyan Reddy Daida,2025-05-15T11:04:23+05:18,Welcome to Stack Simplify,False,,0,low,2,1,1,,,,0,0,0,
+stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,662848cf234bb0a483e2cf5b7787cd65874fa9e6,Kalyan Reddy Daida,2025-05-15T11:05:14+05:18,Welcome to Stack Simplify,False,,0,low,12,3,3,,,,0,0,0,
+antonputra/tutorials,https://github.com/antonputra/tutorials,680d6812511f4970ea1446e714a8e8a28fcda6b5,Anton Putra,2023-01-03T22:41:03-06:00,Go (Golang) vs Node JS (Microservices) performance benchmark (Istio - Prometheus - Grafana) (#124),True,"Evaluate Using a Service Mesh, Scale Logical Components Independently, Use Compiled Languages, Performance Profiling, Service Mesh Optimization",5,high,148,59094,0,0.8153846153846154,0.8769230769230769,0.9038461538461539,381,61,40,
+antonputra/tutorials,https://github.com/antonputra/tutorials,56fea262706adc3a71016adeab17b3e2646301d5,Anton Putra,2023-01-06T21:24:11-06:00,Nginx vs Traefik performance benchmark (HTTP - HTTPS - gRPC | Latency - CPU - Memory | Prometheus) (,True,"Choose Region Closest to Users, Evaluate Other CPU Architectures, Optimize Average CPU Utilization, Optimize Peak CPU Utilization, Reduce Network Traversal Between VMs, Keep Request Counts Low, gRPC for Service Communication, Performance Profiling",8,high,60,2386,0,0.5599078341013825,0.8755760368663594,0.9470046082949308,658,104,57,
+antonputra/tutorials,https://github.com/antonputra/tutorials,3e81d7fdf4baeb3591c1ed061e4bca2dd376f905,Anton Putra,2023-01-12T19:58:24-06:00,Go (Golang) vs Java performance benchmark (Fiber vs Spring Boot | Prometheus | Minio | MongoDB) (#12,True,"Use Compiled Languages, Performance Profiling",2,high,120,35601,0,0.6451612903225806,1.0,0.8790322580645161,443,44,36,
+antonputra/tutorials,https://github.com/antonputra/tutorials,603b5ff043fd22b7ae4aaaf298d212e9e89a4ce3,Anton Putra,2023-01-15T12:57:45-08:00,Nginx vs Apache HTTP Server performance benchmark (Prometheus | HTTP | HTTPS | Grafana | Ansible) (#,True,"Keep Request Counts Low, Performance Profiling",2,high,57,3052,0,1.0,1.0,1.0,140,15,14,
+antonputra/tutorials,https://github.com/antonputra/tutorials,f5d0d7b402808c06928db2741a7a2c23dd178bf9,Anton Putra,2023-01-17T17:44:21-08:00,Go (Golang) vs Rust performance benchmark (gRPC | Tonic | Prometheus | Kubernetes | EKS | AWS ) (#12,True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Use Compiled Languages, gRPC for Service Communication, Performance Profiling",6,high,109,35121,0,0.7159090909090909,0.9090909090909091,0.9128787878787878,467,81,41,
+antonputra/tutorials,https://github.com/antonputra/tutorials,08648d9fabec9938062b95ee370afe6d50ee762e,Anton Putra,2023-01-21T15:21:42-08:00,HTTP/2 vs HTTP/3 performance benchmark (#129),True,"Keep Request Counts Low, Performance Profiling",2,high,40,865,1,0.32,1.0,1.0,148,28,20,
+antonputra/tutorials,https://github.com/antonputra/tutorials,36bfea8837141a7d5e7def5d7f919b1b508a1e81,Anton Putra,2023-01-23T17:07:09-08:00,gRPC vs REST performance benchmark (#130),True,"gRPC for Service Communication, Performance Profiling",2,high,94,33065,0,0.7971576227390181,1.0,0.9702842377260982,1104,197,108,
+antonputra/tutorials,https://github.com/antonputra/tutorials,b09834856cc27ad8aa2fde45fbcd655a9a1425dd,Anton Putra,2023-01-26T17:01:47-08:00,ARM vs x86 performance benchmark (#133),True,"Evaluate Other CPU Architectures, Performance Profiling",2,high,75,32170,0,0.4266666666666667,1.0,1.0,104,16,10,
+antonputra/tutorials,https://github.com/antonputra/tutorials,389c46c46eba376209c44819410df2e5336328b4,Anton Putra,2023-01-29T13:44:01-08:00,Nginx vs Envoy performance benchmark (#134),True,"Evaluate Using a Service Mesh, Performance Profiling",2,high,68,3180,0,0.862796833773087,1.0,0.8786279683377308,687,107,67,
+antonputra/tutorials,https://github.com/antonputra/tutorials,7b1be8c0a447e489f3ada8b2f5af46bfa0ecd910,Anton Putra,2023-02-03T17:03:10-08:00,gRPC vs Kafka: Which one should you choose? (#135),True,"Event-Driven Architecture, gRPC for Service Communication",2,high,66,31720,0,0.5347985347985348,1.0,0.7728937728937729,414,61,30,
+antonputra/tutorials,https://github.com/antonputra/tutorials,136df0534c633b89c9d3ea05959e3c7212435e32,Anton Putra,2023-02-11T18:49:15-08:00,Traefik vs Caddy 2 (#137),False,,0,low,63,3039,0,0.7513089005235603,1.0,0.8429319371727748,555,94,51,
+antonputra/tutorials,https://github.com/antonputra/tutorials,d82d00cb44236dfda4b1b3766d77dda07ce0b205,Kimi,2023-02-21T13:58:08+08:00,"Add lesson 125 AWS architecture diagram (#140)
+
+* Add architecture diagram
+
+An AWS architecture di",True,"Evaluate Other CPU Architectures, Match VM Utilization Requirements, Avoid Excessive DOM Size, Properly Sized Images",4,high,2,2,0,,,,0,0,0,
+antonputra/tutorials,https://github.com/antonputra/tutorials,6934fc1e1c034d82f8328df9be554755241efcad,Anton Putra,2023-02-21T13:13:21-08:00,Prometheus Operator Kubernetes Tutorial (#141),True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events",3,high,57,37292,0,1.0,1.0,1.0,65,7,6,
+antonputra/tutorials,https://github.com/antonputra/tutorials,0c40a5fb8347f1993833b584712bc167e93840be,Anton Putra,2023-03-03T18:41:02-08:00,Istio Service Mesh Tutorial (#142),True,"Evaluate Using a Service Mesh, Service Mesh Optimization",2,high,82,42859,0,0.32432432432432434,1.0,1.0,58,7,3,
+antonputra/tutorials,https://github.com/antonputra/tutorials,da643ae6b262343df1a9062130bfb93b5f7e27ec,Anton Putra,2023-03-07T10:36:41-08:00,update support section (#143),False,,0,low,1,1,1,,,,0,0,0,
+antonputra/tutorials,https://github.com/antonputra/tutorials,7eceda0d0031a90ad5811d7ac917334f44fed20e,Anton Putra,2023-03-10T20:01:18-08:00,How to Use EKS Blueprints Terraform Modules? (#144),True,Infrastructure as Code Optimization,1,medium,25,946,0,,,,0,0,0,
+antonputra/tutorials,https://github.com/antonputra/tutorials,aa20bc9436b4ac420e16e0b86574363e7715032b,Anton Putra,2023-03-14T13:42:54-07:00,DevOps Interview Questions: (Step-by-Step) #1 (#146),False,"Minimize Deployed Environments, Database Views & Materialized Views",2,high,17,275,0,1.0,1.0,0.5294117647058824,28,4,2,
+antonputra/tutorials,https://github.com/antonputra/tutorials,d54b58f9b21f5e138ca11992fd3303e6e7b3021a,Anton Putra,2023-03-25T12:31:38-07:00,ArgoCD Tutorial for Beginners: GitOps CD for Kubernetes (#148),True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Use Compiled Languages",4,high,24,2405,0,,,,0,0,0,
+antonputra/tutorials,https://github.com/antonputra/tutorials,7328e50569455646902550f63852e5e8a2c6f971,Anton Putra,2023-03-25T17:02:56-07:00,Add sub link (#149),False,,0,low,1,1,1,,,,0,0,0,
+antonputra/tutorials,https://github.com/antonputra/tutorials,295ddbbbc7e95271514908fed9a6e3e38ae1658c,Anton Putra,2023-04-03T22:06:13-07:00,ArgoCD Image Updater: Decouple CI from CD! #2 (#151),True,"Scale Logical Components Independently, Use Compiled Languages, Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",5,high,20,892,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,24a642910ca167c39e4abf47aa2b3d0322b2ea64,Abhishek Veeramalla,2023-10-12T16:57:21+05:18,Initial commit,False,,0,low,3,183,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,aa64dc7b093ffc932fa937d6a601410075f6b0d9,Abhishek Veeramalla,2023-10-12T17:52:54+05:18,Update README.md,False,,0,low,1,119,2,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,7ddfd8df89b9f89d145aaf821feb0558bbacd1b3,Abhishek Veeramalla,2023-10-12T21:46:23+05:18,Update README.md,False,,0,low,1,1,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,e9a36227a63a1ca77d3b8a05232ba75285c3f0dc,Abhishek Veeramalla,2023-10-12T21:46:44+05:18,Update README.md,False,,0,low,1,1,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,22f33a3093dba5dd19ae7a7fdd18a341a95847be,Abhishek Veeramalla,2023-10-12T17:06:51+00:00,Add folders,False,,0,low,19,0,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,297ab486f271776140d4e0b146c1c73175b87fc3,Abhishek Veeramalla,2023-10-19T18:58:35+00:00,add files for day -1,False,,0,low,2,28,0,,,,1,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,01141da02ff080b882e2589673a34462575922b6,Abhishek Veeramalla,2023-10-21T13:06:03+00:00,add files for day-2,False,,0,low,14,106,0,,,,80,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,98356cba82466d4654560badc8840de32f173754,Abhishek Veeramalla,2023-10-21T13:07:00+00:00,add docs for day-2,False,,0,low,5,67,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,5a310fc1e045054096a9808b9a5342c82405448e,Abhishek Veeramalla,2023-10-22T17:35:21+00:00,add files for day-3,False,,0,low,3,154,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,f95242661c1986354232964da71fe64151dc5ad9,Abhishek Veeramalla,2023-10-22T17:36:15+00:00,update README.md,False,,0,low,1,1,1,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,2a8028b77d700ec6c0d60703cf0d2c1a35482687,Abhishek Veeramalla,2023-10-22T17:37:09+00:00,update README.md,False,,0,low,1,1,1,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,0986feecdd5af91cba759eea9e70d111f8bd705d,Abhishek Veeramalla,2023-10-25T13:54:43+00:00,update README.md,False,,0,low,1,114,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,d0b806f72903130b38816bf585a8414001124f72,Abhishek Veeramalla,2023-10-30T08:25:40+00:00,"create files for day-6
+
+Signed-off-by: Abhishek Veeramalla <abhishek.veeramalla@gmail.com>",False,,0,low,15,373,0,,,,51,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,ba7252a96aeb5d98e7fd1ae5bc2928e47c21811a,Abhishek Veeramalla,2023-11-01T17:53:50+05:18,Update README.md,False,,0,low,1,69,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,8f08b88a2028801f2f6c6ef28ae420399f2b1083,Abhishek Veeramalla,2023-11-01T17:56:11+05:18,Update README.md,False,,0,low,1,0,1,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,9a3ae076946e9066f1a968bfabc15b0f8a211fee,Abhishek Veeramalla,2023-11-02T12:14:58+00:00,create files for day-8,False,,0,low,13,277,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,cbe88626a8190069071acb86b253294376925b4b,Abhishek Veeramalla,2023-11-07T12:05:14+00:00,feat: add files for day-9,False,,0,low,5,283,0,,,,0,0,0,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,3ba1f9358f1e9ec53a640defdf31e247e992641d,Abhishek Veeramalla,2023-11-08T12:31:13+00:00,feat: add files for day-10,False,,0,low,5,38,1,1.0,1.0,1.0,27,8,3,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,53a9830e82e9a0e29b07c0ac55ac01d275c26278,Abhishek Veeramalla,2023-11-16T09:36:30+00:00,feat: add files for day-11,False,,0,low,6,234,0,1.0,1.0,1.0,10,1,1,
+iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,dab0b271cc08880725cab8fcbde0d87eae281edc,Abhishek Veeramalla,2023-11-20T20:30:37+05:18,demo,False,,0,low,1,33,0,,,,17,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,583823325b7bf18461086ff0c7a0712c9bb934b3,Azizul Haque,2023-01-05T11:48:12+06:00,Cloudflare has explained OSI model greatly,True,"Use Cloud Native Security Tools, Energy Efficient Models, Database Indexing",3,high,1,1,1,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,f53470e695ae2f5c6a964b593bf94a2ba17bc211,Azizul Haque,2023-01-26T22:50:52+03:00,GitHub Actions Workflow syntax doc added,False,,0,low,1,1,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,bf700bfc3e2525728875b6df56a4c422de1b7770,Milan Milanovic,2023-02-22T08:04:41+01:00,Update for 2023.,False,,0,low,6,126,6,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,8d214566bef881acf4e00153bace0f006fd66128,Milan Milanovic,2023-02-22T08:08:32+01:00,Fix typo,False,,0,low,1,1,1,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,7f0514e1469885f56bfcdfaaa390477543570aa6,Milan Milanovic,2023-02-22T08:14:21+01:00,Fix links,False,,0,low,1,6,6,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,14b1a05fcd65561a455b47c9bc2c7cb2e19d1a17,Milan Milanovic,2023-02-22T08:18:17+01:00,Update CI/CD,False,,0,low,1,9,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,ebc4f368970825567cb29942a9922650ab32311e,Milan Milanovic,2023-02-22T08:28:00+01:00,Add Veracode,False,,0,low,1,8,8,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,d307a62a3cda9a3a0d97aa3771e97f55aea0f0e2,Milan Milanovic,2023-02-22T17:52:16+01:00,Add books info,False,,0,low,1,20,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,2f7b7fa7e593e8f85491c9f92d70e965782309e1,Milan Milanovic,2023-02-22T17:55:45+01:00,Format books,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,8,8,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,8c4743db796cc2e511d0b4887b8ab214cebaeded,Milan Milanovic,2023-02-22T17:56:34+01:00,Remove book marks,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,7,7,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,527a388c3fc3a99ab51493465b410c965664f2ce,Milan Milanovic,2023-02-22T18:05:52+01:00,Move tools image,True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,1,2,2,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,5ddcbafaf8441775ef767b9e14994039da9fc643,Milan Milanovic,2023-08-12T10:15:25+02:00,Add new DevOps tools,False,Minimize Deployed Environments,1,medium,1,0,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,f7294318393ddc52076a593db69f5d754a5dbf7c,Milan Milanovic,2023-10-30T13:54:43+01:00,Add newsletter,False,,0,low,1,2,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,979f05ede7182026b38b59177af9d17acfaa5496,Milan Milanovic,2023-10-30T13:55:11+01:00,Change link,False,,0,low,1,1,1,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,232fb58f0e7f7adeb2838eb90327814483c45ba6,Milan Milanovic,2023-10-30T13:57:24+01:00,Adjust title,False,,0,low,1,1,1,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,27f7a36d586e6a658c9d000fc547b2c26147ba0d,Deep145757,2023-10-30T18:36:07+05:18,doc(README): remove typo,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,1,1,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,0d13c777d324fc441730a5f99469399a664f9725,Milan Milanovic,2024-01-08T13:41:09+01:00,Update for 2024,False,,0,low,5,1,1,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,77ea56c743f1bfe9e3473512ed62e5442b1f6adf,Milan Milanovic,2024-01-08T13:53:29+01:00,Add TOC,False,,0,low,1,19,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,110dc9c0633bb44d35139270b44557add09d3af5,Milan Milanovic,2024-01-21T11:05:19+01:00,Add CI article,False,,0,low,1,1,0,,,,0,0,0,
+milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,ef63cedb1ddee6a4d2ea8092f004c982a0c65701,Milan Milanovic,2024-02-06T12:21:55+01:00,Add DevOps as a Burger (DaaB),False,Minimize Deployed Environments,1,medium,2,6,0,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,fb5f814913952f4e2a0787bc8fcb4ec2630192e9,Julia Kulla-Mader,2023-03-14T14:36:47-04:00,Add Codespaces .devcontainer configuration (#7142),True,"Containerize Your Workload, Minimize Deployed Environments",2,high,4,559,0,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,70701b77dca7fc2dbfee622473bd5ff3edd6b53e,Julia Kulla-Mader,2023-03-15T17:30:29-04:00,update dev container and move files (#7148),True,"Containerize Your Workload, Minimize Deployed Environments",2,high,4,19,5,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,641579254cebcbbefbfe92b2c8a6b8caadea0a62,Steve Danielson,2023-06-16T12:11:26-04:00,Update azure-pipelines.yml for Azure Pipelines,False,,0,low,1,3,0,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,499bca6cb48815597366ddc63d7e0e1b79dd1424,Steve Danielson,2023-06-19T12:18:08-04:00,Move self-hosted agent files,False,,0,low,3,93,0,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,05174e031c0018800fc4e6727b0449fe75b2c4be,Steve Danielson,2023-06-20T08:51:29-04:00,Move agent build files folder,False,,0,low,3,0,0,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,20eda5524ee4e3a42c6a9ff33b1d06c5cc8ef5f6,Steve Danielson,2023-06-20T11:40:00-04:00,Update node version,False,,0,low,1,2,2,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,51e2863729d128b57c0149748c95647856b88f2f,Steve Danielson,2023-06-20T12:21:59-04:00,Update node version,False,,0,low,1,1,1,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,0e512eff7846bab58558c133f0bbcb0842fc694e,Shawn Kupfer,2025-05-09T11:25:53-05:00,"Update build-tools.sh
+
+Update .NET version as part of Technical Review 1044253: Host your own build ",False,Database Views & Materialized Views,1,medium,1,1,1,,,,0,0,0,
+MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,fddce71f30e4834ead9e8b7508db808acc37d388,Steve Danielson,2025-05-22T10:55:08-04:00,Update .NET version on main branch,False,,0,low,1,1,1,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,798ea938a35b141d88c70c11a5fc146e0264ef87,Chimon Sultan,2023-01-04T13:17:38+01:00,"Fix cascade option value (#330)
+
+--cascade=false is deprecated (boolean value) and can be replaced w",True,Delete Unused Storage Resources,1,medium,1,1,1,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,c7f89d43d543ca34f93a4eae81e5ba7e26711a31,Chimon Sultan,2023-01-04T13:18:35+01:00,"Removed the need for Kustomize in prerequisites (#332)
+
+Since 1.14, Kubectl also supports the manage",True,"Containerize Your Workload, Delete Unused Storage Resources, Remove Unused Assets, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Keep Request Counts Low",6,high,1,2,2,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,f1e2be3a54f3ef08d197e3fe4b8aad909f673687,Chimon Sultan,2023-01-04T13:18:59+01:00,"Use Kubectl command instead of kustomize (#331)
+
+Since 1.14, Kubectl also supports the management of",True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Keep Request Counts Low",4,high,1,2,2,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,dfb4da70b656469b28b33f0f0d9c8f2f868fb845,Abdellah AHBANE,2023-01-25T00:33:00-05:00,"Contribution to azure topic (#335)
+
+* Duplicated question
+
+* Contribution to azure topic",False,Data Deduplication,1,medium,1,32,9,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,3ed8064e3eb46a81f9f94ad1e0a888a7fdae893f,Bilalbsd,2023-01-29T21:55:59+01:00,Responding to questions in Puppet section (#340),False,,0,low,1,8,0,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,6811a827de942ff4fb5e59307920de763ff7aec7,Pankaj Kumar,2023-01-30T02:15:03+05:18,"Complete answer for openstack question (#338)
+
+Add one line description of what are 'Neutron' and 'G",False,,0,low,1,2,0,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,47c39f6e9a3854415ca892d2f6c2e13cb97cbd40,Bilalbsd,2023-02-02T11:59:41+01:00,"Contribution to MongoDB topic (#343)
+
+* Responding to questions in Puppet section
+
+* responding to",True,Use Compiled Languages,1,medium,1,13,1,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,c664d2e7e2a7d41e3b787c62a0398e4f620164eb,krufab,2023-02-02T12:00:23+01:00,"Added a shorter solution for the directory diff exercise (#344)
+
+Signed-off-by: Fabio Kruger <109564",False,Incremental Processing,1,medium,2,10,3,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,b35b1f2c2e736524f960eca08c9a3633424529a9,Kirill,2023-02-02T14:00:42+03:00,"Update common software development questions (#342)
+
+* Update README.md
+
+* Update README.md",False,Minimize Deployed Environments,1,medium,1,55,10,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,211c28c340af5d6c50d06cb12cb8414a3b800ada,Ayobami Alaran A,2023-02-03T10:42:59+01:00,"Added new python exercise with solution (#346)
+
+* added new python exercise and solution
+
+* add so",False,,0,low,4,90,0,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,50c9714fe4da37271b3c066f3526a4bc8ec9b408,Thomas Leon Highbaugh,2023-02-04T02:08:34-08:00,"Update README.md (#347)
+
+fix the minor spelling error that drove me nuts",False,,0,low,1,1,1,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,01e1dddd2f810a8aedae9fcf8fca7a70c10a673a,MengDanzz,2023-02-06T02:50:51+08:00,"scripts/run_ci.sh to cover directories in the exercises and topics dir (#315)
+
+* Smoother practice e",True,"Containerize Your Workload, Delete Unused Storage Resources, Database Indexing, Service Mesh Optimization",4,high,5,61,45,0.625,0.625,1.0,80,35,5,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,299a1fa9398f6f9a4e97ab08d0d32dce8ac8cea8,Melany Estevez Camata,2023-02-05T14:51:34-04:00,"changing the function a bit (#314)
+
+* changing the function a bit
+
+using regex
+
+* fixing path
+",True,Use Serverless,1,medium,1,48,52,1.0,1.0,1.0,49,14,6,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,0939fd7996eb9efcf74b919e4f0a56c5ee6c1251,Ashraful Alam,2023-02-17T18:35:02+00:00,Answered Some of The Unanswered Questions. (#348),False,,0,low,1,18,1,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,58d0a20307a14398562c0e5cd91a3141113f68f3,Pranay K. Singh,2023-03-25T16:17:55+05:18,"corrected spelling mistake (#362)
+
+* corrected spelling mistake
+
+* changed text to code in git/REA",False,Enable Text Compression,1,medium,1,34,29,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,bca183c4624f04c9f83881fbb1d7697f34a482bf,@Kumar,2023-03-25T16:20:15+05:18,"fixed top-down button issues. (#361)
+
+Co-authored-by: Arie Bregman <bregman.arie@gmail.com>",False,Scale Down Unused Applications,1,medium,1,26,15,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,5599587daddb931af4626e6bcf8118d617794c18,Chetan Thapliyal,2023-03-25T16:20:44+05:18,Answered some network related questions (#360),True,"Compress Transmitted Data, Reduce Network Traversal Between VMs",2,high,1,65,5,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,9e9a6a35d782a97c28ade991ec6881e244193d9c,Adrian,2023-03-25T12:05:56+01:00,"Update/run ci script (#352)
+
+* New questions and spell check (#181)
+
+Added new questions related w",True,Match VM Utilization Requirements,1,medium,2,16,16,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,11bf00e181225115e63b347c5e72faa94ed2ede7,Haydar KÜLEKCİ,2023-03-25T14:07:39+03:00,elasticsearch answer updates (#354),True,"Scale Infrastructure with User Load, Autoscaling",2,high,1,17,10,,,,0,0,0,
+bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,8e691b56817e4b5f24f2811fe7215239f38db7d8,bregman-arie,2023-03-25T17:41:32+00:00,Update README index,True,Database Indexing,1,medium,5,332,257,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,2745db131a667a3d5457957cb3ed6adeb9b9949a,Bruno Alla,2023-01-06T18:32:31+00:00,Switch to Python 3.11 final on CI and add to tox file (#6325),False,,0,low,2,2,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,eb07385b025798baf921d3cb3b398c8794524fd9,Ashish Kurmi,2023-01-12T03:24:53+05:18,"ci: add minimum GitHub token permissions for workflows (#6236)
+
+Signed-off-by: Ashish Kurmi <akurmi@",True,"Scan for Vulnerabilities, Use Cloud Native Security Tools",2,high,3,13,0,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,61c324da43dd8b775d3930d76265538b3ca27bc1,Nate Prewitt,2023-01-12T09:16:09-07:00,v2.28.2,False,,0,low,2,14,3,,,,10,0,0,
+psf/requests,https://github.com/psf/requests,16a17a3ca7134b0a56c49653165ef37cb6acfece,Matthew Feickert,2023-01-18T23:37:24-06:00,"fix: Remove '<4' from python_requires (#6333)
+
+* As discussed in https://discuss.python.org/t/use-of",False,"Delete Unused Storage Resources, Remove Unused Assets, Keep Request Counts Low, Eliminate Polling",4,high,1,1,1,,,,114,4,3,
+psf/requests,https://github.com/psf/requests,15585909c3dd3014e4083961c8a404709450151c,Quentin Pradet,2023-01-21T09:44:33+01:00,Support missing SNIMissingWarning in tests (#6336),False,,0,low,2,14,5,,,,2170,306,257,
+psf/requests,https://github.com/psf/requests,46188256ee5955147cce4c0af91958b1681b47b1,Boris Verkhovskiy,2023-02-27T16:31:15+01:00,Response.raw.read() returns bytes (#6365),False,,0,low,1,2,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,ec78348c4b6292b1a38008fa31e51f7b6b2252dc,Nate Prewitt,2023-03-02T20:45:27-08:00,Upgrade lint.yml action (#6370),False,,0,low,2,6,5,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,e90852d20c9bc44c465e55234c01432711627d94,Yifang Zhu,2023-03-02T21:32:49-08:00,Make json doc strings consistent (#6368),False,,0,low,1,3,3,,,,19,8,8,
+psf/requests,https://github.com/psf/requests,7f694b79e114c06fac5ec06019cada5a61e5570f,Seth Michael Larson,2023-02-17T10:17:19-06:00,Allow str/bytes subclasses to be used as header parts,False,Eliminate Polling,1,medium,3,48,13,0.15789473684210525,1.0,0.47368421052631576,2784,503,303,
+psf/requests,https://github.com/psf/requests,26bea1e498d6e234fbc9ce8e07c0389bac73810b,Levi,2023-04-22T17:32:51-06:00,"Use urllib3 native chunking ability (#6226)
+
+* Fix #3844 
+* Use urllib for chunked 
+
+---------
+",False,Use Cloud Native Security Tools,1,medium,1,13,58,1.0,1.0,1.0,301,62,17,
+psf/requests,https://github.com/psf/requests,dfc3e2433836813fe6b93b8e182a761aa6c0ee05,Thomas Grainger,2023-04-23T00:41:27+01:00,"pin cryptography<40 on pypy 3.7 (#6421)
+
+* pin cryptography<40 on pypy 3.7",False,Encrypt What Is Necessary,1,medium,1,1,0,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,a7da1ab3498b10ec3a3582244c94b2845f8a8e71,Thomas Grainger,2023-04-23T00:53:09+01:00,try on ubuntu 22.04 (#6418),False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,51716c4ef390136b0d4b800ec7665dd5503e64fc,Thomas Grainger,2023-04-23T01:00:22+01:00,enable the warnings plugin (#6416),False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,87d63de8739263bbe17034fba2285c79780da7e8,Nate Prewitt,2023-04-26T09:19:11-06:00,v2.29.0,False,,0,low,2,10,2,,,,10,0,0,
+psf/requests,https://github.com/psf/requests,f2629e9e3c7ce3c3c8c025bcd8db551101cbc773,Quentin Pradet,2023-04-28T23:17:10+04:00,Remove strict parameter (#6434),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,0,1,0.0,0.0,1.0,300,62,17,
+psf/requests,https://github.com/psf/requests,2ad18e0e10e7d7ecd5384c378f25ec8821a10a29,Nate Prewitt,2023-05-03T08:39:44-07:00,v2.30.0,False,,0,low,4,19,7,,,,224,12,5,
+psf/requests,https://github.com/psf/requests,d3d504436ef0c2ac7ec8af13738b04dcc8c694be,Syed Saifullah,2023-05-09T22:13:33+05:18,Fixed a small typo (#6452),False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,b639e66c816514e40604d46f0088fbceec1a5149,Thomas Grainger,2023-05-13T15:10:56+01:00,"test on py3.12 (#6448)
+
+* test on py3.12
+
+* update to pytest-httpbin==2.0.0",False,Keep Request Counts Low,1,medium,3,3,3,,,,114,4,3,
+psf/requests,https://github.com/psf/requests,302225334678490ec66b3614a9dddb8a02c5f4fe,Thomas Grainger,2023-05-15T16:04:21+01:00,test on pypy 3.8 and pypy 3.9 on windows and macos (#6424),False,,0,low,1,3,4,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5,Nate Prewitt,2023-05-22T08:08:57-07:00,Merge pull request from GHSA-j8r2-6x86-q33q,False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,2,23,1,1.0,0.0,0.0,2602,419,287,
+pallets/flask,https://github.com/pallets/flask,bb1f83c26586f1aa254d67a67e6b692034b4cb4a,dependabot[bot],2023-01-01T16:01:00+00:00,"Bump dessant/lock-threads from 3 to 4
+
+Bumps [dessant/lock-threads](https://github.com/dessant/lock-",False,Keep Request Counts Low,1,medium,1,1,1,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,d7b6c1f6703df405c69da45e7e0ba3d1aed512ce,Josh Michael Karamuth,2022-10-31T12:49:16+04:00,"Fix subdomain inheritance for nested blueprints.
+
+Fixes #4834",True,Avoid Excessive DOM Size,1,medium,2,56,0,0.425,0.825,0.825,1138,243,192,
+pallets/flask,https://github.com/pallets/flask,cabda5935322d75e7aedb3ee6d59fb7ab62bd674,pgjones,2023-01-04T16:45:20+00:00,"Ensure that blueprint subdomains suffix-chain
+
+This ensures that a child's subdomain prefixs any par",True,"Avoid Chaining Critical Requests, Avoid Excessive DOM Size",2,high,4,26,4,0.0,0.5,0.5,1142,244,192,
+pallets/flask,https://github.com/pallets/flask,2a9d16d01189249749324141f0c294b31bf7ba6b,David Lord,2023-01-09T10:37:04-08:00,"update tested python versions
+
+test 3.11 final
+test 3.12 dev
+update for tox 4",False,Minimize Deployed Environments,1,medium,4,30,38,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,a7487701999fee55bb76a393e72c96ac8e277fcf,Bhushan Mohanraj,2023-01-06T22:14:03-05:00,clarify `View.as_view` docstring,False,Database Views & Materialized Views,1,medium,1,2,2,,,,59,17,6,
+pallets/flask,https://github.com/pallets/flask,9da947a279d5ed5958609e0b6ec690160c496480,David Lord,2023-01-09T12:45:16-08:00,set workflow permissions,False,,0,low,1,11,4,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,6d6d986fc502c2c24fe3db0ec0dbb062d053e068,David Lord,2023-01-18T09:50:41-08:00,switch to pyproject.toml,False,,0,low,6,123,141,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,8f13f5b6d672f1ba434f9c8ebe2c1b1dd385962e,David Lord,2023-01-18T10:21:37-08:00,"update docs and examples for pyproject
+
+setup.py -> pyproject.toml
+venv -> .venv",False,,0,low,24,153,195,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,261e4a6cf287180b69c4db407791e43ce90e50ad,David Lord,2023-01-18T10:31:08-08:00,fix flake8 bugbear errors,False,,0,low,3,17,16,,,,1576,305,283,
+pallets/flask,https://github.com/pallets/flask,3a35977d5fbcc424688d32154d250bc0bae918d6,David Lord,2023-01-19T06:35:15-08:00,stop ignoring flake8 e402,False,,0,low,3,3,5,,,,10,0,0,
+pallets/flask,https://github.com/pallets/flask,99b34f7148b77d4b1311593590629c2bc8e8e772,David Lord,2023-01-18T10:31:08-08:00,move and update flake8 config,False,,0,low,6,33,35,,,,1586,305,283,
+pallets/flask,https://github.com/pallets/flask,0b4b61146ffca0f7dfc25f1b245df89442293335,David Lord,2023-01-20T13:45:15-08:00,"build, provenance, publish workflow",True,,0,low,5,106,9,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,d93760d8bd6e367faefe9ad550f753e32ef9a12d,Andrii Kolomoiets,2023-01-23T17:01:49+02:00,Fix function argument name,True,Use Serverless,1,medium,1,1,1,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,94a23a3e24b6736ca3b54773de0ce384270c457a,dependabot[bot],2023-02-01T16:01:23+00:00,"Bump actions/setup-python from 4.4.0 to 4.5.0
+
+Bumps [actions/setup-python](https://github.com/actio",False,Keep Request Counts Low,1,medium,2,2,2,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,74c256872b5f0be65e9f71b91a73ac4b02647298,dependabot[bot],2023-02-01T16:01:30+00:00,"Bump actions/cache from 3.2.3 to 3.2.4
+
+Bumps [actions/cache](https://github.com/actions/cache) from",True,"Cache Static Data, Keep Request Counts Low",2,high,1,1,1,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,9abe28130d4f0aff48b4f9931ebc15bd7617f19f,owgreen,2023-02-03T00:43:02+09:00,fix doc,False,,0,low,1,2,2,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,c1d01f69994e87489d04c3218a417f517ab6c88e,pre-commit-ci[bot],2023-02-07T04:42:52+00:00,"[pre-commit.ci] pre-commit autoupdate
+
+updates:
+- [github.com/psf/black: 22.12.0 → 23.1.0](https://g",False,Keep Request Counts Low,1,medium,1,1,1,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,a15da89dbb4be39be09ed7e5b57a22acfb117e6d,pre-commit-ci[bot],2023-02-07T04:43:02+00:00,"[pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.c",False,"Keep Request Counts Low, Serve Images in Modern Formats, Efficient Format for Model Training",3,high,1,0,1,,,,233,39,35,
+pallets/flask,https://github.com/pallets/flask,428d9430bc69031150a8d50ac8af17cc8082ea4e,Maxim G. Ivanov,2023-02-09T09:38:57+07:00,Fix command-line formatting,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,2,0,,,,0,0,0,
+pallets/flask,https://github.com/pallets/flask,dca8cf013b2c0086539697ae6e4515a1c819092c,David Lord,2023-02-08T17:30:53-08:00,rewrite celery background tasks docs,True,Queue Non-Urgent Requests,1,medium,1,200,67,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,d0573f5713b0a8ce2dbb3d12d36a7fc34b89e2ff,Yurii Karabas,2023-01-07T15:45:48+02:00,"✨ Add support for function return type annotations to declare the `response_model` (#1436)
+
+Co-autho",True,"Use Compiled Languages, Energy Efficient Models, Use Serverless",3,high,18,1368,58,0.9930555555555556,0.9930555555555556,0.9930555555555556,3868,401,167,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,18d087f9c66b06c8baa4164bdf647af362b4a4ee,github-actions,2023-01-07T13:46:24+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,cb35e275e3f17badea3f3715a35b5e7028121eda,Sebastián Ramírez,2023-01-07T17:58:46+04:00,🔧 Remove Doist sponsor (#5847),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,3,0,10,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,679aee85ce145fc9a9d052bffafd31d281ea6c58,github-actions,2023-01-07T13:59:26+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,d70eef825e2a31cd0a7b37765c0b21514a336fb1,Sebastián Ramírez,2023-01-07T18:13:34+04:00,"🔧 Update sponsors, add Svix (#5848)",False,,0,low,3,182,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,a3edc760513f638a7dd417414787cfa23e2327e7,github-actions,2023-01-07T14:14:07+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,2a3a786dd7dc8a9112a1f47dd1949d21be33284b,Nina Hwang,2023-01-07T23:21:23+09:00,"🌐 Add Korean translation for `docs/tutorial/cors.md` (#3764)
+
+Co-authored-by: weekwith.me <63915557+",True,"Match SLO Requirements, Use Compiled Languages",2,high,2,85,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,1be95ba02dc907fb864d03c287c4851c35322515,github-actions,2023-01-07T14:21:59+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,3178c17776d7dfbe14a270c5128a483694a3477a,Ben Ho,2023-01-07T22:33:29+08:00,"🌐 Fix typo in Chinese translation for `docs/zh/docs/benchmarks.md` (#4269)
+
+Co-authored-by: Sebastiá",True,"Match SLO Requirements, Use Compiled Languages, Performance Profiling",3,high,2,2,2,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,3c20b6e42b13f266a4e9652b793c042cefea3228,github-actions,2023-01-07T14:34:13+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,d0027de64f96911c4083f3f6a9fc69ee5ce4a77f,Vladislav Kramorenko,2023-01-07T17:45:32+03:00,"🌐 Add Russian translation for `docs/ru/docs/fastapi-people.md` (#5577)
+
+Co-authored-by: Sebastián Ra",True,"Match SLO Requirements, Use Compiled Languages",2,high,1,180,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,59d654672f0bdc75a5cab772c50172dc987991e6,github-actions,2023-01-07T14:46:09+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,2583a83f9dab0e35b7e82e01c8524253f547b562,Sviatoslav Sydorenko,2023-01-07T15:54:59+01:00,👷 Add GitHub Action gate/check (#5492),False,,0,low,1,16,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,9812116dc77318b1bfc98778ccaf775ee0433bf3,github-actions,2023-01-07T14:55:35+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,6e1152d31fd4a849dcb50fbed9a0b4c14f50bebc,dependabot[bot],2023-01-07T15:08:12+00:00,"⬆ Bump pypa/gh-action-pypi-publish from 1.5.2 to 1.6.4 (#5750)
+
+Co-authored-by: dependabot[bot] <496",True,Use Compiled Languages,1,medium,1,1,1,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,adef9f4c02d007bcaacf93548328d8e4be3f490a,github-actions,2023-01-07T15:08:57+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,f4e895bc8a6dad274c9dcf006f491da064cd34f8,dependabot[bot],2023-01-07T15:12:49+00:00,"⬆ Bump types-ujson from 5.5.0 to 5.6.0.0 (#5735)
+
+Co-authored-by: dependabot[bot] <49699333+dependab",True,Use Compiled Languages,1,medium,1,1,1,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,929c70011707b138cf9c2b8fcfbafc647ee8a90f,github-actions,2023-01-07T15:13:27+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,bea1fdd2eb34c9933bf66f08f9cc164ca97d99f1,Kelby Faessler,2023-01-07T10:31:03-05:00,✏ Fix typo in `docs/en/docs/deployment/concepts.md` (#5824),False,,0,low,1,1,1,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,789d649fbadea706e90e219049e9326689e881db,github-actions,2023-01-07T15:31:38+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
