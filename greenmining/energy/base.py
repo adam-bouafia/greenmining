@@ -42,6 +42,14 @@ class EnergyMetrics:
     start_time: Optional[datetime] = None
     end_time: Optional[datetime] = None
 
+    @property
+    def energy_joules(self) -> float:
+        return self.joules
+
+    @property
+    def average_power_watts(self) -> float:
+        return self.watts_avg
+
     def to_dict(self) -> Dict[str, Any]:
         # Convert to dictionary.
         return {

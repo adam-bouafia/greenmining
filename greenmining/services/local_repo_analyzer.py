@@ -470,13 +470,16 @@ class LocalRepoAnalyzer:
 
         colored_print(f"   Cloning to: {local_path}", "cyan")
 
-        # Phase 2.2: Start energy measurement if enabled
+        # Phase 2.2: Start energy measurement if enabled (fresh meter per repo)
         energy_result = None
-        if self.energy_tracking and self._energy_meter:
+        energy_meter = None
+        if self.energy_tracking:
             try:
-                self._energy_meter.start()
-            except Exception as e:
-                colored_print(f"   Warning: Energy measurement start failed: {e}", "yellow")
+                from greenmining.energy.base import get_energy_meter
+                energy_meter = get_energy_meter(self.energy_backend)
+                energy_meter.start()
+            except Exception:
+                energy_meter = None
 
         commits_analyzed = []
         commit_count = 0
@@ -503,11 +506,11 @@ class LocalRepoAnalyzer:
             colored_print(f"    Analyzed {len(commits_analyzed)} commits", "green")
 
             # Phase 2.2: Stop energy measurement
-            if self.energy_tracking and self._energy_meter:
+            if energy_meter:
                 try:
-                    energy_result = self._energy_meter.stop()
-                except Exception as e:
-                    colored_print(f"   Warning: Energy measurement stop failed: {e}", "yellow")
+                    energy_result = energy_meter.stop()
+                except Exception:
+                    pass
 
             # Compute process metrics if enabled
             process_metrics = {}

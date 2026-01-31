@@ -50,7 +50,8 @@ class StatisticalAnalyzer:
     def temporal_trend_analysis(self, commits_df: pd.DataFrame) -> Dict[str, Any]:
         # Analyze temporal trends in green awareness.
         # Prepare time series data
-        commits_df["date"] = pd.to_datetime(commits_df["date"])
+        commits_df["date"] = pd.to_datetime(commits_df["date"], utc=True, errors="coerce")
+        commits_df["date"] = commits_df["date"].dt.tz_localize(None)
         commits_df = commits_df.sort_values("date")
 
         # Monthly aggregation

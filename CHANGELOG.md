@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.1.6] - 2026-01-31
+
+### Fixed
+- EnergyMetrics property aliases (`energy_joules`, `average_power_watts`)
+- Parallel energy measurement conflict with shared meter instance
+- StatisticalAnalyzer timezone-aware date handling
+- DataFrame column collision in pattern correlation analysis
+
+### Added
+- `since_date` / `to_date` parameters for date-bounded commit analysis
+- `created_before` / `pushed_after` search filters
+- Dashboard, GraphQL API, and experiment documentation pages
+- Full process metrics and method-level metrics documentation
+
+### Changed
+- Energy measurement demonstrates all 4 backends: RAPL, CPU Meter, CodeCarbon, tracemalloc
+- Removed all PyDriller references (replaced with gitpython + lizard)
+
+### Removed
+- Qualitative Validation and Carbon Footprint Reporting steps from experiment
+
 ## [0.1.12] - 2025-12-03
 
 ### Added

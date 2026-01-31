@@ -11,6 +11,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.6] - 2026-01-31
+
+### Fixed
+- EnergyMetrics property aliases: `energy_joules` and `average_power_watts` now accessible alongside `joules` and `watts_avg`
+- Parallel energy measurement: each repository analysis creates its own energy meter instance, eliminating "Already measuring energy" errors with parallel workers
+- StatisticalAnalyzer handles timezone-aware dates from commit analysis (tz-aware to tz-naive conversion)
+- `get_pattern_by_keywords()` return type correctly documented as list of strings
+- DataFrame pattern column collision: `pattern_details` and `pattern_count` columns no longer interfere with binary pattern indicator columns during correlation analysis
+
+### Added
+- `since_date` and `to_date` parameters for `analyze_repositories()` and `LocalRepoAnalyzer` to bound commit date ranges
+- `created_before` and `pushed_after` parameters for `fetch_repositories()` search filtering
+- Dashboard documentation page (`user-guide/dashboard.md`) with full REST API reference
+- GraphQL API reference page (`reference/graphql.md`) with query schema, pagination, and rate limiting docs
+- Complete experiment documentation (`examples/experiment.md`) mapping all 20 notebook steps to library features
+- 4 missing process metrics documented: `contributors_experience`, `history_complexity`, `hunks_count`, `lines_count`
+- Method-level metrics documentation with per-function Lizard fields
+
+### Changed
+- Energy measurement in experiment notebook demonstrates all 4 backends independently: RAPL, CPU Meter, CodeCarbon, tracemalloc
+- Removed all PyDriller references from documentation, README, and CHANGELOG
+- Updated dependencies listing: `gitpython>=3.1.0` and `lizard>=1.17.0` replace former references
+- MkDocs navigation updated with Dashboard and GraphQL API pages
+
+### Removed
+- Qualitative Validation step from experiment notebook
+- Separate Carbon Footprint Reporting step (consolidated into CodeCarbon in energy measurement)
+- Roadmap page from documentation (replaced by experiment pipeline page)
+
+---
+
 ## [1.1.3] - 2026-01-30
 
 ### Fixed
