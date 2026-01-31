@@ -4,7 +4,7 @@
 
 GreenMining is an empirical Python library for Mining Software Repositories (MSR) in Green IT research. It analyzes GitHub repositories to detect green software engineering practices by matching commit messages and code changes against the Green Software Foundation (GSF) pattern catalog. The library supports energy measurement during analysis using Intel RAPL, CodeCarbon, or CPU utilization-based estimation, and provides statistical, temporal, and qualitative analysis capabilities.
 
-**Version:** 1.1.7
+**Version:** 1.1.8
 **License:** MIT
 **PyPI:** [greenmining](https://pypi.org/project/greenmining/)
 **Documentation:** [greenmining.readthedocs.io](https://greenmining.readthedocs.io)
@@ -125,7 +125,7 @@ Singleton factory that returns or creates a global `Config` instance.
 
 Contains the Green Software Foundation pattern catalog and keyword matching logic.
 
-**`GSF_PATTERNS`** -- Dictionary of 122 green software patterns across 15 categories:
+**`GSF_PATTERNS`** -- Dictionary of 124 green software patterns across 15 categories:
 
 | Category | Count | Examples |
 |----------|-------|---------|
@@ -146,7 +146,7 @@ Contains the Green Software Foundation pattern catalog and keyword matching logi
 
 Each pattern has: `name`, `category`, `keywords` (list), `description`, `sci_impact`.
 
-**`GREEN_KEYWORDS`** -- List of 321 keywords used for green awareness detection (e.g., "energy", "cache", "optimize", "serverless", "quantization").
+**`GREEN_KEYWORDS`** -- List of 332 keywords used for green awareness detection (e.g., "energy", "cache", "optimize", "serverless", "quantization").
 
 | Function | Parameters | Description |
 |----------|-----------|-------------|

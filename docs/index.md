@@ -28,8 +28,8 @@ The library performs deep repository analysis with full commit extraction and su
 
 | Feature | Description |
 |---------|-------------|
-| **122 GSF Patterns** | Detect patterns across 15 categories (cloud, web, AI, caching, etc.) |
-| **321 Green Keywords** | Comprehensive keyword matching for green-aware commits |
+| **124 GSF Patterns** | Detect patterns across 15 categories (cloud, web, AI, caching, etc.) |
+| **332 Green Keywords** | Comprehensive keyword matching for green-aware commits |
 | **GitHub Mining** | Fetch repositories by keywords, stars, language filters |
 | **URL Analysis** | Analyze any GitHub repo directly via URL with full commit extraction |
 | **Statistical Analysis** | Pattern correlations, temporal trends, effect sizes |
@@ -77,7 +77,7 @@ print(f"Green-aware: {result['green_aware_percentage']:.1f}%")
 
 ## Pattern Categories
 
-GreenMining detects **122 patterns** across **15 categories**:
+GreenMining detects **124 patterns** across **15 categories**:
 
 | Category | Patterns | Examples |
 |----------|----------|----------|
@@ -113,7 +113,7 @@ GreenMining detects **122 patterns** across **15 categories**:
 
 ### Reference
 
-- [GSF Patterns](reference/patterns.md) - All 122 patterns with categories and keywords
+- [GSF Patterns](reference/patterns.md) - All 124 patterns with categories and keywords
 - [Configuration Options](reference/config-options.md) - All configuration parameters
 - [Data Models](reference/models.md) - Repository, Commit, and AnalysisResult models
 
@@ -166,7 +166,7 @@ GreenMining is designed for **empirical MSR research** in Green IT:
 - Batch processing with rate limit handling
 
 ### Green IT Pattern Analysis
-- 122 GSF patterns across 15 sustainability categories
+- 124 GSF patterns across 15 sustainability categories
 - Keyword-based commit classification with confidence scoring
 - Pattern co-occurrence and correlation analysis
 

@@ -1,6 +1,6 @@
 # GSF Patterns Reference
 
-Complete reference for all 122 Green Software Foundation patterns supported by GreenMining.
+Complete reference for all 124 Green Software Foundation patterns supported by GreenMining.
 
 ---
 
@@ -10,9 +10,9 @@ GreenMining detects patterns from the [Green Software Foundation](https://patter
 
 | Statistic | Value |
 |-----------|-------|
-| **Total Patterns** | 122 |
+| **Total Patterns** | 124 |
 | **Categories** | 15 |
-| **Keywords** | 321 |
+| **Keywords** | 332 |
 
 ---
 
@@ -220,7 +220,7 @@ General optimization patterns.
 from greenmining import GSF_PATTERNS
 
 # Count patterns
-print(f"Total patterns: {len(GSF_PATTERNS)}")  # 122
+print(f"Total patterns: {len(GSF_PATTERNS)}")  # 124
 
 # Get all categories
 categories = set(p["category"] for p in GSF_PATTERNS.values())
@@ -246,7 +246,7 @@ print(f"SCI Impact: {pattern['sci_impact']}")
 
 ## Green Keywords
 
-The 321 green keywords used for detection:
+The 332 green keywords used for detection:
 
 ```python
 from greenmining import GREEN_KEYWORDS

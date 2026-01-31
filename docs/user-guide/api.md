@@ -8,8 +8,8 @@ Use GreenMining programmatically in your Python scripts.
 
 ```python
 from greenmining import (
-    GSF_PATTERNS,        # Dict of 122 GSF patterns
-    GREEN_KEYWORDS,      # List of 321 green keywords
+    GSF_PATTERNS,        # Dict of 124 GSF patterns
+    GREEN_KEYWORDS,      # List of 332 green keywords
     is_green_aware,      # Check if message is green-aware
     get_pattern_by_keywords,  # Get matched patterns
     fetch_repositories,  # Fetch repos from GitHub
@@ -140,7 +140,7 @@ for repo in repos:
 
 ### GSF_PATTERNS
 
-Dictionary containing all 122 Green Software Foundation patterns.
+Dictionary containing all 124 Green Software Foundation patterns.
 
 ```python
 from greenmining import GSF_PATTERNS
@@ -164,7 +164,7 @@ GSF_PATTERNS = {
 from greenmining import GSF_PATTERNS
 
 # Get pattern count
-print(f"Total patterns: {len(GSF_PATTERNS)}")  # 122
+print(f"Total patterns: {len(GSF_PATTERNS)}")  # 124
 
 # Get all categories
 categories = set(p["category"] for p in GSF_PATTERNS.values())
@@ -188,12 +188,12 @@ print(f"Keywords: {cache_pattern['keywords']}")
 
 ### GREEN_KEYWORDS
 
-List of 321 keywords indicating green software practices.
+List of 332 keywords indicating green software practices.
 
 ```python
 from greenmining import GREEN_KEYWORDS
 
-print(f"Total keywords: {len(GREEN_KEYWORDS)}")  # 321
+print(f"Total keywords: {len(GREEN_KEYWORDS)}")  # 332
 
 # Sample keywords
 print(GREEN_KEYWORDS[:10])
@@ -807,4 +807,4 @@ print("Report saved to flask_analysis.md")
 
 - [URL Analysis](url-analysis.md) - Deep dive into URL-based analysis
 - [Energy Measurement](energy.md) - Power profiling with RAPL/CodeCarbon
-- [GSF Patterns Reference](../reference/patterns.md) - All 122 patterns
+- [GSF Patterns Reference](../reference/patterns.md) - All 124 patterns

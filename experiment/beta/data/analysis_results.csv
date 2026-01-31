@@ -1,312 +1,275 @@
 repository,repo_url,commit_hash,author,date,message,green_aware,patterns_matched,pattern_count,confidence,files_modified,insertions,deletions,dmm_unit_size,dmm_unit_complexity,dmm_unit_interfacing,total_nloc,total_complexity,methods_count,energy_joules
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,51cd5945f1a22c62a4800d6b79bfa000400403ea,Maxat Akbanov,2023-02-11T13:58:13+06:00,Change PHP version to 8.2 and Drush to 11*,False,,0,low,1,14,15,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,553ad77c05a993894e84243bcd8bc539c8b47ebe,Walid Shouman,2023-03-03T07:12:59+01:00,"Update master node label
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,26e85831a7e20408422a19b2a9a5eb1e10429c96,Ilias Gerostathopoulos,2023-10-15T15:46:55+03:00,Initial commit,False,,0,low,2,203,0,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,7bdb5f8a76e3900c84c139530f17387b1e4dd434,Ilias Gerostathopoulos,2023-10-15T14:51:40+02:00,"adding gitignore, updating readme",False,,0,low,2,8,1,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f,Ilias Gerostathopoulos,2023-10-15T15:10:43+02:00,"adding test node application, updating README",False,,0,low,5,117,4,0.22666666666666666,1.0,1.0,80,8,5,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,0be88f9268f4fbae14a0a24bcaacbf6507bceeff,Ilias Gerostathopoulos,2023-10-15T15:13:07+02:00,adding first version of UPISAS,False,,0,low,8,307,0,0.8924050632911392,1.0,0.8607594936708861,191,44,17,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,8cd0c08f644b7b88520bc5b1edfabef362d6dfe8,Ilias Gerostathopoulos,2023-10-15T15:33:56+02:00,git ignoring venv and __pycache__ folders,True,Cache Static Data,1,medium,1,2,0,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,1ed8839c6e258b15f6e71c7332ae1db9d2374492,Ilias Gerostathopoulos,2023-10-15T17:42:50+02:00,whitespace changes,False,,0,low,1,4,4,,,,108,25,9,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,a15455b7bd12edc33e2b9a470aa2435c489e5b35,Ilias Gerostathopoulos,2023-10-15T20:59:15+02:00,capturing connection and 404 error when starting up,True,Resource Limits & Constraints,1,medium,2,23,2,1.0,1.0,1.0,136,33,11,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,7bbef63900a43ef81ce243a92543fb6c05e40116,EGAlberts,2023-10-15T21:13:28+02:00,"re-structuring, logging, docstrings",False,,0,low,7,149,9,0.5377358490566038,1.0,0.8490566037735849,209,48,18,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,48239ff7d93d18013975420298f8afc542af4979,EGAlberts,2023-10-15T21:15:13+02:00,whoops,False,,0,low,1,0,121,0.16666666666666666,0.0,0.12745098039215685,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,82167a9aae8d3ce01e4f4c7050766fb79d7bfb5d,Ilias Gerostathopoulos,2023-10-15T22:25:02+02:00,"simplifying perform_get_request util function, adding validate_schema util function",True,"Avoid Chaining Critical Requests, Keep Request Counts Low, Use Serverless, Performance Profiling",4,high,4,43,41,1.0,0.0,1.0,187,41,17,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,2503903e27ab64535194659d1a2380e3b5aa9c6c,Ilias Gerostathopoulos,2023-10-17T09:38:53+02:00,unit tests initial commit (not complete suite yet),False,,0,low,3,30,1,1.0,1.0,1.0,49,10,5,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,b3516cc72e78a172cb4140eadc24e0d2213224c5,Ilias Gerostathopoulos,2023-10-17T14:54:45+02:00,"some more tests, moving http-test-server into the UPISAS/test folder",False,Keep Request Counts Low,1,medium,8,142,10,0.4727272727272727,1.0,1.0,257,46,23,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,ee2d8940e995ce0bff79994d498a42ff1e21b600,Ilias Gerostathopoulos,2023-10-17T15:10:44+02:00,making all file (module) names lowercase with underscores,False,,0,low,7,46,46,,,,235,52,25,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,a2db97d7d1d93d84204dfc6ef73447d529c4929c,Ilias Gerostathopoulos,2023-10-17T15:55:06+02:00,adding exemplar lifecycle tests,False,Set Retention Policy on Storage,1,medium,2,56,2,1.0,1.0,1.0,77,14,12,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,8358347bf5d70b188b80ccbe2ca2aa55a6946f7f,Ilias Gerostathopoulos,2023-10-17T22:27:47+02:00,first complete set of unit tests,False,,0,low,13,205,80,0.05263157894736842,1.0,0.8947368421052632,473,69,45,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,3405e5c99ec5b965e67e92b113105b306ec866a2,Ilias Gerostathopoulos,2023-10-19T11:57:55+02:00,busy loop for trying to connect to server in tests,False,,0,low,2,19,8,1.0,1.0,1.0,57,11,8,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,a265dea32db918ae9f451ba275fc0924469507db,EGAlberts,2023-10-19T14:31:18+02:00,"fix tests and run, container transition",True,Containerize Your Workload,1,medium,9,99,49,0.2,1.0,0.2,450,62,33,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,35f3c09a4f0685967ba7f082c8d0c0ce6fd8fc0a,EGAlberts,2023-10-19T16:41:49+02:00,Fixing the tests,False,,0,low,3,37,30,0.0,0.0,0.25,193,40,19,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,d8b06ffbe26dcf7c9900d8468dbbbc5ca7645e71,Ilias Gerostathopoulos,2023-10-21T09:51:47+02:00,adding instructions of how to run unit tests in README,False,,0,low,2,15,12,,,,45,9,9,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,c5596d399c5b67c5a028cea6ea80f56fb67a74ef,Elvin,2023-10-21T18:19:44+02:00,"proof of concept http through docker, test TBD",True,"Containerize Your Workload, Keep Request Counts Low",2,high,8,93,38,1.0,1.0,0.46153846153846156,323,59,35,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,712f672a34a68692359f62b437acd47be2031935,Ilias Gerostathopoulos,2023-10-22T13:22:07+02:00,cleanup,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,7,33,,,,143,28,10,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,f3ca3802fe0475d97429335173ad82fef47cd588,Ilias Gerostathopoulos,2023-10-22T20:16:36+02:00,"dockerizing demo managed system, moving adaptations and monitor and execute schema to strategy from ",True,"Containerize Your Workload, Use Cloud Native Security Tools",2,high,28,415,492,1.0,0.0,0.0,508,100,59,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,dab92fb88b085d686e7b1e8475155ca46b7a13fb,Ilias Gerostathopoulos,2023-10-22T20:20:10+02:00,updating readme for demo managed system,False,Use Cloud Native Security Tools,1,medium,1,4,0,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,8cd3d5050a1db41928818968508b715240f725d4,Ilias Gerostathopoulos,2023-10-23T21:12:39+02:00,cleanup,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,4,7,1.0,1.0,1.0,117,25,6,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,c9f38c39a1eed1d2d24af9e8ed10fc5c5a27bbe7,Ilias Gerostathopoulos,2023-10-23T21:13:37+02:00,changing possible_adaptations endpoint to adaptation_options and adapation_optins_schema,False,,0,low,4,76,41,0.6666666666666666,1.0,1.0,295,52,39,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,c2cb3b8d91de92cb9c4209bb03373562cefd49fa,Ilias Gerostathopoulos,2023-10-23T22:57:04+02:00,"enhancing validation of json schema, reworking tests",False,,0,low,3,141,61,0.3026315789473684,0.7763157894736842,1.0,284,55,36,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,821d46d11b70eaeff39757fabd6db9c97fa03f6c,Ilias Gerostathopoulos,2023-10-24T10:08:02+02:00,giving demo exemplar semantics of optimizing f fuction,False,,0,low,1,54,52,1.0,0.0,0.0,97,11,8,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,ac11108e209373d43fc0219e30d5ff2feebb65b2,Ilias Gerostathopoulos,2023-10-25T14:04:35+02:00,"changing post to put, demo app returning 1calculated value instead of 2 predefined ones, making test",False,,0,low,5,32,31,1.0,0.0,0.0,364,57,43,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,bd10d60e54b6646aa953bcc4352c8a60699f9e5b,Ilias Gerostathopoulos,2023-10-25T15:31:18+02:00,renaming folder of unit tests from demo to upisas,False,,0,low,4,272,2,1.0,1.0,0.9560975609756097,221,40,34,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,5fb1a781c0249bf51b10d85742c26607d999298c,Ilias Gerostathopoulos,2023-10-25T15:31:35+02:00,removing old demo unit tests,False,,0,low,3,0,272,0.0,0.0,0.04390243902439024,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,818766f1d48d72be39cd5cd8088c667a5b888e83,Ilias Gerostathopoulos,2023-10-25T15:32:37+02:00,making dockerhub search work with tags,True,Containerize Your Workload,1,medium,1,1,1,,,,107,25,6,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,9bd4456de0b800a834af373edc7657da5bbf95a3,Ilias Gerostathopoulos,2023-10-25T20:10:46+02:00,demo managed system - small changes in json schema and unit tests,False,Use Cloud Native Security Tools,1,medium,2,6,8,1.0,0.0,0.0,263,37,30,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,6da0a6fa26c21e8ab791f8b4b0131ee524ff59b8,Ilias Gerostathopoulos,2023-10-25T20:11:35+02:00,unit tests for swim + auxiliary empty strategy used for testing,False,,0,low,5,94,8,1.0,1.0,1.0,156,36,27,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,0dfc667768f35f93a7e2f3763ec92bf11ac8f0af,Ilias Gerostathopoulos,2023-10-28T12:49:46+02:00,template for openapi specs,False,,0,low,1,63,15,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,79bc1419d01fa2f5650c277294131bced3ddefa6,Ilias Gerostathopoulos,2023-10-29T15:40:47+01:00,updating exception logic for json validation,False,,0,low,6,78,75,1.0,0.0,0.0,455,98,54,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,cefe58d49141751e64d2675658d9bb758961b67e,Ilias Gerostathopoulos,2023-10-30T17:55:24+01:00,adding swim tests to readme,False,,0,low,1,3,0,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,1765a4c79455e03f809bbcb01e64ba20c9c595c3,Ilias Gerostathopoulos,2023-10-30T17:55:39+01:00,adding start_run method to exemplar,False,,0,low,1,5,1,1.0,1.0,1.0,110,26,7,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,fb123a599c2b607234287aeaaeb6876f5dbd45c8,Jorit de Weerdt,2023-11-18T21:19:50+01:00,Adjust docker daemon error message,True,Containerize Your Workload,1,medium,2,4,5,1.0,1.0,1.0,121,26,7,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,e890d10aa70279d23cbff4362aca4a931a2d580d,Jorit de Weerdt,2023-11-18T21:30:59+01:00,Remove DockerDaemon exception,True,"Containerize Your Workload, Delete Unused Storage Resources, Remove Unused Assets",3,high,2,4,7,1.0,1.0,1.0,118,26,7,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,6e0e19b6187c868d3c5958372a980c3c83196759,Qi-Mo Lin,2023-11-29T21:09:54+01:00,fix execute strategy,False,,0,low,1,5,2,,,,68,18,11,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,3331f3c79a9ece0e838eeb1e1d2e3badf266a406,Ilias Gerostathopoulos,2024-10-28T15:15:18+02:00,"Revert ""fix execute strategy""",False,,0,low,1,2,5,,,,68,18,11,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,d6719aaf957abbe68c6b5622d7b34d20f5b79cca,EGAlberts,2024-10-28T18:53:05+01:00,first attempt experiment_runner integration,False,,0,low,9,363,108,0.46564885496183206,0.732824427480916,0.9694656488549618,318,70,29,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,4ac123c4514fb2437f56a7bd87aa76aec8ef2b8c,Ilias Gerostathopoulos,2024-10-28T21:34:35+01:00,fixing path to experiment runner,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,776352167f393ff5f6cbfe2b8723f7c66a2f2d38,Ilias Gerostathopoulos,2024-10-28T21:35:03+01:00,updating README with instuctions to use experiment runner,False,,0,low,2,12,6,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,943abefb129e61653f71b41f4b8a4f61bdd5f03b,Ilias Gerostathopoulos,2024-10-28T21:36:41+01:00,fixing broken tests,False,,0,low,2,10,10,1.0,1.0,0.0,220,41,35,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,bdc866b6c149c38d2ffcc1f9330928b3451932a2,Ilias Gerostathopoulos,2024-10-28T21:43:33+01:00,git ignoring experiments folder where experiments results are stored,False,Compress Stored Data,1,medium,1,1,0,,,,0,0,0,
+S2-group/UPISAS,https://github.com/S2-group/UPISAS,63d7b6606fc04c447cfa9957339e07be5c053757,Elvin,2024-11-05T15:45:32+01:00,Update README.md,False,,0,low,1,2,2,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,85eca66ac90a5dd54b9c2e2f87da902ea519a0d3,Ivano Malavolta,2022-06-20T11:40:52+02:00,Initial commit,False,,0,low,63,3224,0,0.7213452299245025,0.7652711050102952,0.8345916266300618,2088,436,241,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,05bca1006a47c30cc0d09eddf571309ab4777142,Ivano Malavolta,2022-06-20T11:46:57+02:00,Add WIP indication,False,,0,low,1,2,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,f2967572e83463431df533753a11286720a3cb95,nikosChalk,2022-06-24T18:39:35+03:00,discarding robot related stuff,False,,0,low,21,111,149,0.7083333333333334,1.0,0.0,697,127,76,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,381ddcc1fb6c9c5fbb0b786e6f86ec4e3620098d,nikosChalk,2022-06-24T18:39:51+03:00,requirements.txt,False,,0,low,1,2,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,081cbcc836d9eda65971ba0ddd5f7faa6b01a66b,nikosChalk,2022-06-24T19:00:30+03:00,folder renaming,False,,0,low,41,0,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,78bd3161b65e49cd747c48bb4a8f16c0473e72fe,nikosChalk,2022-06-24T19:10:02+03:00,.gitignore,False,,0,low,1,5,1,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,19f5951ea26a4b44529857f2c8492abaefa3d8c6,nikosChalk,2022-06-24T19:10:20+03:00,readme,False,,0,low,1,3,3,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,43b01797d9468dce0c051ce1d319dc5d88efe201,nikosChalk,2022-07-01T00:53:04+03:00,cleanup & renaming,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,30,3,568,0.38175675675675674,0.2972972972972973,0.30743243243243246,206,28,26,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,ba2d46a0e5e550ec2756cddfa99829a6c10ea011,nikosChalk,2022-07-01T00:54:24+03:00,more cleanup,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,17,0,1208,0.1646234676007005,0.18038528896672504,0.138353765323993,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,65032b4b81456259c82c343dd6c0108b7e06b6d2,nikosChalk,2022-07-01T02:41:00+03:00,friendlier user code,False,,0,low,1,10,8,,,,29,2,1,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,457784e50707e1b8ee15536681a9c6337d1ce9cc,nikosChalk,2022-07-01T03:06:54+03:00,changed events order,False,Scale Kubernetes Workloads Based on Events,1,medium,1,5,4,,,,29,2,1,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,17229faff6dddbc37bf3ba7c72ce143424bd9b4f,nikosChalk,2022-07-01T03:07:56+03:00,removed unecessary state,False,"Delete Unused Storage Resources, Implement Stateless Design, Remove Unused Assets",3,high,1,10,6,0.0,0.0,1.0,44,16,5,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,256fa894acce01fe024130a47310d8a084ce8120,nikosChalk,2022-07-01T03:33:21+03:00,sample config fixes,False,,0,low,1,52,40,1.0,1.0,1.0,62,11,11,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,55071173f3ac4ed38694ae404b9a50ec6e1c1e23,nikosChalk,2022-07-01T03:33:32+03:00,type fix,False,,0,low,1,3,3,,,,44,16,5,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,e5d45ccf116091f9929c281e9de5e5766e7ee927,nikosChalk,2022-07-01T03:34:18+03:00,renaming,False,,0,low,1,2,2,,,,102,23,13,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,313a96d7267366098d4f39c880c362c6ff3322db,nikosChalk,2022-07-01T04:13:32+03:00,linux-top example,False,,0,low,7,262,12,0.7142857142857143,0.7142857142857143,1.0,268,49,27,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,848d22f3ff2f2010f214378aa6927c2b950dbf19,nikosChalk,2022-07-01T04:14:00+03:00,.gitignore,False,,0,low,1,2,1,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,52e1a9f34ac17568c9e6d3645b726656a1b849fa,nikosChalk,2022-07-01T04:21:23+03:00,linux-top --> linux-ps-profiling,True,Performance Profiling,1,medium,5,0,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,de6891c6191bb26951043ce4f1b695a11e23295d,nikosChalk,2022-07-01T04:21:35+03:00,.gitignore,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,9b3ce7272741d0aa9a1d0b415aa7a9a344bb546c,nikosChalk,2022-07-01T04:24:19+03:00,hello world example,False,,0,low,1,121,0,1.0,1.0,1.0,63,11,11,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,4afd1d1ba49d3ac2b86587d7885e54ce2aff8977,nikosChalk,2022-07-01T11:37:18+03:00,examples readmes,False,,0,low,3,39,1,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,d3407119d1e427d2bd2d3f4b9d8b032f63508877,nikosChalk,2022-07-01T13:53:09+03:00,readme update,False,,0,low,1,91,152,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,a785e93a3d4a39dada899b32748944697ce1eef0,nikosChalk,2022-07-01T13:54:17+03:00,documentation fixes,False,,0,low,4,38,27,,,,217,35,33,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,dfda2a96e41556a44bf5756ccb03ad0cf3672d22,nikosChalk,2022-07-01T14:02:59+03:00,readme,False,,0,low,1,9,7,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,75a6ad58b2a3d0e5075e43e62c962c6a8b174b6c,nikosChalk,2022-07-09T16:38:50+03:00,fixed bug for exclusions,False,,0,low,14,126,33,0.7076923076923077,0.7076923076923077,0.8769230769230769,195,47,24,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,6b3a56459f7c95017872c53f7bac0320f0546854,nikosChalk,2022-07-09T22:14:35+03:00,"md5sum & less restrictive treatment levels
 
-Reflecting: [PR107](https://github.com/geerlingguy/ansible-role-kubernetes",True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Keep Request Counts Low",4,high,1,2,2,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,30fa8228eb409c4293f662c0914aa3d80dcc91c3,Walid Shouman,2023-03-03T07:17:35+01:00,"Use docker_packages instead of docker_package
+* md5sum check
+* support for arbitrary python objects in",True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,10,150,73,0.0,0.0,0.0,302,60,26,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,0ce57af5d84fc5e2e355d21ebb1955577eb4a4bf,nikosChalk,2022-07-11T21:52:07+03:00,examples update,False,,0,low,4,41,18,0.0,0.0,0.0,148,24,22,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,ab7ed709c169de53014fa871e442ac8d2d26dc39,nikosChalk,2022-07-11T21:52:42+03:00,exit code fix,False,,0,low,1,3,1,,,,64,12,2,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,b02200416a1515291c55fdc1cec6ec15516d6ca8,nikosChalk,2022-07-11T21:53:39+03:00,.gitignore,False,,0,low,1,3,2,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,f54a973feada9a8266ea6d70c9390b22bd6af9f0,nikosChalk,2022-07-11T22:17:52+03:00,pycharm hack,True,Evaluate Other CPU Architectures,1,medium,1,9,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,d2cbca1311239eb631ec6db2c127e028c9a30f0d,nikosChalk,2022-07-11T22:25:21+03:00,empty plugins folder,False,,0,low,1,0,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,671fac873d5767f2d7568a94cc7aa1daaad2b6b5,nikosChalk,2022-07-16T21:50:29+03:00,better restart handling,False,,0,low,3,64,24,0.08695652173913043,0.08695652173913043,0.8695652173913043,151,37,13,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,d4b388521659e8438c3ad963ef149aa1a20ec4bf,nikosChalk,2022-07-16T23:03:56+03:00,FactorModel update,True,Energy Efficient Models,1,medium,6,33,23,1.0,1.0,0.0,232,55,16,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,b683f46abaea00ebf680359899d87b4023907b15,nikosChalk,2022-07-16T23:04:55+03:00,test fixes,False,,0,low,1,2,2,,,,12,2,1,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,36085f5065685c5e287ecc2d8926f7da1744fd01,nikosChalk,2022-07-16T23:15:32+03:00,minor fixes,False,,0,low,1,2,4,,,,6,1,1,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,de4e914fd7b7e0f1c7dbd8311b77e81696df7ffe,nikosChalk,2022-07-17T21:07:20+03:00,bug fix,False,,0,low,2,8,8,,,,148,24,22,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,ada902a8ef69bda4983a2c1b71d8b59faa8c368d,nikosChalk,2022-07-17T22:52:58+03:00,codecarbon plugin,True,Leverage Sustainable Regions for AI,1,medium,6,138,0,1.0,1.0,0.958904109589041,93,21,18,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,d5b3a608e340f81981ada36b21636fb8a9d7c3cf,nikosChalk,2022-07-22T02:05:06+03:00,codecarbon plugin - simpler,True,Leverage Sustainable Regions for AI,1,medium,2,54,5,1.0,1.0,0.9210526315789473,137,29,26,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,30dafcf774278b6bd1c3bf138a102bf58d872429,nikosChalk,2022-07-22T02:39:35+03:00,bug fix,False,,0,low,1,2,0,1.0,1.0,1.0,49,15,11,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,31238f735ed5cec3729bcc537dc5042a1c2b9387,nikosChalk,2022-07-22T02:42:24+03:00,codecarbon README,True,Leverage Sustainable Regions for AI,1,medium,1,70,0,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,acb47a0ca1b170966e1434f3bfec0735fbb46639,nikosChalk,2022-07-22T03:19:04+03:00,README,False,,0,low,1,1,3,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,13f38d1712bfd25e8bae55f5bb101b2818619e95,nikosChalk,2022-07-22T14:41:00+03:00,codecarbon - more data columns,True,"Reduce Transmitted Data, Leverage Sustainable Regions for AI",2,high,3,63,32,1.0,1.0,1.0,173,36,28,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,c51beabf7b061c1f74d13048a09704431fa73f8d,nikosChalk,2022-07-22T14:48:55+03:00,codecarbon testing,True,Leverage Sustainable Regions for AI,1,medium,7,283,2,1.0,1.0,1.0,187,24,24,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,6f2e4dbd7c29fd0dbc440f6c920d7a54e7d6920e,nikosChalk,2022-07-22T14:49:06+03:00,.gitignore,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,cae06774d2184e04200fe3cbe920dbf83d29981d,nikosChalk,2022-07-22T15:02:31+03:00,codecarbon doc & bug fix,True,Leverage Sustainable Regions for AI,1,medium,2,8,5,,,,77,21,13,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,37952ca36e9c654150ce94831df17d588708d7a4,nikosChalk,2022-07-22T18:05:01+03:00,spacing,False,,0,low,1,1,1,,,,63,11,11,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,fc8564c6fca33207f02f097f1be519975e044ea4,nikosChalk,2022-07-22T18:06:02+03:00,more core testing,False,,0,low,6,177,3,1.0,1.0,1.0,250,36,36,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,462b563c58392dde78fa769ad131fb67630cf47b,nikosChalk,2022-07-22T18:32:12+03:00,"API change - create_run_table() removed
 
-Reflecting [PR#365](https://github.com/geerlingguy/an",True,"Containerize Your Workload, Keep Request Counts Low",2,high,1,2,1,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,eeb73d7a436570a142337f4291e7e8ce8096e77e,Jeff Geerling,2023-06-17T21:48:26-05:00,Proper way of installing molecule with docker tests.,True,Containerize Your Workload,1,medium,3,4,4,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,a4b7cfb5fb4e536496aad02161910238167e757d,Jeff Geerling,2023-06-17T21:57:54-05:00,Fixes #531: systemd with molecule Docker containers requires cgroupns set to host and rw.,True,Containerize Your Workload,1,medium,2,4,3,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,0f7a64822c9c727871e3b22471aab728b7871399,Jeff Geerling,2023-06-17T22:18:16-05:00,Small fix to README.,False,,0,low,1,1,1,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,8058f712c375039dd62c67b8c2518795718b262f,Jeff Geerling,2023-06-29T11:03:04-05:00,Add a link to the book's manuscript repository.,False,,0,low,1,6,2,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,4df7fa21362a57e8c438317a7918cf98ce6e3fae,Fredrik Jervfors,2023-07-19T15:23:40+02:00,"Remove TODO from mysql.yml
+This change will make it easier for plugins to modify
+the b",True,"Delete Unused Storage Resources, Remove Unused Assets, Energy Efficient Models, Use Serverless",4,high,10,28,28,,,,683,123,99,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,0039fd544ed11b2a424a226df36f1036950a2a13,nikosChalk,2022-07-22T19:32:24+03:00,shuffling of run table,False,,0,low,8,208,13,0.6705882352941176,0.6705882352941176,0.8352941176470589,352,73,25,
+S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,36e1ae73192637c69e685773fb0da910bc80c706,Giovanni,2022-07-28T14:20:45+05:18,added Wattsup,True,Energy-Aware Monitoring,1,medium,2,214,0,0.6019417475728155,0.6019417475728155,0.49514563106796117,133,28,16,
+psf/requests,https://github.com/psf/requests,f462eecf4817ad886efd21f417129c4fd820c7ce,Hugo,2020-01-06T11:24:02+02:00,Update supported Python versions,False,,0,low,2,2,10,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,782e94d141cddb57400f444341b7f68c2211c66f,John Kooker,2020-01-09T09:26:42-08:00,"Update example code in README.md (#5292)
 
-https://github.com/geerlingguy/ansible-for-devops/issues/297 is closed
-s",True,"Delete Unused Storage Resources, Minimize Deployed Environments, Remove Unused Assets, Keep Request Counts Low",4,high,1,0,1,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,4c6bc5a74b42d0c25339aa2f682d7389546944b9,meysiolio,2023-11-03T09:26:32-04:00,"Update digitalocean.yml
+Show the current project description.",False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,a9ee0eef5a70acb9ed35622b3675574b11f92cb4,Sumana Harihareswara,2020-01-09T12:55:20-05:00,"Add Python 2 support entry in FAQ (#5303)
 
-new size name in DO",False,"Match VM Utilization Requirements, Avoid Excessive DOM Size, Properly Sized Images",3,high,1,1,1,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,cb8b77aba8dbaba6c7cb70bf324fe702a83264eb,Lukas Riedersberger,2024-01-04T09:46:59+01:00,"Fix running npm package forever in chapter 4
+* Add Python 2 support entry in FAQ
 
-This addresses an issue in the nodejs example of chapt",False,Eliminate Polling,1,medium,1,2,2,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,d169fa793f253511e7961c2f8cace5ea8c994e80,Seth Franklin,2025-01-01T13:12:52-05:00,Updated Droplet image_id for CentOS,True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,1,1,1,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,ca886e83a0d4b64fb2dfe04248ffbcac56be7198,Jeff Geerling,2025-05-25T00:01:10-05:00,Update versions for molecule test versions in chapter 13.,False,,0,low,2,3,3,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,9714c4b51d9af963f6ae0ea1fc7d4ba4de64a6fd,Jeff Geerling,2025-05-25T00:34:27-05:00,Syntax update for jenkins provisioning.,False,,0,low,1,3,1,,,,0,0,0,
-geerlingguy/ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops,86e1bf80098239cd995d54217585e8d61117d2e7,Jeff Geerling,2025-05-25T00:58:10-05:00,Replace use of private_network directive with quoted version.,True,"Compress Transmitted Data, Reduce Network Traversal Between VMs",2,high,19,28,28,,,,0,0,0,
-in28minutes/devops-master-class,https://github.com/in28minutes/devops-master-class,ad44023ee8b03b4b509be35993a109a3c0e9fae3,Aamir Khan,2023-06-04T14:42:39+05:18,Update readme.md for docker commands list,True,Containerize Your Workload,1,medium,1,191,7,,,,0,0,0,
-in28minutes/devops-master-class,https://github.com/in28minutes/devops-master-class,a3f7bc5c4e2371680c763465d59dd531e6eec5b8,rameezsyed94,2024-09-10T19:09:27+05:18,fork request,False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,1,1,2,,,,0,0,0,
-hygieia/hygieia,https://github.com/hygieia/hygieia,3c9f733d1e36f5561567648c208f91ccc16e646d,Mio Diaz,2023-09-29T16:42:56-04:00,Update README.md,False,,0,low,1,3,1,,,,0,0,0,
-hygieia/hygieia,https://github.com/hygieia/hygieia,3964249fec9f877c662d20d6622ecad2c16e99fc,Mio Diaz,2023-09-29T16:43:13-04:00,Update README.md,False,,0,low,1,1,1,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,a4c930f4014cf25cd9655fb073999becdc789357,Kalyan Reddy Daida,2023-01-17T09:36:55+05:18,Welcome to StackSimplify,False,,0,low,28,765,45,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,07829be8177d8dba6ffaf0e57a472c520b40abb6,STACKSIMPLIFY,2023-03-16T07:15:49+05:18,"Added PDF version of PPT
+Fixes: #5211
 
-Added PDF version of PPT",False,,0,low,1,0,0,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,d7362b3b7760b32623db0ae6b60f18a8f9901a67,STACKSIMPLIFY,2023-03-16T12:33:36+05:18,"Updated Trust policy creation using Windows Powershell
+Si",True,,0,low,1,12,0,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,d2f65af033942a50890b29ab0159b385c426ea5b,Hugo van Kemenade,2020-01-19T17:41:09+02:00,Move community files under .github/ (#5206),False,,0,low,3,4,6,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,9b95b4e7b4df1865b058161f1492989868614535,johnthagen,2020-01-21T12:00:51-05:00,Add PyPy3 to Travis test suite (#5193),False,,0,low,2,5,1,1.0,1.0,1.0,92,25,12,
+psf/requests,https://github.com/psf/requests,7138d8b0e305e8b8c8348e2526c8580d6d7db192,Nick Watts,2020-01-25T12:09:10-05:00,Change link for pip installation instructions,False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,d5c4cac0f4cc2f558099a55686ddb2e0bdc2dbd1,Nick Watts,2020-01-25T18:19:22-05:00,Fix intersphinx_mapping config for Python standard library,False,,0,low,1,1,1,,,,77,0,0,
+psf/requests,https://github.com/psf/requests,b1631b03bc8dbff0266225b2ecebed9880449c32,John Samuels,2020-02-17T21:46:26+00:00,Update link to pipenv in README.,False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,ae0a497b0c8506f6187167da8d181fa400fd08f8,John Samuels,2020-02-17T21:47:34+00:00,Update link to pipenv in installation guide.,False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,e11302018b72679505503241c9276a46c163e14a,Alexander Zhukov,2020-02-18T09:19:38+02:00,"Fix the syntax highlighting in the example (#5276)
 
-Updated Trust policy creation using Windows ",True,"Set Retention Policy on Storage, Use Compiled Languages",2,high,1,81,1,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,f04ff14c71bf9c556038dd03b3002814d474396b,STACKSIMPLIFY,2023-03-21T17:38:45+05:18,"Add Windows Powershell steps for updating aws-auth configmap
+Co-authored-by: Nate Prewitt <nate.prewitt@gmail",False,,0,low,1,2,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,c46f55bd48dabc02f033d252f8c64e2011f37361,Chris Withers,2020-02-18T14:58:27+00:00,Limit dependencies to major instead of minor (#5342),True,Resource Limits & Constraints,1,medium,1,3,3,,,,95,4,3,
+psf/requests,https://github.com/psf/requests,80011a7917afe2cd6a5fa8359e7ea90203880b3c,Ned Batchelder,2019-06-04T16:05:28-04:00,"Remove an obsolete attribute from __attrs__
 
-Add Windows Powershell steps for updat",True,,0,low,1,36,0,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,1148246aedad0a4f68ff780ea73b810b29a9485b,Kalyan Reddy Daida,2023-05-01T16:53:36+05:18,Welcome to StackSimplify,False,,0,low,4,102,15,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,5e1e0c1585b5d22144c7dff83869c5114dfc5a89,Kalyan Reddy Daida,2024-01-02T13:52:13+05:18,Welcome to Stack Simplify,False,,0,low,35,1642,1,0.7704918032786885,1.0,0.8961748633879781,365,43,37,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,63e22ffa239b4e47364c0a60b6d30bf76d37f1e3,STACKSIMPLIFY,2024-05-16T18:53:39+05:18,Update 02-Nginx-App1-LoadBalancer-Service.yml,True,Scale Infrastructure with User Load,1,medium,1,3,1,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,c5aa6c5926aaa2928ffc4494ff0c1ad29cf07c5a,STACKSIMPLIFY,2024-05-23T11:05:40+05:18,"Update README.md 
+The extra attribute in __attrs__ makes an unpickled ses",False,"Delete Unused Storage Resources, Implement Stateless Design, Remove Unused Assets",3,high,1,1,1,,,,343,113,28,
+psf/requests,https://github.com/psf/requests,b15056d1d3c4ca3546c88b9fe390f0721b198c2e,Nate Prewitt,2020-02-18T14:56:19-08:00,"Revert ""#4965 fix: Accessing response.content twice removes forgets read error.""
 
-Updated with --image=mysql:5.7.22 to --image=mysql:latest",True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,1,1,1,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,860bdcd30e796cc208bd69b7038de2a422132e1f,Kalyan Reddy Daida,2024-05-24T18:38:08+05:18,Welcome to StackSimplify,False,,0,low,44,0,0,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,5e0b3c0a338a2f10ec168d40891f21f9bec0169d,STACKSIMPLIFY,2024-05-24T19:00:22+05:18,Update README.md,False,,0,low,1,5,0,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,d48915c59867b57075b21de102b0820c5374698c,Kalyan Reddy Daida,2025-05-14T09:47:39+05:18,Welcome to StackSimplify,False,,0,low,1,3,2,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,5d37679007a3a654f0d55fa0a8eaa04dd64e9799,Kalyan Reddy Daida,2025-05-15T06:37:10+05:18,Welcome to Stack Simplify,False,,0,low,491,21476,0,0.7712418300653595,0.9044117647058824,0.9174836601307189,2175,309,233,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,2fa5de92e6cfbf83d7628edcc04a3ec7bb51a5d4,Kalyan Reddy Daida,2025-05-15T06:38:22+05:18,Welcome to Stack Simplify,False,,0,low,1,0,10,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,9787db6b2de9692a74513d7ec05ccb0f3056c1e5,Kalyan Reddy Daida,2025-05-15T06:42:49+05:18,Welcome to Stack Simplify,False,,0,low,1,1,18,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,3200f3b838c144d4785668f1f5dcae7e4271a1f3,Kalyan Reddy Daida,2025-05-15T07:00:29+05:18,Welcome to Stack Simplify,False,,0,low,1,76,98,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,53485ed2d25d8122c21d8f76fb1645324950fcf5,Kalyan Reddy Daida,2025-05-15T07:11:06+05:18,Welcome to Stack Simplify,False,,0,low,3,104,55,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,3891361ebc3807250fae500f62e987c3df106338,Kalyan Reddy Daida,2025-05-15T07:12:11+05:18,Welcome to Stack Simplify,False,,0,low,1,0,1,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,6bd411134a5a7d013648c96e98f8dd0a37c20700,Kalyan Reddy Daida,2025-05-15T09:22:29+05:18,Welcome to Stack Simplify,False,,0,low,12,3,3,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,b535fa71a0a004c69b7841bbec59a81a78ac1ebe,Kalyan Reddy Daida,2025-05-15T11:04:23+05:18,Welcome to Stack Simplify,False,,0,low,2,1,1,,,,0,0,0,
-stacksimplify/aws-eks-kubernetes-masterclass,https://github.com/stacksimplify/aws-eks-kubernetes-masterclass,662848cf234bb0a483e2cf5b7787cd65874fa9e6,Kalyan Reddy Daida,2025-05-15T11:05:14+05:18,Welcome to Stack Simplify,False,,0,low,12,3,3,,,,0,0,0,
-antonputra/tutorials,https://github.com/antonputra/tutorials,680d6812511f4970ea1446e714a8e8a28fcda6b5,Anton Putra,2023-01-03T22:41:03-06:00,Go (Golang) vs Node JS (Microservices) performance benchmark (Istio - Prometheus - Grafana) (#124),True,"Evaluate Using a Service Mesh, Scale Logical Components Independently, Use Compiled Languages, Performance Profiling, Service Mesh Optimization",5,high,148,59094,0,0.8153846153846154,0.8769230769230769,0.9038461538461539,381,61,40,
-antonputra/tutorials,https://github.com/antonputra/tutorials,56fea262706adc3a71016adeab17b3e2646301d5,Anton Putra,2023-01-06T21:24:11-06:00,Nginx vs Traefik performance benchmark (HTTP - HTTPS - gRPC | Latency - CPU - Memory | Prometheus) (,True,"Choose Region Closest to Users, Evaluate Other CPU Architectures, Optimize Average CPU Utilization, Optimize Peak CPU Utilization, Reduce Network Traversal Between VMs, Keep Request Counts Low, gRPC for Service Communication, Performance Profiling",8,high,60,2386,0,0.5599078341013825,0.8755760368663594,0.9470046082949308,658,104,57,
-antonputra/tutorials,https://github.com/antonputra/tutorials,3e81d7fdf4baeb3591c1ed061e4bca2dd376f905,Anton Putra,2023-01-12T19:58:24-06:00,Go (Golang) vs Java performance benchmark (Fiber vs Spring Boot | Prometheus | Minio | MongoDB) (#12,True,"Use Compiled Languages, Performance Profiling",2,high,120,35601,0,0.6451612903225806,1.0,0.8790322580645161,443,44,36,
-antonputra/tutorials,https://github.com/antonputra/tutorials,603b5ff043fd22b7ae4aaaf298d212e9e89a4ce3,Anton Putra,2023-01-15T12:57:45-08:00,Nginx vs Apache HTTP Server performance benchmark (Prometheus | HTTP | HTTPS | Grafana | Ansible) (#,True,"Keep Request Counts Low, Performance Profiling",2,high,57,3052,0,1.0,1.0,1.0,140,15,14,
-antonputra/tutorials,https://github.com/antonputra/tutorials,f5d0d7b402808c06928db2741a7a2c23dd178bf9,Anton Putra,2023-01-17T17:44:21-08:00,Go (Golang) vs Rust performance benchmark (gRPC | Tonic | Prometheus | Kubernetes | EKS | AWS ) (#12,True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Use Compiled Languages, gRPC for Service Communication, Performance Profiling",6,high,109,35121,0,0.7159090909090909,0.9090909090909091,0.9128787878787878,467,81,41,
-antonputra/tutorials,https://github.com/antonputra/tutorials,08648d9fabec9938062b95ee370afe6d50ee762e,Anton Putra,2023-01-21T15:21:42-08:00,HTTP/2 vs HTTP/3 performance benchmark (#129),True,"Keep Request Counts Low, Performance Profiling",2,high,40,865,1,0.32,1.0,1.0,148,28,20,
-antonputra/tutorials,https://github.com/antonputra/tutorials,36bfea8837141a7d5e7def5d7f919b1b508a1e81,Anton Putra,2023-01-23T17:07:09-08:00,gRPC vs REST performance benchmark (#130),True,"gRPC for Service Communication, Performance Profiling",2,high,94,33065,0,0.7971576227390181,1.0,0.9702842377260982,1104,197,108,
-antonputra/tutorials,https://github.com/antonputra/tutorials,b09834856cc27ad8aa2fde45fbcd655a9a1425dd,Anton Putra,2023-01-26T17:01:47-08:00,ARM vs x86 performance benchmark (#133),True,"Evaluate Other CPU Architectures, Performance Profiling",2,high,75,32170,0,0.4266666666666667,1.0,1.0,104,16,10,
-antonputra/tutorials,https://github.com/antonputra/tutorials,389c46c46eba376209c44819410df2e5336328b4,Anton Putra,2023-01-29T13:44:01-08:00,Nginx vs Envoy performance benchmark (#134),True,"Evaluate Using a Service Mesh, Performance Profiling",2,high,68,3180,0,0.862796833773087,1.0,0.8786279683377308,687,107,67,
-antonputra/tutorials,https://github.com/antonputra/tutorials,7b1be8c0a447e489f3ada8b2f5af46bfa0ecd910,Anton Putra,2023-02-03T17:03:10-08:00,gRPC vs Kafka: Which one should you choose? (#135),True,"Event-Driven Architecture, gRPC for Service Communication",2,high,66,31720,0,0.5347985347985348,1.0,0.7728937728937729,414,61,30,
-antonputra/tutorials,https://github.com/antonputra/tutorials,136df0534c633b89c9d3ea05959e3c7212435e32,Anton Putra,2023-02-11T18:49:15-08:00,Traefik vs Caddy 2 (#137),False,,0,low,63,3039,0,0.7513089005235603,1.0,0.8429319371727748,555,94,51,
-antonputra/tutorials,https://github.com/antonputra/tutorials,d82d00cb44236dfda4b1b3766d77dda07ce0b205,Kimi,2023-02-21T13:58:08+08:00,"Add lesson 125 AWS architecture diagram (#140)
+This reverts commi",False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,3,3,62,0.6666666666666666,0.16666666666666666,0.0,722,211,58,
+psf/requests,https://github.com/psf/requests,24bcb9eab60d2db5e71979ea391b3e5675daff1f,Nate Prewitt,2020-02-18T15:00:28-08:00,"Revert ""Use urllib for chunked requests""
 
-* Add architecture diagram
+This reverts commit 2da7fe08586aeaff614c017a9a834a22c93738",False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,1,58,13,0.0,0.0,0.0,281,67,17,
+psf/requests,https://github.com/psf/requests,fd13816d015c4c90ee65297fa996caea6a094ed1,Nate Prewitt,2020-02-18T15:01:34-08:00,"Revert ""Fix for response with UTF-8 BOM #4976""
 
-An AWS architecture di",True,"Evaluate Other CPU Architectures, Match VM Utilization Requirements, Avoid Excessive DOM Size, Properly Sized Images",4,high,2,2,0,,,,0,0,0,
-antonputra/tutorials,https://github.com/antonputra/tutorials,6934fc1e1c034d82f8328df9be554755241efcad,Anton Putra,2023-02-21T13:13:21-08:00,Prometheus Operator Kubernetes Tutorial (#141),True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events",3,high,57,37292,0,1.0,1.0,1.0,65,7,6,
-antonputra/tutorials,https://github.com/antonputra/tutorials,0c40a5fb8347f1993833b584712bc167e93840be,Anton Putra,2023-03-03T18:41:02-08:00,Istio Service Mesh Tutorial (#142),True,"Evaluate Using a Service Mesh, Service Mesh Optimization",2,high,82,42859,0,0.32432432432432434,1.0,1.0,58,7,3,
-antonputra/tutorials,https://github.com/antonputra/tutorials,da643ae6b262343df1a9062130bfb93b5f7e27ec,Anton Putra,2023-03-07T10:36:41-08:00,update support section (#143),False,,0,low,1,1,1,,,,0,0,0,
-antonputra/tutorials,https://github.com/antonputra/tutorials,7eceda0d0031a90ad5811d7ac917334f44fed20e,Anton Putra,2023-03-10T20:01:18-08:00,How to Use EKS Blueprints Terraform Modules? (#144),True,Infrastructure as Code Optimization,1,medium,25,946,0,,,,0,0,0,
-antonputra/tutorials,https://github.com/antonputra/tutorials,aa20bc9436b4ac420e16e0b86574363e7715032b,Anton Putra,2023-03-14T13:42:54-07:00,DevOps Interview Questions: (Step-by-Step) #1 (#146),False,"Minimize Deployed Environments, Database Views & Materialized Views",2,high,17,275,0,1.0,1.0,0.5294117647058824,28,4,2,
-antonputra/tutorials,https://github.com/antonputra/tutorials,d54b58f9b21f5e138ca11992fd3303e6e7b3021a,Anton Putra,2023-03-25T12:31:38-07:00,ArgoCD Tutorial for Beginners: GitOps CD for Kubernetes (#148),True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Use Compiled Languages",4,high,24,2405,0,,,,0,0,0,
-antonputra/tutorials,https://github.com/antonputra/tutorials,7328e50569455646902550f63852e5e8a2c6f971,Anton Putra,2023-03-25T17:02:56-07:00,Add sub link (#149),False,,0,low,1,1,1,,,,0,0,0,
-antonputra/tutorials,https://github.com/antonputra/tutorials,295ddbbbc7e95271514908fed9a6e3e38ae1658c,Anton Putra,2023-04-03T22:06:13-07:00,ArgoCD Image Updater: Decouple CI from CD! #2 (#151),True,"Scale Logical Components Independently, Use Compiled Languages, Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",5,high,20,892,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,24a642910ca167c39e4abf47aa2b3d0322b2ea64,Abhishek Veeramalla,2023-10-12T16:57:21+05:18,Initial commit,False,,0,low,3,183,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,aa64dc7b093ffc932fa937d6a601410075f6b0d9,Abhishek Veeramalla,2023-10-12T17:52:54+05:18,Update README.md,False,,0,low,1,119,2,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,7ddfd8df89b9f89d145aaf821feb0558bbacd1b3,Abhishek Veeramalla,2023-10-12T21:46:23+05:18,Update README.md,False,,0,low,1,1,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,e9a36227a63a1ca77d3b8a05232ba75285c3f0dc,Abhishek Veeramalla,2023-10-12T21:46:44+05:18,Update README.md,False,,0,low,1,1,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,22f33a3093dba5dd19ae7a7fdd18a341a95847be,Abhishek Veeramalla,2023-10-12T17:06:51+00:00,Add folders,False,,0,low,19,0,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,297ab486f271776140d4e0b146c1c73175b87fc3,Abhishek Veeramalla,2023-10-19T18:58:35+00:00,add files for day -1,False,,0,low,2,28,0,,,,1,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,01141da02ff080b882e2589673a34462575922b6,Abhishek Veeramalla,2023-10-21T13:06:03+00:00,add files for day-2,False,,0,low,14,106,0,,,,80,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,98356cba82466d4654560badc8840de32f173754,Abhishek Veeramalla,2023-10-21T13:07:00+00:00,add docs for day-2,False,,0,low,5,67,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,5a310fc1e045054096a9808b9a5342c82405448e,Abhishek Veeramalla,2023-10-22T17:35:21+00:00,add files for day-3,False,,0,low,3,154,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,f95242661c1986354232964da71fe64151dc5ad9,Abhishek Veeramalla,2023-10-22T17:36:15+00:00,update README.md,False,,0,low,1,1,1,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,2a8028b77d700ec6c0d60703cf0d2c1a35482687,Abhishek Veeramalla,2023-10-22T17:37:09+00:00,update README.md,False,,0,low,1,1,1,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,0986feecdd5af91cba759eea9e70d111f8bd705d,Abhishek Veeramalla,2023-10-25T13:54:43+00:00,update README.md,False,,0,low,1,114,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,d0b806f72903130b38816bf585a8414001124f72,Abhishek Veeramalla,2023-10-30T08:25:40+00:00,"create files for day-6
+This reverts commit 19cff44ec1b8eeec99459b504a681aa4",False,,0,low,3,0,34,0.0,0.0,0.0,1246,282,121,
+psf/requests,https://github.com/psf/requests,b7c6aba848b10933f327fcce41970c29dc59051b,Nate Prewitt,2020-02-19T10:27:54-08:00,v2.23.0,False,,0,low,2,19,3,,,,10,0,0,
+psf/requests,https://github.com/psf/requests,ca6f9af5dba09591007b15a7368bc0f006b7cc50,Redowan Delowar,2020-02-23T23:56:46+06:00,Normalize exception docstrings (#5338),False,,0,low,1,3,6,,,,32,4,1,
+psf/requests,https://github.com/psf/requests,0a760ff025e933cbd1c5017bb5f2dfc9aa1dd6a3,Nate Prewitt,2020-02-26T20:21:08-08:00,updating pipfile.lock for bleach security issue (#5364),True,"Scan for Vulnerabilities, Use Cloud Native Security Tools",2,high,1,230,184,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,65989ddfe927f2dd3f194c5fed0df770006473bc,Nate Prewitt,2020-02-26T20:45:41-08:00,"changing of the guard
 
-Signed-off-by: Abhishek Veeramalla <abhishek.veeramalla@gmail.com>",False,,0,low,15,373,0,,,,51,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,ba7252a96aeb5d98e7fd1ae5bc2928e47c21811a,Abhishek Veeramalla,2023-11-01T17:53:50+05:18,Update README.md,False,,0,low,1,69,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,8f08b88a2028801f2f6c6ef28ae420399f2b1083,Abhishek Veeramalla,2023-11-01T17:56:11+05:18,Update README.md,False,,0,low,1,0,1,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,9a3ae076946e9066f1a968bfabc15b0f8a211fee,Abhishek Veeramalla,2023-11-02T12:14:58+00:00,create files for day-8,False,,0,low,13,277,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,cbe88626a8190069071acb86b253294376925b4b,Abhishek Veeramalla,2023-11-07T12:05:14+00:00,feat: add files for day-9,False,,0,low,5,283,0,,,,0,0,0,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,3ba1f9358f1e9ec53a640defdf31e247e992641d,Abhishek Veeramalla,2023-11-08T12:31:13+00:00,feat: add files for day-10,False,,0,low,5,38,1,1.0,1.0,1.0,27,8,3,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,53a9830e82e9a0e29b07c0ac55ac01d275c26278,Abhishek Veeramalla,2023-11-16T09:36:30+00:00,feat: add files for day-11,False,,0,low,6,234,0,1.0,1.0,1.0,10,1,1,
-iam-veeramalla/python-for-devops,https://github.com/iam-veeramalla/python-for-devops,dab0b271cc08880725cab8fcbde0d87eae281edc,Abhishek Veeramalla,2023-11-20T20:30:37+05:18,demo,False,,0,low,1,33,0,,,,17,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,583823325b7bf18461086ff0c7a0712c9bb934b3,Azizul Haque,2023-01-05T11:48:12+06:00,Cloudflare has explained OSI model greatly,True,"Use Cloud Native Security Tools, Energy Efficient Models, Database Indexing",3,high,1,1,1,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,f53470e695ae2f5c6a964b593bf94a2ba17bc211,Azizul Haque,2023-01-26T22:50:52+03:00,GitHub Actions Workflow syntax doc added,False,,0,low,1,1,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,bf700bfc3e2525728875b6df56a4c422de1b7770,Milan Milanovic,2023-02-22T08:04:41+01:00,Update for 2023.,False,,0,low,6,126,6,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,8d214566bef881acf4e00153bace0f006fd66128,Milan Milanovic,2023-02-22T08:08:32+01:00,Fix typo,False,,0,low,1,1,1,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,7f0514e1469885f56bfcdfaaa390477543570aa6,Milan Milanovic,2023-02-22T08:14:21+01:00,Fix links,False,,0,low,1,6,6,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,14b1a05fcd65561a455b47c9bc2c7cb2e19d1a17,Milan Milanovic,2023-02-22T08:18:17+01:00,Update CI/CD,False,,0,low,1,9,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,ebc4f368970825567cb29942a9922650ab32311e,Milan Milanovic,2023-02-22T08:28:00+01:00,Add Veracode,False,,0,low,1,8,8,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,d307a62a3cda9a3a0d97aa3771e97f55aea0f0e2,Milan Milanovic,2023-02-22T17:52:16+01:00,Add books info,False,,0,low,1,20,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,2f7b7fa7e593e8f85491c9f92d70e965782309e1,Milan Milanovic,2023-02-22T17:55:45+01:00,Format books,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,8,8,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,8c4743db796cc2e511d0b4887b8ab214cebaeded,Milan Milanovic,2023-02-22T17:56:34+01:00,Remove book marks,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,7,7,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,527a388c3fc3a99ab51493465b410c965664f2ce,Milan Milanovic,2023-02-22T18:05:52+01:00,Move tools image,True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,1,2,2,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,5ddcbafaf8441775ef767b9e14994039da9fc643,Milan Milanovic,2023-08-12T10:15:25+02:00,Add new DevOps tools,False,Minimize Deployed Environments,1,medium,1,0,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,f7294318393ddc52076a593db69f5d754a5dbf7c,Milan Milanovic,2023-10-30T13:54:43+01:00,Add newsletter,False,,0,low,1,2,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,979f05ede7182026b38b59177af9d17acfaa5496,Milan Milanovic,2023-10-30T13:55:11+01:00,Change link,False,,0,low,1,1,1,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,232fb58f0e7f7adeb2838eb90327814483c45ba6,Milan Milanovic,2023-10-30T13:57:24+01:00,Adjust title,False,,0,low,1,1,1,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,27f7a36d586e6a658c9d000fc547b2c26147ba0d,Deep145757,2023-10-30T18:36:07+05:18,doc(README): remove typo,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,1,1,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,0d13c777d324fc441730a5f99469399a664f9725,Milan Milanovic,2024-01-08T13:41:09+01:00,Update for 2024,False,,0,low,5,1,1,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,77ea56c743f1bfe9e3473512ed62e5442b1f6adf,Milan Milanovic,2024-01-08T13:53:29+01:00,Add TOC,False,,0,low,1,19,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,110dc9c0633bb44d35139270b44557add09d3af5,Milan Milanovic,2024-01-21T11:05:19+01:00,Add CI article,False,,0,low,1,1,0,,,,0,0,0,
-milanm/DevOps-Roadmap,https://github.com/milanm/DevOps-Roadmap,ef63cedb1ddee6a4d2ea8092f004c982a0c65701,Milan Milanovic,2024-02-06T12:21:55+01:00,Add DevOps as a Burger (DaaB),False,Minimize Deployed Environments,1,medium,2,6,0,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,fb5f814913952f4e2a0787bc8fcb4ec2630192e9,Julia Kulla-Mader,2023-03-14T14:36:47-04:00,Add Codespaces .devcontainer configuration (#7142),True,"Containerize Your Workload, Minimize Deployed Environments",2,high,4,559,0,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,70701b77dca7fc2dbfee622473bd5ff3edd6b53e,Julia Kulla-Mader,2023-03-15T17:30:29-04:00,update dev container and move files (#7148),True,"Containerize Your Workload, Minimize Deployed Environments",2,high,4,19,5,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,641579254cebcbbefbfe92b2c8a6b8caadea0a62,Steve Danielson,2023-06-16T12:11:26-04:00,Update azure-pipelines.yml for Azure Pipelines,False,,0,low,1,3,0,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,499bca6cb48815597366ddc63d7e0e1b79dd1424,Steve Danielson,2023-06-19T12:18:08-04:00,Move self-hosted agent files,False,,0,low,3,93,0,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,05174e031c0018800fc4e6727b0449fe75b2c4be,Steve Danielson,2023-06-20T08:51:29-04:00,Move agent build files folder,False,,0,low,3,0,0,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,20eda5524ee4e3a42c6a9ff33b1d06c5cc8ef5f6,Steve Danielson,2023-06-20T11:40:00-04:00,Update node version,False,,0,low,1,2,2,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,51e2863729d128b57c0149748c95647856b88f2f,Steve Danielson,2023-06-20T12:21:59-04:00,Update node version,False,,0,low,1,1,1,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,0e512eff7846bab58558c133f0bbcb0842fc694e,Shawn Kupfer,2025-05-09T11:25:53-05:00,"Update build-tools.sh
+Thanks for everything Ian. Welcome Seth!",False,,0,low,1,3,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,4fc7f4a255fff60d1033ec66b0d180390adf9306,Nate Prewitt,2020-02-27T10:05:07-08:00,Update disclosure contact info (#5369),False,,0,low,1,6,4,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,2758124a13cddff7244b97b5ffe3fddabb90bc18,Seth Michael Larson,2020-02-27T21:33:09-06:00,Also update GitHub's Security Disclosure document (#5370),True,"Scan for Vulnerabilities, Use Cloud Native Security Tools",2,high,1,8,8,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,bebf5250b0df1b922ff534e987a4481cc4dde99d,Alessio Izzo,2020-03-25T20:44:51+01:00,"Remove explicit unicode literal in README.md and doc (#5336)
 
-Update .NET version as part of Technical Review 1044253: Host your own build ",False,Database Views & Materialized Views,1,medium,1,1,1,,,,0,0,0,
-MicrosoftDocs/mslearn-tailspin-spacegame-web,https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web,fddce71f30e4834ead9e8b7508db808acc37d388,Steve Danielson,2025-05-22T10:55:08-04:00,Update .NET version on main branch,False,,0,low,1,1,1,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,798ea938a35b141d88c70c11a5fc146e0264ef87,Chimon Sultan,2023-01-04T13:17:38+01:00,"Fix cascade option value (#330)
+* [remove] remove ""u"" prefix in README",False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,4,17,17,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,c577eb8d5fa39eb4acdc64eb2e957a2c1b261c9b,Dustin Rodrigues,2020-03-28T19:24:35-04:00,fix README typo,False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,9ea85109a51d6573caab6d6811c503dfec456ea7,Nate Prewitt,2020-04-03T14:31:44-07:00,fixing rst markup,False,,0,low,1,2,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,bfb93d4b7d269a8735f1b216093e7e9a9fdc4517,Nate Prewitt,2020-04-03T14:39:06-07:00,update bleach security vulnerability,True,"Scan for Vulnerabilities, Use Cloud Native Security Tools",2,high,1,83,103,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,db47b9b4a0c5877fb97f64ac442757604c4c45cc,Seth Michael Larson,2020-04-30T08:55:53-05:00,Don't use pyOpenSSL unless no SNI is detected,False,"Encrypt What Is Necessary, Evaluate TLS Termination",2,high,1,14,6,,,,65,5,2,
+psf/requests,https://github.com/psf/requests,251f73f65d46ff5de64b8ae2e6c6fe38c1a28808,Seth Michael Larson,2020-05-01T18:24:51-05:00,Add changelog entry for pyOpenSSL change,False,"Encrypt What Is Necessary, Evaluate TLS Termination",2,high,1,7,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,427e8eb1e7559ac4739c04069310be18ddbb734f,Miro Hrončok,2020-05-09T06:58:03+02:00,"Fix test_conflicting_post_params to work on pytest 5 (#5305)
 
---cascade=false is deprecated (boolean value) and can be replaced w",True,Delete Unused Storage Resources,1,medium,1,1,1,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,c7f89d43d543ca34f93a4eae81e5ba7e26711a31,Chimon Sultan,2023-01-04T13:18:35+01:00,"Removed the need for Kustomize in prerequisites (#332)
+The non-contextmanager form of pytest.",True,"Delete Unused Storage Resources, Remove Unused Assets, Avoid Chaining Critical Requests, Enable Text Compression, Keep Request Counts Low",5,high,1,4,2,1.0,1.0,1.0,1938,291,243,
+psf/requests,https://github.com/psf/requests,9ed5db8ed28e816b597dafd328b342ec95466afa,Thomas Grainger,2020-05-09T06:08:51+01:00,"fix raise_for_status docstring (#5293)
 
-Since 1.14, Kubectl also supports the manage",True,"Containerize Your Workload, Delete Unused Storage Resources, Remove Unused Assets, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Keep Request Counts Low",6,high,1,2,2,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,f1e2be3a54f3ef08d197e3fe4b8aad909f673687,Chimon Sultan,2023-01-04T13:18:59+01:00,"Use Kubectl command instead of kustomize (#331)
+the exception isn't stored it's created new each call",False,Compress Stored Data,1,medium,1,1,1,,,,516,195,44,
+psf/requests,https://github.com/psf/requests,fa2dbe9a91764734a23104f9a4bde2a6d2bd9cde,David Black,2020-06-15T20:14:29+10:00,Remove what appears to be an un-needed call to self.resolve_redirects when not following redirects a,False,"Delete Unused Storage Resources, Remove Unused Assets, Avoid Chaining Critical Requests, Keep Request Counts Low",4,high,1,6,4,0.0,0.0,0.0,346,113,28,
+psf/requests,https://github.com/psf/requests,8ac5929ae199164f3a96a6f7a53c177a87018f43,Kevin Kirsche,2020-06-15T11:23:17-04:00,Fix typo in README (#5468),False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,737dd0c3c6b9c090d1d525ffc0c7449d2cdca0ac,Bharat Raghunathan,2020-06-16T01:14:07+05:18,"Update number of dependents on requests (#5495)
 
-Since 1.14, Kubectl also supports the management of",True,"Containerize Your Workload, Scale Down Kubernetes Workloads, Scale Kubernetes Workloads Based on Events, Keep Request Counts Low",4,high,1,2,2,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,dfb4da70b656469b28b33f0f0d9c8f2f868fb845,Abdellah AHBANE,2023-01-25T00:33:00-05:00,"Contribution to azure topic (#335)
+* Update dependents on requests",False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,71a05cf28985da6bb56ee27b91d7cd005ce8da9d,David Black,2020-06-16T20:53:07+10:00,Avoid an unnecessary computation of the length of data for non-stream requests (which determines con,False,"Reduce Transmitted Data, Avoid Chaining Critical Requests, Avoid Tracking Unnecessary Data, Keep Request Counts Low",4,high,1,5,5,,,,516,195,44,
+psf/requests,https://github.com/psf/requests,daa2b297a35518e2b4b649919e49d65f1f7ca463,Nate Prewitt,2020-06-16T13:54:43-07:00,updating usage information,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,2,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,0797c61fd541f92f66e409dbf9515ca287af28d2,Nate Prewitt,2020-06-16T13:55:11-07:00,v2.24.0,False,,0,low,2,12,2,,,,10,0,0,
+psf/requests,https://github.com/psf/requests,1ca1c52e698b13d3d5cc0755a6450306d880b933,Kartik Chugh,2020-06-17T16:09:34-04:00,"Google App Engine (#5475)
 
-* Duplicated question
+* Continuity: Google App Engine",True,Use Compiled Languages,1,medium,2,2,2,,,,498,177,39,
+psf/requests,https://github.com/psf/requests,9cae7be94f0aa35a26b42e1a34e26f874cd754da,Nick Krichevsky,2020-06-18T22:06:23-04:00,"Clarify that PreparedRequests should not be manually created
 
-* Contribution to azure topic",False,Data Deduplication,1,medium,1,32,9,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,3ed8064e3eb46a81f9f94ad1e0a888a7fdae893f,Bilalbsd,2023-01-29T21:55:59+01:00,Responding to questions in Puppet section (#340),False,,0,low,1,8,0,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,6811a827de942ff4fb5e59307920de763ff7aec7,Pankaj Kumar,2023-01-30T02:15:03+05:18,"Complete answer for openstack question (#338)
+Closes #5504",False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,1,3,1,,,,516,195,44,
+psf/requests,https://github.com/psf/requests,1b417634721ec377abb7f17bc1f215e07202c2f7,Nate Prewitt,2020-06-26T10:45:06-08:00,cleanup advanced docs header,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,0,2,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,2d39c0db054e158767ab4a755476844fe40787e7,Ben Bodenmiller,2020-07-23T21:57:30-07:00,"Docs: list CURL_CA_BUNDLE as supported (#5509)
 
-Add one line description of what are 'Neutron' and 'G",False,,0,low,1,2,0,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,47c39f6e9a3854415ca892d2f6c2e13cb97cbd40,Bilalbsd,2023-02-02T11:59:41+01:00,"Contribution to MongoDB topic (#343)
+* Docs: list CURL_CA_BUNDLE as supported",True,Reduce HTTP Requests,1,medium,1,1,0,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,02eb5a2cd34d36548ebb08528c73ca66c2a398d9,Matt Silverlock,2020-08-16T19:31:05-07:00,Document the dangers of using verify=False,False,,0,low,2,19,1,,,,346,113,28,
+psf/requests,https://github.com/psf/requests,533c384b875166eef837b4e0e45125cf8ad9c6b1,Seth Michael Larson,2020-08-01T19:50:53-05:00,Make README markdown compatible,False,Scale Down Unused Applications,1,medium,1,27,87,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,08300621004a76dcacf03ed6538bcf2e592ac521,Seth Michael Larson,2020-08-01T23:36:08-05:00,"Remove images, analytics, 'keep up to date'",True,"Delete Unused Storage Resources, Remove Unused Assets, Avoid Tracking Unnecessary Data, Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",6,high,22,2,203,0.4690265486725664,0.21238938053097345,0.07964601769911504,0,0,0,
+psf/requests,https://github.com/psf/requests,551a0bf0df2db42413baf4734ad6be37415f25ca,Seth Michael Larson,2020-08-02T00:08:12-05:00,"Recommend Pip, remove todo/philo docs, pare down support avenues",True,"Delete Unused Storage Resources, Remove Unused Assets, Scale Down Unused Applications",3,high,8,8,193,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,43ed689d97266476871ff38cd45ba551e934ef63,Seth Michael Larson,2020-08-02T00:20:26-05:00,"Trim release section, add back Twitter support",False,,0,low,3,14,11,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,0b013558704edc6b9aeeef566460b28e019052c4,Seth Michael Larson,2020-08-02T00:39:37-05:00,Pin more helpful links to sidebar,False,,0,low,2,27,3,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,48237afd9d064c639b9c2bcea7e75ab7b717b181,Nate Prewitt,2020-08-18T14:42:10-07:00,updating doc links and formatting,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,3,4,3,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,2a7832b5b06d377c7c79d1170b07e41fbd1a5d7c,Sagar Giri,2020-08-26T09:23:30+09:00,"Update index.rst
 
-* Responding to questions in Puppet section
+Update misleading text about python support",True,"Enable Text Compression, Database Indexing",2,high,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,22b5a39098223f51fcd2df238e13f9bac86b35a4,Andrew Jorgensen,2020-08-27T09:44:27-07:00,"Apply the Apache-2.0 license correctly
 
-* responding to",True,Use Compiled Languages,1,medium,1,13,1,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,c664d2e7e2a7d41e3b787c62a0398e4f620164eb,krufab,2023-02-02T12:00:23+01:00,"Added a shorter solution for the directory diff exercise (#344)
+This follows instructions from the Apache Foundation. It als",True,"Scan for Vulnerabilities, Enable Text Compression",2,high,2,174,10,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,967a05bfffcb68f97296eda197b062221c2ebc0d,Martin,2020-09-11T17:36:21+02:00,Update renamed GitHub handle,False,,0,low,1,1,1,,,,0,0,0,
+psf/requests,https://github.com/psf/requests,c3280d7844cc88693b1e97d45f704945cb55f29c,Ruben,2020-09-23T13:19:29+02:00,"Update advanced.rst
 
-Signed-off-by: Fabio Kruger <109564",False,Incremental Processing,1,medium,2,10,3,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,b35b1f2c2e736524f960eca08c9a3633424529a9,Kirill,2023-02-02T14:00:42+03:00,"Update common software development questions (#342)
-
-* Update README.md
-
-* Update README.md",False,Minimize Deployed Environments,1,medium,1,55,10,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,211c28c340af5d6c50d06cb12cb8414a3b800ada,Ayobami Alaran A,2023-02-03T10:42:59+01:00,"Added new python exercise with solution (#346)
-
-* added new python exercise and solution
-
-* add so",False,,0,low,4,90,0,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,50c9714fe4da37271b3c066f3526a4bc8ec9b408,Thomas Leon Highbaugh,2023-02-04T02:08:34-08:00,"Update README.md (#347)
-
-fix the minor spelling error that drove me nuts",False,,0,low,1,1,1,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,01e1dddd2f810a8aedae9fcf8fca7a70c10a673a,MengDanzz,2023-02-06T02:50:51+08:00,"scripts/run_ci.sh to cover directories in the exercises and topics dir (#315)
-
-* Smoother practice e",True,"Containerize Your Workload, Delete Unused Storage Resources, Database Indexing, Service Mesh Optimization",4,high,5,61,45,0.625,0.625,1.0,80,35,5,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,299a1fa9398f6f9a4e97ab08d0d32dce8ac8cea8,Melany Estevez Camata,2023-02-05T14:51:34-04:00,"changing the function a bit (#314)
-
-* changing the function a bit
-
-using regex
-
-* fixing path
-",True,Use Serverless,1,medium,1,48,52,1.0,1.0,1.0,49,14,6,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,0939fd7996eb9efcf74b919e4f0a56c5ee6c1251,Ashraful Alam,2023-02-17T18:35:02+00:00,Answered Some of The Unanswered Questions. (#348),False,,0,low,1,18,1,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,58d0a20307a14398562c0e5cd91a3141113f68f3,Pranay K. Singh,2023-03-25T16:17:55+05:18,"corrected spelling mistake (#362)
-
-* corrected spelling mistake
-
-* changed text to code in git/REA",False,Enable Text Compression,1,medium,1,34,29,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,bca183c4624f04c9f83881fbb1d7697f34a482bf,@Kumar,2023-03-25T16:20:15+05:18,"fixed top-down button issues. (#361)
-
-Co-authored-by: Arie Bregman <bregman.arie@gmail.com>",False,Scale Down Unused Applications,1,medium,1,26,15,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,5599587daddb931af4626e6bcf8118d617794c18,Chetan Thapliyal,2023-03-25T16:20:44+05:18,Answered some network related questions (#360),True,"Compress Transmitted Data, Reduce Network Traversal Between VMs",2,high,1,65,5,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,9e9a6a35d782a97c28ade991ec6881e244193d9c,Adrian,2023-03-25T12:05:56+01:00,"Update/run ci script (#352)
-
-* New questions and spell check (#181)
-
-Added new questions related w",True,Match VM Utilization Requirements,1,medium,2,16,16,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,11bf00e181225115e63b347c5e72faa94ed2ede7,Haydar KÜLEKCİ,2023-03-25T14:07:39+03:00,elasticsearch answer updates (#354),True,"Scale Infrastructure with User Load, Autoscaling",2,high,1,17,10,,,,0,0,0,
-bregman-arie/devops-exercises,https://github.com/bregman-arie/devops-exercises,8e691b56817e4b5f24f2811fe7215239f38db7d8,bregman-arie,2023-03-25T17:41:32+00:00,Update README index,True,Database Indexing,1,medium,5,332,257,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,2745db131a667a3d5457957cb3ed6adeb9b9949a,Bruno Alla,2023-01-06T18:32:31+00:00,Switch to Python 3.11 final on CI and add to tox file (#6325),False,,0,low,2,2,2,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,eb07385b025798baf921d3cb3b398c8794524fd9,Ashish Kurmi,2023-01-12T03:24:53+05:18,"ci: add minimum GitHub token permissions for workflows (#6236)
-
-Signed-off-by: Ashish Kurmi <akurmi@",True,"Scan for Vulnerabilities, Use Cloud Native Security Tools",2,high,3,13,0,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,61c324da43dd8b775d3930d76265538b3ca27bc1,Nate Prewitt,2023-01-12T09:16:09-07:00,v2.28.2,False,,0,low,2,14,3,,,,10,0,0,
-psf/requests,https://github.com/psf/requests,16a17a3ca7134b0a56c49653165ef37cb6acfece,Matthew Feickert,2023-01-18T23:37:24-06:00,"fix: Remove '<4' from python_requires (#6333)
-
-* As discussed in https://discuss.python.org/t/use-of",False,"Delete Unused Storage Resources, Remove Unused Assets, Keep Request Counts Low, Eliminate Polling",4,high,1,1,1,,,,114,4,3,
-psf/requests,https://github.com/psf/requests,15585909c3dd3014e4083961c8a404709450151c,Quentin Pradet,2023-01-21T09:44:33+01:00,Support missing SNIMissingWarning in tests (#6336),False,,0,low,2,14,5,,,,2170,306,257,
-psf/requests,https://github.com/psf/requests,46188256ee5955147cce4c0af91958b1681b47b1,Boris Verkhovskiy,2023-02-27T16:31:15+01:00,Response.raw.read() returns bytes (#6365),False,,0,low,1,2,2,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,ec78348c4b6292b1a38008fa31e51f7b6b2252dc,Nate Prewitt,2023-03-02T20:45:27-08:00,Upgrade lint.yml action (#6370),False,,0,low,2,6,5,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,e90852d20c9bc44c465e55234c01432711627d94,Yifang Zhu,2023-03-02T21:32:49-08:00,Make json doc strings consistent (#6368),False,,0,low,1,3,3,,,,19,8,8,
-psf/requests,https://github.com/psf/requests,7f694b79e114c06fac5ec06019cada5a61e5570f,Seth Michael Larson,2023-02-17T10:17:19-06:00,Allow str/bytes subclasses to be used as header parts,False,Eliminate Polling,1,medium,3,48,13,0.15789473684210525,1.0,0.47368421052631576,2784,503,303,
-psf/requests,https://github.com/psf/requests,26bea1e498d6e234fbc9ce8e07c0389bac73810b,Levi,2023-04-22T17:32:51-06:00,"Use urllib3 native chunking ability (#6226)
-
-* Fix #3844 
-* Use urllib for chunked 
-
----------
-",False,Use Cloud Native Security Tools,1,medium,1,13,58,1.0,1.0,1.0,301,62,17,
-psf/requests,https://github.com/psf/requests,dfc3e2433836813fe6b93b8e182a761aa6c0ee05,Thomas Grainger,2023-04-23T00:41:27+01:00,"pin cryptography<40 on pypy 3.7 (#6421)
-
-* pin cryptography<40 on pypy 3.7",False,Encrypt What Is Necessary,1,medium,1,1,0,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,a7da1ab3498b10ec3a3582244c94b2845f8a8e71,Thomas Grainger,2023-04-23T00:53:09+01:00,try on ubuntu 22.04 (#6418),False,,0,low,1,1,1,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,51716c4ef390136b0d4b800ec7665dd5503e64fc,Thomas Grainger,2023-04-23T01:00:22+01:00,enable the warnings plugin (#6416),False,,0,low,1,1,1,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,87d63de8739263bbe17034fba2285c79780da7e8,Nate Prewitt,2023-04-26T09:19:11-06:00,v2.29.0,False,,0,low,2,10,2,,,,10,0,0,
-psf/requests,https://github.com/psf/requests,f2629e9e3c7ce3c3c8c025bcd8db551101cbc773,Quentin Pradet,2023-04-28T23:17:10+04:00,Remove strict parameter (#6434),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,0,1,0.0,0.0,1.0,300,62,17,
-psf/requests,https://github.com/psf/requests,2ad18e0e10e7d7ecd5384c378f25ec8821a10a29,Nate Prewitt,2023-05-03T08:39:44-07:00,v2.30.0,False,,0,low,4,19,7,,,,224,12,5,
-psf/requests,https://github.com/psf/requests,d3d504436ef0c2ac7ec8af13738b04dcc8c694be,Syed Saifullah,2023-05-09T22:13:33+05:18,Fixed a small typo (#6452),False,,0,low,1,1,1,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,b639e66c816514e40604d46f0088fbceec1a5149,Thomas Grainger,2023-05-13T15:10:56+01:00,"test on py3.12 (#6448)
-
-* test on py3.12
-
-* update to pytest-httpbin==2.0.0",False,Keep Request Counts Low,1,medium,3,3,3,,,,114,4,3,
-psf/requests,https://github.com/psf/requests,302225334678490ec66b3614a9dddb8a02c5f4fe,Thomas Grainger,2023-05-15T16:04:21+01:00,test on pypy 3.8 and pypy 3.9 on windows and macos (#6424),False,,0,low,1,3,4,,,,0,0,0,
-psf/requests,https://github.com/psf/requests,74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5,Nate Prewitt,2023-05-22T08:08:57-07:00,Merge pull request from GHSA-j8r2-6x86-q33q,False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,2,23,1,1.0,0.0,0.0,2602,419,287,
-pallets/flask,https://github.com/pallets/flask,bb1f83c26586f1aa254d67a67e6b692034b4cb4a,dependabot[bot],2023-01-01T16:01:00+00:00,"Bump dessant/lock-threads from 3 to 4
-
-Bumps [dessant/lock-threads](https://github.com/dessant/lock-",False,Keep Request Counts Low,1,medium,1,1,1,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,d7b6c1f6703df405c69da45e7e0ba3d1aed512ce,Josh Michael Karamuth,2022-10-31T12:49:16+04:00,"Fix subdomain inheritance for nested blueprints.
-
-Fixes #4834",True,Avoid Excessive DOM Size,1,medium,2,56,0,0.425,0.825,0.825,1138,243,192,
-pallets/flask,https://github.com/pallets/flask,cabda5935322d75e7aedb3ee6d59fb7ab62bd674,pgjones,2023-01-04T16:45:20+00:00,"Ensure that blueprint subdomains suffix-chain
-
-This ensures that a child's subdomain prefixs any par",True,"Avoid Chaining Critical Requests, Avoid Excessive DOM Size",2,high,4,26,4,0.0,0.5,0.5,1142,244,192,
-pallets/flask,https://github.com/pallets/flask,2a9d16d01189249749324141f0c294b31bf7ba6b,David Lord,2023-01-09T10:37:04-08:00,"update tested python versions
-
-test 3.11 final
-test 3.12 dev
-update for tox 4",False,Minimize Deployed Environments,1,medium,4,30,38,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,a7487701999fee55bb76a393e72c96ac8e277fcf,Bhushan Mohanraj,2023-01-06T22:14:03-05:00,clarify `View.as_view` docstring,False,Database Views & Materialized Views,1,medium,1,2,2,,,,59,17,6,
-pallets/flask,https://github.com/pallets/flask,9da947a279d5ed5958609e0b6ec690160c496480,David Lord,2023-01-09T12:45:16-08:00,set workflow permissions,False,,0,low,1,11,4,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,6d6d986fc502c2c24fe3db0ec0dbb062d053e068,David Lord,2023-01-18T09:50:41-08:00,switch to pyproject.toml,False,,0,low,6,123,141,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,8f13f5b6d672f1ba434f9c8ebe2c1b1dd385962e,David Lord,2023-01-18T10:21:37-08:00,"update docs and examples for pyproject
-
-setup.py -> pyproject.toml
-venv -> .venv",False,,0,low,24,153,195,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,261e4a6cf287180b69c4db407791e43ce90e50ad,David Lord,2023-01-18T10:31:08-08:00,fix flake8 bugbear errors,False,,0,low,3,17,16,,,,1576,305,283,
-pallets/flask,https://github.com/pallets/flask,3a35977d5fbcc424688d32154d250bc0bae918d6,David Lord,2023-01-19T06:35:15-08:00,stop ignoring flake8 e402,False,,0,low,3,3,5,,,,10,0,0,
-pallets/flask,https://github.com/pallets/flask,99b34f7148b77d4b1311593590629c2bc8e8e772,David Lord,2023-01-18T10:31:08-08:00,move and update flake8 config,False,,0,low,6,33,35,,,,1586,305,283,
-pallets/flask,https://github.com/pallets/flask,0b4b61146ffca0f7dfc25f1b245df89442293335,David Lord,2023-01-20T13:45:15-08:00,"build, provenance, publish workflow",True,,0,low,5,106,9,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,d93760d8bd6e367faefe9ad550f753e32ef9a12d,Andrii Kolomoiets,2023-01-23T17:01:49+02:00,Fix function argument name,True,Use Serverless,1,medium,1,1,1,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,94a23a3e24b6736ca3b54773de0ce384270c457a,dependabot[bot],2023-02-01T16:01:23+00:00,"Bump actions/setup-python from 4.4.0 to 4.5.0
-
-Bumps [actions/setup-python](https://github.com/actio",False,Keep Request Counts Low,1,medium,2,2,2,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,74c256872b5f0be65e9f71b91a73ac4b02647298,dependabot[bot],2023-02-01T16:01:30+00:00,"Bump actions/cache from 3.2.3 to 3.2.4
-
-Bumps [actions/cache](https://github.com/actions/cache) from",True,"Cache Static Data, Keep Request Counts Low",2,high,1,1,1,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,9abe28130d4f0aff48b4f9931ebc15bd7617f19f,owgreen,2023-02-03T00:43:02+09:00,fix doc,False,,0,low,1,2,2,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,c1d01f69994e87489d04c3218a417f517ab6c88e,pre-commit-ci[bot],2023-02-07T04:42:52+00:00,"[pre-commit.ci] pre-commit autoupdate
-
-updates:
-- [github.com/psf/black: 22.12.0 → 23.1.0](https://g",False,Keep Request Counts Low,1,medium,1,1,1,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,a15da89dbb4be39be09ed7e5b57a22acfb117e6d,pre-commit-ci[bot],2023-02-07T04:43:02+00:00,"[pre-commit.ci] auto fixes from pre-commit.com hooks
-
-for more information, see https://pre-commit.c",False,"Keep Request Counts Low, Serve Images in Modern Formats, Efficient Format for Model Training",3,high,1,0,1,,,,233,39,35,
-pallets/flask,https://github.com/pallets/flask,428d9430bc69031150a8d50ac8af17cc8082ea4e,Maxim G. Ivanov,2023-02-09T09:38:57+07:00,Fix command-line formatting,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,2,0,,,,0,0,0,
-pallets/flask,https://github.com/pallets/flask,dca8cf013b2c0086539697ae6e4515a1c819092c,David Lord,2023-02-08T17:30:53-08:00,rewrite celery background tasks docs,True,Queue Non-Urgent Requests,1,medium,1,200,67,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,d0573f5713b0a8ce2dbb3d12d36a7fc34b89e2ff,Yurii Karabas,2023-01-07T15:45:48+02:00,"✨ Add support for function return type annotations to declare the `response_model` (#1436)
-
-Co-autho",True,"Use Compiled Languages, Energy Efficient Models, Use Serverless",3,high,18,1368,58,0.9930555555555556,0.9930555555555556,0.9930555555555556,3868,401,167,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,18d087f9c66b06c8baa4164bdf647af362b4a4ee,github-actions,2023-01-07T13:46:24+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,cb35e275e3f17badea3f3715a35b5e7028121eda,Sebastián Ramírez,2023-01-07T17:58:46+04:00,🔧 Remove Doist sponsor (#5847),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,3,0,10,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,679aee85ce145fc9a9d052bffafd31d281ea6c58,github-actions,2023-01-07T13:59:26+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,d70eef825e2a31cd0a7b37765c0b21514a336fb1,Sebastián Ramírez,2023-01-07T18:13:34+04:00,"🔧 Update sponsors, add Svix (#5848)",False,,0,low,3,182,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,a3edc760513f638a7dd417414787cfa23e2327e7,github-actions,2023-01-07T14:14:07+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,2a3a786dd7dc8a9112a1f47dd1949d21be33284b,Nina Hwang,2023-01-07T23:21:23+09:00,"🌐 Add Korean translation for `docs/tutorial/cors.md` (#3764)
-
-Co-authored-by: weekwith.me <63915557+",True,"Match SLO Requirements, Use Compiled Languages",2,high,2,85,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,1be95ba02dc907fb864d03c287c4851c35322515,github-actions,2023-01-07T14:21:59+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,3178c17776d7dfbe14a270c5128a483694a3477a,Ben Ho,2023-01-07T22:33:29+08:00,"🌐 Fix typo in Chinese translation for `docs/zh/docs/benchmarks.md` (#4269)
-
-Co-authored-by: Sebastiá",True,"Match SLO Requirements, Use Compiled Languages, Performance Profiling",3,high,2,2,2,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,3c20b6e42b13f266a4e9652b793c042cefea3228,github-actions,2023-01-07T14:34:13+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,d0027de64f96911c4083f3f6a9fc69ee5ce4a77f,Vladislav Kramorenko,2023-01-07T17:45:32+03:00,"🌐 Add Russian translation for `docs/ru/docs/fastapi-people.md` (#5577)
-
-Co-authored-by: Sebastián Ra",True,"Match SLO Requirements, Use Compiled Languages",2,high,1,180,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,59d654672f0bdc75a5cab772c50172dc987991e6,github-actions,2023-01-07T14:46:09+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,2583a83f9dab0e35b7e82e01c8524253f547b562,Sviatoslav Sydorenko,2023-01-07T15:54:59+01:00,👷 Add GitHub Action gate/check (#5492),False,,0,low,1,16,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,9812116dc77318b1bfc98778ccaf775ee0433bf3,github-actions,2023-01-07T14:55:35+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,6e1152d31fd4a849dcb50fbed9a0b4c14f50bebc,dependabot[bot],2023-01-07T15:08:12+00:00,"⬆ Bump pypa/gh-action-pypi-publish from 1.5.2 to 1.6.4 (#5750)
-
-Co-authored-by: dependabot[bot] <496",True,Use Compiled Languages,1,medium,1,1,1,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,adef9f4c02d007bcaacf93548328d8e4be3f490a,github-actions,2023-01-07T15:08:57+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,f4e895bc8a6dad274c9dcf006f491da064cd34f8,dependabot[bot],2023-01-07T15:12:49+00:00,"⬆ Bump types-ujson from 5.5.0 to 5.6.0.0 (#5735)
-
-Co-authored-by: dependabot[bot] <49699333+dependab",True,Use Compiled Languages,1,medium,1,1,1,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,929c70011707b138cf9c2b8fcfbafc647ee8a90f,github-actions,2023-01-07T15:13:27+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,bea1fdd2eb34c9933bf66f08f9cc164ca97d99f1,Kelby Faessler,2023-01-07T10:31:03-05:00,✏ Fix typo in `docs/en/docs/deployment/concepts.md` (#5824),False,,0,low,1,1,1,,,,0,0,0,
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,789d649fbadea706e90e219049e9326689e881db,github-actions,2023-01-07T15:31:38+00:00,📝 Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+replaced reference to requests-async with httpx the replacement project",True,"Queue Non-Urgent Requests, Use Async Instead of Sync, Avoid Chaining Critical Requests, Keep Request Counts Low, Lazy Loading, Asynchronous Processing",6,high,1,2,2,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,947b175f20f87b4301582fec5ac3960114bca3dd,Ivano Malavolta,2023-12-01T13:08:41+01:00,Initial commit,False,,0,low,2,23,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,68327b99f93661428509c2a135d0d0b4faaa268d,Max Karsten,2025-09-10T16:42:48+02:00,Example experiment +,False,,0,low,14,138,0,1.0,1.0,0.18518518518518517,38,10,8,
+S2-group/green-lab,https://github.com/S2-group/green-lab,c76191b15a7de8c266eb7c83e9451b96336f6668,Max Karsten,2025-09-10T16:43:00+02:00,Small config change,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,63fe282083b7b3f4e8aaa1f0c6888cbbf0190b21,Andrei Dragomir,2025-09-11T16:15:19+02:00,Lab 1 Materials,False,,0,low,5,355,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,2c5149e06d62804c471c33662ae879a109fbab09,Max Karsten,2025-09-11T17:26:18+02:00,Make readme more robust,False,,0,low,1,150,4,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,5a9de56ba089fe6c54a9bc54807f67422564bf3b,Max Karsten,2025-09-11T17:37:05+02:00,More readme updates,False,,0,low,1,14,13,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,ddc720b78fbb5868451e53db7e1587ebd7ac2e5e,Max Karsten,2025-09-11T17:41:36+02:00,Add in some more links,False,,0,low,1,2,2,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,cacc5d30edf17185e2b0aeca1971b3a3809da976,Max Karsten,2025-09-11T17:42:49+02:00,More links,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,21dac56ca273688b503cade33b09d9327f8a0915,Max Karsten,2025-09-11T17:47:15+02:00,More tweaks,False,,0,low,1,6,4,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,8085fe997d33e317e928e8c1522e728a093b521e,Max Karsten,2025-09-11T17:49:11+02:00,Last change,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,14fe4172dd21d05e90f076e19d50b288e706d928,Cedar_Cheng,2025-09-11T19:48:47+02:00,update links at slides,False,,0,low,1,0,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,26d5da194f12daccbf746dad35ecabab1128e9ce,Cedar_Cheng,2025-09-12T01:53:16+08:00,Fix formatting in README for exercises section,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,2,2,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,0c513f8e299a4eca09f3775c450d74d0c98f1a36,Andrei Dragomir,2025-09-12T13:10:17+02:00,Fixed some ambiguities in Lab 1,False,,0,low,3,12,5,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,6714197488ed83c75ec07fb9f5f2b7d8d0e1c7c5,Andrei Dragomir,2025-09-12T13:11:01+02:00,Cleaned Lab 1 directory,False,,0,low,1,0,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,e1275c1cc95a0499784b885d98594379ab34108e,Max Karsten,2025-09-15T15:46:49+02:00,Add in presentation slides,False,,0,low,1,0,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,8abadcbeac3cbf8cc2e64524ad4fb8e7b4f3cf42,Max Karsten,2025-09-17T13:39:05+02:00,Make some edits to the presentation & readme,False,,0,low,2,31,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,87eae741d07f0bdb6bcaa2903a1dea38121d8fd2,Max Karsten,2025-09-17T14:16:22+02:00,Add reference to monkey tool,False,,0,low,1,3,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,ba91a91d39d6847e5395c6fb5608086bc66f13f0,Max Karsten,2025-09-17T14:17:08+02:00,Correct spelling,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,3c26aaaacd710fbcd833710c43ad547b6b276cdf,Cedar_Cheng,2025-09-17T22:14:43+08:00,Modify a cmd for emulator launching,False,,0,low,1,11,5,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,8f739ae1703f1b950f678920debd583d602157da,Cedar_Cheng,2025-09-17T22:24:12+08:00,Add troubleshooting tip for messaging app error,False,,0,low,1,1,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,f3020bb928073cdda72f7b7812c0c28205657ac6,Cedar_Cheng,2025-09-17T23:09:57+08:00,Update README with manual app start instructions,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,7e975294fc1ceeefd324430d327c5109ad5e3f09,Cedar_Cheng,2025-09-19T03:24:06+08:00,add links to MacOS dependencies installation,False,,0,low,1,6,2,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,d0fc99eb01e20adbb0ca782831406fa352f8844f,Cedar_Cheng,2025-09-19T16:43:53+08:00,Fix path in Hello World example command,False,,0,low,1,1,1,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,d262189c6e3be15c9b3fc02b957465e083925891,Aayush Joglekar,2025-10-02T13:11:56+02:00,Initialise Lab 3 files,False,,0,low,2,34,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,9330edb4b869687d21274cbbc24caf6738249fe1,Aayush Joglekar,2025-10-02T13:14:54+02:00,Add sample data,False,Reduce Transmitted Data,1,medium,1,301,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,a76586e94a54f8108eedff88ee1e3b9d04280f1d,Aayush Joglekar,2025-10-02T13:25:27+02:00,"[Lab3] Add exercises for section 0, 4, 5, 6",False,,0,low,1,13,3,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,68df498dc97bae8bc143878b07b8674ab935041c,Yuqi Yue,2025-10-02T13:37:52+02:00,cheatsheets added,False,,0,low,3,0,0,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,8f97f9b93a991db0e7dd5faf78aa912d9f872d1f,Aayush Joglekar,2025-10-02T13:49:37+02:00,"[Lab3] Add solutions for section 4, 5, 6",False,,0,low,2,126,9,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,d089179be1b73c148b1206cf9596d5157eaf84cb,Yuqi Yue,2025-10-02T15:11:43+02:00,"[Lab 3] Ex 1, 2, 3",False,,0,low,2,165,7,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,01e5a6a627e54a403a2aa087b17b8eb7b844ac62,Aayush Joglekar,2025-10-02T22:53:31+02:00,[Lab3] Fix minor issues,False,,0,low,1,5,5,,,,0,0,0,
+S2-group/green-lab,https://github.com/S2-group/green-lab,1f53a7f7ff746b609e7fb16f2947de136a2e2e86,Yuqi Yue,2025-10-03T08:52:51+02:00,slides added,False,,0,low,1,0,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,8d3dcbcd1bb93bc0563eea5e98688d9dc4867e00,Dustyposa,2020-01-08T16:08:43+08:00,fix type UrlStr -> HttpUrl (#832),True,"Keep Request Counts Low, Right Hardware Type for AI",2,high,5,9,9,,,,68,4,4,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,08fc2a41ca6bc1fa1d0970edeaaf8e9184035895,Sebastián Ramírez,2020-01-08T19:16:57+01:00,:memo: Update release notes,False,,0,low,1,2,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,b85b2e39425c9d37d614ce89c056ed77bad7af6d,Roald Storm,2020-01-08T21:50:21+01:00,:sparkles: Add support for subtypes of main types in jsonable_encoder,False,,0,low,2,108,13,0.9024390243902439,0.9024390243902439,0.9024390243902439,189,44,9,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,b6ea9ea2cadcade9ee0428a08cf394df58b9d5da,Sebastián Ramírez,2020-01-08T21:53:14+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,9f9ed7a6bddde4b434638fefa26a09917cdae349,Xucong ZHAN,2020-01-08T15:58:33-05:00,:pencil: Add four JP articles to external links (#783),False,,0,low,1,8,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,462e24e8647555082bb27f5c3d92380b101f8b01,Sebastián Ramírez,2020-01-08T22:00:44+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,4151616681511a7e7425b9927c27bde3c66a1d8b,Ken Kinder,2020-01-08T16:01:22-05:00,:pencil2: Fix typos (#784),False,,0,low,0,0,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,7b31e527667b016f9aa525262d778fdba453c454,Sebastián Ramírez,2020-01-08T22:02:32+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,cb1410426e11886825fece1cdc10a781bbfd57b2,James Kaplan,2020-01-08T13:22:14-08:00,:bug: Fix callback handling in sub-routers (#792),True,,0,low,4,235,5,0.9411764705882353,0.9411764705882353,0.9411764705882353,1147,134,31,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,fd5ba77b8322f1599bad8cbcf72887bbbb75ed60,Sebastián Ramírez,2020-01-08T22:23:54+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,cad6a6e0c1ffa9bb1720f4fb4a627da94f463c98,Christoph Deil,2020-01-08T22:34:14+01:00,:memo: Highlight all new lines in docs example upgrade (#795),False,,0,low,2,2,4,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,a0c8f93231e51b3f58ba3fb2bbc1e52b0874eb8f,Sebastián Ramírez,2020-01-08T22:35:33+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,91fe90e8e67c3cc0951e3f16704a7c96385960ac,Jesse P. Johnson,2020-01-08T16:47:19-05:00,:sparkles: Implement OAuth2 authorization_code integration (#797),True,gRPC for Service Communication,1,medium,3,115,0,0.6078431372549019,1.0,0.6078431372549019,203,26,14,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,13da029dca4035a6d31f6af1f8b900c52b7047a9,Sebastián Ramírez,2020-01-08T22:51:55+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,d0ab9095449e2a99aacd31c370a6fb314434dc5a,wxq0309,2020-01-09T06:01:58+08:00,:pencil: Add link to Chinese FastAPI posts (#810),True,,0,low,1,2,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,6a2007825932c1712ef920509bc10eb92e7ee01d,Sebastián Ramírez,2020-01-08T23:03:08+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,7b3319ddabad1006468db7a7b864660b163718a8,Sebastián Ramírez,2020-01-08T23:25:29+01:00,:pencil2: Tweak typos and configs (#837),False,,0,low,7,51,32,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,aa28784f6b7b2e3609eb929d093e279602d5846a,Sebastián Ramírez,2020-01-08T23:26:15+01:00,:memo: Update release notes,False,,0,low,1,1,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,a9673f145a6bf0f87ec5f934e6337984d619bd96,Sebastián Ramírez,2020-01-08T23:28:03+01:00,:bookmark: Release version 0.46.0,False,,0,low,2,3,1,,,,17,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,ba9c9a3f78f5ed229e16b64a9100c7e54cbe67a8,Zachary Wasserman,2020-01-12T11:38:39-08:00,:lock: Update HTTP Basic Auth docs fixing timing attacks (#807),False,Keep Request Counts Low,1,medium,2,73,3,1.0,1.0,1.0,19,4,2,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,3eca945bd17600a0be6eae1d8fd93ba8f9805006,Sebastián Ramírez,2020-01-12T20:43:46+01:00,:memo: Udpate release notes,False,,0,low,1,2,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,e5d78788563cedf4fd03222800f6b7056507e6ba,Sebastián Ramírez,2020-01-17T09:51:03+01:00,":heavy_minus_sign: Use venv with Flit for local development, instead of requiring Flit and Pipenv (#",False,Minimize Deployed Environments,1,medium,5,104,78,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,3f53deebc949ee9d4aaa9eae7e195f9f2cfc5598,Sebastián Ramírez,2020-01-17T09:59:38+01:00,:bug: Fix Peewee contextvars handling in docs (#879),False,Enable Text Compression,1,medium,3,160,23,1.0,1.0,1.0,77,15,11,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,180b842a1e24f86f214e416aa1e8d409f6bcaa28,Sebastián Ramírez,2020-01-17T10:46:44+01:00,":memo: Add external links, dynamic GitHub topic projects, and formatting (#850)",False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,4,109,30,1.0,1.0,1.0,35,7,4,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,5db99a27cf640864b4793807811848698c5ff4a2,Aviram Hassan,2020-01-17T13:37:44+02:00,:sparkles: add body to RequestValidationError for easier debugging (#853),False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,8,241,60,1.0,1.0,0.8,1197,145,39,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,874d24181e779ebc6e1c52afb7d6598f863fd6a8,Nik,2020-01-17T14:45:55+03:00,":bug: Fix validating form params declared with classes (list, tuple, set, etc) (#856)",False,Eliminate Polling,1,medium,2,49,3,1.0,1.0,1.0,749,146,27,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,174e7b1730c6b21eb015a8b8ff3e56e018bc0de3,Pavel Isaev,2020-01-17T13:49:54+02:00,:lock: Check both username and password in security tutorial (#865),True,"Scan for Vulnerabilities, Use Cloud Native Security Tools",2,high,1,1,1,,,,19,4,2,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,a41a7296826a32bf03819bbc6149a3037a3da0bb,Sebastián Ramírez,2020-01-17T16:24:05+01:00,":art: Tweak external links, Markdown format, typos (#881)",False,"Scale Down Unused Applications, Serve Images in Modern Formats, Efficient Format for Model Training",3,high,60,341,418,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,22982287ff5e8434fdaffcf118d56eb084f2490c,Sebastián Ramírez,2020-01-18T16:21:54+01:00,":memo: Refactor docs, ""Tutorial - User Guide"" and ""Advanced User Guide"" (#887)",True,,0,low,78,340,292,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,bd581c5337dfb33b6670f84dddb7ab4f2139b123,Sebastián Ramírez,2020-01-18T17:14:03+01:00,:memo: Update release notes,False,,0,low,1,15,7,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,3a5158a784d7baaf370dff700913ab559e361213,Sebastián Ramírez,2020-01-18T17:14:59+01:00,:bookmark: Release version 0.47.0,False,,0,low,2,3,1,,,,17,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,7cea84b74ca3106a7f861b774e9d215e5228728f,Sebastián Ramírez,2020-01-18T17:32:57+01:00,:bug: Fix FastAPI serialization of Pydantic ORM mode blocking the event loop (#888),True,"Scale Kubernetes Workloads Based on Events, Efficient Serialization",2,high,1,10,3,0.0,0.0,0.14285714285714285,944,128,24,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,75a07f24bf01a31225ee687f3e2b3fc1981b67ab,Sebastián Ramírez,2020-01-18T18:03:51+01:00,:lock: Fix clone field implementation to handle sub-models in response_model (#889),True,Energy Efficient Models,1,medium,2,92,1,1.0,1.0,1.0,211,32,11,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,3b40c557ce65843e68889b6c43b302e8707ad659,Sebastián Ramírez,2020-01-18T18:06:20+01:00,:memo: Update release notes,False,,0,low,1,3,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,a0858983096cad68c1de7d67085b547354990791,Sebastián Ramírez,2020-01-18T18:06:47+01:00,:bookmark: Release version 0.47.1,False,,0,low,2,3,1,,,,17,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,b307d388976de6d4b804704b7429e0b34843a463,Sebastián Ramírez,2020-01-18T19:07:42+01:00,":recycle: Update default API title from ""Fast API"" to ""FastAPI"" for consistency (#890)",True,,0,low,110,111,111,,,,13168,545,449,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,55afb70b3717969565499f5dcaef54b1f0acc7da,Sebastián Ramírez,2020-01-18T19:08:24+01:00,:memo: Update release notes,False,,0,low,1,2,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,4f964939a15d3fbd9ecec7607a5f43b0b4a2c288,linchiwei123,2020-02-04T10:27:10+08:00,:bug: Fix middleware docs link (#893),False,,0,low,1,1,2,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,70bdade23b25baa17eb6ebdf3b0fdcfcbf7984ad,Andy Smith,2020-02-03T22:03:51-05:00,:bug: Fix Pydantic field clone logic with validators (#899),False,,0,low,2,72,13,1.0,1.0,0.6363636363636364,267,35,13,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,68723d529148657fb5568998a96eca239901928a,Timothée Mazzucotelli,2020-02-04T04:17:20+01:00,:memo: Add note about Body parameters without Pydantic (#900),False,,0,low,1,4,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,27fb2b358c91205c5d238b8191404cada498b206,Ben,2020-02-04T04:25:52+01:00,:memo: Add article to external links (#901),False,,0,low,1,2,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,a448bd63bd6d0f6c512cdede6b38fd9b675939e0,李冬冬,2020-02-04T11:37:47+08:00,:bug: Allow Any type for enums in OpenAPI (#906),False,,0,low,1,1,1,,,,257,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,d8451f75a4f06f9c6bbbaa69c9bd734528685b1f,adursun,2020-02-04T06:57:18+03:00,:pencil2: Fix typo (#916),False,,0,low,1,1,1,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,c425509d57a47a6d31ca8b0357ea6a68d830065b,David Montague,2020-02-03T20:01:59-08:00,:bug: Fix body parsing (#918),False,,0,low,2,40,13,1.0,1.0,1.0,909,144,24,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,e6da96fbb77595aa7227af3ab5e55dc445ba84ad,Maciej Marzęta,2020-02-04T05:04:32+01:00,:pencil2: Fix typos (#920),False,,0,low,2,2,2,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,44b45caf65abacdafc2872dfca9059bfdffdd219,raphaelauv,2020-02-04T05:14:07+01:00,:memo: Update Sanic description as it is now ASGI too :tada: (#932),False,,0,low,1,1,1,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,1fd1e8733afb6a9ba1aa9d5b72d203b792742b5f,नवुले पवन कुमार राव,2020-02-04T09:43:00+05:18,:memo: Add link: Create and Deploy FastAPI app to Heroku (#942),True,,0,low,1,2,0,,,,0,0,0,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,636ce6b3f730f9738c4584659b778263fd914e70,Sebastián Ramírez,2020-02-04T05:28:19+01:00,":memo: Update Peewee docs, simplify with double dependency with yield (#947)",False,,0,low,2,54,71,0.0,0.0,0.0,58,12,8,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,2e0a10256584bbdf727d552ccdef66f54e66332a,Sebastián Ramírez,2020-02-04T05:31:01+01:00,:mute: Log email-validator not installed only when used (#946),False,,0,low,1,12,6,1.0,1.0,1.0,262,2,2,
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,957313063076e345771eb24e98cbdc9fc2f1f641,Sebastián Ramírez,2020-02-04T05:41:42+01:00,":white_check_mark: Lint first in tests, to error out faster (#948)",True,,0,low,1,2,3,,,,0,0,0,

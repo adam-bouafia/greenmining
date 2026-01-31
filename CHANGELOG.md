@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.7] - 2026-01-31
+## [1.1.8] - 2026-01-31
 
 ### Removed
 - Web dashboard module (`greenmining/dashboard/`) and Flask dependency

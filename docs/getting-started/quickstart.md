@@ -102,7 +102,7 @@ from greenmining import GSF_PATTERNS, is_green_aware, get_pattern_by_keywords
 
 # Check pattern count
 print(f"Loaded {len(GSF_PATTERNS)} GSF patterns")
-# Output: Loaded 122 GSF patterns
+# Output: Loaded 124 GSF patterns
 
 # Test green awareness detection
 messages = [
@@ -190,5 +190,5 @@ python test_greenmining.py
 
 - [Configuration](configuration.md) - Customize settings
 - [Python API](../user-guide/api.md) - Programmatic usage
-- [GSF Patterns](../reference/patterns.md) - All 122 patterns
+- [GSF Patterns](../reference/patterns.md) - All 124 patterns
 - [URL Analysis](../user-guide/url-analysis.md) - Analyze by URL

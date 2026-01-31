@@ -13,7 +13,7 @@ An empirical Python library for Mining Software Repositories (MSR) in Green IT r
 
 - **Mine repositories at scale** - Search, Fetch and analyze GitHub repositories via GraphQL API with configurable filters
 
-- **Classify green commits** - Detect 122 sustainability patterns from the Green Software Foundation (GSF) catalog
+- **Classify green commits** - Detect 124 sustainability patterns from the Green Software Foundation (GSF) catalog
 - **Analyze any repository by URL** - Direct Git-based analysis with support for private repositories
 - **Measure energy consumption** - RAPL, CodeCarbon, and CPU Energy Meter backends for power profiling
 - **Carbon footprint reporting** - CO2 emissions calculation with 20+ country profiles and cloud region support
@@ -56,7 +56,7 @@ docker pull adambouafia/greenmining:latest
 from greenmining import GSF_PATTERNS, is_green_aware, get_pattern_by_keywords
 
 # Check available patterns
-print(f"Total patterns: {len(GSF_PATTERNS)}")  # 122 patterns across 15 categories
+print(f"Total patterns: {len(GSF_PATTERNS)}")  # 124 patterns across 15 categories
 
 # Detect green awareness in commit messages
 commit_msg = "Optimize Redis caching to reduce energy consumption"
@@ -613,8 +613,8 @@ config = Config(
 
 ### Core Capabilities
 
-- **Pattern Detection**: 122 sustainability patterns across 15 categories from the GSF catalog
-- **Keyword Analysis**: 321 green software detection keywords
+- **Pattern Detection**: 124 sustainability patterns across 15 categories from the GSF catalog
+- **Keyword Analysis**: 332 green software detection keywords
 - **Repository Fetching**: GraphQL API with date, star, and language filters
 - **URL-Based Analysis**: Direct Git-based analysis from GitHub URLs (HTTPS and SSH)
 - **Batch Processing**: Parallel analysis of multiple repositories with configurable workers
@@ -682,7 +682,7 @@ print(f"Equivalent: {report.tree_months:.2f} tree-months to offset")
 
 ### Pattern Database
 
-**122 green software patterns based on:**
+**124 green software patterns based on:**
 - Green Software Foundation (GSF) Patterns Catalog
 - VU Amsterdam 2024 research on ML system sustainability
 - ICSE 2024 conference papers on sustainable software
@@ -692,11 +692,11 @@ print(f"Equivalent: {report.tree_months:.2f} tree-months to offset")
 - **Coverage**: 67% of patterns actively detect in real-world commits
 - **Accuracy**: 100% true positive rate for green-aware commits
 - **Categories**: 15 distinct sustainability domains covered
-- **Keywords**: 321 detection terms across all patterns
+- **Keywords**: 332 detection terms across all patterns
 
 ## GSF Pattern Categories
 
-**122 patterns across 15 categories:**
+**124 patterns across 15 categories:**
 
 ### 1. Cloud (40 patterns)
 Auto-scaling, serverless computing, right-sizing instances, region selection for renewable energy, spot instances, idle resource detection, cloud-native architectures

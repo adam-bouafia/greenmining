@@ -53,9 +53,9 @@ import tracemalloc
 ```
 
 ```
-GreenMining version: 1.1.7
-GSF Patterns: 122
-Green Keywords: 321
+GreenMining version: 1.1.8
+GSF Patterns: 124
+Green Keywords: 332
 ```
 
 ### Step 3 -- Configuration
@@ -147,7 +147,7 @@ converted to dictionaries with `.to_dict()` for downstream processing.
 
 **Library features applied per repository:**
 
-- GSF pattern detection (122 patterns, 15 categories, 321 keywords)
+- GSF pattern detection (124 patterns, 15 categories, 332 keywords)
 - Process metrics (DMM unit size, complexity, interfacing)
 - Method-level analysis (per-function complexity via Lizard)
 - Source code capture (before/after for each modified file)
@@ -196,7 +196,7 @@ Every analyzer operates on the combined dataset of all 13 repositories.
 
 Counts pattern frequency across all commits and groups patterns by category.
 
-**Library features:** `GSF_PATTERNS` dictionary (122 patterns), category grouping.
+**Library features:** `GSF_PATTERNS` dictionary (124 patterns), category grouping.
 
 ```
 Unique patterns detected: 46
@@ -586,7 +586,7 @@ The experiment applies every library feature to every repository equally:
 
 | Feature | Module | Applied |
 |---------|--------|---------|
-| GSF Pattern Detection (122 patterns, 15 categories) | `greenmining` | Yes |
+| GSF Pattern Detection (124 patterns, 15 categories) | `greenmining` | Yes |
 | Process Metrics (DMM size, complexity, interfacing) | `greenmining` | Yes |
 | Method-Level Analysis (per-function complexity) | `greenmining` | Yes |
 | Source Code Capture (before/after) | `greenmining` | Yes |
