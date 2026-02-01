@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.4] - 2026-02-01
+
+### Added
+- `skip_merges` parameter exposed in `analyze_repositories()` API (default: True)
+- `commit_order` parameter to control commit traversal order: "newest_first" (default) or "oldest_first"
+
+### Changed
+- Commit analysis now configurable between newest-first (recent trends) and oldest-first (evolution studies)
+
 ## [1.2.3] - 2026-02-01
 
 ### Fixed
@@ -107,6 +116,7 @@
 - Green awareness analysis
 - Docker containerization
 
+[1.2.4]: https://github.com/adam-bouafia/greenmining/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/adam-bouafia/greenmining/compare/v1.2.1...v1.2.3
 [1.2.1]: https://github.com/adam-bouafia/greenmining/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/adam-bouafia/greenmining/compare/v1.1.9...v1.2.0

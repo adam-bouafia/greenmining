@@ -205,6 +205,7 @@ class LocalRepoAnalyzer:
         process_metrics: str = "standard",
         since_date: Optional[datetime] = None,
         to_date: Optional[datetime] = None,
+        commit_order: str = "newest_first",
     ):
         # Initialize the local repository analyzer.
         # Args:
@@ -221,6 +222,7 @@ class LocalRepoAnalyzer:
         #   method_level_analysis: Extract per-method metrics via Lizard
         #   include_source_code: Include source code before/after in results
         #   process_metrics: "standard" or "full" PyDriller process metrics
+        #   commit_order: "newest_first" (default) or "oldest_first"
         self.clone_path = clone_path or Path.cwd() / "greenmining_repos"
         self.clone_path.mkdir(parents=True, exist_ok=True)
         self.max_commits = max_commits
@@ -230,6 +232,7 @@ class LocalRepoAnalyzer:
         self.skip_merges = skip_merges
         self.compute_process_metrics = compute_process_metrics
         self.cleanup_after = cleanup_after
+        self.commit_order = commit_order
         self.gsf_patterns = GSF_PATTERNS
 
         # Phase 1.3: Private repository support
@@ -459,6 +462,8 @@ class LocalRepoAnalyzer:
         }
         if self.to_date:
             repo_config["to"] = self.to_date
+        if self.commit_order == "oldest_first":
+            repo_config["order"] = "reverse"
 
         # Use owner_repo format for unique directory names (avoids collisions
         # when multiple repos share the same name, e.g. open-android/Android

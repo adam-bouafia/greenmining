@@ -8,7 +8,7 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "1.2.3"
+__version__ = "1.2.4"
 
 
 def fetch_repositories(
@@ -73,6 +73,8 @@ def analyze_repositories(
     since_date: str = None,
     to_date: str = None,
     cleanup_after: bool = True,
+    skip_merges: bool = True,
+    commit_order: str = "newest_first",
 ):
     # Analyze multiple repositories from URLs.
     # Args:
@@ -88,6 +90,9 @@ def analyze_repositories(
     #   github_token: GitHub token for private HTTPS repositories
     #   since_date: Analyze commits from this date (YYYY-MM-DD string)
     #   to_date: Analyze commits up to this date (YYYY-MM-DD string)
+    #   cleanup_after: Remove cloned repos after analysis (default True)
+    #   skip_merges: Skip merge commits (default True)
+    #   commit_order: "newest_first" (default) or "oldest_first"
     from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
 
     kwargs = {}
@@ -109,6 +114,8 @@ def analyze_repositories(
         ssh_key_path=ssh_key_path,
         github_token=github_token,
         cleanup_after=cleanup_after,
+        skip_merges=skip_merges,
+        commit_order=commit_order,
         **kwargs,
     )
 
