@@ -1,4 +1,8 @@
 repository,repo_url,commit_hash,author,date,message,green_aware,patterns_matched,pattern_count,confidence,files_modified,insertions,deletions,dmm_unit_size,dmm_unit_complexity,dmm_unit_interfacing,total_nloc,total_complexity,methods_count,energy_joules
+itheima1/Android,https://github.com/itheima1/Android,b385b001c52ca4e0c9fc9b69b6866d0941940a76,黑马程序员,2025-08-07T17:01:52+08:00,Created using Colab,False,,0,low,1,934,0,,,,0,0,0,
+cSploit/android,https://github.com/cSploit/android,814ddc87c31c7bab21107791d52568c5ecd6d6e4,pahapoika,2021-01-13T11:00:40+02:00,"EOL notice
+
+Announce EOL. The project hasn't been updated by the devs for a long time.",False,Minimize Deployed Environments,1,medium,1,4,0,,,,0,0,0,
 S2-group/UPISAS,https://github.com/S2-group/UPISAS,26e85831a7e20408422a19b2a9a5eb1e10429c96,Ilias Gerostathopoulos,2023-10-15T15:46:55+03:00,Initial commit,False,,0,low,2,203,0,,,,0,0,0,
 S2-group/UPISAS,https://github.com/S2-group/UPISAS,7bdb5f8a76e3900c84c139530f17387b1e4dd434,Ilias Gerostathopoulos,2023-10-15T14:51:40+02:00,"adding gitignore, updating readme",False,,0,low,2,8,1,,,,0,0,0,
 S2-group/UPISAS,https://github.com/S2-group/UPISAS,2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f,Ilias Gerostathopoulos,2023-10-15T15:10:43+02:00,"adding test node application, updating README",False,,0,low,5,117,4,0.22666666666666666,1.0,1.0,80,8,5,
@@ -46,6 +50,170 @@ S2-group/UPISAS,https://github.com/S2-group/UPISAS,776352167f393ff5f6cbfe2b8723f
 S2-group/UPISAS,https://github.com/S2-group/UPISAS,943abefb129e61653f71b41f4b8a4f61bdd5f03b,Ilias Gerostathopoulos,2024-10-28T21:36:41+01:00,fixing broken tests,False,,0,low,2,10,10,1.0,1.0,0.0,220,41,35,
 S2-group/UPISAS,https://github.com/S2-group/UPISAS,bdc866b6c149c38d2ffcc1f9330928b3451932a2,Ilias Gerostathopoulos,2024-10-28T21:43:33+01:00,git ignoring experiments folder where experiments results are stored,False,Compress Stored Data,1,medium,1,1,0,,,,0,0,0,
 S2-group/UPISAS,https://github.com/S2-group/UPISAS,63d7b6606fc04c447cfa9957339e07be5c053757,Elvin,2024-11-05T15:45:32+01:00,Update README.md,False,,0,low,1,2,2,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,aad7592bf743d6144dbd597dfd0e45e87a6ee282,Michael Bestas,2019-10-25T20:11:55+03:00,"manifest: Move from android-10.0.0_r11 to android-10.0.0_r18
+
+Change-Id: I285f58201a2973024eb5fb89a7",False,,0,low,3,59,48,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,d7f59b1e4fccad54c6eee73b3a1109fd7334a11a,Michael Bestas,2020-01-08T00:51:30+02:00,"manifest: Move from android-10.0.0_r18 to android-10.0.0_r23
+
+Change-Id: I6361e7d181df10a073a88f439e",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,11bf1371badf43e83199c01659242a638504dd7f,Michael Bestas,2019-10-09T21:30:56+03:00,"lineage: Reenable Profiles
+
+Change-Id: I42123416b90c8d10ce294cc9f6eaae5335143823",True,Performance Profiling,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,0e7b6fb097f7faff464a1b3e1914d69a5dadd8ab,Michael Bestas,2020-01-20T16:14:26+02:00,"manifest: Switch to our system/hardware/interfaces fork
+
+Change-Id: Ic242ec8a1752f16b93172aeede852a3",False,Use Energy Efficient Hardware,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,48cd51e7592adbebb4dc263963f756de1e7b6d84,Nolen Johnson,2020-01-21T17:02:23+00:00,"lineage: Track our system/sepolicy
+
+Change-Id: Ib37aa1f6f02aba4e5ceafa0941923b85ee916f76",False,Set Retention Policy on Storage,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,9bd031c7c1554966658a0c2f985d5773ea16f284,Han Wang,2019-10-06T06:19:28+02:00,"lineage: Sync devicesettings/flipflap globally
+
+ * Widely used by many devices and are rather small.",False,Minimize Deployed Environments,1,medium,1,2,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,fb532721d0820ab2443b0607a74ef79bd646d3b5,Chirayu Desai,2019-09-20T04:44:12+05:18,"Sync SetupWizard
+
+Change-Id: I585168f56a4a962c87215fc42c2abd001132b9ff",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,9eacca91556a4c1caa91b6e9ef3b3012e1858486,Luca Stefani,2020-02-03T20:37:06+01:00,"manifest: Move from android-10.0.0_r23 to android-10.0.0_r27
+
+Change-Id: Ic0fc8124e6e5c69898616c42c3",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,052e544fdae7400ebf31da03d48a12bdbcf99c6b,Arian,2020-02-07T20:19:59+01:00,"manifest: Track own external/toybox
+
+Change-Id: Idf807d475ebd59bb5bdac61223b67378eded4981",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,38ad30dd43bfdd692229025e3485e4d18b5c7886,Michael Bestas,2020-02-02T21:51:54+02:00,"lineage: Readd Backgrounds
+
+Change-Id: Ieceb6341fea19260ffde7b3b085fd2ed639ace07",True,Queue Non-Urgent Requests,1,medium,1,1,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,b37015f8a2ae170e9a6071b0b880be6a88158255,Luca Stefani,2020-02-24T15:31:22+02:00,"Switch to our chromium-webview fork
+
+* The latest webview 80 supports android Q
+* TODO: Move to Tric",True,Database Views & Materialized Views,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,c52d227b4f9cc50948ea24a21e640ea0274da430,Michael Bestas,2020-02-25T20:11:03+02:00,"manifest: Track our own external/libhevc
+
+Change-Id: Iae97259f2c58442f02c642701c4292622af25f00",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,76173efb87f4e58293af4c78758316d3b575f665,Tom Powell,2020-02-25T18:02:13-08:00,"android: drop gitlab remote, as we don't pull from gitlab
+
+Change-Id: Ib04757b49d19d05f727da5da0a5ec",False,,0,low,1,0,3,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,658db31104917c4614ef879434bec8c417b271b0,Luca Stefani,2020-03-03T11:51:33+01:00,"manifest: Move from android-10.0.0_r27 to android-10.0.0_r31
+
+ * Track apifinder from AOSP
+
+Change-I",True,,0,low,1,2,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,89f3db79f396eb6de44b77267dfd9a6ec98a6892,Aaron Kling,2019-09-06T20:26:53-05:00,"Move libcxx to our fork
+
+Change-Id: I766a212d8b03864c4f15376895110f66800340d8",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,153918691eddced762df4cb93661be3bcfb65ae6,Luca Stefani,2020-03-27T12:05:42+02:00,"Fork system/extras
+
+Change-Id: I04a5665920f2c4fae1a74a607591aec7a6c0350e",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,e641fb9c44618c826d5dd4ce544b2797a250e908,Luca Stefani,2020-04-09T22:01:36+02:00,"manifest: Move from android-10.0.0_r31 to android-10.0.0_r33
+
+Change-Id: I2695bd4d97e2258acccbd01d1f",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,93fcc05b008e58ea9616565ee437233813d1c0e1,Alessandro,2020-04-06T22:23:47+02:00,"manifest: Track our own external/gptfdisk
+
+Change-Id: I731fc4a68c116064b7fe6165f2b8a29dc706c94c",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,dbeddab0a96e54d603c01d617e1ef8a2919a48be,Kevin F. Haggerty,2020-03-07T14:10:01-07:00,"manifest: Track our own external/ppp
+
+* Necessary in order to patch CVE-2020-8597
+
+Change-Id: I482a1",False,Scan for Vulnerabilities,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,53b0fc47422206a9d3d0d7b31a673beecd255f33,Aaron Kling,2020-04-20T14:51:52-05:00,"manifest: Track packages/inputmethods/LeanbackIME
+
+Change-Id: I346510648da55a50ebc03fc4150317715d7e9",False,,0,low,1,1,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,e8f9969b7e9b84c4a5d552c927d8c8d7d31f6622,Nolen Johnson,2020-05-01T15:55:19-04:00,"manifest: Track additional Pixel 4{,XL} hardware repo
+
+Change-Id: I2b2b4ddef7ab08fabf8c2fc1164084251",False,Use Energy Efficient Hardware,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,b6cea84cff4af0eef9deb8917d5f1e9521ef051a,LuK1337,2020-05-02T19:36:41+02:00,"manifest: Sync vendor/qcom/opensource/vibrator
+
+Change-Id: I31a4ec3f4838314d5bb6c4854c2e5aa6a825c0a1",False,,0,low,1,1,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,4adc1d688f1966e9288c3094835aa23502758f93,Davide Garberi,2020-05-05T01:05:34+02:00,"manifest: Move from android-10.0.0_r33 to android-10.0.0_r35
+
+Change-Id: I8c5d4f2900e138bf5b1d87426e",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,945a9fc8662111be42e1cabfe67d7c01299dcd24,Kevin F. Haggerty,2020-05-01T08:41:42-06:00,"manifest: Use our forks of e/{cldr,icu} and s/timezone
+
+* Necessary for tzdb updates
+
+Change-Id: I19",True,,0,low,1,3,3,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,d2ca8aea60d0e54e90156adece8a46a332c763ca,Chirayu Desai,2020-05-09T02:08:19+05:18,"Fetch our fork of build-tools
+
+Change-Id: I2191ba7d798fffb5bf5792de3cdb9034b144fd0f",True,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,0dbc6327264622b635e357f3bb3d339194da18d5,LuK1337,2020-05-06T02:16:43+02:00,"manifest: Replace Calendar with Etar
+
+Change-Id: If8a5786ee40cc8a20931eddfee51ed028155315a",False,,0,low,2,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,35fe670d857a6feb3a02c45cb154ac43a775432a,Neil Fuller,2019-07-19T16:46:32+01:00,"Remove unused frameworks/opt/datetimepicker
+
+The code has Y2038 issues via android.text.format.Time.",True,"Delete Unused Storage Resources, Remove Unused Assets, Enable Text Compression, Remove Unused CSS, Serve Images in Modern Formats, Efficient Format for Model Training",6,high,1,0,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,56491b1af74d5cfa7bbeb8c0b7e0a38344a0c7c9,Michael W,2020-05-07T12:31:44+02:00,"android: Move to our own fork of timezonepicker
+
+Change-Id: I699809d128d21cbc48ef32730baac57d43a54f9",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,2cb0f81ace4c6c336e513a557ae08b287cb99ce0,Han Wang,2020-06-01T12:04:17+02:00,"manifest: Switch to our external/libtextclassifier fork
+
+Change-Id: Iec83239ce5f47e8625c0d6dea6fc001",False,Enable Text Compression,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,4426c2f661b65662a8717285877c67b9665ac6c1,Kevin F. Haggerty,2020-06-01T16:52:09-06:00,"manifest: android-10.0.0_r35 -> android-10.0.0_r37
+
+Change-Id: Ic805bbef0d77dcffb21785a6c9354da1cb89",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,9ff371afacb44317922539063f07c4f0b437fedf,Kevin F. Haggerty,2020-06-02T01:00:25-06:00,"manifest: Track additional projects introduced in android-10.0.0_r37
+
+Change-Id: I8d091d335f88c76048",False,,0,low,1,1,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,5e6813e9523f6e52532e70e05d379ca6b7a80916,Han Wang,2020-06-25T14:45:13+02:00,"manifest: Switch to our external/skia fork
+
+Change-Id: Ia0d205968ebc824bb02beba665f5bd5a42c3c501",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,7756768e4aa9de8a30431986de18c3143a1ee18d,Pig,2020-05-24T17:20:21+02:00,"lineage: Track QTI BT repos
+
+Change-Id: I24995a166d3772dfb119a5a7b8406ee477029aff",False,,0,low,1,4,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,53f057c9b52eefd6bef730cf545f45960b7e3a5d,LuK1337,2020-06-25T16:32:51+02:00,"manifest: Sync sm8250 HALs
+
+Change-Id: I041271a32e7d0dd616bde9942ba544c81c1367e3",False,,0,low,1,5,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,a0636077c37acd530c7c3c5a5acfb35d375dc380,Nolen Johnson,2020-06-30T12:51:27-04:00,"manifest: Track AOSP TV app
+
+* Back on 14.1 the planned additions for this never
+  actually panned o",True,API Gateway Pattern,1,medium,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,c42e39b5746eb64a4bfd61295f3dddc135928660,Kevin F. Haggerty,2020-07-06T14:17:34-06:00,"manifest: android-10.0.0_r37 -> android-10.0.0_r40
+
+Change-Id: I814f32ad61f75bb3098576e27e3db17b1790",True,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,486feedcc841f404c35e4321fd6db7fca55b7621,Kevin F. Haggerty,2020-08-03T12:13:35-06:00,"manifest: android-10.0.0_r40 -> android-10.0.0_r41
+
+Change-Id: I7e29f1f2d758f9d33b04a4d0bbd8e1ec1160",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,cd746b0823671f1b43c0ef98c5398518448c1ff5,Luca Stefani,2020-08-05T11:46:26+02:00,"Switch to our system/libufdt fork
+
+Change-Id: I4b14f9cfda2ed4a28c610e068eeaf2a645251350",False,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,54bb6d652d7b711deae5bf3742972c1c533d79e9,Michael Bestas,2020-09-09T03:31:32+03:00,"Initial manifest for Android 11
+
+Change-Id: Icd6eeac35c2272947cbdff60c3ae7d76e4422b39",False,,0,low,3,366,286,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,583440ba3e32d873a4130c3d04e4ccd10b87e8c7,Han Wang,2020-09-19T18:06:44+02:00,"manifest: Switch to our bionic fork
+
+Change-Id: I7de93ffa45f9723546f26db6712060bf5a9f66f1",True,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,c09b572eda3554b361a8e79d82909e69abf862a2,LuK1337,2020-09-15T14:37:01+02:00,"manifest: Reenable updated external repos
+
+Change-Id: Ia11aa5e5391c2ebe3d5f4e5e01dded57e5549d64",False,,0,low,1,12,12,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,3b8f0edf7216ac1ef66215d11f9441f6dea4d6f9,Pig,2020-09-20T21:19:16+08:00,"manifest: Reenable our sepolicy forks
+
+Change-Id: Ibafe7cb12c93f03d1446e8b264eb0ef5cfbf25a5",False,Set Retention Policy on Storage,1,medium,2,4,3,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,ca74391242eba6e6479aae0109bd77b9ca60b5e1,Pig,2020-09-20T21:25:31+08:00,"lineage: Reenable ANT+ repos
+
+Change-Id: I24fdcdbebbdc4c9c0c3d576fd503370e92083eba",True,,0,low,1,5,3,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,2fcc2ac16f1f4145de6e9024a6cd09aa6d99bb27,Jan Altensen,2020-09-21T22:25:34+02:00,"manifest: switch to more of our forks
+
+Change-Id: I103437dbefa80f8614a606d442661e7c3b195b8c",True,,0,low,1,4,4,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,621c348a7aa8700bf54ad0f8c584091050055c73,LuK1337,2020-09-23T22:54:16+02:00,"manifest: Sync even more of our repos
+
+Change-Id: I107f5cb286136dbdc04a86e79ec036412b39c93e",True,,0,low,2,11,11,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,cb2eed6bb50bf7801aaadacbc977433f11d3c0fa,Aaron Kling,2020-09-23T14:44:29-05:00,"Track our TvSettings
+
+Change-Id: I0a7cb0ea43597cc4d5ff73fdaedbb4e5efce5ae7",True,,0,low,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,586b97be0733ac5fdc0f55bbdb3c1d7da00f01a5,Aaron Kling,2020-09-21T21:48:57-05:00,"Sync Lineage Customizer
+
+Used by all atv devices
+
+Change-Id: Ib8f6e46abec02eaacc6c4e6944b4111fa7481d",True,Minimize Deployed Environments,1,medium,1,1,0,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,af721d0e16c380ee45790bc5ff7fb4dfb4c96e8c,Aaron Kling,2020-09-21T21:47:38-05:00,"Switch to our device/google/atv fork
+
+Change-Id: Ic746a016355d560788f61c19dadc2c32cdc2b3ce",True,"Minimize Deployed Environments, Use Compiled Languages, Incremental Processing",3,high,1,1,1,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,46237c6a882d3dbc23f11d289f1d70fd32ae20a1,Bruno Martins,2020-09-24T14:17:08+01:00,"lineage: Bring up the SDK
+
+Let the fun begin.
+
+Change-Id: Iee8278462fe4675434957b4e08ade96ea6807048",False,,0,low,1,7,7,,,,0,0,0,
+LineageOS/android,https://github.com/LineageOS/android,344f8fb6056e3689e996d12e780b37a3b2e51f0e,Bruno Martins,2020-09-24T14:26:50+01:00,"lineage: Enable Trebuchet
+
+We need a launcher, even if it's just the plain Launcher3 right now.
+
+Cha",True,,0,low,1,1,1,,,,0,0,0,
 S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,85eca66ac90a5dd54b9c2e2f87da902ea519a0d3,Ivano Malavolta,2022-06-20T11:40:52+02:00,Initial commit,False,,0,low,63,3224,0,0.7213452299245025,0.7652711050102952,0.8345916266300618,2088,436,241,
 S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,05bca1006a47c30cc0d09eddf571309ab4777142,Ivano Malavolta,2022-06-20T11:46:57+02:00,Add WIP indication,False,,0,low,1,2,0,,,,0,0,0,
 S2-group/experiment-runner,https://github.com/S2-group/experiment-runner,f2967572e83463431df533753a11286720a3cb95,nikosChalk,2022-06-24T18:39:35+03:00,discarding robot related stuff,False,,0,low,21,111,149,0.7083333333333334,1.0,0.0,697,127,76,
@@ -223,6 +391,166 @@ S2-group/green-lab,https://github.com/S2-group/green-lab,8f97f9b93a991db0e7dd5fa
 S2-group/green-lab,https://github.com/S2-group/green-lab,d089179be1b73c148b1206cf9596d5157eaf84cb,Yuqi Yue,2025-10-02T15:11:43+02:00,"[Lab 3] Ex 1, 2, 3",False,,0,low,2,165,7,,,,0,0,0,
 S2-group/green-lab,https://github.com/S2-group/green-lab,01e5a6a627e54a403a2aa087b17b8eb7b844ac62,Aayush Joglekar,2025-10-02T22:53:31+02:00,[Lab3] Fix minor issues,False,,0,low,1,5,5,,,,0,0,0,
 S2-group/green-lab,https://github.com/S2-group/green-lab,1f53a7f7ff746b609e7fb16f2947de136a2e2e86,Yuqi Yue,2025-10-03T08:52:51+02:00,slides added,False,,0,low,1,0,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,9e773fea642aeca8e3e49546196a909c61235e43,Dominik Schmidt,2020-01-08T10:28:23+00:00,[tx] updated from transifex,False,,0,low,9,137,1,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,50eaecf9886019649b2583b78df9a66147eade2b,Dominik Schmidt,2020-01-08T15:26:47+00:00,[tx] updated from transifex,False,,0,low,1,15,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,ba7d427cdb6f2da957e61f8aff89d724f87f55d1,Dominik Schmidt,2020-01-08T16:26:06+00:00,[tx] updated from transifex,False,,0,low,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,88089179b0f10b491174524850bac5e4874a6a2d,Dominik Schmidt,2020-01-10T09:43:19+00:00,[tx] updated from transifex,False,,0,low,1,16,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,94932c7724a06a22ce6827cd94c568bcea77308f,Dominik Schmidt,2020-01-11T09:34:55+00:00,[tx] updated from transifex,False,,0,low,1,47,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,ec162f9fbd7586672ea92ea478f3e2163f5f2b72,Dominik Schmidt,2020-01-11T13:34:40+00:00,[tx] updated from transifex,False,,0,low,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,925dbe9f678b083f084d835fbfe7a52834485532,Abel García de Prada,2019-12-19T13:06:18+01:00,Remove kitkat from wizard,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,4,10,22,0.2857142857142857,0.2857142857142857,0.5714285714285714,144,31,18,
+owncloud/android,https://github.com/owncloud/android,3201406f15fcfdaaddde7a0275199a261f4e442c,davigonz,2019-12-19T13:49:31+01:00,Wizard cleanup,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,46,13,317,,,,144,31,18,
+owncloud/android,https://github.com/owncloud/android,9a2efb918f3b6e3e6abb04cb530903972acd8607,Dominik Schmidt,2020-01-13T09:48:34+00:00,[tx] updated from transifex,False,,0,low,21,39,12,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,fdbe144c0f4ae8c978b78f89b518f797bdaa3b88,Hannes Achleitner,2020-01-04T10:14:29+01:00,"Android Studio 3.5.3
+
+(cherry picked from commit e6d9b72a2b4840c3b549c62649e2a2b5dcdc16d6)",False,Incremental Processing,1,medium,3,4,4,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,c7ed04c783be97a8b2c4d3e30a1554443b516176,Hannes Achleitner,2020-01-03T00:10:44+01:00,update Room schema 28,False,,0,low,1,4,5,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,27fa212a2a461b9afd2fcaf9e3524a7a265a5f42,jrecio,2020-01-10T08:41:24+01:00,add new task to release template: upload APK to internal instance,True,"Match VM Utilization Requirements, Scale Infrastructure with User Load",2,high,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,638fbbe19734c9f18a843aafc0860ad719b2f93b,Hannes Achleitner,2020-01-02T17:06:01+01:00,code format and minor lint issues,False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,2,42,77,0.5416666666666666,0.20833333333333334,0.625,539,83,30,
+owncloud/android,https://github.com/owncloud/android,59c4a2ad34e603dfe9a1ea6b8cb6fc1967f60102,Hannes Achleitner,2020-01-04T09:51:45+01:00,"fix lint warnings
+
+(cherry picked from commit 44769d0b24a98dc1a1053ef1ff3bc5fbd7a75c1b)",False,,0,low,4,55,68,1.0,0.3076923076923077,0.15384615384615385,1334,257,105,
+owncloud/android,https://github.com/owncloud/android,0f7534c15e7cb3362af6ef5101cb42dc651f1b57,Hannes Achleitner,2020-01-10T15:51:11+01:00,apply code review wish,False,Database Views & Materialized Views,1,medium,1,1,5,0.0,0.0,0.0,858,168,57,
+owncloud/android,https://github.com/owncloud/android,db58c3ea013ba991a471df1b43dfbc9fc62a43fe,davigonz,2020-01-14T16:39:49+01:00,Update library reference with latest changes,False,,0,low,1,1,1,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,a301888973b77bf202839089b3e6a30b3e317c40,Abel García de Prada,2019-12-20T14:28:02+01:00,Move log initialization to MainApp,False,,0,low,2,16,14,1.0,1.0,1.0,209,34,16,
+owncloud/android,https://github.com/owncloud/android,94a92de18c8dce65778318f07af49ef4357faa1f,Abel García de Prada,2020-01-13T14:34:23+01:00,Replace log_OC with Timber,False,,0,low,105,953,1468,0.0,0.09615384615384616,0.4188034188034188,27580,4966,1801,
+owncloud/android,https://github.com/owncloud/android,2d001212c95e23062a7a0301551fabe4d9126cc7,Abel García de Prada,2020-01-14T12:44:08+01:00,Remove unused logs,True,"Delete Unused Storage Resources, Remove Unused Assets, Remove Unused CSS",3,high,3,0,9,,,,2025,357,113,
+owncloud/android,https://github.com/owncloud/android,0596b883f249f80a590a186f1b84b540196c3e3a,Dominik Schmidt,2020-01-16T02:27:33+00:00,[tx] updated from transifex,False,,0,low,2,2,1,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,2a558338c1a8773a76dc67c5430d9ce124b0e0d4,Dominik Schmidt,2020-01-18T02:25:03+00:00,[tx] updated from transifex,False,,0,low,1,2,2,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,c261508ce45d55928300bc21527e4a9c8e312657,davigonz,2019-08-29T11:01:40+02:00,Get rid of conditions for <10 servers,False,,0,low,20,394,274,1.0,1.0,0.0625,8960,1657,567,
+owncloud/android,https://github.com/owncloud/android,3f0532608715ea69c237d6662e6405e81257566e,davigonz,2019-09-02T10:03:19+02:00,Apply changes requested in PR,False,"Avoid Chaining Critical Requests, Keep Request Counts Low",2,high,7,17,41,0.7272727272727273,0.36363636363636365,1.0,2134,339,146,
+owncloud/android,https://github.com/owncloud/android,af24ef418e10a6bfd702828851ff915752ae74da,David González,2019-09-10T15:25:54+02:00,Fix folder creation and check again names with /,False,,0,low,3,12,1,0.0,1.0,1.0,593,79,30,
+owncloud/android,https://github.com/owncloud/android,ca1c62d5c49b895aa0a296b733d0e7b69facc668,Abel García de Prada,2019-12-18T12:41:18+01:00,Update library reference,False,,0,low,1,1,1,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,28b80df03cc109165ac7a469d8d3a00163d34ff2,Abel García de Prada,2019-12-18T12:54:15+01:00,Delete old tests,False,Delete Unused Storage Resources,1,medium,3,1,239,0.3218390804597701,0.0,0.0,73,3,3,
+owncloud/android,https://github.com/owncloud/android,ecc144c7d3ff419de05cc0aae2535f28861147ee,davigonz,2019-12-11T13:09:07+01:00,Show snackbar with specific error message when using <10 servers,False,,0,low,3,9,7,0.0,0.0,1.0,1708,401,114,
+owncloud/android,https://github.com/owncloud/android,49ba21cdb1794c0925d19c08496a0cb97c92f392,Abel García de Prada,2019-12-20T12:00:38+01:00,Show a dialog when logged in an old server,False,,0,low,3,23,12,0.0,1.0,1.0,1927,446,125,
+owncloud/android,https://github.com/owncloud/android,fe7868b68ccbf47f1a0671d396cee7df1560fba6,Abel García de Prada,2019-12-20T12:29:44+01:00,Wizard cleanup,True,"Delete Unused Storage Resources, Remove Unused Assets",2,high,7,10,43,1.0,0.4166666666666667,0.25,1084,216,93,
+owncloud/android,https://github.com/owncloud/android,7d6b68c86e0351e902e962ebaf13540093ab3814,Abel García de Prada,2019-12-20T12:44:14+01:00,Remove old servers constants,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,0,16,0.0,0.0,0.0,290,51,22,
+owncloud/android,https://github.com/owncloud/android,ec41fc7f2aff2d0ed051018bba00017b9234a778,Abel García de Prada,2020-01-13T13:45:40+01:00,Show custom error message when logging <10 servers,False,,0,low,2,10,2,0.0,0.0,1.0,2590,567,143,
+owncloud/android,https://github.com/owncloud/android,7014d0eb50f6aa4051feeab96d74168212b08166,Abel García de Prada,2020-01-13T14:49:18+01:00,Remove unused strings,True,"Delete Unused Storage Resources, Remove Unused Assets, Remove Unused CSS",3,high,9,0,18,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,4be715ecc1272662642e8c76bbec2026fb94ad6b,davigonz,2020-01-16T11:15:29+01:00,"Improve warning and fix upgrading server to newer version, warning stays
+
+Rebase with master
+
+Remove",True,"Delete Unused Storage Resources, Remove Unused Assets, Remove Unused CSS",3,high,6,52,77,0.0,0.0,0.38461538461538464,2237,483,125,
+owncloud/android,https://github.com/owncloud/android,253d4ecdd3de4389fc7e5edf2311702472bdb058,Dominik Schmidt,2020-01-22T02:24:22+00:00,[tx] updated from transifex,False,,0,low,3,6,3,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,0323cfb6e75d946c64b410585a30f2489afe1cb8,Dominik Schmidt,2020-01-23T02:28:26+00:00,[tx] updated from transifex,False,,0,low,2,2,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,d9811b915a53f84be7606ef28282d761a1efb4fd,Dominik Schmidt,2020-01-24T02:33:08+00:00,[tx] updated from transifex,False,,0,low,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,50cd4b9ca94702d37223940dc14609fc9040357b,Dominik Schmidt,2020-01-26T02:18:54+00:00,[tx] updated from transifex,False,,0,low,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,5638a377bb63833c4b11973ddc69763837d0ed00,Dominik Schmidt,2020-01-28T02:05:45+00:00,[tx] updated from transifex,False,,0,low,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,7aef29eb4b901e18c74212d3619d10b73f8f1779,Hannes Achleitner,2020-01-02T17:07:31+01:00,remove a crash,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,3,5,1.0,0.0,0.0,530,84,30,
+owncloud/android,https://github.com/owncloud/android,bc900fdcd1e313d7cf6b53de128bddbc9248f340,Abel García de Prada,2020-01-20T12:54:18+01:00,Fix crash when trying to connect to self signed certificate,False,,0,low,1,18,1,1.0,1.0,1.0,1241,242,67,
+owncloud/android,https://github.com/owncloud/android,7537164cd2a1bc515919df9ca1975b58aa9a1f51,Abel García de Prada,2020-01-22T13:25:08+01:00,"Update versionName, versionCode and changelog",False,,0,low,2,5,2,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,c166e4e263ac9aa6fc4485bc8d0ed4eb072bd55f,Abel García de Prada,2020-01-29T12:57:40+01:00,"Update library reference
+
+Rebase with master",False,,0,low,2,4,4,,,,1241,242,67,
+owncloud/android,https://github.com/owncloud/android,94ed4f6edd3e212cc8a92f641972ab2ec8937533,Abel García de Prada,2020-01-16T13:10:26+01:00,Use timber instead of printstacktrace,False,,0,low,16,22,47,1.0,1.0,1.0,4145,701,213,
+owncloud/android,https://github.com/owncloud/android,a79109dea8edcd9e0c071951475b7ef1145efeae,Abel García de Prada,2020-01-17T13:33:26+01:00,Remove some lint warnings,False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,6,8,8,,,,4653,785,197,
+owncloud/android,https://github.com/owncloud/android,9b9f27fc301de39d0de0c3b1ada06654108ae222,davigonz,2020-01-28T17:33:43+01:00,Use latest gradle version,False,,0,low,1,1,1,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,35e9ac38f237a98bf6685834951ead3a5bbc3e7e,davigonz,2020-01-31T11:47:28+01:00,Rebase with master,False,,0,low,1,1,1,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,7520039d05b326d7dda4eeb8db1cf9fd8b7bbba1,Dominik Schmidt,2020-02-02T02:22:49+00:00,[tx] updated from transifex,False,,0,low,1,1,0,,,,0,0,0,
+owncloud/android,https://github.com/owncloud/android,fc3062e0aabe4549ba2eb0cb77bfecf6b444f316,davigonz,2020-02-04T15:35:34+01:00,Create clean clients when there's no account to execute the operations,False,Keep Request Counts Low,1,medium,2,10,1,0.0,0.0,1.0,421,61,22,
+owncloud/android,https://github.com/owncloud/android,05a41ae7ef0707f323f5626d611882c2084f771c,davigonz,2020-02-04T17:29:57+01:00,Clean up owncloud client factories,False,Use Cloud Native Security Tools,1,medium,10,43,59,1.0,0.2,0.0,3719,660,211,
+owncloud/android,https://github.com/owncloud/android,b69e1e881a74abdd43df568b10ba864ac100c597,davigonz,2020-02-05T08:49:45+01:00,Remove unnecessary method,False,"Delete Unused Storage Resources, Remove Unused Assets, Avoid Tracking Unnecessary Data",3,high,1,1,1,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,ffdc3c3750d501eb86ad48a4cb28bd67774e2f7a,Justin Bassett,2020-01-03T05:43:25-05:00,"Home Network Settings (#209)
+
+* Url management now abstracted to new separate use case.
+
+* Add pre",True,"Compress Transmitted Data, Reduce Network Traversal Between VMs, Use Compiled Languages, Avoid Tracking Unnecessary Data, Serve Images in Modern Formats, Efficient Format for Model Training",6,high,41,746,384,0.7289719626168224,0.7102803738317757,0.616822429906542,2615,156,101,
+home-assistant/android,https://github.com/home-assistant/android,2e8cfc9499887093ad60c0ec883bc8c9600aebc3,Justin Bassett,2020-01-03T15:20:06-05:00,Fix integration registration overriding url. (#220),False,,0,low,1,3,1,1.0,1.0,0.0,91,13,7,
+home-assistant/android,https://github.com/home-assistant/android,0ee9b29074187ac48b5131314cc29405d2a5d5d9,Justin Bassett,2020-01-08T15:49:19-05:00,Add permissions for Camera and Audio. (#235),False,,0,low,2,49,0,0.0,0.37209302325581395,1.0,222,24,16,
+home-assistant/android,https://github.com/home-assistant/android,5d02ec9bc62e2208423fbe86770c998811713048,Justin Bassett,2020-01-08T15:49:38-05:00,Send device_id for HA versions above 0.104.0 (#234),False,Minimize Deployed Environments,1,medium,8,121,10,0.0,1.0,1.0,1026,40,19,
+home-assistant/android,https://github.com/home-assistant/android,5f548960575c788020f7e2a5910c4d741b4c4c92,Justin Bassett,2020-01-08T16:51:57-05:00,"Support Migrations (#224)
+
+* Add instanceId to data layer.
+
+* Support migrations.
+
+* Formatting",False,"Match VM Utilization Requirements, Reduce Transmitted Data, Serve Images in Modern Formats, Efficient Format for Model Training",4,high,4,78,9,0.24324324324324326,1.0,1.0,210,10,8,
+home-assistant/android,https://github.com/home-assistant/android,dfb03e32e088b28304dd2bdaa728420b9acf36d4,Justin Bassett,2020-01-08T17:55:14-05:00,Open urls that are outside the application correctly. (#236),False,,0,low,1,23,9,1.0,1.0,1.0,235,26,17,
+home-assistant/android,https://github.com/home-assistant/android,3a99f623636a54550085b7fb105c32b9b0e620df,Justin Bassett,2020-01-10T13:50:34-05:00,Remove URLs and WiFi when logged out. (#248),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,6,0,1.0,1.0,1.0,394,19,10,
+home-assistant/android,https://github.com/home-assistant/android,3719a1ca84304f4f54a13d06e716984645c7fd95,Justin Bassett,2020-01-10T13:51:33-05:00,Only show error screen if main url fails to load. (#245),True,Scale Infrastructure with User Load,1,medium,1,8,2,1.0,1.0,0.2,241,28,17,
+home-assistant/android,https://github.com/home-assistant/android,f9dfc15ec637a2809e3a2d04510c678e4fa24281,Justin Bassett,2020-01-10T13:51:50-05:00,Fix issue when we are on local wifi without local url. (#247),False,,0,low,1,2,1,1.0,1.0,1.0,92,14,7,
+home-assistant/android,https://github.com/home-assistant/android,cf283cf6628debc0599e04fb366ed96fbf336482,Justin Bassett,2020-01-10T13:52:02-05:00,Fix migration to pull from the correct preference. (#246),False,,0,low,1,6,6,,,,50,3,2,
+home-assistant/android,https://github.com/home-assistant/android,675861d7c0857e56a7eda509583aa0e0eef799d3,Justin Bassett,2020-01-10T19:45:01-05:00,"Add timeout to UI on load. (#249)
+
+* Refactor to isConnected.
+
+* Add timeout to UI on load.",True,"Scale Infrastructure with User Load, Resource Limits & Constraints",2,high,1,16,3,0.18181818181818182,1.0,1.0,253,33,19,
+home-assistant/android,https://github.com/home-assistant/android,5fa1ee05ce186d5fe9a3976ecd977460c28e359b,Justin Bassett,2020-01-12T07:56:04-05:00,"Add specific error handling around revoked token. (#251)
+
+* Add specific error handling around revok",False,,0,low,10,95,21,0.6111111111111112,0.5,0.4583333333333333,904,73,41,
+home-assistant/android,https://github.com/home-assistant/android,21e038bd2be2894b0b51e7c4aa84759be5ebd663,neopilou,2020-01-16T21:48:32+01:00,Android TV Support (#264),False,,0,low,2,14,1,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,5db4b2d501ea743296e6acab428925ada05196e0,Justin Bassett,2020-01-17T18:32:47-05:00,Automatic discovery of HA on local network. (#255),True,"Compress Transmitted Data, Reduce Network Traversal Between VMs",2,high,14,324,92,0.9797979797979798,1.0,1.0,408,42,34,
+home-assistant/android,https://github.com/home-assistant/android,bda966b2702df0f62b861e9188ef57d4e2eaf0e4,Justin Bassett,2020-01-17T18:33:27-05:00,Status Bar Color Match Theme (#268),False,,0,low,11,69,3,0.9523809523809523,1.0,0.9523809523809523,896,96,54,
+home-assistant/android,https://github.com/home-assistant/android,672a80e773ac83524c38d30a94164524bcdd99f5,Justin Bassett,2020-01-17T19:15:26-05:00,Fix get theme because of missing fields in DTO. (#270),False,,0,low,2,7,1,0.0,1.0,1.0,105,8,5,
+home-assistant/android,https://github.com/home-assistant/android,1219767ef4d6e011b604b3fd774baec90983cd1c,Justin Bassett,2020-01-18T19:08:41-05:00,"Stop the app from opening browser when logging out. (#274)
+
+* Stop the app from opening browser when",False,"Serve Images in Modern Formats, Efficient Format for Model Training",2,high,1,5,1,0.0,1.0,1.0,278,40,23,
+home-assistant/android,https://github.com/home-assistant/android,cc241e18bc0c43b3eaa144133e395770e6f4f78d,Justin Bassett,2020-01-18T19:10:11-05:00,"Add the ability to debug on same device as production application. (#271)
+
+* Add the ability to debu",True,"Minimize Deployed Environments, Use Compiled Languages",2,high,2,16,0,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,195bc9601cfe34d1c1754b59e315348aaf26b99f,Justin Bassett,2020-01-19T16:51:10-05:00,"Reload UI url more proactively (#275)
+
+* Reload UI if the base url has changed.
+AKA changed from re",True,Scale Infrastructure with User Load,1,medium,18,84,52,1.0,1.0,0.14285714285714285,948,121,74,
+home-assistant/android,https://github.com/home-assistant/android,122f9e3a1058b99ff9f18438d35a927d8b4de8c7,Justin Bassett,2020-01-19T18:21:53-05:00,Place the mock google services for debug only. (#280),True,Use Compiled Languages,1,medium,1,2,0,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,9f5a61b0ced28d728f580df38c7e8574cbe93945,Kevin T. Berstene,2020-01-22T17:55:51-05:00,"Basic widget functionality added (#212)
+
+* Basic widget functionality added
+
+* Requested Fixes: 4 ",True,"Compress Stored Data, Delete Unused Storage Resources, Optimize Storage Resource Utilization, Reduce Transmitted Data, Remove Unused Assets, Scale Down Unused Applications, Avoid Chaining Critical Requests, Avoid Excessive DOM Size, Avoid Tracking Unnecessary Data, Enable Text Compression, Keep Request Counts Low, Properly Sized Images, Use Serverless",13,high,41,1326,0,0.4565916398713826,1.0,0.6945337620578779,2111,109,67,
+home-assistant/android,https://github.com/home-assistant/android,e6d5b5825b7fca90a7c0574f792e3733aae515f3,Justin Bassett,2020-01-22T19:22:17-05:00,"Request we be exempt from Doze. (#273)
+
+* Request we be exempt from Doze.
+
+* Add an integration scre",True,"Avoid Chaining Critical Requests, Keep Request Counts Low, Feature Flags for Resource Control",3,high,6,181,20,0.0,1.0,0.26666666666666666,216,25,15,
+home-assistant/android,https://github.com/home-assistant/android,baba03a757b4a5aaf2e8184d774b877e273a18d8,Justin Bassett,2020-01-22T21:45:30-05:00,"Bugfix/crashlytics fixes (#289)
+
+* Add null checks for HomeAssistantSearcher.
+https://github.com/ho",False,"Minimize Deployed Environments, Keep Request Counts Low",2,high,5,39,13,0.0,0.625,1.0,308,56,30,
+home-assistant/android,https://github.com/home-assistant/android,ce719e90172a9c221644c73f47e3aa333555c7e4,Justin Bassett,2020-01-23T01:36:02-05:00,Make sure it's easy to tell which app is debug and which is production. (#290),False,,0,low,13,29,0,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,11e0906f0c25225c9335daaf9b1e10b6138ea5aa,Justin Bassett,2020-01-23T08:26:54-05:00,Don't need to create debug directory anymore. (#294),False,,0,low,1,1,2,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,922be6f168ee7cdb1e1cbfc18b638cf68879b2aa,neopilou,2020-01-23T14:52:57+01:00,Add Fullscreen option (#293),False,,0,low,11,80,1,1.0,1.0,1.0,820,141,71,
+home-assistant/android,https://github.com/home-assistant/android,d1a846a5f0adeb46c49db3cd481f0921f64371d7,Justin Bassett,2020-01-23T09:35:42-05:00,"Revert ""Add Fullscreen option (#293)"" (#295)
+
+This reverts commit 922be6f168ee7cdb1e1cbfc18b638cf688",True,,0,low,11,1,80,0.0,0.0,0.0,773,131,65,
+home-assistant/android,https://github.com/home-assistant/android,497843b686001460b0f0abf2073320ac598af926,Justin Bassett,2020-01-24T14:13:52-05:00,Dependency updates and 'Ok' to 'OK' changes. (#301),False,,0,low,5,5,6,,,,448,59,39,
+home-assistant/android,https://github.com/home-assistant/android,a21f0fea72771395725ee1a662e5daacfa6403da,Justin Bassett,2020-01-24T14:21:31-05:00,"Fixup the styling on the Widget configuration. (#291)
+
+* Fixup the styling on the Widget configurati",True,,0,low,21,236,78,0.36923076923076925,1.0,0.8615384615384616,982,108,65,
+home-assistant/android,https://github.com/home-assistant/android,bc03c149e14991f0fa270a37dbf0be5e6b23c33b,Neonicus,2020-01-27T01:47:51+01:00,Add Fullscreen option (#304),False,,0,low,12,83,4,1.0,0.0,1.0,853,147,74,
+home-assistant/android,https://github.com/home-assistant/android,d56d64f81ff7a86d42639c1d9d8240f8783f853d,Justin Bassett,2020-01-27T00:43:08-05:00,Update translations. (#308),True,Match SLO Requirements,1,medium,11,442,49,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,154b9239294b0dc86a4042292d7bcc36a468613a,Robbie Trencheny,2020-01-29T11:04:54-08:00,"Microphone is not required (#317)
+
+* Microphone is not required
+
+Fixes Play Store rejection
+
+* H",False,Use Energy Efficient Hardware,1,medium,1,1,0,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,417461d4b581edc1c735b99ff5daaff53fd4bc71,Justin Bassett,2020-01-29T19:24:34-05:00,Update Lokalise. (#318),False,,0,low,1,1,1,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,f7a63c085ae0c3c54dbb4cc38bda1e095268cfc0,Daniel Shokouhi,2020-01-29T20:57:15-08:00,Update size of text (#321),False,"Match VM Utilization Requirements, Avoid Excessive DOM Size, Enable Text Compression, Properly Sized Images",4,high,1,0,0,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,779b4ceff99f3fb43ae63b2dccabac754db58c95,Neonicus,2020-01-30T17:19:00+01:00,"Fix Fullscreen for notch (#326)
+
+* Fix Fullscreen for notch
+
+Test if notch or not, if notch just h",True,Resource Limits & Constraints,1,medium,2,17,7,1.0,1.0,1.0,314,50,26,
+home-assistant/android,https://github.com/home-assistant/android,33ffe4a70c93eeeac4d79388eb5066ab9d15b008,Justin Bassett,2020-02-02T22:50:28-05:00,Actionable Notifications (#332),False,,0,low,22,408,205,0.0,1.0,0.43037974683544306,1640,78,45,
+home-assistant/android,https://github.com/home-assistant/android,48dd9192bbed55717ed22e4bc7ff19f4e051689a,Jörg Thalheim,2020-02-04T14:31:26+00:00,implement request_location_update via push notifications (#333),False,"Choose Region Closest to Users, Avoid Chaining Critical Requests, Keep Request Counts Low, Eliminate Polling",4,high,2,20,0,0.42857142857142855,0.21428571428571427,1.0,356,48,20,
+home-assistant/android,https://github.com/home-assistant/android,5113a0ed969ac16958c69939db283ed8ed532f1c,Justin Bassett,2020-02-06T22:02:41-05:00,Add support for images and actions no matter what the app is doing. (#341),True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,high,4,55,17,0.0,0.0,0.6296296296296297,1283,65,27,
+home-assistant/android,https://github.com/home-assistant/android,447cd635dde29a9b122428a6a370c023fa58e66a,Justin Bassett,2020-02-07T00:11:55-05:00,Lokalise Update. (#346),False,,0,low,12,164,22,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,2283042393d1309ff48f2ecb1e2ba40c48d525e2,Kevin T. Berstene,2020-02-07T20:47:26-05:00,Added dynamic auto-complete fields for widget configuration (#339),False,,0,low,20,421,92,0.5976331360946746,0.7396449704142012,0.9467455621301775,1133,147,79,
+home-assistant/android,https://github.com/home-assistant/android,4deffd108a11bfd41b360f7b967d260e1a006ff1,Neonicus,2020-02-09T14:12:40+01:00,Add Authentication Dialog for iFrames (#351),False,,0,low,4,58,0,0.15789473684210525,1.0,1.0,351,52,28,
+home-assistant/android,https://github.com/home-assistant/android,5a7b49a7a09e2c8ad629fd9e6c08aae4282af214,quthla,2020-02-10T14:08:01+01:00,Enable receiving broadcast to update location (#355),False,Choose Region Closest to Users,1,medium,1,2,2,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,6db3201c248af8d20ef2f3c80740f86145ebaf4f,Daniel Shokouhi,2020-02-10T13:00:09-08:00,Add note to check companion docs (#361),False,,0,low,1,1,0,,,,0,0,0,
+home-assistant/android,https://github.com/home-assistant/android,876914a918731c05c1dca890a58087daacdcec69,Kevin T. Berstene,2020-02-10T22:13:55-05:00,Added all as an available entity_id for autocompletion (#364),False,,0,low,1,8,1,0.0,0.0,1.0,86,18,7,
+home-assistant/android,https://github.com/home-assistant/android,6030aaa8fcd34b129ad420a50ba48f18e6b3cdf5,Justin Bassett,2020-02-10T22:14:16-05:00,Multiple Notification Options (#356),False,,0,low,3,195,78,0.9270833333333334,1.0,1.0,299,36,17,
+home-assistant/android,https://github.com/home-assistant/android,aacb4ea605c8fd3c59d3b0550c128a47eafdc365,Justin Bassett,2020-02-10T23:49:39-05:00,Sensor Support (#336),False,,0,low,21,431,12,0.36,0.6114285714285714,1.0,1768,236,127,
+home-assistant/android,https://github.com/home-assistant/android,427226bd238dfafccedd77274bf2337b44cc30a8,Justin Bassett,2020-02-11T11:36:30-05:00,Fix regression with notification actions. (#376),False,,0,low,2,23,17,0.0,1.0,1.0,294,37,17,
+home-assistant/android,https://github.com/home-assistant/android,0fa443a4fa2b942f2fe5ab3c5571fa386eb87fce,Justin Bassett,2020-02-11T11:55:07-05:00,"Remove quotes from wifi ssid and add '<not connected>' (#371)
+
+* Remove quotes from wifi ssid and ad",False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,7,1,0.0,0.0,1.0,64,9,4,
+home-assistant/android,https://github.com/home-assistant/android,2ed6fdda52cddf517c6ef6f8ed4281fb357fa9a5,Justin Bassett,2020-02-11T11:55:26-05:00,Make sure registration is required. (#370),False,,0,low,1,5,0,0.0,1.0,1.0,95,15,7,
+home-assistant/android,https://github.com/home-assistant/android,21de26d435496ae00a2bfeefdb1fe90899333968,Kevin T. Berstene,2020-02-11T20:01:27-05:00,Handle bad service json (#377),True,,0,low,1,4,4,0.0,1.0,1.0,195,22,9,
 tiangolo/fastapi,https://github.com/tiangolo/fastapi,8d3dcbcd1bb93bc0563eea5e98688d9dc4867e00,Dustyposa,2020-01-08T16:08:43+08:00,fix type UrlStr -> HttpUrl (#832),True,"Keep Request Counts Low, Right Hardware Type for AI",2,high,5,9,9,,,,68,4,4,
 tiangolo/fastapi,https://github.com/tiangolo/fastapi,08fc2a41ca6bc1fa1d0970edeaaf8e9184035895,Sebastián Ramírez,2020-01-08T19:16:57+01:00,:memo: Update release notes,False,,0,low,1,2,0,,,,0,0,0,
 tiangolo/fastapi,https://github.com/tiangolo/fastapi,b85b2e39425c9d37d614ce89c056ed77bad7af6d,Roald Storm,2020-01-08T21:50:21+01:00,:sparkles: Add support for subtypes of main types in jsonable_encoder,False,,0,low,2,108,13,0.9024390243902439,0.9024390243902439,0.9024390243902439,189,44,9,
@@ -273,3 +601,301 @@ tiangolo/fastapi,https://github.com/tiangolo/fastapi,1fd1e8733afb6a9ba1aa9d5b72d
 tiangolo/fastapi,https://github.com/tiangolo/fastapi,636ce6b3f730f9738c4584659b778263fd914e70,Sebastián Ramírez,2020-02-04T05:28:19+01:00,":memo: Update Peewee docs, simplify with double dependency with yield (#947)",False,,0,low,2,54,71,0.0,0.0,0.0,58,12,8,
 tiangolo/fastapi,https://github.com/tiangolo/fastapi,2e0a10256584bbdf727d552ccdef66f54e66332a,Sebastián Ramírez,2020-02-04T05:31:01+01:00,:mute: Log email-validator not installed only when used (#946),False,,0,low,1,12,6,1.0,1.0,1.0,262,2,2,
 tiangolo/fastapi,https://github.com/tiangolo/fastapi,957313063076e345771eb24e98cbdc9fc2f1f641,Sebastián Ramírez,2020-02-04T05:41:42+01:00,":white_check_mark: Lint first in tests, to error out faster (#948)",True,,0,low,1,2,3,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,1c12ca0ee88e0daa0d0ef01273be9afa763d6c65,dependabot-preview[bot],2020-01-02T02:14:59+00:00,"Bump junit from 4.12 to 4.13
+
+Bumps [junit](https://github.com/junit-team/junit4) from 4.12 to 4.13.",False,"Keep Request Counts Low, Database Views & Materialized Views",2,high,1,1,1,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,7b6e1b73b4e5593c72573e48afc7cb0ff24d6255,Nextcloud bot,2020-01-02T04:18:21+00:00,[tx-robot] updated from transifex,False,,0,low,1,1,1,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,4e91c23bb5f42ce65d11574961f52c2d1ad198e0,Fabian Bettag,2020-01-02T17:51:14+01:00,"Add check to make sure cursor is initialized
+
+Fixes #4702
+Fixes #4919
+
+Signed-off-by: Fabian <fabian",False,,0,low,1,1,1,,0.0,,426,60,28,
+nextcloud/android,https://github.com/nextcloud/android,6d76582b3ec40ff97d09f9e3d8b5302885704b95,Nextcloud bot,2020-01-03T04:17:57+00:00,[tx-robot] updated from transifex,False,,0,low,2,2,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,80d7d26cdc32eb9803bc6ebc6e7b218b979562e7,Nextcloud bot,2020-01-04T04:21:28+00:00,[tx-robot] updated from transifex,False,,0,low,1,47,47,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,22ab16ef472fead57bd05ef9b12dffeb861c15a0,Nextcloud bot,2020-01-05T04:33:10+00:00,[tx-robot] updated from transifex,False,,0,low,1,2,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,cd0f834a9f1f9c40dc503ca32adced73ffe446c1,Nextcloud bot,2020-01-06T04:20:28+00:00,[tx-robot] updated from transifex,False,,0,low,2,13,12,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,5f70ea643ec9cd61436b873d863cb317b1f4172e,Andy Scherzinger,2019-12-19T14:54:06+01:00,"Make hyperlinks clickable in markdown previews
+
+Resolves: #5030
+
+Signed-off-by: Andy Scherzinger <in",False,"Scale Down Unused Applications, Database Views & Materialized Views",2,high,2,24,3,0.8666666666666667,1.0,0.8,179,23,11,
+nextcloud/android,https://github.com/nextcloud/android,a15f7248ffd4ee6ed7ba18153b328a3f2ac2c029,Andy Scherzinger,2019-12-19T14:54:06+01:00,"Make hyperlinks clickable in markdown previews
+
+Resolves: #5030
+
+Signed-off-by: Andy Scherzinger <in",False,"Scale Down Unused Applications, Database Views & Materialized Views",2,high,1,3,0,,,,182,23,11,
+nextcloud/android,https://github.com/nextcloud/android,154b9af5331dacdf2c0cccc470e1514da2b98dfb,tobiasKaminsky,2020-01-06T10:10:28+01:00,"adjusted to master
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,6,78,70,1.0,1.0,0.25,3636,763,198,
+nextcloud/android,https://github.com/nextcloud/android,a680697529530c39f7d86cddad0c7c2bdf85b82f,tobiasKaminsky,2020-01-06T12:00:30+01:00,"Removed unneeded try/catch
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,1,2,8,0.0,0.0,0.0,182,25,12,
+nextcloud/android,https://github.com/nextcloud/android,5fce6caea406ee36e6c9512152cffddb6edaeb2a,tobiasKaminsky,2020-01-06T12:00:47+01:00,"Removed unneeded try/catch
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,1,3,,,,129,0,0,
+nextcloud/android,https://github.com/nextcloud/android,b675942f1e34bc742f40f7938364156c2ba73b4e,Tobias Kaminsky,2020-01-06T15:16:38+01:00,small typo,False,,0,low,1,1,1,,,,1052,207,62,
+nextcloud/android,https://github.com/nextcloud/android,051423cf219306ae4ef29cf963893fbf7e43f6ab,tobiasKaminsky,2020-01-06T15:48:12+01:00,"remove support for NC12
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,6,8,23,0.1111111111111111,0.0,0.0,4107,795,249,
+nextcloud/android,https://github.com/nextcloud/android,36294785cf97097b1429c1e9f074bc833757d77d,Tobias Kaminsky,2020-01-07T03:40:25+01:00,"daily dev 20200107
+
+f690417d3 Merge pull request #5102 from nextcloud/removeNC12
+051423cf2 remove su",True,"Compress Stored Data, Delete Unused Storage Resources, Minimize Deployed Environments, Optimize Storage Resource Utilization, Remove Unused Assets, Scale Down Unused Applications, Use Cloud Native Security Tools, Avoid Chaining Critical Requests, Keep Request Counts Low, Database Views & Materialized Views",10,high,2,33,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,59585d0f5b8f013a7836c2bc5cf958108cea2bc2,tobiasKaminsky,2019-11-01T12:09:08+01:00,"Direct editing support
+- abstract EditorWebView
+- support direct editing endpoint
+Create new files v",False,Database Views & Materialized Views,1,medium,30,1097,341,0.5625,1.0,0.819078947368421,8419,1574,447,
+nextcloud/android,https://github.com/nextcloud/android,74f8a723b82e76afaaf46aab9ffa69f8eab8c924,tobiasKaminsky,2020-01-07T07:43:54+01:00,"fixes from CI
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,4,3,5,1.0,1.0,0.0,1338,293,88,
+nextcloud/android,https://github.com/nextcloud/android,9c927629376a0194c97e3f2008a1ab4fe3c7c667,tobiasKaminsky,2020-01-07T09:28:24+01:00,"Fix white header with dark mode
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,4,18,10,0.0,1.0,1.0,2488,490,168,
+nextcloud/android,https://github.com/nextcloud/android,57b0d425b6efe68e84430f20521c71f150d54e25,tobiasKaminsky,2020-01-07T10:12:34+01:00,"Fix text in option menu within image preview
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",True,"Defer Offscreen Images, Enable Text Compression, Properly Sized Images, Serve Images in Modern Formats, Database Views & Materialized Views",5,high,1,19,2,1.0,1.0,1.0,594,118,32,
+nextcloud/android,https://github.com/nextcloud/android,9556a69204d171ec8ed5e6c4281788b6cd5800eb,tobiasKaminsky,2020-01-07T11:57:10+01:00,"Better handling of parsing enum
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,2,17,2,1.0,1.0,1.0,99,9,2,
+nextcloud/android,https://github.com/nextcloud/android,248fe1a44105f20229ed046c465b2bc88029609c,Tobias Kaminsky,2020-01-08T03:37:17+01:00,"daily dev 20200108
+
+de46f83dd Merge pull request #5108 from nextcloud/whiteOptionMenu
+57b0d425b Fix ",True,"Minimize Deployed Environments, Use Cloud Native Security Tools, Avoid Chaining Critical Requests, Defer Offscreen Images, Enable Text Compression, Keep Request Counts Low, Properly Sized Images, Serve Images in Modern Formats, Database Views & Materialized Views",9,high,2,7,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,3011097be802262c5bd09247cfe879baa969d64d,Nextcloud bot,2020-01-08T04:20:34+00:00,[tx-robot] updated from transifex,False,,0,low,1,418,0,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,62aaed7f3c986d8f0d7ff84c6dd11890e5b17baf,tobiasKaminsky,2020-01-08T08:35:02+01:00,"bump to 3.11 alpha
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,1,1,1,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,1ec8b067f09e1000136ac05b401be9111558727c,tobiasKaminsky,2020-01-08T08:25:30+01:00,"- fix not clickable rich workspace area
+- fix crash on first loading
+
+Signed-off-by: tobiasKaminsky ",True,Scale Infrastructure with User Load,1,medium,4,16,7,0.0,0.0,0.0,1244,250,71,
+nextcloud/android,https://github.com/nextcloud/android,ee6e7ce5bfe5e74d274b5d35c3af7a918949e5c4,tobiasKaminsky,2020-01-08T09:38:23+01:00,"fix fastlane RC
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",True,,0,low,1,3,3,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,9d2b80da1a42cebfa3bdd424656fd6314ff63f0c,tobiasKaminsky,2020-01-08T10:21:30+01:00,"spinner: if primary color is white, use grey
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,1,2,2,,,,578,115,43,
+nextcloud/android,https://github.com/nextcloud/android,bbc2c8282b15092e13b3c9f115a982d96050609a,tobiasKaminsky,2020-01-07T15:56:09+01:00,"new background icon
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",True,Queue Non-Urgent Requests,1,medium,39,177,2948,,,,1400,254,88,
+nextcloud/android,https://github.com/nextcloud/android,e0beda807dc87ba1c32ce523146f7f1036f1f76e,Tobias Kaminsky,2020-01-09T03:37:23+01:00,"daily dev 20200109
+
+8751c85c2 Merge pull request #5120 from nextcloud/spinner
+9d2b80da1 spinner: if ",True,"Minimize Deployed Environments, Scale Infrastructure with User Load, Use Cloud Native Security Tools, Avoid Chaining Critical Requests, Enable Text Compression, Keep Request Counts Low",6,high,2,15,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,99eb991f1b495e5b153b3b8a7041553ba3577b97,Nextcloud bot,2020-01-09T04:19:51+00:00,[tx-robot] updated from transifex,False,,0,low,13,97,32,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,56e6ed58885ee08eb7a91a9a8c29a5eb61b869c5,tobiasKaminsky,2020-01-09T11:34:37+01:00,"editor: click on snackbar closes webview for real
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me",False,Database Views & Materialized Views,1,medium,1,1,1,,,,151,25,11,
+nextcloud/android,https://github.com/nextcloud/android,4b073e9283a250884e91566c75af71145b3ed9e6,tobiasKaminsky,2020-01-09T14:54:00+01:00,"task needs to be a new object for every button
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,1,5,5,,,,230,26,13,
+nextcloud/android,https://github.com/nextcloud/android,0e5a772e63b5c3220fa5cc7f73bf518d339a1504,tobiasKaminsky,2020-01-09T12:57:07+01:00,"rich workspaces
+- show button to create folder info
+- bug fixes
+
+Signed-off-by: tobiasKaminsky <tobi",False,,0,low,9,114,17,0.0,0.9166666666666666,1.0,1732,351,117,
+nextcloud/android,https://github.com/nextcloud/android,15ac2318186d008d79e985829a282c5a1d0a506d,tobiasKaminsky,2020-01-09T15:53:03+01:00,"make ""follow system"" default for dark theme
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,2,5,5,,,,1278,238,123,
+nextcloud/android,https://github.com/nextcloud/android,197726782609f1d3320addd2f5245b0ccf30e9dc,tobiasKaminsky,2020-01-09T16:09:46+01:00,"fix FAB position
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,1,40,33,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,4b2002a9a32c6554eedff041469e6c535113d859,tobiasKaminsky,2020-01-09T16:10:58+01:00,"better error description
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,1,1,1,,,,1315,287,84,
+nextcloud/android,https://github.com/nextcloud/android,e0b77f9102f20980cabd2dbdd7b0ccc68f1bd51b,Tobias Kaminsky,2020-01-10T03:37:41+01:00,"daily dev 20200110
+
+8a343be9c Merge pull request #5133 from nextcloud/notificationTask
+6cd1b751e Mer",False,"Delete Unused Storage Resources, Minimize Deployed Environments, Remove Unused Assets, Use Cloud Native Security Tools, Avoid Chaining Critical Requests, Keep Request Counts Low, Database Views & Materialized Views",7,high,2,11,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,51fdf94615ff40a8fca40aa4e5bf5c6923c7815f,Nextcloud bot,2020-01-10T03:29:56+00:00,[tx-robot] updated from transifex,False,,0,low,1,100,0,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,4c10cf5d7f2d43d7f57644d25afd9b31626eb388,tobiasKaminsky,2020-01-10T08:53:47+01:00,"launcher: correct folder position according to AS
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me",False,,0,low,2,2,34,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,91252852c79b4b7ce5acbb46b70da303e56e7529,tobiasKaminsky,2020-01-10T09:32:43+01:00,"manually increasing lint due to ""autoMirrored"" warning
+
+Signed-off-by: tobiasKaminsky <tobias@kamins",False,,0,low,1,1,1,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,87dae2ef041a0dd3912c8dd1b8cb4747fb099f28,tobiasKaminsky,2020-01-08T11:26:50+01:00,"show first run again
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,2,14,5,0.8,0.8,1.0,356,66,33,
+nextcloud/android,https://github.com/nextcloud/android,c6d89edf85c4c7c53f7c2aa43d315b99f91a2432,tobiasKaminsky,2020-01-10T09:59:15+01:00,"only allow rich workspace creation on >= Lollipop
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me",False,,0,low,1,3,1,0.0,0.0,1.0,1317,288,84,
+nextcloud/android,https://github.com/nextcloud/android,603825e36f1de84f0457af403fa3003539eb89c5,tobiasKaminsky,2020-01-10T12:09:57+01:00,"update screenshot
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",False,,0,low,1,0,0,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,ec515d0aadf1743bc219f6e8955e06833129df84,Nextcloud bot,2020-01-11T03:28:17+00:00,[tx-robot] updated from transifex,False,,0,low,3,50,0,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,fe404f0e257bf4e2f90dd9d6e2913174e5bff62d,Chris Narkiewicz,2020-01-11T21:31:00+00:00,"Fix NPE in UserAccountManagerImpl.getUser(CharSequence)
+
+Optional.of() called on nullable value caus",False,Keep Request Counts Low,1,medium,1,1,1,,,,284,57,19,
+nextcloud/android,https://github.com/nextcloud/android,19f2a5024d6e1ca33272a4b848d8966d4e1c8e2a,nextcloud-android-bot,2020-01-11T21:40:56+00:00,"Drone: update FindBugs results to reflect reduced error/warning count [skip ci]
+
+Signed-off-by: next",True,"Reduce Transmitted Data, Use Cloud Native Security Tools, Keep Request Counts Low",3,high,1,1,1,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,09d98e16c5a252961867cbd7f6da0ca6b0caf021,Tobias Kaminsky,2020-01-12T03:37:14+01:00,"daily dev 20200112
+
+ec515d0aa [tx-robot] updated from transifex
+422a61d8d Merge pull request #5136 f",True,"Minimize Deployed Environments, Queue Non-Urgent Requests, Use Cloud Native Security Tools, Avoid Chaining Critical Requests, Keep Request Counts Low",5,high,2,15,2,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,a4287380ace61f5aa745b464a4bdd484c86c56e9,Nextcloud bot,2020-01-12T03:28:46+00:00,[tx-robot] updated from transifex,False,,0,low,6,18,0,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,3007477d905eb0b847c7b5a6a8acc6c26b252e06,dependabot-preview[bot],2020-01-13T02:13:46+00:00,"Bump detekt-gradle-plugin from 1.3.0 to 1.4.0
+
+Bumps detekt-gradle-plugin from 1.3.0 to 1.4.0.
+
+Sign",False,Database Views & Materialized Views,1,medium,1,1,1,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,b1f198ff65433468fd8902d3dfe72edff56327de,Nextcloud bot,2020-01-13T03:27:25+00:00,[tx-robot] updated from transifex,False,,0,low,4,20,0,,,,0,0,0,
+nextcloud/android,https://github.com/nextcloud/android,f01cdd65ae5c5ec1912f021b0bb7375722dce828,tobiasKaminsky,2020-01-13T14:05:32+01:00,"UI enhancements to rich workspaces
+
+Signed-off-by: tobiasKaminsky <tobias@kaminsky.me>",True,,0,low,4,18,9,0.0,0.0,1.0,1146,236,63,
+bitwarden/android,https://github.com/bitwarden/android,67fd9d30b6dfe28d47c76fed255102eab490050a,Rico Acosta,2023-07-14T11:56:49-05:00,Initial commit,False,,0,low,19,2297,0,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,8bd430b793a4e7a01bbea71c91685aa093229244,Matt Bishop,2024-03-26T12:09:32-04:00,Initial commit,False,,0,low,18,2004,0,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,3636da5c4e5795eb170aa97ac8dc8a9bec65a060,Patrick Honkonen,2024-03-26T14:22:54-04:00,Update .gitignore (#2),False,,0,low,1,10,11,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,8553fb3995fb7d25aab912f3e50836b34dd6a149,Patrick Honkonen,2024-03-27T05:31:20-04:00,Set mobile dev team as default code owners (#3),False,Minimize Deployed Environments,1,medium,1,1,1,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,c01a101f83e36cb72676026052b5d3089f4ba848,Matt Bishop,2024-03-27T10:02:59-04:00,Adjust scan permissions,True,Scan for Vulnerabilities,1,medium,1,6,3,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,4575f52fe0e7cf48b61bb55a7290430631b2fea6,Patrick Honkonen,2024-03-28T09:27:33-04:00,"Splash, Item Listing, & View Item screens (#4)",False,Database Views & Materialized Views,1,medium,134,7072,0,0.46738513896766876,0.897334089619966,0.7243335224049915,4401,226,162,
+bitwarden/android,https://github.com/bitwarden/android,c012e3cb7e187e9a0ca74309d99ed78a017f1ceb,Matt Bishop,2024-03-28T11:05:03-04:00,Disable SARIF upload until repo becomes public (#8),True,Scale Infrastructure with User Load,1,medium,1,5,5,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,bcaf00dc976733a1e868934d0974223777fc8479,Patrick Honkonen,2024-03-29T00:02:01-04:00,Change color of countdown indicator when period nears expiration (#5),False,"Scale Down Unused Applications, Keep Request Counts Low",2,high,13,216,48,0.7931034482758621,1.0,0.8620689655172413,1066,79,47,
+bitwarden/android,https://github.com/bitwarden/android,5fd859309579b99e23b549dc159d85bd1df06517,Matt Bishop,2024-03-29T11:30:47-04:00,Provide prefix for Renovate,False,,0,low,1,2,0,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,d28a754ee9951abbd2540260d5aad4e8ceaaae70,Patrick Honkonen,2024-04-02T10:34:13-04:00,Introduce Expandable floating action button (#6),False,,0,low,9,300,28,0.13636363636363635,0.9090909090909091,0.49242424242424243,843,55,31,
+bitwarden/android,https://github.com/bitwarden/android,580a0eecdd0624def7f52e8ba54eb41753e874af,Patrick Honkonen,2024-04-02T17:19:38-04:00,Configure Renovate to monitor Android project dependencies (#9),True,,0,low,3,32,782,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,a92ed17d65bf18185f80ad8ad42a868ff1062942,Patrick Honkonen,2024-04-02T17:45:33-04:00,QR Scanner and Manual Key Entry screens (#7),True,Scan for Vulnerabilities,1,medium,15,1327,2,0.30802292263610315,0.9684813753581661,0.7707736389684814,1128,74,49,
+bitwarden/android,https://github.com/bitwarden/android,67d641572e7d69f2fb39d766ec45dad2a46b20e9,Patrick Honkonen,2024-04-02T23:35:00-04:00,Trigger checks during CI execution (#10),False,,0,low,8,340,2,,,,45,2,1,
+bitwarden/android,https://github.com/bitwarden/android,6a226f21bda988e310324234c8ab81f0823c98a1,Patrick Honkonen,2024-04-03T12:39:30-04:00,Correct renovate ruby manager declaration to use bundler (#15),True,Reduce HTTP Requests,1,medium,1,3,4,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,9aa091818d70f0bb1d3fad4f759d811d244aa9ec,Patrick Honkonen,2024-04-03T13:10:36-04:00,Display no items content when user has no items saved (#13),False,,0,low,11,449,232,0.0,1.0,0.2222222222222222,858,64,44,
+bitwarden/android,https://github.com/bitwarden/android,04a565e5a2ef4c6d76db96db9f3bccf60826f662,Patrick Honkonen,2024-04-03T19:11:20-04:00,Include Compose compiler in kotlin renovate group (#16),False,Use Compiled Languages,1,medium,2,3,0,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,50530b57c6e312549e8250f773f72b229a7b6743,Patrick Honkonen,2024-04-05T12:49:04-04:00,Define local database (#17),True,Reduce Transmitted Data,1,medium,25,503,227,0.0,1.0,1.0,900,58,41,
+bitwarden/android,https://github.com/bitwarden/android,65263ebad9ade08f0248d72ae993bbf9783af337,renovate[bot],2024-04-05T13:03:53-04:00,[deps]: Update gradle minor (#11),False,,0,low,1,7,7,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,38a92042deea088c94a9702511dc392083357d75,renovate[bot],2024-04-05T13:11:17-04:00,[deps]: Update kotlin (#12),False,,0,low,1,7,7,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,cd992a6994c698859b778132a2003c3dc16f4e3d,Patrick Honkonen,2024-04-05T16:12:25-04:00,Allow users to save items to local storage (#18),True,"Compress Stored Data, Delete Unused Storage Resources, Optimize Storage Resource Utilization",3,high,18,608,72,0.0,0.7633136094674556,0.4289940828402367,1695,102,58,
+bitwarden/android,https://github.com/bitwarden/android,32b0c90f173a3c12272cbdb1fb78acd3d89c9d39,Patrick Honkonen,2024-04-09T10:01:57-04:00,Refactor primary data model (#19),True,"Reduce Transmitted Data, Energy Efficient Models",2,high,9,69,68,1.0,1.0,1.0,729,79,46,
+bitwarden/android,https://github.com/bitwarden/android,a00452faf1d983e99a6eeda4707776b01518d271,Patrick Honkonen,2024-04-11T09:14:11-04:00,Edit item UI (#20),False,,0,low,18,1791,72,0.20705882352941177,0.8223529411764706,0.7235294117647059,2358,171,93,
+bitwarden/android,https://github.com/bitwarden/android,168e662a38684734110876f2074eb1ba710a34a3,Patrick Honkonen,2024-04-11T10:03:16-04:00,Update item listing header text (#21),False,Enable Text Compression,1,medium,2,2,1,,,,263,9,6,
+bitwarden/android,https://github.com/bitwarden/android,8ad7c184f11f1f9fb7c3bf99b4b8518f4d669242,Patrick Honkonen,2024-04-11T10:08:26-04:00,Remove View Item screen (#22),False,"Delete Unused Storage Resources, Remove Unused Assets, Database Views & Materialized Views",3,high,13,8,758,0.8006756756756757,0.27702702702702703,0.0,741,50,30,
+bitwarden/android,https://github.com/bitwarden/android,a27002af0f5c2170b9e34d32a6a03d5c2781dcf8,Patrick Honkonen,2024-04-12T12:34:13-04:00,Allow users to search items (#23),False,,0,low,23,1473,6,0.1466854724964739,0.995768688293371,0.5232722143864598,1898,102,60,
+bitwarden/android,https://github.com/bitwarden/android,ea58313e313010edf0e33659120515f121f335e3,Patrick Honkonen,2024-04-13T18:06:20-04:00,Display bottom app bar for navigation (#24),False,,0,low,16,738,16,0.1482758620689655,1.0,0.4793103448275862,1018,36,26,
+bitwarden/android,https://github.com/bitwarden/android,6b025832d7ce8008add9bbd9918965d4d043dd72,Patrick Honkonen,2024-04-13T20:39:03-04:00,DIsplay base settings screen (#25),False,,0,low,10,358,64,0.15714285714285714,1.0,0.55,637,21,18,
+bitwarden/android,https://github.com/bitwarden/android,b6a165aef5eaf59aea391b3130cf2c852022a579,Patrick Honkonen,2024-04-14T17:03:34-04:00,Allow modification of appearance settings (#26),False,,0,low,11,771,92,0.3582089552238806,1.0,0.332089552238806,868,41,30,
+bitwarden/android,https://github.com/bitwarden/android,12e5314c61e98af75d89150250b380f0a289494c,Patrick Honkonen,2024-04-15T10:12:58-04:00,Show Welcome Tutorial on first launch (#27),False,,0,low,21,766,33,0.5426621160409556,1.0,0.9897610921501706,1514,87,64,
+bitwarden/android,https://github.com/bitwarden/android,d98db6ee67c3347fb84f5efdff3fd380c98f8396,renovate[bot],2024-04-15T16:10:17-04:00,"[deps]: Update gh minor (#29)
+
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.g",False,,0,low,2,3,3,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,6d4df646afaf11106f1a5c2cdae62d367eebb965,Patrick Honkonen,2024-04-15T20:18:48-04:00,Allow backup & restore to cloud and device transfer (#32),True,"Minimize Deployed Environments, Use Cloud Native Security Tools, Pre-trained Transfer Learning",3,high,3,21,28,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,8da98f95e112109f90fcc99d1dc53c5c9bf15d32,Patrick Honkonen,2024-04-15T20:39:45-04:00,Copy auth code on item click (#28),False,,0,low,8,174,34,0.8048780487804879,1.0,0.2926829268292683,890,53,29,
+bitwarden/android,https://github.com/bitwarden/android,612c8e8aa3957eb2484a680ec284fee2e524b159,Patrick Honkonen,2024-04-15T21:08:26-04:00,Implement context menu on item long press (#31),False,Enable Text Compression,1,medium,8,277,49,0.20588235294117646,0.9411764705882353,0.21568627450980393,965,55,28,
+bitwarden/android,https://github.com/bitwarden/android,7bad1848495313345ad45611ae5c6d404b686427,Patrick Honkonen,2024-04-16T10:04:42-04:00,Box in list item context menu (#33),False,Enable Text Compression,1,medium,3,109,93,0.375,0.625,0.75,933,57,29,
+bitwarden/android,https://github.com/bitwarden/android,736761ee93306e8e0d860f1636c9109a6ff42bce,Patrick Honkonen,2024-04-16T23:19:36-04:00,Update settings tutorial label (#35),False,,0,low,2,2,2,,,,237,11,9,
+bitwarden/android,https://github.com/bitwarden/android,de02a6999d7e438ffa981e0971b8ff5ab4e7fe67,Patrick Honkonen,2024-04-16T23:19:51-04:00,Prompt for camera permissions from item listing screen (#34),False,,0,low,2,61,1,0.6666666666666666,0.6666666666666666,1.0,813,60,30,
+bitwarden/android,https://github.com/bitwarden/android,186766960f98f1f2b51bf3a0b5d2ee5343bf5afb,Patrick Honkonen,2024-04-16T23:29:20-04:00,Include app database in auto backup and restore (#36),True,Reduce Transmitted Data,1,medium,1,1,1,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,af1ab4c953fdb5d4b43e8f4efd0c69dfff924508,Patrick Honkonen,2024-04-17T08:34:54-04:00,Remove x8bit references from project (#37),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,163,600,601,,,,10355,555,368,
+bitwarden/android,https://github.com/bitwarden/android,34c547a431383a49d153eba77b011e03658a00c4,Patrick Honkonen,2024-04-21T22:07:58-04:00,Remove Sync with Bitwarden button (#39),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,4,1,20,0.9090909090909091,0.0,0.5454545454545454,454,21,15,
+bitwarden/android,https://github.com/bitwarden/android,066d5c56282f48de0dc4e6298482e0d47415375a,Patrick Honkonen,2024-04-22T10:29:03-04:00,Remove Import button from empty item listing screen (#40),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,4,1,13,0.875,0.0,1.0,444,20,14,
+bitwarden/android,https://github.com/bitwarden/android,66d834c7e91b7a24c22cf2649074156c0b390c7c,Patrick Honkonen,2024-04-22T10:30:04-04:00,Users can export unencrypted data to JSON or CSV (#41),False,"Encrypt What Is Necessary, Reduce Transmitted Data",2,high,31,894,145,0.2183288409703504,0.9407008086253369,0.6819407008086253,2306,134,96,
+bitwarden/android,https://github.com/bitwarden/android,015cbdd37a5ac7bf24edcfaf365b947a22aa3435,Patrick Honkonen,2024-04-22T10:38:14-04:00,Prompt for camera permission from Add Code button (#42),False,,0,low,1,5,2,0.0,1.0,1.0,358,15,9,
+bitwarden/android,https://github.com/bitwarden/android,e829e1e2ca5091d43062f04157d86d9e018e2418,Patrick Honkonen,2024-04-22T13:49:16-04:00,"Assemble, sign, upload and publish release builds (#38)",True,"Scale Infrastructure with User Load, Eliminate Polling",2,high,7,257,17,1.0,1.0,1.0,113,3,3,
+bitwarden/android,https://github.com/bitwarden/android,eb97a33e8e8d99891457e73f23e56debc113b817,Patrick Honkonen,2024-04-24T00:03:04-04:00,Define proguard rules for release builds (#47),False,,0,low,1,79,21,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,6b88bcf02f780441527ea5c4c9646554adad1180,Patrick Honkonen,2024-04-24T00:44:46-04:00,Establish infrastructure to support biometric lock and unlock (#43),True,,0,low,14,288,42,0.5465116279069767,1.0,0.8255813953488372,501,34,26,
+bitwarden/android,https://github.com/bitwarden/android,5167b2c491be79d51abdccdda25dcacfa6089c90,Patrick Honkonen,2024-04-24T01:05:13-04:00,Flip name and key fields in manual entry screen (#46),False,,0,low,2,15,17,,,,197,11,8,
+bitwarden/android,https://github.com/bitwarden/android,d85904748e48eaa6c12402cb2d4387abd4c4f86a,Patrick Honkonen,2024-04-24T01:23:43-04:00,Correct tutorial screen behavior during rotation (#45),False,,0,low,3,10,1,1.0,1.0,1.0,373,25,15,
+bitwarden/android,https://github.com/bitwarden/android,9e86332c5e2f378dce8a7006b7fe43304ef2a368,Patrick Honkonen,2024-04-24T04:53:21-04:00,Cache build output separate from gradle cache (#49),True,"Cache Static Data, Right Hardware Type for AI",2,high,1,20,4,,,,0,0,0,
+bitwarden/android,https://github.com/bitwarden/android,f191f02296c328e6fbfac47575b753cf7431d130,Patrick Honkonen,2024-04-24T09:40:54-04:00,Allow users to enable biometric unlock from settings (#44),True,,0,low,14,556,66,0.18412698412698414,1.0,0.8571428571428571,1567,92,57,
+bitwarden/android,https://github.com/bitwarden/android,7e93c1a74b2af4e850a0dcda72f4afd580376eae,Patrick Honkonen,2024-04-24T19:29:48-04:00,Fix routing on tutorial completion (#51),False,,0,low,7,22,19,1.0,0.0,1.0,559,28,20,
+duckduckgo/Android,https://github.com/duckduckgo/Android,d6e3298a3975a4e3d44c9d3b2174f03641852516,Craig Russell,2020-01-07T17:46:31+00:00,Update gemfile.lock to grab newer (safer) dependency for excon (#665),False,,0,low,1,27,27,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,1f2cc975ca9603e19aa0d3c857002b0147e3c4d0,Mia Alexiou,2020-01-08T17:57:59+00:00,"Completes support for opening ""target blank"" urls in new tabs (#666)
+
+* Update solution to avoid ope",True,"Reduce Transmitted Data, Scale Infrastructure with User Load, Database Views & Materialized Views",3,high,9,84,35,0.9069767441860465,1.0,1.0,4122,608,416,
+duckduckgo/Android,https://github.com/duckduckgo/Android,923dca3ccec7ba2e4f79d408eeceecac87f7e3be,Mia Alexiou,2020-01-08T19:02:11+00:00,"Revert ""Allow DDG to handle links from certain external applications #659"" (#667)
+
+This reverts comm",True,,0,low,1,0,4,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,c6853c96b15e9b4e997454a292015153862191f5,Puddingpapst,2020-01-14T12:38:28+01:00,"Update strings.xml (#669)
+
+Improved some German translations.",True,Match SLO Requirements,1,medium,1,14,14,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,f92ad026646608fadcf8a55aef5a95db9bf7ba50,Craig Russell,2020-01-14T11:50:37+00:00,"Add newer WebView cache directory to deletion whitelist (#658)
+
+* Add newer WebView cache directory ",True,"Cache Static Data, Database Views & Materialized Views",2,high,1,6,2,,,,22,1,1,
+duckduckgo/Android,https://github.com/duckduckgo/Android,c65e33996e47bfbe6740b80be38be3901a0db3ea,Jeff G,2020-01-14T07:00:42-05:00,"Allow DDG to handle different MIME types, and to become the default handler for them (#668)",True,Incremental Processing,1,medium,1,15,0,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,9cc21162ce55c1a5ce25992526d4991605c0d747,Craig Russell,2020-01-15T16:30:32+00:00,"Catch Exception instead of RuntimeException; some exceptions are uncaught (#671)
+
+Crash reports show",False,Match VM Utilization Requirements,1,medium,1,1,1,,,,1254,189,111,
+duckduckgo/Android,https://github.com/duckduckgo/Android,fe66c3fd351ff4aaf8b5a8f6e66ab7ecb4b2ad41,Marcos,2020-01-22T14:31:53+00:00,New onboarding tweaks and bug fixes (#672),False,,0,low,6,43,17,0.0,1.0,0.0,1141,120,79,
+duckduckgo/Android,https://github.com/duckduckgo/Android,8c9d5ee3091502c404189bc19c74a2deb98e336b,cmonfortep,2020-01-23T14:17:22+01:00,"Better handling of browser state to obtain a Cta (#673)
+
+* Introduce new callback methods to control",True,"Implement Stateless Design, Scale Kubernetes Workloads Based on Events, Database Views & Materialized Views",3,high,7,201,106,1.0,1.0,1.0,4124,572,388,
+duckduckgo/Android,https://github.com/duckduckgo/Android,0eb8e9e84766ad8740688479ab10869a54a5fda4,Mia Alexiou,2020-01-23T20:12:10+00:00,"Add CTA experiments (#675)
+
+* Add new retention experiment to help up determine effectiveness of CTA",True,Set Retention Policy on Storage,1,medium,10,165,111,1.0,1.0,1.0,1857,209,132,
+duckduckgo/Android,https://github.com/duckduckgo/Android,0cc60ee89352a9f6c4524f1a6cc321c723bf448d,Mia Alexiou,2020-01-24T21:32:03+00:00,Prepare for release 5.41.0,False,,0,low,2,2,2,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,82362dc2e3f5a2e463de395db24bf51fee05350d,Marcos,2020-01-31T18:07:28+00:00,Cta new interfaces (#679),False,,0,low,3,28,43,0.0,0.0,0.0,1748,231,147,
+duckduckgo/Android,https://github.com/duckduckgo/Android,d5fc83d5fcc2f49333a245a6c0740c8b712611d3,cmonfortep,2020-02-04T12:35:33+01:00,"Fix: cancel coroutine when activity gets destroyed (#699)
+
+* Cancel coroutine running on activity co",False,"Delete Unused Storage Resources, Remove Unused Assets, Enable Text Compression, Reactive Streams",4,high,1,13,1,1.0,1.0,1.0,334,64,32,
+duckduckgo/Android,https://github.com/duckduckgo/Android,5603bad3e510b14f425340ab489b4e324dca3ddc,Marcos,2020-02-04T12:45:56+00:00,Introduce DaxCta interface (#680),False,,0,low,8,157,98,1.0,1.0,1.0,4573,603,416,
+duckduckgo/Android,https://github.com/duckduckgo/Android,02859380dfc0e2a5ff14bcf75263abd45675cfac,cmonfortep,2020-02-05T09:54:52+01:00,"Insert CTAs into concept test experience #1 (#697)
+
+* Introducing new variants and setting to 0.0 pr",False,"Implement Stateless Design, Database Views & Materialized Views",2,high,10,398,91,0.7136563876651982,1.0,1.0,2551,353,222,
+duckduckgo/Android,https://github.com/duckduckgo/Android,e81d2902992da3fe56e5aa5fc3f70f7f02011164,cmonfortep,2020-02-05T10:15:05+01:00,"Unify styles used on buttons for all onboarding screens when concept test is enabled (#701)
+
+* Show ",False,,0,low,6,266,8,1.0,1.0,1.0,205,33,18,
+duckduckgo/Android,https://github.com/duckduckgo/Android,98c8a98f1597c65d36446dcc1c27c137de670a46,Cristian Monforte,2020-02-05T10:24:58+01:00,5.42.0 as new app version,False,,0,low,1,1,1,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,4467935cbac2175bf9bf78466e5a188d1c09efe1,cmonfortep,2020-02-05T12:04:17+01:00,"Fix: avoid canceling all jobs, instead cancel only the one that could cause a crash if activity is i",True,Implement Stateless Design,1,medium,1,5,9,,,,331,64,32,
+duckduckgo/Android,https://github.com/duckduckgo/Android,127555f81ffe6747e38aa6b2d0b47529860b05cc,Cristian Monforte,2020-02-05T12:21:56+01:00,5.42.1 as new app version,False,,0,low,1,1,1,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,ca1acf6616d57fe77aed0ec702e587eecbf57e18,David González,2020-02-06T16:47:08+01:00,"Feature/david/fix download manager (#704)
+
+* added mime type and default user agent
+
+* ensure we u",True,"Scale Down Unused Applications, Scale Infrastructure with User Load, Avoid Chaining Critical Requests, Keep Request Counts Low",4,high,3,5,1,1.0,1.0,0.75,1328,197,115,
+duckduckgo/Android,https://github.com/duckduckgo/Android,90c48d9e3f1b044800079a708a9bebee6c4c979b,Cristian Monforte,2020-02-08T17:00:39+01:00,"Avoid sending null when dismissing FindInPage.
+Latest chromium release 80.0.3987.87 Feb 4 2020 intro",True,"Queue Non-Urgent Requests, Use Async Instead of Sync, Lazy Loading, Asynchronous Processing",4,high,1,1,1,,,,1263,191,112,
+duckduckgo/Android,https://github.com/duckduckgo/Android,d1653a9b381495b6411f831e2a8fd1ef4a1da647,Cristian Monforte,2020-02-08T17:02:08+01:00,bump app version to 5.42.2,False,,0,low,1,1,1,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,476fee65f00519323176d61699173ea47bea4e77,Craig Russell,2020-02-10T09:19:19+00:00,Remove unused app referrer logic (#703),True,"Delete Unused Storage Resources, Remove Unused Assets, Remove Unused CSS",3,high,4,8,41,1.0,0.0,0.0,314,27,22,
+duckduckgo/Android,https://github.com/duckduckgo/Android,493a1eacc2a3e735b394363733ec83d7ec9b60d1,Craig Russell,2020-02-10T13:41:57+00:00,"Feature/craig/map auction variant (#710)
+
+* Add EU auction detection to referrer logic
+
+* Add unit",False,"Implement Stateless Design, Scale Down Unused Applications, Data Deduplication",3,high,13,144,35,0.9384615384615385,1.0,0.9846153846153847,1024,128,88,
+duckduckgo/Android,https://github.com/duckduckgo/Android,01739f8ec1e119e93d695489ad9a74276f1bac09,David González,2020-02-10T15:47:59+01:00,Updated release notes and version number for new release - 5.43.0,False,,0,low,1,1,1,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,1c86506bedd68b36ec71eaf9c796946e2bc4a146,Marcos,2020-02-17T10:08:04+00:00,Smoother progress bar (#711),False,,0,low,4,79,8,0.45714285714285713,1.0,1.0,3460,498,345,
+duckduckgo/Android,https://github.com/duckduckgo/Android,68a5d84fb0480f04d3fec95b9995938529c379d3,cmonfortep,2020-02-19T14:16:08+01:00,Removing unnecessary coroutineScope and context from BrowserChromeClient. (#706),False,"Avoid Tracking Unnecessary Data, Enable Text Compression, Reactive Streams",3,high,1,3,9,0.0,0.0,0.0,89,15,6,
+duckduckgo/Android,https://github.com/duckduckgo/Android,b94513ab4c177d5a634993fe946394037b94d7fb,cmonfortep,2020-02-19T14:16:36+01:00,"Remove coroutineScope from ClearPersonalDataAction (#707)
+
+* remove coroutineScope from ClearPersona",False,"Delete Unused Storage Resources, Reduce Transmitted Data, Remove Unused Assets, Reactive Streams",4,high,1,1,11,0.0,0.0,0.0,82,9,8,
+duckduckgo/Android,https://github.com/duckduckgo/Android,701a222335400c2807bebf9e710e0b2cfb4e5f6b,Marcos,2020-02-20T12:17:48+00:00,Remove scanning animation (#715),True,"Delete Unused Storage Resources, Remove Unused Assets, Scan for Vulnerabilities, Deprecate GIFs",4,high,4,49,161,1.0,0.036585365853658534,0.4024390243902439,1425,215,128,
+duckduckgo/Android,https://github.com/duckduckgo/Android,7077d763f4ef13d78825023e3d3f31c77736bff0,cmonfortep,2020-02-21T12:34:22+01:00,Add David and Cristian to codeowners file (#718),False,,0,low,1,1,1,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,2e755d904fb51cc2cb9abd86b2e06f7d016dc9fa,David González,2020-02-21T16:16:04+01:00,"Fix/david/new link tab order (#717)
+
+* ensure we respect the position of each tab when adding a new ",False,,0,low,2,43,6,0.0,1.0,0.5,305,23,16,
+duckduckgo/Android,https://github.com/duckduckgo/Android,2b54d4059d3eeffcf7d31019c32e391204234567,Mia Alexiou,2020-02-24T08:42:38+00:00,Remove CTA validation variants (#720),False,"Delete Unused Storage Resources, Remove Unused Assets",2,high,2,0,40,0.0,0.0,0.0,203,31,18,
+duckduckgo/Android,https://github.com/duckduckgo/Android,acd30faf970aeb5d3f765df0ed2855d82cbb17a6,David González,2020-02-24T13:21:16+01:00,light theme will now use light navigation bar (#722),False,,0,low,3,36,0,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,412d70b3c168dd268dcd8197d7f39f9902c52ea4,Mia Alexiou,2020-02-27T14:55:27+00:00,"Add interstitial search (#719)
+
+* Add new interstitial search screen
+* Remove duplicate data and pr",True,"Delete Unused Storage Resources, Reduce Transmitted Data, Remove Unused Assets, Shed Lower Priority Traffic, Data Deduplication",5,high,34,1258,129,0.8429319371727748,1.0,1.0,5523,704,491,
+duckduckgo/Android,https://github.com/duckduckgo/Android,76c40593cd3136bf7463f934b6ba8c45f1340971,cmonfortep,2020-02-28T12:16:49+01:00,"Insert CTAs on concept test Experiment#2 (#724)
+
+* Dax dialog with two buttons (#713)
+
+* New varia",False,,0,low,30,1225,236,0.7049891540130152,0.9088937093275488,0.7613882863340564,6800,853,577,
+duckduckgo/Android,https://github.com/duckduckgo/Android,4ad5c4aa580184d61a0ea6ce28022133aebf2c91,cmonfortep,2020-02-28T12:53:06+01:00,"Revert ""light theme will now use light navigation bar (#722)"" (#725)
+
+* Revert ""light theme will now",False,,0,low,3,0,36,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,b743b7e5714ffa993fc73f7fe426f4edd4fd32b7,David González,2020-02-28T14:36:47+01:00,"Feature/david/light navigation bar (#726)
+
+* light theme will now use light navigation bar
+
+* this",False,,0,low,2,34,0,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,401ee6eacb4817e983c3024bb33fc9ced5ce862a,Mia Alexiou,2020-02-28T16:23:28+00:00,Prepare for next release,False,,0,low,2,2,2,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,1da153c3e76190ef38570213a972c7ec9e3dfb2b,Mia Alexiou,2020-02-28T19:01:47+00:00,Cater for cases where icon may be missing,False,,0,low,1,7,2,1.0,1.0,1.0,48,7,5,
+duckduckgo/Android,https://github.com/duckduckgo/Android,85bae2939e0b0fd2c81d5475dd7ec1532a146afd,Mia Alexiou,2020-02-28T19:37:45+00:00,Prepare for next release,False,,0,low,1,1,1,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,088595a007da686526abe3ec588fc6ca175b5afc,Mia Alexiou,2020-03-01T20:28:47+00:00,Escape device app regex queries,True,"Minimize Deployed Environments, Resource Limits & Constraints",2,high,3,15,3,0.75,1.0,1.0,159,18,14,
+duckduckgo/Android,https://github.com/duckduckgo/Android,26857a622a5c29e9e353c4add97c4002c4fe3b08,Christopher Brind,2020-03-04T08:31:40+00:00,support window.close (#731),False,,0,low,4,17,2,1.0,1.0,1.0,1116,187,106,
+duckduckgo/Android,https://github.com/duckduckgo/Android,d386310bf6e4a32ab6892ea7871f58c562860abf,cmonfortep,2020-03-05T11:09:57+01:00,enable se-sc variants (#735),False,,0,low,2,4,4,,,,221,31,18,
+duckduckgo/Android,https://github.com/duckduckgo/Android,816def7e65a9b0d47ce257b3cb08d41131a56d01,cmonfortep,2020-03-05T11:10:22+01:00,Prevent elements in overflow menu from overlapping (#733),False,Scale Kubernetes Workloads Based on Events,1,medium,1,2,0,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,d842b0d8fcb441665f64a0c3faf54c0cfcc20a2e,cmonfortep,2020-03-05T11:10:38+01:00,Prevent incorrect tab image preview from loading by calling glide's clear method when it's into meth,True,"Scale Infrastructure with User Load, Scale Kubernetes Workloads Based on Events, Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats, Database Views & Materialized Views",6,high,1,6,1,0.0,1.0,0.0,130,18,10,
+duckduckgo/Android,https://github.com/duckduckgo/Android,5726fb45d061dfd29c9c8488fe64b7462e234811,Mia Alexiou,2020-03-06T12:17:19+00:00,Fix issue where view state would update and delete space from user query (#737),True,"Delete Unused Storage Resources, Implement Stateless Design, Database Views & Materialized Views",3,high,2,18,7,,,,259,26,21,
+duckduckgo/Android,https://github.com/duckduckgo/Android,0f16407e7d48888b2f8439c9745e2054c719f452,Cristian Monforte,2020-03-06T16:21:37+01:00,Prepare for release 5.45.0,False,,0,low,2,2,2,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,a6bdd691faa7cb6134b53fff0b82f7891c61579e,Gabriel Lidenor,2020-03-09T08:28:32-05:00,"Fix typo in Portuguese translation (#736)
+
+The word anonymous in Portuguese is: anônimo and NOT anón",True,Match SLO Requirements,1,medium,1,2,2,,,,0,0,0,
+duckduckgo/Android,https://github.com/duckduckgo/Android,25cfa62a3d95070936462b219fd6fc4d2612f66d,Mia Alexiou,2020-03-10T14:00:47+00:00,"Add alternative onboarding for interstitial search users (#738)
+
+* Add system search alternative onb",False,Use Cloud Native Security Tools,1,medium,40,634,98,0.9565217391304348,1.0,1.0,1354,130,93,
+duckduckgo/Android,https://github.com/duckduckgo/Android,632c17d6a44c5b90272517aa9c34a552edcc95ef,Mia Alexiou,2020-03-11T13:20:52+00:00,"Add Estonian, Latvian and Turkish support plus fill gaps in other languages (#740)
+
+* Add missing tr",True,"Delete Unused Storage Resources, Match SLO Requirements, Remove Unused Assets",3,high,28,1914,40,,,,0,0,0,

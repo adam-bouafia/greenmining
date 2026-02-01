@@ -639,6 +639,9 @@ class LocalRepoAnalyzer:
             colored_print(f"\n[{i}/{len(urls)}] Processing repository...", "cyan")
             try:
                 result = self.analyze_repository(url)
+                if result.total_commits == 0:
+                    colored_print(f"   Skipping {result.name}: no commits in date range", "yellow")
+                    continue
                 results.append(result)
             except Exception as e:
                 colored_print(f"   Error analyzing {url}: {e}", "red")
@@ -656,6 +659,9 @@ class LocalRepoAnalyzer:
                 url = future_to_url[future]
                 try:
                     result = future.result()
+                    if result.total_commits == 0:
+                        colored_print(f"   Skipping {result.name}: no commits in date range", "yellow")
+                        continue
                     results.append(result)
                     colored_print(f"   Completed: {result.name}", "green")
                 except Exception as e:

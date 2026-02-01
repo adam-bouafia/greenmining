@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.3] - 2026-02-01
+
+### Fixed
+- `cleanup_after` parameter not exposed in top-level `analyze_repositories()` API
+- Repositories with empty commit histories no longer included in analysis results
+
+### Changed
+- Experiment notebook updated with full Android-domain pipeline run and results
+
 ## [1.2.1] - 2026-02-01
 
 ### Fixed
@@ -98,6 +107,7 @@
 - Green awareness analysis
 - Docker containerization
 
+[1.2.3]: https://github.com/adam-bouafia/greenmining/compare/v1.2.1...v1.2.3
 [1.2.1]: https://github.com/adam-bouafia/greenmining/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/adam-bouafia/greenmining/compare/v1.1.9...v1.2.0
 [1.1.9]: https://github.com/adam-bouafia/greenmining/compare/v1.1.6...v1.1.9

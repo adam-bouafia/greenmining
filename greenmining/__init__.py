@@ -8,7 +8,7 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "1.2.1"
+__version__ = "1.2.3"
 
 
 def fetch_repositories(
@@ -72,6 +72,7 @@ def analyze_repositories(
     github_token: str = None,
     since_date: str = None,
     to_date: str = None,
+    cleanup_after: bool = True,
 ):
     # Analyze multiple repositories from URLs.
     # Args:
@@ -107,6 +108,7 @@ def analyze_repositories(
         include_source_code=include_source_code,
         ssh_key_path=ssh_key_path,
         github_token=github_token,
+        cleanup_after=cleanup_after,
         **kwargs,
     )
 
