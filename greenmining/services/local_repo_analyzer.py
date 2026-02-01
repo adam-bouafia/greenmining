@@ -486,6 +486,7 @@ class LocalRepoAnalyzer:
         if self.energy_tracking:
             try:
                 from greenmining.energy.base import get_energy_meter
+
                 energy_meter = get_energy_meter(self.energy_backend)
                 energy_meter.start()
             except Exception:
@@ -665,7 +666,9 @@ class LocalRepoAnalyzer:
                 try:
                     result = future.result()
                     if result.total_commits == 0:
-                        colored_print(f"   Skipping {result.name}: no commits in date range", "yellow")
+                        colored_print(
+                            f"   Skipping {result.name}: no commits in date range", "yellow"
+                        )
                         continue
                     results.append(result)
                     colored_print(f"   Completed: {result.name}", "green")

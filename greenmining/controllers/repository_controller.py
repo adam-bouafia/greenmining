@@ -41,9 +41,7 @@ class RepositoryController:
                 f"   Created: {created_after or 'any'} to {created_before or 'any'}", "cyan"
             )
         if pushed_after or pushed_before:
-            colored_print(
-                f"   Pushed: {pushed_after or 'any'} to {pushed_before or 'any'}", "cyan"
-            )
+            colored_print(f"   Pushed: {pushed_after or 'any'} to {pushed_before or 'any'}", "cyan")
 
         try:
             repositories = self.graphql_fetcher.search_repositories(

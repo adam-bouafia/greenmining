@@ -123,4 +123,3 @@ class CodeCarbonMeter(EnergyMeter):
             start_time=datetime.fromtimestamp(self._start_time),
             end_time=datetime.fromtimestamp(end_time),
         )
-
