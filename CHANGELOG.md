@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1] - 2026-02-01
+
+### Fixed
+- Clone directory collision in `LocalRepoAnalyzer` when multiple repos share the same name (e.g. `open-android/Android` vs `hmkcode/Android` vs `duckduckgo/Android`)
+- Race condition corruption during parallel analysis (`could not lock config file` errors)
+- Aligned clone path sanitization with `RepositoryController._sanitize_repo_name` (owner\_repo format)
+
+### Changed
+- Clone directory structure now uses unique `owner_repo/` parent dirs per repository
+
 ## [1.2.0] - 2026-01-31
 
 ### Added
@@ -88,6 +98,7 @@
 - Green awareness analysis
 - Docker containerization
 
+[1.2.1]: https://github.com/adam-bouafia/greenmining/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/adam-bouafia/greenmining/compare/v1.1.9...v1.2.0
 [1.1.9]: https://github.com/adam-bouafia/greenmining/compare/v1.1.6...v1.1.9
 [1.1.6]: https://github.com/adam-bouafia/greenmining/compare/v0.1.12...v1.1.6

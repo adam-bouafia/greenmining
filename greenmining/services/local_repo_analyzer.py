@@ -460,12 +460,18 @@ class LocalRepoAnalyzer:
         if self.to_date:
             repo_config["to"] = self.to_date
 
-        # Clone to specific path if needed
-        local_path = self.clone_path / repo_name
+        # Use owner_repo format for unique directory names (avoids collisions
+        # when multiple repos share the same name, e.g. open-android/Android
+        # vs hmkcode/Android vs duckduckgo/Android).
+        safe_name = re.sub(r"[^a-z0-9_-]", "_", f"{owner}_{repo_name}".lower())
+        clone_parent = self.clone_path / safe_name
+        clone_parent.mkdir(parents=True, exist_ok=True)
+        local_path = clone_parent / repo_name
+
         if local_path.exists():
             shutil.rmtree(local_path)
 
-        repo_config["clone_repo_to"] = str(self.clone_path)
+        repo_config["clone_repo_to"] = str(clone_parent)
 
         colored_print(f"   Cloning to: {local_path}", "cyan")
 
@@ -540,10 +546,11 @@ class LocalRepoAnalyzer:
             return result
 
         finally:
-            # Cleanup if requested
-            if self.cleanup_after and local_path.exists():
-                colored_print(f"   Cleaning up: {local_path}", "cyan")
-                shutil.rmtree(local_path, ignore_errors=True)
+            # Cleanup if requested (remove the unique parent dir to avoid
+            # accumulating empty owner_repo directories)
+            if self.cleanup_after and clone_parent.exists():
+                colored_print(f"   Cleaning up: {clone_parent}", "cyan")
+                shutil.rmtree(clone_parent, ignore_errors=True)
 
     def _compute_process_metrics(self, repo_path: str) -> Dict[str, Any]:
         # Compute PyDriller process metrics for the repository.
