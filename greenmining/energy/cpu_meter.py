@@ -3,12 +3,11 @@
 
 from __future__ import annotations
 
-import time
 import platform
+import time
 from datetime import datetime
-from typing import List, Optional
 
-from .base import EnergyMeter, EnergyMetrics, EnergyBackend
+from .base import EnergyBackend, EnergyMeter, EnergyMetrics
 
 
 class CPUEnergyMeter(EnergyMeter):
@@ -23,7 +22,7 @@ class CPUEnergyMeter(EnergyMeter):
         "Windows": 65.0,
     }
 
-    def __init__(self, tdp_watts: Optional[float] = None, sample_interval: float = 0.5):
+    def __init__(self, tdp_watts: float | None = None, sample_interval: float = 0.5):
         # Initialize CPU energy meter.
         # Args:
         #   tdp_watts: CPU Thermal Design Power in watts (auto-detected if None)
@@ -31,15 +30,15 @@ class CPUEnergyMeter(EnergyMeter):
         super().__init__(EnergyBackend.CPU_METER)
         self.tdp_watts = tdp_watts or self._detect_tdp()
         self.sample_interval = sample_interval
-        self._start_time: Optional[float] = None
-        self._samples: List[float] = []
+        self._start_time: float | None = None
+        self._samples: list[float] = []
         self._platform = platform.system()
         self._psutil_available = self._check_psutil()
 
     def _check_psutil(self) -> bool:
         # Check if psutil is available.
         try:
-            import psutil
+            import psutil  # noqa: F401
 
             return True
         except ImportError:

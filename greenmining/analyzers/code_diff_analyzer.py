@@ -1,7 +1,7 @@
 # Code diff analyzer for detecting green software patterns in code changes.
 
 import re
-from typing import Any, Dict, List
+from typing import Any
 
 from pydriller import Commit, ModifiedFile
 
@@ -207,7 +207,7 @@ class CodeDiffAnalyzer:
         },
     }
 
-    def analyze_commit_diff(self, commit: Commit) -> Dict[str, Any]:
+    def analyze_commit_diff(self, commit: Commit) -> dict[str, Any]:
         # Analyze code changes in a commit to detect green patterns.
         patterns_detected = []
         evidence = {}
@@ -244,12 +244,12 @@ class CodeDiffAnalyzer:
             "metrics": metrics,
         }
 
-    def _detect_patterns_in_line(self, code_line: str) -> List[str]:
+    def _detect_patterns_in_line(self, code_line: str) -> list[str]:
         # Detect patterns in a single line of code.
         detected = []
 
         for pattern_name, signatures in self.PATTERN_SIGNATURES.items():
-            for signature_type, patterns in signatures.items():
+            for _signature_type, patterns in signatures.items():
                 for pattern_regex in patterns:
                     if re.search(pattern_regex, code_line, re.IGNORECASE):
                         detected.append(pattern_name)
@@ -257,7 +257,7 @@ class CodeDiffAnalyzer:
 
         return detected
 
-    def _calculate_metrics(self, commit: Commit) -> Dict[str, int]:
+    def _calculate_metrics(self, commit: Commit) -> dict[str, int]:
         # Calculate code change metrics.
         lines_added = sum(f.added_lines for f in commit.modified_files)
         lines_removed = sum(f.deleted_lines for f in commit.modified_files)
@@ -276,7 +276,7 @@ class CodeDiffAnalyzer:
         }
 
     def _calculate_diff_confidence(
-        self, patterns: List[str], evidence: Dict[str, List[str]], metrics: Dict[str, int]
+        self, patterns: list[str], evidence: dict[str, list[str]], metrics: dict[str, int]
     ) -> str:
         # Calculate confidence level for diff-based detection.
         if not patterns:

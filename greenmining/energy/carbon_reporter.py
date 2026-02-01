@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from .base import EnergyMetrics
 
@@ -88,9 +88,9 @@ class CarbonReport:
     tree_months: float = 0.0  # Equivalent tree-months to offset
     smartphone_charges: float = 0.0  # Equivalent smartphone charges
     km_driven: float = 0.0  # Equivalent km driven in average car
-    analysis_results: List[Dict[str, Any]] = field(default_factory=list)
+    analysis_results: list[dict[str, Any]] = field(default_factory=list)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "total_energy_kwh": round(self.total_energy_kwh, 6),
             "total_emissions_kg": round(self.total_emissions_kg, 6),
@@ -143,8 +143,8 @@ class CarbonReporter:
     def __init__(
         self,
         country_iso: str = "USA",
-        cloud_provider: Optional[str] = None,
-        region: Optional[str] = None,
+        cloud_provider: str | None = None,
+        region: str | None = None,
     ):
         # Initialize carbon reporter.
         # Args:
@@ -169,9 +169,9 @@ class CarbonReporter:
 
     def generate_report(
         self,
-        energy_metrics: Optional[EnergyMetrics] = None,
-        analysis_results: Optional[List[Dict[str, Any]]] = None,
-        total_joules: Optional[float] = None,
+        energy_metrics: EnergyMetrics | None = None,
+        analysis_results: list[dict[str, Any]] | None = None,
+        total_joules: float | None = None,
     ) -> CarbonReport:
         # Generate a carbon footprint report.
         # Args:
@@ -232,11 +232,11 @@ class CarbonReporter:
         return self.carbon_intensity
 
     @staticmethod
-    def get_supported_countries() -> List[str]:
+    def get_supported_countries() -> list[str]:
         # Get list of supported country ISO codes.
         return list(CARBON_INTENSITY_BY_COUNTRY.keys())
 
     @staticmethod
-    def get_supported_cloud_regions(provider: str) -> List[str]:
+    def get_supported_cloud_regions(provider: str) -> list[str]:
         # Get list of supported cloud regions for a provider.
         return list(CLOUD_REGION_INTENSITY.get(provider.lower(), {}).keys())

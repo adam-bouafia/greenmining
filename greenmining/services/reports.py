@@ -366,7 +366,7 @@ No novel microservice-specific green practices were automatically detected. Manu
             if green_vs_nongreen:
                 cohens_d = green_vs_nongreen.get("cohens_d", 0)
                 magnitude = green_vs_nongreen.get("magnitude", "negligible")
-                sections.append(f"**Green vs Non-Green Pattern Usage:**")
+                sections.append("**Green vs Non-Green Pattern Usage:**")
                 sections.append(f"- Cohen's d: {cohens_d:.3f}")
                 sections.append(f"- Effect magnitude: {magnitude.capitalize()}")
                 sections.append("")

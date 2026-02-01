@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 
-import os
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional
 
-from .base import EnergyMeter, EnergyMetrics, EnergyBackend
+from .base import EnergyBackend, EnergyMeter, EnergyMetrics
 
 
 class RAPLEnergyMeter(EnergyMeter):
@@ -19,10 +17,10 @@ class RAPLEnergyMeter(EnergyMeter):
     def __init__(self):
         # Initialize RAPL energy meter.
         super().__init__(EnergyBackend.RAPL)
-        self._domains: Dict[str, Path] = {}
-        self._start_energy: Dict[str, int] = {}
-        self._start_time: Optional[float] = None
-        self._power_samples: List[float] = []
+        self._domains: dict[str, Path] = {}
+        self._start_energy: dict[str, int] = {}
+        self._start_time: float | None = None
+        self._power_samples: list[float] = []
         self._discover_domains()
 
     def _discover_domains(self) -> None:
@@ -146,6 +144,6 @@ class RAPLEnergyMeter(EnergyMeter):
             end_time=datetime.fromtimestamp(end_time),
         )
 
-    def get_available_domains(self) -> List[str]:
+    def get_available_domains(self) -> list[str]:
         # Get list of available RAPL domains.
         return list(self._domains.keys())

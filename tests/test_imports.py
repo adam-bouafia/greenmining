@@ -1,5 +1,4 @@
 import time
-import pytest
 
 
 class TestModuleImports:
@@ -34,7 +33,7 @@ class TestModuleImports:
         assert hasattr(gsf_patterns, "is_green_aware")
 
     def test_import_models(self):
-        from greenmining.models import Repository, Commit, AnalysisResult, AggregatedStats
+        from greenmining.models import AggregatedStats, AnalysisResult, Commit, Repository
 
         assert Repository is not None
         assert Commit is not None
@@ -43,12 +42,12 @@ class TestModuleImports:
 
     def test_import_services(self):
         from greenmining.services import (
-            GitHubGraphQLFetcher,
             CommitExtractor,
-            DataAnalyzer,
             DataAggregator,
-            ReportGenerator,
+            DataAnalyzer,
+            GitHubGraphQLFetcher,
             LocalRepoAnalyzer,
+            ReportGenerator,
         )
 
         assert GitHubGraphQLFetcher is not None
@@ -72,8 +71,8 @@ class TestModuleImports:
         assert TemporalAnalyzer is not None
 
     def test_import_energy(self):
-        from greenmining.energy import EnergyMeter, RAPLEnergyMeter, CodeCarbonMeter
-        from greenmining.energy.base import EnergyMetrics, EnergyBackend
+        from greenmining.energy import CodeCarbonMeter, EnergyMeter, RAPLEnergyMeter
+        from greenmining.energy.base import EnergyBackend, EnergyMetrics
 
         assert EnergyMeter is not None
         assert RAPLEnergyMeter is not None

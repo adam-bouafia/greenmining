@@ -2,7 +2,7 @@
 
 import json
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 import requests
 
@@ -30,12 +30,12 @@ class GitHubGraphQLFetcher:
         keywords: str = "microservices",
         max_repos: int = 100,
         min_stars: int = 100,
-        languages: Optional[List[str]] = None,
+        languages: Optional[list[str]] = None,
         created_after: Optional[str] = None,
         created_before: Optional[str] = None,
         pushed_after: Optional[str] = None,
         pushed_before: Optional[str] = None,
-    ) -> List[Repository]:
+    ) -> list[Repository]:
         # Search GitHub repositories using GraphQL.
         #
         # Args:
@@ -172,7 +172,7 @@ class GitHubGraphQLFetcher:
         self,
         keywords: str,
         min_stars: int,
-        languages: Optional[List[str]],
+        languages: Optional[list[str]],
         created_after: Optional[str],
         created_before: Optional[str],
         pushed_after: Optional[str],
@@ -201,7 +201,7 @@ class GitHubGraphQLFetcher:
 
         return " ".join(query_parts)
 
-    def _execute_query(self, query: str, variables: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_query(self, query: str, variables: dict[str, Any]) -> dict[str, Any]:
         # Execute GraphQL query.
         payload = {"query": query, "variables": variables}
 
@@ -212,7 +212,7 @@ class GitHubGraphQLFetcher:
         response.raise_for_status()
         return response.json()
 
-    def _parse_repository(self, node: Dict[str, Any], repo_id: int = 0) -> Repository:
+    def _parse_repository(self, node: dict[str, Any], repo_id: int = 0) -> Repository:
         # Parse GraphQL repository node to Repository object.
         full_name = node.get("nameWithOwner", "")
         owner = full_name.split("/")[0] if "/" in full_name else ""
@@ -252,7 +252,7 @@ class GitHubGraphQLFetcher:
 
     def get_repository_commits(
         self, owner: str, name: str, max_commits: int = 100
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         # Fetch commits for a specific repository using GraphQL.
         #
         # Args:
@@ -341,7 +341,7 @@ class GitHubGraphQLFetcher:
 
         return commits
 
-    def save_results(self, repositories: List[Repository], output_file: str):
+    def save_results(self, repositories: list[Repository], output_file: str):
         # Save repositories to JSON file.
         data = {
             "total_repositories": len(repositories),

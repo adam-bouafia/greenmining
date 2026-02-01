@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple
-from dataclasses import dataclass
-from collections import defaultdict
 import statistics
+from collections import defaultdict
+from dataclasses import dataclass
+from datetime import datetime, timedelta
 
 
 @dataclass
@@ -20,7 +19,7 @@ class TemporalMetrics:
     green_commit_count: int
     green_awareness_rate: float
     unique_patterns: int
-    dominant_pattern: Optional[str]
+    dominant_pattern: str | None
     velocity: float  # commits per day
 
 
@@ -44,8 +43,8 @@ class TemporalAnalyzer:
         self.granularity = granularity
 
     def group_commits_by_period(
-        self, commits: List[Dict], date_field: str = "date"
-    ) -> Dict[str, List[Dict]]:
+        self, commits: list[dict], date_field: str = "date"
+    ) -> dict[str, list[dict]]:
         # Group commits into time periods.
         periods = defaultdict(list)
 
@@ -86,7 +85,7 @@ class TemporalAnalyzer:
         else:
             return date.strftime("%Y-%m")
 
-    def _parse_period_key(self, period_key: str) -> Tuple[datetime, datetime]:
+    def _parse_period_key(self, period_key: str) -> tuple[datetime, datetime]:
         # Parse period key back to start and end dates.
         if "W" in period_key:
             # Week format: 2024-W15
@@ -138,7 +137,7 @@ class TemporalAnalyzer:
         return start, end
 
     def calculate_period_metrics(
-        self, period_key: str, commits: List[Dict], analysis_results: List[Dict]
+        self, period_key: str, commits: list[dict], analysis_results: list[dict]
     ) -> TemporalMetrics:
         # Calculate metrics for a time period.
         start_date, end_date = self._parse_period_key(period_key)
@@ -185,7 +184,7 @@ class TemporalAnalyzer:
             velocity=round(velocity, 2),
         )
 
-    def analyze_trends(self, commits: List[Dict], analysis_results: List[Dict]) -> Dict:
+    def analyze_trends(self, commits: list[dict], analysis_results: list[dict]) -> dict:
         # Comprehensive temporal trend analysis.
         # Group by periods
         grouped = self.group_commits_by_period(commits)
@@ -227,7 +226,7 @@ class TemporalAnalyzer:
             },
         }
 
-    def _calculate_trend(self, periods: List[TemporalMetrics]) -> Optional[TrendAnalysis]:
+    def _calculate_trend(self, periods: list[TemporalMetrics]) -> TrendAnalysis | None:
         # Calculate linear trend using least squares regression.
         if len(periods) < 2:
             return None
@@ -275,7 +274,7 @@ class TemporalAnalyzer:
             change_percentage=round(change, 2),
         )
 
-    def _calculate_adoption_curve(self, periods: List[TemporalMetrics]) -> List[Tuple[str, float]]:
+    def _calculate_adoption_curve(self, periods: list[TemporalMetrics]) -> list[tuple[str, float]]:
         # Calculate cumulative adoption over time.
         cumulative_green = 0
         cumulative_total = 0
@@ -291,7 +290,7 @@ class TemporalAnalyzer:
 
         return curve
 
-    def _calculate_velocity_trend(self, periods: List[TemporalMetrics]) -> Dict:
+    def _calculate_velocity_trend(self, periods: list[TemporalMetrics]) -> dict:
         # Analyze velocity changes over time.
         if not periods:
             return {}
@@ -307,8 +306,8 @@ class TemporalAnalyzer:
         }
 
     def _analyze_pattern_evolution(
-        self, periods: List[TemporalMetrics], analysis_results: List[Dict]
-    ) -> Dict:
+        self, periods: list[TemporalMetrics], analysis_results: list[dict]
+    ) -> dict:
         # Track when different patterns emerged and dominated.
         pattern_timeline = defaultdict(lambda: {"first_seen": None, "occurrences_by_period": {}})
 
@@ -349,7 +348,7 @@ class TemporalAnalyzer:
             for pattern, data in pattern_timeline.items()
         }
 
-    def _metrics_to_dict(self, metrics: TemporalMetrics) -> Dict:
+    def _metrics_to_dict(self, metrics: TemporalMetrics) -> dict:
         # Convert TemporalMetrics to dictionary.
         return {
             "period": metrics.period,
@@ -363,7 +362,7 @@ class TemporalAnalyzer:
             "velocity": metrics.velocity,
         }
 
-    def _trend_to_dict(self, trend: Optional[TrendAnalysis]) -> Dict:
+    def _trend_to_dict(self, trend: TrendAnalysis | None) -> dict:
         # Convert TrendAnalysis to dictionary.
         if not trend:
             return {}

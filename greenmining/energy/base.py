@@ -3,11 +3,10 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
-from typing import Any, Dict, List, Optional, Callable
-import time
+from typing import Any, Callable
 
 
 class EnergyBackend(Enum):
@@ -31,16 +30,16 @@ class EnergyMetrics:
     # Component-specific energy (if available)
     cpu_energy_joules: float = 0.0  # CPU-specific energy
     dram_energy_joules: float = 0.0  # Memory energy
-    gpu_energy_joules: Optional[float] = None  # GPU energy if available
+    gpu_energy_joules: float | None = None  # GPU energy if available
 
     # Carbon footprint (if carbon tracking enabled)
-    carbon_grams: Optional[float] = None  # CO2 equivalent in grams
-    carbon_intensity: Optional[float] = None  # gCO2/kWh of grid
+    carbon_grams: float | None = None  # CO2 equivalent in grams
+    carbon_intensity: float | None = None  # gCO2/kWh of grid
 
     # Metadata
     backend: str = ""
-    start_time: Optional[datetime] = None
-    end_time: Optional[datetime] = None
+    start_time: datetime | None = None
+    end_time: datetime | None = None
 
     @property
     def energy_joules(self) -> float:
@@ -50,7 +49,7 @@ class EnergyMetrics:
     def average_power_watts(self) -> float:
         return self.watts_avg
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         # Convert to dictionary.
         return {
             "joules": self.joules,
@@ -73,13 +72,13 @@ class CommitEnergyProfile:
     # Energy profile for a specific commit.
 
     commit_hash: str
-    energy_before: Optional[EnergyMetrics] = None  # Parent commit energy
-    energy_after: Optional[EnergyMetrics] = None  # This commit energy
+    energy_before: EnergyMetrics | None = None  # Parent commit energy
+    energy_after: EnergyMetrics | None = None  # This commit energy
     energy_delta: float = 0.0  # Change in joules
     energy_regression: bool = False  # True if energy increased
     regression_percentage: float = 0.0  # % change
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         # Convert to dictionary.
         return {
             "commit_hash": self.commit_hash,
@@ -98,8 +97,8 @@ class EnergyMeter(ABC):
         # Initialize the energy meter.
         self.backend = backend
         self._is_measuring = False
-        self._start_time: Optional[float] = None
-        self._measurements: List[float] = []
+        self._start_time: float | None = None
+        self._measurements: list[float] = []
 
     @abstractmethod
     def is_available(self) -> bool:
@@ -125,7 +124,7 @@ class EnergyMeter(ABC):
             metrics = self.stop()
         return result, metrics
 
-    def measure_command(self, command: str, timeout: Optional[int] = None) -> EnergyMetrics:
+    def measure_command(self, command: str, timeout: int | None = None) -> EnergyMetrics:
         # Measure energy consumption of a shell command.
         import subprocess
 
@@ -156,9 +155,9 @@ class EnergyMeter(ABC):
 def get_energy_meter(backend: str = "rapl") -> EnergyMeter:
     # Factory function to get an energy meter instance.
     # Supported backends: rapl, codecarbon, cpu_meter, auto
-    from .rapl import RAPLEnergyMeter
     from .codecarbon_meter import CodeCarbonMeter
     from .cpu_meter import CPUEnergyMeter
+    from .rapl import RAPLEnergyMeter
 
     backend_lower = backend.lower()
 

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 @dataclass
@@ -16,21 +15,21 @@ class Repository:
     full_name: str
     url: str
     clone_url: str
-    language: Optional[str]
+    language: str | None
     stars: int
     forks: int
     watchers: int
     open_issues: int
     last_updated: str
     created_at: str
-    description: Optional[str]
+    description: str | None
     main_branch: str
     topics: list[str] = field(default_factory=list)
     size: int = 0
     has_issues: bool = True
     has_wiki: bool = True
     archived: bool = False
-    license: Optional[str] = None
+    license: str | None = None
 
     def to_dict(self) -> dict:
         # Convert to dictionary.
@@ -59,12 +58,12 @@ class Repository:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Repository":
+    def from_dict(cls, data: dict) -> Repository:
         # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})
 
     @classmethod
-    def from_github_repo(cls, repo, repo_id: int) -> "Repository":
+    def from_github_repo(cls, repo, repo_id: int) -> Repository:
         # Create from PyGithub repository object.
         return cls(
             repo_id=repo_id,

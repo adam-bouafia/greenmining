@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -12,7 +12,7 @@ from scipy import stats
 class StatisticalAnalyzer:
     # Advanced statistical analyses for green software patterns.
 
-    def analyze_pattern_correlations(self, commit_data: pd.DataFrame) -> Dict[str, Any]:
+    def analyze_pattern_correlations(self, commit_data: pd.DataFrame) -> dict[str, Any]:
         # Analyze correlations between patterns.
         # Create pattern co-occurrence matrix
         pattern_columns = [col for col in commit_data.columns if col.startswith("pattern_")]
@@ -47,7 +47,7 @@ class StatisticalAnalyzer:
             "interpretation": self._interpret_correlations(significant_pairs),
         }
 
-    def temporal_trend_analysis(self, commits_df: pd.DataFrame) -> Dict[str, Any]:
+    def temporal_trend_analysis(self, commits_df: pd.DataFrame) -> dict[str, Any]:
         # Analyze temporal trends in green awareness.
         # Prepare time series data
         commits_df["date"] = pd.to_datetime(commits_df["date"], utc=True, errors="coerce")
@@ -101,7 +101,7 @@ class StatisticalAnalyzer:
             "monthly_data": monthly.to_dict(),
         }
 
-    def effect_size_analysis(self, group1: List[float], group2: List[float]) -> Dict[str, Any]:
+    def effect_size_analysis(self, group1: list[float], group2: list[float]) -> dict[str, Any]:
         # Calculate effect size between two groups.
         # Cohen's d (effect size)
         mean1, mean2 = np.mean(group1), np.mean(group2)
@@ -135,7 +135,7 @@ class StatisticalAnalyzer:
             "significant": bool(p_value < 0.05),
         }
 
-    def _interpret_correlations(self, significant_pairs: List[Dict[str, Any]]) -> str:
+    def _interpret_correlations(self, significant_pairs: list[dict[str, Any]]) -> str:
         # Generate interpretation of correlation results.
         if not significant_pairs:
             return "No significant correlations found between patterns."

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 @dataclass
@@ -14,7 +13,7 @@ class AggregatedStats:
     known_patterns: dict = field(default_factory=dict)
     repositories: list[dict] = field(default_factory=list)
     languages: dict = field(default_factory=dict)
-    timestamp: Optional[str] = None
+    timestamp: str | None = None
 
     def to_dict(self) -> dict:
         # Convert to dictionary.
@@ -27,6 +26,6 @@ class AggregatedStats:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "AggregatedStats":
+    def from_dict(cls, data: dict) -> AggregatedStats:
         # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})

@@ -44,12 +44,12 @@ class Commit:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Commit":
+    def from_dict(cls, data: dict) -> Commit:
         # Create from dictionary.
         return cls(**{k: v for k, v in data.items() if k in cls.__annotations__})
 
     @classmethod
-    def from_pydriller_commit(cls, commit, repo_name: str) -> "Commit":
+    def from_pydriller_commit(cls, commit, repo_name: str) -> Commit:
         # Create from PyDriller commit object.
         return cls(
             commit_id=commit.hash,

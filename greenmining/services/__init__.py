@@ -5,10 +5,10 @@ from .data_aggregator import DataAggregator
 from .data_analyzer import DataAnalyzer
 from .github_graphql_fetcher import GitHubGraphQLFetcher
 from .local_repo_analyzer import (
-    LocalRepoAnalyzer,
     CommitAnalysis,
-    RepositoryAnalysis,
+    LocalRepoAnalyzer,
     MethodMetrics,
+    RepositoryAnalysis,
     SourceCodeChange,
 )
 from .reports import ReportGenerator

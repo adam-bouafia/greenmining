@@ -3,8 +3,8 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from dataclasses import dataclass
+from typing import Any
 
 import numpy as np
 from scipy import stats
@@ -22,7 +22,7 @@ class CorrelationResult:
     significant: bool = False
     strength: str = "none"
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "metric_name": self.metric_name,
             "pearson_r": round(self.pearson_r, 4),
@@ -44,17 +44,17 @@ class MetricsPowerCorrelator:
         # Args:
         #   significance_level: P-value threshold for significance
         self.significance_level = significance_level
-        self._metrics_data: Dict[str, List[float]] = {}
-        self._power_data: List[float] = []
+        self._metrics_data: dict[str, list[float]] = {}
+        self._power_data: list[float] = []
         self._fitted = False
-        self._results: Dict[str, CorrelationResult] = {}
-        self._feature_importance: Dict[str, float] = {}
+        self._results: dict[str, CorrelationResult] = {}
+        self._feature_importance: dict[str, float] = {}
 
     def fit(
         self,
-        metrics: List[str],
-        metrics_values: Dict[str, List[float]],
-        power_measurements: List[float],
+        metrics: list[str],
+        metrics_values: dict[str, list[float]],
+        power_measurements: list[float],
     ) -> None:
         # Fit the correlator with metrics and power data.
         # Args:
@@ -86,7 +86,7 @@ class MetricsPowerCorrelator:
         self._fitted = True
 
     def _compute_correlation(
-        self, metric_name: str, metric_values: List[float], power_values: List[float]
+        self, metric_name: str, metric_values: list[float], power_values: list[float]
     ) -> CorrelationResult:
         # Compute Pearson and Spearman correlations for a single metric.
         x = np.array(metric_values, dtype=float)
@@ -127,29 +127,29 @@ class MetricsPowerCorrelator:
         )
 
     @property
-    def pearson(self) -> Dict[str, float]:
+    def pearson(self) -> dict[str, float]:
         # Get Pearson correlations for all metrics.
         return {name: r.pearson_r for name, r in self._results.items()}
 
     @property
-    def spearman(self) -> Dict[str, float]:
+    def spearman(self) -> dict[str, float]:
         # Get Spearman correlations for all metrics.
         return {name: r.spearman_r for name, r in self._results.items()}
 
     @property
-    def feature_importance(self) -> Dict[str, float]:
+    def feature_importance(self) -> dict[str, float]:
         # Get normalized feature importance scores.
         return self._feature_importance
 
-    def get_results(self) -> Dict[str, CorrelationResult]:
+    def get_results(self) -> dict[str, CorrelationResult]:
         # Get all correlation results.
         return self._results
 
-    def get_significant_correlations(self) -> Dict[str, CorrelationResult]:
+    def get_significant_correlations(self) -> dict[str, CorrelationResult]:
         # Get only statistically significant correlations.
         return {name: r for name, r in self._results.items() if r.significant}
 
-    def summary(self) -> Dict[str, Any]:
+    def summary(self) -> dict[str, Any]:
         # Generate summary of correlation analysis.
         return {
             "total_metrics": len(self._results),

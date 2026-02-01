@@ -1,10 +1,10 @@
 # Energy measurement module for GreenMining.
 
-from .base import EnergyMeter, EnergyMetrics, EnergyBackend, CommitEnergyProfile, get_energy_meter
-from .rapl import RAPLEnergyMeter
+from .base import CommitEnergyProfile, EnergyBackend, EnergyMeter, EnergyMetrics, get_energy_meter
+from .carbon_reporter import CarbonReport, CarbonReporter
 from .codecarbon_meter import CodeCarbonMeter
 from .cpu_meter import CPUEnergyMeter
-from .carbon_reporter import CarbonReporter, CarbonReport
+from .rapl import RAPLEnergyMeter
 
 __all__ = [
     "EnergyMeter",

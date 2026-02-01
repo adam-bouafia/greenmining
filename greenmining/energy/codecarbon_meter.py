@@ -4,9 +4,8 @@ from __future__ import annotations
 
 import time
 from datetime import datetime
-from typing import Optional
 
-from .base import EnergyMeter, EnergyMetrics, EnergyBackend
+from .base import EnergyBackend, EnergyMeter, EnergyMetrics
 
 
 class CodeCarbonMeter(EnergyMeter):
@@ -15,7 +14,7 @@ class CodeCarbonMeter(EnergyMeter):
     def __init__(
         self,
         project_name: str = "greenmining",
-        output_dir: Optional[str] = None,
+        output_dir: str | None = None,
         save_to_file: bool = False,
     ):
         # Initialize CodeCarbon energy meter.
@@ -24,13 +23,13 @@ class CodeCarbonMeter(EnergyMeter):
         self.output_dir = output_dir
         self.save_to_file = save_to_file
         self._tracker = None
-        self._start_time: Optional[float] = None
+        self._start_time: float | None = None
         self._codecarbon_available = self._check_codecarbon()
 
     def _check_codecarbon(self) -> bool:
         # Check if CodeCarbon is installed.
         try:
-            from codecarbon import EmissionsTracker
+            from codecarbon import EmissionsTracker  # noqa: F401
 
             return True
         except ImportError:
