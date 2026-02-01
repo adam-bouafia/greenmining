@@ -47,6 +47,9 @@ site/
 task/
  
 /examples/
+
+# Cloned repos for experiments
+experiment/beta/greenmining_repos/
  
 
 # IDE
