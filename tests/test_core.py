@@ -15,13 +15,6 @@ class TestModuleImports:
         assert elapsed < 5.0, f"Import took {elapsed:.2f}s"
         assert hasattr(greenmining, "fetch_repositories")
 
-    def test_import_config(self):
-        from greenmining import config
-
-        assert hasattr(config, "Config")
-        assert hasattr(config, "get_config")
-        assert hasattr(config, "_load_yaml_config")
-
     def test_import_utils(self):
         from greenmining import utils
 
@@ -64,13 +57,11 @@ class TestModuleImports:
     def test_import_analyzers(self):
         from greenmining.analyzers import (
             CodeDiffAnalyzer,
-            QualitativeAnalyzer,
             StatisticalAnalyzer,
             TemporalAnalyzer,
         )
 
         assert CodeDiffAnalyzer is not None
-        assert QualitativeAnalyzer is not None
         assert StatisticalAnalyzer is not None
         assert TemporalAnalyzer is not None
 
@@ -83,11 +74,6 @@ class TestModuleImports:
         assert CodeCarbonMeter is not None
         assert EnergyMetrics is not None
         assert EnergyBackend is not None
-
-    def test_import_presenters(self):
-        from greenmining.presenters import ConsolePresenter
-
-        assert ConsolePresenter is not None
 
     def test_import_controllers(self):
         from greenmining.controllers import RepositoryController
@@ -260,19 +246,6 @@ class TestUtils:
         assert isinstance(result, str)
         assert "2025" in result
 
-    def test_estimate_tokens(self):
-        from greenmining import utils
-
-        text = "This is a sample text for token estimation"
-        tokens = utils.estimate_tokens(text)
-        assert tokens > 0
-
-    def test_estimate_cost(self):
-        from greenmining import utils
-
-        cost = utils.estimate_cost(1000, model="gpt-4")
-        assert cost >= 0
-
     def test_format_number(self):
         from greenmining import utils
 
@@ -283,19 +256,6 @@ class TestUtils:
 
         result = utils.format_percentage(0.5)
         assert isinstance(result, str)
-
-    def test_format_duration(self):
-        from greenmining import utils
-
-        result = utils.format_duration(3661)
-        assert isinstance(result, str)
-
-    def test_truncate_text(self):
-        from greenmining import utils
-
-        text = "A" * 100
-        truncated = utils.truncate_text(text, max_length=50)
-        assert len(truncated) <= 53
 
     def test_retry_decorator_success(self):
         from greenmining import utils
@@ -375,12 +335,6 @@ class TestAnalyzers:
         analyzer = CodeDiffAnalyzer()
         assert analyzer is not None
 
-    def test_qualitative_analyzer_init(self):
-        from greenmining.analyzers import QualitativeAnalyzer
-
-        analyzer = QualitativeAnalyzer()
-        assert analyzer is not None
-
     def test_statistical_analyzer_init(self):
         from greenmining.analyzers import StatisticalAnalyzer
 
@@ -399,36 +353,3 @@ class TestAnalyzers:
 
         analyzer = TemporalAnalyzer()
         assert analyzer is not None
-
-
-class TestPresenters:
-
-    def test_console_presenter_init(self):
-        from greenmining.presenters import ConsolePresenter
-
-        presenter = ConsolePresenter()
-        assert presenter is not None
-
-    def test_console_presenter_banner(self, capsys):
-        from greenmining.presenters import ConsolePresenter
-
-        presenter = ConsolePresenter()
-        presenter.show_banner()
-        captured = capsys.readouterr()
-        assert len(captured.out) > 0
-
-    def test_console_presenter_error(self, capsys):
-        from greenmining.presenters import ConsolePresenter
-
-        presenter = ConsolePresenter()
-        presenter.show_error("Test error")
-        captured = capsys.readouterr()
-        assert len(captured.out) > 0
-
-    def test_console_presenter_success(self, capsys):
-        from greenmining.presenters import ConsolePresenter
-
-        presenter = ConsolePresenter()
-        presenter.show_success("Done")
-        captured = capsys.readouterr()
-        assert len(captured.out) > 0

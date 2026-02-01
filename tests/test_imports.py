@@ -11,13 +11,6 @@ class TestModuleImports:
         assert elapsed < 5.0, f"Import took {elapsed:.2f}s"
         assert hasattr(greenmining, "fetch_repositories")
 
-    def test_import_config(self):
-        from greenmining import config
-
-        assert hasattr(config, "Config")
-        assert hasattr(config, "get_config")
-        assert hasattr(config, "_load_yaml_config")
-
     def test_import_utils(self):
         from greenmining import utils
 
@@ -60,13 +53,11 @@ class TestModuleImports:
     def test_import_analyzers(self):
         from greenmining.analyzers import (
             CodeDiffAnalyzer,
-            QualitativeAnalyzer,
             StatisticalAnalyzer,
             TemporalAnalyzer,
         )
 
         assert CodeDiffAnalyzer is not None
-        assert QualitativeAnalyzer is not None
         assert StatisticalAnalyzer is not None
         assert TemporalAnalyzer is not None
 
@@ -79,11 +70,6 @@ class TestModuleImports:
         assert CodeCarbonMeter is not None
         assert EnergyMetrics is not None
         assert EnergyBackend is not None
-
-    def test_import_presenters(self):
-        from greenmining.presenters import ConsolePresenter
-
-        assert ConsolePresenter is not None
 
     def test_import_controllers(self):
         from greenmining.controllers import RepositoryController
