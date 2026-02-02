@@ -8,7 +8,7 @@ from greenmining.gsf_patterns import (
     is_green_aware,
 )
 
-__version__ = "1.2.4"
+__version__ = "1.2.5"
 
 
 def fetch_repositories(
@@ -75,6 +75,8 @@ def analyze_repositories(
     cleanup_after: bool = True,
     skip_merges: bool = True,
     commit_order: str = "newest_first",
+    shallow_clone: bool = True,
+    clone_depth: int = None,
 ):
     # Analyze multiple repositories from URLs.
     # Args:
@@ -93,6 +95,8 @@ def analyze_repositories(
     #   cleanup_after: Remove cloned repos after analysis (default True)
     #   skip_merges: Skip merge commits (default True)
     #   commit_order: "newest_first" (default) or "oldest_first"
+    #   shallow_clone: Use shallow cloning to reduce download size (default True)
+    #   clone_depth: Git clone depth (auto-calculated from max_commits if None)
     from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
 
     kwargs = {}
@@ -116,6 +120,8 @@ def analyze_repositories(
         cleanup_after=cleanup_after,
         skip_merges=skip_merges,
         commit_order=commit_order,
+        shallow_clone=shallow_clone,
+        clone_depth=clone_depth,
         **kwargs,
     )
 

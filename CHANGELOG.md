@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.5] - 2026-02-02
+
+### Added
+- `shallow_clone` parameter (default: True) to significantly reduce repository download size
+- `clone_depth` parameter for custom clone depth (auto-calculated as `max(50, max_commits * 3)` if None)
+- Manual git shallow cloning before PyDriller analysis for dramatic performance improvement
+
+### Changed
+- Repository cloning now uses `git clone --depth=N` by default, reducing download times by ~90%
+- Clone depth automatically calculated based on max_commits to ensure sufficient history
+
+### Performance
+- Reduced clone size from 528 MB to ~50 MB for typical 10-repo analysis (90% reduction)
+- Example: ant-design repo reduced from 184 MB (full) to 14 MB (depth=50) - 92% smaller
+- Analysis time for small experiments reduced from 6+ minutes to under 1 minute
+
 ## [1.2.4] - 2026-02-01
 
 ### Added
@@ -116,6 +132,7 @@
 - Green awareness analysis
 - Docker containerization
 
+[1.2.5]: https://github.com/adam-bouafia/greenmining/compare/v1.2.4...v1.2.5
 [1.2.4]: https://github.com/adam-bouafia/greenmining/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/adam-bouafia/greenmining/compare/v1.2.1...v1.2.3
 [1.2.1]: https://github.com/adam-bouafia/greenmining/compare/v1.2.0...v1.2.1

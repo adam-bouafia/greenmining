@@ -205,6 +205,8 @@ class LocalRepoAnalyzer:
         since_date: datetime | None = None,
         to_date: datetime | None = None,
         commit_order: str = "newest_first",
+        shallow_clone: bool = True,
+        clone_depth: int | None = None,
     ):
         # Initialize the local repository analyzer.
         # Args:
@@ -222,6 +224,8 @@ class LocalRepoAnalyzer:
         #   include_source_code: Include source code before/after in results
         #   process_metrics: "standard" or "full" PyDriller process metrics
         #   commit_order: "newest_first" (default) or "oldest_first"
+        #   shallow_clone: Use shallow cloning to reduce download size (default True)
+        #   clone_depth: Git clone depth (auto-calculated from max_commits if None)
         self.clone_path = clone_path or Path.cwd() / "greenmining_repos"
         self.clone_path.mkdir(parents=True, exist_ok=True)
         self.max_commits = max_commits
@@ -232,6 +236,9 @@ class LocalRepoAnalyzer:
         self.compute_process_metrics = compute_process_metrics
         self.cleanup_after = cleanup_after
         self.commit_order = commit_order
+        self.shallow_clone = shallow_clone
+        # Auto-calculate clone depth: max_commits * 3 to account for merges/skipped commits
+        self.clone_depth = clone_depth if clone_depth else max(50, max_commits * 3)
         self.gsf_patterns = GSF_PATTERNS
 
         # Phase 1.3: Private repository support
@@ -472,12 +479,36 @@ class LocalRepoAnalyzer:
         clone_parent.mkdir(parents=True, exist_ok=True)
         local_path = clone_parent / repo_name
 
-        if local_path.exists():
-            shutil.rmtree(local_path)
+        # Perform shallow clone manually before PyDriller (much faster!)
+        if not local_path.exists():
+            import subprocess
 
-        repo_config["clone_repo_to"] = str(clone_parent)
+            clone_cmd = ["git", "clone"]
+            if self.shallow_clone:
+                clone_cmd.extend(["--depth", str(self.clone_depth)])
+            clone_cmd.extend([auth_url, str(local_path)])
 
-        colored_print(f"   Cloning to: {local_path}", "cyan")
+            colored_print(f"   Cloning to: {local_path} (depth={self.clone_depth if self.shallow_clone else 'full'})", "cyan")
+
+            try:
+                subprocess.run(
+                    clone_cmd,
+                    capture_output=True,
+                    text=True,
+                    check=True,
+                    timeout=180,
+                )
+            except subprocess.TimeoutExpired:
+                colored_print(f"   Clone timeout after 180s", "yellow")
+                raise
+            except subprocess.CalledProcessError as e:
+                colored_print(f"   Clone failed: {e.stderr}", "red")
+                raise
+        else:
+            colored_print(f"   Using existing clone: {local_path}", "cyan")
+
+        # PyDriller will analyze the already-cloned repo
+        repo_config["path_to_repo"] = str(local_path)
 
         # Phase 2.2: Start energy measurement if enabled (fresh meter per repo)
         energy_result = None
