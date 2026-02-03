@@ -526,7 +526,10 @@ class LocalRepoAnalyzer:
                 except subprocess.CalledProcessError:
                     pass  # Already unshallowed or not shallow
                 except subprocess.TimeoutExpired:
-                    colored_print("   Warning: Full history fetch timed out, some metrics may be incomplete", "yellow")
+                    colored_print(
+                        "   Warning: Full history fetch timed out, some metrics may be incomplete",
+                        "yellow",
+                    )
         else:
             colored_print(f"   Using existing clone: {local_path}", "cyan")
 
