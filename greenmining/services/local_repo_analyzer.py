@@ -480,7 +480,7 @@ class LocalRepoAnalyzer:
         clone_parent.mkdir(parents=True, exist_ok=True)
         local_path = clone_parent / repo_name
 
-        # Perform shallow clone manually before PyDriller (much faster!)
+        # Perform shallow clone manually, then unshallow for full history
         if not local_path.exists():
             import subprocess
 
@@ -500,14 +500,33 @@ class LocalRepoAnalyzer:
                     capture_output=True,
                     text=True,
                     check=True,
-                    timeout=180,
+                    timeout=300,
                 )
             except subprocess.TimeoutExpired:
-                colored_print("   Clone timeout after 180s", "yellow")
+                colored_print("   Clone timeout after 300s", "yellow")
                 raise
             except subprocess.CalledProcessError as e:
                 colored_print(f"   Clone failed: {e.stderr}", "red")
                 raise
+
+            # Immediately unshallow to get full history for accurate analysis
+            # This is still faster than a full clone: shallow clone negotiates
+            # objects quickly, then unshallow fetches the remainder incrementally
+            if self.shallow_clone:
+                colored_print("   Fetching full history...", "cyan")
+                try:
+                    subprocess.run(
+                        ["git", "fetch", "--unshallow"],
+                        cwd=str(local_path),
+                        capture_output=True,
+                        text=True,
+                        check=True,
+                        timeout=300,
+                    )
+                except subprocess.CalledProcessError:
+                    pass  # Already unshallowed or not shallow
+                except subprocess.TimeoutExpired:
+                    colored_print("   Warning: Full history fetch timed out, some metrics may be incomplete", "yellow")
         else:
             colored_print(f"   Using existing clone: {local_path}", "cyan")
 
@@ -557,32 +576,10 @@ class LocalRepoAnalyzer:
                 except Exception:
                     pass
 
-            # Compute process metrics if enabled
+            # Compute process metrics if enabled (full history already available
+            # from the unshallow step that runs right after cloning)
             process_metrics = {}
             if self.compute_process_metrics and local_path.exists():
-                # Unshallow the repo before process metrics — they need full history
-                # for metrics like CommitsCount, ContributorsExperience, HistoryComplexity
-                if self.shallow_clone:
-                    colored_print("   Deepening clone for process metrics...", "cyan")
-                    try:
-                        import subprocess
-
-                        subprocess.run(
-                            ["git", "fetch", "--unshallow"],
-                            cwd=str(local_path),
-                            capture_output=True,
-                            text=True,
-                            check=True,
-                            timeout=120,
-                        )
-                    except subprocess.CalledProcessError:
-                        # Already unshallowed or not a shallow repo — safe to ignore
-                        pass
-                    except subprocess.TimeoutExpired:
-                        colored_print(
-                            "   Warning: Unshallow timed out, process metrics may be incomplete",
-                            "yellow",
-                        )
                 colored_print("   Computing process metrics...", "cyan")
                 process_metrics = self._compute_process_metrics(str(local_path))
 
