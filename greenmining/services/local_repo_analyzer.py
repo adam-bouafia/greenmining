@@ -502,7 +502,7 @@ class LocalRepoAnalyzer:
                     timeout=180,
                 )
             except subprocess.TimeoutExpired:
-                colored_print(f"   Clone timeout after 180s", "yellow")
+                colored_print("   Clone timeout after 180s", "yellow")
                 raise
             except subprocess.CalledProcessError as e:
                 colored_print(f"   Clone failed: {e.stderr}", "red")
