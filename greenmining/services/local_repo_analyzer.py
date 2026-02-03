@@ -237,8 +237,9 @@ class LocalRepoAnalyzer:
         self.cleanup_after = cleanup_after
         self.commit_order = commit_order
         self.shallow_clone = shallow_clone
-        # Auto-calculate clone depth: max_commits * 3 to account for merges/skipped commits
-        self.clone_depth = clone_depth if clone_depth else max(50, max_commits * 3)
+        # Auto-calculate clone depth: max_commits * 5 to account for merges/skipped commits
+        # and avoid boundary errors where parent commits fall outside the shallow window
+        self.clone_depth = clone_depth if clone_depth else max(100, max_commits * 5)
         self.gsf_patterns = GSF_PATTERNS
 
         # Phase 1.3: Private repository support
@@ -559,6 +560,25 @@ class LocalRepoAnalyzer:
             # Compute process metrics if enabled
             process_metrics = {}
             if self.compute_process_metrics and local_path.exists():
+                # Unshallow the repo before process metrics — they need full history
+                # for metrics like CommitsCount, ContributorsExperience, HistoryComplexity
+                if self.shallow_clone:
+                    colored_print("   Deepening clone for process metrics...", "cyan")
+                    try:
+                        import subprocess
+                        subprocess.run(
+                            ["git", "fetch", "--unshallow"],
+                            cwd=str(local_path),
+                            capture_output=True,
+                            text=True,
+                            check=True,
+                            timeout=120,
+                        )
+                    except subprocess.CalledProcessError:
+                        # Already unshallowed or not a shallow repo — safe to ignore
+                        pass
+                    except subprocess.TimeoutExpired:
+                        colored_print("   Warning: Unshallow timed out, process metrics may be incomplete", "yellow")
                 colored_print("   Computing process metrics...", "cyan")
                 process_metrics = self._compute_process_metrics(str(local_path))
 
