@@ -1,0 +1,101 @@
+repository,commit_hash,author,date,green_aware,patterns_matched,pattern_count,files_modified,insertions,deletions,dmm_unit_size,dmm_unit_complexity,total_nloc,total_complexity
+S2-group/UPISAS,26e85831a7e20408422a19b2a9a5eb1e10429c96,Ilias Gerostathopoulos,2023-10-15T15:46:55+03:00,False,,0,2,203,0,,,0,0
+S2-group/UPISAS,7bdb5f8a76e3900c84c139530f17387b1e4dd434,Ilias Gerostathopoulos,2023-10-15T14:51:40+02:00,False,,0,2,8,1,,,0,0
+S2-group/UPISAS,2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f,Ilias Gerostathopoulos,2023-10-15T15:10:43+02:00,False,,0,5,117,4,0.22666666666666666,1.0,80,8
+S2-group/UPISAS,0be88f9268f4fbae14a0a24bcaacbf6507bceeff,Ilias Gerostathopoulos,2023-10-15T15:13:07+02:00,False,,0,8,307,0,0.8924050632911392,1.0,191,44
+S2-group/UPISAS,8cd0c08f644b7b88520bc5b1edfabef362d6dfe8,Ilias Gerostathopoulos,2023-10-15T15:33:56+02:00,True,Cache Static Data,1,1,2,0,,,0,0
+S2-group/UPISAS,1ed8839c6e258b15f6e71c7332ae1db9d2374492,Ilias Gerostathopoulos,2023-10-15T17:42:50+02:00,False,,0,1,4,4,,,108,25
+S2-group/UPISAS,a15455b7bd12edc33e2b9a470aa2435c489e5b35,Ilias Gerostathopoulos,2023-10-15T20:59:15+02:00,True,Resource Limits & Constraints,1,2,23,2,1.0,1.0,136,33
+S2-group/UPISAS,7bbef63900a43ef81ce243a92543fb6c05e40116,EGAlberts,2023-10-15T21:13:28+02:00,False,,0,7,149,9,0.5377358490566038,1.0,209,48
+S2-group/UPISAS,48239ff7d93d18013975420298f8afc542af4979,EGAlberts,2023-10-15T21:15:13+02:00,False,,0,1,0,121,0.16666666666666666,0.0,0,0
+S2-group/UPISAS,82167a9aae8d3ce01e4f4c7050766fb79d7bfb5d,Ilias Gerostathopoulos,2023-10-15T22:25:02+02:00,True,"Avoid Chaining Critical Requests, Keep Request Counts Low, Use Serverless, Performance Profiling",4,4,43,41,1.0,0.0,187,41
+tanprathan/MobileApp-Pentest-Cheatsheet,c8bf89320217f5c10d441dab21dc591ae418ed4f,Prathan Phongthiproek,2020-01-19T10:19:33+07:00,False,,0,1,3,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,5db472591a0a57bc8e9f30626e638edc5a06b941,Sunny Singh,2020-02-26T00:22:04+05:18,False,,0,1,1,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,36642304d303dcde739e7f6deb8189d0fea7b12f,Prathan Phongthiproek,2020-08-05T13:10:31+07:00,False,,0,1,3,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,e82fcbebdbbf1c40c3e0f1088ae2cfdf4ff36a05,Prathan Phongthiproek,2020-08-06T17:52:02+07:00,False,,0,1,3,1,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,91c643d9a3eb3730aad09229fdf7d35563b16f3f,Prathan Phongthiproek,2020-08-06T17:54:54+07:00,False,,0,1,1,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,0f0a29de93488943058589dc9853a7577a6cbcf0,Rodrigo,2021-02-25T00:21:32-03:00,False,,0,1,1,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,c743cd1fbf00113c65b13429a36f58be8f0f291d,Rodrigo,2021-02-25T00:50:22-03:00,False,,0,1,0,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,30bfa7f853ecf7df48e137e175569bfbd0180dc5,Rodrigo,2021-02-28T15:54:18-03:00,False,,0,1,1,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,ac31f2c14962daa3a70959f362986dbba8b6457b,hoek,2021-08-27T14:52:53+02:00,False,Match VM Utilization Requirements,1,1,1,0,,,0,0
+tanprathan/MobileApp-Pentest-Cheatsheet,2cfe8bf385cd383e90caa1b73149e02707d1bb2b,Prathan Phongthiproek,2022-09-29T13:38:41+07:00,False,,0,1,2,4,,,0,0
+S2-group/experiment-runner,85eca66ac90a5dd54b9c2e2f87da902ea519a0d3,Ivano Malavolta,2022-06-20T11:40:52+02:00,False,,0,63,3224,0,0.7213452299245025,0.7652711050102952,2088,436
+S2-group/experiment-runner,05bca1006a47c30cc0d09eddf571309ab4777142,Ivano Malavolta,2022-06-20T11:46:57+02:00,False,,0,1,2,0,,,0,0
+S2-group/experiment-runner,f2967572e83463431df533753a11286720a3cb95,nikosChalk,2022-06-24T18:39:35+03:00,False,,0,21,111,149,0.7083333333333334,1.0,697,127
+S2-group/experiment-runner,381ddcc1fb6c9c5fbb0b786e6f86ec4e3620098d,nikosChalk,2022-06-24T18:39:51+03:00,False,,0,1,2,0,,,0,0
+S2-group/experiment-runner,081cbcc836d9eda65971ba0ddd5f7faa6b01a66b,nikosChalk,2022-06-24T19:00:30+03:00,False,,0,41,0,0,,,0,0
+S2-group/experiment-runner,78bd3161b65e49cd747c48bb4a8f16c0473e72fe,nikosChalk,2022-06-24T19:10:02+03:00,False,,0,1,5,1,,,0,0
+S2-group/experiment-runner,19f5951ea26a4b44529857f2c8492abaefa3d8c6,nikosChalk,2022-06-24T19:10:20+03:00,False,,0,1,3,3,,,0,0
+S2-group/experiment-runner,43b01797d9468dce0c051ce1d319dc5d88efe201,nikosChalk,2022-07-01T00:53:04+03:00,True,"Delete Unused Storage Resources, Remove Unused Assets",2,30,3,568,0.38175675675675674,0.2972972972972973,206,28
+S2-group/experiment-runner,ba2d46a0e5e550ec2756cddfa99829a6c10ea011,nikosChalk,2022-07-01T00:54:24+03:00,True,"Delete Unused Storage Resources, Remove Unused Assets",2,17,0,1208,0.1646234676007005,0.18038528896672504,0,0
+S2-group/experiment-runner,65032b4b81456259c82c343dd6c0108b7e06b6d2,nikosChalk,2022-07-01T02:41:00+03:00,False,,0,1,10,8,,,29,2
+frappe/mobile,0646bbac1f59fe8a5d27bb51a7d79057568c4916,Sumit Bhanushali,2020-04-03T16:25:54+05:18,False,,0,70,3153,0,1.0,1.0,22,3
+frappe/mobile,0aeb04b58b10f9c601de3a1beb035688707c54ad,Sumit Bhanushali,2020-04-10T01:40:41+05:18,True,Database Views & Materialized Views,1,17,833,1002,,,0,0
+frappe/mobile,1df57fc9307cf8b0336bcaea66e6d71afc59c4ef,Sumit Bhanushali,2020-04-10T16:26:56+05:18,True,,0,4,120,177,,,0,0
+frappe/mobile,5014935eb8bae14c2fc11de449eb70db82781e32,Sumit Bhanushali,2020-04-13T20:32:36+05:18,True,"Delete Unused Storage Resources, Remove Unused Assets, Database Views & Materialized Views",3,7,436,76,,,0,0
+frappe/mobile,ac7789cd87dee511dffb827d9850f95cfeb9a7c3,Sumit Bhanushali,2020-04-13T20:35:47+05:18,True,"Delete Unused Storage Resources, Remove Unused Assets",2,2,0,382,,,0,0
+frappe/mobile,91001ddcbd0d4463eb7bdc06dde5e387588d33e6,Sumit Bhanushali,2020-04-23T15:34:09+05:18,True,Enable Text Compression,1,10,525,49,,,0,0
+frappe/mobile,df95e458ded26ed80db8c4c5d96bd4255f36504f,Afshan,2020-04-26T20:07:15+05:18,True,,0,11,371,111,,,0,0
+frappe/mobile,6a48273feaf223f8db838ac402933419dfe490ad,Afshan,2020-04-29T16:05:32+05:18,False,,0,9,363,145,,,0,0
+frappe/mobile,d08d23e3400c74708101ef2b03d49984c83c1b59,Afshan,2020-04-29T16:07:53+05:18,False,"Delete Unused Storage Resources, Remove Unused Assets",2,1,1,22,,,0,0
+frappe/mobile,9d831bdc1d4c9a8d2896c0813cd67238ad5d5d0f,Afshan,2020-04-30T21:39:43+05:18,False,,0,7,218,107,,,0,0
+S2-group/robot-runner,16264b3f5af56c493c5a84e8719113bf7f2b007d,Stan Swanborn,2020-01-15T16:29:16+01:00,False,,0,1,2,0,,,0,0
+S2-group/robot-runner,6462d5af57398a6ab802ed09be637f1f4772b706,=,2020-01-15T16:31:55+01:00,False,,0,6,114,0,0.5454545454545454,0.5454545454545454,66,14
+S2-group/robot-runner,46efc4caf2d8de3bf3e64e5804a71a6b51ed4fdf,=,2020-01-20T18:43:59+01:00,True,"Minimize Deployed Environments, Energy Efficient Models",2,39,3466,3,0.3890909090909091,0.5963636363636363,320,63
+S2-group/robot-runner,5d26a5ef02dfbf4e0f7038f21a46f4e7fc261f26,=,2020-01-20T18:46:23+01:00,False,,0,1,4,0,,,0,0
+S2-group/robot-runner,004bd43ae28ffc3257121ee4f91497bff4ce44f7,Stan Swanborn,2020-01-21T14:49:20+01:00,False,,0,7,44,7,1.0,1.0,197,34
+S2-group/robot-runner,d19057c074ba9ae883c4e1755e4d7c38aadfd14b,Stan Swanborn,2020-01-22T16:53:27+01:00,False,,0,70,8845,63,0.3359683794466403,0.5612648221343873,510,96
+S2-group/robot-runner,da4538d79d8342a1e3fc89dd4bd81dd63da499fc,Stan Swanborn,2020-01-22T17:00:18+01:00,False,,0,8,0,0,,,0,0
+S2-group/robot-runner,290f4a83bd7f0748ec62b473a44eb980d9802aa8,Stan Swanborn,2020-01-23T19:20:25+01:00,True,Match SLO Requirements,1,15,159,10,1.0,1.0,98,18
+S2-group/robot-runner,d87c640d6cb25cd9c7d08e0f8b877e67d64ca9a3,Stan Swanborn,2020-01-23T22:25:27+01:00,True,"Scale Down Unused Applications, Graceful Shutdown",2,3,40,9,1.0,1.0,53,10
+S2-group/robot-runner,87de694a34de6f9530b8d94a151a6ca285c79244,Stan Swanborn,2020-01-24T02:35:27+01:00,True,"Avoid Excessive DOM Size, Deprecate GIFs, Right Hardware Type for AI, Use Serverless",4,14,135,45,1.0,1.0,184,33
+S2-group/android-runner,497021ff2781071d9f4659f525ed7ce39d108711,Thijmen Kurk,2020-01-20T18:58:31+01:00,False,,0,1,6,3,,,0,0
+S2-group/android-runner,d545cfd1d5f2ef574eb2aac1d7e040ccc042b670,Thijmen Kurk,2020-01-20T19:00:37+01:00,False,Avoid Tracking Unnecessary Data,1,1,1,1,,,0,0
+S2-group/android-runner,76be1d57e44e360b36b4cbf87db3f45801623b13,GordonBombay88,2020-01-24T17:57:59+01:00,True,Implement Stateless Design,1,1,2,2,,,0,0
+S2-group/android-runner,7a95e764dbe35ffdff15d32067b046ac8116145f,Thijmen Kurk,2020-01-26T15:56:49+01:00,False,,0,5,18,13,,,204,62
+S2-group/android-runner,62c37a1004423d40720f0bfc689abe56c2b7c937,Thijmen Kurk,2020-01-26T16:01:49+01:00,False,"Delete Unused Storage Resources, Remove Unused Assets",2,48,0,7405,,,0,0
+S2-group/android-runner,5da7789467e4471ee7ca54f58c7a2f45a8030cb1,Eric,2020-01-27T12:09:50+01:00,False,,0,1,1,0,,,0,0
+S2-group/android-runner,10620974232ab6886b6192eb386a3c2debf22221,GordonBombay88,2020-02-07T14:43:00+01:00,False,,0,1,2,1,,,0,0
+S2-group/android-runner,adc72c4e68d9ac029e17d2cf543a477382ac8696,GordonBombay88,2020-02-08T19:01:20+01:00,False,,0,1,1,1,,,0,0
+S2-group/android-runner,80947c4cec1b706b42a3ff81bf3597d9c7a15fe9,GordonBombay88,2020-02-08T19:57:40+01:00,False,,0,2,2,2,,,0,0
+S2-group/android-runner,44e4e4890895465bcaa8e74d6641124bae8c9d72,GordonBombay88,2020-02-08T20:01:54+01:00,False,,0,2,2,2,,,0,0
+xbrowsersync/app,b1d722b2cdee330d6c2cc452af71fd41bcf8d2e0,nero120,2020-01-02T20:10:37+00:00,False,Reduce Transmitted Data,1,10,135,63,0.0,0.0,5196,1201
+xbrowsersync/app,4ebff3b7934d98260d668268b398a57d86f84f33,nero120,2020-01-04T00:04:39+00:00,False,"Delete Unused Storage Resources, Remove Unused Assets",2,7,83,121,0.0,0.0,1858,505
+xbrowsersync/app,b721db859201d853da0eb3e3d0c7b0aac88485f1,nero120,2020-01-05T22:52:44+00:00,False,"Delete Unused Storage Resources, Remove Unused Assets",2,10,74,54,0.0,0.0,3384,782
+xbrowsersync/app,00be3f9a4ed8c0e8dbcdba96111a507a725bc1ab,nero120,2020-01-05T23:00:58+00:00,False,,0,1,5,1,0.0,0.0,1528,278
+xbrowsersync/app,89abcf7deb91b352989b628410dd86d9299d8a4c,nero120,2020-01-07T23:02:19+00:00,True,"Delete Unused Storage Resources, Remove Unused Assets, Scan for Vulnerabilities, Remove Unused CSS",4,14,345,140,0.0,1.0,5785,1142
+xbrowsersync/app,ed354e7de92a7ccb5e13b7951654b66695e04154,nero120,2020-01-08T23:50:29+00:00,False,"Delete Unused Storage Resources, Remove Unused Assets",2,13,70,100,0.0,0.0,8728,2167
+xbrowsersync/app,f6292baa40777b70b995412ae206e7740e164904,nero120,2020-01-09T15:10:27+00:00,False,,0,11,87,5,0.55,0.95,3785,786
+xbrowsersync/app,2abc92f3f38ecb8619cd431d39d364b4fd670d33,nero120,2020-01-10T21:59:49+00:00,True,Data Deduplication,1,11,182,194,1.0,0.0,5529,1259
+xbrowsersync/app,55004f6185ba567c427e1d0a40b04966be3e09af,nero120,2020-01-15T19:12:19+00:00,False,"Avoid Excessive DOM Size, Database Views & Materialized Views",2,23,676,268,0.0,0.0,6367,1383
+xbrowsersync/app,64a78ae672e52f0229c2bd23e9cca8eaed2b8645,nero120,2020-01-16T23:05:22+00:00,False,Avoid Excessive DOM Size,1,9,183,155,0.0,0.7666666666666667,2103,537
+S2-group/green-lab,947b175f20f87b4301582fec5ac3960114bca3dd,Ivano Malavolta,2023-12-01T13:08:41+01:00,False,,0,2,23,0,,,0,0
+S2-group/green-lab,68327b99f93661428509c2a135d0d0b4faaa268d,Max Karsten,2025-09-10T16:42:48+02:00,False,,0,14,138,0,1.0,1.0,38,10
+S2-group/green-lab,c76191b15a7de8c266eb7c83e9451b96336f6668,Max Karsten,2025-09-10T16:43:00+02:00,False,,0,1,1,1,,,0,0
+S2-group/green-lab,63fe282083b7b3f4e8aaa1f0c6888cbbf0190b21,Andrei Dragomir,2025-09-11T16:15:19+02:00,False,,0,5,355,0,,,0,0
+S2-group/green-lab,2c5149e06d62804c471c33662ae879a109fbab09,Max Karsten,2025-09-11T17:26:18+02:00,False,,0,1,150,4,,,0,0
+S2-group/green-lab,5a9de56ba089fe6c54a9bc54807f67422564bf3b,Max Karsten,2025-09-11T17:37:05+02:00,False,,0,1,14,13,,,0,0
+S2-group/green-lab,ddc720b78fbb5868451e53db7e1587ebd7ac2e5e,Max Karsten,2025-09-11T17:41:36+02:00,False,,0,1,2,2,,,0,0
+S2-group/green-lab,cacc5d30edf17185e2b0aeca1971b3a3809da976,Max Karsten,2025-09-11T17:42:49+02:00,False,,0,1,1,1,,,0,0
+S2-group/green-lab,21dac56ca273688b503cade33b09d9327f8a0915,Max Karsten,2025-09-11T17:47:15+02:00,False,,0,1,6,4,,,0,0
+S2-group/green-lab,8085fe997d33e317e928e8c1522e728a093b521e,Max Karsten,2025-09-11T17:49:11+02:00,False,,0,1,1,1,,,0,0
+ant-design/ant-design-mobile,0fc1e681d8a579ddc550f4c9fd627e2087d6b487,Jøao Henriques,2020-01-13T02:21:33+00:00,False,,0,1,1,0,,,21,1
+ant-design/ant-design-mobile,dff971d56c83c4045cce0469ce01464fc7447eb8,Colder Xihk,2020-01-13T10:24:40+08:00,True,"Defer Offscreen Images, Properly Sized Images, Serve Images in Modern Formats",3,1,12,7,,,19,4
+ant-design/ant-design-mobile,cff2c112339db139d2652761e1cead6d6d88f3ae,lzghost,2020-02-20T09:24:38+08:00,False,Enable Text Compression,1,1,1,1,,,250,51
+ant-design/ant-design-mobile,36939b2d615101a5af19d0160a16c4a4111fd452,毒枭东,2020-05-14T12:01:16+08:00,False,"Delete Unused Storage Resources, Remove Unused Assets, Scale Down Unused Applications",3,3,22,12,,,35,0
+ant-design/ant-design-mobile,cbcce5cb1e072f39ffd8adadef5a9f0c7919442f,duxiaodong,2020-05-14T13:50:24+08:00,False,,0,3,15,1,,,0,0
+ant-design/ant-design-mobile,a74013b8dabe6b98649d48cb49779ae20f62e0e6,毒枭东,2020-05-19T16:20:10+08:00,False,,0,2,5,5,,,518,43
+ant-design/ant-design-mobile,2b7436044ca2f381b9084ed74e319fe7620b4d97,duxiaodong,2020-05-19T16:26:13+08:00,False,,0,3,15,1,,,0,0
+ant-design/ant-design-mobile,be9d6f5cc7a914f04f386d19cc487eddfc5a274e,毒枭东,2020-09-18T11:35:20+08:00,True,Queue Non-Urgent Requests,1,1,4,1,,,0,0
+ant-design/ant-design-mobile,ad3630c295a3bb1a9b7cebb9d9cc9dab8966efa6,duxiaodong,2020-09-18T14:55:46+08:00,False,,0,1,1,1,,,0,0
+ant-design/ant-design-mobile,a7362c677447ddeadda964ac162311a6be4e0866,duxiaodong,2020-09-18T14:59:50+08:00,False,,0,2,14,0,,,0,0
+lichess-org/mobile,b55a6f65aa5a721aab45d9f16bf6ce0771e94da9,Thibault Duplessis,2022-05-01T12:26:51+02:00,False,,0,3,697,0,,,0,0
+lichess-org/mobile,5b3579d4f57a7c3070d7a9a92bed2aee702b8146,Thibault Duplessis,2022-05-01T12:27:25+02:00,False,,0,1,3,2,,,0,0
+lichess-org/mobile,38ddcfe8c3a707f907d5bcbea29e61adf1375560,Vincent Velociter,2022-11-03T15:38:36+01:00,False,,0,63,1519,0,1.0,1.0,16,2
+lichess-org/mobile,9b89172bfd5bb47446e9425c99bdc3c2b65bd4e9,Vincent Velociter,2022-11-03T15:59:04+01:00,False,,0,37,93,81,,,0,0
+lichess-org/mobile,6080d6db1ed204d50e4184a6719e2aaff1fe2663,Vincent Velociter,2022-11-03T17:31:02+01:00,False,,0,21,13,4,,,0,0
+lichess-org/mobile,dceffb224c806082d57216d5ab83cd0bc22b0ce9,Michal Srutek,2022-11-07T07:55:45+01:00,False,"Match VM Utilization Requirements, Avoid Excessive DOM Size, Properly Sized Images",3,22,9,129,,,0,0
+lichess-org/mobile,e4fc8ae113d555199a4cf9b9a5d526d382cf2138,Vincent Velociter,2022-11-07T19:28:54+01:00,False,,0,14,493,200,,,0,0
+lichess-org/mobile,6dbfe5b467b627a6cbd11ac70652772385e23a05,Vincent Velociter,2022-11-08T05:39:49+01:00,False,,0,3,3,2,,,0,0
+lichess-org/mobile,631601b912da484aaf56407deaaed8e44199bff6,Vincent Velociter,2022-11-08T14:21:54+01:00,False,Incremental Processing,1,7,105,2,,,0,0
+lichess-org/mobile,e200d61e868aa8bfbcff9a8e3898689917508462,Vincent Velociter,2022-11-08T15:41:58+01:00,False,,0,9,24,14,,,0,0

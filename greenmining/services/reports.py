@@ -76,12 +76,12 @@ class ReportGenerator:
 
         return f"""### Executive Summary
 
-This report presents findings from analyzing **{format_number(summary['total_commits'])} commits** across **{format_number(summary['total_repos'])} microservice-based repositories** to identify green software engineering practices.
+This report presents findings from analyzing **{format_number(summary["total_commits"])} commits** across **{format_number(summary["total_repos"])} microservice-based repositories** to identify green software engineering practices.
 
 **Key Findings:**
 
-- **{format_percentage(summary['green_aware_percentage'])}** of commits ({format_number(summary['green_aware_count'])}) explicitly mention energy efficiency, performance optimization, or sustainability concerns
-- **{format_number(summary['repos_with_green_commits'])}** out of {format_number(summary['total_repos'])} repositories contain at least one green-aware commit
+- **{format_percentage(summary["green_aware_percentage"])}** of commits ({format_number(summary["green_aware_count"])}) explicitly mention energy efficiency, performance optimization, or sustainability concerns
+- **{format_number(summary["repos_with_green_commits"])}** out of {format_number(summary["total_repos"])} repositories contain at least one green-aware commit
 - {pattern_text if pattern_text else "Various green software patterns were detected across the analyzed commits."}
 
 **Implications:**
@@ -106,15 +106,15 @@ Repositories were selected from GitHub based on the following criteria:
 
 - **Keywords:** {search_keywords}
 - **Programming Languages:** {languages}
-- **Minimum Stars:** {metadata.get('min_stars', 100)} (to ensure established projects)
+- **Minimum Stars:** {metadata.get("min_stars", 100)} (to ensure established projects)
 - **Sort Order:** Stars (descending)
-- **Total Repositories:** {metadata.get('total_repos', 0)}
+- **Total Repositories:** {metadata.get("total_repos", 0)}
 
 #### 1.2 Data Extraction Approach
 
 Commit data was extracted using PyDriller library:
 
-- **Commits Analyzed:** {analysis_metadata.get('total_commits_analyzed', 0)}
+- **Commits Analyzed:** {analysis_metadata.get("total_commits_analyzed", 0)}
 - **Time Window:** Last 2 years (730 days)
 - **Merge Commits:** Excluded
 - **Minimum Commit Message Length:** 10 characters
@@ -192,8 +192,8 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
 
         return f"""#### 2.1 Green Awareness in Commits
 
-**Total commits analyzed:** {format_number(summary['total_commits'])}
-**Commits with explicit green mention:** {format_number(summary['green_aware_count'])} ({format_percentage(summary['green_aware_percentage'])})
+**Total commits analyzed:** {format_number(summary["total_commits"])}
+**Commits with explicit green mention:** {format_number(summary["green_aware_count"])} ({format_percentage(summary["green_aware_percentage"])})
 
 **Table: Top 10 Repositories with Highest Green Awareness**
 
@@ -224,10 +224,10 @@ Commits were analyzed using a keyword and heuristic-based classification framewo
         # Pattern descriptions
         pattern_details = []
         for i, pattern in enumerate(patterns[:10], 1):
-            pattern_details.append(f"""**{i}. {pattern['pattern_name']}**
-- Frequency: {format_number(pattern['count'])} commits ({format_percentage(pattern['percentage'])})
-- Confidence Distribution: HIGH={conf['HIGH']}, MEDIUM={conf['MEDIUM']}, LOW={conf['LOW']}
-- Example Commits: {', '.join([c[:8] for c in pattern['example_commits'][:3]])}""")
+            pattern_details.append(f"""**{i}. {pattern["pattern_name"]}**
+- Frequency: {format_number(pattern["count"])} commits ({format_percentage(pattern["percentage"])})
+- Confidence Distribution: HIGH={conf["HIGH"]}, MEDIUM={conf["MEDIUM"]}, LOW={conf["LOW"]}
+- Example Commits: {", ".join([c[:8] for c in pattern["example_commits"][:3]])}""")
 
         return f"""#### 2.2 Known Green Patterns & Tactics Applied
 
@@ -252,10 +252,10 @@ No novel microservice-specific green practices were automatically detected. Manu
 
         pattern_list = []
         for pattern in emergent:
-            pattern_list.append(f"""**Pattern:** {pattern['pattern_name']}
-- Occurrences: {pattern['count']}
-- Description: {pattern['description']}
-- Example Commits: {', '.join([c[:8] for c in pattern['example_commits'][:3]])}""")
+            pattern_list.append(f"""**Pattern:** {pattern["pattern_name"]}
+- Occurrences: {pattern["count"]}
+- Description: {pattern["description"]}
+- Example Commits: {", ".join([c[:8] for c in pattern["example_commits"][:3]])}""")
 
         return f"""#### 2.3 Emerging Practices Discovered
 
@@ -299,7 +299,7 @@ No novel microservice-specific green practices were automatically detected. Manu
         if "error" in stats:
             return f"""#### 2.5 Statistical Analysis
 
-**Note:** Statistical analysis encountered an error: {stats['error']}
+**Note:** Statistical analysis encountered an error: {stats["error"]}
 """
 
         sections = []
@@ -495,16 +495,16 @@ Based on the detected patterns, microservice developers primarily focus on:
 
 #### 5.1 Summary of Key Findings
 
-This study analyzed {format_number(summary['total_commits'])} commits from {format_number(summary['total_repos'])} microservice repositories and found:
+This study analyzed {format_number(summary["total_commits"])} commits from {format_number(summary["total_repos"])} microservice repositories and found:
 
-1. **{format_percentage(summary['green_aware_percentage'])}** of commits explicitly address energy/sustainability concerns
-2. **{format_number(summary['repos_with_green_commits'])}** repositories demonstrate some level of green awareness
+1. **{format_percentage(summary["green_aware_percentage"])}** of commits explicitly address energy/sustainability concerns
+2. **{format_number(summary["repos_with_green_commits"])}** repositories demonstrate some level of green awareness
 3. Common green patterns include: {patterns_text}
 
 #### 5.2 Answers to Research Questions
 
 **RQ1: What percentage of microservice commits explicitly mention energy efficiency?**
-Answer: {format_percentage(summary['green_aware_percentage'])} of analyzed commits contain explicit mentions.
+Answer: {format_percentage(summary["green_aware_percentage"])} of analyzed commits contain explicit mentions.
 
 **RQ2: Which green software tactics are developers applying in practice?**
 Answer: Developers primarily apply caching strategies, resource pooling, database optimization, and asynchronous processing patterns.

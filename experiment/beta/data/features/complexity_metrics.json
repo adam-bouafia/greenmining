@@ -1,0 +1,290 @@
+[
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f",
+    "total_nloc": 80,
+    "total_complexity": 8,
+    "max_complexity": 8,
+    "methods_count": 5
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "0be88f9268f4fbae14a0a24bcaacbf6507bceeff",
+    "total_nloc": 191,
+    "total_complexity": 44,
+    "max_complexity": 25,
+    "methods_count": 17
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "1ed8839c6e258b15f6e71c7332ae1db9d2374492",
+    "total_nloc": 108,
+    "total_complexity": 25,
+    "max_complexity": 25,
+    "methods_count": 9
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "a15455b7bd12edc33e2b9a470aa2435c489e5b35",
+    "total_nloc": 136,
+    "total_complexity": 33,
+    "max_complexity": 25,
+    "methods_count": 11
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "7bbef63900a43ef81ce243a92543fb6c05e40116",
+    "total_nloc": 209,
+    "total_complexity": 48,
+    "max_complexity": 25,
+    "methods_count": 18
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "82167a9aae8d3ce01e4f4c7050766fb79d7bfb5d",
+    "total_nloc": 187,
+    "total_complexity": 41,
+    "max_complexity": 25,
+    "methods_count": 17
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "85eca66ac90a5dd54b9c2e2f87da902ea519a0d3",
+    "total_nloc": 2088,
+    "total_complexity": 436,
+    "max_complexity": 46,
+    "methods_count": 241
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "f2967572e83463431df533753a11286720a3cb95",
+    "total_nloc": 697,
+    "total_complexity": 127,
+    "max_complexity": 23,
+    "methods_count": 76
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "43b01797d9468dce0c051ce1d319dc5d88efe201",
+    "total_nloc": 206,
+    "total_complexity": 28,
+    "max_complexity": 11,
+    "methods_count": 26
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "65032b4b81456259c82c343dd6c0108b7e06b6d2",
+    "total_nloc": 29,
+    "total_complexity": 2,
+    "max_complexity": 2,
+    "methods_count": 1
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "0646bbac1f59fe8a5d27bb51a7d79057568c4916",
+    "total_nloc": 22,
+    "total_complexity": 3,
+    "max_complexity": 2,
+    "methods_count": 2
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "6462d5af57398a6ab802ed09be637f1f4772b706",
+    "total_nloc": 66,
+    "total_complexity": 14,
+    "max_complexity": 9,
+    "methods_count": 6
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "46efc4caf2d8de3bf3e64e5804a71a6b51ed4fdf",
+    "total_nloc": 320,
+    "total_complexity": 63,
+    "max_complexity": 34,
+    "methods_count": 21
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "004bd43ae28ffc3257121ee4f91497bff4ce44f7",
+    "total_nloc": 197,
+    "total_complexity": 34,
+    "max_complexity": 34,
+    "methods_count": 11
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d19057c074ba9ae883c4e1755e4d7c38aadfd14b",
+    "total_nloc": 510,
+    "total_complexity": 96,
+    "max_complexity": 34,
+    "methods_count": 32
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "290f4a83bd7f0748ec62b473a44eb980d9802aa8",
+    "total_nloc": 98,
+    "total_complexity": 18,
+    "max_complexity": 7,
+    "methods_count": 12
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d87c640d6cb25cd9c7d08e0f8b877e67d64ca9a3",
+    "total_nloc": 53,
+    "total_complexity": 10,
+    "max_complexity": 8,
+    "methods_count": 6
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "87de694a34de6f9530b8d94a151a6ca285c79244",
+    "total_nloc": 184,
+    "total_complexity": 33,
+    "max_complexity": 9,
+    "methods_count": 21
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "7a95e764dbe35ffdff15d32067b046ac8116145f",
+    "total_nloc": 204,
+    "total_complexity": 62,
+    "max_complexity": 62,
+    "methods_count": 26
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b1d722b2cdee330d6c2cc452af71fd41bcf8d2e0",
+    "total_nloc": 5196,
+    "total_complexity": 1201,
+    "max_complexity": 505,
+    "methods_count": 630
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "4ebff3b7934d98260d668268b398a57d86f84f33",
+    "total_nloc": 1858,
+    "total_complexity": 505,
+    "max_complexity": 505,
+    "methods_count": 245
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b721db859201d853da0eb3e3d0c7b0aac88485f1",
+    "total_nloc": 3384,
+    "total_complexity": 782,
+    "max_complexity": 505,
+    "methods_count": 391
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "00be3f9a4ed8c0e8dbcdba96111a507a725bc1ab",
+    "total_nloc": 1528,
+    "total_complexity": 278,
+    "max_complexity": 278,
+    "methods_count": 146
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "89abcf7deb91b352989b628410dd86d9299d8a4c",
+    "total_nloc": 5785,
+    "total_complexity": 1142,
+    "max_complexity": 507,
+    "methods_count": 546
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "ed354e7de92a7ccb5e13b7951654b66695e04154",
+    "total_nloc": 8728,
+    "total_complexity": 2167,
+    "max_complexity": 504,
+    "methods_count": 1115
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "f6292baa40777b70b995412ae206e7740e164904",
+    "total_nloc": 3785,
+    "total_complexity": 786,
+    "max_complexity": 507,
+    "methods_count": 394
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "2abc92f3f38ecb8619cd431d39d364b4fd670d33",
+    "total_nloc": 5529,
+    "total_complexity": 1259,
+    "max_complexity": 379,
+    "methods_count": 644
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "55004f6185ba567c427e1d0a40b04966be3e09af",
+    "total_nloc": 6367,
+    "total_complexity": 1383,
+    "max_complexity": 508,
+    "methods_count": 669
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "64a78ae672e52f0229c2bd23e9cca8eaed2b8645",
+    "total_nloc": 2103,
+    "total_complexity": 537,
+    "max_complexity": 521,
+    "methods_count": 262
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "68327b99f93661428509c2a135d0d0b4faaa268d",
+    "total_nloc": 38,
+    "total_complexity": 10,
+    "max_complexity": 2,
+    "methods_count": 8
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "0fc1e681d8a579ddc550f4c9fd627e2087d6b487",
+    "total_nloc": 21,
+    "total_complexity": 1,
+    "max_complexity": 1,
+    "methods_count": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "dff971d56c83c4045cce0469ce01464fc7447eb8",
+    "total_nloc": 19,
+    "total_complexity": 4,
+    "max_complexity": 4,
+    "methods_count": 4
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "cff2c112339db139d2652761e1cead6d6d88f3ae",
+    "total_nloc": 250,
+    "total_complexity": 51,
+    "max_complexity": 51,
+    "methods_count": 5
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "36939b2d615101a5af19d0160a16c4a4111fd452",
+    "total_nloc": 35,
+    "total_complexity": 0,
+    "max_complexity": 0,
+    "methods_count": 0
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "a74013b8dabe6b98649d48cb49779ae20f62e0e6",
+    "total_nloc": 518,
+    "total_complexity": 43,
+    "max_complexity": 28,
+    "methods_count": 18
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "38ddcfe8c3a707f907d5bcbea29e61adf1375560",
+    "total_nloc": 16,
+    "total_complexity": 2,
+    "max_complexity": 2,
+    "methods_count": 1
+  }
+]

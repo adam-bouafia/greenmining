@@ -488,7 +488,10 @@ class LocalRepoAnalyzer:
                 clone_cmd.extend(["--depth", str(self.clone_depth)])
             clone_cmd.extend([auth_url, str(local_path)])
 
-            colored_print(f"   Cloning to: {local_path} (depth={self.clone_depth if self.shallow_clone else 'full'})", "cyan")
+            colored_print(
+                f"   Cloning to: {local_path} (depth={self.clone_depth if self.shallow_clone else 'full'})",
+                "cyan",
+            )
 
             try:
                 subprocess.run(

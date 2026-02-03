@@ -2,7 +2,6 @@ import time
 
 
 class TestModuleImports:
-
     def test_import_greenmining(self):
         start = time.perf_counter()
         import greenmining

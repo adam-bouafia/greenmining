@@ -1,0 +1,894 @@
+[
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "26e85831a7e20408422a19b2a9a5eb1e10429c96",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "7bdb5f8a76e3900c84c139530f17387b1e4dd434",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "0be88f9268f4fbae14a0a24bcaacbf6507bceeff",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "8cd0c08f644b7b88520bc5b1edfabef362d6dfe8",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Cache Static Data"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "1ed8839c6e258b15f6e71c7332ae1db9d2374492",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "a15455b7bd12edc33e2b9a470aa2435c489e5b35",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Resource Limits & Constraints"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "7bbef63900a43ef81ce243a92543fb6c05e40116",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "48239ff7d93d18013975420298f8afc542af4979",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "82167a9aae8d3ce01e4f4c7050766fb79d7bfb5d",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Avoid Chaining Critical Requests",
+      "Keep Request Counts Low",
+      "Use Serverless",
+      "Performance Profiling"
+    ],
+    "pattern_count": 4,
+    "confidence": "high"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "c8bf89320217f5c10d441dab21dc591ae418ed4f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "5db472591a0a57bc8e9f30626e638edc5a06b941",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "36642304d303dcde739e7f6deb8189d0fea7b12f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "e82fcbebdbbf1c40c3e0f1088ae2cfdf4ff36a05",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "91c643d9a3eb3730aad09229fdf7d35563b16f3f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "0f0a29de93488943058589dc9853a7577a6cbcf0",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "c743cd1fbf00113c65b13429a36f58be8f0f291d",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "30bfa7f853ecf7df48e137e175569bfbd0180dc5",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "ac31f2c14962daa3a70959f362986dbba8b6457b",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Match VM Utilization Requirements"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "2cfe8bf385cd383e90caa1b73149e02707d1bb2b",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "85eca66ac90a5dd54b9c2e2f87da902ea519a0d3",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "05bca1006a47c30cc0d09eddf571309ab4777142",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "f2967572e83463431df533753a11286720a3cb95",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "381ddcc1fb6c9c5fbb0b786e6f86ec4e3620098d",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "081cbcc836d9eda65971ba0ddd5f7faa6b01a66b",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "78bd3161b65e49cd747c48bb4a8f16c0473e72fe",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "19f5951ea26a4b44529857f2c8492abaefa3d8c6",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "43b01797d9468dce0c051ce1d319dc5d88efe201",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "ba2d46a0e5e550ec2756cddfa99829a6c10ea011",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "65032b4b81456259c82c343dd6c0108b7e06b6d2",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "0646bbac1f59fe8a5d27bb51a7d79057568c4916",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "0aeb04b58b10f9c601de3a1beb035688707c54ad",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Database Views & Materialized Views"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "1df57fc9307cf8b0336bcaea66e6d71afc59c4ef",
+    "green_aware": true,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "5014935eb8bae14c2fc11de449eb70db82781e32",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets",
+      "Database Views & Materialized Views"
+    ],
+    "pattern_count": 3,
+    "confidence": "high"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "ac7789cd87dee511dffb827d9850f95cfeb9a7c3",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "91001ddcbd0d4463eb7bdc06dde5e387588d33e6",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Enable Text Compression"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "df95e458ded26ed80db8c4c5d96bd4255f36504f",
+    "green_aware": true,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "6a48273feaf223f8db838ac402933419dfe490ad",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "d08d23e3400c74708101ef2b03d49984c83c1b59",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "9d831bdc1d4c9a8d2896c0813cd67238ad5d5d0f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "16264b3f5af56c493c5a84e8719113bf7f2b007d",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "6462d5af57398a6ab802ed09be637f1f4772b706",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "46efc4caf2d8de3bf3e64e5804a71a6b51ed4fdf",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Minimize Deployed Environments",
+      "Energy Efficient Models"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "5d26a5ef02dfbf4e0f7038f21a46f4e7fc261f26",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "004bd43ae28ffc3257121ee4f91497bff4ce44f7",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d19057c074ba9ae883c4e1755e4d7c38aadfd14b",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "da4538d79d8342a1e3fc89dd4bd81dd63da499fc",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "290f4a83bd7f0748ec62b473a44eb980d9802aa8",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Match SLO Requirements"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d87c640d6cb25cd9c7d08e0f8b877e67d64ca9a3",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Scale Down Unused Applications",
+      "Graceful Shutdown"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "87de694a34de6f9530b8d94a151a6ca285c79244",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Avoid Excessive DOM Size",
+      "Deprecate GIFs",
+      "Right Hardware Type for AI",
+      "Use Serverless"
+    ],
+    "pattern_count": 4,
+    "confidence": "high"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "497021ff2781071d9f4659f525ed7ce39d108711",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "d545cfd1d5f2ef574eb2aac1d7e040ccc042b670",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Avoid Tracking Unnecessary Data"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "76be1d57e44e360b36b4cbf87db3f45801623b13",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Implement Stateless Design"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "7a95e764dbe35ffdff15d32067b046ac8116145f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "62c37a1004423d40720f0bfc689abe56c2b7c937",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "5da7789467e4471ee7ca54f58c7a2f45a8030cb1",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "10620974232ab6886b6192eb386a3c2debf22221",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "adc72c4e68d9ac029e17d2cf543a477382ac8696",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "80947c4cec1b706b42a3ff81bf3597d9c7a15fe9",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "44e4e4890895465bcaa8e74d6641124bae8c9d72",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b1d722b2cdee330d6c2cc452af71fd41bcf8d2e0",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Reduce Transmitted Data"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "4ebff3b7934d98260d668268b398a57d86f84f33",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b721db859201d853da0eb3e3d0c7b0aac88485f1",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "00be3f9a4ed8c0e8dbcdba96111a507a725bc1ab",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "89abcf7deb91b352989b628410dd86d9299d8a4c",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets",
+      "Scan for Vulnerabilities",
+      "Remove Unused CSS"
+    ],
+    "pattern_count": 4,
+    "confidence": "high"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "ed354e7de92a7ccb5e13b7951654b66695e04154",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "f6292baa40777b70b995412ae206e7740e164904",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "2abc92f3f38ecb8619cd431d39d364b4fd670d33",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Data Deduplication"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "55004f6185ba567c427e1d0a40b04966be3e09af",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Avoid Excessive DOM Size",
+      "Database Views & Materialized Views"
+    ],
+    "pattern_count": 2,
+    "confidence": "high"
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "64a78ae672e52f0229c2bd23e9cca8eaed2b8645",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Avoid Excessive DOM Size"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "947b175f20f87b4301582fec5ac3960114bca3dd",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "68327b99f93661428509c2a135d0d0b4faaa268d",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "c76191b15a7de8c266eb7c83e9451b96336f6668",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "63fe282083b7b3f4e8aaa1f0c6888cbbf0190b21",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "2c5149e06d62804c471c33662ae879a109fbab09",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "5a9de56ba089fe6c54a9bc54807f67422564bf3b",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "ddc720b78fbb5868451e53db7e1587ebd7ac2e5e",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "cacc5d30edf17185e2b0aeca1971b3a3809da976",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "21dac56ca273688b503cade33b09d9327f8a0915",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "8085fe997d33e317e928e8c1522e728a093b521e",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "0fc1e681d8a579ddc550f4c9fd627e2087d6b487",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "dff971d56c83c4045cce0469ce01464fc7447eb8",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Defer Offscreen Images",
+      "Properly Sized Images",
+      "Serve Images in Modern Formats"
+    ],
+    "pattern_count": 3,
+    "confidence": "high"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "cff2c112339db139d2652761e1cead6d6d88f3ae",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Enable Text Compression"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "36939b2d615101a5af19d0160a16c4a4111fd452",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Delete Unused Storage Resources",
+      "Remove Unused Assets",
+      "Scale Down Unused Applications"
+    ],
+    "pattern_count": 3,
+    "confidence": "high"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "cbcce5cb1e072f39ffd8adadef5a9f0c7919442f",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "a74013b8dabe6b98649d48cb49779ae20f62e0e6",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "2b7436044ca2f381b9084ed74e319fe7620b4d97",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "be9d6f5cc7a914f04f386d19cc487eddfc5a274e",
+    "green_aware": true,
+    "gsf_patterns_matched": [
+      "Queue Non-Urgent Requests"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "ad3630c295a3bb1a9b7cebb9d9cc9dab8966efa6",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "a7362c677447ddeadda964ac162311a6be4e0866",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "b55a6f65aa5a721aab45d9f16bf6ce0771e94da9",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "5b3579d4f57a7c3070d7a9a92bed2aee702b8146",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "38ddcfe8c3a707f907d5bcbea29e61adf1375560",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "9b89172bfd5bb47446e9425c99bdc3c2b65bd4e9",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "6080d6db1ed204d50e4184a6719e2aaff1fe2663",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "dceffb224c806082d57216d5ab83cd0bc22b0ce9",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Match VM Utilization Requirements",
+      "Avoid Excessive DOM Size",
+      "Properly Sized Images"
+    ],
+    "pattern_count": 3,
+    "confidence": "high"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "e4fc8ae113d555199a4cf9b9a5d526d382cf2138",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "6dbfe5b467b627a6cbd11ac70652772385e23a05",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "631601b912da484aaf56407deaaed8e44199bff6",
+    "green_aware": false,
+    "gsf_patterns_matched": [
+      "Incremental Processing"
+    ],
+    "pattern_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "e200d61e868aa8bfbcff9a8e3898689917508462",
+    "green_aware": false,
+    "gsf_patterns_matched": [],
+    "pattern_count": 0,
+    "confidence": "low"
+  }
+]

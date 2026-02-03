@@ -1,0 +1,1002 @@
+[
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "26e85831a7e20408422a19b2a9a5eb1e10429c96",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T15:46:55+03:00",
+    "message": "Initial commit",
+    "files_modified": 2,
+    "insertions": 203,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "7bdb5f8a76e3900c84c139530f17387b1e4dd434",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T14:51:40+02:00",
+    "message": "adding gitignore, updating readme",
+    "files_modified": 2,
+    "insertions": 8,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T15:10:43+02:00",
+    "message": "adding test node application, updating README",
+    "files_modified": 5,
+    "insertions": 117,
+    "deletions": 4
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "0be88f9268f4fbae14a0a24bcaacbf6507bceeff",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T15:13:07+02:00",
+    "message": "adding first version of UPISAS",
+    "files_modified": 8,
+    "insertions": 307,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "8cd0c08f644b7b88520bc5b1edfabef362d6dfe8",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T15:33:56+02:00",
+    "message": "git ignoring venv and __pycache__ folders",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "1ed8839c6e258b15f6e71c7332ae1db9d2374492",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T17:42:50+02:00",
+    "message": "whitespace changes",
+    "files_modified": 1,
+    "insertions": 4,
+    "deletions": 4
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "a15455b7bd12edc33e2b9a470aa2435c489e5b35",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T20:59:15+02:00",
+    "message": "capturing connection and 404 error when starting up",
+    "files_modified": 2,
+    "insertions": 23,
+    "deletions": 2
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "7bbef63900a43ef81ce243a92543fb6c05e40116",
+    "author": "EGAlberts",
+    "date": "2023-10-15T21:13:28+02:00",
+    "message": "re-structuring, logging, docstrings",
+    "files_modified": 7,
+    "insertions": 149,
+    "deletions": 9
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "48239ff7d93d18013975420298f8afc542af4979",
+    "author": "EGAlberts",
+    "date": "2023-10-15T21:15:13+02:00",
+    "message": "whoops",
+    "files_modified": 1,
+    "insertions": 0,
+    "deletions": 121
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "82167a9aae8d3ce01e4f4c7050766fb79d7bfb5d",
+    "author": "Ilias Gerostathopoulos",
+    "date": "2023-10-15T22:25:02+02:00",
+    "message": "simplifying perform_get_request util function, adding validate_schema util function",
+    "files_modified": 4,
+    "insertions": 43,
+    "deletions": 41
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "c8bf89320217f5c10d441dab21dc591ae418ed4f",
+    "author": "Prathan Phongthiproek",
+    "date": "2020-01-19T10:19:33+07:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 3,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "5db472591a0a57bc8e9f30626e638edc5a06b941",
+    "author": "Sunny Singh",
+    "date": "2020-02-26T00:22:04+05:18",
+    "message": "Added apk-mitm\n\nAdded apk-mitm in Dynamic and Runtime Analysis for android section.",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "36642304d303dcde739e7f6deb8189d0fea7b12f",
+    "author": "Prathan Phongthiproek",
+    "date": "2020-08-05T13:10:31+07:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 3,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "e82fcbebdbbf1c40c3e0f1088ae2cfdf4ff36a05",
+    "author": "Prathan Phongthiproek",
+    "date": "2020-08-06T17:52:02+07:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 3,
+    "deletions": 1
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "91c643d9a3eb3730aad09229fdf7d35563b16f3f",
+    "author": "Prathan Phongthiproek",
+    "date": "2020-08-06T17:54:54+07:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "0f0a29de93488943058589dc9853a7577a6cbcf0",
+    "author": "Rodrigo",
+    "date": "2021-02-25T00:21:32-03:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "c743cd1fbf00113c65b13429a36f58be8f0f291d",
+    "author": "Rodrigo",
+    "date": "2021-02-25T00:50:22-03:00",
+    "message": "New checklist for testing in README.md",
+    "files_modified": 1,
+    "insertions": 0,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "30bfa7f853ecf7df48e137e175569bfbd0180dc5",
+    "author": "Rodrigo",
+    "date": "2021-02-28T15:54:18-03:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "ac31f2c14962daa3a70959f362986dbba8b6457b",
+    "author": "hoek",
+    "date": "2021-08-27T14:52:53+02:00",
+    "message": "Update README.md\n\nAdded Mobexler virtual machine.",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "tanprathan/MobileApp-Pentest-Cheatsheet",
+    "commit_hash": "2cfe8bf385cd383e90caa1b73149e02707d1bb2b",
+    "author": "Prathan Phongthiproek",
+    "date": "2022-09-29T13:38:41+07:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 4
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "85eca66ac90a5dd54b9c2e2f87da902ea519a0d3",
+    "author": "Ivano Malavolta",
+    "date": "2022-06-20T11:40:52+02:00",
+    "message": "Initial commit",
+    "files_modified": 63,
+    "insertions": 3224,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "05bca1006a47c30cc0d09eddf571309ab4777142",
+    "author": "Ivano Malavolta",
+    "date": "2022-06-20T11:46:57+02:00",
+    "message": "Add WIP indication",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "f2967572e83463431df533753a11286720a3cb95",
+    "author": "nikosChalk",
+    "date": "2022-06-24T18:39:35+03:00",
+    "message": "discarding robot related stuff",
+    "files_modified": 21,
+    "insertions": 111,
+    "deletions": 149
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "381ddcc1fb6c9c5fbb0b786e6f86ec4e3620098d",
+    "author": "nikosChalk",
+    "date": "2022-06-24T18:39:51+03:00",
+    "message": "requirements.txt",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "081cbcc836d9eda65971ba0ddd5f7faa6b01a66b",
+    "author": "nikosChalk",
+    "date": "2022-06-24T19:00:30+03:00",
+    "message": "folder renaming",
+    "files_modified": 41,
+    "insertions": 0,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "78bd3161b65e49cd747c48bb4a8f16c0473e72fe",
+    "author": "nikosChalk",
+    "date": "2022-06-24T19:10:02+03:00",
+    "message": ".gitignore",
+    "files_modified": 1,
+    "insertions": 5,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "19f5951ea26a4b44529857f2c8492abaefa3d8c6",
+    "author": "nikosChalk",
+    "date": "2022-06-24T19:10:20+03:00",
+    "message": "readme",
+    "files_modified": 1,
+    "insertions": 3,
+    "deletions": 3
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "43b01797d9468dce0c051ce1d319dc5d88efe201",
+    "author": "nikosChalk",
+    "date": "2022-07-01T00:53:04+03:00",
+    "message": "cleanup & renaming",
+    "files_modified": 30,
+    "insertions": 3,
+    "deletions": 568
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "ba2d46a0e5e550ec2756cddfa99829a6c10ea011",
+    "author": "nikosChalk",
+    "date": "2022-07-01T00:54:24+03:00",
+    "message": "more cleanup",
+    "files_modified": 17,
+    "insertions": 0,
+    "deletions": 1208
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "65032b4b81456259c82c343dd6c0108b7e06b6d2",
+    "author": "nikosChalk",
+    "date": "2022-07-01T02:41:00+03:00",
+    "message": "friendlier user code",
+    "files_modified": 1,
+    "insertions": 10,
+    "deletions": 8
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "0646bbac1f59fe8a5d27bb51a7d79057568c4916",
+    "author": "Sumit Bhanushali",
+    "date": "2020-04-03T16:25:54+05:18",
+    "message": "initial commit",
+    "files_modified": 70,
+    "insertions": 3153,
+    "deletions": 0
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "0aeb04b58b10f9c601de3a1beb035688707c54ad",
+    "author": "Sumit Bhanushali",
+    "date": "2020-04-10T01:40:41+05:18",
+    "message": "refactored detail view, link field, select field",
+    "files_modified": 17,
+    "insertions": 833,
+    "deletions": 1002
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "1df57fc9307cf8b0336bcaea66e6d71afc59c4ef",
+    "author": "Sumit Bhanushali",
+    "date": "2020-04-10T16:26:56+05:18",
+    "message": "refactored filter list",
+    "files_modified": 4,
+    "insertions": 120,
+    "deletions": 177
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "5014935eb8bae14c2fc11de449eb70db82781e32",
+    "author": "Sumit Bhanushali",
+    "date": "2020-04-13T20:32:36+05:18",
+    "message": "refactored list view and other cleanups",
+    "files_modified": 7,
+    "insertions": 436,
+    "deletions": 76
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "ac7789cd87dee511dffb827d9850f95cfeb9a7c3",
+    "author": "Sumit Bhanushali",
+    "date": "2020-04-13T20:35:47+05:18",
+    "message": "removed deprecated files",
+    "files_modified": 2,
+    "insertions": 0,
+    "deletions": 382
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "91001ddcbd0d4463eb7bdc06dde5e387588d33e6",
+    "author": "Sumit Bhanushali",
+    "date": "2020-04-23T15:34:09+05:18",
+    "message": "added email form, rich text editor and refactor",
+    "files_modified": 10,
+    "insertions": 525,
+    "deletions": 49
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "df95e458ded26ed80db8c4c5d96bd4255f36504f",
+    "author": "Afshan",
+    "date": "2020-04-26T20:07:15+05:18",
+    "message": "done some refactoring of the code and a did UI for login form",
+    "files_modified": 11,
+    "insertions": 371,
+    "deletions": 111
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "6a48273feaf223f8db838ac402933419dfe490ad",
+    "author": "Afshan",
+    "date": "2020-04-29T16:05:32+05:18",
+    "message": "implemented a part where if a user logs in once they are kept logged in unless they explicitly log out and they are directed to the issue screen directly",
+    "files_modified": 9,
+    "insertions": 363,
+    "deletions": 145
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "d08d23e3400c74708101ef2b03d49984c83c1b59",
+    "author": "Afshan",
+    "date": "2020-04-29T16:07:53+05:18",
+    "message": "removed comments from app.dart",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 22
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "9d831bdc1d4c9a8d2896c0813cd67238ad5d5d0f",
+    "author": "Afshan",
+    "date": "2020-04-30T21:39:43+05:18",
+    "message": "changed UI for issue list",
+    "files_modified": 7,
+    "insertions": 218,
+    "deletions": 107
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "16264b3f5af56c493c5a84e8719113bf7f2b007d",
+    "author": "Stan Swanborn",
+    "date": "2020-01-15T16:29:16+01:00",
+    "message": "Initial commit",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "6462d5af57398a6ab802ed09be637f1f4772b706",
+    "author": "=",
+    "date": "2020-01-15T16:31:55+01:00",
+    "message": "Initial setup project with examples to run a Turtlebot3 in Gazebo / real world",
+    "files_modified": 6,
+    "insertions": 114,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "46efc4caf2d8de3bf3e64e5804a71a6b51ed4fdf",
+    "author": "=",
+    "date": "2020-01-20T18:43:59+01:00",
+    "message": "Added example environment with correct model, launch file, world file, and install instructions + scripts",
+    "files_modified": 39,
+    "insertions": 3466,
+    "deletions": 3
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "5d26a5ef02dfbf4e0f7038f21a46f4e7fc261f26",
+    "author": "=",
+    "date": "2020-01-20T18:46:23+01:00",
+    "message": "Readme update",
+    "files_modified": 1,
+    "insertions": 4,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "004bd43ae28ffc3257121ee4f91497bff4ce44f7",
+    "author": "Stan Swanborn",
+    "date": "2020-01-21T14:49:20+01:00",
+    "message": "Intermediate backup push",
+    "files_modified": 7,
+    "insertions": 44,
+    "deletions": 7
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d19057c074ba9ae883c4e1755e4d7c38aadfd14b",
+    "author": "Stan Swanborn",
+    "date": "2020-01-22T16:53:27+01:00",
+    "message": "intermediate update",
+    "files_modified": 70,
+    "insertions": 8845,
+    "deletions": 63
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "da4538d79d8342a1e3fc89dd4bd81dd63da499fc",
+    "author": "Stan Swanborn",
+    "date": "2020-01-22T17:00:18+01:00",
+    "message": "Backup",
+    "files_modified": 8,
+    "insertions": 0,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "290f4a83bd7f0748ec62b473a44eb980d9802aa8",
+    "author": "Stan Swanborn",
+    "date": "2020-01-23T19:20:25+01:00",
+    "message": "Work in progress, roslaunch of launch file working, config parsing working, experiment and run WIP",
+    "files_modified": 15,
+    "insertions": 159,
+    "deletions": 10
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d87c640d6cb25cd9c7d08e0f8b877e67d64ca9a3",
+    "author": "Stan Swanborn",
+    "date": "2020-01-23T22:25:27+01:00",
+    "message": "Automated gazebo launch and stop based on ROS interaction. WIP: Wait for graceful shutdown of launch file",
+    "files_modified": 3,
+    "insertions": 40,
+    "deletions": 9
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "87de694a34de6f9530b8d94a151a6ca285c79244",
+    "author": "Stan Swanborn",
+    "date": "2020-01-24T02:35:27+01:00",
+    "message": "Abstracted ExperimentController and ROSController for functionality seperation and future ease-of-expansion,\nadded terminal animations,\nadded pretty dict output,\nadded graceful exit on SIGINT,\nadded g",
+    "files_modified": 14,
+    "insertions": 135,
+    "deletions": 45
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "497021ff2781071d9f4659f525ed7ce39d108711",
+    "author": "Thijmen Kurk",
+    "date": "2020-01-20T18:58:31+01:00",
+    "message": "Added missing options to README.md",
+    "files_modified": 1,
+    "insertions": 6,
+    "deletions": 3
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "d545cfd1d5f2ef574eb2aac1d7e040ccc042b670",
+    "author": "Thijmen Kurk",
+    "date": "2020-01-20T19:00:37+01:00",
+    "message": "Fixed unnecessary indent in README.md",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "76be1d57e44e360b36b4cbf87db3f45801623b13",
+    "author": "GordonBombay88",
+    "date": "2020-01-24T17:57:59+01:00",
+    "message": "Replaced app state with another metric to reflect changes in parent repo",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 2
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "7a95e764dbe35ffdff15d32067b046ac8116145f",
+    "author": "Thijmen Kurk",
+    "date": "2020-01-26T15:56:49+01:00",
+    "message": "Collaborative commit with Eric to fix the aggregation bug",
+    "files_modified": 5,
+    "insertions": 18,
+    "deletions": 13
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "62c37a1004423d40720f0bfc689abe56c2b7c937",
+    "author": "Thijmen Kurk",
+    "date": "2020-01-26T16:01:49+01:00",
+    "message": "removed backup files",
+    "files_modified": 48,
+    "insertions": 0,
+    "deletions": 7405
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "5da7789467e4471ee7ca54f58c7a2f45a8030cb1",
+    "author": "Eric",
+    "date": "2020-01-27T12:09:50+01:00",
+    "message": "To fix build import error",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "10620974232ab6886b6192eb386a3c2debf22221",
+    "author": "GordonBombay88",
+    "date": "2020-02-07T14:43:00+01:00",
+    "message": "Reset HEAD to Ivano commit before Eric Monsoon changes; update to travisci file to update python version and dependency",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "adc72c4e68d9ac029e17d2cf543a477382ac8696",
+    "author": "GordonBombay88",
+    "date": "2020-02-08T19:01:20+01:00",
+    "message": "Updated coveragerc from Py2.7 to 3.6",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "80947c4cec1b706b42a3ff81bf3597d9c7a15fe9",
+    "author": "GordonBombay88",
+    "date": "2020-02-08T19:57:40+01:00",
+    "message": "Reverted TravisCI Py version to 2.7 since no issues on build on Jan 27",
+    "files_modified": 2,
+    "insertions": 2,
+    "deletions": 2
+  },
+  {
+    "repository": "S2-group/android-runner",
+    "commit_hash": "44e4e4890895465bcaa8e74d6641124bae8c9d72",
+    "author": "GordonBombay88",
+    "date": "2020-02-08T20:01:54+01:00",
+    "message": "Reverting to 2.7 did not work, as expected.  Build problems likely related to changes made to tests/",
+    "files_modified": 2,
+    "insertions": 2,
+    "deletions": 2
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b1d722b2cdee330d6c2cc452af71fd41bcf8d2e0",
+    "author": "nero120",
+    "date": "2020-01-02T20:10:37+00:00",
+    "message": "Fixed bug on Android where fetching metadata cannot be cancelled.\nFixed bugs on Android when fetching metadata for url in url field.\nUpdated icon button styles in input fields.\nUpdated styling for rev",
+    "files_modified": 10,
+    "insertions": 135,
+    "deletions": 63
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "4ebff3b7934d98260d668268b398a57d86f84f33",
+    "author": "nero120",
+    "date": "2020-01-04T00:04:39+00:00",
+    "message": "Fixed input field icon button styling bugs.\nRemoved broken word suggestion fixes.",
+    "files_modified": 7,
+    "insertions": 83,
+    "deletions": 121
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b721db859201d853da0eb3e3d0c7b0aac88485f1",
+    "author": "nero120",
+    "date": "2020-01-05T22:52:44+00:00",
+    "message": "Added show password button to new sync password fields.\nFixed Android bug when back button does not cause the correct action for certain screens.\nFixed Android button styles to remove hover/focus pseu",
+    "files_modified": 10,
+    "insertions": 74,
+    "deletions": 54
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "00be3f9a4ed8c0e8dbcdba96111a507a725bc1ab",
+    "author": "nero120",
+    "date": "2020-01-05T23:00:58+00:00",
+    "message": "Fixed Android bug where login error message hidden by soft keyboard.",
+    "files_modified": 1,
+    "insertions": 5,
+    "deletions": 1
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "89abcf7deb91b352989b628410dd86d9299d8a4c",
+    "author": "nero120",
+    "date": "2020-01-07T23:02:19+00:00",
+    "message": "Added sync ID validation to login form and scan panel.\nFixed active css styles for Android.\nRemoved add bookmark ids implementation for Android.\nUpdated localised strings.",
+    "files_modified": 14,
+    "insertions": 345,
+    "deletions": 140
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "ed354e7de92a7ccb5e13b7951654b66695e04154",
+    "author": "nero120",
+    "date": "2020-01-08T23:50:29+00:00",
+    "message": "Added bookmark id validation check to pull sync and restore, fixes invalid ids if found.\nRemoved id validation from restore form.",
+    "files_modified": 13,
+    "insertions": 70,
+    "deletions": 100
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "f6292baa40777b70b995412ae206e7740e164904",
+    "author": "nero120",
+    "date": "2020-01-09T15:10:27+00:00",
+    "message": "Added preferences section to Settings panel.\nAdded preference to display search bar beneath search results (resolves #143).",
+    "files_modified": 11,
+    "insertions": 87,
+    "deletions": 5
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "2abc92f3f38ecb8619cd431d39d364b4fd670d33",
+    "author": "nero120",
+    "date": "2020-01-10T21:59:49+00:00",
+    "message": "Refactored process of adding unique bookmark ids on initial sync.\nUpdated close link label on help panel.",
+    "files_modified": 11,
+    "insertions": 182,
+    "deletions": 194
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "55004f6185ba567c427e1d0a40b04966be3e09af",
+    "author": "nero120",
+    "date": "2020-01-15T19:12:19+00:00",
+    "message": "Added bookmark tree view to search panel (resolves #16).\nUpdated dependencies.",
+    "files_modified": 23,
+    "insertions": 676,
+    "deletions": 268
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "64a78ae672e52f0229c2bd23e9cca8eaed2b8645",
+    "author": "nero120",
+    "date": "2020-01-16T23:05:22+00:00",
+    "message": "Fixed bookmark tree bugs for Android.",
+    "files_modified": 9,
+    "insertions": 183,
+    "deletions": 155
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "947b175f20f87b4301582fec5ac3960114bca3dd",
+    "author": "Ivano Malavolta",
+    "date": "2023-12-01T13:08:41+01:00",
+    "message": "Initial commit",
+    "files_modified": 2,
+    "insertions": 23,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "68327b99f93661428509c2a135d0d0b4faaa268d",
+    "author": "Max Karsten",
+    "date": "2025-09-10T16:42:48+02:00",
+    "message": "Example experiment +",
+    "files_modified": 14,
+    "insertions": 138,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "c76191b15a7de8c266eb7c83e9451b96336f6668",
+    "author": "Max Karsten",
+    "date": "2025-09-10T16:43:00+02:00",
+    "message": "Small config change",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "63fe282083b7b3f4e8aaa1f0c6888cbbf0190b21",
+    "author": "Andrei Dragomir",
+    "date": "2025-09-11T16:15:19+02:00",
+    "message": "Lab 1 Materials",
+    "files_modified": 5,
+    "insertions": 355,
+    "deletions": 0
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "2c5149e06d62804c471c33662ae879a109fbab09",
+    "author": "Max Karsten",
+    "date": "2025-09-11T17:26:18+02:00",
+    "message": "Make readme more robust",
+    "files_modified": 1,
+    "insertions": 150,
+    "deletions": 4
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "5a9de56ba089fe6c54a9bc54807f67422564bf3b",
+    "author": "Max Karsten",
+    "date": "2025-09-11T17:37:05+02:00",
+    "message": "More readme updates",
+    "files_modified": 1,
+    "insertions": 14,
+    "deletions": 13
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "ddc720b78fbb5868451e53db7e1587ebd7ac2e5e",
+    "author": "Max Karsten",
+    "date": "2025-09-11T17:41:36+02:00",
+    "message": "Add in some more links",
+    "files_modified": 1,
+    "insertions": 2,
+    "deletions": 2
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "cacc5d30edf17185e2b0aeca1971b3a3809da976",
+    "author": "Max Karsten",
+    "date": "2025-09-11T17:42:49+02:00",
+    "message": "More links",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "21dac56ca273688b503cade33b09d9327f8a0915",
+    "author": "Max Karsten",
+    "date": "2025-09-11T17:47:15+02:00",
+    "message": "More tweaks",
+    "files_modified": 1,
+    "insertions": 6,
+    "deletions": 4
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "8085fe997d33e317e928e8c1522e728a093b521e",
+    "author": "Max Karsten",
+    "date": "2025-09-11T17:49:11+02:00",
+    "message": "Last change",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "0fc1e681d8a579ddc550f4c9fd627e2087d6b487",
+    "author": "J\u00f8ao Henriques",
+    "date": "2020-01-13T02:21:33+00:00",
+    "message": "fix(drawer): missing enableDragHandle on type definitions (#3496)",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 0
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "dff971d56c83c4045cce0469ce01464fc7447eb8",
+    "author": "Colder Xihk",
+    "date": "2020-01-13T10:24:40+08:00",
+    "message": "fix: ImagePicker types (#3491)",
+    "files_modified": 1,
+    "insertions": 12,
+    "deletions": 7
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "cff2c112339db139d2652761e1cead6d6d88f3ae",
+    "author": "lzghost",
+    "date": "2020-02-20T09:24:38+08:00",
+    "message": "fix: \u5f53TextareaItem\uff0c\u8bbe\u7f6e\u6210disabled\u6216\u8005readonly\u65f6\uff0c\u65e0\u6cd5\u83b7\u53d6\u7126\u70b9\uff0c\u5bfc\u81f4\u65e0\u6cd5\u8ba1\u7b97\u9ad8\u5ea6\uff0c\u8c03\u7528reAlignHeight\u65b9\u6cd5 (#3538)",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "36939b2d615101a5af19d0160a16c4a4111fd452",
+    "author": "\u6bd2\u67ad\u4e1c",
+    "date": "2020-05-14T12:01:16+08:00",
+    "message": "Fix Switch style error (#3606)\n\n* Fix Switch style error\r\n\r\nremove fix shadow for right-down\r\n\r\ncentre the switch\r\n\r\n* fix: test for rmc\r\n\r\n* fix: lint",
+    "files_modified": 3,
+    "insertions": 22,
+    "deletions": 12
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "cbcce5cb1e072f39ffd8adadef5a9f0c7919442f",
+    "author": "duxiaodong",
+    "date": "2020-05-14T13:50:24+08:00",
+    "message": "chore: release 2.3.2",
+    "files_modified": 3,
+    "insertions": 15,
+    "deletions": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "a74013b8dabe6b98649d48cb49779ae20f62e0e6",
+    "author": "\u6bd2\u67ad\u4e1c",
+    "date": "2020-05-19T16:20:10+08:00",
+    "message": "Revert \"InputItem\u5728customInput\u7ec4\u4ef6\u4e8b\u4ef6click\u66ff\u6362\u4e3atouchend (#3401)\" (#3613)\n\nThis reverts commit d01282699c490b79415de8b93f7265cea98f2541.",
+    "files_modified": 2,
+    "insertions": 5,
+    "deletions": 5
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "2b7436044ca2f381b9084ed74e319fe7620b4d97",
+    "author": "duxiaodong",
+    "date": "2020-05-19T16:26:13+08:00",
+    "message": "chore: release 2.3.3",
+    "files_modified": 3,
+    "insertions": 15,
+    "deletions": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "be9d6f5cc7a914f04f386d19cc487eddfc5a274e",
+    "author": "\u6bd2\u67ad\u4e1c",
+    "date": "2020-09-18T11:35:20+08:00",
+    "message": "feat: add single body background variable (#3713)",
+    "files_modified": 1,
+    "insertions": 4,
+    "deletions": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "ad3630c295a3bb1a9b7cebb9d9cc9dab8966efa6",
+    "author": "duxiaodong",
+    "date": "2020-09-18T14:55:46+08:00",
+    "message": "release: 2.3.4",
+    "files_modified": 1,
+    "insertions": 1,
+    "deletions": 1
+  },
+  {
+    "repository": "ant-design/ant-design-mobile",
+    "commit_hash": "a7362c677447ddeadda964ac162311a6be4e0866",
+    "author": "duxiaodong",
+    "date": "2020-09-18T14:59:50+08:00",
+    "message": "docs: update changelog",
+    "files_modified": 2,
+    "insertions": 14,
+    "deletions": 0
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "b55a6f65aa5a721aab45d9f16bf6ce0771e94da9",
+    "author": "Thibault Duplessis",
+    "date": "2022-05-01T12:26:51+02:00",
+    "message": "Initial commit",
+    "files_modified": 3,
+    "insertions": 697,
+    "deletions": 0
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "5b3579d4f57a7c3070d7a9a92bed2aee702b8146",
+    "author": "Thibault Duplessis",
+    "date": "2022-05-01T12:27:25+02:00",
+    "message": "Update README.md",
+    "files_modified": 1,
+    "insertions": 3,
+    "deletions": 2
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "38ddcfe8c3a707f907d5bcbea29e61adf1375560",
+    "author": "Vincent Velociter",
+    "date": "2022-11-03T15:38:36+01:00",
+    "message": "Init flutter project",
+    "files_modified": 63,
+    "insertions": 1519,
+    "deletions": 0
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "9b89172bfd5bb47446e9425c99bdc3c2b65bd4e9",
+    "author": "Vincent Velociter",
+    "date": "2022-11-03T15:59:04+01:00",
+    "message": "Change iOS icons",
+    "files_modified": 37,
+    "insertions": 93,
+    "deletions": 81
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "6080d6db1ed204d50e4184a6719e2aaff1fe2663",
+    "author": "Vincent Velociter",
+    "date": "2022-11-03T17:31:02+01:00",
+    "message": "Add android icons",
+    "files_modified": 21,
+    "insertions": 13,
+    "deletions": 4
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "dceffb224c806082d57216d5ab83cd0bc22b0ce9",
+    "author": "Michal Srutek",
+    "date": "2022-11-07T07:55:45+01:00",
+    "message": "Use single app icon size",
+    "files_modified": 22,
+    "insertions": 9,
+    "deletions": 129
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "e4fc8ae113d555199a4cf9b9a5d526d382cf2138",
+    "author": "Vincent Velociter",
+    "date": "2022-11-07T19:28:54+01:00",
+    "message": "Add localizations package",
+    "files_modified": 14,
+    "insertions": 493,
+    "deletions": 200
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "6dbfe5b467b627a6cbd11ac70652772385e23a05",
+    "author": "Vincent Velociter",
+    "date": "2022-11-08T05:39:49+01:00",
+    "message": "Tweak l10n.yaml",
+    "files_modified": 3,
+    "insertions": 3,
+    "deletions": 2
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "631601b912da484aaf56407deaaed8e44199bff6",
+    "author": "Vincent Velociter",
+    "date": "2022-11-08T14:21:54+01:00",
+    "message": "Add a way to test different languages on iOS",
+    "files_modified": 7,
+    "insertions": 105,
+    "deletions": 2
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "e200d61e868aa8bfbcff9a8e3898689917508462",
+    "author": "Vincent Velociter",
+    "date": "2022-11-08T15:41:58+01:00",
+    "message": "Change localization settings",
+    "files_modified": 9,
+    "insertions": 24,
+    "deletions": 14
+  }
+]

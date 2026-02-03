@@ -6,7 +6,6 @@ import pytest
 
 
 class TestModuleImports:
-
     def test_import_greenmining(self):
         start = time.perf_counter()
         import greenmining
@@ -82,7 +81,6 @@ class TestModuleImports:
 
 
 class TestModels:
-
     def test_repository_model(self):
         from greenmining.models import Repository
 
@@ -148,7 +146,6 @@ class TestModels:
 
 
 class TestEnergy:
-
     def test_energy_backend_enum(self):
         from greenmining.energy.base import EnergyBackend
 
@@ -208,7 +205,6 @@ class TestEnergy:
 
 
 class TestGSFPatterns:
-
     def test_is_green_aware_positive(self):
         from greenmining.gsf_patterns import is_green_aware
 
@@ -235,7 +231,6 @@ class TestGSFPatterns:
 
 
 class TestUtils:
-
     def test_format_timestamp(self):
         from datetime import datetime
 
@@ -285,7 +280,6 @@ class TestUtils:
 
 
 class TestServices:
-
     def test_commit_extractor_init(self):
         from greenmining.services import CommitExtractor
 
@@ -328,7 +322,6 @@ class TestServices:
 
 
 class TestAnalyzers:
-
     def test_code_diff_analyzer_init(self):
         from greenmining.analyzers import CodeDiffAnalyzer
 

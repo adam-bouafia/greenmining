@@ -1,0 +1,212 @@
+[
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "2d4bfdcca77bf48e260403fba8b7cdb0ce054b0f",
+    "dmm_unit_size": 0.22666666666666666,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "0be88f9268f4fbae14a0a24bcaacbf6507bceeff",
+    "dmm_unit_size": 0.8924050632911392,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 0.8607594936708861
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "a15455b7bd12edc33e2b9a470aa2435c489e5b35",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "7bbef63900a43ef81ce243a92543fb6c05e40116",
+    "dmm_unit_size": 0.5377358490566038,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 0.8490566037735849
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "48239ff7d93d18013975420298f8afc542af4979",
+    "dmm_unit_size": 0.16666666666666666,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 0.12745098039215685
+  },
+  {
+    "repository": "S2-group/UPISAS",
+    "commit_hash": "82167a9aae8d3ce01e4f4c7050766fb79d7bfb5d",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "85eca66ac90a5dd54b9c2e2f87da902ea519a0d3",
+    "dmm_unit_size": 0.7213452299245025,
+    "dmm_unit_complexity": 0.7652711050102952,
+    "dmm_unit_interfacing": 0.8345916266300618
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "f2967572e83463431df533753a11286720a3cb95",
+    "dmm_unit_size": 0.7083333333333334,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 0.0
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "43b01797d9468dce0c051ce1d319dc5d88efe201",
+    "dmm_unit_size": 0.38175675675675674,
+    "dmm_unit_complexity": 0.2972972972972973,
+    "dmm_unit_interfacing": 0.30743243243243246
+  },
+  {
+    "repository": "S2-group/experiment-runner",
+    "commit_hash": "ba2d46a0e5e550ec2756cddfa99829a6c10ea011",
+    "dmm_unit_size": 0.1646234676007005,
+    "dmm_unit_complexity": 0.18038528896672504,
+    "dmm_unit_interfacing": 0.138353765323993
+  },
+  {
+    "repository": "frappe/mobile",
+    "commit_hash": "0646bbac1f59fe8a5d27bb51a7d79057568c4916",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "6462d5af57398a6ab802ed09be637f1f4772b706",
+    "dmm_unit_size": 0.5454545454545454,
+    "dmm_unit_complexity": 0.5454545454545454,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "46efc4caf2d8de3bf3e64e5804a71a6b51ed4fdf",
+    "dmm_unit_size": 0.3890909090909091,
+    "dmm_unit_complexity": 0.5963636363636363,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "004bd43ae28ffc3257121ee4f91497bff4ce44f7",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 0.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d19057c074ba9ae883c4e1755e4d7c38aadfd14b",
+    "dmm_unit_size": 0.3359683794466403,
+    "dmm_unit_complexity": 0.5612648221343873,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "290f4a83bd7f0748ec62b473a44eb980d9802aa8",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "d87c640d6cb25cd9c7d08e0f8b877e67d64ca9a3",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/robot-runner",
+    "commit_hash": "87de694a34de6f9530b8d94a151a6ca285c79244",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b1d722b2cdee330d6c2cc452af71fd41bcf8d2e0",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "4ebff3b7934d98260d668268b398a57d86f84f33",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 0.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "b721db859201d853da0eb3e3d0c7b0aac88485f1",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "00be3f9a4ed8c0e8dbcdba96111a507a725bc1ab",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 0.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "89abcf7deb91b352989b628410dd86d9299d8a4c",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "ed354e7de92a7ccb5e13b7951654b66695e04154",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 0.2727272727272727
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "f6292baa40777b70b995412ae206e7740e164904",
+    "dmm_unit_size": 0.55,
+    "dmm_unit_complexity": 0.95,
+    "dmm_unit_interfacing": 0.7
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "2abc92f3f38ecb8619cd431d39d364b4fd670d33",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "55004f6185ba567c427e1d0a40b04966be3e09af",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.0,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "xbrowsersync/app",
+    "commit_hash": "64a78ae672e52f0229c2bd23e9cca8eaed2b8645",
+    "dmm_unit_size": 0.0,
+    "dmm_unit_complexity": 0.7666666666666667,
+    "dmm_unit_interfacing": 1.0
+  },
+  {
+    "repository": "S2-group/green-lab",
+    "commit_hash": "68327b99f93661428509c2a135d0d0b4faaa268d",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 0.18518518518518517
+  },
+  {
+    "repository": "lichess-org/mobile",
+    "commit_hash": "38ddcfe8c3a707f907d5bcbea29e61adf1375560",
+    "dmm_unit_size": 1.0,
+    "dmm_unit_complexity": 1.0,
+    "dmm_unit_interfacing": 1.0
+  }
+]
