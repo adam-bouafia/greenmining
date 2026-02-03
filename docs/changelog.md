@@ -1,5 +1,76 @@
 # Changelog
 
+## [1.2.8] - 2026-02-03
+
+### Changed
+- Documentation audit: updated all docs to match library v1.2.x API
+- Removed references to deleted Config class, CommitExtractor, GitHubFetcher
+- Updated experiment.md to match actual beta notebook (10 repos, cloud domain)
+- Fixed installation.md version number
+
+### Fixed
+- url-analysis.md Config import references (Config class was removed in v1.2.0)
+- library-reference.md CommitExtractor documentation (class was removed)
+- Redacted exposed GitHub PAT from notebook cell output
+
+## [1.2.7] - 2026-02-03
+
+### Fixed
+- Notebook pip install version sync issue
+
+## [1.2.6] - 2026-02-03
+
+### Added
+- Notebook kernel configuration for experiment.ipynb
+- Improved energy tracking output formatting
+
+### Fixed
+- Package version sync between PyPI and local development
+
+## [1.2.5] - 2026-02-02
+
+### Added
+- `shallow_clone` parameter (default: True) to significantly reduce repository download size
+- `clone_depth` parameter for custom clone depth (auto-calculated as `max(50, max_commits * 3)` if None)
+- Manual git shallow cloning before PyDriller analysis for dramatic performance improvement
+
+### Changed
+- Repository cloning now uses `git clone --depth=N` by default, reducing download times by ~90%
+- Clone depth automatically calculated based on max_commits to ensure sufficient history
+
+### Performance
+- Reduced clone size from 528 MB to ~50 MB for typical 10-repo analysis (90% reduction)
+- Example: ant-design repo reduced from 184 MB (full) to 14 MB (depth=50) - 92% smaller
+- Analysis time for small experiments reduced from 6+ minutes to under 1 minute
+
+## [1.2.4] - 2026-02-01
+
+### Added
+- `skip_merges` parameter exposed in `analyze_repositories()` API (default: True)
+- `commit_order` parameter to control commit traversal order: "newest_first" (default) or "oldest_first"
+
+### Changed
+- Commit analysis now configurable between newest-first (recent trends) and oldest-first (evolution studies)
+
+## [1.2.3] - 2026-02-01
+
+### Fixed
+- `cleanup_after` parameter not exposed in top-level `analyze_repositories()` API
+- Repositories with empty commit histories no longer included in analysis results
+
+### Changed
+- Experiment notebook updated with full Android-domain pipeline run and results
+
+## [1.2.1] - 2026-02-01
+
+### Fixed
+- Clone directory collision in `LocalRepoAnalyzer` when multiple repos share the same name (e.g. `open-android/Android` vs `hmkcode/Android` vs `duckduckgo/Android`)
+- Race condition corruption during parallel analysis (`could not lock config file` errors)
+- Aligned clone path sanitization with `RepositoryController._sanitize_repo_name` (owner\_repo format)
+
+### Changed
+- Clone directory structure now uses unique `owner_repo/` parent dirs per repository
+
 ## [1.2.0] - 2026-01-31
 
 ### Added
@@ -88,6 +159,13 @@
 - Green awareness analysis
 - Docker containerization
 
+[1.2.8]: https://github.com/adam-bouafia/greenmining/compare/v1.2.7...v1.2.8
+[1.2.7]: https://github.com/adam-bouafia/greenmining/compare/v1.2.6...v1.2.7
+[1.2.6]: https://github.com/adam-bouafia/greenmining/compare/v1.2.5...v1.2.6
+[1.2.5]: https://github.com/adam-bouafia/greenmining/compare/v1.2.4...v1.2.5
+[1.2.4]: https://github.com/adam-bouafia/greenmining/compare/v1.2.3...v1.2.4
+[1.2.3]: https://github.com/adam-bouafia/greenmining/compare/v1.2.1...v1.2.3
+[1.2.1]: https://github.com/adam-bouafia/greenmining/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/adam-bouafia/greenmining/compare/v1.1.9...v1.2.0
 [1.1.9]: https://github.com/adam-bouafia/greenmining/compare/v1.1.6...v1.1.9
 [1.1.6]: https://github.com/adam-bouafia/greenmining/compare/v0.1.12...v1.1.6

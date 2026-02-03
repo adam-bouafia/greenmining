@@ -314,7 +314,6 @@ Aggregate analysis results with statistics.
 from greenmining.services.data_aggregator import DataAggregator
 
 aggregator = DataAggregator(
-    config=None,                  # Config object
     enable_stats=True,            # Statistical analysis
     enable_temporal=True,         # Temporal trends
     temporal_granularity="quarter"  # day/week/month/quarter/year

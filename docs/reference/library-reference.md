@@ -309,29 +309,6 @@ Fetches repositories and commits from GitHub using GraphQL API v4. Handles pagin
 
 ---
 
-### `greenmining/services/github_fetcher.py`
-
-**Deprecated.** Legacy REST API fetcher. Use `GitHubGraphQLFetcher` instead.
-
----
-
-### `greenmining/services/commit_extractor.py`
-
-#### class `CommitExtractor`
-
-Extracts commit data from repositories using the GitHub REST API (PyGithub).
-
-| Method | Parameters | Description |
-|--------|-----------|-------------|
-| `__init__(max_commits, skip_merges, days_back, github_token, timeout)` | see params | Initialize with extraction settings. Default: 50 commits, skip merges, 730 days back, 60s timeout. |
-| `extract_from_repositories(repositories)` | `repositories: list` | Extract commits from a list of repositories. Handles timeouts and errors per repository. Uses SIGALRM for timeout enforcement. |
-| `save_results(commits, output_file, repos_count)` | `commits: list, output_file: Path, repos_count: int` | Save extracted commits to JSON with metadata. |
-| `_extract_repo_commits(repo)` | internal | Extract commits from a single repository via GitHub API. Decorated with `@retry_on_exception`. |
-| `_extract_commit_metadata(commit, repo_name)` | internal | Extract metadata from a PyDriller commit object. |
-| `_extract_commit_metadata_from_github(commit, repo_name)` | internal | Extract metadata from a PyGithub commit object. |
-
----
-
 ### `greenmining/services/data_analyzer.py`
 
 #### class `DataAnalyzer`

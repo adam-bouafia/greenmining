@@ -284,27 +284,22 @@ Each method entry includes:
 
 ---
 
-## Configuration Options
+## Configuration Parameters
 
-Configure URL analysis via environment variables or Config:
-
-```bash
-# Environment variables
-export CLONE_PATH=/custom/path
-export CLEANUP_AFTER_ANALYSIS=false
-export PROCESS_METRICS_ENABLED=true
-export DMM_ENABLED=true
-```
+URL analysis is configured via function parameters:
 
 ```python
-# Python configuration
-from greenmining.config import Config
+from greenmining.services.local_repo_analyzer import LocalRepoAnalyzer
 
-config = Config()
-print(config.CLONE_PATH)               # /tmp/greenmining_repos
-print(config.CLEANUP_AFTER_ANALYSIS)   # True
-print(config.PROCESS_METRICS_ENABLED)  # True
-print(config.DMM_ENABLED)              # True
+analyzer = LocalRepoAnalyzer(
+    max_commits=500,              # Maximum commits per repository
+    cleanup_after=True,           # Remove cloned repos after analysis
+    skip_merges=True,             # Skip merge commits
+    energy_tracking=False,        # Enable energy measurement
+    energy_backend="auto",        # Energy backend (rapl, codecarbon, cpu_meter, auto)
+    method_level_analysis=False,  # Per-method complexity metrics
+    include_source_code=False,    # Include source code before/after
+)
 ```
 
 ---

@@ -6,7 +6,15 @@ end-to-end pipeline applied to 15 repositories.
 
 ## Overview
 
-The experiment follows a simple structure with 15 steps:
+- **5 cloud repositories** found via GraphQL search
+- **5 S2-group research repositories** manually selected (SAF-Toolkit, UPISAS, experiment-runner, robot-runner, android-runner)
+- **Total: 10 repositories** — all analyzed with the same pipeline and ALL features enabled
+- **Commits per repository:** 50 (max)
+- **Min stars:** 5
+- **Languages:** 21 top programming languages
+- **Date range:** 2020-01-01 to 2026-12-31
+
+The experiment follows a 16-step pipeline:
 
 | Step | Purpose | Library Features Used |
 |------|---------|----------------------|

@@ -26,7 +26,7 @@ Verify installation:
 
 ```python
 python -c "import greenmining; print(f'greenmining v{greenmining.__version__}')"
-# Output: greenmining v1.0.4
+# Output: greenmining v1.2.8
 ```
 
 ### Method 2: From Source
