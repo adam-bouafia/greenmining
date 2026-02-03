@@ -566,6 +566,7 @@ class LocalRepoAnalyzer:
                     colored_print("   Deepening clone for process metrics...", "cyan")
                     try:
                         import subprocess
+
                         subprocess.run(
                             ["git", "fetch", "--unshallow"],
                             cwd=str(local_path),
@@ -578,7 +579,10 @@ class LocalRepoAnalyzer:
                         # Already unshallowed or not a shallow repo — safe to ignore
                         pass
                     except subprocess.TimeoutExpired:
-                        colored_print("   Warning: Unshallow timed out, process metrics may be incomplete", "yellow")
+                        colored_print(
+                            "   Warning: Unshallow timed out, process metrics may be incomplete",
+                            "yellow",
+                        )
                 colored_print("   Computing process metrics...", "cyan")
                 process_metrics = self._compute_process_metrics(str(local_path))
 
